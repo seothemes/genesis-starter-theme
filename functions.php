@@ -45,16 +45,6 @@ function starter_enqueue_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'starter_enqueue_scripts_styles' );
 
 /**
- * Add custom Viewport meta tag for mobile browsers.
- */
-function starter_viewport_meta_tag() {
-
-	// This prevents users from zooming so be cautious.
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>';
-}
-add_action( 'genesis_meta', 'starter_viewport_meta_tag' );
-
-/**
  * Emulate hover effects on mobile devices.
  *
  * @param  string $attributes On touch start attribute.
@@ -99,6 +89,9 @@ add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'g
 
 // Enable Accessibility support.
 add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+
+// Enable responsive viewport.
+add_theme_support( 'genesis-responsive-viewport' );
 
 // Enable automatic output of WordPress title tags.
 add_theme_support( 'title-tag' );
