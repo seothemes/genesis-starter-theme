@@ -1,0 +1,23 @@
+{
+  "name": "genesis-starter",
+  "version": "0.1.0",
+  "devDependencies": {
+    "browser-sync": "*",
+    "css-mqpacker": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cached": "*",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-cssbeautify": "^0.1.3",
+    "gulp-filter": "*",
+    "gulp-imagemin": "*",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*"
+  }
+}

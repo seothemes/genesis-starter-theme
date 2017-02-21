@@ -1,0 +1,33 @@
+/* # Front Page
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Front Page Widgets
+--------------------------------------------- */
+
+.front-page-1,
+.front-page-2,
+.front-page-3,
+.front-page-4,
+.front-page-5 {
+	padding: 50px 0;
+	background-color: transparent;
+	background-size: cover;
+	background-position: center;
+	border-bottom: 1px solid $color-outline;
+
+	@include breakpoint(sm) {
+		padding: 100px 0;
+	}
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+
+.front-page-1 {
+	padding: 75px 0;
+
+	@include breakpoint(sm) {
+		padding: 200px 0;
+	}
+}

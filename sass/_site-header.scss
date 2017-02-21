@@ -1,0 +1,285 @@
+/* # Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	position: relative;
+	width: 100%;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+
+	> .wrap {
+		max-width: 100%;
+		padding: 0;
+		transition: all .2s ease;
+	}
+
+	@include breakpoint(md) {
+
+		> .wrap {
+			max-width: 90%;
+		}
+
+		.search-form {
+			float: right;
+			margin: 12px auto 0;
+		}
+	}
+
+	@include breakpoint(lg) {
+
+		> .wrap {
+			max-width: 1140px;
+		}
+	}
+
+	@include breakpoint(xl) {
+
+		> .wrap {
+			max-width: 1280px;
+		}
+	}
+
+	.custom-header & {
+		background-size: cover !important;
+		background-position: center !important;
+	}
+
+	.search-form {
+		margin: 0;
+		float: right;
+
+		input[type=search] {
+			padding: 14px;
+		}
+	}
+}
+
+.header-section {
+	position: relative;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid $color-outline;
+	@include transition;
+
+	@include breakpoint(sm) {
+		padding: 20px 0;
+	}
+
+	.responsive & {
+		position: absolute;
+	}
+
+	&.shrink {
+
+		@include breakpoint(sm) {
+			padding: 10px 0;
+		}
+
+		@include breakpoint(md) {
+			padding: 0;
+		}
+	}
+}
+
+/* ## Before Header
+--------------------------------------------- */
+
+.before-header {
+	border-bottom: 1px solid $color-outline;
+	font-size: $font-size-body * 0.82;
+	padding: 5px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+
+	@include breakpoint(sm) {
+		padding: 5px 0;
+	}
+
+	.wrap {
+		position: relative;
+	}
+
+	.widget,
+	p {
+		margin-bottom: 0;
+	}
+
+	.dashicons-no-alt {
+		position: absolute;
+		right: 5%;
+		top: calc(50% - 10px);
+		cursor: pointer;
+		z-index: 2;
+
+		@include breakpoint(sm) {
+			right: 0;
+		}
+	}
+}
+
+/* ## Title Area
+--------------------------------------------- */
+
+.title-area {
+	padding: 10px 0;
+	margin: 0 auto;
+	float: left;
+
+	@include breakpoint(sm) {
+		padding: 0px 0;
+	}
+
+	@include breakpoint(md) {
+		float: left;
+		padding: 20px 0;
+	}
+}
+
+.site-title {
+	font-size: $font-size-heading;
+	font-family: $font-heading;
+	font-weight: $font-weight-heading;
+	line-height: $line-height-heading;
+
+	a {
+		color: $color-text;
+	}
+
+	a:hover,
+	a:focus {
+		color: $color-link;
+		text-decoration: none;
+	}
+
+	@include breakpoint(md) {
+		text-align: left;
+	}
+}
+
+.site-description {
+	font-size: $font-size-heading * 0.5;
+	line-height: $line-height-heading;
+
+	@include breakpoint(md) {
+		text-align: left;
+	}
+}
+
+.site-description,
+.site-title,
+.site-header .widget-area {
+	margin-bottom: 0;
+}
+
+.wp-custom-logo {
+
+	.title-area {
+		padding: 10px 0;
+		height: 60px;
+
+		@include breakpoint(sm) {
+			height: 40px;
+			padding: 0;
+		}
+
+		@include breakpoint(md) {
+			height: 80px;
+			padding: 10px 0;
+		}
+
+ 	}
+
+	.custom-logo-link {
+		display: block;
+		line-height: 40px;
+		height: 40px;
+
+		@include breakpoint(md) {
+			line-height: 60px;
+			height: 60px;
+		}
+
+		img {
+			width: auto;
+			max-height: 100%;
+			margin: auto;
+			vertical-align: middle;
+		}
+	}
+}
+
+/* ## Header widget area
+--------------------------------------------- */
+
+.header-widget-area {
+	float: right;
+	padding: 10px 0 0 30px;
+	display: none;
+
+	@include breakpoint(sm) {
+		padding: 0 0 0 40px;
+		display: block;
+	}
+
+	@include breakpoint(md) {
+		padding: 20px 0 20px 40px;
+	}
+}
+
+/* ## Hero Section
+--------------------------------------------- */
+
+.hero-section {
+	padding: 50px 0;
+	border-bottom: 1px solid $color-outline;
+
+	@include breakpoint(sm) {
+		padding: 75px 0;
+	}
+
+	.entry-title,
+	.archive-title {
+		margin-bottom: 0;
+		float: left;
+		width: 100%;
+	}
+
+	p,
+	.breadcrumb {
+		padding: 12px 0 0;
+		width: 100%;
+		display: block;
+		clear: both;
+		background: transparent;
+
+		@include breakpoint(sm) {
+			float: left;
+			width: auto;
+			clear: none;
+		}
+	}
+
+	p {
+		margin-bottom: 0;
+
+		@include breakpoint(sm) {
+			float: none;
+			clear: both;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+

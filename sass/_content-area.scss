@@ -1,0 +1,204 @@
+/* # Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Entries
+--------------------------------------------- */
+
+.entry {
+	margin-bottom: 5%;
+
+	.page &:last-of-type,
+	.archive &:last-of-type,
+	.single & {
+		margin-bottom: 0;
+	}
+
+	@include breakpoint(sm) {
+		margin-bottom: 40px;
+	}
+}
+
+.entry-content {
+
+	ol,
+	ul {
+		margin-bottom: 28px;
+		margin-left: 40px;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+
+	code {
+		background-color: $color-outline;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+.entry-title a {
+	color: $color-text;
+
+	&:hover {
+		color: $color-link;
+	}
+}
+
+/* ## Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin-bottom: 0;
+}
+
+.entry-header .entry-meta {
+	margin-bottom: 24px;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}
+
+/* ## Pagination
+--------------------------------------------- */
+
+.pagination {
+	clear: both;
+	margin: 5% auto 0;
+
+	@include breakpoint(sm) {
+		margin: 40px 0 0;
+	}
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination {
+	
+	li {
+		display: inline;
+	}
+
+	a {
+		color: $color-text;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 16px;
+		font-size: 1.6rem;
+		padding: 8px 12px;
+		text-decoration: none;
+	}
+
+	li a {
+		margin-bottom: 4px;
+
+		@include breakpoint(sm) {
+			margin-bottom: 0;
+		}
+	}
+
+	a:hover,
+	a:focus,
+	.active a {
+		background-color: $color-button;
+		color: #fff;
+	}
+}
+
+
+/* ## Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	font-size: $font-size-body;
+	margin-top: 5%;
+
+	@include breakpoint(sm) {
+		margin-top: 40px;
+	}
+}
+
+.comment-list li {
+	padding: 40px 0 0 30px;
+}
+
+.comment-list .depth-1 {
+	padding-left: 0;
+}
+
+.comment-header {
+	margin-bottom: 30px;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.comment-content {
+	clear: both;
+	
+	ul > li {
+		list-style-type: disc;
+	}
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.form-submit {
+	margin-bottom: 0;
+}
+
+@include breakpoint(sm) {
+
+	.comment-respond input[type="email"],
+	.comment-respond input[type="text"],
+	.comment-respond input[type="url"] {
+		width: 50%;
+	}
+}
+
+
+/* # Sidebars
+---------------------------------------------------------------------------------------------------- */
+
+.sidebar {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 10% auto 5%;
+
+	@include breakpoint(md) {
+		margin: 0 auto 40px;
+	}
+}

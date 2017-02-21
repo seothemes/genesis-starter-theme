@@ -1,0 +1,333 @@
+/* # Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu {
+	clear: both;
+	line-height: 1;
+	width: 100%;
+	white-space: nowrap;
+	font-size: $font-size-body * .95;
+	line-height: 1;
+
+	.menu-item {
+		display: block;
+		margin-bottom: 0;
+		padding-bottom: 0;
+		text-align: left;
+		width: 100%;
+		float: left;
+		position: relative;
+
+		@include breakpoint(sm) {
+			float: left;
+			text-align: right;
+			width: auto;
+		}
+
+		&:last-of-type a {
+			padding-right: 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 12px 0;
+		color: $color-text;
+
+		@include breakpoint(sm) {
+			padding: 12px 10px;
+		}
+
+		@include breakpoint(md) {
+			padding: 33px 20px;
+		}
+	}
+
+	a:hover,
+	a:focus,
+	.current-menu-item > a,
+	.sub-menu .current-menu-item > a:hover,
+	.sub-menu .current-menu-item > a:focus  {
+		text-decoration: none;
+		color: $color-link;
+	}
+
+	.sub-menu {
+		transition: none;
+
+		@include breakpoint(sm) {
+			border-top: 1px solid $color-outline;
+			left: -9999px;
+			opacity: 0;
+			position: absolute;
+			width: 200px;
+			z-index: 99;
+		}
+
+		.responsive & {
+			display: none;
+		}
+
+		a {
+			padding-left: 10px;
+			text-align: left;
+
+			@include breakpoint(sm) {
+				background-color: #fff;
+				border: 1px solid $color-outline;
+				border-top: 0;
+				padding: 20px;
+				position: relative;
+				width: 200px;
+				word-wrap: break-word;
+			}
+		}
+
+		.sub-menu {
+			margin: -56px 0 0 199px;
+			padding-left: 0;
+		}
+
+	}
+
+	.menu-item:hover > .sub-menu {
+
+		@include breakpoint(sm) {
+			left: 0;
+			opacity: 1;
+			display: block;
+		}
+	}
+
+	> .first > a {
+		padding-left: 0;
+	}
+
+	> .last > a {
+		padding-right: 0;
+	}
+
+	> .right {
+		float: right;
+	}
+}
+
+
+/* ## Accessible Menu
+--------------------------------------------- */
+
+.menu {
+	padding: 10px 0;
+
+	.menu-item:focus {
+		position: static;
+	}
+
+	.menu-item > a:focus + ul.sub-menu,
+	.menu-item.sfHover > ul.sub-menu {
+		opacity: 1;
+	}
+
+	@include breakpoint(sm) {
+		padding: 0;
+	}
+}
+
+/* ## Nav Primary
+--------------------------------------------- */
+
+.nav-primary {
+	width: 100%;
+	clear: both;
+
+	@include breakpoint(sm) {
+		width: calc(100% - 200px);
+		width: auto;
+		clear: none;
+		display: block !important;
+		background-color: transparent;
+		float: right;
+	}
+
+	.responsive & {
+		display: none;
+	}
+
+	.wrap {
+		padding: 0;
+		max-width: 100%;
+	}
+
+	li li {
+		margin-left: 0;
+	}
+}
+
+/* ## Nav Secondary
+--------------------------------------------- */
+
+.nav-secondary {
+	width: 100%;
+	clear: both;
+	border-bottom: 1px solid $color-outline;
+	background-color: #fff;
+
+	.responsive & {
+
+		.wrap {
+			display: none;
+
+			@include breakpoint(sm) {
+				display: block;
+				top: 0;
+			}
+		}
+	}
+
+	.menu {
+
+		> .menu-item {
+
+			a {
+				@include breakpoint(sm) {
+					padding: 25px;
+				}
+			}
+
+			&:first-of-type a {
+				@include breakpoint(sm) {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
+
+/* ## Responsive Navigation
+--------------------------------------------- */
+
+.menu-toggle {
+	border-width: 0;
+	background-color: transparent;
+	color: $color-text;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	padding: 20px 25px 20px 0;
+	line-height: 20px;
+	position: relative;
+	right: 0;
+	z-index: 9;
+	float: right;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline: none;
+		box-shadow: none;
+		color: $color-text;
+	}
+
+	@include breakpoint(sm) {
+		padding: 30px 30px 30px 0;
+	}
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+
+	span {
+		position: absolute;
+		right: 0;
+		width: 20px;
+		height: 2px;
+		background-color: $color-text;
+		display: block;
+		float: left;
+		top: calc(50% - 7px);
+		transition: all .15s ease;
+
+		&:nth-of-type(2),
+		&:nth-of-type(3) {
+			top: calc(50% - 1px);
+		}
+
+		&:nth-of-type(4) {
+			top: calc(50% + 5px);
+		}
+	}
+
+	&.activated {
+		span {
+			top: calc(50% - 1px);
+			opacity: 0;
+
+			&:nth-of-type(2) {
+				transform: rotate(45deg);
+				opacity: 1;
+			}
+
+			&:nth-of-type(3) {
+				transform: rotate(-45deg);
+				opacity: 1;
+			}
+		}
+	}
+
+	&.toggle-secondary {
+		float: none;
+		margin: 0 auto;
+
+		@include breakpoint(sm) {
+			padding: 20px 25px 20px 0;
+		}
+	}
+}
+
+.sub-menu-toggle {
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-width: 0;
+	background-color: transparent;
+
+	&:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: calc(50% - 2.5px);
+		right: calc(50% - 5px);
+		width: 0;
+		height: 0;
+		border: 5px solid transparent;
+		border-top: 5px solid $color-text;
+		text-rendering: auto;
+		-webkit-transform: translate(0, 0);
+		-ms-transform:     translate(0, 0);
+		transform:         translate(0, 0);
+	}
+
+	&.activated:before {
+		border-top: none;
+		border-bottom: 5px solid $color-text;
+	}
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+}
+
+
+/* ## Footer Navigation
+--------------------------------------------- */
+
+.site-footer .genesis-nav-menu {
+	padding-bottom: 20px;
+
+	a {
+		padding: 0 20px 10px;
+	}
+}
