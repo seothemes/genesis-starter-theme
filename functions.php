@@ -158,8 +158,17 @@ add_action( 'genesis_site_title', 'starter_custom_logo', 0 );
 // Remove unused/unnecessary features.
 include_once( get_stylesheet_directory() . '/lib/clean-up.php' );
 
+// Add default theme settings.
+include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
+
+// Add theme helper functions.
+include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
+
 // Add Customizer color & font settings.
 include_once( get_stylesheet_directory() . '/lib/customizer.php' );
+
+// Ouput Customizer color & font settings.
+include_once( get_stylesheet_directory() . '/lib/output.php' );
 
 // Add Widget Areas.
 include_once( get_stylesheet_directory() . '/lib/widget-areas.php' );
@@ -167,8 +176,8 @@ include_once( get_stylesheet_directory() . '/lib/widget-areas.php' );
 // Create a Hero section.
 include_once( get_stylesheet_directory() . '/lib/hero-section.php' );
 
+// Add Require Plugins.
+include_once( get_stylesheet_directory() . '/lib/class-plugin-activation.php' );
+
 // Compress HTML, inline CSS and inline JS.
 include_once( get_stylesheet_directory() . '/lib/class-theme-compression.php' );
-
-// Add Require Plugins.
-include_once( get_stylesheet_directory() . '/lib/class-register-plugins.php' );

@@ -76,7 +76,6 @@ foreach ( $starter_widget_areas as $id => $location ) {
 	genesis_register_sidebar( array(
 		'id'            => $id,
 		'name'          => $name,
-		// THis gets stuff.
 		'description'   => sprintf( 'This is the %1$s widget area which will appear in the %2$s section.', strtolower( $name ), str_replace( '_', ' ', $location ) ),
 	) );
 }
