@@ -20,21 +20,15 @@ load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_text
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'genesis-starter' );
 define( 'CHILD_THEME_URL', 'http://www.seothemes.net/' );
-define( 'CHILD_THEME_VERSION', '1.2.1' );
+define( 'CHILD_THEME_VERSION', '1.3.1' );
 
 /**
  * Enqueue Scripts and Styles.
  */
 function starter_enqueue_scripts_styles() {
 
-	global $starter_default_font;
-
 	// Google fonts.
-	$heading_font        = get_theme_mod( 'font-heading', $starter_default_font );
-	$body_font           = get_theme_mod( 'font-body', $starter_default_font );
-	$heading_font_weight = get_theme_mod( 'font-weight-heading', '500' );
-	$body_font_weight    = get_theme_mod( 'font-weight-body', '300' );
-	wp_enqueue_style( 'google-fonts', "//fonts.googleapis.com/css?family=$heading_font:$heading_font_weight|$body_font:$body_font_weight", array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', "//fonts.googleapis.com/css?family=Roboto", array(), CHILD_THEME_VERSION );
 
 	// Load dashicons for front-end usage.
 	wp_enqueue_style( 'dashicons' );
@@ -43,16 +37,6 @@ function starter_enqueue_scripts_styles() {
 	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/js/min/starter.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'starter_enqueue_scripts_styles' );
-
-/**
- * Add custom Viewport meta tag for mobile browsers.
- */
-function starter_viewport_meta_tag() {
-
-	// This prevents users from zooming so be cautious.
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>';
-}
-add_action( 'genesis_meta', 'starter_viewport_meta_tag' );
 
 /**
  * Emulate hover effects on mobile devices.
@@ -99,6 +83,9 @@ add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'g
 
 // Enable Accessibility support.
 add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+
+// Enable responsive viewport.
+add_theme_support( 'genesis-responsive-viewport' );
 
 // Enable automatic output of WordPress title tags.
 add_theme_support( 'title-tag' );
@@ -165,8 +152,17 @@ add_action( 'genesis_site_title', 'starter_custom_logo', 0 );
 // Remove unused/unnecessary features.
 include_once( get_stylesheet_directory() . '/lib/clean-up.php' );
 
+// Add default theme settings.
+include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
+
+// Add theme helper functions.
+include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
+
 // Add Customizer color & font settings.
 include_once( get_stylesheet_directory() . '/lib/customizer.php' );
+
+// Ouput Customizer color & font settings.
+include_once( get_stylesheet_directory() . '/lib/output.php' );
 
 // Add Widget Areas.
 include_once( get_stylesheet_directory() . '/lib/widget-areas.php' );
@@ -174,8 +170,8 @@ include_once( get_stylesheet_directory() . '/lib/widget-areas.php' );
 // Create a Hero section.
 include_once( get_stylesheet_directory() . '/lib/hero-section.php' );
 
+// Add Require Plugins.
+include_once( get_stylesheet_directory() . '/lib/class-plugin-activation.php' );
+
 // Compress HTML, inline CSS and inline JS.
 include_once( get_stylesheet_directory() . '/lib/class-theme-compression.php' );
-
-// Add Require Plugins.
-include_once( get_stylesheet_directory() . '/lib/class-register-plugins.php' );
