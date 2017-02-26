@@ -20,21 +20,15 @@ load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_text
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'genesis-starter' );
 define( 'CHILD_THEME_URL', 'http://www.seothemes.net/' );
-define( 'CHILD_THEME_VERSION', '1.2.1' );
+define( 'CHILD_THEME_VERSION', '1.3.1' );
 
 /**
  * Enqueue Scripts and Styles.
  */
 function starter_enqueue_scripts_styles() {
 
-	global $starter_default_font;
-
 	// Google fonts.
-	$heading_font        = get_theme_mod( 'font-heading', $starter_default_font );
-	$body_font           = get_theme_mod( 'font-body', $starter_default_font );
-	$heading_font_weight = get_theme_mod( 'font-weight-heading', '500' );
-	$body_font_weight    = get_theme_mod( 'font-weight-body', '300' );
-	wp_enqueue_style( 'google-fonts', "//fonts.googleapis.com/css?family=$heading_font:$heading_font_weight|$body_font:$body_font_weight", array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', "//fonts.googleapis.com/css?family=Roboto", array(), CHILD_THEME_VERSION );
 
 	// Load dashicons for front-end usage.
 	wp_enqueue_style( 'dashicons' );
