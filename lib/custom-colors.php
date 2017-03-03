@@ -1,8 +1,6 @@
 <?php
 /**
- * Genesis Starter.
- *
- * This file adds the required CSS to the front end to the Genesis Starter theme.
+ * This file adds customizer settings to the Genesis Starter theme.
  *
  * @package      Genesis Starter
  * @link         https://seothemes.net/genesis-starter
@@ -10,6 +8,111 @@
  * @copyright    Copyright © 2017 Seo Themes
  * @license      GPL-2.0+
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Check for theme support.
+ */
+if ( ! current_theme_supports( 'custom-colors' ) ) {
+	return;
+}
+
+/**
+ * Get default link color for Customizer.
+ * Abstracted here since at least two functions use it.
+ *
+ * @since 1.3
+ *
+ * @return string Hex color code for link color.
+ */
+function starter_default_text_color() {
+	return '#333333';
+}
+
+/**
+ * Get default accent color for Customizer.
+ * Abstracted here since at least two functions use it.
+ *
+ * @since 1.3
+ *
+ * @return string Hex color code for accent color.
+ */
+function starter_default_link_color() {
+	return '#dddddd';
+}
+
+/**
+ * Get default accent color for Customizer.
+ * Abstracted here since at least two functions use it.
+ *
+ * @since 1.3
+ *
+ * @return string Hex color code for accent color.
+ */
+function starter_default_button_color() {
+	return '#555555';
+}
+
+/**
+ * Get default accent color for Customizer.
+ * Abstracted here since at least two functions use it.
+ *
+ * @since 1.3
+ *
+ * @return string Hex color code for accent color.
+ */
+function starter_default_outline_color() {
+	return '#eeeeee';
+}
+
+// Create array of default colors.
+$starter_default_colors = array(
+	'color_text'	=> starter_default_text_color(),
+	'color_link' 	=> starter_default_link_color(),
+	'color_button'  => starter_default_button_color(),
+	'color_outline'	=> starter_default_outline_color(),
+);
+
+/**
+ * Register settings and controls with the Customizer.
+ */
+function starter_customizer_register() {
+
+	// Global variables required.
+	global $wp_customize;
+	global $starter_default_colors;
+
+	/**
+	 * Customizer Color Settings
+	 *
+	 * Loop through each color variable set in `$starter_default_colors`
+	 * and create a new setting and control.
+	 */
+	foreach ( $starter_default_colors as $key => $value ) {
+
+		$wp_customize->add_setting( $key , array(
+		    'default' => $value,
+		    'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$key,
+				array(
+					'label'      => ucwords( str_replace( 'color_', '', $key ) ) . ' Color',
+					'section'    => 'colors',
+					'settings'   => $key,
+				)
+			)
+		);
+	}
+}
+add_action( 'customize_register', 'starter_customizer_register' );
 
 /**
  * Checks the settings for the text, link, button & outline color.
@@ -70,7 +173,12 @@ function starter_custom_css() {
 		input[type="submit"]:disabled,
 		.button:disabled,
 		.site-title a:hover,
-		.site-title a:focus {
+		.site-title a:focus,
+		.genesis-nav-menu a:hover,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu .current-menu-item > a,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:focus {
 			color: %1$s;
 		}
 		button.secondary,
@@ -126,8 +234,8 @@ function starter_custom_css() {
 		.front-page-4,
 		.front-page-5,
 		.before-header,
-		.header-section,
-		.hero-section,
+		.navbar,
+		.hero,
 		.nav-secondary {
 			border-bottom-color: %1$s;
 		}
@@ -162,4 +270,5 @@ function starter_custom_css() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'starter_custom_css', 9999 );
+
 
