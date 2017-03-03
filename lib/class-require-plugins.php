@@ -9,6 +9,18 @@
  * @license      GPL-2.0+
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Check for theme support.
+ */
+if ( ! current_theme_supports( 'require-plugins' ) ) {
+	return;
+}
+
 /**
  * Register required plugins.
  *
@@ -89,7 +101,7 @@ function starter_register_required_plugins() {
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! class_exists( 'Plugin_Activation' ) ) {
+if ( ! class_exists( 'Require_Plugins' ) ) {
 
 	/**
 	 * Automatic plugin installation and activation library.
@@ -104,7 +116,7 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 	 * @author  Thomas Griffin
 	 * @author  Gary Jones
 	 */
-	class Plugin_Activation {
+	class Require_Plugins {
 		/**
 		 * TGMPA version number.
 		 *
@@ -137,7 +149,7 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @var Plugin_Activation
+		 * @var Require_Plugins
 		 */
 		public static $instance;
 
@@ -307,7 +319,7 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @see Plugin_Activation::init()
+		 * @see Require_Plugins::init()
 		 */
 		public function __construct() {
 			// Set the current WordPress version.
@@ -361,9 +373,9 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 *
 		 * @since 2.0.0
 		 *
-		 * @see Plugin_Activation::admin_menu()
-		 * @see Plugin_Activation::notices()
-		 * @see Plugin_Activation::styles()
+		 * @see Require_Plugins::admin_menu()
+		 * @see Require_Plugins::notices()
+		 * @see Require_Plugins::styles()
 		 */
 		public function init() {
 			/**
@@ -656,8 +668,8 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @see Plugin_Activation::init()
-		 * @see Plugin_Activation::install_plugins_page()
+		 * @see Require_Plugins::init()
+		 * @see Require_Plugins::install_plugins_page()
 		 *
 		 * @return null Return early if user lacks capability to install a plugin.
 		 */
@@ -2048,7 +2060,7 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 *
 		 * @since 2.4.0
 		 *
-		 * @return \Plugin_Activation The Plugin_Activation object.
+		 * @return \Require_Plugins The Require_Plugins object.
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
@@ -2066,7 +2078,7 @@ if ( ! class_exists( 'Plugin_Activation' ) ) {
 		 * @since 2.5.0
 		 */
 		function load_plugin_activation() {
-			$GLOBALS['tgmpa'] = Plugin_Activation::get_instance();
+			$GLOBALS['tgmpa'] = Require_Plugins::get_instance();
 		}
 	}
 
@@ -3055,15 +3067,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * Retrieve plugin data, given the plugin name.
 		 *
 		 * @since      2.2.0
-		 * @deprecated 2.5.0 use {@see Plugin_Activation::_get_plugin_data_from_name()} instead.
-		 * @see        Plugin_Activation::_get_plugin_data_from_name()
+		 * @deprecated 2.5.0 use {@see Require_Plugins::_get_plugin_data_from_name()} instead.
+		 * @see        Require_Plugins::_get_plugin_data_from_name()
 		 *
 		 * @param string $name Name of the plugin, as it was registered.
 		 * @param string $data Optional. Array key of plugin data to return. Default is slug.
 		 * @return string|boolean Plugin slug if found, false otherwise.
 		 */
 		protected function _get_plugin_data_from_name( $name, $data = 'slug' ) {
-			_deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'Plugin_Activation::_get_plugin_data_from_name()' );
+			_deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'Require_Plugins::_get_plugin_data_from_name()' );
 
 			return $this->tgmpa->_get_plugin_data_from_name( $name, $data );
 		}
