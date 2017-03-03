@@ -1,5 +1,14 @@
 # Genesis Starter Theme Changelog
 
+## [1.4.0] - 2017-03-03
+* Add backstretch
+* Add autoprefix for more browsers
+* Add 'zip' task to gulpfile
+* Convert all custom functionality into theme features
+* Move everything out of functions.php into correct file in /lib.
+* Combine customize.php and output.php into custom-colors.php
+* Rename theme-compression and plugin-activation classes
+
 ## [1.3.1] - 2017-02-26
 * Add readme & changelog
 * Update gulpfile.js to enable theme packaging
