@@ -12,20 +12,29 @@
 	.menu-item {
 		display: block;
 		margin-bottom: 0;
-		padding-bottom: 0;
+		padding: 10px;
 		text-align: left;
-		width: 100%;
+		width: auto;
 		float: left;
 		position: relative;
 
 		@include breakpoint(sm) {
 			float: left;
 			text-align: right;
-			width: auto;
+			padding: 0;
 		}
 
 		&:last-of-type a {
 			padding-right: 0;
+		}
+
+		.responsive & {
+			width: 100%;
+			padding: 0;
+
+			@include breakpoint(sm) {
+				width: auto;
+			}
 		}
 	}
 
@@ -55,6 +64,7 @@
 
 	.sub-menu {
 		transition: none;
+		display: none;
 
 		@include breakpoint(sm) {
 			border-top: 1px solid $color-outline;
@@ -63,10 +73,6 @@
 			position: absolute;
 			width: 200px;
 			z-index: 99;
-		}
-
-		.responsive & {
-			display: none;
 		}
 
 		a {
@@ -174,6 +180,7 @@
 	background-color: #fff;
 
 	.responsive & {
+		position: absolute;
 
 		.wrap {
 			display: none;

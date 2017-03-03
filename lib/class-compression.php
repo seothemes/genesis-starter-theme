@@ -12,13 +12,25 @@
  * @license      GPL-2.0+
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 /**
- * Theme_Compression Class
+ * Check for theme support.
+ */
+if ( ! current_theme_supports( 'compression' ) ) {
+	return;
+}
+
+/**
+ * Compression Class
  *
  * @package      Genesis Starter
  * @author       Seo Themes
  */
-class Theme_Compression {
+class Compression {
 
 	/**
 	 * CSS settings
@@ -197,12 +209,12 @@ class Theme_Compression {
 /**
  * Finish compression
  *
- * @param  string $html Theme_Compression settings.
- * @return object Theme_Compression
+ * @param  string $html Compression settings.
+ * @return object Compression
  */
 function wp_html_compression_finish( $html ) {
 
-		return new Theme_Compression( $html );
+		return new Compression( $html );
 }
 
 /**

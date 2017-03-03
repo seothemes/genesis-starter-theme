@@ -34,46 +34,49 @@ function starter_front_page() {
 	add_filter( 'genesis_structural_wrap-site-inner', '__return_empty_string' );
 
 	/**
-	 * Front Page 1
-	 *
-	 * Adds front page 1 widget area inside `site-header` to allow
-	 * Header Image to be used as background image.
+	 * Display front page widget areas.
 	 */
-	function starter_front_page_1() {
+	function starter_front_page_widgets() {
+		for ( $i = 1; $i < 5; $i++ ) {
 
-		$id = 'front-page-1';
-
-		genesis_widget_area( $id, array(
-		    'before' => sprintf( '<div class="%s%s"><div class="wrap">', $id, starter_widgets_flex_class( $id ) ),
-		    'after' => '</div></div>',
-		) );
-	}
-	add_action( 'genesis_header', 'starter_front_page_1', 14 );
-
-	/**
-	 * Display remaining front page widget areas.
-	 */
-	function get_front_page_widgets() {
-		for ( $i = 2; $i < 6; $i++ ) {
-
+			// Format the widget area ID.
 			$id = sprintf( 'front-page-%s', $i );
 
+			// Display widget areas.
 			genesis_widget_area( $id, array(
 			    'before' => sprintf( '<div class="%s%s"><div class="wrap">', $id, starter_widgets_flex_class( $id ) ),
 			    'after' => '</div></div>',
 			) );
 		}
 	}
+	add_action( 'front_page_widgets', 'starter_front_page_widgets' );
 
 	// Display header.
 	get_header();
 
 	// Front page widget areas.
-	get_front_page_widgets();
+	do_action( 'front_page_widgets' );
 
 	// Display footer.
 	get_footer();
 
+}
+
+// Create array of active front-page widgets to check if any are active.
+global $wp_registered_sidebars;
+
+// Create empty array to store active front page widgets.
+$front_page_widgets = array();
+
+// Loop through registered widget areas.
+foreach ( $wp_registered_sidebars as $key => $value ) {
+
+	// Check for front page widget areas.
+	if ( strpos( $key, 'front-page' ) !== false ) {
+
+		// Add each front page widget area to array.
+		$front_page_widgets[] .= $key;
+	}
 }
 
 // If no front page widgets are active, do the default loop.

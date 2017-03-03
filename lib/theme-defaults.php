@@ -20,7 +20,7 @@ function starter_theme_defaults( $defaults ) {
 	$defaults['blog_cat_num']              = 6;
 	$defaults['content_archive']           = 'excerpt';
 	$defaults['content_archive_limit']     = 300;
-	$defaults['content_archive_thumbnail'] = 0;
+	$defaults['content_archive_thumbnail'] = 1;
 	$defaults['image_alignment']           = 'alignnone';
 	$defaults['posts_nav']                 = 'numeric';
 	$defaults['image_size']                = 'large';
@@ -42,7 +42,7 @@ function starter_theme_setting_defaults() {
 			'blog_cat_num'              => 6,
 			'content_archive'           => 'excerpt',
 			'content_archive_limit'     => 300,
-			'content_archive_thumbnail' => 0,
+			'content_archive_thumbnail' => 1,
 			'image_alignment'           => 'alignnone',
 			'image_size'                => 'large',
 			'posts_nav'                 => 'numeric',

@@ -16,7 +16,11 @@
 	// Keep site header below the header section
 	$( window ).resize( function() {
 
-		$( ".site-header" ).css( { "padding-top": $( ".header-section" ).outerHeight() } );
+		var navbar = $( '.navbar' ).outerHeight();
+		var navSecondary = $( '.nav-secondary' ).outerHeight();
+
+		$( ".site-header" ).css( { "padding-top": ( navbar + navSecondary ) } );
+		$( '.nav-secondary' ).css( { "top": navbar } );
 
 	} ).resize();
 

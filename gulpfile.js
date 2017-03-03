@@ -2,7 +2,7 @@
  * Gulp tasks for the Genesis Starter theme.
  *
  * @author Seo Themes
- * @version 1.3.0
+ * @version 1.4.0
  */
 
 'use strict';
@@ -170,7 +170,7 @@ gulp.task( 'zip', function() {
 	    .pipe( gulp.dest( './' ) );
 
 	// Create zip file and ignore the following.
-	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**', '!./gulpfile.js', '!./package.json' ] )
+	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**' ] )
 		.pipe( zip( __dirname.split("/").pop() + '.zip' ) )
 		.pipe( gulp.dest( '../' ) );
 
