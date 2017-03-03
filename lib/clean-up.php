@@ -21,6 +21,18 @@
  * @license      GPL-2.0+
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Check for theme support.
+ */
+if ( ! current_theme_supports( 'clean-up' ) ) {
+	return;
+}
+
 // Remove secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
 
@@ -115,23 +127,6 @@ add_filter( 'nav_menu_css_class', 'starter_menu_class_filter', 100, 1 );
 add_filter( 'nav_menu_item_id', 'starter_menu_class_filter', 100, 1 );
 add_filter( 'page_css_class', 'starter_menu_class_filter', 100, 1 );
 
-// Remove thumbnail cropping & date organization of uploads.
-$media_options = array(
-	'thumbnail_size_w',
-	'thumbnail_size_h',
-	'medium_size_w',
-	'medium_size_h',
-	'large_size_w',
-	'large_size_h',
-	'uploads_use_yearmonth_folders',
-);
-
-foreach ( $media_options as $media_option ) {
-	if ( 0 !== $media_option ) {
-		update_option( $media_option, 0 );
-	}
-}
-
 // Remove the edit post link.
 add_filter( 'genesis_edit_post_link' , '__return_false' );
 
@@ -147,7 +142,6 @@ function starter_remove_genesis_page_templates( $page_templates ) {
 	return $page_templates;
 }
 add_filter( 'theme_page_templates', 'starter_remove_genesis_page_templates' );
-
 
 // Change order of main stylesheet to override plugin styles.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
@@ -179,18 +173,59 @@ add_action( 'genesis_header', 'genesis_do_nav', 12 );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_header', 'genesis_do_subnav', 14 );
 
+// Remove featured image from content.
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+remove_action( 'genesis_post_content', 'genesis_do_post_image' );
+
 /**
- * Display featured image before post content on archives.
+ * Display featured image before post content on blog.
  *
  * @return array Featured image size.
  */
 function starter_display_featured_image() {
 
-	if ( ! is_archive() || ! is_home() || ! is_template( 'page_blog.php' ) ) {
+	// Check display featured image option.
+	$genesis_settings = get_option( 'genesis-settings' );
+
+	if ( ( ! is_archive() && ! is_home() && ! is_page_template( 'page_blog.php' ) ) || ( $genesis_settings['content_archive_thumbnail'] !== 1 ) ) {
 		return;
 	}
-	genesis_image( array(
-		'size' => 'large',
-	) );
+
+	// Display featured image.
+	add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+
 }
-add_action( 'genesis_before_entry', 'starter_display_featured_image' );
+add_action( 'genesis_before', 'starter_display_featured_image' );
+
+/**
+ * Clean up widget markup.
+ *
+ * Removes widget-wrap div and changes widget titles
+ * to use <b> instead of <h3>.
+ *
+ * @param array $defaults Widget area defaults.
+ */
+function starter_clean_up_widgets( $defaults ) {
+
+	$defaults = array(
+
+		'before_widget' => genesis_markup( array(
+			'open'    => '<div class="widget %%2$s">',
+			'context' => 'widget-wrap',
+			'echo'    => false,
+		) ),
+
+		'after_widget'  => genesis_markup( array(
+			'close'   => '</div>',
+			'context' => 'widget-wrap',
+			'echo'    => false,
+		) ),
+
+		'before_title'  => '<b class="widget-title">',
+		'after_title'   => "</b>\n",
+
+	);
+	return $defaults;
+
+}
+add_filter( 'genesis_register_widget_area_defaults', 'starter_clean_up_widgets' );

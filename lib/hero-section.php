@@ -10,6 +10,40 @@
  * @license      GPL-2.0+
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Wrap header content in 'navbar' div.
+ */
+function starter_navbar_markup_open() {
+	echo '<div class="navbar"><div class="wrap">';
+}
+add_action( 'genesis_header', 'starter_navbar_markup_open', 6 );
+
+/**
+ * Close header wrapper.
+ */
+function starter_navbar_markup_close() {
+	echo '</div></div>';
+}
+add_action( 'genesis_header', 'starter_navbar_markup_close', 13 );
+
+/**
+ * Check for theme support.
+ *
+ * This needs to be checked after the navbar markup functions
+ * and before the starter_custom_header function is run.
+ */
+if ( ! current_theme_supports( 'hero-section' ) ) {
+	return;
+}
+
+// Add custom header callback to genesis meta.
+add_action( 'genesis_meta', 'starter_custom_header' );
+
 /**
  * Setup Hero Section
  *
@@ -29,27 +63,19 @@ function starter_setup_hero_section() {
 	remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
 	remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
 
-	// Enable excerpts on pages for use as subtitles.
-	add_post_type_support( 'page', 'excerpt' );
-
-	// Wrap header content in a new container.
-	add_action( 'genesis_header', function() {
-		echo '<div class="header-section"><div class="wrap">';
-	}, 6 );
-	add_action( 'genesis_header', function() {
-		echo '</div></div>';
-	}, 13 );
 }
-starter_setup_hero_section();
+add_action( 'genesis_before', 'starter_setup_hero_section' );
 
 /**
  * Create the main hero section function.
  *
- * This function is made up of four parts
- * - Start
- * - Title
- * - Subtitle
- * - End
+ * This function is made up of four actions that are
+ * added to the starter_hero hook.
+ *
+ * - starter_hero_markup_open
+ * - starter_hero_title
+ * - starter_hero_subtitle
+ * - starter_hero_markup_close
  */
 function starter_hero_section() {
 
@@ -66,31 +92,20 @@ function starter_hero_section() {
 	 * Checks if post has a featured image set and if so
 	 * uses it as a background image for the hero section
 	 */
-	function before_title_section() {
-		// Define variables.
-	    global $post;
-	    $thumbnail = get_post_thumbnail_id( $post->ID );
-	    $size = 'thumb';
-	    $html = '';
-
-	    // Add background image if a featured image is set.
-	    if ( $thumbnail ) {
-	    	$class = 'has-thumbnail';
-	        $image = wp_get_attachment_image_src( $thumbnail, $size );
-	        $html  = 'style="background-image: url(' . $image[0] . ') !important;"';
-	    }
+	function starter_hero_markup_open() {
 
 	    // Output the html.
-		echo sprintf( '<div class="hero-section"%s><div class="wrap">', wp_kses_post( $html ) );
+		echo '<div class="hero"><div class="wrap">';
+
 	}
-	before_title_section();
+	add_action( 'starter_hero', 'starter_hero_markup_open' );
 
 	/**
 	 * Titles.
 	 *
 	 * Displays the relevant entry/archive title depending on the post type
 	 */
-	function starter_hero_section_content() {
+	function starter_hero_title() {
 
 		// Figure out what page were on and display the correct title.
 		if ( is_front_page() && ! is_home() ) {
@@ -126,7 +141,7 @@ function starter_hero_section() {
 
 		}
 	}
-	starter_hero_section_content();
+	add_action( 'starter_hero', 'starter_hero_title' );
 
 	/**
 	 * Subtitles.
@@ -134,7 +149,7 @@ function starter_hero_section() {
 	 * Displays the description if one is set or will use
 	 * page excerpts or breadcrumbs if no excerpt is set
 	 */
-	function starter_hero_section_after() {
+	function starter_hero_subtitle() {
 
 		if ( is_tax() ) {
 
@@ -162,15 +177,22 @@ function starter_hero_section() {
 
 		}
 	}
-	starter_hero_section_after();
+	add_action( 'starter_hero', 'starter_hero_subtitle' );
 
 	/**
 	 * End hero section.
 	 *
 	 * Adds the closing markup to the hero section
 	 */
-	echo '</div></div>';
+	function starter_hero_markup_close() {
+		echo '</div></div>';
+	}
+	add_action( 'starter_hero', 'starter_hero_markup_close' );
+
+	/**
+	 * Run the starter_hero hook.
+	 */
+	do_action( 'starter_hero' );
 
 }
-
 add_action( 'genesis_header', 'starter_hero_section', 14 );
