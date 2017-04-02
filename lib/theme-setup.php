@@ -2,7 +2,13 @@
 /**
  * Genesis Starter.
  *
- * This file adds the default functionality to the Genesis Starter theme.
+ * This file adds the default functionality to the Genesis Starter
+ * theme. It includes the following:
+ * - theme setup
+ * - theme constants
+ * - theme supports
+ * - theme includes
+ * - theme assets
  *
  * @package      Genesis Starter
  * @link         https://seothemes.net/genesis-starter
@@ -11,6 +17,9 @@
  * @license      GPL-2.0+
  */
 
+/**
+ * Theme setup.
+ */
 // Start the engine (do not remove).
 include_once( get_template_directory() . '/lib/init.php' );
 
@@ -19,18 +28,14 @@ load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_text
 
 /**
  * Theme constants.
- *
- * @since 1.4.0
  */
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'genesis-starter' );
 define( 'CHILD_THEME_URL', 'http://www.seothemes.net/' );
-define( 'CHILD_THEME_VERSION', '1.4.0' );
+define( 'CHILD_THEME_VERSION', '1.5.0' );
 
 /**
- * Theme supports.
- *
- * @since 1.4.0
+ * Theme features.
  */
 // Enable responsive viewport.
 add_theme_support( 'genesis-responsive-viewport' );
@@ -103,8 +108,6 @@ add_theme_support( 'custom-header', array(
 
 /**
  * Theme includes.
- *
- * @since 1.4.0
  */
 // Load theme defaults.
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
@@ -135,8 +138,6 @@ require_if_theme_supports( 'woocommerce', get_stylesheet_directory() . '/lib/woo
 
 /**
  * Theme assets.
- *
- * @since 1.4.0
  */
 function starter_enqueue_scripts_styles() {
 

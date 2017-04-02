@@ -14,6 +14,8 @@
 
 /**
  * One click demo import.
+ *
+ * @since 1.5.0
  */
 function starter_import_files() {
 	return array(
@@ -30,6 +32,8 @@ add_filter( 'pt-ocdi/import_files', 'starter_import_files' );
 
 /**
  * Setup theme after import.
+ *
+ * @since 1.5.0
  */
 function starter_after_import_setup() {
 

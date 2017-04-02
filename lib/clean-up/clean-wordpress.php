@@ -34,6 +34,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Remove inline CSS used by Recent Comments widget
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tags
+ *
+ * @since 1.5.0
  */
 function starter_head_cleanup() {
 
@@ -71,6 +73,7 @@ add_action( 'init', 'starter_head_cleanup' );
 /**
  * Clean up output of <script> tags.
  *
+ * @since 1.5.0
  * @param string $input Scripts.
  */
 function starter_clean_script_tag( $input ) {
@@ -130,6 +133,8 @@ add_filter( 'page_css_class', 'starter_menu_class_filter', 100, 1 );
 
 /**
  * Remove unnecessary self-closing tags
+ *
+ * @since 1.5.0
  */
 function starter_remove_self_closing_tags( $input ) {
 	return str_replace( ' />', '>', $input );
@@ -142,6 +147,7 @@ add_filter( 'post_thumbnail_html', 'starter_remove_self_closing_tags' );
  * Don't return the default description in the
  * RSS feed if it hasn't been changed.
  *
+ * @since 1.5.0
  * @param string $bloginfo Site tagline.
  */
 function remove_default_description( $bloginfo ) {
@@ -156,6 +162,7 @@ add_filter( 'get_bloginfo_rss', 'starter_remove_default_description' );
  * This overrides the default widget template with
  * a custom one in /templates/image-widget.php.
  *
+ * @since 1.5.0
  * @param string $template The template file location.
  */
 function starter_image_widget_template( $template ) {
@@ -166,6 +173,7 @@ add_filter( 'sp_template_image-widget_widget.php', 'starter_image_widget_templat
 /**
  * Emulate hover effects on mobile devices.
  *
+ * @since 1.5.0
  * @param  string $attributes On touch start attribute.
  * @return string
  */
@@ -178,6 +186,7 @@ add_filter( 'genesis_attr_body', 'starter_add_ontouchstart' );
 /**
  * Enable svg uploads.
  *
+ * @since 1.5.0
  * @param  array $mimes Mime types.
  * @return array $mimes Added SVG to mime types
  */

@@ -136,6 +136,7 @@ add_action( 'genesis_before', 'starter_display_featured_image' );
  * Removes widget-wrap div and changes widget titles
  * to use <b> instead of <h3>.
  *
+ * @since 1.5.0
  * @param array $defaults Widget area defaults.
  */
 function starter_clean_up_widgets( $defaults ) {
@@ -166,6 +167,7 @@ add_filter( 'genesis_register_widget_area_defaults', 'starter_clean_up_widgets' 
 /**
  * Add schema microdata to title-area.
  *
+ * @since 1.5.0
  * @param  array $args Array of arguments.
  * @return array $args Additional arguments.
  */
@@ -179,6 +181,7 @@ add_filter( 'genesis_attr_title-area', 'starter_title_area' );
 /**
  * Correct site-title schema microdata.
  *
+ * @since 1.5.0
  * @param  array $args Array of arguments.
  * @return array $args New arguments.
  */
@@ -191,6 +194,7 @@ add_filter( 'genesis_attr_site-title', 'starter_site_title' );
 /**
  * Change the footer text.
  *
+ * @since 1.5.0
  * @param  string $creds Defaults.
  * @return string Custom footer credits.
  */

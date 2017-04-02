@@ -7,10 +7,13 @@
  * @author       Seo Themes
  * @copyright    Copyright © 2017 Seo Themes
  * @license      GPL-2.0+
+ * @since 1.5.0
  */
 
 /**
  * Load jQuery from jQuery's CDN with a local fallback.
+ *
+ * @since 1.5.0
  */
 function starter_register_jquery() {
 	$jquery_version = wp_scripts()->registered['jquery']->ver;
@@ -35,6 +38,7 @@ add_action( 'wp_enqueue_scripts', 'starter_register_jquery', 100 );
 /**
  * Output the local fallback immediately after jQuery's <script>
  *
+ * @since 1.5.0
  * @link http://wordpress.stackexchange.com/a/12450
  * @param string $src jQUery source.
  * @param string $handle Theme handle.

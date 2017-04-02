@@ -3,6 +3,7 @@
  * This file implements custom requirements for the Kirki plugin.
  * It can be used as-is in themes (drop-in).
  *
+ * @since 1.5.0
  * @package kirki-helpers
  */
 

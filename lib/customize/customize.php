@@ -17,6 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Modify default customizer settings.
  *
+ * @since 1.5.0
  * @param array $wp_customize Customizer defaults.
  */
 function starter_customize_register( $wp_customize ) {

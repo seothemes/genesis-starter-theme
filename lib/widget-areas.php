@@ -19,6 +19,8 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * Moved to a lower priority so that page widgets
  * are shown above site-wide widget areas.
+ *
+ * @since 1.5.0
  */
 function starter_register_widget_areas() {
 

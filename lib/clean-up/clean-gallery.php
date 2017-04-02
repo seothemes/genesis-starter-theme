@@ -2,37 +2,27 @@
 /**
  * Clean Gallery - A valid image gallery script for WordPress.
  *
- * Clean Gallery was created to clean up the invalid HTML and remove the inline styles of the default
- * implementation of the WordPress [gallery] shortcode.  This has the obvious benefits of creating
- * sites with clean, valid code.  But, it also allows developers to more easily create custom styles for
- * galleries within their themes.
+ * This is a modified version of Justin Tadlock's cleaner gallery.
+ * https://github.com/justintadlock/cleaner-gallery
  *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
- * General Public License as published by the Free Software Foundation; either version 2 of the License,
- * or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @package   CleanGallery
- * @version   1.2.0-dev
- * @author    Justin Tadlock <justin@justintadlock.com>
- * @copyright Copyright (c) 2008 - 2015, Justin Tadlock
- * @link      http://justintadlock.com/archives/2008/04/13/cleaner-wordpress-gallery-plugin
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package      Genesis Starter
+ * @link         https://seothemes.net/genesis-starter
+ * @author       Seo Themes
+ * @copyright    Copyright © 2017 Seo Themes
+ * @license      GPL-2.0+
  */
 
 /**
  * Clean Gallery class.  This wraps everything up nicely.
  *
- * @since  1.1.0
+ * @since 1.5.0
  */
 final class Clean_Gallery {
 
 	/**
 	 * Holds the instance of this class.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access private
 	 * @var    object
 	 */
@@ -41,7 +31,7 @@ final class Clean_Gallery {
 	/**
 	 * Array of all the arguments for the gallery.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @var    array
 	 */
@@ -51,7 +41,7 @@ final class Clean_Gallery {
 	 * Instance of the gallery for this post. Used so that galleries don't have duplicate IDs
 	 * when there's multiple galleries in a post.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @var    int
 	 */
@@ -60,7 +50,7 @@ final class Clean_Gallery {
 	/**
 	 * Type of gallery currently being viewed.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @var    string
 	 */
@@ -69,7 +59,7 @@ final class Clean_Gallery {
 	/**
 	 * Array of all the media mime types in the current gallery.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @var    array
 	 */
@@ -78,7 +68,7 @@ final class Clean_Gallery {
 	/**
 	 * Whether a gallery item has a caption. This changes per image.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @var    bool
 	 */
@@ -87,7 +77,7 @@ final class Clean_Gallery {
 	/**
 	 * Constructor.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @return void
 	 */
@@ -101,7 +91,7 @@ final class Clean_Gallery {
 	 * Filter for the 'post_gallery' hook, which is run when WordPress' [gallery] shortcode is
 	 * executed.  This is the main function that handles the output of the new gallery.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  string  $output The shortcode output.
 	 * @param  array   $attr Attributes.
@@ -180,7 +170,7 @@ final class Clean_Gallery {
 	/**
 	 * Method for setting up, parsing, and providing filter hooks for the arguments.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @return void
 	 */
@@ -235,7 +225,7 @@ final class Clean_Gallery {
 	 * Formats and returns the gallery item.  The gallery item is composed of both the gallery
 	 * icon (image) and gallery caption.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  object  $attachment
 	 * @return string
@@ -279,7 +269,7 @@ final class Clean_Gallery {
 	/**
 	 * Gets the gallery icon, which is the gallery image. Formats the output.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  object  $attachment
 	 * @return string
@@ -330,7 +320,7 @@ final class Clean_Gallery {
 	/**
 	 * Gets the gallery image caption and formats it.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  object  $attachment
 	 * @return string
@@ -354,7 +344,7 @@ final class Clean_Gallery {
 	/**
 	 * Gets the gallery's itemptype.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @return string
 	 */
@@ -385,7 +375,7 @@ final class Clean_Gallery {
 	/**
 	 * Filters the gallery image attributes and adds the 'itemprop' attribute.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  array  $attr
 	 * @param  object $attachment
@@ -404,7 +394,7 @@ final class Clean_Gallery {
 	/**
 	 * Filters the attachment link and adds the 'itemprop' attribute.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @param  string  $link
 	 * @return string
@@ -417,7 +407,7 @@ final class Clean_Gallery {
 	/**
 	 * Returns the instance.
 	 *
-	 * @since  1.1.0
+	 * @since 1.5.0
 	 * @access public
 	 * @return object
 	 */
@@ -433,6 +423,6 @@ final class Clean_Gallery {
 Clean_Gallery::get_instance();
 
 /**
- * @since  0.9.0
+ * @since 1.5.0
  */
 function cleaner_gallery( $output, $attr ) {}

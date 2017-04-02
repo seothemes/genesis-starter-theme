@@ -16,6 +16,8 @@
  *
  * This also outputs the before-header widget area
  * inside the site-header, outside of the wrap.
+ *
+ * @since 1.5.0
  */
 function starter_header_wrap_open() {
 
@@ -30,6 +32,8 @@ add_action( 'genesis_header', 'starter_header_wrap_open', 6 );
 
 /**
  * Closing header wrap markup.
+ *
+ * @since 1.5.0
  */
 function starter_header_wrap_close() {
 	echo '</div>';
@@ -53,6 +57,8 @@ add_action( 'genesis_site_title', 'starter_custom_logo', 0 );
  * If a featured image is set it will override the
  * header image. If a video is set it will be used
  * on the home page only.
+ *
+ * @since 1.5.0
  */
 function starter_custom_header() {
 
@@ -61,6 +67,8 @@ function starter_custom_header() {
 	 *
 	 * This requires that the hero section is available
 	 * because it is added to the `genesis_hero` hook.
+	 *
+	 * @since 1.5.0
 	 */
 	function starter_hero_image_video() {
 
