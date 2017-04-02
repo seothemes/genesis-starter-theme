@@ -12,53 +12,53 @@ Github project link: https://github.com/seothemes/genesis-starter/
 
 
 ## Theme structure          
-theme/
-├── assets
-│	├── demo/
-│   ├── fonts/
-│   ├── images/
-│   ├── scripts/
-│   └── styles/
-├── languages
-│	└── genesis-starter.pot
-├── lib/
-│	├── classes/
-│   │	├── class-genesis-hero.php
-│   │	└── class-require-plugins.php
-│   ├── clean-up/
-│   │	├── clean-body-class.php	
-│   │	├── clean-gallery.php
-│   │	├── clean-genesis.php
-│   │	├── clean-jquery.php
-│   │	├── clean-wordpress.php
-│   │	└── clean.php
-│   ├── customize/
-│   │	├── customize-colors.php
-│   │	├── customize-header.php
-│   │	├── customize-typography.php
-│   │	├── class-starter-kirki.php
-│   │	├── include-kirki.php
-│   │	└── customize.php
-│   ├── demo-import.php
-│   ├── header-functions.php
-│   ├── theme-defaults.php
-│   ├── theme-setup.php
-│   ├── widget-areas.php
-│   └── woocommerce.php
-├── node_modules/
-├── templates/
-│   ├── image-widget.php/
-│   ├── page-narrow.php/
-│   └── page-wide.php/
-├── .editorconfig
-├── CHANGELOG.md
-├── functions.php
-├── gulpfile.js
-├── package.json
-├── README.md
-├── screenshot.png
-├── style.css
-└── style.css.map
+theme/  
+├── assets  
+│	├── demo/  
+│   ├── fonts/  
+│   ├── images/  
+│   ├── scripts/  
+│   └── styles/  
+├── languages  
+│	└── genesis-starter.pot  
+├── lib/  
+│	├── classes/  
+│   │	├── class-genesis-hero.php  
+│   │	└── class-require-plugins.php  
+│   ├── clean-up/  
+│   │	├── clean-body-class.php	  
+│   │	├── clean-gallery.php  
+│   │	├── clean-genesis.php  
+│   │	├── clean-jquery.php  
+│   │	├── clean-wordpress.php  
+│   │	└── clean.php  
+│   ├── customize/  
+│   │	├── customize-colors.php  
+│   │	├── customize-header.php  
+│   │	├── customize-typography.php  
+│   │	├── class-starter-kirki.php  
+│   │	├── include-kirki.php  
+│   │	└── customize.php  
+│   ├── demo-import.php  
+│   ├── header-functions.php  
+│   ├── theme-defaults.php  
+│   ├── theme-setup.php  
+│   ├── widget-areas.php  
+│   └── woocommerce.php  
+├── node_modules/  
+├── templates/  
+│   ├── image-widget.php/  
+│   ├── page-narrow.php/  
+│   └── page-wide.php/  
+├── .editorconfig  
+├── CHANGELOG.md  
+├── functions.php  
+├── gulpfile.js  
+├── package.json  
+├── README.md  
+├── screenshot.png  
+├── style.css  
+└── style.css.map  
 
 
 ## Theme support
