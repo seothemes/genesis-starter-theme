@@ -1,25 +1,46 @@
 {
   "name": "genesis-starter",
   "version": "1.3.0",
-  "devDependencies": {
+  "description": "The Genesis Starter theme with modern build tools.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
     "browser-sync": "*",
     "css-mqpacker": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-cached": "*",
-    "gulp-combine-mq": "^0.4.0",
     "gulp-cssbeautify": "^0.1.3",
+    "gulp-cssnano": "^2.1.0",
     "gulp-filter": "*",
     "gulp-imagemin": "*",
-    "gulp-line-ending-corrector": "*",
-    "gulp-merge-media-queries": "^0.2.1",
     "gulp-notify": "*",
-    "gulp-plumber": "*",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "*",
     "gulp-sass": "*",
+    "gulp-sort": "^1.1.1",
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",
+    "gulp-wp-pot": "^1.1.1",
     "gulp-zip": "*"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seothemes/genesis-starter"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "Seo Themes",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/seothemes/genesis-starter/issues"
+  },
+  "homepage": "https://github.com/seothemes/genesis-starter#readme"
 }
