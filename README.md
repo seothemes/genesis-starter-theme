@@ -11,7 +11,8 @@ Github project link: https://github.com/seothemes/genesis-starter/
 4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
 
 
-## Theme structure          
+## Theme structure 
+```shell         
 theme/  
 ├── assets  
 │	├── demo/  
@@ -59,6 +60,7 @@ theme/
 ├── screenshot.png  
 ├── style.css  
 └── style.css.map  
+```
 
 
 ## Theme support
