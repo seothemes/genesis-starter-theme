@@ -1,0 +1,522 @@
+# Copyright (C) 2017 genesis-starter
+# This file is distributed under the same license as the genesis-starter package.
+msgid ""
+msgstr ""
+"Project-Id-Version: genesis-starter\n"
+"Report-Msgid-Bugs-To: http://genesis-starter.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Lee Anthony <seothemeswp@gmail.com>\n"
+"Language-Team: Seo Themes <seothemeswp@gmail.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: lib/class-genesis-hero.php:85
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/class-genesis-hero.php:106
+msgid "Search Results"
+msgstr ""
+
+#: lib/class-genesis-hero.php:109
+msgid "Page not found!"
+msgstr ""
+
+#: lib/class-genesis-hero.php:139
+msgid "Showing the latest posts"
+msgstr ""
+
+#: lib/class-require-plugins.php:439
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/class-require-plugins.php:440
+msgid "Install Plugins"
+msgstr ""
+
+#: lib/class-require-plugins.php:442
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/class-require-plugins.php:444
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/class-require-plugins.php:445
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/class-require-plugins.php:446
+msgid "/*translators:1:pluginnames.*/This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:452
+msgid "/*translators:1:pluginnames.*/This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:458
+msgid "/*translators:1:pluginnames.*/The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:464
+msgid "/*translators:1:pluginnames.*/There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:470
+msgid "/*translators:1:pluginnames.*/The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:476
+msgid "/*translators:1:pluginnames.*/The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:482
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:487
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:492
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:497
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/class-require-plugins.php:498, lib/class-require-plugins.php:939, lib/class-require-plugins.php:2645, lib/class-require-plugins.php:3692
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/class-require-plugins.php:499, lib/class-require-plugins.php:3271
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/class-require-plugins.php:500, lib/class-require-plugins.php:3064
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:502
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: lib/class-require-plugins.php:504
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#: lib/class-require-plugins.php:506
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/class-require-plugins.php:507
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/class-require-plugins.php:508
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: lib/class-require-plugins.php:509
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/class-require-plugins.php:634
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/class-require-plugins.php:635
+msgid "Update Required"
+msgstr ""
+
+#: lib/class-require-plugins.php:1046
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: lib/class-require-plugins.php:1046, lib/class-require-plugins.php:1049
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: lib/class-require-plugins.php:1049
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: lib/class-require-plugins.php:1233, lib/class-require-plugins.php:3060
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: lib/class-require-plugins.php:2094
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/class-require-plugins.php:2385
+msgid "Required"
+msgstr ""
+
+#: lib/class-require-plugins.php:2388
+msgid "Recommended"
+msgstr ""
+
+#: lib/class-require-plugins.php:2404
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/class-require-plugins.php:2407
+msgid "External Source"
+msgstr ""
+
+#: lib/class-require-plugins.php:2410
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/class-require-plugins.php:2427
+msgid "Not Installed"
+msgstr ""
+
+#: lib/class-require-plugins.php:2431
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/class-require-plugins.php:2433
+msgid "Active"
+msgstr ""
+
+#: lib/class-require-plugins.php:2439
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/class-require-plugins.php:2442
+msgid "Requires Update"
+msgstr ""
+
+#: lib/class-require-plugins.php:2445
+msgid "Update recommended"
+msgstr ""
+
+#: lib/class-require-plugins.php:2454
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: lib/class-require-plugins.php:2500
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:2504
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:2508
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:2512
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-require-plugins.php:2594
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/class-require-plugins.php:2602
+msgid "Installed version:"
+msgstr ""
+
+#: lib/class-require-plugins.php:2610
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/class-require-plugins.php:2622
+msgid "Available version:"
+msgstr ""
+
+#: lib/class-require-plugins.php:2645
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: lib/class-require-plugins.php:2659
+msgid "Plugin"
+msgstr ""
+
+#: lib/class-require-plugins.php:2660
+msgid "Source"
+msgstr ""
+
+#: lib/class-require-plugins.php:2661
+msgid "Type"
+msgstr ""
+
+#: lib/class-require-plugins.php:2665
+msgid "Version"
+msgstr ""
+
+#: lib/class-require-plugins.php:2666
+msgid "Status"
+msgstr ""
+
+#: lib/class-require-plugins.php:2715
+msgid "Install %2$s"
+msgstr ""
+
+#: lib/class-require-plugins.php:2720
+msgid "Update %2$s"
+msgstr ""
+
+#: lib/class-require-plugins.php:2726
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/class-require-plugins.php:2796
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/class-require-plugins.php:2829
+msgid "Install"
+msgstr ""
+
+#: lib/class-require-plugins.php:2835
+msgid "Update"
+msgstr ""
+
+#: lib/class-require-plugins.php:2838
+msgid "Activate"
+msgstr ""
+
+#: lib/class-require-plugins.php:2869
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/class-require-plugins.php:2871
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/class-require-plugins.php:2912
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/class-require-plugins.php:2914
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/class-require-plugins.php:3020
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/class-require-plugins.php:3046
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/class-require-plugins.php:3270
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/class-require-plugins.php:3610
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-require-plugins.php:3613
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/class-require-plugins.php:3615
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/class-require-plugins.php:3619
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/class-require-plugins.php:3621
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/class-require-plugins.php:3621, lib/class-require-plugins.php:3629
+msgid "Show Details"
+msgstr ""
+
+#: lib/class-require-plugins.php:3621, lib/class-require-plugins.php:3629
+msgid "Hide Details"
+msgstr ""
+
+#: lib/class-require-plugins.php:3622
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/class-require-plugins.php:3624
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-require-plugins.php:3627
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/class-require-plugins.php:3629
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/class-require-plugins.php:3630
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/class-require-plugins.php:3632
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/customize/customize-colors.php:25
+msgid "Background Color"
+msgstr ""
+
+#: lib/customize/customize-colors.php:43
+msgid "Header Color"
+msgstr ""
+
+#: lib/customize/customize-colors.php:61
+msgid "Sticky Header Color"
+msgstr ""
+
+#: lib/customize/customize-colors.php:79
+msgid "Overlay Color"
+msgstr ""
+
+#: lib/customize/customize-colors.php:101
+msgid "Overlay Text Color"
+msgstr ""
+
+#: lib/customize/customize-colors.php:120
+msgid "Accent Color"
+msgstr ""
+
+#: lib/customize/customize-header.php:25
+msgid "Sticky Header"
+msgstr ""
+
+#: lib/customize/customize-header.php:30
+msgid "Enable"
+msgstr ""
+
+#: lib/customize/customize-header.php:31
+msgid "Disable"
+msgstr ""
+
+#: lib/customize/customize-typography.php:28
+msgid "Body Font"
+msgstr ""
+
+#: lib/customize/customize-typography.php:48
+msgid "Heading Font"
+msgstr ""
+
+#: lib/customize/customize.php:30
+msgid "Hero Image"
+msgstr ""
+
+#: lib/customize/include-kirki.php:54
+msgid "A plugin is required to take advantage of this theme's features in the customizer."
+msgstr ""
+
+#: lib/customize/include-kirki.php:55
+msgid "Install Kirki Toolkit now"
+msgstr ""
+
+#: lib/customize/include-kirki.php:56
+msgid "Install Now"
+msgstr ""
+
+#: lib/customize/include-kirki.php:59
+msgid "You have installed Kirki. Activate it to take advantage of this theme's features in the customizer."
+msgstr ""
+
+#: lib/customize/include-kirki.php:60
+msgid "Activate Kirki Toolkit now"
+msgstr ""
+
+#: lib/customize/include-kirki.php:61
+msgid "Activate Now"
+msgstr ""
+
+#: lib/theme-setup.php:117
+msgid "Header Menu"
+msgstr ""
+
+#: lib/theme-setup.php:118
+msgid "After Header Menu"
+msgstr ""
+
+#: lib/widget-areas.php:28
+msgid "Before Header"
+msgstr ""
+
+#: lib/widget-areas.php:29
+msgid "This is the before header section."
+msgstr ""
+
+#: lib/widget-areas.php:35
+msgid "Header Right"
+msgstr ""
+
+#: lib/widget-areas.php:36
+msgid "This is the header right section."
+msgstr ""
+
+#: lib/widget-areas.php:42
+msgid "Sidebar"
+msgstr ""
+
+#: lib/widget-areas.php:43
+msgid "This is the sidebar section."
+msgstr ""
+
+#: lib/widget-areas.php:49
+msgid "Before Footer"
+msgstr ""
+
+#: lib/widget-areas.php:50
+msgid "This is the before footer section."
+msgstr ""
+
+#: lib/widget-areas.php:56
+msgid "Footer Widgets"
+msgstr ""
+
+#: lib/widget-areas.php:57
+msgid "This is the footer widgets section."
+msgstr ""
