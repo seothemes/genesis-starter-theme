@@ -40,7 +40,7 @@ var php_src		 = ['./*.php', './**/*.php', './**/**/*.php'];
 var php_dest	 = './';
 
 // Set BrowserSync proxy url.
-var bs_url       = 'genesis-starter.dev';
+var dev_url       = 'genesis-starter.dev';
 var reload       = browserSync.reload;
 
 /**
@@ -117,13 +117,13 @@ gulp.task( 'sass', function () {
 } );
 
 /**
- * Minify javascripts after they're concatenated.
+ * Minify javascript files.
  *
  * https://www.npmjs.com/package/gulp-uglify
  */
 gulp.task( 'scripts', function () {
 
-    gulp.src(js_src)
+    gulp.src( js_src )
         // Notify on error.
         .pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 
@@ -199,11 +199,11 @@ gulp.task( 'i18n', function() {
  *
  * https://www.npmjs.com/package/browser-sync
  */
-gulp.task( 'browsersync', function() {
+gulp.task( 'watch', function() {
 
 	// Kick off BrowserSync.
     browserSync( {
-        proxy: bs_url,
+        proxy: dev_url,
         notify: false,
         open: false
     } );
@@ -238,6 +238,6 @@ gulp.task( 'zip', function() {
 /**
  * Create default task.
  */
-gulp.task( 'default', ['browsersync'], function() {
+gulp.task( 'default', ['watch'], function() {
     gulp.start( 'sass', 'scripts', 'images' );
 } );
