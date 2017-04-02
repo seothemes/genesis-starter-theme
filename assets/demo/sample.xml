@@ -1720,7 +1720,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<link>http://genesis-starter.dev/sample/typography/</link>
 		<pubDate>Mon, 25 Apr 2016 19:44:06 +0000</pubDate>
 		<dc:creator><![CDATA[leighanthony]]></dc:creator>
-		<guid isPermaLink="false">http://demo.studiopress.com/genesis-sample/?page_id=485</guid>
+		<guid isPermaLink="false">http://demo.studiopress.com/genesis-starter/?page_id=485</guid>
 		<description></description>
 		<content:encoded><![CDATA[<strong>Want to see what a blockquote looks like?</strong>
 <blockquote>This is an example of a WordPress post, you could edit this to put information about your site so readers know where you are coming from. You can create as many posts as you like in order to share with your readers what is on your mind.</blockquote>
@@ -2016,7 +2016,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<link>http://genesis-starter.dev/templates/landing-page/</link>
 		<pubDate>Mon, 25 Apr 2016 19:01:32 +0000</pubDate>
 		<dc:creator><![CDATA[leighanthony]]></dc:creator>
-		<guid isPermaLink="false">http://demo.studiopress.com/genesis-sample/?page_id=473</guid>
+		<guid isPermaLink="false">http://demo.studiopress.com/genesis-starter/?page_id=473</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress.
 <h4>Reason #1 To Buy This Theme</h4>
@@ -2691,7 +2691,7 @@ This is an example of a WordPress post, you could edit this to put information a
 		<dc:creator><![CDATA[leighanthony]]></dc:creator>
 		<guid isPermaLink="false">http://demo.studiopress.com/genesis/?p=20</guid>
 		<description></description>
-		<content:encoded><![CDATA[<img class="alignnone size-full wp-image-482" src="http://www.studiopress.com/images/genesis-sample/featured-image.jpg" alt="featured-image" width="720" height="400" />
+		<content:encoded><![CDATA[<img class="alignnone size-full wp-image-482" src="http://www.studiopress.com/images/genesis-starter/featured-image.jpg" alt="featured-image" width="720" height="400" />
 
 This is an example of a WordPress post, you could edit this to put information about yourself or your site so readers know where you are coming from. You can create as many posts as you like in order to share with your readers what is on your mind.
 

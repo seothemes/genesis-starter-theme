@@ -11,18 +11,41 @@
 
 	'use strict';
 
-	$( '.site-header' ).addClass( 'responsive' );
+	// Add js class.
+	$( 'body' ).addClass( 'js' );
 
-	// Keep site header below the header section
+	/**
+	 * Keep hero below the header section.
+	 *
+	 * Gets the site header height and hero section
+	 * bottom padding value and calculates the hero
+	 * padding top value.
+	 */
 	$( window ).resize( function() {
 
-		var navbar = $( '.navbar' ).outerHeight();
-		var navSecondary = $( '.nav-secondary' ).outerHeight();
-
-		$( ".site-header" ).css( { "padding-top": ( navbar + navSecondary ) } );
-		$( '.nav-secondary' ).css( { "top": navbar } );
+		var siteHeader  = $( '.site-header' ).outerHeight();
+		var padding = parseInt( $( '.hero-section' ).css( "padding-bottom" ), 10 );
+		$( ".hero-section" ).css( { "padding-top": ( siteHeader + padding ) } );
 
 	} ).resize();
+
+	// Site header shrink.
+	$( document ).on( "scroll", function() {
+
+		var header = $( '.site-header' );
+		//console.log( $( header ).css( 'position' ) );
+
+		if( $( document ).scrollTop() > 0 ){
+			if( $( header ).css( 'position' ) === 'fixed' ) {
+				$( header ).addClass( 'shrink' );
+			}
+		} else {
+			$( header ).removeClass( 'shrink' );
+		}
+	} );
+
+	// Add before header close button.
+	$( '.before-header .wrap' ).append( '<button class="close-before-header" role="button">Close</button>' );
 
 	// Add menu-toggle button
 	$( '.nav-primary' ).before( '<button class="menu-toggle toggle-primary" role="button">Menu <span></span><span></span><span></span><span></span></button>' );
@@ -37,6 +60,15 @@
 
 	// Add aria labels
 	$( '.menu-toggle, .sub-menu-toggle' ).attr( { "aria-expanded":false, "aria-pressed": false } );
+
+	// Close before header section.
+	$( '.close-before-header' ).on( "click", function() {
+	    $( '.before-header' ).slideToggle( 100, function() {
+		    var siteHeader  = $( '.site-header' ).height();
+		    var padding = parseInt( $( '.hero-section' ).css( "padding-bottom" ), 10 );
+		    $( ".hero-section" ).css( { "padding-top": ( siteHeader + padding ) } );
+		} );
+	} );
 
 	// Smaller screens responsive menu
 	$( '.toggle-primary' ).on( "click", function() {
@@ -63,4 +95,24 @@
 	    $( this ).attr( 'aria-pressed',$( this ).attr( 'aria-pressed' ) === 'true'?'false':'true' );
 	});
 
+	// Back to top.
+	$( '.site-container' ).attr( 'id', 'top' );
+	$( '.site-footer > .wrap' ).append( '<a href="#top" class="back-to-top"><span></span></a>' );
+
 } )( document, jQuery );
+
+// Smooth scrolling.
+(function($) {
+	$( 'a[href*="#"]:not([href="#"])' ).click(function() {
+	    if ( location.pathname.replace( /^\//,'' ) == this.pathname.replace( /^\//,'' ) && location.hostname == this.hostname ) {
+			var target = $( this.hash );
+	      	target = target.length ? target : $( '[name=' + this.hash.slice(1) +']' );
+			if ( target.length ) {
+	        	$( 'html, body' ).animate( {
+	          		scrollTop: target.offset().top
+	        	}, 1000 );
+	        	return false;
+	      	}
+	    }
+	});
+})(jQuery);
