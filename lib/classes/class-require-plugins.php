@@ -15,13 +15,6 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Check for theme support.
- */
-if ( ! current_theme_supports( 'require-plugins' ) ) {
-	return;
-}
-
-/**
  * Register required plugins.
  *
  * The variables passed to the `tgmpa()` function should be:
@@ -45,15 +38,69 @@ function starter_register_required_plugins() {
 		 * Add any recommended plugins here.
 		 */
 		array(
-			'name'      => 'WordPress Importer',
-			'slug'      => 'wordpress-importer',
-			'required'  => true,
+			'name'      => 'Easy Widget Columns',
+			'slug'      => 'easy-widget-columns',
+			'required'  => false,
 		),
 
 		array(
-			'name'      => 'Widget Importer',
-			'slug'      => 'widget-importer-exporter',
-			'required'  => true,
+			'name'      => 'Genesis eNews Extended',
+			'slug'      => 'genesis-enews-extended',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Genesis Testimonial Slider',
+			'slug'      => 'wpstudio-testimonial-slider',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Image Widget',
+			'slug'      => 'image-widget',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Kirki Toolkit',
+			'slug'      => 'kirki',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Ninja Forms',
+			'slug'      => 'ninja-forms',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'One Click Demo Import',
+			'slug'      => 'one-click-demo-import',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Simple Social Icons',
+			'slug'      => 'simple-social-icons',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'Widgetized Page Template',
+			'slug'      => 'widgetized-page-template',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'WooCommerce',
+			'slug'      => 'woocommerce',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => 'WP Featherlight',
+			'slug'      => 'wp-featherlight',
+			'required'  => false,
 		),
 
 	);
@@ -328,8 +375,6 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 			// Announce that the class is ready, and pass the object (for advanced use).
 			do_action_ref_array( 'tgmpa_init', array( $this ) );
 
-
-
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
 		}
@@ -350,9 +395,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 * @return void  Silently fail to set the property when this is tried from outside of this class context.
 		 *               (Inside this class context, the __set() method if not used as there is direct access.)
 		 */
-		public function __set( $name, $value ) {
-			return;
-		}
+		public function __set( $name, $value ) { }
 
 		/**
 		 * Magic method to get the value of a protected property outside of this class context.
