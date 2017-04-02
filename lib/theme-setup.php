@@ -11,7 +11,7 @@
  * @license      GPL-2.0+
  */
 
-// Start the engine.
+// Start the engine (do not remove).
 include_once( get_template_directory() . '/lib/init.php' );
 
 // Set Localization (do not remove).
@@ -28,36 +28,10 @@ define( 'CHILD_THEME_URL', 'http://www.seothemes.net/' );
 define( 'CHILD_THEME_VERSION', '1.4.0' );
 
 /**
- * Theme assets.
- *
- * @since 1.4.0
- */
-function starter_enqueue_scripts_styles() {
-
-	// Google fonts.
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto', array(), CHILD_THEME_VERSION );
-
-	// Custom JS.
-	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/js/min/starter.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-
-	// Backstretch.
-	wp_enqueue_script( 'backstretch', get_stylesheet_directory_uri() . '/js/min/backstretch.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-
-}
-add_action( 'wp_enqueue_scripts', 'starter_enqueue_scripts_styles' );
-
-/**
  * Theme supports.
  *
  * @since 1.4.0
  */
-
-// Enable HTML5 markup structure.
-add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
-
-// Enable Accessibility support.
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
-
 // Enable responsive viewport.
 add_theme_support( 'genesis-responsive-viewport' );
 
@@ -70,93 +44,107 @@ add_theme_support( 'customize-selective-refresh-widgets' );
 // Enable theme support for custom background image.
 add_theme_support( 'custom-background' );
 
-// Enable theme support for hero section.
-add_theme_support( 'hero' );
+// Enable theme clean up.
+add_theme_support( 'clean-up' );
 
-// Enable theme support for custom header background image.
-add_theme_support( 'custom-header', array(
-	'header-selector' 	=> '.hero',
-	'header_image'    	=> get_stylesheet_directory_uri() . '/images/hero.jpg',
-	'header-text'     	=> false,
-	'width'           	=> 1600,
-	'height'          	=> 1200,
-	'flex-height'     	=> true,
-	'flex-width'		=> true,
-	'wp-head-callback'	=> 'starter_custom_header',
+// Enable hero section.
+add_theme_support( 'hero-section' );
+
+// Enable customizer settings.
+add_theme_support( 'customize' );
+
+// Enable custom widget areas.
+add_theme_support( 'widget-areas' );
+
+// Enable WooCommerce support.
+add_theme_support( 'woocommerce' );
+
+// Enable HTML5 markup structure.
+add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
+
+// Enable Accessibility support.
+add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+
+// Rename primary and secondary navigation menus.
+add_theme_support( 'genesis-menus' , array(
+	'primary' => __( 'Header Menu', 'genesis-starter' ),
+	'secondary' => __( 'After Header Menu', 'genesis-starter' ),
 ) );
 
-// Disable support for structural wraps except for menus and site inner.
+// Remove unused structural wraps.
 add_theme_support( 'genesis-structural-wraps', array(
 	'menu-primary',
 	'menu-secondary',
 	'site-inner',
+	'footer',
 ) );
 
 // Enable Logo option in Customizer > Site Identity.
 add_theme_support( 'custom-logo', array(
-	'height'      => 50,
+	'height'      => 60,
 	'width'       => 200,
 	'flex-height' => true,
 	'flex-width'  => true,
 	'header-text' => array( '.site-title', '.site-description' ),
 ) );
 
-/**
- * Display the custom logo if one is set.
- */
-function starter_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
-add_action( 'genesis_site_title', 'starter_custom_logo', 0 );
+// Enable theme support for custom header background image.
+add_theme_support( 'custom-header', array(
+	'header-selector' 	=> '.hero',
+	'header_image'    	=> get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
+	'header-text'     	=> false,
+	'width'           	=> 1920,
+	'height'          	=> 1080,
+	'flex-height'     	=> true,
+	'flex-width'		=> true,
+	'video'				=> true,
+	'wp-head-callback'	=> 'starter_custom_header',
+) );
 
-// Enable excerpts on pages. This is just handy.
-add_post_type_support( 'page', 'excerpt' );
-
 /**
- * Custom theme features.
- *
- * Enable the custom theme features for the Genesis Starter theme.
- * The following are optional and can be removed or commented out
- * if functionality is not required.
+ * Theme includes.
  *
  * @since 1.4.0
  */
-add_theme_support( 'clean-up' );
-add_theme_support( 'hero-section' );
-add_theme_support( 'custom-colors' );
-add_theme_support( 'front_page_content' );
-add_theme_support( 'widget-areas' );
-add_theme_support( 'require-plugins' );
-add_theme_support( 'compression' );
-
-/**
- * Load theme files and features.
- *
- * @since 1.4.0
- */
-
-// Theme defaults.
+// Load theme defaults.
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
-// Helper functions.
-include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
+// Load one click demo import.
+include_once( get_stylesheet_directory() . '/lib/demo-import.php' );
 
-// Clean up.
-include_once( get_stylesheet_directory() . '/lib/clean-up.php' );
+// Load header functions.
+include_once( get_stylesheet_directory() . '/lib/header-functions.php' );
 
-// Custom colors.
-include_once( get_stylesheet_directory() . '/lib/custom-colors.php' );
+// Load required plugins.
+include_once( get_stylesheet_directory() . '/lib/classes/class-require-plugins.php' );
 
-// Widget areas.
-include_once( get_stylesheet_directory() . '/lib/widget-areas.php' );
+// Load hero section.
+require_if_theme_supports( 'hero-section', get_stylesheet_directory() . '/lib/classes/class-genesis-hero.php' );
 
-// Hero section.
-include_once( get_stylesheet_directory() . '/lib/hero-section.php' );
+// Load customizer settings.
+require_if_theme_supports( 'customize', get_stylesheet_directory() . '/lib/customize/customize.php' );
 
-// Required plugins.
-include_once( get_stylesheet_directory() . '/lib/class-require-plugins.php' );
+// Load clean up functions.
+require_if_theme_supports( 'clean-up', get_stylesheet_directory() . '/lib/clean-up/clean.php' );
 
-// HTML, CSS and JS compression.
-include_once( get_stylesheet_directory() . '/lib/class-compression.php' );
+// Load custom widget areas.
+require_if_theme_supports( 'widget-areas', get_stylesheet_directory() . '/lib/widget-areas.php' );
+
+// Load WooCommerce setup.
+require_if_theme_supports( 'woocommerce', get_stylesheet_directory() . '/lib/woocommerce.php' );
+
+/**
+ * Theme assets.
+ *
+ * @since 1.4.0
+ */
+function starter_enqueue_scripts_styles() {
+
+	// Google fonts.
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Muli:400,600', array(), CHILD_THEME_VERSION );
+
+	// Enqueue scripts.
+	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/scripts/min/starter.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
+}
+add_action( 'wp_enqueue_scripts', 'starter_enqueue_scripts_styles' );

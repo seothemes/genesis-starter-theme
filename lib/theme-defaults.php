@@ -97,13 +97,13 @@ function starter_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'alignleft',
-		'background_color'       => '#aaaaaa',
-		'background_color_hover' => '#333333',
+		'background_color'       => '#777777',
+		'background_color_hover' => '#999999',
 		'border_radius'          => 0,
 		'border_color'           => '#ffffff',
 		'border_color_hover'     => '#ffffff',
 		'border_width'           => 0,
-		'icon_color'             => '#fff',
+		'icon_color'             => '#ffffff',
 		'icon_color_hover'       => '#ffffff',
 		'size'                   => 32,
 		'new_window'             => 1,

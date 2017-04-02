@@ -12,7 +12,5 @@
  * @license      GPL-2.0+
  */
 
-/**
- * Setup theme (do not remove).
- */
+// Setup theme (do not remove).
 require_once( get_stylesheet_directory() . '/lib/theme-setup.php' );
