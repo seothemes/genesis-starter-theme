@@ -1,0 +1,79 @@
+/* ## WordPress
+--------------------------------------------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 12px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 24px 24px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 24px 24px;
+}
+
+.wp-caption-text {
+	font-size: 14px;
+	font-size: 1.4rem;
+	margin: 0;
+	text-align: center;
+}
+
+.entry-content {
+
+	p.wp-caption-text {
+		margin-bottom: 0;
+	}
+
+	.wp-audio-shortcode,
+	.wp-playlist,
+	.wp-video {
+		margin: 0 0 28px;
+	}
+}
+
+a.post-edit-link {
+	display: none;
+}
+
+.sticky,
+.bypostauthor {
+	background-color: transparent;
+}

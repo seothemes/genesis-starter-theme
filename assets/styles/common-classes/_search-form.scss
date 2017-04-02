@@ -1,0 +1,25 @@
+/* ## Search Form
+--------------------------------------------- */
+
+.search-form {
+	display: block;
+	width: 100%;
+
+	input[type="search"] {
+		float: left;
+		width: auto;
+		padding: 12px 14px;
+		line-height: 1;
+	}
+
+	input[type="submit"] {
+		float: right;
+		display: inline-block;
+		padding: 15px;
+	}
+
+	.entry-content & {
+		margin-bottom: 40px;
+		width: 50%;
+	}
+}

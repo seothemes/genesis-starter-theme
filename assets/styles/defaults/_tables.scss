@@ -1,0 +1,34 @@
+/* ## Tables
+--------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: $line-height-body;
+	margin-bottom: 40px;
+	width: 100%;
+	word-break: break-word;
+}
+
+tbody {
+	border-bottom: 1px solid $color-border;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid $color-border;
+	padding: 6px;
+}
+
+th {
+	padding: 0 6px;
+}
+
+td:first-child,
+th:first-child {
+	padding-left: 0;
+}

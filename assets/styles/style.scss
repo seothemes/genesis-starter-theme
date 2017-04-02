@@ -1,0 +1,138 @@
+/*!
+	Theme Name: Genesis Starter
+	Theme URI: http://www.seothemes.net/genesis-starter/
+	Description: This is the Genesis Starter theme created for the Genesis Framework.
+	Author: Seo Themes
+	Author URI: http://www.seothemes.net/
+	Version: 1.4.0
+	Text Domain: genesis-starter
+	Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+	Template: genesis
+	Template Version: 2.4.2
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* # Table of Contents
+
+- Utlities
+	- Variables
+	- Mixins
+- Reset
+	- Baseline Normalize
+	- Box Sizing
+	- Float Clearing
+- Defaults
+	- Typography
+	- Headings
+	- Objects
+	- Forms
+	- Tables
+	- Accessibility
+- Structure and Layout
+	- Site Containers
+	- Content Width
+	- Column Classes
+	- Gallery
+	- Featured Content
+- Common Classes
+	- Avatar
+	- Genesis
+	- Search Form
+	- Titles
+	- WordPress
+- Widgets
+	- Widgets
+	- Front Page
+- Plugins
+	- WooCommerce
+	- Genesis eNews Extended
+	- Jetpack
+	- Ninja Forms
+	- Gravity Forms
+- Site Header
+	- Before Header
+	- Site Header
+	- Title Area
+	- Widget Area
+	- Hero Section
+- Site Navigation
+	- Site Navigation
+	- Primary Menu
+	- Secondary Menu
+	- Footer Menu
+	- Menu buttons
+- Content Area
+	- Entries
+	- Entry Meta
+	- Pagination
+	- Comments
+	- Sidebars
+- Site Footer
+	- Site Footer
+	- Before Footer
+	- Footer Widgets
+	- After Footer
+- Print Styles
+	- Print Styles
+*/
+
+/* # Utilities
+---------------------------------------------------------------------------------------------------- */
+
+@import 'utilities/index';
+
+/* # HTML5 Reset
+---------------------------------------------------------------------------------------------------- */
+
+@import 'reset/index';
+
+/* # Defaults
+---------------------------------------------------------------------------------------------------- */
+
+@import 'defaults/index';
+
+/* # Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+@import 'structure-layout/index';
+
+/* # Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+@import 'common-classes/index';
+
+/* # Site Header
+---------------------------------------------------------------------------------------------------- */
+
+@import 'site-header/index';
+
+/* # Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+@import 'site-navigation/index';
+
+/* # Content Area
+---------------------------------------------------------------------------------------------------- */
+
+@import 'content-area/index';
+
+/* # Widgets
+---------------------------------------------------------------------------------------------------- */
+
+@import 'widgets/index';
+
+/* # Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+@import 'site-footer/index';
+
+/* # Plugins
+---------------------------------------------------------------------------------------------------- */
+
+@import 'plugins/index';
+
+/* # Print Styles
+---------------------------------------------------------------------------------------------------- */
+
+@import 'print-styles/index';

@@ -1,0 +1,15 @@
+/* ## Footer Navigation
+--------------------------------------------- */
+
+.site-footer .menu {
+
+	> .menu-item {
+		width: 50%;
+		float: left;
+	}
+
+	.sub-menu,
+	.sub-menu-toggle {
+		display: none;
+	}
+}

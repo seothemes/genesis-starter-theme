@@ -1,0 +1,28 @@
+/* ## Column Widths and Positions
+--------------------------------------------- */
+
+@include breakpoint(md) {
+
+	.content {
+		float: right;
+		width: 61.8%;
+	}
+
+	.content-sidebar .content {
+		float: left;
+	}
+
+	.full-width-content .content {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.sidebar-primary {
+		float: right;
+		width: 33.2%;
+	}
+
+	.sidebar-content .sidebar-primary {
+		float: left;
+	}
+}

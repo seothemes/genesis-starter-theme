@@ -1,0 +1,176 @@
+/* ## Site Navigation
+--------------------------------------------- */
+
+.genesis-nav-menu {
+	clear: both;
+	line-height: 1;
+	width: 100%;
+	white-space: nowrap;
+	font-size: $font-size-body * .95;
+	line-height: 1;
+
+	.menu-item {
+		display: block;
+		margin-bottom: 0;
+		padding: 10px 0;
+		text-align: left;
+		width: 100%;
+		float: left;
+		position: relative;
+
+		@include breakpoint(sm) {
+			float: left;
+			text-align: right;
+			padding: 0;
+			width: auto;
+		}
+
+		&:last-of-type a {
+			padding-right: 0;
+		}
+
+		.responsive & {
+			width: 100%;
+			padding: 0;
+
+			@include breakpoint(sm) {
+				width: auto;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 8px 0;
+		color: $color-text;
+
+		@include breakpoint(sm) {
+			padding: 23px 13px;
+		}
+
+		@include breakpoint(md) {
+			padding: 23px 20px;
+		}
+	}
+
+	a:hover,
+	a:focus,
+	.current-menu-item > a,
+	.sub-menu .current-menu-item > a:hover,
+	.sub-menu .current-menu-item > a:focus  {
+		text-decoration: none;
+		color: $color-accent;
+	}
+
+	.menu-item-has-children {
+
+		> a span {
+
+			&:after {
+				content: " ";
+				display: none;
+				margin-top: 5px;
+				margin-left: 5px;
+				float: right;
+				height: 4px;
+				width: 4px;
+				border-left: 1px solid $color-text;
+				border-bottom: 1px solid $color-text;
+				transform: rotate(-45deg);
+
+				@include breakpoint(sm) {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		transition: none;
+		display: none;
+
+		@include breakpoint(sm) {
+			left: -9999px;
+			top: 125%;
+			opacity: 0;
+			position: absolute;
+			width: 200px;
+			z-index: 99;
+			transition: top .4s ease, opacity .5s ease;
+			display: block;
+			border: 1px solid $color-border;
+		}
+
+		&:before {
+			content: " ";
+			display: none;
+			position: absolute;
+			top: -5px;
+			left: 3rem;
+			height: 10px;
+			width: 10px;
+			background-color: $color-white;
+			border: 1px solid $color-border;
+			transform: rotate(45deg);
+
+			@include breakpoint(sm) {
+				display: block;
+			}
+		}
+
+		.menu-item {
+			width: 100%;
+
+			> a span:after {
+				transform: rotate(-135deg);
+				float: none;
+				margin-top: 0;
+			}
+		}
+
+		a {
+			padding-left: 10px;
+			text-align: left;
+
+			@include breakpoint(sm) {
+				background-color: $color-white;
+				padding: 20px;
+				position: relative;
+				word-wrap: break-word;
+			}
+		}
+
+		.sub-menu {
+			margin: -55px 0 0 199px;
+			padding-left: 0;
+			border-left: none;
+
+			&:before {
+				display: none;
+			}
+		}
+
+	}
+
+	.menu-item:hover > .sub-menu {
+
+		@include breakpoint(sm) {
+			left: 0;
+			top: 100%;
+			opacity: 1;
+		}
+	}
+
+	> .first > a {
+		padding-left: 0;
+	}
+
+	> .last > a {
+		padding-right: 0;
+	}
+
+	> .right {
+		float: right;
+	}
+}

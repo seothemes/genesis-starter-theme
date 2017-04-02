@@ -1,0 +1,46 @@
+/* ## Genesis Testimonial Slider
+--------------------------------------------- */
+
+div.lSSlideOuter {
+
+	h5 {
+		font-size: $font-size-body * 1.1;
+
+		@include breakpoint(sm) {
+			font-size: $font-size-body * 1.2;
+		}
+	}
+
+	ul.testimonials-list li {
+		text-align: left;
+		padding: 0 20px 0;
+
+		blockquote {
+			margin: 0 0 4rem;
+		}
+
+		&.active {
+			padding-left: 0;
+			padding-right: 4rem;
+
+			+ li + li {
+				padding-right: 0;
+				padding-left: 40px;
+			}
+		}
+	}
+
+	.lSPager.lSpg > li {
+
+		a {
+			background-color: $color-text;
+			opacity: .382;
+		}
+
+		&.active a,
+		&:hover a {
+			background-color: $color-text;
+			opacity: 1;
+		}
+	}
+}

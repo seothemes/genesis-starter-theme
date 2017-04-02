@@ -1,0 +1,33 @@
+/* ## Primary Navigation
+--------------------------------------------- */
+
+.nav-primary {
+	width: 100%;
+	clear: both;
+
+	@include breakpoint(sm) {
+		width: calc(100% - 200px);
+		width: auto;
+		clear: none;
+		display: block !important;
+		background-color: transparent;
+		float: right;
+	}
+
+	.js & {
+		display: none;
+	}
+
+	.wrap {
+		padding: 20px 0;
+		max-width: 100%;
+
+		@include breakpoint(sm) {
+			padding: 0;
+		}
+	}
+
+	li li {
+		margin-left: 0;
+	}
+}

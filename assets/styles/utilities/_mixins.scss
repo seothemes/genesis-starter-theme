@@ -1,0 +1,49 @@
+/* # Mixins
+-----------------------------------------------------------------------*/
+
+/* ### Media Queries */
+
+@mixin breakpoint( $breakpoint ) {
+
+    @if map-has-key( $breakpoints, $breakpoint ) {
+
+        @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+            @content;
+        }
+
+    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+
+        @media (min-width: $breakpoint ) {
+            @content;
+        }
+
+    } @else {
+
+        @warn "Unfortunately no value could be retrieved from `#{$breakpoint}`. "
+              + "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+    }
+}
+
+/* ### Clearfix */
+
+@mixin clearfix {
+
+	&:before,
+	&:after {
+		display: block;
+		content: '';
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* ### Transitions */
+
+@mixin transition {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}

@@ -1,0 +1,12 @@
+/* # Sidebars
+--------------------------------------------- */
+
+.sidebar {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 10% auto 5%;
+
+	@include breakpoint(md) {
+		margin: 0 auto 40px;
+	}
+}

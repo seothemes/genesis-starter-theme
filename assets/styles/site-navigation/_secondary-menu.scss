@@ -1,0 +1,42 @@
+/* ## Nav Secondary
+--------------------------------------------- */
+
+.nav-secondary {
+	width: 100%;
+	clear: both;
+	position: relative;
+	border-top: 1px solid $color-border;
+
+	.js & {
+
+		.wrap {
+			display: none;
+
+			@include breakpoint(sm) {
+				display: block;
+			}
+		}
+	}
+
+	.menu {
+
+		> .menu-item {
+
+			a {
+				@include breakpoint(sm) {
+					padding: 22px;
+
+					.shrink & {
+						padding: 16px 22px;
+					}
+				}
+			}
+
+			&:first-of-type a {
+				@include breakpoint(sm) {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}

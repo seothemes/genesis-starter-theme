@@ -1,5 +1,5 @@
 /* # Print Styles
----------------------------------------------------------------------------------------------------- */
+--------------------------------------------- */
 
 @media print {
 
@@ -57,7 +57,7 @@
 
 	blockquote,
 	pre {
-		border: 1px solid $color-outline;
+		border: 1px solid $color-border;
 		page-break-inside: avoid;
 	}
 

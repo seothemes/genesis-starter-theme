@@ -1,0 +1,60 @@
+/* ## Easy Widget Columns
+--------------------------------------------- */
+
+.widget-row {
+	padding: 10% 0;
+	border-bottom: 1px solid $color-border;
+
+	@include breakpoint(sm) {
+		padding: 7.5% 0;
+	}
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+
+	&.icons {
+
+		.widget_sp_image {
+			position: relative;
+			display: block;
+
+			.widget-title {
+				line-height: 1;
+			}
+
+			.alignleft {
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				+ .widget-title,
+				~ p {
+					padding-left: 6rem;
+				}
+			}
+
+			.aligncenter {
+
+				+ .widget-title,
+				~ p {
+					text-align: center;
+					display: block;
+				}
+			}
+
+			.alignright {
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				+ .widget-title,
+				~ p {
+					text-align: right;
+					float: right;
+					padding-right: 6rem;
+				}
+			}
+		}
+	}
+}

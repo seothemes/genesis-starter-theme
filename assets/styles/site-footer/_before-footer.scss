@@ -1,0 +1,27 @@
+/* ## Before Footer
+--------------------------------------------- */
+
+.before-footer {
+	border-top: 1px solid $color-border;
+
+	.widget {
+		margin-bottom: 0;
+	}
+
+	.widget-row {
+
+		.wrap {
+
+			@include breakpoint(sm) {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: bottom;
+
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

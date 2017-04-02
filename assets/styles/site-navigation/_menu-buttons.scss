@@ -1,0 +1,115 @@
+/* ## Responsive Navigation
+--------------------------------------------- */
+
+.menu-toggle {
+	border-width: 0;
+	background-color: transparent;
+	color: $color-text;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	padding: 20px 25px 20px 0;
+	line-height: 20px;
+	position: relative;
+	right: 0;
+	z-index: 9;
+	float: right;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline: none;
+		box-shadow: none;
+		color: $color-text;
+	}
+
+	@include breakpoint(sm) {
+		padding: 30px 30px 30px 0;
+	}
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+
+	span {
+		position: absolute;
+		right: 0;
+		width: 20px;
+		height: 2px;
+		background-color: $color-text;
+		display: block;
+		float: left;
+		top: calc(50% - 7px);
+		@include transition;
+
+		&:nth-of-type(2),
+		&:nth-of-type(3) {
+			top: calc(50% - 1px);
+		}
+
+		&:nth-of-type(4) {
+			top: calc(50% + 5px);
+		}
+	}
+
+	&.activated {
+		span {
+			top: calc(50% - 1px);
+			opacity: 0;
+
+			&:nth-of-type(2) {
+				transform: rotate(45deg);
+				opacity: 1;
+			}
+
+			&:nth-of-type(3) {
+				transform: rotate(-45deg);
+				opacity: 1;
+			}
+		}
+	}
+
+	&.toggle-secondary {
+		float: none;
+		margin: 0 auto;
+
+		@include breakpoint(sm) {
+			padding: 20px 25px 20px 0;
+		}
+	}
+}
+
+.sub-menu-toggle {
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-width: 0;
+	background-color: transparent;
+
+	&:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: calc(50% - 2.5px);
+		right: calc(50% - 5px);
+		width: 0;
+		height: 0;
+		border: 5px solid transparent;
+		border-top: 5px solid $color-text;
+		text-rendering: auto;
+		-webkit-transform: translate(0, 0);
+		-ms-transform:     translate(0, 0);
+		transform:         translate(0, 0);
+	}
+
+	&.activated:before {
+		border-top: none;
+		border-bottom: 5px solid $color-text;
+	}
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+}

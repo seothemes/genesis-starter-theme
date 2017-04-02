@@ -1,0 +1,20 @@
+/* ## Titles
+--------------------------------------------- */
+
+.author-box-title {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.entry-title {
+
+	a {
+		color: $color-accent;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus {
+		color: $color-accent;
+	}
+}

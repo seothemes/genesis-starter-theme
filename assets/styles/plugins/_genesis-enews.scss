@@ -1,0 +1,50 @@
+/* ## Genesis eNews Extended
+--------------------------------------------- */
+
+.sidebar {
+
+	.enews-widget {
+		color: $color-white;
+		background-color: $color-accent;
+
+		.widget-title {
+			color: $color-white;
+		}
+
+		input {
+
+			&[type="submit"] {
+				background-color: $color-white;
+				color: $color-accent;
+
+				&:hover,
+				&:focus  {
+					background-color: $color-border;
+					color: $color-accent;
+				}
+			}
+		}
+	}
+}
+
+.enews-widget {
+
+	input {
+
+		&[type="email"] {
+			width: 80%;
+			float: left;
+		}
+
+		&[type="submit"] {
+			margin: 0;
+			width: 20%;
+			float: left;
+			padding: 11px 0;
+		}
+	}
+}
+
+.enews form + p {
+	margin-top: 24px;
+}

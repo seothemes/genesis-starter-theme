@@ -1,0 +1,22 @@
+/* ## Genesis
+--------------------------------------------- */
+
+.breadcrumb {
+	margin-bottom: 1px;
+	padding: 0 0 12px;
+}
+
+.after-entry,
+.author-box {
+	font-size: $font-size-body * 1.1;
+	margin-bottom: 5%;
+
+	@include breakpoint(sm) {
+		margin-bottom: 40px;
+	}
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+	margin-bottom: 0;
+}

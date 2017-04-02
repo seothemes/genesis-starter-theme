@@ -1,0 +1,21 @@
+/* ## Footer Widgets
+--------------------------------------------- */
+
+.footer-widgets {
+
+	.widget {
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.widget-title {
+		font-size: $font-size-heading * .9;
+		display: block;
+
+		@include breakpoint(sm) {
+			font-size: $font-size-heading * 1;
+		}
+	}
+}

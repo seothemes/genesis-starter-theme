@@ -1,0 +1,59 @@
+/* ## Before Header
+--------------------------------------------- */
+
+.before-header {
+	border-bottom: 1px solid $color-border;
+	font-size: $font-size-body * 0.82;
+	position: relative;
+	width: 100%;
+	z-index: 99;
+
+	.wrap {
+		position: relative;
+		padding: 3px 5%;
+
+		@include breakpoint(sm) {
+			padding: 5px 0;
+		}
+	}
+
+	.widget,
+	.widget-title,
+	p {
+		margin-bottom: 0;
+		font-size: $font-size-body * 0.82;
+		float: left;
+	}
+
+	.close-before-header {
+		background: none;
+		color: transparent;
+		float: right;
+		padding: 0;
+		position: relative;
+		width: 1.6rem;
+		height: 1.6rem;
+		font-size: 0;
+		display: block;
+
+		&:before,
+		&:after {
+			content: " ";
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: 15px;
+			width: 2px;
+			background-color: $color-text;
+			transform: rotate(-45deg);
+			margin: auto;
+		}
+
+		&:after {
+			transform: rotate(45deg);
+		}
+	}
+}
