@@ -15,60 +15,70 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Check for theme support.
+ * Genesis Starter widget areas.
+ *
+ * Moved to a lower priority so that page widgets
+ * are shown above site-wide widget areas.
  */
-if ( ! current_theme_supports( 'widget-areas' ) ) {
-	return;
-}
+function starter_register_widget_areas() {
 
-// Create array of widget area IDs and locations.
-$starter_widget_areas = array(
-
-	'before-footer'  => 'genesis_footer',
-	'footer-widgets' => 'genesis_footer',
-	'after-footer'   => 'genesis_footer',
-	'front-page-1'   => 'front_page_widgets',
-	'front-page-2'   => 'front_page_widgets',
-	'front-page-3'   => 'front_page_widgets',
-	'front-page-4'   => 'front_page_widgets',
-	'front-page-5'   => 'front_page_widgets',
-
-);
-
-/**
- * Register widget areas.
- */
-// Loop through widget areas in array.
-foreach ( $starter_widget_areas as $id => $location ) {
-
-	// Format ID for use as widget name.
-	$name = ucwords( str_replace( '-', ' ', $id ) );
-
-	// Register sidebar.
+	// Register before header widget area.
 	genesis_register_sidebar( array(
-		'id'            => $id,
-		'name'          => $name,
-		'description'   => sprintf( 'This is the %1$s widget area which will appear in the %2$s section.', strtolower( $name ), str_replace( '_', ' ', $location ) ),
+		'id'          => 'before-header',
+		'name'        => __( 'Before Header', 'genesis-starter' ),
+		'description' => __( 'This is the before header section.', 'genesis-starter' ),
+	) );
+
+	// Register header-right widget area.
+	genesis_register_sidebar( array(
+		'id'          => 'header-right',
+		'name'        => __( 'Header Right', 'genesis-starter' ),
+		'description' => __( 'This is the header right section.', 'genesis-starter' ),
+	) );
+
+	// Register header-right widget area.
+	genesis_register_sidebar( array(
+		'id'          => 'sidebar',
+		'name'        => __( 'Sidebar', 'genesis-starter' ),
+		'description' => __( 'This is the sidebar section.', 'genesis-starter' ),
+	) );
+
+	// Register before footer widget area.
+	genesis_register_sidebar( array(
+		'id'          => 'before-footer',
+		'name'        => __( 'Before Footer', 'genesis-starter' ),
+		'description' => __( 'This is the before footer section.', 'genesis-starter' ),
+	) );
+
+	// Register before footer widgets area.
+	genesis_register_sidebar( array(
+		'id'          => 'footer-widgets',
+		'name'        => __( 'Footer Widgets', 'genesis-starter' ),
+		'description' => __( 'This is the footer widgets section.', 'genesis-starter' ),
 	) );
 }
+add_action( 'widgets_init', 'starter_register_widget_areas', 99 );
 
 /**
- * Display footer widget areas.
+ * Display before-header widget area.
  */
-function starter_footer_widget_areas() {
+function starter_before_footer_widget_area() {
 
-	global $starter_widget_areas;
-
-	// Loop through all widget areas.
-	foreach ( $starter_widget_areas as $id => $location ) {
-
-		// Display if location is `genesis_footer`.
-		if ( 'genesis_footer' === $location ) {
-			genesis_widget_area( $id, array(
-				'before' => sprintf( '<div class="%s%s"><div class="wrap">', $id, starter_widgets_flex_class( $id ) ),
-				'after' => '</div></div>',
-			) );
-		}
-	}
+	genesis_widget_area( 'before-footer', array(
+	    'before' => '<div class="before-footer"><div class="wrap">',
+	    'after'	=> '</div></div>',
+	) );
 }
-add_action( 'genesis_footer', 'starter_footer_widget_areas', 8 );
+add_action( 'genesis_before_footer', 'starter_before_footer_widget_area', 5 );
+
+/**
+ * Display before-header widget area.
+ */
+function starter_footer_widgets_area() {
+
+	genesis_widget_area( 'footer-widgets', array(
+	    'before' => '<div class="footer-widgets">',
+	    'after' => '</div>',
+	) );
+}
+add_action( 'genesis_footer', 'starter_footer_widgets_area', 6 );
