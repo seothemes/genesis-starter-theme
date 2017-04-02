@@ -26,6 +26,7 @@ theme/
 │   │	├── class-genesis-hero.php
 │   │	└── class-require-plugins.php
 │   ├── clean-up/
+│   │	├── clean-body-class.php	
 │   │	├── clean-gallery.php
 │   │	├── clean-genesis.php
 │   │	├── clean-jquery.php
@@ -45,8 +46,6 @@ theme/
 │   ├── widget-areas.php
 │   └── woocommerce.php
 ├── node_modules/
-├── pro/
-│   └── starter-pro.php
 ├── templates/
 │   ├── image-widget.php/
 │   ├── page-narrow.php/
