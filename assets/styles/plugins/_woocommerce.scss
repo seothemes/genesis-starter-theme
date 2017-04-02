@@ -58,21 +58,47 @@
 		}
 	}
 
-	ul.products li.product {
+	ul.products {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 
-		h3,
-		.price .from {
-			color: $color-text;
+		&:before,
+		&:after {
+			display: none;
 		}
 
-		h3:hover,
-		.price {
-			color: $color-accent;
-		}
+		li.product {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			box-shadow: none;
 
-		/* MS Edge Bug Fix */
-		a {
-			@include transition;
+			&:before,
+			&:after {
+				display: none;
+			}
+
+			h3,
+			.price .from {
+				color: $color-text;
+			}
+
+			h3:hover,
+			.price {
+				color: $color-text;
+			}
+
+			.woocommerce-LoopProduct-link {
+				display: block;
+				align-self: flex-start;
+				@include transition;
+			}
+
+			.button {
+				display: block;
+				align-self: flex-end;
+			}
 		}
 	}
 }
@@ -109,6 +135,7 @@
 /* ### WooCommerce Product Tabs */
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding-left: 5px;
 
 	&::before,
 	li {
@@ -295,7 +322,7 @@
 	input.button[type="submit"],
 	#respond input#submit,
 	#respond input#submit.alt {
-		background-color: $color-text;
+		background-color: $color-accent;
 		border: 0;
 		border-radius: 0;
 		color: $color-white;
@@ -310,15 +337,14 @@
 
 		&:focus,
 		&:hover {
-			background-color: $color-accent;
-			color: $color-white;
+			box-shadow: inset 0 0 0 999px hsla(0,0%,100%,.15);
 		}
 
 		&.disabled,
 		&:disabled,
 		&:disabled[disabled] {
-			background-color: $color-text;
-			color: $color-white;
+			background-color: $color-border;
+			color: $color-text;
 			padding: 16px 24px;
 		}
 
@@ -329,7 +355,7 @@
 		&[disabled]:disabled,
 		&[disabled]:disabled:hover {
 			background-color: $color-border;
-			color: $color-text;
+			color: $color-accent;
 		}
 	}
 
@@ -482,10 +508,9 @@
 	#reviews #comments ol.commentlist li {
 		background: transparent;
 		border: 0;
-		margin: 0 16px 24px 0;
+		margin: 2rem 0 3rem;
 		padding: 0;
 		position: relative;
-		width: 60px;
 
 		img.avatar {
 			background: transparent;
@@ -493,13 +518,12 @@
 			margin: 0 16px 24px 0;
 			padding: 0;
 			position: relative;
-			width: 60px;
 		}
 
 		.comment-text {
-			border-color: $color-border;
+			border-color: transparent;
 			border-radius: 0;
-			margin-left: 80px;
+			padding: 0;
 		}
 	}
 

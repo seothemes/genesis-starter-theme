@@ -97,7 +97,7 @@ function starter_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'alignleft',
-		'background_color'       => '#777777',
+		'background_color'       => '#555555',
 		'background_color_hover' => '#999999',
 		'border_radius'          => 0,
 		'border_color'           => '#ffffff',

@@ -2,16 +2,10 @@
 --------------------------------------------- */
 
 .entry {
-	margin-bottom: 5%;
+	margin-bottom: 10%;
 
-	.page &:last-of-type,
-	.archive &:last-of-type,
-	.single & {
+	&:last-of-type {
 		margin-bottom: 0;
-	}
-
-	@include breakpoint(sm) {
-		margin-bottom: 40px;
 	}
 }
 

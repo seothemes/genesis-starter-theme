@@ -62,75 +62,40 @@ add_action( 'genesis_site_title', 'starter_custom_logo', 0 );
  */
 function starter_custom_header() {
 
-	/**
-	 * Get the correct image or video.
-	 *
-	 * This requires that the hero section is available
-	 * because it is added to the `genesis_hero` hook.
-	 *
-	 * @since 1.5.0
-	 */
-	function starter_hero_image_video() {
+	// Get the featured image if one is set.
+	if ( get_the_post_thumbnail_url() ) {
 
-		if ( get_the_post_thumbnail_url() ) {
+		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 
-			if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+			$image = get_the_post_thumbnail_url( get_option( 'woocommerce_shop_page_id' ) );
 
-				// Get the shop page featured image instead of product.
-				$image = genesis_get_image( array(
-					'post_id'  => get_option( 'woocommerce_shop_page_id' ),
-				) );
-
-				// If no featured image use the header image.
-				if ( ! $image ) {
-					$image = get_header_image_tag();
-				}
-
-			} elseif ( is_home() ) {
-
-				// Get the blog page featured image instead of product.
-				$image = genesis_get_image( array(
-					'post_id'  => get_option( 'page_for_posts' ),
-				) );
-
-				// If no featured image use the header image.
-				if ( ! $image ) {
-					$image = get_header_image_tag();
-				}
-
-			} elseif ( is_archive() || is_category() || is_tag() || is_tax() || is_home() ) {
-
-				// Don't get archive featured images (because it uses the first post image).
-				$image = get_header_image_tag();
-
-			} else {
-
-				// Get the featured image.
-				$image = genesis_get_image();
-
+			if ( ! $image ) {
+				$image = get_header_image();
 			}
-		} elseif ( has_header_image() ) {
+		} elseif ( is_home() ) {
 
-			// If no featured image use the header image.
-			$image = get_header_image_tag();
+			$image = get_the_post_thumbnail_url( get_option( 'page_for_posts' ) );
 
-		}
+			if ( ! $image ) {
+				$image = get_header_image();
+			}
+		} elseif ( is_archive() || is_category() || is_tag() || is_tax() || is_home() ) {
+			$image = get_header_image();
 
-		if ( is_front_page() && has_header_video() ) {
-
-			// Don't display an image.
-			$image = null;
-
-			// Display the video instead.
-			the_custom_header_markup();
-
-		} elseif ( $image ) {
-
-			// Wrap output in .wp-custom-header for consistency.
-			echo '<div class="wp-custom-header">' . $image . '</div>';
+		} else {
+			$image = get_the_post_thumbnail_url();
 
 		}
+	} elseif ( has_header_image() ) {
+		$image = get_header_image();
 
 	}
-	add_action( 'genesis_hero', 'starter_hero_image_video', 13 );
+
+	// Use video on front page if available.
+	if ( is_front_page() && has_header_video() ) {
+		add_action( 'genesis_hero', 'the_custom_header_markup', 13 );
+
+	} else {
+		printf( '<style>.hero-section { background-image: url(%s); }</style>', $image );
+	}
 }

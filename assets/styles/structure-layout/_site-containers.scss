@@ -21,8 +21,12 @@
 
 .site-inner {
 	clear: both;
-	padding: 5% 0;
+	padding: 10% 0;
 	word-wrap: break-word;
+
+	@include breakpoint(sm) {
+		padding: 5% 0;
+	}
 }
 
 .site-inner,
@@ -37,6 +41,7 @@
 
 		.wide & {
 			max-width: 90%;
+			padding: 0;
 		}
 	}
 }

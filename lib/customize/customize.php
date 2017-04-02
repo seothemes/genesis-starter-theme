@@ -28,7 +28,7 @@ function starter_customize_register( $wp_customize ) {
 	$wp_customize->remove_setting( 'background_color' );
 
 	// Rename header image section.
-	$wp_customize->get_section( 'header_image' )->title = __( 'Hero Image', 'genesis-starter' );
+	$wp_customize->get_section( 'header_image' )->title = __( 'Hero Section', 'genesis-starter' );
 
 }
 add_action( 'customize_register', 'starter_customize_register' );

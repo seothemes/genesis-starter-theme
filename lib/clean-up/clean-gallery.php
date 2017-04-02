@@ -160,7 +160,7 @@ final class Clean_Gallery {
 		remove_filter( 'wp_get_attachment_link',             array( $this, 'get_attachment_link'         ) );
 
 		// Gallery attributes.
-		$gallery_attr .= sprintf( ' class="gallery gallery-columns-%1$s"', esc_attr( $this->args['columns'] ) );
+		$gallery_attr = sprintf( ' class="gallery gallery-columns-%1$s"', esc_attr( $this->args['columns'] ) );
 		$gallery_attr .= sprintf( ' itemscope itemtype="%s"', esc_attr( $this->get_gallery_itemtype() ) );
 
 		// Return out very nice, valid HTML gallery.

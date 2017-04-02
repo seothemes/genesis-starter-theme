@@ -15,9 +15,7 @@
 }
 
 .screen-reader-text:focus,
-.screen-reader-shortcut:focus,
-.genesis-nav-menu .search input[type="submit"]:focus,
-.widget_search input[type="submit"]:focus {
+.screen-reader-shortcut:focus {
 	clip: auto !important;
 	height: auto;
 	width: auto;

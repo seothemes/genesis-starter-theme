@@ -106,6 +106,18 @@ add_theme_support( 'custom-header', array(
 	'wp-head-callback'	=> 'starter_custom_header',
 ) );
 
+// Register default header (just in case).
+register_default_headers( array(
+	'child' => array(
+		'url'           => '%2$s/assets/images/hero.jpg',
+		'thumbnail_url' => '%2$s/assets/images/hero.jpg',
+		'description'   => __( 'Hero Image', 'genesis-starter' ),
+	),
+) );
+
+// Add WooCommerce support for Genesis layouts (sidebar, full-width, etc).
+add_post_type_support( 'post', 'genesis-cpt-archives-settings' );
+
 /**
  * Theme includes.
  */

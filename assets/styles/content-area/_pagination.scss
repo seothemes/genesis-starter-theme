@@ -3,11 +3,7 @@
 
 .pagination {
 	clear: both;
-	margin: 5% auto 0;
-
-	@include breakpoint(sm) {
-		margin: 40px 0 0;
-	}
+	margin: 10% auto 0;
 }
 
 .adjacent-entry-pagination {

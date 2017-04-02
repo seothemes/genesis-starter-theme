@@ -10,7 +10,7 @@
  */
 
 // Add WooCommerce support for Genesis layouts (sidebar, full-width, etc).
-add_post_type_support( 'product', array( 'genesis-layouts', 'genesis-seo' ) );
+add_post_type_support( 'product', array( 'genesis-layouts', 'genesis-seo', 'genesis-cpt-archives-settings' ) );
 
 // Unhook WooCommerce Sidebar - use Genesis Sidebars instead.
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );

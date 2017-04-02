@@ -4,18 +4,19 @@
 .search-form {
 	display: block;
 	width: 100%;
+	@include clearfix;
 
 	input[type="search"] {
 		float: left;
-		width: auto;
-		padding: 12px 14px;
-		line-height: 1;
+		width: 80%;
 	}
 
 	input[type="submit"] {
 		float: right;
 		display: inline-block;
-		padding: 15px;
+		width: 20%;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.entry-content & {

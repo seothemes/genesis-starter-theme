@@ -11,8 +11,12 @@
 		padding-bottom: 5%;
 	}
 
-	.wrap {
+	> .wrap {
 		position: relative;
+
+		> p {
+			max-width: 90%;
+		}
 	}
 
 	p {
