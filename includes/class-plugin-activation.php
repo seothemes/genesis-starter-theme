@@ -62,12 +62,6 @@ function starter_register_required_plugins() {
 		),
 
 		array(
-			'name'      => 'WooCommerce',
-			'slug'      => 'woocommerce',
-			'required'  => false,
-		),
-
-		array(
 			'name'      => 'WP Featherlight',
 			'slug'      => 'wp-featherlight',
 			'required'  => false,

@@ -191,9 +191,6 @@ include_once( get_stylesheet_directory() . '/includes/class-plugin-activation.ph
 // Load theme widget areas.
 include_once( get_stylesheet_directory() . '/includes/widget-areas.php' );
 
-// Load WooCommerce functionality.
-include_once( get_stylesheet_directory() . '/includes/woocommerce.php' );
-
 // Load customizer controls and settings.
 include_once( get_stylesheet_directory() . '/includes/customizer-settings.php' );
 
