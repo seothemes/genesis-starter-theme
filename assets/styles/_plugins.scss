@@ -1,0 +1,175 @@
+/* ## Simple Social Icons
+--------------------------------------------- */
+
+.simple-social-icons {
+
+	ul.alignleft {
+
+		li {
+			margin-left: 0 !important;
+			margin-right: .618em !important;
+		}
+	}
+
+	ul.alignright {
+
+		li {
+			margin-left: .618em !important;
+			margin-right: 0 !important;
+		}
+	}
+
+}
+
+/* ## Genesis Testimonial Slider
+--------------------------------------------- */
+
+div.lSSlideOuter {
+	padding: 4rem 0;
+
+	h5 {
+		font-size: $font-size-body * 1.1;
+		margin-bottom: 0.382em;
+
+		@include breakpoint(sm) {
+			font-size: $font-size-body * 1.2;
+		}
+	}
+
+	blockquote {
+		padding: 0 1.5em;
+
+		@include breakpoint(sm) {
+			padding: 0 3em;
+		}
+	}
+
+	ul.testimonials-list {
+		margin: 0 auto;
+
+		li {
+			text-align: center;
+			padding: 0 20px 0;
+			list-style-type: none;
+
+			blockquote {
+				margin: 0 0 2em;
+			}
+		}
+	}
+
+	.lSAction {
+
+		a {
+			font-family: 'FontAwesome';
+			display: block;
+			background: none;
+			@include transition;
+
+			&:hover {
+				color: $color-accent;
+			}
+		}
+
+		.lSPrev {
+			left: -1em;
+			text-align: right;
+
+			&:before {
+				content: "\f104";
+
+			}
+		}
+
+		.lSNext {
+			right: -1em;
+
+			&:before {
+				content: "\f105";
+			}
+
+		}
+	}
+
+	.lSPager.lSpg > li {
+		margin-top: 2em;
+
+		a {
+			background-color: $color-accent;
+			opacity: .382;
+		}
+
+		&.active a,
+		&:hover a {
+			background-color: $color-accent;
+			opacity: 1;
+		}
+	}
+}
+
+/* ## Genesis eNews Extended
+--------------------------------------------- */
+
+.enews-widget {
+
+	input {
+
+		&[type="email"] {
+			width: calc(70% - 1em);
+			float: left;
+		}
+
+		&[type="submit"] {
+			margin: 0;
+			width: 30%;
+			float: right;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.before-footer & {
+		position: relative;
+
+		.enews {
+
+			@include breakpoint(sm) {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		b,
+		p {
+			font-size: $font-size-heading;
+			margin-bottom: 0.5em;
+			line-height: 1;
+
+			@include breakpoint(sm) {
+				float: left;
+				width: 50%;
+				clear: both;
+				margin-bottom: 0;
+			}
+		}
+
+		p {
+			font-size: $font-size-body * 0.9;
+		}
+
+		form {
+
+			@include breakpoint(sm) {
+				float: right;
+				width: 50%;
+				clear: none;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+}
+
+.enews form + p {
+	margin-top: 24px;
+}

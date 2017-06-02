@@ -1,17 +1,22 @@
 /*!
-	Theme Name: Genesis Starter
-	Theme URI: http://www.seothemes.net/genesis-starter/
-	Description: This is the Genesis Starter theme created for the Genesis Framework.
-	Author: Seo Themes
-	Author URI: http://www.seothemes.net/
-	Version: 1.5.0
-	Text Domain: genesis-starter
-	Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-	Template: genesis
-	Template Version: 2.4.2
-	License: GPL-2.0+
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+ * Theme Name: Starter
+ * Theme URI: http://www.seothemes.net/starter/
+ * Description: A starter theme for the Genesis Framework.
+ * Author: Seo Themes
+ * Author URI: http://www.seothemes.net/
+ * Version: 0.1.0
+ * Text Domain: starter
+ * Tags: one-column, two-columns, left-sidebar, right-sidebar,
+ * accessibility-ready, custom-logo, custom-background,
+ * custom-colors, custom-header, custom-menu, featured-images,
+ * full-width-template, rtl-language-support, sticky-post,
+ * theme-options, threaded-comments, translation-ready.
+ * Template: genesis
+ * Template Version: 2.4.2
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * GitHub Theme URI: https://github.com/seothemes/starter
+ */
 
 /* # Table of Contents
 
@@ -80,59 +85,69 @@
 /* # Utilities
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'utilities/index';
+@import 'utilities';
 
 /* # HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'reset/index';
+@import 'reset';
 
 /* # Defaults
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'defaults/index';
+@import 'defaults';
 
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'structure-layout/index';
+@import 'structure-layout';
 
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'common-classes/index';
+@import 'common-classes';
 
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'site-header/index';
+@import 'site-header';
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'site-navigation/index';
+@import 'site-navigation';
 
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'content-area/index';
+@import 'content-area';
 
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'widgets/index';
+@import 'widgets';
 
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'site-footer/index';
+@import 'site-footer';
+
+/* # Front Page
+---------------------------------------------------------------------------------------------------- */
+
+@import 'front-page';
 
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'plugins/index';
+@import 'plugins';
+
+/* # WooCommerce
+---------------------------------------------------------------------------------------------------- */
+
+@import 'woocommerce';
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
-@import 'print-styles/index';
+@import 'print-styles';

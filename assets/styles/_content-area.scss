@@ -1,0 +1,226 @@
+/* ## Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	font-size: $font-size-body;
+	margin-top: 10%;
+
+	@include breakpoint(sm) {
+		margin-top: 4em;
+	}
+}
+
+.comment-list li {
+	padding: 40px 0 0 30px;
+}
+
+.comment-list .depth-1 {
+	padding-left: 0;
+}
+
+.comment-header {
+	margin-bottom: 1.382em;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	span[itemprop="name"] {
+		line-height: 2.5;
+		font-weight: $font-weight-bolder;
+	}
+}
+
+.comment-meta {
+	font-size: $font-size-body * 0.82;
+}
+
+.comment-content {
+	clear: both;
+	padding-left: 64px;
+
+	.entry-pings & {
+		padding: 1em 0 2em;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+}
+
+.comment-reply {
+	margin-left: 64px;
+	font-weight: $font-weight-bolder;
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.form-submit {
+	margin-bottom: 0;
+}
+
+@include breakpoint(sm) {
+
+	.comment-respond input[type="email"],
+	.comment-respond input[type="text"],
+	.comment-respond input[type="url"] {
+		width: 50%;
+	}
+}
+
+/* ## Entries
+--------------------------------------------- */
+
+.entry {
+	margin-bottom: 10%;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.entry-content {
+	@include clearfix;
+
+	ol,
+	ul {
+		margin-bottom: 28px;
+		margin-left: 40px;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+
+	code {
+		background-color: $color-light;
+		display: block;
+		padding: 1rem 2rem;
+		border: $border;
+		margin-top: 1em;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+.entry-content > p:first-of-type,
+.term-description p,
+.intro {
+	font-size: $font-size-heading;
+	margin-bottom: 2em;
+
+	@include breakpoint(sm) {
+		font-size: $font-size-heading * 1.146;
+	}
+
+	button,
+	.button {
+		font-size: $font-size-body * 0.82;
+		font-family: $font-body;
+	}
+}
+
+/* ## Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin-bottom: 0;
+}
+
+.entry-header .entry-meta {
+	margin-bottom: 24px;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}
+
+.entry-author-name {
+	text-transform: capitalize;
+}
+
+/* ## Pagination
+--------------------------------------------- */
+
+.pagination {
+	clear: both;
+	margin: 10% auto 0;
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination {
+
+	li {
+		display: inline;
+	}
+
+	a {
+		color: $color-body;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 16px;
+		font-size: 1.6rem;
+		padding: 8px 12px;
+		text-decoration: none;
+		border-radius: $border-radius;
+	}
+
+	li a {
+		margin-bottom: 4px;
+
+		@include breakpoint(sm) {
+			margin-bottom: 0;
+		}
+	}
+
+	a:hover,
+	.active a {
+		background-color: $color-accent;
+		color: $color-white;
+	}
+}
+
+/* # Sidebars
+--------------------------------------------- */
+
+.sidebar {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 10% auto 5%;
+
+	@include breakpoint(md) {
+		margin: 0 auto 40px;
+	}
+}

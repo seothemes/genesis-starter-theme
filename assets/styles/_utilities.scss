@@ -1,0 +1,106 @@
+/* # Functions
+-----------------------------------------------------------------------*/
+
+@function black( $opacity ) {
+    @return rgba(0, 10, 20, $opacity );
+}
+
+@function white( $opacity ) {
+    @return rgba( 255, 255, 255, $opacity );
+}
+
+/* # Variables
+-----------------------------------------------------------------------*/
+
+/* ### Breakpoints */
+
+$breakpoints: (
+	xs: 568px,
+	sm: 768px,
+	md: 1023px,
+	lg: 1158px,
+	xl: 1340px
+);
+
+/* ### Colors */
+
+$color-light:   #f5f5f5;
+$color-dark:    #2c2d33;
+$color-accent:  #2c2d33;
+$color-heading: #43454b;
+$color-body:    #55575d;
+$color-link:    #2c2d33;
+$color-white:   #ffffff;
+$color-success: #2ecc71;
+$color-error:   #f54d56;
+$color-info:    #3498db;
+$color-grey:	#a9abb5;
+$color-border:  black(0.075);
+
+/* ### Typography */
+
+$font-heading:        'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-body:           'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-size-heading:   20px;
+$font-size-body:      16px;
+$font-weight-normal:  400;
+$font-weight-bolder:  600;
+$font-weight-bold:    600;
+$line-height-heading: 1.382;
+$line-height-body:    1.618;
+
+/* ### Other */
+
+$border-radius:       1px;
+$border:			  1px solid $color-border;
+
+/* # Mixins
+-----------------------------------------------------------------------*/
+
+/* ### Media Queries */
+
+@mixin breakpoint( $breakpoint ) {
+
+    @if map-has-key( $breakpoints, $breakpoint ) {
+
+        @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+            @content;
+        }
+
+    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+
+        @media (min-width: $breakpoint ) {
+            @content;
+        }
+
+    } @else {
+
+        @warn "No value could be retrieved from `#{$breakpoint}`. "
+              + "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+    }
+}
+
+/* ### Clearfix */
+
+@mixin clearfix {
+	clear: both;
+
+	&:before,
+	&:after {
+		display: block;
+		content: '';
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* ### Transitions */
+
+@mixin transition {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}

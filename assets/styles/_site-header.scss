@@ -1,0 +1,307 @@
+/* ## Site Header
+--------------------------------------------- */
+
+.site-header {
+	position: absolute;
+	position: fixed;
+	position: relative;
+	width: 100%;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	background-color: $color-white;
+	box-shadow: 0 1px 0 $color-border;
+	@include transition;
+	@include clearfix;
+
+	> .wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include breakpoint(sm) {
+			padding: 0;
+			min-height: 6em;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	&.shrink {
+		background-color: $color-white;
+
+		> .wrap {
+			padding: 0 5%;
+
+			@include breakpoint(sm) {
+				padding: 0;
+			}
+		}
+	}
+
+	.custom-header & {
+		background-size: cover !important;
+		background-position: center !important;
+	}
+
+}
+
+/* ## Before Header
+--------------------------------------------- */
+
+.before-header {
+	display: block;
+	font-size: $font-size-body * 0.82;
+	font-weight: $font-weight-bolder;
+	border-bottom: $border;
+	background-color: $color-light;
+	position: relative;
+	width: 100%;
+	z-index: 99;
+	line-height: 1;
+	@include clearfix;
+
+	.wrap {
+		position: relative;
+		padding: 0.5em 5%;
+
+		@include breakpoint(sm) {
+			padding: 0.618em 0;
+		}
+	}
+
+	.widget,
+	.widget-title,
+	p {
+		margin-bottom: 0;
+		font-size: $font-size-body * 0.82;
+		float: left;
+	}
+
+	.fa-close {
+		position: absolute;
+		right: calc( 5% - 1em );
+		top: 0;
+		cursor: pointer;
+		line-height: 1;
+		height: 100%;
+		background: transparent;
+		color: $color-body;
+		padding: 0 1em;
+
+		@include breakpoint(sm) {
+			right: -1em;
+		}
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
+}
+
+/* ## Title Area
+--------------------------------------------- */
+
+.title-area {
+	margin: 0;
+	float: left;
+	position: relative;
+	height: 100%;
+	display: block;
+	flex: 1;
+	padding: 1.382em 0;
+
+	@include breakpoint(sm) {
+		margin-right: 3rem;
+		padding: 0;
+		flex: inherit;
+	}
+}
+
+.site-title {
+	font-size: $font-size-heading * 1.2;
+	font-family: $font-heading;
+	font-weight: $font-weight-bold;
+	line-height: 1;
+
+	a {
+		text-decoration: none;
+		color: $color-heading;
+	}
+}
+
+.site-description {
+	font-size: $font-size-heading * 0.75;
+	line-height: 1;
+
+	@include breakpoint(md) {
+		text-align: left;
+		line-height: $line-height-body;
+	}
+}
+
+.site-description,
+.site-title,
+.site-header .widget-area {
+	margin-bottom: 0;
+}
+
+.wp-custom-logo {
+
+	.title-area {
+		padding: 10px 0;
+		height: 60px;
+		width: auto;
+		@include transition;
+
+		@include breakpoint(sm) {
+			padding: 5px 0;
+		}
+
+		@include breakpoint(md) {
+			padding: 0;
+		}
+ 	}
+
+ 	.shrink .title-area {
+
+		@include breakpoint(md) {
+			padding: 10px 0;
+		}
+ 	}
+
+	.custom-logo-link {
+		display: flex;
+		height: 100%;
+		padding-bottom: 0.1em;
+		justify-content: flex-start;
+		float: left;
+
+		img {
+			width: auto;
+			height: 2rem;
+			margin: auto;
+			vertical-align: middle;
+
+		}
+	}
+}
+
+/* ## Header Widget Area
+--------------------------------------------- */
+
+.header-widget-area {
+	float: right;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: $color-light;
+	width: 100vw;
+	height: 6rem;
+	display: none;
+	z-index: 99;
+	box-shadow: inset 0 1px 0 $color-border, inset 0 -1px 0 $color-border;
+
+	@include breakpoint(sm) {
+		width: 100%;
+		padding-left: 2em;
+	}
+
+	@include breakpoint(md) {
+		display: block;
+		background-color: transparent;
+		position: static;
+		width: auto;
+		height: auto;
+		top: auto;
+		left: auto;
+		box-shadow: none;
+	}
+
+	.widget_search {
+		width: 100%;
+		padding: 0.5em 5%;
+
+		@include breakpoint(md) {
+			float: right;
+			padding: 0;
+			width: auto;
+		}
+	}
+}
+
+.search-toggle {
+	background-color: transparent;
+	font-size: $font-size-heading;
+	padding: 0 0.1em;
+	width: 2rem;
+	margin-left: 3rem;
+	color: $color-body;
+	display: block;
+
+	@include breakpoint(md) {
+		display: none;
+	}
+
+	&:hover {
+		color: $color-body;
+	}
+}
+
+/* ## After Header
+--------------------------------------------- */
+
+.after-header {
+	background-color: $color-light;
+	color: $color-grey;
+	font-size: $font-size-body;
+	font-weight: $font-weight-bolder;
+	padding: 1em 0;
+	@include clearfix;
+
+	.breadcrumb + & {
+		border-top: $border;
+	}
+}
+
+
+/* ## Custom Header
+--------------------------------------------- */
+
+.wp-custom-header {
+	position: relative;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	height: 200px;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100%;
+		height: auto;
+		min-height: 100%;
+		min-width: 100%;
+		object-fit: cover;
+	}
+}
+
+/* ## Hero Section
+--------------------------------------------- */
+
+.hero-section {
+	background-color: $color-light;
+	padding: 6rem 0;
+
+	@include breakpoint(sm) {
+		padding: 10rem 0;
+	}
+}

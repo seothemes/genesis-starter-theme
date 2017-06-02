@@ -1,6 +1,6 @@
 # Genesis Starter Theme
 
-A search engine optimized starter theme for the Genesis Framework with a modern development workflow.
+A search engine optimized, mobile-first starter theme for the Genesis Framework with a modern development workflow.
 
 
 ## Features
@@ -8,11 +8,16 @@ A search engine optimized starter theme for the Genesis Framework with a modern 
 * Optimized HTML, CSS & JS output
 * Sass for stylesheets
 * Gulp for compiling assets, optimizing images
-* Customizer toolkit
+* Customizer support
 * WooCommerce support
-* Hero section
+* Page Builder support
 * Video background
 * Page templates
+* Front page content setting
+* Front page order setting
+* Front page widgets setting
+* Footer widgets setting
+* Flexible widget areas
 
 
 ## Requirements
@@ -26,63 +31,68 @@ A search engine optimized starter theme for the Genesis Framework with a modern 
 
 ## Installation
 
-1. Upload the Genesis Starter theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)
-2. Go to your WordPress dashboard and select Appearance.
-3. Activate the Genesis Starter theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
-5. Inside your WordPress dashboard, go to Appearance > Customize and customize to your liking.
+1. Upload and install Genesis
+2. Upload, install and activate Genesis Starter
+3. Install and activate recommended plugins
+4. Delete existing post, pages, comments & widgets
+5. Import sample.xml from Tools > Import
+6. Import widgets.wie from Tools > Widget Importer & Exporter
+7. Go to Appearance > Customize > Site Identity to upload a logo
+8. Go to Appearamce > Customize > Header Media to upload hero image or video
+9. Go to Appearance > Customize > Menus to create menus
+11. Go to Appearance > Customize > Static Front Page and configure to your liking
+12. Go to Appearance > Customize > Site Layout and configure to your liking
+13. Go to Genesis > Theme Settings and enable Breadcrumbs on all pages
+
+
+## Widget Areas
+
+* Before header
+* Header right
+* After header
+* Primary sidebar
+* Shop sidebar
+* Before footer
+* Front page (unlimited) 
+* Footer widget (unlimited)
 
 
 ## Structure
 
 ```shell
 theme/  
-├── assets  
-│   ├── demo/  
-│   ├── fonts/  
-│   ├── images/  
-│   ├── scripts/  
-│   └── styles/  
-├── languages  
-│   └── genesis-starter.pot  
-├── lib/  
-│   ├── classes/  
-│   │   ├── class-genesis-hero.php  
-│   │   └── class-require-plugins.php  
-│   ├── clean-up/  
-│   │   ├── clean-body-class.php  
-│   │   ├── clean-gallery.php  
-│   │   ├── clean-genesis.php  
-│   │   ├── clean-jquery.php  
-│   │   ├── clean-wordpress.php  
-│   │   └── clean.php  
-│   ├── customize/  
-│   │   ├── customize-colors.php  
-│   │   ├── customize-header.php  
-│   │   ├── customize-typography.php  
-│   │   ├── class-starter-kirki.php  
-│   │   ├── include-kirki.php  
-│   │   └── customize.php  
-│   ├── demo-import.php  
-│   ├── header-functions.php  
-│   ├── theme-defaults.php  
-│   ├── theme-setup.php  
-│   ├── widget-areas.php  
-│   └── woocommerce.php  
-├── node_modules/  
-├── templates/  
-│   ├── image-widget.php/  
-│   ├── page-narrow.php/  
-│   └── page-wide.php/  
-├── .editorconfig  
-├── CHANGELOG.md  
-├── functions.php  
-├── gulpfile.js  
-├── package.json  
-├── README.md  
-├── screenshot.png  
-├── style.css  
-└── style.css.map  
+├── assets/
+│   ├── fonts/
+│   ├── images/
+│   ├── scripts/
+│   └── styles/
+├── includes/
+│   ├── class-clean-gallery.php
+│   ├── class-optimizations.php
+│   ├── class-plugin-activation.php
+│   ├── customizer-settings.php
+│   ├── customizer-output.php
+│   ├── helper-functions.php
+│   ├── theme-defaults.php
+│   ├── widget-areas.php
+│   └── woocommerce.php
+├── languages/
+│   └── genesis-starter.pot
+├── templates/
+│   ├── page-builder.php
+│   └── page-landing.php
+├── .editorconfig
+├── CHANGELOG.md
+├── front-page.php
+├── functions.php
+├── gulpfile.js
+├── package.json
+├── README.md
+├── sample.xml
+├── screenshot.png
+├── style.css
+├── style.css.map
+└── widgets.wie
 ```
 
 
@@ -131,4 +141,3 @@ If your local development URL is `my-site.dev`, update the file to read:
 ## Support
 
 Please visit https://seothemes.net/support/ for theme support.
-

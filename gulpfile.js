@@ -1,47 +1,41 @@
-/**
- * Gulp tasks for the Genesis Starter theme.
- *
- * @author Seo Themes
- * @version 1.4.0
- */
-
-'use strict';
-
 // Require our dependencies.
-var autoprefixer = require( 'autoprefixer' );
-var browserSync  = require( 'browser-sync' );
-var mqpacker 	 = require( 'css-mqpacker' );
-var gulp         = require( 'gulp' );
-var beautify  	 = require( 'gulp-cssbeautify' );
-var cache        = require( 'gulp-cached' );
-var cssnano 	 = require( 'gulp-cssnano');
-var filter       = require( 'gulp-filter' );
-var imagemin     = require( 'gulp-imagemin' );
-var notify       = require( 'gulp-notify' );
-var pixrem 		 = require( 'gulp-pixrem' );
-var plumber      = require( 'gulp-plumber' );
-var postcss 	 = require( 'gulp-postcss');
-var rename       = require( 'gulp-rename' );
-var sass         = require( 'gulp-sass' );
-var sort 		 = require( 'gulp-sort' );
-var sourcemaps   = require( 'gulp-sourcemaps' );
-var uglify       = require( 'gulp-uglify' );
-var wpPot 		 = require( 'gulp-wp-pot' );
-var zip 		 = require( 'gulp-zip' );
+var autoprefixer = require( 'autoprefixer' ),
+	browserSync  = require( 'browser-sync' ),
+	mqpacker 	 = require( 'css-mqpacker' ),
+	gulp         = require( 'gulp' ),
+	bump 		 = require( 'gulp-bump' ),
+	beautify  	 = require( 'gulp-cssbeautify' ),
+	cache        = require( 'gulp-cached' ),
+	cleancss 	 = require( 'gulp-clean-css' ),
+	cssnano 	 = require( 'gulp-cssnano' ),
+	filter       = require( 'gulp-filter' ),
+	imagemin     = require( 'gulp-imagemin' ),
+	notify       = require( 'gulp-notify' ),
+	pixrem 		 = require( 'gulp-pixrem' ),
+	plumber      = require( 'gulp-plumber' ),
+	postcss 	 = require( 'gulp-postcss' ),
+	rename       = require( 'gulp-rename' ),
+	replace 	 = require( 'gulp-replace' ),
+	sass         = require( 'gulp-sass' ),
+	sort 		 = require( 'gulp-sort' ),
+	sourcemaps   = require( 'gulp-sourcemaps' ),
+	uglify       = require( 'gulp-uglify' ),
+	wpPot 		 = require( 'gulp-wp-pot' ),
+	zip 		 = require( 'gulp-zip' );
 
 // Set assets paths.
-var js_src       = ['assets/scripts/*.js', '!assets/scripts/*.min.js'];
-var js_dest      = 'assets/scripts/min';
-var sass_src     = 'assets/styles/*.scss';
-var sass_dest    = './';
-var img_src      = ['assets/images/*', '!assets/images/*.svg'];
-var img_dest     = 'assets/images';
-var php_src		 = ['./*.php', './**/*.php', './**/**/*.php'];
-var php_dest	 = './';
+var js_src       = [ 'assets/scripts/*.js', '!assets/scripts/*.min.js' ],
+	js_dest      = 'assets/scripts/',
+	sass_src     = 'assets/styles/*.scss',
+	sass_dest    = './',
+	img_src      = [ 'assets/images/*', '!assets/images/*.svg' ],
+	img_dest     = 'assets/images',
+	php_src		 = [ './*.php', './**/*.php', './**/**/*.php' ],
+	php_dest	 = './';
 
 // Set BrowserSync proxy url.
-var dev_url       = 'genesis-starter.dev';
-var reload       = browserSync.reload;
+var dev_url      = 'genesis-starter.dev',
+	reload       = browserSync.reload;
 
 /**
  * Autoprefixed browser support.
@@ -49,17 +43,17 @@ var reload       = browserSync.reload;
  * https://github.com/ai/browserslist
  */
 const AUTOPREFIXER_BROWSERS = [
-	'last 2 version',
-	'> 1%',
-	'ie >= 9',
-	'ie_mob >= 10',
-	'ff >= 30',
-	'chrome >= 34',
-	'safari >= 7',
-	'opera >= 23',
-	'ios >= 7',
+	'last 2 versions',
+	'> 0.25%',
+	'ie >= 8',
+	'ie_mob >= 9',
+	'ff >= 28',
+	'chrome >= 40',
+	'safari >= 6',
+	'opera >= 22',
+	'ios >= 6',
 	'android >= 4',
-	'bb >= 10'
+	'bb >= 9'
 ];
 
 /**
@@ -69,23 +63,23 @@ const AUTOPREFIXER_BROWSERS = [
  */
 gulp.task( 'sass', function () {
 
-    gulp.src( sass_src )
+	gulp.src( sass_src )
 
-        // Notify on error
-        .pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		// Notify on error
+		.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 
-        // Source maps init
-        .pipe( sourcemaps.init() )
+		// Source maps init
+		.pipe( sourcemaps.init() )
 
-        // Process sass
-        .pipe( sass( {
-            outputStyle: 'expanded'
-        } ) )
+		// Process sass
+		.pipe( sass( {
+			outputStyle: 'expanded'
+		} ) )
 
-        // Pixel fallbacks for rem units.
+		// Pixel fallbacks for rem units.
 		.pipe( pixrem() )
 
-        // Parse with PostCSS plugins.
+		// Parse with PostCSS plugins.
 		.pipe( postcss( [
 			autoprefixer( {
 				browsers: AUTOPREFIXER_BROWSERS
@@ -95,25 +89,69 @@ gulp.task( 'sass', function () {
 			} ),
 		] ) )
 
-        // Minify and optimize style.css.
-        .pipe(cssnano( {
-        	safe: true // Use safe optimizations.
-        } ) )
+		// Format non-minified stylesheet.
+		.pipe ( cleancss( {
+			level: {
+				2: {
+					 all: true
+				}
+			},
+			format: {
+				breaks: {
+					afterAtRule: true,
+					afterBlockBegins: true,
+					afterBlockEnds: true,
+					afterComment: true,
+					afterProperty: true,
+					afterRuleBegins: true,
+					afterRuleEnds: true,
+					beforeBlockEnds: true,
+					betweenSelectors: true
+				},
+				indentBy: 1,
+				indentWith: 'tab',
+				spaces: {
+					aroundSelectorRelation: true,
+					beforeBlockBegins: true,
+					beforeValue: true
+				},
+				wrapAt: false
+			}
+		} ) )
 
-        // Write source map
-        .pipe( sourcemaps.write( sass_dest ) )
+		// Output non minified css to this directory.
+		.pipe( gulp.dest( sass_dest ) )
 
-        // Output the compiled sass to this directory
-        .pipe( gulp.dest( sass_dest ) )
+		// Process sass again.
+		.pipe( sass( {
+			outputStyle: 'compressed'
+		} ) )
 
-        // Filtering stream to only css files
-        .pipe( filter( '**/*.css' ) )
+		// Minify and optimize style.css again.
+		.pipe( cssnano( {
+			safe: false,
+			discardComments: {
+				removeAll: true,
+			},
+		} ) )
 
-        // Inject changes via browsersync
-        .pipe( reload( {stream: true } ) )
+		// Add .min suffix.
+		.pipe( rename( { suffix: '.min' } ) )
 
-        // Notify on successful compile (uncomment for notifications)
-        .pipe( notify( "Compiled: <%= file.relative %>" ) );
+		// Write source map
+		.pipe( sourcemaps.write( sass_dest ) )
+
+		// Output the compiled sass to this directory
+		.pipe( gulp.dest( sass_dest ) )
+
+		// Filtering stream to only css files
+		.pipe( filter( '**/*.css' ) )
+
+		// Inject changes via browsersync
+		.pipe( reload( { stream: true } ) )
+
+		// Notify on successful compile (uncomment for notifications)
+		.pipe( notify( "Compiled: <%= file.relative %>" ) );
 } );
 
 /**
@@ -123,27 +161,27 @@ gulp.task( 'sass', function () {
  */
 gulp.task( 'scripts', function () {
 
-    gulp.src( js_src )
-        // Notify on error.
-        .pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+	gulp.src( js_src )
+		// Notify on error.
+		.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 
-        // Cache files to avoid processing files that haven't changed.
-        .pipe( cache( 'scripts' ) )
+		// Cache files to avoid processing files that haven't changed.
+		.pipe( cache( 'scripts' ) )
 
-        // Add .min suffix.
-        .pipe( rename( { suffix: '.min' } ) )
+		// Add .min suffix.
+		.pipe( rename( { suffix: '.min' } ) )
 
-        // Minify.
-        .pipe( uglify() )
+		// Minify.
+		.pipe( uglify() )
 
-        // Output the processed js to this directory.
-        .pipe( gulp.dest( js_dest ) )
+		// Output the processed js to this directory.
+		.pipe( gulp.dest( js_dest ) )
 
-        // Inject changes via browsersync.
-        .pipe( reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe( reload( { stream: true } ) )
 
-        // Notify on successful compile.
-        .pipe( notify( "Minified: <%= file.relative %>" ) );
+		// Notify on successful compile.
+		.pipe( notify( "Minified: <%= file.relative %>" ) );
 } );
 
 /**
@@ -152,26 +190,26 @@ gulp.task( 'scripts', function () {
  * https://www.npmjs.com/package/gulp-imagemin
  */
 gulp.task( 'images', function () {
-    return gulp.src( img_src )
-        // Notify on error.
-        .pipe( plumber( {errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+	return gulp.src( img_src )
+		// Notify on error.
+		.pipe( plumber( {errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 
-        // Cache files to avoid processing files that haven't changed.
-        .pipe( cache( 'images' ) )
+		// Cache files to avoid processing files that haven't changed.
+		.pipe( cache( 'images' ) )
 
-        // Optimise images.
-        .pipe( imagemin( {
-            progressive: true
-        } ) )
+		// Optimise images.
+		.pipe( imagemin( {
+			progressive: true
+		} ) )
 
-        // Output the optimised images to this directory.
-        .pipe( gulp.dest( img_dest ) )
+		// Output the optimised images to this directory.
+		.pipe( gulp.dest( img_dest ) )
 
-        // Inject changes via browsersync.
-        .pipe( reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe( reload( { stream: true } ) )
 
-        // Notify on successful compile.
-        .pipe( notify( "Optimised: <%= file.relative %>" ) );
+		// Notify on successful compile.
+		.pipe( notify( "Optimised: <%= file.relative %>" ) );
 } );
 
 /**
@@ -184,10 +222,10 @@ gulp.task( 'i18n', function() {
 	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 	.pipe( sort() )
 	.pipe( wpPot( {
-		domain: 'genesis-starter',
-		destFile:'genesis-starter.pot',
-		package: 'genesis-starter',
-		bugReport: 'http://genesis-starter.com',
+		domain: 'starter',
+		destFile:'translate.pot',
+		package: 'GenesisStarter',
+		bugReport: 'https://seothemes.net/support',
 		lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
 		team: 'Seo Themes <seothemeswp@gmail.com>'
 	} ) )
@@ -195,25 +233,31 @@ gulp.task( 'i18n', function() {
 } );
 
 /**
- * Process tasks and reload browsers on file changes.
+ * Manually bumps version.
  *
- * https://www.npmjs.com/package/browser-sync
+ * https://www.npmjs.com/package/gulp-bump
  */
-gulp.task( 'watch', function() {
+gulp.task( 'bump', function() {
 
-	// Kick off BrowserSync.
-    browserSync( {
-        proxy: dev_url,
-        notify: false,
-        open: false
-    } );
+	var oldversion = '1.5.0';
+	var newversion = '1.6.0';
 
-    // Run tasks when files change.
-    gulp.watch( [sass_src, 'assets/styles/**/*.scss'], ['sass'] );
-    gulp.watch( js_src, ['scripts'] );
-    gulp.watch( img_src, ['images'] );
-    gulp.watch( php_src ).on( "change", reload );
-} );
+	gulp.src( [ './package.json', './style.css' ] )
+	.pipe( bump( { version: newversion } ) )
+	.pipe( gulp.dest( './' ) );
+
+	gulp.src( [ './gulpfile.js' ] )
+	.pipe( replace( "oldversion = " + oldversion + ";", "oldversion = " + newversion + ";" ) )
+	.pipe( gulp.dest( './' ) );
+
+	gulp.src( [ './functions.php' ] )
+	.pipe( replace( "'CHILD_THEME_VERSION', '" + oldversion, "'CHILD_THEME_VERSION', '" + newversion ) )
+	.pipe( gulp.dest( './' ) );
+
+	gulp.src( './assets/styles/style.scss' )
+	.pipe( bump( { version: newversion } ) )
+	.pipe( gulp.dest( './assets/styles/' ) );
+});
 
 /**
  * Package theme.
@@ -224,20 +268,40 @@ gulp.task( 'zip', function() {
 
 	gulp.src( '*.css' )
 
-        // Beautify CSS.
-        .pipe( beautify() )
-	    .pipe( gulp.dest( './' ) );
+		// Beautify CSS.
+		.pipe( beautify() )
+		.pipe( gulp.dest( './' ) );
 
 	// Create zip file and ignore the following.
 	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**' ] )
 		.pipe( zip( __dirname.split( "/" ).pop() + '.zip' ) )
 		.pipe( gulp.dest( '../' ) );
+} );
 
+/**
+ * Process tasks and reload browsers on file changes.
+ *
+ * https://www.npmjs.com/package/browser-sync
+ */
+gulp.task( 'watch', function() {
+
+	// Kick off BrowserSync.
+	browserSync( {
+		proxy: dev_url,
+		notify: false,
+		open: false
+	} );
+
+	// Run tasks when files change.
+	gulp.watch( [sass_src, 'assets/styles/**/*.scss' ], [ 'sass' ] );
+	gulp.watch( js_src, [ 'scripts' ] );
+	gulp.watch( img_src, [ 'images' ] );
+	gulp.watch( php_src ).on( "change", reload );
 } );
 
 /**
  * Create default task.
  */
-gulp.task( 'default', ['watch'], function() {
-    gulp.start( 'sass', 'scripts', 'images' );
+gulp.task( 'default', [ 'watch' ], function() {
+	gulp.start( 'sass', 'scripts', 'images' );
 } );

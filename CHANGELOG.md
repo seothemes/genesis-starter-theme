@@ -1,5 +1,8 @@
 # Genesis Starter Theme Changelog
 
+## [1.6.0] - 2017-05-24
+
+
 ## [1.5.0] - 2017-04-02
 * Add video background feature
 * Add WooCommerce support

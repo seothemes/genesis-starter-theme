@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter",
-  "version": "1.3.0",
+  "version": "0.1.0",
   "description": "The Genesis Starter theme with modern build tools.",
   "main": "gulpfile.js",
   "dependencies": {
@@ -9,7 +9,9 @@
     "css-mqpacker": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
+    "gulp-bump": "^2.7.0",
     "gulp-cached": "*",
+    "gulp-clean-css": "^3.4.1",
     "gulp-cssbeautify": "^0.1.3",
     "gulp-cssnano": "^2.1.0",
     "gulp-filter": "*",
@@ -19,6 +21,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "*",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "*",
     "gulp-sort": "^1.1.1",
     "gulp-sourcemaps": "*",
@@ -37,10 +40,10 @@
   "keywords": [
     "theme"
   ],
-  "author": "Seo Themes",
+  "author": "SeoThemes",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/seothemes/genesis-starter/issues"
   },
-  "homepage": "https://github.com/seothemes/genesis-starter#readme"
+  "homepage": "https://github.com/seothemes/genesis-starter"
 }

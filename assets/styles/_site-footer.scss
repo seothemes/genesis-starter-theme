@@ -1,0 +1,157 @@
+/* ## Site Footer
+--------------------------------------------- */
+
+.site-footer {
+	border-top: $border;
+	line-height: 1.382;
+	padding-bottom: calc(3rem + 2px);
+	font-size: $font-size-body;
+
+	@include breakpoint(sm) {
+		padding-bottom: calc(5rem + 2px);
+	}
+
+	.before-footer + & {
+		border-top: none;
+	}
+
+	> .wrap {
+		position: relative;
+
+		> p {
+			max-width: 80%;
+		}
+	}
+
+	p {
+		max-width: 90%;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.widget-area {
+
+		@include breakpoint(sm) {
+			margin-bottom: 0;
+		}
+	}
+
+	.back-to-top {
+		position: absolute;
+		right: 5%;
+		bottom: 0;
+		width: 2em;
+		height: 2em;
+		font-size: $font-size-body * 0.8;
+		line-height: 2em;
+		text-align: center;
+		border-radius: $border-radius;
+		color: $color-grey;
+
+		@include breakpoint(sm) {
+			right: 0;
+		}
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
+}
+
+/* ## Before Footer
+--------------------------------------------- */
+
+.before-footer {
+	background-color: $color-light;
+	@include clearfix;
+
+	.wrap {
+		padding: 4em 5%;
+
+		@include breakpoint(sm) {
+			padding: 5em 0;
+		}
+	}
+
+	.widget {
+		margin-bottom: 0;
+	}
+
+	.widget-row {
+
+		.wrap {
+
+			@include breakpoint(sm) {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: bottom;
+
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/* ## Footer Widgets
+--------------------------------------------- */
+
+.footer-widgets {
+	padding: 5rem 0 4rem;
+	border-bottom: $border;
+	margin-bottom: 3rem;
+
+	@include breakpoint(sm) {
+		padding: 10rem 0 9rem;
+		margin-bottom: 5rem;
+	}
+
+	a {
+		color: $color-body;
+		display: block;
+		margin-bottom: 2.5em;
+		line-height: 1;
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
+
+	.widget-area {
+		margin: 0 auto 4rem;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		.widget {
+			width: 100%;
+			display: block;
+			clear: none;
+			margin: 0 auto 2em;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.widget-title {
+		font-size: $font-size-heading;
+		display: block;
+		margin-bottom: 1.2em;
+
+		@include breakpoint(sm) {
+			font-size: $font-size-heading * 1.2;
+		}
+	}
+
+	ul li {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}
