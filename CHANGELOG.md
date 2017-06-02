@@ -1,7 +1,21 @@
 # Genesis Starter Theme Changelog
 
-## [1.6.0] - 2017-05-24
-
+## [1.6.0] - 2017-06-02
+* NEW: Add front-page, landing-page and page-builder templates
+* NEW: Added front-page widgets and footer widgets customizer settings
+* NEW: Added front-page customizer settings
+* NEW: Added accessible 'read more' links with descriptive text
+* Added 'dynamic widgets' functionality
+* Added some helper functions
+* Improved gulp configuration
+* Move theme functionality back to functions.php
+* Rename lib/ to includes/
+* Remove 'Hero' section on inner pages - use plugin instead
+* Remove Kirki customizer support 
+* Remove Easy Widget Columns support
+* Remove WP Page Widget support
+* Remove WooCommerce support
+* Remove optimizations class
 
 ## [1.5.0] - 2017-04-02
 * Add video background feature

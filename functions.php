@@ -174,8 +174,6 @@ function starter_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'starter_scripts_styles' );
 
-//add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 999 );
-
 // Load theme defaults.
 include_once( get_stylesheet_directory() . '/includes/theme-defaults.php' );
 

@@ -51,7 +51,6 @@ A search engine optimized, mobile-first starter theme for the Genesis Framework 
 * Header right
 * After header
 * Primary sidebar
-* Shop sidebar
 * Before footer
 * Front page (unlimited) 
 * Footer widget (unlimited)
@@ -68,16 +67,14 @@ theme/
 │   └── styles/
 ├── includes/
 │   ├── class-clean-gallery.php
-│   ├── class-optimizations.php
 │   ├── class-plugin-activation.php
 │   ├── customizer-settings.php
 │   ├── customizer-output.php
 │   ├── helper-functions.php
 │   ├── theme-defaults.php
-│   ├── widget-areas.php
-│   └── woocommerce.php
+│   └── widget-areas.php
 ├── languages/
-│   └── genesis-starter.pot
+│   └── translate.pot
 ├── templates/
 │   ├── page-builder.php
 │   └── page-landing.php
@@ -91,7 +88,8 @@ theme/
 ├── sample.xml
 ├── screenshot.png
 ├── style.css
-├── style.css.map
+├── style.min.css
+├── style.min.css.map
 └── widgets.wie
 ```
 
