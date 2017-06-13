@@ -1,3 +1,5 @@
+//process.env.DISABLE_NOTIFIER = true; // Disable all notifications.
+
 // Require our dependencies.
 var autoprefixer = require( 'autoprefixer' ),
 	browserSync  = require( 'browser-sync' ),
@@ -24,10 +26,10 @@ var autoprefixer = require( 'autoprefixer' ),
 	zip 		 = require( 'gulp-zip' );
 
 // Set assets paths.
-var js_src       = [ 'assets/scripts/*.js', '!assets/scripts/*.min.js' ],
-	js_dest      = 'assets/scripts/',
-	sass_src     = 'assets/styles/*.scss',
-	sass_dest    = './',
+var js_src       = [ 'assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/min/' ],
+	js_dest      = 'assets/scripts/min/',
+	sass_src     = [ 'assets/styles/*.scss', '!assets/styles/min/' ],
+	sass_dest    = 'assets/styles/min/',
 	img_src      = [ 'assets/images/*', '!assets/images/*.svg' ],
 	img_dest     = 'assets/images',
 	php_src		 = [ './*.php', './**/*.php', './**/**/*.php' ],
@@ -119,8 +121,8 @@ gulp.task( 'sass', function () {
 			}
 		} ) )
 
-		// Output non minified css to this directory.
-		.pipe( gulp.dest( sass_dest ) )
+		// Output non minified css to theme directory.
+		.pipe( gulp.dest( './' ) )
 
 		// Process sass again.
 		.pipe( sass( {
@@ -138,19 +140,19 @@ gulp.task( 'sass', function () {
 		// Add .min suffix.
 		.pipe( rename( { suffix: '.min' } ) )
 
-		// Write source map
-		.pipe( sourcemaps.write( sass_dest ) )
+		// Write source map.
+		.pipe( sourcemaps.write( './' ) )
 
-		// Output the compiled sass to this directory
+		// Output the compiled sass to this directory.
 		.pipe( gulp.dest( sass_dest ) )
 
-		// Filtering stream to only css files
+		// Filtering stream to only css files.
 		.pipe( filter( '**/*.css' ) )
 
-		// Inject changes via browsersync
+		// Inject changes via browsersync.
 		.pipe( reload( { stream: true } ) )
 
-		// Notify on successful compile (uncomment for notifications)
+		// Notify on successful compile (uncomment for notifications).
 		.pipe( notify( "Compiled: <%= file.relative %>" ) );
 } );
 
@@ -197,19 +199,19 @@ gulp.task( 'images', function () {
 		// Cache files to avoid processing files that haven't changed.
 		.pipe( cache( 'images' ) )
 
-		// Optimise images.
+		// Optimize images.
 		.pipe( imagemin( {
 			progressive: true
 		} ) )
 
-		// Output the optimised images to this directory.
+		// Output the optimized images to this directory.
 		.pipe( gulp.dest( img_dest ) )
 
 		// Inject changes via browsersync.
 		.pipe( reload( { stream: true } ) )
 
 		// Notify on successful compile.
-		.pipe( notify( "Optimised: <%= file.relative %>" ) );
+		.pipe( notify( "Optimized: <%= file.relative %>" ) );
 } );
 
 /**
@@ -223,13 +225,13 @@ gulp.task( 'i18n', function() {
 	.pipe( sort() )
 	.pipe( wpPot( {
 		domain: 'starter',
-		destFile:'translate.pot',
+		destFile:'starter.pot',
 		package: 'GenesisStarter',
 		bugReport: 'https://seothemes.net/support',
 		lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
 		team: 'Seo Themes <seothemeswp@gmail.com>'
 	} ) )
-	.pipe( gulp.dest( 'languages/' ) );
+	.pipe( gulp.dest( 'assets/languages/' ) );
 } );
 
 /**
@@ -239,25 +241,25 @@ gulp.task( 'i18n', function() {
  */
 gulp.task( 'bump', function() {
 
-	var oldversion = '1.5.0';
-	var newversion = '1.6.0';
+	var oldversion = '2.0.0';
+	var newversion = '2.0.0';
 
 	gulp.src( [ './package.json', './style.css' ] )
-	.pipe( bump( { version: newversion } ) )
-	.pipe( gulp.dest( './' ) );
+		.pipe( bump( { version: newversion } ) )
+		.pipe( gulp.dest( './' ) );
 
 	gulp.src( [ './gulpfile.js' ] )
-	.pipe( replace( "oldversion = " + oldversion + ";", "oldversion = " + newversion + ";" ) )
-	.pipe( gulp.dest( './' ) );
+		.pipe( replace( "oldversion = " + oldversion + ";", "oldversion = " + newversion + ";" ) )
+		.pipe( gulp.dest( './' ) );
 
 	gulp.src( [ './functions.php' ] )
-	.pipe( replace( "'CHILD_THEME_VERSION', '" + oldversion, "'CHILD_THEME_VERSION', '" + newversion ) )
-	.pipe( gulp.dest( './' ) );
+		.pipe( replace( "'CHILD_THEME_VERSION', '" + oldversion, "'CHILD_THEME_VERSION', '" + newversion ) )
+		.pipe( gulp.dest( './' ) );
 
 	gulp.src( './assets/styles/style.scss' )
-	.pipe( bump( { version: newversion } ) )
-	.pipe( gulp.dest( './assets/styles/' ) );
-});
+		.pipe( bump( { version: newversion } ) )
+		.pipe( gulp.dest( './assets/styles/' ) );
+} );
 
 /**
  * Package theme.
