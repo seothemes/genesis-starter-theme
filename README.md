@@ -1,23 +1,23 @@
 # Genesis Starter Theme
 
-A search engine optimized, mobile-first starter theme for the Genesis Framework with a modern development workflow.
+A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow.
 
 
 ## Features
 
-* Optimized HTML, CSS & JS output
-* Sass for stylesheets
-* Gulp for compiling assets, optimizing images
-* Customizer support
-* WooCommerce support
-* Page Builder support
-* Video background
-* Page templates
-* Front page content setting
-* Front page order setting
-* Front page widgets setting
-* Footer widgets setting
-* Flexible widget areas
+* Fully responsive, lightweight menus with pure CSS menu-toggle buttons that combine into one on small screens.
+* Superfish menu for keyboard navigation and other accessibility enhancements.
+* Accessible skip links and read more links with descriptive screen-reader text.
+* Mobile-first, flexbox-based CSS with combined rules, selectors and media queries for the smallest minification possible.
+* Exhaustive, valid schema.org microdata.
+* Robust Gulpfile included for automatically compiling assets, optimizing images, i18n, theme zip packaging and more.
+* Sass/SCSS partials, variables, mixins and functions included.
+* Custom logo, header and background support with postMessage transport.
+* Custom colors with postMessage transport.
+* Front page Hero section widget area with custom background image or video upload.
+* Dynamic, flexbox-based widget areas that automatically adjust column widths.
+* Built in support for [Roots Soil](https://roots.io/plugins/soil/) and [Cleaner Gallery](https://wordpress.org/plugins/cleaner-gallery/) plugins.
+* Gravity Forms and Simple Social Icons CSS/SCSS reset.
 
 
 ## Requirements
@@ -34,26 +34,29 @@ A search engine optimized, mobile-first starter theme for the Genesis Framework 
 1. Upload and install Genesis
 2. Upload, install and activate Genesis Starter
 3. Install and activate recommended plugins
-4. Delete existing post, pages, comments & widgets
+4. *Important* Delete unwanted existing posts, pages, comments & widgets
 5. Import sample.xml from Tools > Import
 6. Import widgets.wie from Tools > Widget Importer & Exporter
-7. Go to Appearance > Customize > Site Identity to upload a logo
-8. Go to Appearamce > Customize > Header Media to upload hero image or video
-9. Go to Appearance > Customize > Menus to create menus
-11. Go to Appearance > Customize > Static Front Page and configure to your liking
-12. Go to Appearance > Customize > Site Layout and configure to your liking
-13. Go to Genesis > Theme Settings and enable Breadcrumbs on all pages
+
+
+## Customization
+
+1. Go to Appearance > Customize > Site Identity to upload a logo
+2. Go to Appearamce > Customize > Header Media to upload hero image or video
+3. Go to Appearance > Customize > Menus to create menus
+4. Go to Appearance > Customize > Static Front Page and configure to your liking
+5. Go to Appearance > Customize > Site Layout and configure to your liking
+6. Go to Genesis > Theme Settings to enable Breadcrumbs on pages
 
 
 ## Widget Areas
 
 * Before header
 * Header right
-* After header
 * Primary sidebar
 * Before footer
-* Front page (unlimited) 
-* Footer widget (unlimited)
+* Front page (dynamic) 
+* Footer (dynamic)
 
 
 ## Structure
@@ -66,31 +69,25 @@ theme/
 │   ├── scripts/
 │   └── styles/
 ├── includes/
-│   ├── class-clean-gallery.php
-│   ├── class-plugin-activation.php
-│   ├── customizer-settings.php
-│   ├── customizer-output.php
-│   ├── helper-functions.php
-│   ├── theme-defaults.php
-│   └── widget-areas.php
-├── languages/
-│   └── translate.pot
-├── templates/
-│   ├── page-builder.php
-│   └── page-landing.php
+│   ├── customize.php
+│   ├── defaults.php
+│   ├── helpers.php
+│   ├── sidebars.php
+│   └── plugins.php
+├── views/
+│   ├── front-page.php
+│   ├── landing-page.php
+│   └── page-builder.php
 ├── .editorconfig
+├── .gitignore
 ├── CHANGELOG.md
-├── front-page.php
 ├── functions.php
 ├── gulpfile.js
+├── languages.pot
 ├── package.json
 ├── README.md
-├── sample.xml
 ├── screenshot.png
-├── style.css
-├── style.min.css
-├── style.min.css.map
-└── widgets.wie
+└── style.css
 ```
 
 
@@ -120,8 +117,9 @@ You now have all the necessary dependencies to run the build process.
 
 #### Additional commands
 
-* `gulp i18n` — Scan the theme and create a POT file.
-* `gulp zip` — Package theme into zip file for distribution.
+* `gulp i18n` — Scan the theme and create `languages.pot` POT file.
+* `gulp zip` — Package theme into zip file for distribution, ignoring `node_modules`.
+* `gulp bump` - Bumps theme version in `package.json`, `style.css`, `style.scss` and `functions.php`. 
 
 ### Using Browsersync
 

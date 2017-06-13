@@ -1,5 +1,29 @@
 # Genesis Starter Theme Changelog
 
+## [2.0.0] - 2017-06-02
+* Added compatibility for WordPress 4.8 & Genesis 2.6
+* Added support for new media widgets
+* Added support for Superfish accessible menus
+* Added CSS only menu and sub-menu toggle buttons
+* Added Gravity Forms reset styles
+* Added support for footer navigation menu
+* Added support for no JavaScript menus
+* Added Simple Social Icons CSS to theme and remove plugin CSS output for easy overwriting and to remove !important styles
+* Added .gitignore for node modules, xml & wie files
+* Switch everything to flexbox based CSS/SCSS where possible
+* Switch to Genesis Sample style design for consistency
+* Switch to Genesis Sample menu script for combining menus on mobile
+* Upgrade all customizer settings to use postMessage
+* Update to normalize.css v7.0.0 and combine selectors
+* Rename `templates/` to `views/` for better organization (so it can contain more than templates)
+* Move front-page.php to `views/` subfolder
+* Move .pot file out of subfolder until translations are submitted
+* Replace superfish args for nicer drop-down menus
+* Replace all px with rem or em
+* Remove Cleaner Gallery script and add theme support for plugin instead
+* Remove 'Flexible Widget' functions, using flexbox CSS instead
+* Reduce style.css from ~40kb to ~25kb, even with plugin styles
+
 ## [1.6.0] - 2017-06-02
 * NEW: Add front-page, landing-page and page-builder templates
 * NEW: Added front-page widgets and footer widgets customizer settings
@@ -9,7 +33,7 @@
 * Added some helper functions
 * Improved gulp configuration
 * Move theme functionality back to functions.php
-* Rename lib/ to includes/
+* Rename `lib/` to `includes/` 
 * Remove 'Hero' section on inner pages - use plugin instead
 * Remove Kirki customizer support 
 * Remove Easy Widget Columns support
