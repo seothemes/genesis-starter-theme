@@ -154,9 +154,7 @@ add_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
  * to improve the overall user experience and should be in core.
  */
 function starter_read_more() {
-	$trimtitle  = get_the_title();
-	$shorttitle = wp_trim_words( $trimtitle, 10, __( '...', 'starter' ) );
-	return sprintf( '... <a class="more-link" rel="nofollow" href="%1$s">Read more<span class="screen-reader-text"> about %2$s</span></a>', esc_url( get_permalink() ), $shorttitle );
+	return sprintf( '... <a class="more-link" rel="nofollow" href="%1$s">%2$s<span class="screen-reader-text">%3$s %4$s</span></a>', esc_url( get_permalink() ), __( 'Read more', 'starter' ), __( ' about', 'starter' ), get_the_title() );
 }
 add_filter( 'excerpt_more', 'starter_read_more' );
 add_filter( 'the_content_more_link', 'starter_read_more' );

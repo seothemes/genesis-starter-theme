@@ -18,6 +18,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Dynamic, flexbox-based widget areas that automatically adjust column widths.
 * Built in support for [Roots Soil](https://roots.io/plugins/soil/) and [Cleaner Gallery](https://wordpress.org/plugins/cleaner-gallery/) plugins.
 * Gravity Forms and Simple Social Icons CSS/SCSS reset.
+* Contains POT file for internationalization (i18n)
 
 
 ## Requirements

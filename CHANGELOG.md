@@ -1,15 +1,16 @@
 # Genesis Starter Theme Changelog
 
 ## [2.0.0] - 2017-06-13
-* Added compatibility for WordPress 4.8 & Genesis 2.6
-* Added support for new media widgets
-* Added support for Superfish accessible menus
-* Added CSS only menu and sub-menu toggle buttons
-* Added Gravity Forms reset styles
-* Added support for footer navigation menu
-* Added support for no JavaScript menus
-* Added Simple Social Icons CSS to theme and remove plugin CSS output for easy overwriting and to remove !important styles
-* Added .gitignore for node modules, xml & wie files
+* Add compatibility for WordPress 4.8 & Genesis 2.6
+* Add support for new media widgets
+* Add support for Superfish accessible menus
+* Add CSS only menu and sub-menu toggle buttons
+* Add Gravity Forms reset styles
+* Add support for footer navigation menu
+* Add support for no JavaScript menus
+* Add Simple Social Icons CSS to theme and remove plugin CSS output for easy overwriting and to remove !important styles
+* Add .gitignore for node modules, xml & wie files
+* Add better support for WP Featherlight jQuery lightbox
 * Switch everything to flexbox based CSS/SCSS where possible
 * Switch to Genesis Sample style design for consistency
 * Switch to Genesis Sample menu script for combining menus on mobile

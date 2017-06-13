@@ -14,8 +14,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// Theme Customizer setup.
-add_action( 'customize_register', 'starter_customize_register' );
+// Add theme customizer colors here.
+$starter_colors = array(
+	'primary' => '#b0b5ba',
+);
 
 /**
  * Sets up the theme customizer sections, controls, and settings.
@@ -26,8 +28,8 @@ add_action( 'customize_register', 'starter_customize_register' );
  */
 function starter_customize_register( $wp_customize ) {
 
-	// Load JavaScript files.
-	add_action( 'customize_preview_init', 'starter_enqueue_customizer_scripts' );
+	// Globals.
+	global $wp_customize, $starter_colors;
 
 	// Enable live preview for WordPress theme features.
 	$wp_customize->get_setting( 'blogname' )->transport              = 'postMessage';
@@ -39,47 +41,14 @@ function starter_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'background_position_x' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_repeat' )->transport     = 'postMessage';
 	$wp_customize->get_setting( 'background_attachment' )->transport = 'postMessage';
-}
 
-/**
- * Loads theme customizer JavaScript.
- *
- * @access public
- * @return void
- */
-function starter_enqueue_customizer_scripts() {
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script(
-		'starter-customize',
-		get_stylesheet_directory_uri() . "/assets/scripts/min/customize{$suffix}.js",
-		array( 'jquery' ),
-		null,
-		true
-	);
-}
-
-// Add theme customizer colors here.
-$starter_colors = array(
-	'primary' => '#b0b5ba',
-);
-
-/**
- * Register customizer settings and controls.
- *
- * This loops through the global variable array of colors and
- * registers a customizer setting and control for each. To add
- * additional color settings, do not modify this function, instead
- * add your color name and hex value to the `$starter_colors` array
- * at the beginning of this file.
- *
- * @param WP_Customize_Manager $wp_customize Customizer object.
- */
-function starter_customizer_register( $wp_customize ) {
-
-	// Globals.
-	global $wp_customize, $starter_colors;
-
-	// Loop through array and display colors.
+	/**
+	 * This loops through the global variable array of colors and
+	 * registers a customizer setting and control for each. To add
+	 * additional color settings, do not modify this function,
+	 * instead add your color name and hex value to the
+	 * $starter_colors` array at the beginning of this file.
+	 */
 	foreach ( $starter_colors as $id => $hex ) {
 
 		$setting = "starter_{$id}_color";
@@ -179,7 +148,25 @@ function starter_customizer_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'starter_customizer_register' );
+add_action( 'customize_register', 'starter_customize_register' );
+
+/**
+ * Loads theme customizer JavaScript.
+ *
+ * @access public
+ * @return void
+ */
+function starter_enqueue_customizer_scripts() {
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	wp_enqueue_script(
+		'starter-customize',
+		get_stylesheet_directory_uri() . "/assets/scripts/min/customize{$suffix}.js",
+		array( 'jquery' ),
+		null,
+		true
+	);
+}
+add_action( 'customize_preview_init', 'starter_enqueue_customizer_scripts' );
 
 /**
  * Output customizer styles.
@@ -199,7 +186,7 @@ function starter_customizer_output() {
 	 * and create a new variable for each. This is just a shorthand
 	 * way of creating multiple variables that we can reuse. The
 	 * benefit of using a foreach loop over creating each variable
-	 * manually is that we can just declare the colors once e.g the
+	 * manually is that we can just declare the colors once in the
 	 * `$starter_colors` array, and they can be used in multiple ways.
 	 */
 	foreach ( $starter_colors as $id => $hex ) {

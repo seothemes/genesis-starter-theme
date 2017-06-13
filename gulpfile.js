@@ -225,13 +225,13 @@ gulp.task( 'i18n', function() {
 	.pipe( sort() )
 	.pipe( wpPot( {
 		domain: 'starter',
-		destFile:'starter.pot',
-		package: 'GenesisStarter',
+		destFile:'languages.pot',
+		package: 'Genesis Starter',
 		bugReport: 'https://seothemes.net/support',
 		lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
 		team: 'Seo Themes <seothemeswp@gmail.com>'
 	} ) )
-	.pipe( gulp.dest( 'assets/languages/' ) );
+	.pipe( gulp.dest( './' ) );
 } );
 
 /**

@@ -176,8 +176,10 @@ add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
  */
 function starter_scripts_styles() {
 
+	global $post;
+
 	// Remove WP Featherlight CSS & JS if no gallery.
-	if ( ! has_shortcode( get_post()->post_content, 'gallery' ) ) {
+	if ( $post && ! has_shortcode( $post->post_content, 'gallery' ) ) {
 		wp_dequeue_style( 'wp-featherlight' );
 		wp_dequeue_script( 'wp-featherlight' );
 	}
