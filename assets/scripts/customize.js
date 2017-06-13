@@ -94,16 +94,6 @@ jQuery( document ).ready( function() {
 
 	} ); // wp.customize
 
-	/*
-	 * Handles the selective refresh for sidebars and widgets.
-	 */
-	wp.customize.selectiveRefresh.bind( 'sidebar-updated', function( sidebarPartial ) {
-
-		// Wrap widget titles.
-		jQuery( '.widget-title' ).wrapInner( '<span class="wrap" />' );
-
-	} );
-
 	/**
 	 * Primary color.
 	 */
