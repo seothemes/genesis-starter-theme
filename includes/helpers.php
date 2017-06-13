@@ -1,7 +1,5 @@
 <?php
 /**
- * Genesis Starter.
- *
  * This file adds helper functions used in the Genesis Starter Theme.
  *
  * @package      Genesis Starter
@@ -28,7 +26,6 @@ if ( ! defined( 'WPINC' ) ) {
  * @return int Absolute integer.
  */
 function starter_sanitize_number( $number, $setting ) {
-
 	$number = absint( $number );
 	return ( $number ? $number : $setting->default );
 }
@@ -67,50 +64,16 @@ function starter_color_brightness( $color, $change ) {
 }
 
 /**
- * Add flexible widget CSS classes.
- *
- * @param  string $id Widget area ID.
- * @return string $class Flexible widgets CSS class.
- */
-function starter_flexible_widgets( $id ) {
-
-	global $sidebars_widgets;
-
-	if ( isset( $sidebars_widgets[ $id ] ) ) {
-		$count = count( $sidebars_widgets[ $id ] );
-	} else {
-		$count = 0;
-	}
-
-	$class = '';
-
-	if ( 6 === $count ) {
-		$class = ' flexible-widgets-6';
-	} elseif ( 0 === $count % 5 ) {
-		$class = ' flexible-widgets-5';
-	} elseif ( 0 === $count % 4 ) {
-		$class = ' flexible-widgets-4';
-	} elseif ( 0 === $count % 3 ) {
-		$class = ' flexible-widgets-3';
-	} elseif ( 0 === $count % 2 ) {
-		$class = ' flexible-widgets-2';
-	} else {
-		$class = '';
-	}
-	return $class;
-}
-
-/**
  * Minify CSS helper function.
  *
  * A handy CSS minification script by Gary Jones that we'll use to
  * minify the CSS output by the customizer. This is called near the
- * end of the /includes/theme-customize.php file. A big thanks to
- * Gary for this one, works perfectly.
+ * end of the /includes/customizer-output.php file. Thanks to Gary
+ * for this one, works perfectly.
  *
  * @author Gary Jones
  * @link https://github.com/GaryJones/Simple-PHP-CSS-Minification
- * @param string $css CSS to minify.
+ * @param string $css The CSS to minify.
  * @return string Minified CSS.
  */
 function starter_minify_css( $css ) {
@@ -149,6 +112,39 @@ function starter_minify_css( $css ) {
 }
 
 /**
+ * Additional opening wrap.
+ *
+ * Used for entry-header, entry-content and entry-footer.
+ * Genesis doesn't provide structural wraps for these elements
+ * so we need to hook in and add the wrap div at the start.
+ * This is a utility function that can be used anywhere to open
+ * a wrap anywhere in your theme.
+ */
+function starter_wrap_open() {
+	echo '<div class="wrap">';
+}
+add_action( 'genesis_header', 'starter_wrap_open', 6 );
+add_action( 'genesis_content', 'starter_wrap_open', 6 );
+add_action( 'genesis_footer', 'starter_wrap_open', 6 );
+add_action( 'genesis_before_content_sidebar_wrap', 'starter_wrap_open', 6 );
+
+/**
+ * Additional closing wrap.
+ *
+ * The closing markup for the additional opening wrap divs,
+ * simply closes the wrap divs that we created earlier. This
+ * is a utility function that can be used anywhere to close
+ * any kind of div, not just wraps.
+ */
+function starter_wrap_close() {
+	echo '</div>';
+}
+add_action( 'genesis_header', 'starter_wrap_close', 13 );
+add_action( 'genesis_content', 'starter_wrap_close', 13 );
+add_action( 'genesis_footer', 'starter_wrap_close', 13 );
+add_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
+
+/**
  * Accessible read more link.
  *
  * The below code modifies the default read more link when
@@ -159,13 +155,12 @@ function starter_minify_css( $css ) {
  */
 function starter_read_more() {
 	$trimtitle  = get_the_title();
-	$shorttitle = wp_trim_words( $trimtitle, $num_words = 10, $more = '…' );
-	return sprintf( '<a class="more-link" rel="nofollow" href="%1$s">Read more<span class="screen-reader-text"> about %2$s</span></a>', esc_url( get_permalink() ), $shorttitle );
+	$shorttitle = wp_trim_words( $trimtitle, 10, __( '...', 'starter' ) );
+	return sprintf( '... <a class="more-link" rel="nofollow" href="%1$s">Read more<span class="screen-reader-text"> about %2$s</span></a>', esc_url( get_permalink() ), $shorttitle );
 }
 add_filter( 'excerpt_more', 'starter_read_more' );
 add_filter( 'the_content_more_link', 'starter_read_more' );
 add_filter( 'get_the_content_more_link', 'starter_read_more' );
-
 
 /**
  * Add no-js class to body.
@@ -188,7 +183,7 @@ add_filter( 'genesis_attr_body', 'starter_add_ontouchstart' );
  * Remove Page Templates.
  *
  * The Genesis Blog & Archive templates are not needed and can
- * create problems for users so it's safe to remove them . If 
+ * create problems for users so it's safe to remove them. If
  * you need to use these templates, simply remove this function.
  *
  * @param  array $page_templates All page templates.
@@ -203,12 +198,49 @@ add_filter( 'theme_page_templates', 'starter_remove_templates' );
 
 /**
  * Remove blog metabox.
- * 
+ *
  * Also remove the Genesis blog settings metabox from the
  * Genesis admin settings screen as it is no longer required
- * if the Blog page template has been removed. 
+ * if the Blog page template has been removed.
+ *
+ * @param string $hook The metabox hook.
  */
 function starter_remove_metaboxes( $hook ) {
 	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
 }
 add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
+
+/**
+ * Footer Navigation.
+ *
+ * Adds a one level depth footer menu between the footer widgets
+ * widget area and the footer credits.
+ */
+function starter_footer_menu() {
+	genesis_nav_menu( array(
+		'theme_location' => 'footer',
+		'menu_class'     => 'menu genesis-nav-menu menu-footer',
+		'depth'           => 1,
+	) );
+}
+add_action( 'genesis_footer', 'starter_footer_menu', 7 );
+
+/**
+ * Front page template path.
+ *
+ * The following function adds a custom template path for the front
+ * page template. This allows us to move the front-page.php
+ * template to the /views/ sub-folder. The point of this is to
+ * keep all templates and template parts in one place.
+ *
+ * @param string $template The template path.
+ */
+function starter_custom_template( $template ) {
+
+	// Return early if not front page.
+	if ( ! is_front_page() ) {
+		return $template;
+	}
+	return get_stylesheet_directory() . '/views/front-page.php';
+}
+add_filter( 'template_include', 'starter_custom_template', 99 );

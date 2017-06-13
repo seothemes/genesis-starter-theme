@@ -9,6 +9,11 @@
  * @license      GPL-2.0+
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 /**
  * Update Theme Settings upon reset.
  *
@@ -84,20 +89,20 @@ function starter_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'alignleft',
-		'background_color'       => '#555555',
-		'background_color_hover' => '#999999',
+		'background_color'       => '#eeeeee',
+		'background_color_hover' => '#333333',
 		'border_radius'          => 0,
 		'border_color'           => '#ffffff',
 		'border_color_hover'     => '#ffffff',
 		'border_width'           => 0,
-		'icon_color'             => '#ffffff',
+		'icon_color'             => '#333333',
 		'icon_color_hover'       => '#ffffff',
-		'size'                   => 32,
+		'size'                   => 40,
 		'new_window'             => 1,
 		'facebook'               => '#',
 		'gplus'                  => '#',
 		'instagram'              => '#',
-		'pinterest'              => '#',
+		'dribbble'               => '#',
 		'twitter'                => '#',
 		'youtube'                => '#',
 	);

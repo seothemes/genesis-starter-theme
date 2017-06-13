@@ -1,6 +1,11 @@
 <?php
 /**
- * This file adds widget areas to the Genesis Starter theme.
+ * Theme Sidebars.
+ *
+ * This file adds custom widget areas to the Genesis Starter
+ * theme. It also contains the dynamic widget area functions
+ * that allow users to select how many widget areas they want
+ * to display on the front page & footer from the Customizer.
  *
  * @package      Genesis Starter
  * @link         https://seothemes.net/themes/genesis-starter
@@ -28,25 +33,11 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the header right widget area. This widget area is not suitable to display every type of widget, and works best with a custom menu, a search form, or possibly a text widget.', 'starter' ),
 ) );
 
-// Register after header widget area.
-genesis_register_sidebar( array(
-	'id'          => 'after-header',
-	'name'        => __( 'After Header', 'starter' ),
-	'description' => __( 'This is the after header flexible widgets area. Widgets displayed in this area will automatically adjust width depending on the number of widgets.', 'starter' ),
-) );
-
 // Register shop sidebar widget area.
 genesis_register_sidebar( array(
 	'id'          => 'sidebar',
 	'name'        => __( 'Primary Sidebar', 'starter' ),
 	'description' => __( 'This is the primary sidebar if you are using a two column site layout option. Not displayed on shop page or product archives.', 'starter' ),
-) );
-
-// Register shop sidebar widget area.
-genesis_register_sidebar( array(
-	'id'          => 'shop-sidebar',
-	'name'        => __( 'Shop Sidebar', 'starter' ),
-	'description' => __( 'This is the shop sidebar widget area if you are using a two column site layout option for your product archive.', 'starter' ),
 ) );
 
 // Register before footer widget area.
@@ -62,7 +53,7 @@ genesis_register_sidebar( array(
 function starter_before_header_widget_area() {
 
 	genesis_widget_area( 'before-header', array(
-	    'before' => sprintf( '<div class="before-header%s"><div class="wrap">', starter_flexible_widgets( 'before-header' ) ),
+	    'before' => sprintf( '<div class="before-header"><div class="wrap">' ),
 	    'after'  => '</div></div>',
 	) );
 }
@@ -81,39 +72,12 @@ function starter_header_right_widget_area() {
 add_action( 'genesis_header', 'starter_header_right_widget_area', 10 );
 
 /**
- * Display after header widget area.
- */
-function starter_after_header_widget_area() {
-
-	genesis_widget_area( 'after-header', array(
-	    'before' => sprintf( '<div class="after-header%s"><div class="wrap">', starter_flexible_widgets( 'after-header' ) ),
-	    'after'  => '</div></div>',
-	) );
-}
-add_action( 'genesis_after_header', 'starter_after_header_widget_area' );
-
-/**
- * Display shop sidebar widget area.
- */
-function starter_shop_widget_area() {
-
-	if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
-
-		genesis_widget_area( 'shop-sidebar', array(
-		    'before' => '<div class="shop-sidebar">',
-		    'after'  => '</div>',
-		) );
-	}
-}
-add_action( 'genesis_before_sidebar_widget_area', 'starter_shop_widget_area' );
-
-/**
  * Display before footer widget area.
  */
 function starter_before_footer_widget_area() {
 
 	genesis_widget_area( 'before-footer', array(
-	    'before' => sprintf( '<div class="before-footer%s"><div class="wrap">', starter_flexible_widgets( 'before-footer' ) ),
+	    'before' => sprintf( '<div class="before-footer"><div class="wrap">' ),
 	    'after'  => '</div></div>',
 	) );
 }
@@ -154,12 +118,14 @@ function starter_footer_widgets() {
 
 	$widget_areas = get_option( 'starter_footer_widgets', 3 );
 
-	// Return early if no front page widget areas.
+	// Return early if no footer widget areas.
 	if ( '0' === $widget_areas ) {
 		return;
 	}
 
-	echo '<div class="footer-widgets flexible-widgets-' . esc_attr( $widget_areas ) . '">';
+	echo '<div class="footer-widgets">';
+
+	starter_wrap_open();
 
 	// Loop through widget areas.
 	for ( $i = 1; $i <= $widget_areas; $i++ ) {
@@ -170,6 +136,8 @@ function starter_footer_widgets() {
 		) );
 	}
 
+	starter_wrap_close();
+
 	echo '</div>';
 }
-add_action( 'genesis_footer', 'starter_footer_widgets', 6 );
+add_action( 'genesis_footer', 'starter_footer_widgets', 5 );

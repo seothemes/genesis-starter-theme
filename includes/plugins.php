@@ -38,14 +38,8 @@ function starter_register_required_plugins() {
 		 * Add any recommended plugins here.
 		 */
 		array(
-			'name'      => 'Genesis eNews Extended',
-			'slug'      => 'genesis-enews-extended',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => 'Genesis Testimonial Slider',
-			'slug'      => 'wpstudio-testimonial-slider',
+			'name'      => 'Cleaner Gallery',
+			'slug'      => 'cleaner-gallery',
 			'required'  => false,
 		),
 
@@ -118,7 +112,7 @@ function starter_register_required_plugins() {
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! class_exists( 'Require_Plugins' ) ) {
+if ( ! class_exists( 'Plugin_Activation' ) ) {
 
 	/**
 	 * Automatic plugin installation and activation library.
@@ -133,7 +127,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 	 * @author  Thomas Griffin
 	 * @author  Gary Jones
 	 */
-	class Require_Plugins {
+	class Plugin_Activation {
 		/**
 		 * TGMPA version number.
 		 *
@@ -166,7 +160,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @var Require_Plugins
+		 * @var Plugin_Activation
 		 */
 		public static $instance;
 
@@ -336,7 +330,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @see Require_Plugins::init()
+		 * @see Plugin_Activation::init()
 		 */
 		public function __construct() {
 			// Set the current WordPress version.
@@ -386,9 +380,9 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 *
 		 * @since 2.0.0
 		 *
-		 * @see Require_Plugins::admin_menu()
-		 * @see Require_Plugins::notices()
-		 * @see Require_Plugins::styles()
+		 * @see Plugin_Activation::admin_menu()
+		 * @see Plugin_Activation::notices()
+		 * @see Plugin_Activation::styles()
 		 */
 		public function init() {
 			/**
@@ -681,8 +675,8 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @see Require_Plugins::init()
-		 * @see Require_Plugins::install_plugins_page()
+		 * @see Plugin_Activation::init()
+		 * @see Plugin_Activation::install_plugins_page()
 		 *
 		 * @return null Return early if user lacks capability to install a plugin.
 		 */
@@ -2073,7 +2067,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 *
 		 * @since 2.4.0
 		 *
-		 * @return \Require_Plugins The Require_Plugins object.
+		 * @return \Plugin_Activation The Plugin_Activation object.
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
@@ -2091,7 +2085,7 @@ if ( ! class_exists( 'Require_Plugins' ) ) {
 		 * @since 2.5.0
 		 */
 		function load_plugin_activation() {
-			$GLOBALS['tgmpa'] = Require_Plugins::get_instance();
+			$GLOBALS['tgmpa'] = Plugin_Activation::get_instance();
 		}
 	}
 
@@ -3080,15 +3074,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * Retrieve plugin data, given the plugin name.
 		 *
 		 * @since      2.2.0
-		 * @deprecated 2.5.0 use {@see Require_Plugins::_get_plugin_data_from_name()} instead.
-		 * @see        Require_Plugins::_get_plugin_data_from_name()
+		 * @deprecated 2.5.0 use {@see Plugin_Activation::_get_plugin_data_from_name()} instead.
+		 * @see        Plugin_Activation::_get_plugin_data_from_name()
 		 *
 		 * @param string $name Name of the plugin, as it was registered.
 		 * @param string $data Optional. Array key of plugin data to return. Default is slug.
 		 * @return string|boolean Plugin slug if found, false otherwise.
 		 */
 		protected function _get_plugin_data_from_name( $name, $data = 'slug' ) {
-			_deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'Require_Plugins::_get_plugin_data_from_name()' );
+			_deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'Plugin_Activation::_get_plugin_data_from_name()' );
 
 			return $this->tgmpa->_get_plugin_data_from_name( $name, $data );
 		}
