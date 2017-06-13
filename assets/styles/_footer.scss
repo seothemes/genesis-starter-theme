@@ -1,0 +1,62 @@
+/* ## Site Footer
+--------------------------------------------- */
+
+.site-footer {
+    background-color: $white;
+    font-size: 1.8rem;
+    >.wrap {
+        text-align: center;
+        position: relative;
+        padding: 5vw;
+        font-size: 1.6rem;
+        @include breakpoint(sm) {
+            padding: 6rem 0;
+        }
+    }
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    .widget-area {
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+/* ## Footer Widgets
+--------------------------------------------- */
+
+.footer-widgets {
+    padding: 6rem 0;
+    border-bottom: $site-border;
+    .wrap {
+        @include breakpoint(sm) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    .widget-area {
+        margin: 0 auto 4rem;
+		@include breakpoint(sm) {
+			flex: 1;
+			margin-left: 2.564102564102564%;
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        .widget {
+            width: 100%;
+            display: block;
+            margin: 0 auto 2em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

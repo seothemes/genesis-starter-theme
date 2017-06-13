@@ -1,0 +1,176 @@
+/* ## Site Containers
+--------------------------------------------- */
+
+.wrap {
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include breakpoint(sm) {
+        width: 90%;
+        max-width: map-get($breakpoints, xl);
+        padding: 0;
+    }
+    .wrap {
+        max-width: 100%;
+        width: auto;
+        padding: 0;
+    }
+}
+
+.site-inner {
+    clear: both;
+    padding: 5vw 0;
+    word-wrap: break-word;
+    @include breakpoint(md) {
+        padding: 4rem 0;
+    }
+    .page-builder & {
+        padding: 0;
+        border-top: $site-border;
+        border-bottom: $site-border;
+    }
+}
+
+.site-inner {
+    .wrap {
+        max-width: map-get($breakpoints, xl);
+        @include breakpoint(md) {
+			display: flex;
+			justify-content: space-between;
+			&:before,
+			&:after {
+				display: none; // Flex fix.
+			}
+			.sidebar-content & {
+				flex-direction: row-reverse;
+			}
+		}
+    }
+}
+
+
+/* ## Content Widths and Positions
+--------------------------------------------- */
+
+@include breakpoint(md) {
+    .content {
+        width: 100%;
+    }
+	.sidebar-primary {
+		width: 25%;
+	}
+	.sidebar-content,
+    .content-sidebar {
+		.content {
+			width: calc(75% - 4rem);
+		}
+	}
+}
+
+
+/* ## Column Classes (including fifths)
+--------------------------------------------- */
+
+@include breakpoint(sm) {
+    .one-half,
+    .one-third,
+    .one-fourth,
+    .one-fifth,
+    .one-sixth,
+    .two-thirds,
+    .two-fourths,
+    .two-fifths,
+    .two-sixths,
+    .three-fourths,
+    .three-fifths,
+    .three-sixths,
+    .four-fifths, // Commish'.
+    .four-sixths,
+    .five-sixths {
+        float: left;
+        margin-left: 2.564102564102564%;
+    }
+    .one-half,
+    .three-sixths,
+    .two-fourths {
+        width: 48.717948717948715%;
+    }
+    .one-third,
+    .two-sixths,
+    .gallery-columns-3 .gallery-item {
+        width: 31.623931623931625%;
+    }
+    .four-sixths,
+    .two-thirds {
+        width: 65.81196581196582%;
+    }
+    .one-fourth,
+    .gallery-columns-4 .gallery-item {
+        width: 23.076923076923077%;
+    }
+    .three-fourths {
+        width: 74.35897435897436%;
+    }
+    .one-fifth,
+    .gallery-columns-5 .gallery-item {
+        width: 17.9487179487179488%;
+    }
+    .two-fifths {
+        width: 38.4615384615384616%;
+    }
+    .three-fifths {
+        width: 58.9743589743589744%;
+    }
+    .four-fifths {
+        width: 79.4871794871794872%;
+    }
+    .one-sixth,
+    .gallery-columns-6 .gallery-item {
+        width: 14.52991452991453%;
+    }
+    .five-sixths {
+        width: 82.90598290598291%;
+    }
+    .first {
+        clear: both;
+        margin-left: 0;
+    }
+}
+
+
+/* ## Gallery
+--------------------------------------------- */
+
+.gallery,
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery {
+    a {
+        display: block;
+        min-height: 100%;
+    }
+    img {
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+}
+
+.gallery-caption {
+    display: block;
+}
+
+.gallery-item {
+    width: 100%;
+    margin: 0 0 5vw;
+    text-align: center;
+    display: block;
+    @include breakpoint(xs) {
+        width: 48.717948717948715%;
+        margin-bottom: 2.564102564102564%;
+    }
+}

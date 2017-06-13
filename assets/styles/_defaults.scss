@@ -2,114 +2,94 @@
 --------------------------------------------- */
 
 * {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::selection {
-	background-color: rgba(255,235,60,0.25);
+    background-color: $dark;
+    color: $white;
 }
 
 html {
-	font-size: 62.5%; /* 10px browser default */
-	max-width: 100vw;
-	overflow-x: hidden;
-}
-
-/* Chrome fix */
-body > div {
-	font-size: $font-size-body * 0.9;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-body;
-	}
+    font-size: 62.5%; // 10px browser default.
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
-	background-color: $color-white;
-	color: $color-body;
-	font-family: $font-body;
-	font-size: $font-size-body * 0.9;
-	font-weight: $font-weight-normal;
-	line-height: $line-height-body;
-	-webkit-font-smoothing: antialiased;
-	margin: 0;
-	max-width: 100vw;
-	overflow-x: hidden;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-body;
-	}
+    background-color: $light;
+    color: $dark;
+    font-family: $font-body;
+    font-size: 1.8rem;
+    font-weight: $normal;
+    line-height: 1.618; // Golden ratio.
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    @include breakpoint(sm) {
+        font-size: 2rem;
+    }
 }
 
-a,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.button,
-.gallery img {
-	@include transition;
-}
-
-a {
-	color: $color-link;
-	text-decoration: none;
-
-	&:hover {
-		color: $color-accent;
-		text-decoration: none;
-	}
+body>div {
+    font-size: 1.8rem;
+    @include breakpoint(sm) {
+        font-size: 2rem;
+    }
 }
 
 p {
-	margin: 0 0 1em;
-	padding: 0;
+    margin: 0 0 1.382em;
+    padding: 0;
+}
+
+a {
+    color: $accent;
+    word-wrap: break-word;
+    &:hover {
+        color: $dark;
+    }
 }
 
 ol,
 ul {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 hr {
-	border: 0;
-	border-collapse: collapse;
-	border-top: $border;
-	clear: both;
-	margin: 1em 0;
+    border: 0;
+    border-collapse: collapse;
+    border-bottom: $site-border;
+    clear: both;
+    padding: 1em 0 0;
+    margin: 0 0 2em;
 }
 
 b,
 strong {
-	font-weight: $font-weight-bolder;
+    font-weight: $bolder;
 }
 
 blockquote,
 cite,
 em,
 i {
-	font-style: italic;
+    font-style: italic;
 }
 
 blockquote {
-	margin: 4rem;
+    border-left: $site-border;
+    margin: 1em 0;
+    padding: 0 1em;
 }
 
-blockquote::before {
-	content: "\201C";
-	font-family: $font-heading;
-	display: block;
-	font-size: $font-size-body * 2;
-	height: 0;
-	left: -0.618em;
-	position: relative;
-	top: -0.618em;
-}
 
 /* ## Headings
 --------------------------------------------- */
@@ -120,60 +100,36 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font-heading;
-	font-weight: $font-weight-bold;
-	line-height: $line-height-heading;
-	color: $color-heading;
-	margin: 0 0 1em;
+    font-family: $font-heading;
+    font-weight: $bolder;
+    line-height: 1.236; // Golden ratio.
+    margin: 0 0 0.618em;
 }
 
 h1 {
-	font-size: $font-size-heading * 2;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 2.6;
-	}
+    font-size: 2em;
 }
 
 h2 {
-	font-size: $font-size-heading * 1.4;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 1.8;
-	}
+    font-size: 1.6em;
 }
 
 h3 {
-	font-size: $font-size-heading * 1.3;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 1.4;
-	}
+    font-size: 1.4em;
 }
 
 h4 {
-	font-size: $font-size-heading * 1.2;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 1.2;
-	}
+    font-size: 1.2em;
 }
 
 h5 {
-	font-size: $font-size-heading * 1.1;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 1.1;
-	}
+    font-size: 1.1em;
 }
 
 h6 {
-	font-size: $font-size-heading * 1;
-
-	@include breakpoint(sm) {
-		font-size: $font-size-heading * 1;
-	}
+    font-size: 1em;
 }
+
 
 /* ## Forms
 --------------------------------------------- */
@@ -181,31 +137,26 @@ h6 {
 input,
 select,
 textarea {
-	background-color: $color-white;
-	border: $border;
-	border-radius: $border-radius;
-	color: $color-body;
-	padding: 0.618em;
-	width: 100%;
-	height: 45px;
-	line-height: 2;
-	letter-spacing: 0.05em;
-	font-size: $font-size-body;
-
-	&:focus {
-		outline: none;
-		border: 1px solid $color-grey;
-	}
+    background-color: $white;
+    border: $site-border;
+    border-radius: $site-border;
+    padding: 0.5em 1em;
+    width: 100%;
+    line-height: 2;
+    &:focus {
+        outline: none;
+        border: $site-border;
+    }
 }
 
 :focus {
-	outline: none;
+    outline: $site-border;
 }
 
 input[type="checkbox"],
 input[type="image"],
 input[type="radio"] {
-	width: auto;
+    width: auto;
 }
 
 input[type="search"] {
@@ -213,81 +164,74 @@ input[type="search"] {
 }
 
 ::-moz-placeholder {
-	color: $color-body;
-	opacity: 1;
+    color: $dark;
+    opacity: 1;
 }
 
 ::-webkit-input-placeholder {
-	color: $color-body;
+    color: $dark;
 }
 
+.button,
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"],
-.button {
-	background: $color-accent;
-	border: 0;
-	border-radius: $border-radius;
-	color: $color-white;
-	cursor: pointer;
-	font-family: $font-heading;
-	font-weight: $font-weight-bold;
-	font-size: $font-size-body;
-	padding: 0.618em 2em;
-	text-decoration: none;
-	white-space: nowrap;
-	display: inline-block;
-	width: auto;
-	height: auto;
-	box-shadow: inset 0 0 0 999px rgba(255,255,255,0);
-	line-height: $line-height-body;
-
-	&:hover {
-		color: $color-white;
-		box-shadow: inset 0 0 0 999px rgba(255,255,255,0.15);
-	}
-
-	&.secondary {
-		background: $color-body;
-
-		&:hover {
-			background: $color-body;
-		}
-	}
-
-	&.small {
-		font-size: $font-size-body * 0.618;
-	}
-
-	&:disabled,
-	&:disabled:hover {
-		background-color: $color-light;
-		border-width: 0;
-		color: $color-accent;
-		cursor: not-allowed;
-	}
-
-	+ button,
-	+ .button {
-		margin-top: 1em;
-		clear: both;
-
-		@include breakpoint(xs) {
-			margin-top: 0;
-			clear: none;
-		}
-	}
+input[type="submit"] {
+    background-color: $dark;
+    border: 0;
+    border-radius: $site-border;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: $bold;
+    padding: 1em 2em;
+    text-decoration: none;
+    $white-space: nowrap;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    &:hover {
+        color: $white;
+        background-color: $accent;
+    }
+    &.secondary {
+        background-color: $accent;
+        &:hover {
+            background-color: $dark;
+        }
+    }
+    &.small {
+        font-size: 1.2rem;
+    }
+    &:disabled,
+    &:disabled:hover {
+        background-color: $light;
+        border-width: 0;
+        color: darken($light, 50%);
+        cursor: not-allowed;
+    }
+    +button,
+    +.button {
+        margin-top: 1em;
+        clear: both;
+        @include breakpoint(xs) {
+            margin-top: 0;
+            clear: none;
+        }
+    }
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
-	display: none;
+    display: none;
 }
 
 fieldset {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
+
 
 /* ## Objects
 --------------------------------------------- */
@@ -297,101 +241,93 @@ iframe,
 img,
 object,
 video,
-.wp-caption {
-	max-width: 100%;
+.wp-caption,
+.wp-video-shortcode {
+    max-width: 100%;
+    display: block;
 }
 
 img {
-	height: auto;
+    height: auto;
 }
 
 figure {
-	margin: 0;
+    margin: 0;
 }
 
 video {
-	object-fit: cover;
+    object-fit: cover;
 }
+
+.wp-video-shortcode {
+    width: auto !important;
+}
+
 
 /* ## Tables
 --------------------------------------------- */
 
 table {
-	background-color: $color-white;
-	border-collapse: collapse;
-	border-spacing: 0;
-	line-height: $line-height-body;
-	margin-bottom: 40px;
-	width: 100%;
-	word-break: break-word;
+    background-color: $white;
+    border: $site-border;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 1;
+    margin-bottom: 4rem;
+    width: 100%;
 }
 
 tbody {
-	border-bottom: $border;
+    border-bottom: $site-border;
 }
 
 td,
 th {
-	text-align: left;
+    text-align: left;
+    padding: 0.618em;
+    border-top: $site-border;
+    border-right: $site-border;
 }
 
-td {
-	border-top: $border;
-	padding: 6px;
-}
-
-th {
-	padding: 0 6px;
-}
-
-td:first-child,
-th:first-child {
-	padding-left: 0;
-}
 
 /* ## Accessibility
 --------------------------------------------- */
 
-.site-description,
 .screen-reader-text,
 .screen-reader-text span,
 .screen-reader-shortcut,
 .wp-custom-logo .site-title,
 .wp-custom-logo .site-description {
-	position: absolute !important;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 0.1rem;
+    width: 0.1rem;
+    border: 0;
+    overflow: hidden;
 }
 
 .screen-reader-text:focus,
 .screen-reader-shortcut:focus {
-	clip: auto !important;
-	height: auto;
-	width: auto;
-	display: block;
-	font-size: $font-size-body;
-	padding: 15px 23px 14px;
-	color: $color-body;
-	z-index: 100000;
-	text-decoration: none;
-	box-shadow: 0 0 2px 2px black( 0.1 );
+    clip: auto !important;
+    height: auto;
+    width: auto;
+    display: block;
+    padding: 1rem 2rem;
+    z-index: 100000;
+    text-decoration: none;
+    box-shadow: 0 0 0.2rem 0.2rem rgba($dark, 0.1);
 }
 
 .more-link {
-	position: relative;
-	font-style: normal;
-	font-size: $font-size-body * 0.75;
+    position: relative;
+    font-style: normal;
 }
 
 .genesis-skip-link {
-	margin: 0;
-
-	li {
-		height: 0;
-		width: 0;
-		list-style: none;
-	}
+    margin: 0;
+    li {
+        height: 0;
+        width: 0;
+        list-style: none;
+    }
 }

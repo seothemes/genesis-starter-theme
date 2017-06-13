@@ -1,0 +1,218 @@
+/* ## Entries
+--------------------------------------------- */
+
+.entry {
+    background-color: $white;
+    margin-bottom: 5vw;
+    padding: 7.5vw;
+    @include breakpoint(sm) {
+        padding: 6rem;
+        margin-bottom: 4rem;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.entry-content {
+    @include clearfix;
+    ol,
+    ul {
+        margin-bottom: 1em;
+        margin-left: 4rem;
+    }
+    ol>li {
+        list-style-type: decimal;
+    }
+    ul>li {
+        list-style-type: disc;
+    }
+    ol ol,
+    ul ul {
+        margin-bottom: 0;
+    }
+    li li {
+        list-style-type: circle;
+    }
+    code {
+        background-color: $light;
+        display: block;
+        padding: 1rem 2rem;
+        border: $site-border;
+        margin-top: 1em;
+    }
+    >*:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.entry-image-link {
+    display: block;
+    margin-bottom: 1em;
+    img {
+        display: block;
+    }
+}
+
+
+/* ## Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    .entry-header & {
+        margin-bottom: 1em;
+    }
+}
+
+.entry-categories,
+.entry-tags {
+    display: block;
+}
+
+.entry-author-name {
+    text-transform: capitalize;
+}
+
+.entry-footer {
+    border-top: $site-border;
+    margin-top: 5vw;
+    padding-top: 5vw;
+    @include breakpoint(sm) {
+        margin-top: 4rem;
+        padding-top: 4rem;
+    }
+}
+
+
+/* ## Pagination
+--------------------------------------------- */
+
+.pagination {
+    margin: 5vw 0;
+    @include clearfix;
+    @include breakpoint(md) {
+        margin: 4rem 0 0;
+    }
+}
+
+.adjacent-entry-pagination {
+    margin-bottom: 0;
+}
+
+.archive-pagination {
+    ul {
+        display: flex;
+    }
+    li {
+        margin: 0 0.25em 0 0;
+    }
+    a {
+        background-color: $white;
+        color: $dark;
+        font-size: 1.6rem;
+        padding: 0.75rem 1rem;
+        border-radius: $site-radius;
+        text-decoration: none;
+        display: block;
+    }
+    a:hover,
+    .active a {
+        background-color: $accent;
+        color: $white;
+    }
+}
+
+
+/* ## Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+    background-color: #fff;
+    font-size: 1.6rem;
+    margin-top: 4rem;
+    padding: 7.5vw;
+    @include breakpoint(sm) {
+        padding: 6rem;
+    }
+}
+
+.comment-respond {
+    .form-submit {
+        margin-bottom: 0;
+    }
+}
+
+.comment-list {
+    li {
+        padding: 4rem 0 0 5vw;
+    }
+    .depth-1 {
+        padding-left: 0;
+    }
+    .comment-respond {
+        padding: 0 0 0 1em;
+    }
+    >.comment-respond {
+        padding: 0;
+    }
+}
+
+.comment-header {
+    margin-bottom: 5vw;
+    @include breakpoint(sm) {
+        margin-bottom: 2em;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.comment-edit-link {
+    padding-left: calc(4.8rem + 1em);
+    .entry-pings & {
+        padding: 0;
+        clear: both;
+        display: block;
+    }
+}
+
+.comment-meta {
+    padding-left: calc(4.8rem + 1em);
+    word-break: break-all;
+    .entry-pings & {
+        padding: 0 0 1em;
+    }
+}
+
+.comment-content {
+    clear: both;
+    ul>li {
+        list-style-type: disc;
+    }
+}
+
+.comment-respond {
+    input[type="email"],
+    input[type="text"],
+    input[type="url"] {
+        @include breakpoint(xl) {
+            width: 50%;
+        }
+        label {
+            display: block;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.entry-pings .reply {
+    display: none;
+}
+
+.pingback:last-of-type p {
+    margin-bottom: 0;
+}

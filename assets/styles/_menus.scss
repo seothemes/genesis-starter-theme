@@ -1,0 +1,275 @@
+/* ## Menus
+--------------------------------------------- */
+
+.menu {
+    width: 100%;
+    font-weight: $bolder;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    @include clearfix;
+}
+
+.menu-item {
+    display: block;
+    padding: 0.5rem 0;
+    width: 100%;
+    position: relative;
+    @include breakpoint(md) {
+        display: inline-block;
+        padding: 0;
+        width: auto;
+        &:first-of-type a {
+            padding-left: 0;
+        }
+        &:last-of-type a {
+            padding-right: 0;
+        }
+    }
+    &.right {
+        margin-left: auto;
+    }
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 0.5em 0;
+        color: $dark;
+        @include breakpoint(md) {
+            padding: 1.5em 1em;
+        }
+        @include breakpoint(xl) {
+            padding: 1.75em 1.25em;
+        }
+    }
+    a:hover,
+    &.current-menu-item>a {
+        color: $accent;
+    }
+}
+
+/* ## Sub Menus
+--------------------------------------------- */
+
+.sub-menu {
+    display: none;
+    font-size: 1.4rem;
+    @include clearfix;
+    @include breakpoint(md) {
+        top: 100%;
+        position: absolute;
+        width: 20rem;
+        z-index: 99;
+        background-color: $white;
+        border: $site-border;
+        padding: 0.5em 0;
+    }
+    li {
+        width: 100%;
+        &:first-of-type {
+            margin-top: 0.5em; // Slide toggle fix.
+            @include breakpoint(md) {
+                margin-top: 0;
+            }   
+            a {
+                padding-left: 1em;
+            }
+        }
+    }
+    a {
+        padding-left: 1em;
+        @include breakpoint(md) {
+            padding: 1em;
+            position: relative;
+            word-wrap: break-word;
+        }
+        @include breakpoint(xl) {
+            padding: 1em;
+        }
+    }
+    .sub-menu {
+        padding-left: 1em;
+        @include breakpoint(md) {
+            margin: -0.1rem 0 0 19.9rem;
+            padding-left: 0;
+            left: -0.1rem;
+            top: -0.5em;
+            border: $site-border;
+        }
+    }
+}
+
+
+/* ## Specific Menus
+--------------------------------------------- */
+
+.nav-primary,
+.nav-secondary {
+    width: 100vw;
+    margin: 0 -5vw;
+    padding: 0 5vw;
+    background-color: $white;
+    border-top: $site-border;
+    border-bottom: $site-border;
+    display: none;
+    position: absolute;
+    left: 5vw;
+    top: 100%;
+    @include breakpoint(md) {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        left: auto;
+        width: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .no-js & {
+        width: 100%;
+        position: relative;
+        display: block;
+        @include breakpoint(md) {
+            display: block;
+            width: auto;
+        }
+        .wrap {
+            padding: 0 5%;
+        }
+        .menu-item {
+            display: inline-block;
+            width: auto;
+            margin: 0 0.5em;
+        }
+    }
+    .menu {
+        padding: 0.5em 0;
+        @include breakpoint(md) {
+            padding: 0;
+        }
+    }
+}
+
+.nav-secondary {
+    @include breakpoint(md) {
+        border-top: $site-border;
+    }
+}
+
+.nav-footer {
+    .menu {
+        justify-content: center;
+        margin-bottom: 1em;
+        @include breakpoint(sm) {
+            margin-bottom: 1.5em;
+        }
+    }
+    .menu-item {
+        width: auto;
+        a {
+            padding: 0;
+            margin: 0 1em;
+        }
+    }
+}
+
+
+/* ## Menu Toggles
+--------------------------------------------- */
+
+.menu-toggle {
+    padding: 2.5rem 0;
+    cursor: pointer;
+    background-color: transparent;
+    display: block;
+    position: relative;
+    line-height: 1;
+    color: $dark;
+    &:hover {
+        background: none;
+        outline: none;
+        box-shadow: none;
+        color: $dark;
+    }
+    &:focus {
+        outline: $site-border;
+        background: none;
+    }
+    @include breakpoint(md) {
+        display: none;
+    }
+    span {
+        display: block;
+        float: right;
+        position: relative;
+        height: 0.25rem;
+        background: $dark;
+        transition: background 0s 0.2s;
+        width: 2.5rem;
+        margin-left: 0.236em;
+        margin-top: 0.7rem;
+        border-radius: $site-radius;
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 0.25rem;
+            background-color: $dark;
+            border-radius: $site-radius;
+            content: " ";
+        }
+        &::before {
+            top: -0.7rem;
+            transition: top 0.2s 0.2s, transform 0.2s 0s;
+        }
+        &::after {
+            bottom: -0.7rem;
+            transition: bottom 0.2s 0.2s, transform 0.2s 0s;
+        }
+    }
+    &.activated span {
+        background: none;
+        &::before {
+            top: 0;
+            transform: rotate(45deg);
+            transition: top 0.2s 0s, transform 0.2s 0.2s;
+        }
+        &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+            transition: bottom 0.2s 0s, transform 0.2s 0.2s;
+        }
+    }
+}
+
+.sub-menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    background: none;
+    padding: 0.5em;
+    margin: 0 -0.5em;
+    @include breakpoint(md) {
+        display: none;
+    }
+    &:hover,
+    &:focus {
+        background: none;
+    }
+    &:before {
+        content: "";
+        display: block;
+        margin: 0.2rem 0 -0.2rem;
+        border: 0.4rem solid transparent;
+        border-top-color: $dark;
+    }
+    &.activated {
+        &:before {
+            transform: rotate(180deg);
+            margin: -0.2rem 0 0.2rem;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+/* ## Widgets
+--------------------------------------------- */
+
+.widget {
+    margin-bottom: 7.5vw;
+    word-wrap: break-word;
+    background-color: $white;
+    @include breakpoint(md) {
+        margin-bottom: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    .sidebar & {
+        margin-bottom: 0;
+        margin-top: 5vw;
+		font-size: 1.6rem;
+        padding: 7.5vw;
+        @include breakpoint(sm) {
+            margin-top: 4rem;
+            padding: 4rem;
+        }
+    }
+    p {
+         &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    ul>li:last-of-type:not(.gfield) {
+        margin-bottom: 0;
+    }
+    ul>li {
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    ul>li:last-of-type {
+        padding-bottom: 0;
+    }
+    ol>li {
+        list-style-position: inside;
+        list-style-type: decimal;
+        padding-left: 1em;
+        text-indent: -1em;
+    }
+    li li {
+        border: 0;
+        margin: 0 0 0 1em;
+        padding: 0;
+    }
+}
+
+.widget-title {
+    font-family: $font-heading;
+    font-size: 2rem;
+}
+
+.widget_calendar {
+    table {
+        width: 100%;
+    }
+    td,
+    th {
+        text-align: center;
+    }
+}
+
+/* ## Sidebars
+--------------------------------------------- */
+
+.sidebar-primary {
+    @include breakpoint(xs) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    @include breakpoint(md) {
+        display: block;
+    }
+	.widget {
+        @include breakpoint(xs) {
+            width: 42.5vw;
+        }
+        @include breakpoint(md) {
+            width: 100%;
+        }
+		&:first-of-type {
+			background-color: $dark;
+			color: $white;
+            @include breakpoint(md) {
+                margin-top: 0;
+            }
+			h3,
+			.widget-title {
+				color: $white;
+				margin-bottom: 0.5em;
+			}
+			input {
+				width: 100%;
+			}
+			input[type="button"],
+			input[type="submit"] {
+				background-color: $accent;
+				width: 100%;
+				&:hover {
+					color: $dark;
+					background-color: $white;
+				}
+			}
+		}
+	}
+}

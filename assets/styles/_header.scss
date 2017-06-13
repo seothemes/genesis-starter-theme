@@ -1,0 +1,64 @@
+/* ## Site Header
+--------------------------------------------- */
+
+.site-header {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    background-color: $white;
+    >.wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include breakpoint(md) {
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+
+/* ## Title Area
+--------------------------------------------- */
+
+.title-area {
+    margin: 0 auto 0 0;
+    position: relative;
+    height: 100%;
+    display: block;
+    flex: 1;
+    padding: 0.618em 0;
+    max-width: 18rem;
+    @include breakpoint(md) {
+        padding: 3rem 0;
+        max-width: 24rem;
+    }
+}
+
+.site-title {
+    font-size: 2.4rem;
+    font-family: $font-heading;
+    font-weight: $bold;
+    line-height: 1;
+    margin-bottom: 0;
+    @include breakpoint(md) {
+        font-size: 3rem;
+    }
+    a {
+        color: $dark;
+        text-decoration: none;
+    }
+}
+
+.site-description {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    line-height: 1;
+    @include breakpoint(md) {
+        text-align: left;
+        font-size: 1.6rem;
+        line-height: 1.382;
+    }
+}

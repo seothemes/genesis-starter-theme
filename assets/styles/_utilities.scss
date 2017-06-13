@@ -1,58 +1,40 @@
-/* # Functions
------------------------------------------------------------------------*/
-
-@function black( $opacity ) {
-    @return rgba(0, 10, 20, $opacity );
-}
-
-@function white( $opacity ) {
-    @return rgba( 255, 255, 255, $opacity );
-}
-
 /* # Variables
 -----------------------------------------------------------------------*/
 
-/* ### Breakpoints */
+/**
+ * ### Breakpoints
+ * 
+ * Based on the most common 16:9 screen resolutions.
+ * @link https://pacoup.com/2011/06/12/list-of-true-169-resolutions/
+ */
 
 $breakpoints: (
-	xs: 568px,
+	xs: 512px,
 	sm: 768px,
-	md: 1023px,
-	lg: 1158px,
-	xl: 1340px
+	md: 896px,
+	lg: 1152px,
+	xl: 1280px
 );
 
 /* ### Colors */
 
-$color-light:   #f5f5f5;
-$color-dark:    #2c2d33;
-$color-accent:  #2c2d33;
-$color-heading: #43454b;
-$color-body:    #55575d;
-$color-link:    #2c2d33;
-$color-white:   #ffffff;
-$color-success: #2ecc71;
-$color-error:   #f54d56;
-$color-info:    #3498db;
-$color-grey:	#a9abb5;
-$color-border:  black(0.075);
+$dark:  #30353a;
+$accent:#a0a8af;
+$light: #f4f5f6;
+$white: #ffffff;
 
 /* ### Typography */
 
-$font-heading:        'Source Sans Pro', Helvetica, Arial, sans-serif;
-$font-body:           'Source Sans Pro', Helvetica, Arial, sans-serif;
-$font-size-heading:   20px;
-$font-size-body:      16px;
-$font-weight-normal:  400;
-$font-weight-bolder:  600;
-$font-weight-bold:    600;
-$line-height-heading: 1.382;
-$line-height-body:    1.618;
+$font-heading: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-body:    'Source Sans Pro', Helvetica, Arial, sans-serif;
+$normal:  	   400;
+$bolder:  	   600;
+$bold:    	   700;
 
 /* ### Other */
 
-$border-radius:       1px;
-$border:			  1px solid $color-border;
+$site-radius: 0.1rem;
+$site-border: 0.1rem solid $light;
 
 /* # Mixins
 -----------------------------------------------------------------------*/
@@ -87,12 +69,9 @@ $border:			  1px solid $color-border;
 
 	&:before,
 	&:after {
+		clear: both;
 		display: block;
 		content: '';
-	}
-
-	&:after {
-		clear: both;
 	}
 }
 

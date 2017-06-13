@@ -1,0 +1,92 @@
+/* ## Front Page
+--------------------------------------------- */
+
+.home {
+    .site-inner {
+        padding: 0;
+        >.wrap {
+            padding: 5vw;
+            @include breakpoint(sm) {
+                padding: 4rem 0;
+            }
+        }
+    }
+}
+
+[class*="front-page-"] {
+    padding: 6rem 0;
+    background-color: $white;
+    border-bottom: $site-border;
+    .wrap {
+        @include breakpoint(sm) {
+            flex-wrap: wrap;
+        }
+    }
+    .widget {
+        @include breakpoint(md) {
+            flex: 1;
+            margin-left: 2.564102564102564%;
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.front-page-1 {
+    background-color: transparent;
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 15vw 0;
+    position: relative;
+    @include clearfix;
+    @include breakpoint(sm) {
+        padding: 15vh 0;
+    }
+    .wrap {
+        position: relative;
+        text-align: center;
+        @include breakpoint(md) {
+            max-width: map-get($breakpoints, sm);
+        }
+    }
+    .widget {
+        background-color: transparent;
+    }
+}
+
+
+/* ## Custom Header
+--------------------------------------------- */
+
+.wp-custom-header {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    img,
+    video,
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: auto;
+        height: auto;
+        min-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: none;
+        object-fit: cover;
+    }
+    iframe {
+        left: -25%;
+        right: -25%;
+        height: 150%;
+        width: 150%;
+    }
+}

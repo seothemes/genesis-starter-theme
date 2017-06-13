@@ -1,18 +1,14 @@
 /*!
- * Theme Name: Starter
- * Theme URI: http://www.seothemes.net/starter/
+ * Theme Name: Genesis Starter
+ * Theme URI: http://www.seothemes.net/themes/genesis-starter/
  * Description: A starter theme for the Genesis Framework.
  * Author: Seo Themes
  * Author URI: http://www.seothemes.net/
- * Version: 1.6.0
+ * Version: 2.0.0
  * Text Domain: starter
- * Tags: one-column, two-columns, left-sidebar, right-sidebar,
- * accessibility-ready, custom-logo, custom-background,
- * custom-colors, custom-header, custom-menu, featured-images,
- * full-width-template, rtl-language-support, sticky-post,
- * theme-options, threaded-comments, translation-ready.
+ * Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready.
  * Template: genesis
- * Template Version: 2.4.2
+ * Template Version: 2.5.2
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * GitHub Theme URI: https://github.com/seothemes/starter
@@ -20,9 +16,10 @@
 
 /* # Table of Contents
 
-- Utlities
+- Utilities
 	- Variables
 	- Mixins
+	- Functions
 - Reset
 	- Baseline Normalize
 	- Box Sizing
@@ -30,119 +27,63 @@
 - Defaults
 	- Typography
 	- Headings
-	- Objects
 	- Forms
+	- Objects
 	- Tables
 	- Accessibility
-- Structure and Layout
+- Layout
 	- Site Containers
 	- Content Width
 	- Column Classes
 	- Gallery
-	- Featured Content
-- Common Classes
-	- Avatar
+- Common
+	- Avatars
 	- Genesis
 	- Search Form
 	- Titles
 	- WordPress
-- Widgets
-	- Widgets
-	- Front Page
-- Plugins
-	- Easy Widget Columns
-	- Genesis eNews
-	- Genesis Testimonials
-	- Simple Social Icons
-	- WooCommerce
-- Site Header
+- Header
 	- Before Header
 	- Site Header
 	- Title Area
 	- Widget Area
 	- Hero Section
-- Site Navigation
-	- Site Navigation
-	- Primary Menu
-	- Secondary Menu
-	- Footer Menu
-	- Menu buttons
-- Content Area
+- Menus
+	- Menus
+	- Sub Menus
+	- Specific Menus
+	- Menu Toggles
+- Content
 	- Entries
 	- Entry Meta
 	- Pagination
 	- Comments
+- Sidebars
+	- Widgets
 	- Sidebars
-- Site Footer
+- Footer
 	- Site Footer
-	- Before Footer
 	- Footer Widgets
-	- After Footer
-- Print Styles
+- Plugins
+	- Simple Social Icons
+	- Gravity Forms
+- Home
+	- Front Page
+	- Custom Header
+- Print
 	- Print Styles
 */
 
-/* # Utilities
----------------------------------------------------------------------------------------------------- */
-
 @import 'utilities';
-
-/* # HTML5 Reset
----------------------------------------------------------------------------------------------------- */
-
 @import 'reset';
-
-/* # Defaults
----------------------------------------------------------------------------------------------------- */
-
 @import 'defaults';
-
-/* # Structure and Layout
----------------------------------------------------------------------------------------------------- */
-
-@import 'structure-layout';
-
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-
-@import 'common-classes';
-
-/* # Site Header
----------------------------------------------------------------------------------------------------- */
-
-@import 'site-header';
-
-/* # Site Navigation
----------------------------------------------------------------------------------------------------- */
-
-@import 'site-navigation';
-
-/* # Content Area
----------------------------------------------------------------------------------------------------- */
-
-@import 'content-area';
-
-/* # Widgets
----------------------------------------------------------------------------------------------------- */
-
-@import 'widgets';
-
-/* # Site Footer
----------------------------------------------------------------------------------------------------- */
-
-@import 'site-footer';
-
-/* # Front Page
----------------------------------------------------------------------------------------------------- */
-
-@import 'front-page';
-
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-
+@import 'layout';
+@import 'common';
+@import 'header';
+@import 'menus';
+@import 'content';
+@import 'sidebars';
+@import 'footer';
 @import 'plugins';
-
-/* # Print Styles
----------------------------------------------------------------------------------------------------- */
-
-@import 'print-styles';
+@import 'home';
+@import 'print';
