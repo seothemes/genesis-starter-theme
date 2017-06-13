@@ -58,11 +58,12 @@ remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
 // Remove footer widgets.
 remove_action( 'genesis_before_footer', 'starter_before_footer_widget_area' );
-remove_action( 'genesis_footer', 'starter_footer_widgets', 6 );
+remove_action( 'genesis_footer', 'starter_footer_widgets', 5 );
 
 // Remove site footer elements.
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
+remove_action( 'genesis_footer', 'starter_footer_menu', 7 );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Run the Genesis loop.

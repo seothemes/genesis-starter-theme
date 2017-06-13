@@ -37,21 +37,16 @@ add_filter( 'body_class', 'starter_page_builder_class' );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 
 // Remove breadcrumbs.
-remove_action( 'genesis_after_header', 'genesis_do_breadcrumbs', 14 );
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+
+// Remove inner wraps.
+remove_action( 'genesis_before_content_sidebar_wrap', 'starter_wrap_open', 6 );
+remove_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
+remove_action( 'genesis_content', 'starter_wrap_open', 6 );
+remove_action( 'genesis_content', 'starter_wrap_close', 13 );
 
 // Force full width content layout.
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
-add_filter( 'genesis_markup_site-inner', '__return_null' );
-add_filter( 'genesis_markup_content', '__return_null' );
-
-// Remove site-inner wrap.
-add_theme_support( 'genesis-structural-wraps', array(
-	'header',
-	'menu-primary',
-	'menu-secondary',
-	'footer-widgets',
-	'footer',
-) );
 
 // Do loop.
 genesis();
