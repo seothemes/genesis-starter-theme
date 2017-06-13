@@ -1,6 +1,6 @@
 # Genesis Starter Theme Changelog
 
-## [2.0.0] - 2017-06-02
+## [2.0.0] - 2017-06-13
 * Added compatibility for WordPress 4.8 & Genesis 2.6
 * Added support for new media widgets
 * Added support for Superfish accessible menus

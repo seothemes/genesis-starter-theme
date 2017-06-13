@@ -21,7 +21,7 @@
         display: inline-block;
         padding: 0;
         width: auto;
-        &:first-of-type a {
+        &:first-of-type>a {
             padding-left: 0;
         }
         &:last-of-type a {
@@ -49,6 +49,7 @@
     }
 }
 
+
 /* ## Sub Menus
 --------------------------------------------- */
 
@@ -71,7 +72,7 @@
             margin-top: 0.5em; // Slide toggle fix.
             @include breakpoint(md) {
                 margin-top: 0;
-            }   
+            }
             a {
                 padding-left: 1em;
             }

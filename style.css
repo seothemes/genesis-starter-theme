@@ -1736,7 +1736,7 @@ p.entry-meta {
 		padding: 0;
 		width: auto
 	}
-	.menu-item:first-of-type a {
+	.menu-item:first-of-type > a {
 		padding-left: 0
 	}
 	.menu-item:last-of-type a {
