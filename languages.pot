@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: functions.php:49
-msgid "Primary Menu"
+msgid "Header Menu"
 msgstr ""
 
 #: functions.php:50
-msgid "Secondary Menu"
+msgid "After Header Menu"
 msgstr ""
 
 #: functions.php:51
@@ -33,35 +33,27 @@ msgstr ""
 msgid "Hero Image"
 msgstr ""
 
-#: functions.php:222, functions.php:223
+#: functions.php:214, functions.php:215
 msgid "Menu"
 msgstr ""
 
-#: includes/customize.php:55
+#: includes/customize.php:65
 msgid " Color"
 msgstr ""
 
-#: includes/customize.php:96
-msgid "Footer Widget Areas"
-msgstr ""
-
-#: includes/customize.php:97
-msgid "Select the number of widget areas to display in the footer section."
-msgstr ""
-
-#: includes/customize.php:117
+#: includes/customize.php:110
 msgid "Front Page Content"
 msgstr ""
 
-#: includes/customize.php:118
+#: includes/customize.php:111
 msgid "Show or hide the front page content."
 msgstr ""
 
-#: includes/customize.php:123
+#: includes/customize.php:116
 msgid "Show content"
 msgstr ""
 
-#: includes/customize.php:124
+#: includes/customize.php:117
 msgid "Hide content"
 msgstr ""
 
@@ -73,12 +65,24 @@ msgstr ""
 msgid "Select the number of widget areas to display on the home page."
 msgstr ""
 
-#: includes/helpers.php:157
+#: includes/customize.php:173
+msgid "Footer Widget Areas"
+msgstr ""
+
+#: includes/customize.php:174
+msgid "Select the number of widget areas to display in the footer section."
+msgstr ""
+
+#: includes/helpers.php:127
 msgid "Read more"
 msgstr ""
 
-#: includes/helpers.php:157
+#: includes/helpers.php:127
 msgid " about"
+msgstr ""
+
+#: includes/menus.php:51
+msgid " Navigation"
 msgstr ""
 
 #: includes/plugins.php:403

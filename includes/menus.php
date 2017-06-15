@@ -29,11 +29,10 @@ add_action( 'genesis_footer', 'starter_nav_footer', 7 );
  * for navigation menus. Genesis doesn't yet support the selective
  * refresh feature for nav menus because the `echo` argument is set
  * to `false`. This custom function will probably be removed if
- * support is added for this feature. We can also add translatable
- * Aria labels to all menus, not just the Primary navigation.
- * Another benefit to this is that Genesis doesn't add
- * `role="navigation"` to menu containers as recommended by Google
- * so we are able to add that in by displaying menus this way.
+ * support is added for this feature. Another benefit to having
+ * this function is that Genesis doesn't add `role="navigation"`
+ * to menu containers as recommended by Google so we are able to
+ * add that in by displaying menus this way.
  *
  * @since  2.0.1
  * @param  array  $name  Name/ID of the menu.
@@ -49,7 +48,7 @@ function starter_nav_menu( $name = '', $wrap = '', $depth = 0 ) {
 	$attr['role']  	   = 'navigation';
 	$attr['itemscope'] = '';
 	$attr['itemtype']  = 'https://schema.org/SiteNavigationElement';
-	$attr['aria-label'] = ucwords( str_replace( '-', ' ', $name ) ) . ' Navigation';
+	$attr['aria-label'] = ucwords( str_replace( '-', ' ', $name ) ) . __( ' Navigation', 'starter' );
 
 	// Opening markup.
 	$output = '<nav';
