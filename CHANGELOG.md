@@ -1,5 +1,16 @@
 # Genesis Starter Theme Changelog
 
+## [2.0.1] - 2017-06-14
+* Add custom nav menu function
+* Add customize partial refresh support for site title and tagline
+* Add `role="navigation"` to all menus
+* Add `includes/menus.php` to organize menu related functions
+* Menus, site title and tagline now have edit icons in customizer
+* Combine Superfish with theme menu script to reduce requests
+* Remove hoverIntent script
+* Clean up gulp file
+* Make front-page-1 full-screen with fix to prevent mobile jump
+
 ## [2.0.0] - 2017-06-13
 * Add compatibility for WordPress 4.8 & Genesis 2.6
 * Add support for new media widgets

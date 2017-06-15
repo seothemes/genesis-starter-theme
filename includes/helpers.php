@@ -15,6 +15,25 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * Render the site title for the selective refresh partial.
+ *
+ * @see starter_customize_register()
+ * @return void
+ */
+function starter_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @see starter_customize_register()
+ * @return void
+ */
+function starter_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+/**
  * Sanitize numbers.
  *
  * A helper function used to ensure that $number is an absolute
@@ -28,39 +47,6 @@ if ( ! defined( 'WPINC' ) ) {
 function starter_sanitize_number( $number, $setting ) {
 	$number = absint( $number );
 	return ( $number ? $number : $setting->default );
-}
-
-/**
- * Calculate color contrast.
- *
- * @param  string $color The input color.
- * @return string Hex color code for contrast color
- */
-function starter_color_contrast( $color ) {
-	$hexcolor = str_replace( '#', '', $color );
-	$red      = hexdec( substr( $hexcolor, 0, 2 ) );
-	$green    = hexdec( substr( $hexcolor, 2, 2 ) );
-	$blue     = hexdec( substr( $hexcolor, 4, 2 ) );
-	$luminosity = ( ( $red * 0.2126 ) + ( $green * 0.7152 ) + ( $blue * 0.0722 ) );
-	return ( $luminosity > 200 ) ? '#2c2d33' : '#ffffff';
-}
-
-/**
- * Calculate the color brightness.
- *
- * @param  string $color The input color.
- * @param  string $change The amount to change.
- * @return string Hex color code for the color brightness
- */
-function starter_color_brightness( $color, $change ) {
-	$hexcolor = str_replace( '#', '', $color );
-	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-	$green = hexdec( substr( $hexcolor, 2, 2 ) );
-	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
-	$red   = max( 0, min( 255, $red + $change ) );
-	$green = max( 0, min( 255, $green + $change ) );
-	$blue  = max( 0, min( 255, $blue + $change ) );
-	return '#' . dechex( $red ) . dechex( $green ) . dechex( $blue );
 }
 
 /**
@@ -207,21 +193,6 @@ function starter_remove_metaboxes( $hook ) {
 	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
 }
 add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
-
-/**
- * Footer Navigation.
- *
- * Adds a one level depth footer menu between the footer widgets
- * widget area and the footer credits.
- */
-function starter_footer_menu() {
-	genesis_nav_menu( array(
-		'theme_location' => 'footer',
-		'menu_class'     => 'menu genesis-nav-menu menu-footer',
-		'depth'           => 1,
-	) );
-}
-add_action( 'genesis_footer', 'starter_footer_menu', 7 );
 
 /**
  * Front page template path.

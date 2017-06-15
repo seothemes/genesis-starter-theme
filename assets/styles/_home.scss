@@ -37,7 +37,7 @@
     background-color: transparent;
     background-size: cover !important;
     background-position: center !important;
-    padding: 15vw 0;
+    padding: 20vw 0;
     position: relative;
     @include clearfix;
     @include breakpoint(sm) {
@@ -52,6 +52,9 @@
     }
     .widget {
         background-color: transparent;
+        p:last-of-type {
+            margin-bottom: 1.382em;
+        }
     }
 }
 

@@ -31,7 +31,7 @@ function starter_customize_register( $wp_customize ) {
 	// Globals.
 	global $wp_customize, $starter_colors;
 
-	// Enable live preview for WordPress theme features.
+	// Enable live preview for WordPress core theme features.
 	$wp_customize->get_setting( 'blogname' )->transport              = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport       = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport      = 'postMessage';
@@ -41,6 +41,16 @@ function starter_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'background_position_x' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_repeat' )->transport     = 'postMessage';
 	$wp_customize->get_setting( 'background_attachment' )->transport = 'postMessage';
+
+	// Enable selective refresh for site title and description.
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '.site-title',
+		'render_callback' => 'starter_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.site-description',
+		'render_callback' => 'starter_customize_partial_blogdescription',
+	) );
 
 	/**
 	 * This loops through the global variable array of colors and
@@ -151,24 +161,6 @@ function starter_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'starter_customize_register' );
 
 /**
- * Loads theme customizer JavaScript.
- *
- * @access public
- * @return void
- */
-function starter_enqueue_customizer_scripts() {
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script(
-		'starter-customize',
-		get_stylesheet_directory_uri() . "/assets/scripts/min/customize{$suffix}.js",
-		array( 'jquery' ),
-		null,
-		true
-	);
-}
-add_action( 'customize_preview_init', 'starter_enqueue_customizer_scripts' );
-
-/**
  * Output customizer styles.
  *
  * Checks the settings for the colors defined in the settings.
@@ -240,3 +232,21 @@ function starter_customizer_output() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'starter_customizer_output', 100 );
+
+/**
+ * Loads theme customizer JavaScript.
+ *
+ * @access public
+ * @return void
+ */
+function starter_enqueue_customizer_scripts() {
+
+	wp_enqueue_script(
+		'starter-customize',
+		get_stylesheet_directory_uri() . '/assets/scripts/min/customize.min.js',
+		array( 'jquery' ),
+		null,
+		true
+	);
+}
+add_action( 'customize_preview_init', 'starter_enqueue_customizer_scripts' );

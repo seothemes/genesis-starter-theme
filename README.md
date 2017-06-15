@@ -9,7 +9,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Superfish menu for keyboard navigation and other accessibility enhancements.
 * Accessible skip links and read more links with descriptive screen-reader text.
 * Mobile-first, flexbox-based CSS with combined rules, selectors and media queries for the smallest minification possible.
-* Exhaustive, valid schema.org microdata.
 * Robust Gulpfile included for automatically compiling assets, optimizing images, i18n, theme zip packaging and more.
 * Sass/SCSS partials, variables, mixins and functions included.
 * Custom logo, header and background support with postMessage transport.

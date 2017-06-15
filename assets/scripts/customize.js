@@ -44,17 +44,10 @@ jQuery( document ).ready( function() {
 				jQuery( '.site-title, .site-description' ).
 					css( 'display', 'none' );
 
-				/* Removes the 'display-header-text' <body> class. */
-				jQuery( 'body' ).
-					removeClass( 'display-header-text' );
 			}
 
 			/* Change the header and secondary menu colors. */
 			else {
-
-				/* Adds the 'display-header-text' <body> class. */
-				jQuery( 'body' ).
-					addClass( 'display-header-text' );
 
 				/* Makes sures both branding and menu-secondary display. */
 				jQuery( '.site-title, .site-description' ).

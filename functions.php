@@ -12,7 +12,7 @@
 // Child theme (do not remove).
 include_once( get_template_directory() . '/lib/init.php' );
 
-// Theme constants.
+// Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.net/themes/genesis-starter' );
 define( 'CHILD_THEME_VERSION', '2.0.0' );
@@ -44,14 +44,14 @@ add_theme_support( 'genesis-accessibility', array(
 	'skip-links',
 ) );
 
-// Rename primary and secondary navigation menus.
+// Enable custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
-	'primary' 	=> __( 'Primary Menu', 'starter' ),
-	'secondary' => __( 'Secondary Menu', 'starter' ),
-	'footer'	=> __( 'Footer Menu', 'starter' ),
+	'header' 	   => __( 'Header Menu', 'starter' ),
+	'after-header' => __( 'After Header Menu', 'starter' ),
+	'footer'	   => __( 'Footer Menu', 'starter' ),
 ) );
 
-// Add viewport meta tag for mobile browsers.
+// Enable viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
 
 // Enable HTML5 markup structure.
@@ -63,7 +63,7 @@ add_theme_support( 'html5', array(
 	'search-form',
 ) );
 
-// Add support for post formats.
+// Enable support for post formats.
 add_theme_support( 'post-formats', array(
 	'aside',
 	'audio',
@@ -129,8 +129,6 @@ add_post_type_support( 'page', 'excerpt' );
 /**
  * Enable features from Soil plugin if active.
  *
- * @link https://roots.io/plugins/soil/.
- *
  * If using Google Analytics, uncomment the following line and
  * replace `YOUR-GA-CODE` with your own unique tracking code:
  * add_theme_support( 'soil-google-analytics', 'YOUR-GA-CODE' );
@@ -146,15 +144,6 @@ add_theme_support( 'soil-relative-urls' );
 
 // Built in support for Cleaner Gallery.
 add_theme_support( 'cleaner-gallery' );
-
-// Reposition navigation menus.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_header', 'genesis_do_nav', 10 );
-add_action( 'genesis_header', 'genesis_do_subnav', 14 );
-
-// Remove superfish args.
-add_filter( 'genesis_superfish_args_url', '__return_null' );
 
 // Force Gravity Forms to disable CSS output.
 add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
@@ -198,6 +187,9 @@ function starter_scripts_styles() {
 	// Google fonts.
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
+	// Remove Genesis superfish script. (Included with theme).
+	wp_deregister_script( 'hoverIntent' );
+
 	// Enqueue responsive menu script.
 	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
@@ -225,8 +217,8 @@ function starter_responsive_menu_settings() {
 		'subMenuIconClass' => null,
 		'menuClasses'      => array(
 			'combine' => array(
-				'.nav-primary',
-				'.nav-secondary',
+				'.nav-header',
+				'.nav-after-header',
 			),
 		),
 	);
@@ -236,6 +228,7 @@ function starter_responsive_menu_settings() {
 // Load theme includes.
 include_once( get_stylesheet_directory() . '/includes/defaults.php' );
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
+include_once( get_stylesheet_directory() . '/includes/menus.php' );
 include_once( get_stylesheet_directory() . '/includes/sidebars.php' );
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins.php' );

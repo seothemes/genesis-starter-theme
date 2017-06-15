@@ -37,10 +37,10 @@
         padding: 0.5em 0;
         color: $dark;
         @include breakpoint(md) {
-            padding: 1.5em 1em;
+            padding: 1.6em 1em;
         }
-        @include breakpoint(xl) {
-            padding: 1.75em 1.25em;
+        @include breakpoint(lg) {
+            padding: 1.82em 1.25em;
         }
     }
     a:hover,
@@ -105,8 +105,8 @@
 /* ## Specific Menus
 --------------------------------------------- */
 
-.nav-primary,
-.nav-secondary {
+.nav-header,
+.nav-after-header {
     width: 100vw;
     margin: 0 -5vw;
     padding: 0 5vw;
@@ -152,7 +152,7 @@
     }
 }
 
-.nav-secondary {
+.nav-after-header {
     @include breakpoint(md) {
         border-top: $site-border;
     }
@@ -180,7 +180,7 @@
 --------------------------------------------- */
 
 .menu-toggle {
-    padding: 2.5rem 0;
+    padding: 2.7rem 0;
     cursor: pointer;
     background-color: transparent;
     display: block;

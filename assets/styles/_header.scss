@@ -32,7 +32,11 @@
     padding: 0.618em 0;
     max-width: 18rem;
     @include breakpoint(md) {
-        padding: 3rem 0;
+        padding: 1.382em 0;
+        max-width: 24rem;
+    }
+    @include breakpoint(lg) {
+        padding: 1.618em 0;
         max-width: 24rem;
     }
 }
