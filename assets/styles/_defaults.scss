@@ -139,7 +139,7 @@ select,
 textarea {
     background-color: $white;
     border: $site-border;
-    border-radius: $site-border;
+    border-radius: $site-radius;
     padding: 0.5em 1em;
     width: 100%;
     line-height: 2;
@@ -179,7 +179,7 @@ input[type="reset"],
 input[type="submit"] {
     background-color: $dark;
     border: 0;
-    border-radius: $site-border;
+    border-radius: $site-radius;
     color: $white;
     cursor: pointer;
     font-size: 1.6rem;

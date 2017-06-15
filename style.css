@@ -4,7 +4,7 @@
  * Description: A starter theme for the Genesis Framework.
  * Author: Seo Themes
  * Author URI: http://www.seothemes.net/
- * Version: 2.0.0
+ * Version: 2.0.2
  * Text Domain: starter
  * Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready.
  * Template: genesis
@@ -380,7 +380,7 @@ textarea {
 	background-color: #fff;
 	border: 1px solid #f4f5f6;
 	border: .1rem solid #f4f5f6;
-	border-radius: .1rem solid #f4f5f6;
+	border-radius: .1rem;
 	padding: .5em 1em;
 	width: 100%;
 	line-height: 2
@@ -418,7 +418,7 @@ input[type=reset],
 input[type=submit] {
 	background-color: #30353a;
 	border: 0;
-	border-radius: .1rem solid #f4f5f6;
+	border-radius: .1rem;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;

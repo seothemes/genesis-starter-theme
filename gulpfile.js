@@ -254,7 +254,7 @@ gulp.task( 'i18n', function() {
 gulp.task( 'bump', function() {
 
 	var oldversion = '2.0.0';
-	var newversion = '2.0.0';
+	var newversion = '2.0.2';
 
 	gulp.src( [ './package.json', './style.css' ] )
 	.pipe( bump( { version: newversion } ) )

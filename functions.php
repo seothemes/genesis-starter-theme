@@ -15,7 +15,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.net/themes/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.0.0' );
+define( 'CHILD_THEME_VERSION', '2.0.2' );
 
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'starter' ) );
