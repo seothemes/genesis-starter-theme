@@ -29,7 +29,7 @@ function starter_theme_defaults( $defaults ) {
 	$defaults['image_alignment']           = 'alignnone';
 	$defaults['posts_nav']                 = 'numeric';
 	$defaults['image_size']                = 'large';
-	$defaults['site_layout']               = 'sidebar-content';
+	$defaults['site_layout']               = 'content-sidebar';
 
 	return $defaults;
 
@@ -51,7 +51,7 @@ function starter_theme_setting_defaults() {
 			'image_alignment'           => 'alignnone',
 			'image_size'                => 'large',
 			'posts_nav'                 => 'numeric',
-			'site_layout'               => 'sidebar-content',
+			'site_layout'               => 'content-sidebar',
 		) );
 	}
 

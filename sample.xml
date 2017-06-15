@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.8" created="2017-06-13 10:32" -->
+<!-- generator="WordPress/4.8" created="2017-06-15 07:18" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Genesis Starter</title>
 	<link>http://genesis-starter.dev</link>
 	<description>Just another starter theme</description>
-	<pubDate>Tue, 13 Jun 2017 10:32:12 +0000</pubDate>
+	<pubDate>Thu, 15 Jun 2017 07:18:28 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://genesis-starter.dev</wp:base_site_url>
@@ -203,6 +203,57 @@
 		<wp:tag_name><![CDATA[Unordered Lists]]></wp:tag_name>
 <wp:tag_description><![CDATA[This is an sample tag description, which can be used to boost SEO rankings.  Make sure you enabled this from the Edit Post Tags screen in your dashboard.]]></wp:tag_description>
 	</wp:tag>
+	<wp:term>
+		<wp:term_id><![CDATA[55]]></wp:term_id>
+		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[after-header-menu]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[After Header Menu]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[headline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[intro_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[display_title]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[display_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[doctitle]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[layout]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[noindex]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[nofollow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[noarchive]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+	</wp:term>
 	<wp:term>
 		<wp:term_id><![CDATA[51]]></wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_format]]></wp:term_taxonomy>
@@ -389,6 +440,57 @@
 		<wp:term_name><![CDATA[grouped]]></wp:term_name>
 	</wp:term>
 	<wp:term>
+		<wp:term_id><![CDATA[52]]></wp:term_id>
+		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[header-menu]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Header Menu]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[headline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[intro_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[display_title]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[display_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[doctitle]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[layout]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[noindex]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[nofollow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[noarchive]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:termmeta>
+	</wp:term>
+	<wp:term>
 		<wp:term_id><![CDATA[28]]></wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[headlines]]></wp:term_slug>
@@ -444,57 +546,6 @@
 		<wp:term_description><![CDATA[A Post Format is a piece of meta information that can be used by a theme to customize its presentation of a post. The Post Formats feature provides a standardized list of formats that are available to all themes that support the feature. ]]></wp:term_description>
 	</wp:term>
 	<wp:term>
-		<wp:term_id><![CDATA[52]]></wp:term_id>
-		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[primary-menu]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[headline]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[intro_text]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[display_title]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[display_description]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[doctitle]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[description]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[keywords]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[layout]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[noindex]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[nofollow]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[noarchive]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-	</wp:term>
-	<wp:term>
 		<wp:term_id><![CDATA[46]]></wp:term_id>
 		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[rated-1]]></wp:term_slug>
@@ -528,57 +579,6 @@
 		<wp:term_slug><![CDATA[rated-5]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[rated-5]]></wp:term_name>
-	</wp:term>
-	<wp:term>
-		<wp:term_id><![CDATA[55]]></wp:term_id>
-		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[secondary-menu]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Secondary Menu]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[headline]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[intro_text]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[display_title]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[display_description]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[doctitle]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[description]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[keywords]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[layout]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[noindex]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[nofollow]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[noarchive]]></wp:meta_key>
-			<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:termmeta>
 	</wp:term>
 	<wp:term>
 		<wp:term_id><![CDATA[38]]></wp:term_id>
@@ -648,11 +648,11 @@
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[variable]]></wp:term_name>
 	</wp:term>
+	<wp:term><wp:term_id>55</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[after-header-menu]]></wp:term_slug><wp:term_name><![CDATA[After Header Menu]]></wp:term_name>
+</wp:term>
 	<wp:term><wp:term_id>54</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[footer-menu]]></wp:term_slug><wp:term_name><![CDATA[Footer Menu]]></wp:term_name>
 </wp:term>
-	<wp:term><wp:term_id>52</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[primary-menu]]></wp:term_slug><wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
-</wp:term>
-	<wp:term><wp:term_id>55</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[secondary-menu]]></wp:term_slug><wp:term_name><![CDATA[Secondary Menu]]></wp:term_name>
+	<wp:term><wp:term_id>52</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[header-menu]]></wp:term_slug><wp:term_name><![CDATA[Header Menu]]></wp:term_name>
 </wp:term>
 
 	<generator>https://wordpress.org/?v=4.8</generator>
@@ -2041,7 +2041,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2096,7 +2096,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2151,7 +2151,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2206,7 +2206,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2261,7 +2261,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2316,7 +2316,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2429,7 +2429,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2484,7 +2484,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2539,7 +2539,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2594,7 +2594,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2649,7 +2649,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2704,7 +2704,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -2759,7 +2759,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -3592,7 +3592,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -3647,7 +3647,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3702,7 +3702,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3757,7 +3757,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3812,7 +3812,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3867,7 +3867,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3922,7 +3922,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -3977,7 +3977,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -4032,7 +4032,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -4087,7 +4087,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -4142,7 +4142,7 @@ This is an example of a WordPress page, you could edit this to put information a
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="secondary-menu"><![CDATA[Secondary Menu]]></category>
+		<category domain="nav_menu" nicename="after-header-menu"><![CDATA[After Header Menu]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
@@ -4688,7 +4688,7 @@ Zen Life
 	</item>
 	<item>
 		<title>Welcome</title>
-		<link>http://genesis-starter.dev/welcome/</link>
+		<link>http://genesis-starter.dev/</link>
 		<pubDate>Thu, 04 May 2017 04:25:10 +0000</pubDate>
 		<dc:creator><![CDATA[leighanthony]]></dc:creator>
 		<guid isPermaLink="false">http://storefront.dev/?page_id=46</guid>

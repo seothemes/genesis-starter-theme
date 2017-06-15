@@ -57,12 +57,19 @@ function starter_nav_menu( $name = '', $wrap = '', $depth = 0 ) {
 	}
 	$output .= '>';
 
+	// Container workaround for Soil.
+	if ( '' !== $wrap ) {
+		add_filter( 'wp_nav_menu_args', function( $args ) {
+			$args['container'] = 'div';
+			$args['container_class'] = 'wrap';
+			return $args;
+		} );
+	}
+
 	// Use output buffer so echo can be true.
 	ob_start();
 	genesis_get_nav_menu( array(
 		'theme_location'  => $name,
-		'container'       => $wrap,
-		'container_class' => 'wrap',
 		'depth'			  => $depth,
 		'echo'			  => true,
 	) );
