@@ -34,22 +34,6 @@ function starter_customize_partial_blogdescription() {
 }
 
 /**
- * Sanitize numbers.
- *
- * A helper function used to ensure that $number is an absolute
- * integer (whole number, zero or greater). If the input is an
- * absolute integer, return it; otherwise, return the default.
- *
- * @param  int $number The input number.
- * @param  obj $setting The setting id.
- * @return int Absolute integer.
- */
-function starter_sanitize_number( $number, $setting ) {
-	$number = absint( $number );
-	return ( $number ? $number : $setting->default );
-}
-
-/**
  * Minify CSS helper function.
  *
  * A handy CSS minification script by Gary Jones that we'll use to

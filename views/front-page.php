@@ -24,6 +24,11 @@ function starter_frontpage_widgets() {
 		return;
 	}
 
+	// Remove page title if not showing posts.
+	if ( ! is_home() ) {
+		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+	}
+
 	// Loop through dynamic widget areas.
 	for ( $i = 1; $i <= $widget_areas; $i++ ) {
 
@@ -68,11 +73,6 @@ if ( 'false' === get_option( 'starter_frontpage_content' ) ) {
 
 	// Remove site-inner closing wrap.
 	remove_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
-}
-
-// Remove page title if not showing posts.
-if ( ! is_home() ) {
-	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 }
 
 // Run Genesis.

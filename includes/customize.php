@@ -88,30 +88,13 @@ function starter_customize_register( $wp_customize ) {
 		);
 	}
 
-	// Footer widget areas.
-	$wp_customize->add_setting(
-		'starter_footer_widgets',
-		array(
-			'default'           => 3,
-			'sanitize_callback' => 'starter_sanitize_number',
-			'type'				=> 'option',
-			'transport'   		=> 'refresh',
-		)
-	);
-
-	$wp_customize->add_control(
-		'starter_footer_widgets',
-		array(
-			'type'		  => 'number',
-			'label'       => __( 'Footer Widget Areas', 'starter' ),
-			'description' => __( 'Select the number of widget areas to display in the footer section.', 'starter' ),
-			'section'     => 'genesis_layout',
-			'settings'    => 'starter_footer_widgets',
-			'priority'	  => 20,
-		)
-	);
-
-	// Add front page setting to the Customizer.
+	/**
+	 * Front Page Content.
+	 *
+	 * Adds the Front Page Content setting and control to the Static
+	 * Front Page section section of the customizer. This allows the
+	 * user to easily show or hide the front page content.
+	 */
 	$wp_customize->add_setting(
 		'starter_frontpage_content',
 		array(
@@ -136,12 +119,19 @@ function starter_customize_register( $wp_customize ) {
 	    )
 	);
 
-	// Front page widget areas.
+	/**
+	 * Front page widget areas.
+	 *
+	 * Adds the Front Page Widget Areas setting and control to the
+	 * Static Front Page section of the customizer. This allows the
+	 * user to select the number of widget areas to display on the
+	 * home page of their site.
+	 */
 	$wp_customize->add_setting(
 		'starter_frontpage_widgets',
 		array(
 			'default'           => 1,
-			'sanitize_callback' => 'starter_sanitize_number',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'				=> 'option',
 			'transport'   		=> 'refresh',
 		)
@@ -155,6 +145,36 @@ function starter_customize_register( $wp_customize ) {
 			'description' => __( 'Select the number of widget areas to display on the home page.', 'starter' ),
 			'section'     => 'static_front_page',
 			'settings'    => 'starter_frontpage_widgets',
+		)
+	);
+
+	/**
+	 * Footer widget areas.
+	 *
+	 * Adds the Footer Widget Areas setting and control to the
+	 * Site Layout section of the customizer. This allows the user
+	 * to select the number of widget areas to display in the footer
+	 * section of their site.
+	 */
+	$wp_customize->add_setting(
+		'starter_footer_widgets',
+		array(
+			'default'           => 3,
+			'sanitize_callback' => 'sanitize_text_field',
+			'type'				=> 'option',
+			'transport'   		=> 'refresh',
+		)
+	);
+
+	$wp_customize->add_control(
+		'starter_footer_widgets',
+		array(
+			'type'		  => 'number',
+			'label'       => __( 'Footer Widget Areas', 'starter' ),
+			'description' => __( 'Select the number of widget areas to display in the footer section.', 'starter' ),
+			'section'     => 'genesis_layout',
+			'settings'    => 'starter_footer_widgets',
+			'priority'	  => 20,
 		)
 	);
 }
@@ -234,13 +254,16 @@ function starter_customizer_output() {
 add_action( 'wp_enqueue_scripts', 'starter_customizer_output', 100 );
 
 /**
- * Loads theme customizer JavaScript.
+ * Customizer JavaScript file.
+ *
+ * Loads the custom scripts used to add the postMessage functions
+ * to WordPress core customizer settings and also the color settings
+ * defined by the theme. Without this, live preview will not work.
  *
  * @access public
  * @return void
  */
 function starter_enqueue_customizer_scripts() {
-
 	wp_enqueue_script(
 		'starter-customize',
 		get_stylesheet_directory_uri() . '/assets/scripts/min/customize.min.js',
@@ -250,3 +273,25 @@ function starter_enqueue_customizer_scripts() {
 	);
 }
 add_action( 'customize_preview_init', 'starter_enqueue_customizer_scripts' );
+
+/**
+ * Customizer inline CSS.
+ *
+ * This function adds some styles to the WordPress Customizer to
+ * hide the first paragraph of the Widgets panel notice. Because
+ * of the dynamic widget areas, it displays an incorrect number
+ * of available widget areas. The simplest way to fix this is to
+ * just hide the number, it's not needed anyway.
+ */
+function my_customizer_styles() {
+	$css = '
+		.no-widget-areas-rendered-notice p:nth-of-type(1) {
+			display: none !important;
+		}
+		.no-widget-areas-rendered-notice p:nth-of-type(2) {
+			margin-top: 0 !important;
+		}
+	';
+	printf( '<style>%s</style>', starter_minify_css( $css ) );
+}
+add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );

@@ -1,6 +1,9 @@
 # Genesis Starter Theme
 
-A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow.
+A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow. Demo - [https://demo.seothemes.net/genesis-sample](https://demo.seothemes.net/genesis-sample)
+
+
+![Screenshot](https://seothemes.net/wp-content/themes/seothemes/images/screenshot.png)
 
 
 ## Features
@@ -15,7 +18,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Custom colors with postMessage transport.
 * Front page Hero section widget area with custom background image or video upload.
 * Dynamic, flexbox-based widget areas that automatically adjust column widths.
-* Built in support for [Roots Soil](https://roots.io/plugins/soil/) and [Cleaner Gallery](https://wordpress.org/plugins/cleaner-gallery/) plugins.
+* Built in support for [Roots Soil](https://roots.io/plugins/soil/), [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/), [Gravity Forms](http://www.gravityforms.com/) and [Cleaner Gallery](https://wordpress.org/plugins/cleaner-gallery/) plugins.
 * Gravity Forms and Simple Social Icons CSS/SCSS reset.
 * Contains POT file for internationalization (i18n)
 
@@ -72,6 +75,7 @@ theme/
 │   ├── customize.php
 │   ├── defaults.php
 │   ├── helpers.php
+│   ├── menus.php
 │   ├── sidebars.php
 │   └── plugins.php
 ├── views/
@@ -108,7 +112,7 @@ You now have all the necessary dependencies to run the build process.
 
 ### Build commands
 
-* `gulp sass` — Compile, autoprefix and minify Sass files.
+* `gulp styles` — Compile, autoprefix and minify Sass files.
 * `gulp scripts` — Minify javascript files.
 * `gulp images` — Compress and optimize images.
 * `gulp watch` — Compile assets when file changes are made, start Browsersync
@@ -123,13 +127,13 @@ You now have all the necessary dependencies to run the build process.
 
 ### Using Browsersync
 
-To use Browsersync you need to update `dev_url` on line 43 of `gulpfile.js` to reflect your local development hostname.
+To use Browsersync you need to update the proxy URL on line 299 of `gulpfile.js` to reflect your local development hostname.
 
 If your local development URL is `my-site.dev`, update the file to read:
 
 ```javascript
 ...
-  var dev_url = 'my-site.dev',
+  proxy: 'my-site.dev',
 ...
 ```
 
