@@ -29,7 +29,7 @@ function starter_theme_defaults( $defaults ) {
 	$defaults['image_alignment']           = 'alignnone';
 	$defaults['posts_nav']                 = 'numeric';
 	$defaults['image_size']                = 'large';
-	$defaults['site_layout']               = 'full-width-content';
+	$defaults['site_layout']               = 'sidebar-content';
 
 	return $defaults;
 
@@ -51,7 +51,7 @@ function starter_theme_setting_defaults() {
 			'image_alignment'           => 'alignnone',
 			'image_size'                => 'large',
 			'posts_nav'                 => 'numeric',
-			'site_layout'               => 'full-width-content',
+			'site_layout'               => 'sidebar-content',
 		) );
 	}
 
@@ -59,25 +59,6 @@ function starter_theme_setting_defaults() {
 
 }
 add_action( 'after_switch_theme', 'starter_theme_setting_defaults' );
-
-/**
- * Modify thumbnail size for WooCommerce.
- */
-function starter_default_thumbnails() {
-
-	$args = array(
-		'width'  => '380',
-		'height' => '620',
-		'crop'   => '1',
-	);
-
-	// Update default thumbnail sizes.
-	update_option( 'shop_catalog_image_size', $args );
-}
-add_action( 'after_switch_theme', 'starter_default_thumbnails' );
-
-// Set portfolio image size to override testimonial plugin.
-add_image_size( 'portfolio', 620, 380, true );
 
 /**
  * Starter Pro Simple Social Icon Defaults.

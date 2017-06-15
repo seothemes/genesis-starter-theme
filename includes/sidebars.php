@@ -33,7 +33,7 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the header right widget area. This widget area is not suitable to display every type of widget, and works best with a custom menu, a search form, or possibly a text widget.', 'starter' ),
 ) );
 
-// Register shop sidebar widget area.
+// Register primary sidebar widget area.
 genesis_register_sidebar( array(
 	'id'          => 'sidebar',
 	'name'        => __( 'Primary Sidebar', 'starter' ),
@@ -53,7 +53,7 @@ genesis_register_sidebar( array(
 function starter_before_header_widget_area() {
 
 	genesis_widget_area( 'before-header', array(
-	    'before' => sprintf( '<div class="before-header"><div class="wrap">' ),
+	    'before' => '<div class="before-header"><div class="wrap">',
 	    'after'  => '</div></div>',
 	) );
 }
@@ -65,7 +65,7 @@ add_action( 'genesis_before_header', 'starter_before_header_widget_area' );
 function starter_header_right_widget_area() {
 
 	genesis_widget_area( 'header-right-widget', array(
-	    'before' => sprintf( '<div class="header-widget-area">' ),
+	    'before' => '<div class="header-widget-area">',
 	    'after'  => '</div>',
 	) );
 }
@@ -77,13 +77,13 @@ add_action( 'genesis_header', 'starter_header_right_widget_area', 10 );
 function starter_before_footer_widget_area() {
 
 	genesis_widget_area( 'before-footer', array(
-	    'before' => sprintf( '<div class="before-footer"><div class="wrap">' ),
+	    'before' => '<div class="before-footer"><div class="wrap">',
 	    'after'  => '</div></div>',
 	) );
 }
 add_action( 'genesis_before_footer', 'starter_before_footer_widget_area' );
 
-// Conditional variable of front page widgets. (Dynamic widget areas workaround).
+// Conditional variable of front page widget areas. (Dynamic widget areas workaround).
 $count_frontpage_widgets = is_customize_preview() ? 20 : get_option( 'starter_frontpage_widgets', 1 );
 
 // Register dynamic front page widget areas.
@@ -96,8 +96,8 @@ for ( $i = 1; $i <= $count_frontpage_widgets; $i++ ) {
 	) );
 }
 
-// Conditional variable of front page widgets. (Dynamic widget areas workaround).
-$count_footer_widgets = is_customize_preview() ? 20 : get_option( 'starter_footer_widgets', 3 );
+// Conditional variable of footer widget areas. (Dynamic widget areas workaround).
+$count_footer_widgets = is_customize_preview() ? 10 : get_option( 'starter_footer_widgets', 3 );
 
 // Register dynamic footer widget areas.
 for ( $i = 1; $i <= $count_footer_widgets; $i++ ) {
@@ -123,21 +123,20 @@ function starter_footer_widgets() {
 		return;
 	}
 
+	// Opening markup with custom wrap.
 	echo '<div class="footer-widgets">';
-
 	starter_wrap_open();
 
 	// Loop through widget areas.
 	for ( $i = 1; $i <= $widget_areas; $i++ ) {
-
 		genesis_widget_area( "footer-widget-$i", array(
 			'before' => sprintf( '<div class="widget-area footer-widgets-%s">', $i ),
 			'after'  => '</div>',
 		) );
 	}
 
+	// Closing markup.
 	starter_wrap_close();
-
 	echo '</div>';
 }
 add_action( 'genesis_footer', 'starter_footer_widgets', 5 );

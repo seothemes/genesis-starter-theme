@@ -23,16 +23,16 @@ add_action( 'genesis_header', 'starter_nav_after_header', 14 );
 add_action( 'genesis_footer', 'starter_nav_footer', 7 );
 
 /**
- * Custom nav menus.
+ * Custom nav menu function.
  *
  * The main purpose of this is to add better customizer support
  * for navigation menus. Genesis doesn't yet support the selective
- * refresh feature for nav menus because the `echo` argument is set
- * to `false`. This custom function will probably be removed if
- * support is added for this feature. Another benefit to having
- * this function is that Genesis doesn't add `role="navigation"`
- * to menu containers as recommended by Google so we are able to
- * add that in by displaying menus this way.
+ * refresh feature for nav menus because the `echo` argument has
+ * to be set to `false`. This custom function will probably be
+ * removed if support is added for this feature. Another benefit
+ * to having this function is that Genesis doesn't add in the
+ * `role="navigation"` to menu containers as recommended by Google
+ * so we are able to add that in by displaying menus this way.
  *
  * @since  2.0.1
  * @param  array  $name  Name/ID of the menu.
