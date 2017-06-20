@@ -38,8 +38,7 @@ function starter_customize_partial_blogdescription() {
  *
  * A handy CSS minification script by Gary Jones that we'll use to
  * minify the CSS output by the customizer. This is called near the
- * end of the /includes/customizer-output.php file. Thanks to Gary
- * for this one, works perfectly.
+ * end of the /includes/customizer-output.php file.
  *
  * @author Gary Jones
  * @link https://github.com/GaryJones/Simple-PHP-CSS-Minification
@@ -120,11 +119,13 @@ add_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
  * The below code modifies the default read more link when
  * using the WordPress More Tag to break a post on your site.
  * Instead of seeing 'Read more', screen readers will instead
- * see 'Read more about (entry title)'. This is a simple fix
- * to improve the overall user experience and should be in core.
+ * see 'Read more about (entry title)'.
  */
 function starter_read_more() {
-	return sprintf( '... <a class="more-link" rel="nofollow" href="%1$s">%2$s<span class="screen-reader-text">%3$s %4$s</span></a>', esc_url( get_permalink() ), __( 'Read more', 'starter' ), __( ' about', 'starter' ), get_the_title() );
+	return sprintf( '&hellip; <a href="%s" class="more-link">%s</a>',
+		get_the_permalink(),
+		genesis_a11y_more_link( __( 'Read more', 'starter' ) )
+	);
 }
 add_filter( 'excerpt_more', 'starter_read_more' );
 add_filter( 'the_content_more_link', 'starter_read_more' );
@@ -189,8 +190,6 @@ add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
  * @param string $template The template path.
  */
 function starter_custom_template( $template ) {
-
-	// Return early if not front page.
 	if ( ! is_front_page() ) {
 		return $template;
 	}
