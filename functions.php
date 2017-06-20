@@ -20,7 +20,7 @@ define( 'CHILD_THEME_VERSION', '2.0.2' );
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'starter' ) );
 
-// Remove unused functionality.
+// Remove unused layouts.
 unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 unregister_sidebar( 'header-right' );
@@ -123,7 +123,7 @@ register_default_headers( array(
 	),
 ) );
 
-// Add support for page excerpts.
+// Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
 
 /**
@@ -142,8 +142,11 @@ add_theme_support( 'soil-nav-walker' );
 add_theme_support( 'soil-nice-search' );
 add_theme_support( 'soil-relative-urls' );
 
-// Built in support for Cleaner Gallery.
+// Enable support for Cleaner Gallery.
 add_theme_support( 'cleaner-gallery' );
+
+// Enable support for WooCommerce.
+add_theme_support( 'woocommerce' );
 
 // Force Gravity Forms to disable CSS output.
 add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
@@ -186,9 +189,6 @@ function starter_scripts_styles() {
 
 	// Google fonts.
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
-
-	// Remove Genesis superfish script. (Included with theme).
-	wp_deregister_script( 'hoverIntent' );
 
 	// Enqueue responsive menu script.
 	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
