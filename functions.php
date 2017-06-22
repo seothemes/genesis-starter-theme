@@ -194,23 +194,7 @@ function starter_scripts_styles() {
 	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Localize responsive menus script.
-	wp_localize_script( 'starter-menus', 'genesis_responsive_menu',	starter_responsive_menu_settings() );
-
-}
-add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
-
-/**
- * Responsive menu settings.
- *
- * Settings can be added by localizing an array of appropriate
- * values to the repsonsive-menus.js script. Localizing values can
- * be used to make any data available to your script that you can
- * normally only get from the server side of WordPress.
- */
-function starter_responsive_menu_settings() {
-
-	// Array of settings.
-	$settings = array(
+	wp_localize_script( 'starter-menus', 'genesis_responsive_menu',	array(
 		'mainMenu'         => __( 'Menu', 'starter' ),
 		'subMenu'          => __( 'Menu', 'starter' ),
 		'menuIconClass'    => null,
@@ -221,9 +205,9 @@ function starter_responsive_menu_settings() {
 				'.nav-after-header',
 			),
 		),
-	);
-	return $settings;
+	) );
 }
+add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 
 // Load theme includes.
 include_once( get_stylesheet_directory() . '/includes/defaults.php' );

@@ -184,7 +184,7 @@ add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
  *
  * The following function adds a custom template path for the front
  * page template. This allows us to move the front-page.php
- * template to the /views/ sub-folder. The point of this is to
+ * template to the /templates/ sub-folder. The point of this is to
  * keep all templates and template parts in one place.
  *
  * @param string $template The template path.
@@ -193,6 +193,6 @@ function starter_custom_template( $template ) {
 	if ( ! is_front_page() ) {
 		return $template;
 	}
-	return get_stylesheet_directory() . '/views/front-page.php';
+	return get_stylesheet_directory() . '/templates/front-page.php';
 }
 add_filter( 'template_include', 'starter_custom_template', 99 );

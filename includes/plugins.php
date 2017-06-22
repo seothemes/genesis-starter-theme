@@ -32,42 +32,46 @@ function starter_register_required_plugins() {
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
-	$plugins = array(
+	$plugins = array();
 
-		/**
-		 * Add any recommended plugins here.
-		 */
-		array(
-			'name'      => 'Cleaner Gallery',
-			'slug'      => 'cleaner-gallery',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => 'Simple Social Icons',
-			'slug'      => 'simple-social-icons',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => 'Widget Importer & Exporter',
-			'slug'      => 'widget-importer-exporter',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => 'WP Featherlight',
-			'slug'      => 'wp-featherlight',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => 'WordPress Importer',
-			'slug'      => 'wordpress-importer',
-			'required'  => false,
-		),
-
+	$plugins[] = array(
+		'name'      => 'Cleaner Gallery',
+		'slug'      => 'cleaner-gallery',
+		'required'  => false,
 	);
+
+	$plugins[] = array(
+		'name'      => 'Simple Social Icons',
+		'slug'      => 'simple-social-icons',
+		'required'  => false,
+	);
+
+	$plugins[] = array(
+		'name'      => 'Widget Importer & Exporter',
+		'slug'      => 'widget-importer-exporter',
+		'required'  => false,
+	);
+
+	$plugins[] = array(
+		'name'      => 'WP Featherlight',
+		'slug'      => 'wp-featherlight',
+		'required'  => false,
+	);
+
+	$plugins[] = array(
+		'name'      => 'WordPress Importer',
+		'slug'      => 'wordpress-importer',
+		'required'  => false,
+	);
+
+	// Check if WooCommerce is installed.
+	if ( class_exists( 'WooCommerce' ) ) {
+		$plugins[] = array(
+			'name'     => 'Genesis Connect WooCommerce',
+			'slug'     => 'genesis-connect-woocommerce',
+			'required' => true,
+		);
+	}
 
 	/*
 	 * Array of configuration settings. Amend each line as needed.
