@@ -3,7 +3,7 @@
  * Template Name: Page Builder
  *
  * This file adds the page builder template to the Genesis Starter
- * theme. It removes everything in between the header and footer
+ * theme. It removes everything between the site header and footer
  * leaving a blank template perfect for page builder plugins.
  *
  * @package      Genesis Starter
