@@ -1,9 +1,9 @@
 # Genesis Starter Theme
 
-A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow. Demo - [https://demo.seothemes.net/genesis-sample](https://demo.seothemes.net/genesis-sample)
+A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow. Demo - [https://demo.seothemes.net/genesis-starter](https://demo.seothemes.net/genesis-starter)
 
 
-![Screenshot](https://seothemes.net/wp-content/themes/seothemes/images/screenshot.png)
+![Screenshot](https://assets.seothemes.net/screenshot.png)
 
 
 ## Features
@@ -140,4 +140,4 @@ If your local development URL is `my-site.dev`, update the file to read:
 
 ## Support
 
-Please visit https://seothemes.net/support/ for theme support.
+Please visit https://seothemes.com/support/ for theme support.
