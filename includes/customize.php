@@ -62,7 +62,7 @@ function starter_customize_register( $wp_customize ) {
 	foreach ( $starter_colors as $id => $hex ) {
 
 		$setting = "starter_{$id}_color";
-		$label	 = ucwords( str_replace( '_', ' ', $id ) ) . __( ' Color', 'starter' );
+		$label	 = ucwords( str_replace( '_', ' ', $id ) ) . __( ' Color', 'genesis-starter' );
 
 		// Add color setting.
 		$wp_customize->add_setting(
@@ -107,14 +107,14 @@ function starter_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'starter_frontpage_content',
 		array(
-			'label'       => __( 'Front Page Content', 'starter' ),
-			'description' => __( 'Show or hide the front page content.', 'starter' ),
+			'label'       => __( 'Front Page Content', 'genesis-starter' ),
+			'description' => __( 'Show or hide the front page content.', 'genesis-starter' ),
 			'section'     => 'static_front_page',
 			'settings'    => 'starter_frontpage_content',
 			'type'        => 'radio',
 			'choices'     => array(
-				'true'    => __( 'Show content', 'starter' ),
-				'false'   => __( 'Hide content', 'starter' ),
+				'true'    => __( 'Show content', 'genesis-starter' ),
+				'false'   => __( 'Hide content', 'genesis-starter' ),
 			),
 	    )
 	);
@@ -141,8 +141,8 @@ function starter_customize_register( $wp_customize ) {
 		'starter_frontpage_widgets',
 		array(
 			'type'		  => 'number',
-			'label'       => __( 'Front Page Widget Areas', 'starter' ),
-			'description' => __( 'Select the number of widget areas to display on the home page.', 'starter' ),
+			'label'       => __( 'Front Page Widget Areas', 'genesis-starter' ),
+			'description' => __( 'Select the number of widget areas to display on the home page.', 'genesis-starter' ),
 			'section'     => 'static_front_page',
 			'settings'    => 'starter_frontpage_widgets',
 		)
@@ -170,8 +170,8 @@ function starter_customize_register( $wp_customize ) {
 		'starter_footer_widgets',
 		array(
 			'type'		  => 'number',
-			'label'       => __( 'Footer Widget Areas', 'starter' ),
-			'description' => __( 'Select the number of widget areas to display in the footer section.', 'starter' ),
+			'label'       => __( 'Footer Widget Areas', 'genesis-starter' ),
+			'description' => __( 'Select the number of widget areas to display in the footer section.', 'genesis-starter' ),
 			'section'     => 'genesis_layout',
 			'settings'    => 'starter_footer_widgets',
 			'priority'	  => 20,

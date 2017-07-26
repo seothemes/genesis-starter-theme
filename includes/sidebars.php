@@ -22,29 +22,29 @@ if ( ! defined( 'WPINC' ) ) {
 // Register before header widget area.
 genesis_register_sidebar( array(
 	'id'          => 'before-header',
-	'name'        => __( 'Before Header', 'starter' ),
-	'description' => __( 'This is the before header flexible widgets area. Widgets displayed in this area will automatically adjust width depending on the number of widgets.', 'starter' ),
+	'name'        => __( 'Before Header', 'genesis-starter' ),
+	'description' => __( 'This is the before header flexible widgets area. Widgets displayed in this area will automatically adjust width depending on the number of widgets.', 'genesis-starter' ),
 ) );
 
 // Register header right widget area.
 genesis_register_sidebar( array(
 	'id'          => 'header-right-widget',
-	'name'        => __( 'Header Right', 'starter' ),
-	'description' => __( 'This is the header right widget area. This widget area is not suitable to display every type of widget, and works best with a custom menu, a search form, or possibly a text widget.', 'starter' ),
+	'name'        => __( 'Header Right', 'genesis-starter' ),
+	'description' => __( 'This is the header right widget area. This widget area is not suitable to display every type of widget, and works best with a custom menu, a search form, or possibly a text widget.', 'genesis-starter' ),
 ) );
 
 // Register primary sidebar widget area.
 genesis_register_sidebar( array(
 	'id'          => 'sidebar',
-	'name'        => __( 'Primary Sidebar', 'starter' ),
-	'description' => __( 'This is the primary sidebar if you are using a two column site layout option. Not displayed on shop page or product archives.', 'starter' ),
+	'name'        => __( 'Primary Sidebar', 'genesis-starter' ),
+	'description' => __( 'This is the primary sidebar if you are using a two column site layout option. Not displayed on shop page or product archives.', 'genesis-starter' ),
 ) );
 
 // Register before footer widget area.
 genesis_register_sidebar( array(
 	'id'          => 'before-footer',
-	'name'        => __( 'Before Footer', 'starter' ),
-	'description' => __( 'This is the before footer flexible widgets area. Widgets displayed in this area will automatically adjust width depending on the number of widgets.', 'starter' ),
+	'name'        => __( 'Before Footer', 'genesis-starter' ),
+	'description' => __( 'This is the before footer flexible widgets area. Widgets displayed in this area will automatically adjust width depending on the number of widgets.', 'genesis-starter' ),
 ) );
 
 /**
@@ -91,8 +91,8 @@ for ( $i = 1; $i <= $count_frontpage_widgets; $i++ ) {
 
 	genesis_register_sidebar( array(
 		'id'          => 'front-page-' . $i,
-		'name'        => __( 'Front Page ', 'starter' ) . $i,
-		'description' => __( 'This is the front page ', 'starter' ) . $i . __( ' widget area.', 'starter' ),
+		'name'        => __( 'Front Page ', 'genesis-starter' ) . $i,
+		'description' => __( 'This is the front page ', 'genesis-starter' ) . $i . __( ' widget area.', 'genesis-starter' ),
 	) );
 }
 
@@ -104,8 +104,8 @@ for ( $i = 1; $i <= $count_footer_widgets; $i++ ) {
 
 	genesis_register_sidebar( array(
 		'id'          => 'footer-widget-' . $i,
-		'name'        => __( 'Footer Widget ', 'starter' ) . $i,
-		'description' => __( 'This is the footer widget ', 'starter' ) . $i . __( ' widget area.', 'starter' ),
+		'name'        => __( 'Footer Widget ', 'genesis-starter' ) . $i,
+		'description' => __( 'This is the footer widget ', 'genesis-starter' ) . $i . __( ' widget area.', 'genesis-starter' ),
 	) );
 }
 

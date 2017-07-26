@@ -124,7 +124,7 @@ add_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
 function starter_read_more() {
 	return sprintf( '&hellip; <a href="%s" class="more-link">%s</a>',
 		get_the_permalink(),
-		genesis_a11y_more_link( __( 'Read more', 'starter' ) )
+		genesis_a11y_more_link( __( 'Read more', 'genesis-starter' ) )
 	);
 }
 add_filter( 'excerpt_more', 'starter_read_more' );

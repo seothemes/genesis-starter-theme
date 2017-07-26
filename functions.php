@@ -18,7 +18,7 @@ define( 'CHILD_THEME_URL', 'https://seothemes.net/themes/genesis-starter' );
 define( 'CHILD_THEME_VERSION', '2.0.2' );
 
 // Set Localization (do not remove).
-load_child_theme_textdomain( 'starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'starter' ) );
+load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'genesis-starter' ) );
 
 // Remove unused layouts.
 unregister_sidebar( 'sidebar' );
@@ -46,9 +46,9 @@ add_theme_support( 'genesis-accessibility', array(
 
 // Enable custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
-	'header' 	   => __( 'Header Menu', 'starter' ),
-	'after-header' => __( 'After Header Menu', 'starter' ),
-	'footer'	   => __( 'Footer Menu', 'starter' ),
+	'header' 	   => __( 'Header Menu', 'genesis-starter' ),
+	'after-header' => __( 'After Header Menu', 'genesis-starter' ),
+	'footer'	   => __( 'Footer Menu', 'genesis-starter' ),
 ) );
 
 // Enable viewport meta tag for mobile browsers.
@@ -119,7 +119,7 @@ register_default_headers( array(
 	'child' => array(
 		'url'           => '%2$s/assets/images/hero.jpg',
 		'thumbnail_url' => '%2$s/assets/images/hero.jpg',
-		'description'   => __( 'Hero Image', 'starter' ),
+		'description'   => __( 'Hero Image', 'genesis-starter' ),
 	),
 ) );
 
@@ -195,8 +195,8 @@ function starter_scripts_styles() {
 
 	// Localize responsive menus script.
 	wp_localize_script( 'starter-menus', 'genesis_responsive_menu',	array(
-		'mainMenu'         => __( 'Menu', 'starter' ),
-		'subMenu'          => __( 'Menu', 'starter' ),
+		'mainMenu'         => __( 'Menu', 'genesis-starter' ),
+		'subMenu'          => __( 'Menu', 'genesis-starter' ),
 		'menuIconClass'    => null,
 		'subMenuIconClass' => null,
 		'menuClasses'      => array(
