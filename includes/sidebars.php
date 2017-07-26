@@ -119,7 +119,7 @@ function starter_footer_widgets() {
 	$widget_areas = get_option( 'starter_footer_widgets', 3 );
 
 	// Return early if no footer widget areas.
-	if ( '0' === $widget_areas ) {
+	if ( '0' === $widget_areas || ! is_active_sidebar( 'footer-widget-1' ) ) {
 		return;
 	}
 
