@@ -1,12 +1,13 @@
 {
   "name": "genesis-starter",
   "version": "2.0.2",
-  "description": "The Genesis Starter theme with modern build tools.",
+  "description": "The Genesis Starter theme for the Genesis Framework.",
   "main": "gulpfile.js",
   "dependencies": {
     "autoprefixer": "^6.3.1",
     "browser-sync": "*",
     "css-mqpacker": "*",
+    "fs": "0.0.1-security",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-bump": "^2.7.0",
@@ -23,6 +24,7 @@
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "*",
     "gulp-replace": "^0.5.4",
+    "gulp-s3-publish": "^2.0.0",
     "gulp-sass": "*",
     "gulp-sort": "^1.1.1",
     "gulp-sourcemaps": "*",

@@ -1,9 +1,18 @@
-//process.env.DISABLE_NOTIFIER = true; // Disable all notifications.
+//process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
+
+/**		
+ * Genesis Starter.		
+ *		
+ * This file adds gulp tasks to the Genesis Starter theme.		
+ *		
+ * @author Seo themes		
+ */
 
 // Require our dependencies.
 var autoprefixer = require( 'autoprefixer' ),
 	browsersync  = require( 'browser-sync' ),
 	mqpacker 	 = require( 'css-mqpacker' ),
+	fs           = require( 'fs' ),
 	gulp         = require( 'gulp' ),
 	bump 		 = require( 'gulp-bump' ),
 	beautify  	 = require( 'gulp-cssbeautify' ),
@@ -18,6 +27,7 @@ var autoprefixer = require( 'autoprefixer' ),
 	postcss 	 = require( 'gulp-postcss' ),
 	rename       = require( 'gulp-rename' ),
 	replace 	 = require( 'gulp-replace' ),
+	s3           = require( 'gulp-s3-publish' ),
 	sass         = require( 'gulp-sass' ),
 	sort 		 = require( 'gulp-sort' ),
 	sourcemaps   = require( 'gulp-sourcemaps' ),
@@ -56,6 +66,12 @@ var format = {
 	},
 	wrapAt: false
 }
+
+// Set AWS S3 settings from private keys.
+aws = JSON.parse( fs.readFileSync( './aws.json' ) );
+
+// Set self-signed certificate.
+ssl = JSON.parse( fs.readFileSync( './ssl.json' ) );
 
 /**
  * Autoprefixed browser support.
@@ -110,10 +126,15 @@ gulp.task( 'styles', function () {
 	] ) )
 
 	// Format non-minified stylesheet.
-	.pipe ( cleancss( { format: format } ) )
+	.pipe ( cleancss( { 
+		format: format
+	} ) )
 
 	// Output non minified css to theme directory.
 	.pipe( gulp.dest( './' ) )
+
+	// Inject changes via browsersync.
+	.pipe( browsersync.reload( { stream: true } ) )
 
 	// Process sass again.
 	.pipe( sass( {
@@ -124,7 +145,7 @@ gulp.task( 'styles', function () {
 	.pipe ( cleancss( {
 		level: {
 			2: {
-					all: true
+				all: true
 			}
 		}
 	} ) )
@@ -148,9 +169,6 @@ gulp.task( 'styles', function () {
 
 	// Filtering stream to only css files.
 	.pipe( filter( '**/*.css' ) )
-
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
 
 	// Notify on successful compile (uncomment for notifications).
 	.pipe( notify( "Compiled: <%= file.relative %>" ) );
@@ -195,9 +213,9 @@ gulp.task( 'scripts', function () {
  * https://www.npmjs.com/package/gulp-imagemin
  */
 gulp.task( 'images', function () {
-	
+
 	return gulp.src( paths.images )
-	
+
 	// Notify on error.
 	.pipe( plumber( {errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
 
@@ -234,15 +252,15 @@ gulp.task( 'i18n', function() {
 	.pipe( sort() )
 
 	.pipe( wpPot( {
-		domain: 'starter',
-		destFile:'languages.pot',
+		domain: 'genesis-starter',
+		destFile:'genesis-starter.pot',
 		package: 'Genesis Starter',
-		bugReport: 'https://seothemes.net/support',
+		bugReport: 'https://seothemes.com/support',
 		lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
 		team: 'Seo Themes <seothemeswp@gmail.com>'
 	} ) )
 
-	.pipe( gulp.dest( './' ) );
+	.pipe( gulp.dest( './languages/' ) );
 
 } );
 
@@ -253,8 +271,8 @@ gulp.task( 'i18n', function() {
  */
 gulp.task( 'bump', function() {
 
-	var oldversion = '2.0.0';
-	var newversion = '2.0.2';
+	var oldversion = '2.0.2';
+	var newversion = '2.0.3';
 
 	gulp.src( [ './package.json', './style.css' ] )
 	.pipe( bump( { version: newversion } ) )
@@ -288,18 +306,39 @@ gulp.task( 'zip', function() {
 } );
 
 /**
+ * Publish packaged theme to S3.
+ *
+ * https://www.npmjs.com/package/gulp-s3
+ */
+gulp.task( 'publish', [ 'zip' ], function() {
+
+	gulp.src( '../genesis-starter.zip' )
+		.pipe( s3( aws ) );
+
+} );
+
+/**
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
  */
 gulp.task( 'watch', function() {
 
-	// Kick off Browsersync.
+	// HTTPS (optional).
 	browsersync( {
-		proxy: 'genesis-starter.dev',
+		proxy: 'https://genesis-starter.dev',
+		port: 8000,
 		notify: false,
-		open: false
+		open: false,
+		https: ssl
 	} );
+
+	// Non HTTPS.
+	//  browsersync( {
+	// 	    proxy: 'genesis-starter.dev',
+	// 	    notify: false,
+	// 	    open: false,
+	//  } );
 
 	// Run tasks when files change.
 	gulp.watch( paths.styles, [ 'styles' ] );
