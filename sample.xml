@@ -5320,7 +5320,7 @@ This is an example of a WordPress page, you could edit this to put information a
 
 &nbsp;
 
-<a href="javascript:history.back()" class="button">Back to demo</a> &nbsp; <a href="https://seothemes.net/store-pro/" class="button secondary">Buy Store Pro</a>]]></content:encoded>
+<a href="javascript:history.back()" class="button">Back to demo</a> &nbsp; <a href="https://seothemes.com/store-pro/" class="button secondary">Buy Store Pro</a>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1032</wp:post_id>
 		<wp:post_date><![CDATA[2017-05-21 07:35:32]]></wp:post_date>
@@ -5846,7 +5846,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>3</wp:comment_id>
 			<wp:comment_author><![CDATA[Lee Anthony]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:13:54]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:13:54]]></wp:comment_date_gmt>
@@ -5860,7 +5860,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>4</wp:comment_id>
 			<wp:comment_author><![CDATA[Lee Anthony]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:04]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:04]]></wp:comment_date_gmt>
@@ -5874,7 +5874,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>5</wp:comment_id>
 			<wp:comment_author><![CDATA[Lee Anthony]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:11]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:11]]></wp:comment_date_gmt>
@@ -5888,7 +5888,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>6</wp:comment_id>
 			<wp:comment_author><![CDATA[Lee Anthony]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:19]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:19]]></wp:comment_date_gmt>
@@ -5902,7 +5902,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>7</wp:comment_id>
 			<wp:comment_author><![CDATA[Lee Anthony]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:25]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:25]]></wp:comment_date_gmt>
@@ -5930,7 +5930,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>9</wp:comment_id>
 			<wp:comment_author><![CDATA[This is a Sample Trackback]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[]]></wp:comment_author_email>
-			<wp:comment_author_url>http://demo.seothemes.net/blog/sample-trackback/</wp:comment_author_url>
+			<wp:comment_author_url>http://demo.seothemes.com/blog/sample-trackback/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[72.10.51.26]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-08-27 00:22:43]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-08-27 00:22:43]]></wp:comment_date_gmt>
@@ -5956,7 +5956,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>10</wp:comment_id>
 			<wp:comment_author><![CDATA[Check Out This Sample Trackback]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[]]></wp:comment_author_email>
-			<wp:comment_author_url>http://demo.seothemes.net/blog/sample-trackback-2/</wp:comment_author_url>
+			<wp:comment_author_url>http://demo.seothemes.com/blog/sample-trackback-2/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[72.10.51.26]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-08-27 00:27:38]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-08-27 00:27:38]]></wp:comment_date_gmt>
@@ -5982,7 +5982,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>12</wp:comment_id>
 			<wp:comment_author><![CDATA[Ken Vanderpump]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:13:54]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:13:54]]></wp:comment_date_gmt>
@@ -5996,7 +5996,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>13</wp:comment_id>
 			<wp:comment_author><![CDATA[Tom Schwartz]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:04]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:04]]></wp:comment_date_gmt>
@@ -6010,7 +6010,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>14</wp:comment_id>
 			<wp:comment_author><![CDATA[Jax Taylor]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:11]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:11]]></wp:comment_date_gmt>
@@ -6024,7 +6024,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>15</wp:comment_id>
 			<wp:comment_author><![CDATA[Tom Sandoval]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:19]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:19]]></wp:comment_date_gmt>
@@ -6038,7 +6038,7 @@ This is an example of a WordPress post, you could edit this to put information a
 			<wp:comment_id>16</wp:comment_id>
 			<wp:comment_author><![CDATA[James Kennedy]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[demo-comments@studiopress.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://www.seothemes.net/</wp:comment_author_url>
+			<wp:comment_author_url>http://www.seothemes.com/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[76.29.60.137]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2013-09-01 19:14:25]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2013-09-01 19:14:25]]></wp:comment_date_gmt>

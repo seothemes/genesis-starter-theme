@@ -9,7 +9,7 @@
  * @package Genesis Starter
  * @author  SeoThemes
  * @license GPL-2.0+
- * @link    https://seothemes.net/themes/genesis-starter
+ * @link    https://seothemes.com/themes/genesis-starter
  */
 
 /**

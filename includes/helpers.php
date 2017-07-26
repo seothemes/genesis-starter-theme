@@ -3,7 +3,7 @@
  * This file adds helper functions used in the Genesis Starter Theme.
  *
  * @package      Genesis Starter
- * @link         https://seothemes.net/themes/genesis-starter
+ * @link         https://seothemes.com/themes/genesis-starter
  * @author       Seo Themes
  * @copyright    Copyright © 2017 Seo Themes
  * @license      GPL-2.0+
