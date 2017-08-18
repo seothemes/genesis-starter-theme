@@ -3,7 +3,7 @@
 A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow. Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 
 
-![Screenshot](https://assets.seothemes.com/screenshot.png)
+![Screenshot](https://s3-us-west-1.amazonaws.com/seo-themes/screenshot.png)
 
 
 ## Features
@@ -15,10 +15,10 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Robust Gulpfile included for automatically compiling assets, optimizing images, i18n, theme zip packaging and more.
 * Sass/SCSS partials, variables, mixins and functions included.
 * Custom logo, header and background support with postMessage transport.
-* Custom colors with postMessage transport.
+* Custom colors with RGBA/transparency settings.
 * Front page Hero section widget area with custom background image or video upload.
-* Dynamic, flexbox-based widget areas that automatically adjust column widths.
-* Built in support for [Roots Soil](https://roots.io/plugins/soil/), [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/), [Gravity Forms](http://www.gravityforms.com/) and [Cleaner Gallery](https://wordpress.org/plugins/cleaner-gallery/) plugins.
+* Flexbox-based widget areas that automatically adjust column widths.
+* Built in support for [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/), [Gravity Forms](http://www.gravityforms.com/) plugins.
 * Gravity Forms and Simple Social Icons CSS/SCSS reset.
 * Contains POT file for internationalization (i18n)
 
@@ -63,12 +63,11 @@ The following instructions require the use of a text editor with search and repl
 
 ## Widget Areas
 
-* Before header
 * Header right
 * Primary sidebar
 * Before footer
-* Front page (dynamic) 
-* Footer (dynamic)
+* Front page (default 5) 
+* Footer (default 3)
 
 
 ## Structure
@@ -84,18 +83,16 @@ theme/
 │   ├── customize.php
 │   ├── defaults.php
 │   ├── helpers.php
-│   ├── menus.php
-│   ├── sidebars.php
 │   └── plugins.php
 ├── languages/
 │   └── genesis-starter.pot
-├── views/
-│   ├── front-page.php
-│   ├── landing-page.php
+├── templates/
+│   ├── page-landing.php
 │   └── page-builder.php
 ├── .editorconfig
 ├── .gitignore
 ├── CHANGELOG.md
+├── front-page.php
 ├── functions.php
 ├── gulpfile.js
 ├── languages.pot
