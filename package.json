@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "The Genesis Starter theme for the Genesis Framework.",
   "main": "gulpfile.js",
   "dependencies": {
@@ -10,7 +10,6 @@
     "fs": "0.0.1-security",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-bump": "^2.7.0",
     "gulp-cached": "*",
     "gulp-clean-css": "^3.4.1",
     "gulp-concat": "^2.6.1",

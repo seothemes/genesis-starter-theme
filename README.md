@@ -23,13 +23,13 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Contains POT file for internationalization (i18n)
 
 
-## Requirements
+## Recommendations
 
-* PHP > 5.6
-* WordPress > 4.7
-* Genesis Framework > 2.0
+* PHP > 7.0
+* WordPress > 4.8
+* Genesis Framework > 2.4
 * Node.js > 6.9
-* Gulp.js > 3.9
+* Gulp.js > 3.9 
 
 
 ## Installation
@@ -40,6 +40,15 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 4. *Important* Delete unwanted existing posts, pages, comments & widgets
 5. Import sample.xml from Tools > Import
 6. Import widgets.wie from Tools > Widget Importer & Exporter
+
+
+## Renaming
+
+The following instructions require the use of a text editor with search and replace functionality. You will need to perform a search and replace on all files in the theme folder. If using NPM, the theme should be renamed before running `npm install`. You do not want to edit any files in the `node_modules` directory.
+
+1. Search and replace `genesis-starter` with your theme slug.
+2. Search and replace `starter_` with your theme function prefix.
+3. Search and replace `Genesis Starter` with your theme name.
 
 
 ## Customization
@@ -78,6 +87,8 @@ theme/
 │   ├── menus.php
 │   ├── sidebars.php
 │   └── plugins.php
+├── languages/
+│   └── genesis-starter.pot
 ├── views/
 │   ├── front-page.php
 │   ├── landing-page.php
@@ -125,9 +136,10 @@ You now have all the necessary dependencies to run the build process.
 * `gulp zip` — Package theme into zip file for distribution, ignoring `node_modules`.
 * `gulp bump` - Bumps theme version in `package.json`, `style.css`, `style.scss` and `functions.php`. 
 
+
 ### Using Browsersync
 
-To use Browsersync you need to update the proxy URL on line 299 of `gulpfile.js` to reflect your local development hostname.
+To use Browsersync you need to update the proxy URL in `gulpfile.js` to reflect your local development hostname.
 
 If your local development URL is `my-site.dev`, update the file to read:
 
@@ -136,6 +148,10 @@ If your local development URL is `my-site.dev`, update the file to read:
   proxy: 'my-site.dev',
 ...
 ```
+
+By default, BrowserSync is configured to use an SSL certificate for local development. If using a Non-HTTPS local site, remove the HTTPS BrowserSync configuration and uncomment the HTTP settings.
+
+
 
 
 ## Support

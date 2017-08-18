@@ -1,11 +1,13 @@
+@import 'utilities';
+
 /* ### WooCommerce Globals */
 
 .woocommerce {
     .content {
         background-color: $white;
-		padding: 0 7.5vw;
+		padding: 7.5vw;
 		@include breakpoint(sm) {
-			padding: 0 6rem;
+			padding: 6rem;
 		}
     }
 	.breadcrumb {

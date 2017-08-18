@@ -35,12 +35,6 @@ function starter_register_required_plugins() {
 	$plugins = array();
 
 	$plugins[] = array(
-		'name'      => 'Cleaner Gallery',
-		'slug'      => 'cleaner-gallery',
-		'required'  => false,
-	);
-
-	$plugins[] = array(
 		'name'      => 'Simple Social Icons',
 		'slug'      => 'simple-social-icons',
 		'required'  => false,
@@ -53,14 +47,14 @@ function starter_register_required_plugins() {
 	);
 
 	$plugins[] = array(
-		'name'      => 'WP Featherlight',
-		'slug'      => 'wp-featherlight',
+		'name'      => 'WordPress Importer',
+		'slug'      => 'wordpress-importer',
 		'required'  => false,
 	);
 
 	$plugins[] = array(
-		'name'      => 'WordPress Importer',
-		'slug'      => 'wordpress-importer',
+		'name'      => 'WP Featherlight',
+		'slug'      => 'wp-featherlight',
 		'required'  => false,
 	);
 

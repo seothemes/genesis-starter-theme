@@ -15,22 +15,59 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Render the site title for the selective refresh partial.
+ * Remove Page Templates.
  *
- * @see starter_customize_register()
- * @return void
+ * The Genesis Blog & Archive templates are not needed and can
+ * create problems for users so it's safe to remove them. If
+ * you need to use these templates, simply remove this function.
+ *
+ * @param  array $page_templates All page templates.
+ * @return array Modified templates.
  */
-function starter_customize_partial_blogname() {
-	bloginfo( 'name' );
+function starter_remove_templates( $page_templates ) {
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
 }
+
 /**
- * Render the site tagline for the selective refresh partial.
+ * Remove blog metabox.
  *
- * @see starter_customize_register()
- * @return void
+ * Also remove the Genesis blog settings metabox from the
+ * Genesis admin settings screen as it is no longer required
+ * if the Blog page template has been removed.
+ *
+ * @param string $hook The metabox hook.
  */
-function starter_customize_partial_blogdescription() {
-	bloginfo( 'description' );
+function starter_remove_metaboxes( $hook ) {
+	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
+}
+
+/**
+ * Sanitize RGBA values.
+ *
+ * If string does not start with 'rgba', then treat as hex then
+ * sanitize the hex color and finally convert hex to rgba.
+ *
+ * @param  string $color The rgba color to sanitize.
+ * @return string $color Sanitized value.
+ */
+function sanitize_rgba_color( $color ) {
+
+	// Return invisible if empty.
+	if ( empty( $color ) || is_array( $color ) ) {
+		return 'rgba(0,0,0,0)';
+	}
+
+	// Return sanitized hex if not rgba value.
+	if ( false === strpos( $color, 'rgba' ) ) {
+		return sanitize_hex_color( $color );
+	}
+
+	// Finally, sanitize and return rgba.
+	$color = str_replace( ' ', '', $color );
+	sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+	return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
 }
 
 /**
@@ -81,118 +118,82 @@ function starter_minify_css( $css ) {
 }
 
 /**
- * Additional opening wrap.
+ * Remove Simple Social Icons inline CSS.
  *
- * Used for entry-header, entry-content and entry-footer.
- * Genesis doesn't provide structural wraps for these elements
- * so we need to hook in and add the wrap div at the start.
- * This is a utility function that can be used anywhere to open
- * a wrap anywhere in your theme.
+ * No longer needed because we are generating custom CSS instead,
+ * removing this means that we don't need to use !important rules
+ * in the above function.
+ *
+ * @return void
  */
-function starter_wrap_open() {
-	echo '<div class="wrap">';
+function starter_remove_ssi_inline_styles() {
+	global $wp_widget_factory;
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['Simple_Social_Icons_Widget'], 'css') );
 }
-add_action( 'genesis_header', 'starter_wrap_open', 6 );
-add_action( 'genesis_content', 'starter_wrap_open', 6 );
-add_action( 'genesis_footer', 'starter_wrap_open', 6 );
-add_action( 'genesis_before_content_sidebar_wrap', 'starter_wrap_open', 6 );
 
 /**
- * Additional closing wrap.
+ * Fix Simple Social Icons multiple instances.
  *
- * The closing markup for the additional opening wrap divs,
- * simply closes the wrap divs that we created earlier. This
- * is a utility function that can be used anywhere to close
- * any kind of div, not just wraps.
+ * By default, Simple Social Icons only allows you to create one
+ * style for your icons, even if you have multiple on one page.
+ * This function allows us to output different styles for each
+ * widget that is output on the front end.
  */
-function starter_wrap_close() {
-	echo '</div>';
-}
-add_action( 'genesis_header', 'starter_wrap_close', 13 );
-add_action( 'genesis_content', 'starter_wrap_close', 13 );
-add_action( 'genesis_footer', 'starter_wrap_close', 13 );
-add_action( 'genesis_after_content_sidebar_wrap', 'starter_wrap_close', 13 );
+function starter_simple_social_icons_css() {
 
-/**
- * Accessible read more link.
- *
- * The below code modifies the default read more link when
- * using the WordPress More Tag to break a post on your site.
- * Instead of seeing 'Read more', screen readers will instead
- * see 'Read more about (entry title)'.
- */
-function starter_read_more() {
-	return sprintf( '&hellip; <a href="%s" class="more-link">%s</a>',
-		get_the_permalink(),
-		genesis_a11y_more_link( __( 'Read more', 'genesis-starter' ) )
-	);
-}
-add_filter( 'excerpt_more', 'starter_read_more' );
-add_filter( 'the_content_more_link', 'starter_read_more' );
-add_filter( 'get_the_content_more_link', 'starter_read_more' );
-
-/**
- * Add no-js class to body.
- *
- * Used for checking whether or not JavaScript is active so we can
- * style the navigation menus to suit the user. Also add an empty
- * `ontouchstart` attribute which emulates hover effects on mobile.
- *
- * @param  string $attr On touch start attribute.
- * @return string
- */
-function starter_add_ontouchstart( $attr ) {
-	$attr['class'] 		  .= ' no-js';
-	$attr['ontouchstart']  = ' ';
-	return $attr;
-}
-add_filter( 'genesis_attr_body', 'starter_add_ontouchstart' );
-
-/**
- * Remove Page Templates.
- *
- * The Genesis Blog & Archive templates are not needed and can
- * create problems for users so it's safe to remove them. If
- * you need to use these templates, simply remove this function.
- *
- * @param  array $page_templates All page templates.
- * @return array Modified templates.
- */
-function starter_remove_templates( $page_templates ) {
-	unset( $page_templates['page_archive.php'] );
-	unset( $page_templates['page_blog.php'] );
-	return $page_templates;
-}
-add_filter( 'theme_page_templates', 'starter_remove_templates' );
-
-/**
- * Remove blog metabox.
- *
- * Also remove the Genesis blog settings metabox from the
- * Genesis admin settings screen as it is no longer required
- * if the Blog page template has been removed.
- *
- * @param string $hook The metabox hook.
- */
-function starter_remove_metaboxes( $hook ) {
-	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
-}
-add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
-
-/**
- * Front page template path.
- *
- * The following function adds a custom template path for the front
- * page template. This allows us to move the front-page.php
- * template to the /templates/ sub-folder. The point of this is to
- * keep all templates and template parts in one place.
- *
- * @param string $template The template path.
- */
-function starter_custom_template( $template ) {
-	if ( ! is_front_page() ) {
-		return $template;
+	if ( ! class_exists( 'Simple_Social_Icons_Widget' ) ) {
+		return;
 	}
-	return get_stylesheet_directory() . '/templates/front-page.php';
+	$obj = new Simple_Social_Icons_Widget();
+
+	// Get widget settings.
+	$all_instances = $obj->get_settings();
+
+	// Loop through instances.
+	foreach ( $all_instances as $key => $options ) :
+
+		$instance = wp_parse_args( $all_instances[$key] );
+
+		$font_size = round( (int) $instance['size'] / 2 );
+		$icon_padding = round ( (int) $font_size / 2 );
+
+		// CSS to output.
+		$css = '#' . $obj->id_base . '-' . $key . ' ul li a,
+		#' . $obj->id_base . '-' . $key . ' ul li a:hover {
+		background-color: ' . $instance['background_color'] . ';
+		border-radius: ' . $instance['border_radius'] . 'px;
+		color: ' . $instance['icon_color'] . ';
+		border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid;
+		font-size: ' . $font_size . 'px;
+		padding: ' . $icon_padding . 'px;
+		}
+		
+		#' . $obj->id_base . '-' . $key . ' ul li a:hover {
+		background-color: ' . $instance['background_color_hover'] . ';
+		border-color: ' . $instance['border_color_hover'] . ';
+		color: ' . $instance['icon_color_hover'] . ';
+		}';
+
+		// Minify.
+		$css = starter_minify_css( $css );
+
+		// Output.
+		echo '<style type="text/css" media="screen">' . $css . '</style>';
+	endforeach;
 }
-add_filter( 'template_include', 'starter_custom_template', 99 );
+
+/**
+ * Conditionally enqueue WooCommerce styles.
+ *
+ * @link https://docs.woocommerce.com/document/conditional-tags/.
+ */
+function starter_is_woocommerce_page() {
+
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return false;
+	}
+	
+	if ( is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
+		return true;
+	}
+}

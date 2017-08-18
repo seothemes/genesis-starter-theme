@@ -11,8 +11,6 @@
 
 	'use strict';
 
-	$('body').removeClass('no-js');
-
 	var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? '' : genesis_responsive_menu,
 		genesisMenusUnchecked  = genesisMenuParams.menuClasses,
 		genesisMenus           = {},
@@ -98,16 +96,14 @@
 				menu : $( '<button />', {
 					'class' : mainMenuButtonClass,
 					'aria-expanded' : false,
-					'aria-pressed' : false,
-					'role'			: 'button',
-					'text'			: 'Menu'
+					'aria-pressed' : false
 					} )
+					.append( genesisMenuParams.mainMenu )
 					.append( $( '<span />' ) ),
 				submenu : $( '<button />', {
 					'class' : subMenuButtonClass,
 					'aria-expanded' : false,
-					'aria-pressed'  : false,
-					'text'			: ''
+					'aria-pressed' : false
 					} )
 					.append( $( '<span />', {
 						'class' : 'screen-reader-text',
@@ -262,11 +258,10 @@
 		}
 		if ( 'none' === _getDisplayValue( buttons ) ) {
 			$args = {
-				'delay': 0,
-				'animation': {'opacity': 'show'},
+				'delay': 100,
+				'animation': {'opacity': 'show', 'height': 'show'},
 				'dropShadows': false,
-				'speed': 0,
-				'disableHI': true
+				'speed': 'fast'
 			};
 		}
 		_superfish.superfish( $args );
@@ -414,6 +409,5 @@
 		}
 
 	});
-
 
 })( document, jQuery );

@@ -14,7 +14,6 @@ var autoprefixer = require( 'autoprefixer' ),
 	mqpacker 	 = require( 'css-mqpacker' ),
 	fs           = require( 'fs' ),
 	gulp         = require( 'gulp' ),
-	bump 		 = require( 'gulp-bump' ),
 	beautify  	 = require( 'gulp-cssbeautify' ),
 	cache        = require( 'gulp-cached' ),
 	cleancss 	 = require( 'gulp-clean-css' ),
@@ -70,9 +69,6 @@ var format = {
 // Set AWS S3 settings from private keys.
 aws = JSON.parse( fs.readFileSync( './aws.json' ) );
 
-// Set self-signed certificate.
-ssl = JSON.parse( fs.readFileSync( './ssl.json' ) );
-
 /**
  * Autoprefixed browser support.
  *
@@ -97,9 +93,76 @@ const AUTOPREFIXER_BROWSERS = [
  *
  * https://www.npmjs.com/package/gulp-sass
  */
-gulp.task( 'styles', function () {
+gulp.task( 'woocommerce', function () {
 
-	gulp.src( paths.styles )
+	/**
+	 * Process WooCommerce styles.
+	 */
+	gulp.src( 'assets/styles/woocommerce.scss' )
+
+	// Notify on error
+	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+
+	// Process sass
+	.pipe( sass( {
+		outputStyle: 'expanded'
+	} ) )
+
+	// Pixel fallbacks for rem units.
+	.pipe( pixrem() )
+
+	// Parse with PostCSS plugins.
+	.pipe( postcss( [
+		autoprefixer( {
+			browsers: AUTOPREFIXER_BROWSERS
+		} ),
+		mqpacker( {
+			sort: true
+		} ),
+	] ) )
+
+	// Combine similar rules.
+	.pipe ( cleancss( {
+		level: {
+			2: {
+				all: true
+			}
+		}
+	} ) )
+
+	// Minify and optimize style.css again.
+	.pipe( cssnano( {
+		safe: false,
+		discardComments: {
+			removeAll: true,
+		},
+	} ) )
+
+	// Add .min suffix.
+	.pipe( rename( { suffix: '.min' } ) )
+
+	// Output non minified css to theme directory.
+	.pipe( gulp.dest( 'assets/styles/min/' ) )
+
+	// Inject changes via browsersync.
+	.pipe( browsersync.reload( { stream: true } ) )
+
+	// Filtering stream to only css files.
+	.pipe( filter( '**/*.css' ) )
+
+	// Notify on successful compile (uncomment for notifications).
+	.pipe( notify( "Compiled: <%= file.relative %>" ) );
+
+} );
+
+/**
+ * Compile Sass.
+ *
+ * https://www.npmjs.com/package/gulp-sass
+ */
+gulp.task( 'styles', [ 'woocommerce' ], function () {
+
+	gulp.src( 'assets/styles/style.scss' )
 
 	// Notify on error
 	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
@@ -265,34 +328,6 @@ gulp.task( 'i18n', function() {
 } );
 
 /**
- * Manually bumps version.
- *
- * https://www.npmjs.com/package/gulp-bump
- */
-gulp.task( 'bump', function() {
-
-	var oldversion = '2.0.2';
-	var newversion = '2.0.3';
-
-	gulp.src( [ './package.json', './style.css' ] )
-	.pipe( bump( { version: newversion } ) )
-	.pipe( gulp.dest( './' ) );
-
-	gulp.src( [ './gulpfile.js' ] )
-	.pipe( replace( "oldversion = " + oldversion + ";", "oldversion = " + newversion + ";" ) )
-	.pipe( gulp.dest( './' ) );
-
-	gulp.src( [ './functions.php' ] )
-	.pipe( replace( "'CHILD_THEME_VERSION', '" + oldversion, "'CHILD_THEME_VERSION', '" + newversion ) )
-	.pipe( gulp.dest( './' ) );
-
-	gulp.src( './assets/styles/style.scss' )
-	.pipe( bump( { version: newversion } ) )
-	.pipe( gulp.dest( './assets/styles/' ) );
-
-} );
-
-/**
  * Package theme.
  *
  * https://www.npmjs.com/package/gulp-zip
@@ -310,7 +345,7 @@ gulp.task( 'zip', function() {
  *
  * https://www.npmjs.com/package/gulp-s3
  */
-gulp.task( 'publish', [ 'zip' ], function() {
+gulp.task( 'publish', function() {
 
 	gulp.src( '../genesis-starter.zip' )
 		.pipe( s3( aws ) );
@@ -330,7 +365,10 @@ gulp.task( 'watch', function() {
 		port: 8000,
 		notify: false,
 		open: false,
-		https: ssl
+		https: {
+			"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
+			"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
+		}
 	} );
 
 	// Non HTTPS.

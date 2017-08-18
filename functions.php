@@ -15,24 +15,34 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.com/themes/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.0.2' );
+define( 'CHILD_THEME_VERSION', '2.1.0' );
 
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'genesis-starter' ) );
 
-// Remove unused layouts.
-unregister_sidebar( 'sidebar' );
+// Remove secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
-unregister_sidebar( 'header-right' );
+
+// Remove unused site layouts.
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-// Remove content-sidebar-wrap.
-add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
+// Enable support for page excerpts.
+add_post_type_support( 'page', 'excerpt' );
 
-// Enable menu wrap only, using custom wraps for everything else.
-add_theme_support( 'genesis-structural-wraps', array( 'menu-secondary' ) );
+// Enable support for WooCommerce.
+add_theme_support( 'woocommerce' );
+
+// Enable support for structural wraps.
+add_theme_support( 'genesis-structural-wraps', array(
+	'header',
+	'menu-primary',
+	'menu-secondary',
+	'site-inner',
+	'footer-widgets',
+	'footer',
+) );
 
 // Enable Accessibility support.
 add_theme_support( 'genesis-accessibility', array(
@@ -46,13 +56,15 @@ add_theme_support( 'genesis-accessibility', array(
 
 // Enable custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
-	'header' 	   => __( 'Header Menu', 'genesis-starter' ),
-	'after-header' => __( 'After Header Menu', 'genesis-starter' ),
-	'footer'	   => __( 'Footer Menu', 'genesis-starter' ),
+	'primary' 	=> __( 'Header Menu', 'genesis-starter' ),
+	'secondary' => __( 'After Header Menu', 'genesis-starter' ),
 ) );
 
 // Enable viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
+
+// Enable footer widgets.
+add_theme_support( 'genesis-footer-widgets', 3 );
 
 // Enable HTML5 markup structure.
 add_theme_support( 'html5', array(
@@ -98,7 +110,6 @@ add_theme_support( 'custom-logo', array(
 	'flex-width'  => true,
 	'header-text' => array( '.site-title', '.site-description' ),
 ) );
-add_action( 'genesis_site_title', 'the_custom_logo', 0 );
 
 // Enable support for custom header image or video.
 add_theme_support( 'custom-header', array(
@@ -123,33 +134,62 @@ register_default_headers( array(
 	),
 ) );
 
-// Enable support for page excerpts.
-add_post_type_support( 'page', 'excerpt' );
+// Register front page widget areas.
+genesis_register_sidebar( array(
+	'id'          => 'front-page-1',
+	'name'        => __( 'Front Page 1', 'starter-pro' ),
+	'description' => __( 'Front page 1 widget area.', 'starter-pro' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'front-page-2',
+	'name'        => __( 'Front Page 2', 'starter-pro' ),
+	'description' => __( 'Front page 2 widget area.', 'starter-pro' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'front-page-3',
+	'name'        => __( 'Front Page 3', 'starter-pro' ),
+	'description' => __( 'Front page 3 widget area.', 'starter-pro' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'front-page-4',
+	'name'        => __( 'Front Page 4', 'starter-pro' ),
+	'description' => __( 'Front page 4 widget area.', 'starter-pro' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'front-page-5',
+	'name'        => __( 'Front Page 5', 'starter-pro' ),
+	'description' => __( 'Front page 5 widget area.', 'starter-pro' ),
+) );
 
-/**
- * Enable features from Soil plugin if active.
- *
- * If using Google Analytics, uncomment the following line and
- * replace `YOUR-GA-CODE` with your own unique tracking code:
- * add_theme_support( 'soil-google-analytics', 'YOUR-GA-CODE' );
- */
-add_theme_support( 'soil-clean-up' );
-add_theme_support( 'soil-disable-asset-versioning' );
-add_theme_support( 'soil-disable-trackbacks' );
-add_theme_support( 'soil-jquery-cdn' );
-add_theme_support( 'soil-js-to-footer' );
-add_theme_support( 'soil-nav-walker' );
-add_theme_support( 'soil-nice-search' );
-add_theme_support( 'soil-relative-urls' );
+// Enable shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
 
-// Enable support for Cleaner Gallery.
-add_theme_support( 'cleaner-gallery' );
+// Remove Genesis blog and archive page templates.
+add_filter( 'theme_page_templates', 'starter_remove_templates' );
 
-// Enable support for WooCommerce.
-add_theme_support( 'woocommerce' );
+// Remove blog metabox from admin.
+add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
+
+// Remove content-sidebar-wrap.
+add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 
 // Force Gravity Forms to disable CSS output.
 add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
+
+// Display custom logo in site title area.
+add_action( 'genesis_site_title', 'the_custom_logo', 0 );
+
+// Reposition primary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
+// Fix Simple Social Icons styles.
+add_action( 'wp_head', 'starter_simple_social_icons_css' );
+add_action( 'wp_head', 'starter_remove_ssi_inline_styles', 1 );
+
+// Change order of main stylesheet to override plugin styles.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
 
 /**
  * Enqueue theme scripts and styles.
@@ -158,10 +198,7 @@ add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
  * function. It looks like there is a lot happening here but it's
  * actually pretty simple. Here's what's going on:
  *
- * - Remove Lightbox functionality if not on gallery page.
  * - Remove Simple Social Icons styles, theme includes the CSS.
- * - Remove default style.css file from loading on the front-end.
- * - Add the minified style.css version instead of the default.
  * - Add Google Fonts. Replace this with your own custom fonts.
  * - Add minified version of the responsive menu script.
  * - Add theme settings to menu script by localizing it.
@@ -170,22 +207,13 @@ function starter_scripts_styles() {
 
 	global $post;
 
-	// Remove WP Featherlight CSS & JS if no gallery.
-	if ( $post && ! has_shortcode( $post->post_content, 'gallery' ) ) {
-		wp_dequeue_style( 'wp-featherlight' );
-		wp_dequeue_script( 'wp-featherlight' );
+	// Conditionally load WooCommerce styles.
+	if ( starter_is_woocommerce_page() ) {
+		wp_enqueue_style( 'starter-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
 	}
 
 	// Remove Simple Social Icons CSS (included with theme).
 	wp_dequeue_style( 'simple-social-icons-font' );
-
-	// Remove default stylesheet.
-	wp_deregister_style( 'genesis-starter' );
-	wp_dequeue_style( 'genesis-starter' );
-
-	// Load minified child theme stylesheet.
-	wp_register_style( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/styles/min/style.min.css', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'genesis-starter' );
 
 	// Google fonts.
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
@@ -201,8 +229,8 @@ function starter_scripts_styles() {
 		'subMenuIconClass' => null,
 		'menuClasses'      => array(
 			'combine' => array(
-				'.nav-header',
-				'.nav-after-header',
+				'.nav-primary',
+				'.nav-secondary',
 			),
 		),
 	) );
@@ -212,7 +240,5 @@ add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 // Load theme includes.
 include_once( get_stylesheet_directory() . '/includes/defaults.php' );
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
-include_once( get_stylesheet_directory() . '/includes/menus.php' );
-include_once( get_stylesheet_directory() . '/includes/sidebars.php' );
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins.php' );

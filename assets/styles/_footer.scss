@@ -2,6 +2,7 @@
 --------------------------------------------- */
 
 .site-footer {
+    width: 100%;
     background-color: $white;
     font-size: 1.8rem;
     >.wrap {
@@ -32,6 +33,7 @@
 .footer-widgets {
     padding: 6rem 0;
     border-bottom: $site-border;
+    background-color: $white;
     .wrap {
         @include breakpoint(sm) {
             display: flex;

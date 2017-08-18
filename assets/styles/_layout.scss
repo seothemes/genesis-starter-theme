@@ -35,7 +35,8 @@
     .wrap {
         max-width: map-get($breakpoints, xl);
         @include breakpoint(md) {
-			display: flex;
+            display: flex;
+            flex-wrap: wrap;
 			justify-content: space-between;
 			&:before,
 			&:after {
