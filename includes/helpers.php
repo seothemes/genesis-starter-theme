@@ -73,10 +73,6 @@ function sanitize_rgba_color( $color ) {
 /**
  * Minify CSS helper function.
  *
- * A handy CSS minification script by Gary Jones that we'll use to
- * minify the CSS output by the customizer. This is called near the
- * end of the /includes/customizer-output.php file.
- *
  * @author Gary Jones
  * @link https://github.com/GaryJones/Simple-PHP-CSS-Minification
  * @param string $css The CSS to minify.
@@ -132,7 +128,7 @@ function starter_remove_ssi_inline_styles() {
 }
 
 /**
- * Fix Simple Social Icons multiple instances.
+ * Simple Social Icons multiple instances workaround.
  *
  * By default, Simple Social Icons only allows you to create one
  * style for your icons, even if you have multiple on one page.
@@ -152,10 +148,10 @@ function starter_simple_social_icons_css() {
 	// Loop through instances.
 	foreach ( $all_instances as $key => $options ) :
 
-		$instance = wp_parse_args( $all_instances[$key] );
+		$instance = wp_parse_args( $all_instances[ $key ] );
 
 		$font_size = round( (int) $instance['size'] / 2 );
-		$icon_padding = round ( (int) $font_size / 2 );
+		$icon_padding = round( (int) $font_size / 2 );
 
 		// CSS to output.
 		$css = '#' . $obj->id_base . '-' . $key . ' ul li a,
@@ -183,16 +179,17 @@ function starter_simple_social_icons_css() {
 }
 
 /**
- * Conditionally enqueue WooCommerce styles.
+ * Helper function to check if we're on a WooCommerce page.
  *
- * @link https://docs.woocommerce.com/document/conditional-tags/.
+ * @link   https://docs.woocommerce.com/document/conditional-tags/.
+ * @return bool
  */
 function starter_is_woocommerce_page() {
 
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return false;
 	}
-	
+
 	if ( is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
 		return true;
 	}

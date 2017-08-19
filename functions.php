@@ -134,31 +134,37 @@ register_default_headers( array(
 	),
 ) );
 
+// Register a custom layout.
+genesis_register_layout( 'custom-layout', array(
+	'label' => __( 'Custom Layout', 'genesis-starter' ),
+	'img'   => get_stylesheet_directory_uri() . '/assets/images/custom-layout.gif',
+) );
+
 // Register front page widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'starter-pro' ),
-	'description' => __( 'Front page 1 widget area.', 'starter-pro' ),
+	'name'        => __( 'Front Page 1', 'genesis-starter' ),
+	'description' => __( 'Front page 1 widget area.', 'genesis-starter' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'starter-pro' ),
-	'description' => __( 'Front page 2 widget area.', 'starter-pro' ),
+	'name'        => __( 'Front Page 2', 'genesis-starter' ),
+	'description' => __( 'Front page 2 widget area.', 'genesis-starter' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'starter-pro' ),
-	'description' => __( 'Front page 3 widget area.', 'starter-pro' ),
+	'name'        => __( 'Front Page 3', 'genesis-starter' ),
+	'description' => __( 'Front page 3 widget area.', 'genesis-starter' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'starter-pro' ),
-	'description' => __( 'Front page 4 widget area.', 'starter-pro' ),
+	'name'        => __( 'Front Page 4', 'genesis-starter' ),
+	'description' => __( 'Front page 4 widget area.', 'genesis-starter' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'starter-pro' ),
-	'description' => __( 'Front page 5 widget area.', 'starter-pro' ),
+	'name'        => __( 'Front Page 5', 'genesis-starter' ),
+	'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
 ) );
 
 // Enable shortcodes in text widgets.

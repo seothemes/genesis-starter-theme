@@ -1,5 +1,22 @@
 # Genesis Starter Theme Changelog
 
+## [2.1.0] - 2017-07-18
+* Add RGBA customizer color settings
+* Add custom page layout
+* Add support for default structural wraps (removed custom)
+* Improve support for Simple Social Icons
+* Separate WooCommerce CSS from style.css
+* Bring responsive menu script current with Genesis Sample
+* Enable shortcodes in widgets by default
+* Rename navigation menus to defaults
+* Remove front page and footer customizer settings
+* Remove complex functions from front-page.php
+* Remove menus.php and sidebars.php
+* Remove 'all' (*) selectors from stylesheet
+* Remove postMessage customizer support (in favor of RGBA)
+* Remove Cleaner Gallery from recommended plugins
+
+
 ## [2.0.1] - 2017-06-14
 * Add custom nav menu function
 * Add customize partial refresh support for site title and tagline
