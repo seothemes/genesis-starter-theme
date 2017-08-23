@@ -911,7 +911,7 @@ img.alignright {
 .nav-primary,
 .nav-secondary {
 	width: 100vw;
-	margin: 0 -5vw;
+	margin: 0;
 	padding: 0 5vw;
 	background-color: #fff;
 	border-top: 1px solid #f4f5f6;

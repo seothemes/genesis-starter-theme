@@ -15,7 +15,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-cssbeautify": "^0.1.3",
     "gulp-cssnano": "^2.1.0",
-    "gulp-filter": "*",
+    "gulp-filter": "^5.0.1",
     "gulp-imagemin": "*",
     "gulp-notify": "*",
     "gulp-pixrem": "^1.0.0",
@@ -26,7 +26,7 @@
     "gulp-s3-publish": "^2.0.0",
     "gulp-sass": "*",
     "gulp-sort": "^1.1.1",
-    "gulp-sourcemaps": "*",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "*",
     "gulp-wp-pot": "^1.1.1",
     "gulp-zip": "*"
