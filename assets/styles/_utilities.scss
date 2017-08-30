@@ -5,6 +5,7 @@
  * ### Breakpoints
  * 
  * Based on the most common 16:9 screen resolutions.
+ *
  * @link https://pacoup.com/2011/06/12/list-of-true-169-resolutions/
  */
 
@@ -35,6 +36,31 @@ $bold:    	   700;
 
 $site-radius: 0.1rem;
 $site-border: 0.1rem solid $light;
+
+/**
+ * ### Columns (including fifths)
+ *
+ * Why not just memorize them?
+ *
+ * @link https://gist.github.com/wpsmith/6201969
+ */
+
+$margin:        2.564102564102564%;
+$one-half:      48.71794871794871%;
+$one-third:     31.62393162393162%;
+$two-thirds:    65.81196581196582%;
+$one-fourth:    23.07692307692307%;
+$two-fourths:   48.71794871794871%;
+$three-fourths: 74.35897435897436%;
+$one-fifth:     17.94871794871794%;
+$two-fifths:    38.46153846153846%;
+$three-fifths:  58.97435897435897%;
+$four-fifths:   79.48717948717948%;
+$one-sixth:     14.52991452991453%;
+$two-sixths:    31.62393162393162%;
+$three-sixths:  48.71794871794871%;
+$four-sixths:   65.81196581196582%;
+$five-sixths:   82.90598290598291%;
 
 /* # Mixins
 -----------------------------------------------------------------------*/

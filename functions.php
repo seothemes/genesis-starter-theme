@@ -211,8 +211,6 @@ add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
  */
 function starter_scripts_styles() {
 
-	global $post;
-
 	// Conditionally load WooCommerce styles.
 	if ( starter_is_woocommerce_page() ) {
 		wp_enqueue_style( 'starter-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
