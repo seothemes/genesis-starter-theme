@@ -22,9 +22,9 @@ function starter_front_page() {
 	if ( is_active_sidebar( 'front-page-1' ) || is_active_sidebar( 'front-page-2' ) || is_active_sidebar( 'front-page-3' ) || is_active_sidebar( 'front-page-4' ) || is_active_sidebar( 'front-page-5' ) ) {
 
 		// Remove default page header.
-		remove_action( 'genesis_after_header', 'starter_header_open', 20 );
-		remove_action( 'genesis_after_header', 'starter_header_title', 24 );
-		remove_action( 'genesis_after_header', 'starter_header_close', 28 );
+		remove_action( 'genesis_after_header', 'starter_page_header_open', 20 );
+		remove_action( 'genesis_after_header', 'starter_page_header_title', 24 );
+		remove_action( 'genesis_after_header', 'starter_page_header_close', 28 );
 
 		// Remove site inner content.
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
