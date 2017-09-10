@@ -4,7 +4,7 @@
  * Description: Starter theme for the Genesis Framework.
  * Author: Seo Themes
  * Author URI: http://www.seothemes.com/
- * Version: 2.1.0
+ * Version: 2.2.0
  * Text Domain: genesis-starter
  * Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready.
  * Template: genesis
@@ -430,8 +430,9 @@ input[type=submit] {
 	width: auto;
 	height: auto;
 	line-height: 1;
-	-webkit-transition: background-color .25s ease,color .25s ease;
-	transition: background-color .25s ease,color .25s ease
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+	box-shadow: inset 0 0 0 9rem rgba(48,53,58,0)
 }
 .button:hover,
 button:hover,
@@ -439,7 +440,7 @@ input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
 	color: #fff;
-	background-color: #a0a8af
+	box-shadow: inset 0 0 0 9rem rgba(48,53,58,.1)
 }
 .button.secondary,
 button.secondary,
@@ -447,13 +448,6 @@ input[type=button].secondary,
 input[type=reset].secondary,
 input[type=submit].secondary {
 	background-color: #a0a8af
-}
-.button.secondary:hover,
-button.secondary:hover,
-input[type=button].secondary:hover,
-input[type=reset].secondary:hover,
-input[type=submit].secondary:hover {
-	background-color: #30353a
 }
 .button.small,
 button.small,
@@ -583,11 +577,13 @@ th {
 	width: 0;
 	list-style: none
 }
+.content-sidebar-wrap,
 .wrap {
 	margin: 0 auto;
 	padding-left: 5%;
 	padding-right: 5%
 }
+.content-sidebar-wrap .wrap,
 .wrap .wrap {
 	max-width: 100%;
 	width: auto;
@@ -605,7 +601,7 @@ th {
 	border-bottom: 1px solid #f4f5f6;
 	border-bottom: .1rem solid #f4f5f6
 }
-.site-inner .wrap {
+.content-sidebar-wrap {
 	max-width: 1280px
 }
 .gallery,
@@ -666,31 +662,8 @@ th {
 .author-box {
 	margin-bottom: 5%
 }
-.archive-description p:last-of-type,
 .author-box p:last-of-type {
 	margin-bottom: 0
-}
-.archive-description {
-	background-color: #fff;
-	padding: 7.5vw;
-	margin-bottom: 5vw;
-	font-size: 18px;
-	font-size: 1.8rem;
-	clear: both
-}
-.archive-description:after,
-.archive-description:before {
-	clear: both;
-	display: block;
-	content: ''
-}
-.archive-title {
-	font-size: 20px;
-	font-size: 2rem;
-	margin-bottom: 0
-}
-.archive-title + p {
-	margin-top: 1em
 }
 .search-form {
 	display: block;
@@ -838,6 +811,43 @@ img.alignright {
 	font-size: 1.4rem;
 	margin-bottom: 0;
 	line-height: 1
+}
+.page-header {
+	width: 100%;
+	margin: 0 auto;
+	padding: 60px 0;
+	padding: 6rem 0;
+	background-size: cover;
+	background-position: center;
+	position: relative
+}
+.page-header:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(48,53,58,.5);
+	z-index: 0
+}
+.page-header .wrap {
+	position: relative
+}
+.page-header h1 {
+	width: 100%;
+	margin-bottom: 0;
+	text-transform: capitalize;
+	color: #fff
+}
+.page-header p {
+	width: 100%;
+	margin: 1em 0 0;
+	color: #fff
+}
+.page-header .widget {
+	background: 0 0
 }
 .menu {
 	width: 100%;
@@ -1636,6 +1646,7 @@ p.entry-meta {
 .front-page-3,
 .front-page-4,
 .front-page-5 {
+	width: 100%;
 	padding: 60px 0;
 	padding: 6rem 0;
 	background-color: #fff;
@@ -1787,6 +1798,7 @@ p.entry-meta {
 	body > div {
 		font-size: 2rem
 	}
+	.content-sidebar-wrap,
 	.wrap {
 		width: 90%;
 		max-width: 1280px;
@@ -1862,10 +1874,6 @@ p.entry-meta {
 	.author-box {
 		margin-bottom: 4rem
 	}
-	.archive-description {
-		padding: 6rem;
-		margin-bottom: 4rem
-	}
 	.nav-footer .menu {
 		margin-bottom: 1.5em
 	}
@@ -1935,7 +1943,7 @@ p.entry-meta {
 	.site-inner {
 		padding: 4rem 0
 	}
-	.site-inner .wrap {
+	.content-sidebar-wrap {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -ms-flexbox;
@@ -1948,11 +1956,11 @@ p.entry-meta {
 		-ms-flex-pack: justify;
 		justify-content: space-between
 	}
-	.site-inner .wrap:after,
-	.site-inner .wrap:before {
+	.content-sidebar-wrap:after,
+	.content-sidebar-wrap:before {
 		display: none
 	}
-	.sidebar-content .site-inner .wrap {
+	.sidebar-content .content-sidebar-wrap {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: reverse;
 		-webkit-flex-direction: row-reverse;

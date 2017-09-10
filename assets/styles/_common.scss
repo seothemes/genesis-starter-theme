@@ -36,33 +36,11 @@
     }
 }
 
-.archive-description,
 .author-box {
     p:last-of-type {
         margin-bottom: 0;
     }
 }
-
-.archive-description {
-    background-color: $white;
-    padding: 7.5vw;
-    margin-bottom: 5vw;
-    font-size: 1.8rem;
-    @include clearfix;
-    @include breakpoint(sm) {
-        padding: 6rem;
-        margin-bottom: 4rem;
-    }
-}
-
-.archive-title {
-    font-size: 2rem;
-    margin-bottom: 0;
-    + p {
-        margin-top: 1em;
-    }
-}
-
 
 /* ## Search Form
 --------------------------------------------- */

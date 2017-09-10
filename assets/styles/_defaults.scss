@@ -191,16 +191,14 @@ input[type="submit"] {
     width: auto;
     height: auto;
     line-height: 1;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    @include transition;
+    box-shadow: inset 0 0 0 9rem rgba($dark, 0);
     &:hover {
         color: $white;
-        background-color: $accent;
+        box-shadow: inset 0 0 0 9rem rgba($dark, 0.1);
     }
     &.secondary {
         background-color: $accent;
-        &:hover {
-            background-color: $dark;
-        }
     }
     &.small {
         font-size: 1.2rem;

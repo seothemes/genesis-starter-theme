@@ -67,3 +67,45 @@
         line-height: 1.382;
     }
 }
+
+
+/* ## Page Header
+--------------------------------------------- */
+
+.page-header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6rem 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($dark, 0.5);
+        z-index: 0;
+    }
+    .wrap {
+        position: relative;
+    }
+    h1 {
+        width: 100%;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: $white;
+    }
+    p {
+        width: 100%;
+        margin: 1em 0 0;
+        color: $white;
+    }
+    .widget {
+        background: transparent;
+    }
+}
+

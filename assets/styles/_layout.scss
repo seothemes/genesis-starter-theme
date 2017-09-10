@@ -1,6 +1,7 @@
 /* ## Site Containers
 --------------------------------------------- */
 
+.content-sidebar-wrap,
 .wrap {
     margin: 0 auto;
     padding-left: 5%;
@@ -31,21 +32,19 @@
     }
 }
 
-.site-inner {
-    .wrap {
-        max-width: map-get($breakpoints, xl);
-        @include breakpoint(md) {
-            display: flex;
-            flex-wrap: wrap;
-			justify-content: space-between;
-			&:before,
-			&:after {
-				display: none; // Flex fix.
-			}
-			.sidebar-content & {
-				flex-direction: row-reverse;
-			}
-		}
+.content-sidebar-wrap {
+    max-width: map-get($breakpoints, xl);
+    @include breakpoint(md) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &:before,
+        &:after {
+            display: none; // Flex fix.
+        }
+        .sidebar-content & {
+            flex-direction: row-reverse;
+        }
     }
 }
 
