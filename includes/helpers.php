@@ -11,9 +11,12 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
+
 	die;
+
 }
 
+add_filter( 'theme_page_templates', 'starter_remove_templates' );
 /**
  * Remove Page Templates.
  *
@@ -25,11 +28,16 @@ if ( ! defined( 'WPINC' ) ) {
  * @return array Modified templates.
  */
 function starter_remove_templates( $page_templates ) {
+
 	unset( $page_templates['page_archive.php'] );
+
 	unset( $page_templates['page_blog.php'] );
+
 	return $page_templates;
+
 }
 
+add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
 /**
  * Remove blog metabox.
  *
@@ -40,7 +48,9 @@ function starter_remove_templates( $page_templates ) {
  * @param string $hook The metabox hook.
  */
 function starter_remove_metaboxes( $hook ) {
+
 	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
+
 }
 
 /**
@@ -56,18 +66,24 @@ function sanitize_rgba_color( $color ) {
 
 	// Return invisible if empty.
 	if ( empty( $color ) || is_array( $color ) ) {
+
 		return 'rgba(0,0,0,0)';
+
 	}
 
 	// Return sanitized hex if not rgba value.
 	if ( false === strpos( $color, 'rgba' ) ) {
+
 		return sanitize_hex_color( $color );
+
 	}
 
 	// Finally, sanitize and return rgba.
 	$color = str_replace( ' ', '', $color );
 	sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+
 	return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+
 }
 
 /**
@@ -111,8 +127,10 @@ function starter_minify_css( $css ) {
 	$css = preg_replace( '/#([a-f0-9])\\1([a-f0-9])\\2([a-f0-9])\\3/i', '#\1\2\3', $css );
 
 	return trim( $css );
+
 }
 
+add_action( 'wp_head', 'starter_remove_ssi_inline_styles', 1 );
 /**
  * Remove Simple Social Icons inline CSS.
  *
@@ -123,10 +141,14 @@ function starter_minify_css( $css ) {
  * @return void
  */
 function starter_remove_ssi_inline_styles() {
+
 	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['Simple_Social_Icons_Widget'], 'css') );
+
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['Simple_Social_Icons_Widget'], 'css' ) );
+
 }
 
+add_action( 'wp_head', 'starter_simple_social_icons_css' );
 /**
  * Simple Social Icons multiple instances workaround.
  *
@@ -138,8 +160,11 @@ function starter_remove_ssi_inline_styles() {
 function starter_simple_social_icons_css() {
 
 	if ( ! class_exists( 'Simple_Social_Icons_Widget' ) ) {
+
 		return;
+
 	}
+
 	$obj = new Simple_Social_Icons_Widget();
 
 	// Get widget settings.
@@ -149,7 +174,6 @@ function starter_simple_social_icons_css() {
 	foreach ( $all_instances as $key => $options ) :
 
 		$instance = wp_parse_args( $all_instances[ $key ] );
-
 		$font_size = round( (int) $instance['size'] / 2 );
 		$icon_padding = round( (int) $font_size / 2 );
 
@@ -174,8 +198,10 @@ function starter_simple_social_icons_css() {
 		$css = starter_minify_css( $css );
 
 		// Output.
-		echo '<style type="text/css" media="screen">' . $css . '</style>';
+		printf( '<style type="text/css" media="screen">%s</style>', $css );
+
 	endforeach;
+
 }
 
 /**
@@ -187,10 +213,97 @@ function starter_simple_social_icons_css() {
 function starter_is_woocommerce_page() {
 
 	if ( ! class_exists( 'WooCommerce' ) ) {
+
 		return false;
+
 	}
 
-	if ( is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
+	if ( is_woocommerce()
+	  || is_shop()
+	  || is_product_category()
+	  || is_product_tag()
+	  || is_product()
+	  || is_cart()
+	  || is_checkout()
+	  || is_account_page() ) {
+
 		return true;
+
+	} else {
+
+		return false;
+
 	}
+
+}
+
+/**
+ * Custom header image callback.
+ *
+ * Loads custom header or featured image depending on what is set.
+ * If a featured image is set it will override the header image.
+ *
+ * @since 2.0.0
+ *
+ * @return void
+ */
+function starter_custom_header_callback() {
+
+	$id = '';
+
+	// Get the current page ID.
+	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+
+		$id = get_option( 'woocommerce_shop_page_id' );
+
+	} elseif ( is_home() ) {
+
+		$id = get_option( 'page_for_posts' );
+
+	} elseif ( is_singular() ) {
+
+		$id = get_the_id();
+
+	}
+
+	$url = get_the_post_thumbnail_url( $id );
+
+	if ( ! $url ) {
+
+		$url = get_header_image();
+
+	}
+
+	printf( '<style type="text/css">.page-header { background-image: url( "%1$s" ); }</style>', esc_url( $url ) );
+
+}
+
+add_filter( 'http_request_args', 'starter_dont_update_theme', 5, 2 );
+/**
+ * Don't Update Theme.
+ *
+ * If there is a theme in the repo with the same name,
+ * this prevents WP from prompting an update.
+ *
+ * @param  array  $request Request arguments.
+ * @param  string $url     Request url.
+ *
+ * @return array  request arguments
+ */
+function starter_dont_update_theme( $request, $url ) {
+
+	 // Not a theme update request. Bail immediately.
+	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) ) {
+		return $request;
+	}
+
+	$themes = unserialize( $request['body']['themes'] );
+
+	unset( $themes[ get_option( 'template' ) ] );
+	unset( $themes[ get_option( 'stylesheet' ) ] );
+
+	$request['body']['themes'] = serialize( $themes );
+
+	return $request;
+
 }
