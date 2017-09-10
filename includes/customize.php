@@ -11,19 +11,25 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
+
 	die;
+
 }
 
-// Add theme customizer colors here.
+/*
+ * Add any theme custom colors here.
+ */
 $starter_colors = array(
 	'primary' => '#b0b5ba',
 );
 
+add_action( 'customize_register', 'starter_customize_register' );
 /**
  * Sets up the theme customizer sections, controls, and settings.
  *
  * @access public
  * @param  object $wp_customize Global customizer object.
+ *
  * @return void
  */
 function starter_customize_register( $wp_customize ) {
@@ -74,6 +80,7 @@ function starter_customize_register( $wp_customize ) {
 		 * alone class we'll register and enqueue them here.
 		 */
 		public function enqueue() {
+
 			wp_enqueue_script(
 				'rgba-color-picker',
 				get_stylesheet_directory_uri() . '/assets/scripts/min/customize.min.js',
@@ -81,12 +88,14 @@ function starter_customize_register( $wp_customize ) {
 				'1.0.0',
 				true
 			);
+
 			wp_enqueue_style(
 				'rgba-color-picker',
 				get_stylesheet_directory_uri() . '/assets/styles/min/customize.min.css',
 				array( 'wp-color-picker' ),
 				'1.0.0'
 			);
+
 		}
 
 		/**
@@ -96,28 +105,42 @@ function starter_customize_register( $wp_customize ) {
 
 			// Process the palette.
 			if ( is_array( $this->palette ) ) {
+
 				$palette = implode( '|', $this->palette );
+
 			} else {
+
 				// Default to true.
 				$palette = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
+
 			}
 
 			// Support passing show_opacity as string or boolean. Default to true.
 			$show_opacity = ( false === $this->show_opacity || 'false' === $this->show_opacity ) ? 'false' : 'true';
 
-			// Begin the output. ?>
+			// Begin the output. 
+			?>
 			<label>
-				<?php // Output the label and description if they were passed in.
+				<?php
+				// Output the label and description if they were passed in.
 				if ( isset( $this->label ) && '' !== $this->label ) {
-					echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+
+					echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
+
 				}
+
 				if ( isset( $this->description ) && '' !== $this->description ) {
-					echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
-				} ?>
-				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo $show_opacity; ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
+
+					echo '<span class="description customize-control-description">' . esc_html( $this->description ) . '</span>';
+
+				}
+				?>
+				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo esc_html( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
 			</label>
 			<?php
+
 		}
+
 	}
 
 	/**
@@ -133,7 +156,7 @@ function starter_customize_register( $wp_customize ) {
 
 		// Format ID and label.
 		$setting = "starter_{$id}_color";
-		$label	 = ucwords( str_replace( '_', ' ', $id ) ) . __( ' Color', 'starter-pro' );
+		$label   = ucwords( str_replace( '_', ' ', $id ) ) . __( ' Color', 'starter-pro' );
 
 		// Add color setting.
 		$wp_customize->add_setting(
@@ -155,7 +178,7 @@ function starter_customize_register( $wp_customize ) {
 					'label'        => $label,
 					'settings'     => $setting,
 					'show_opacity' => true,
-					'palette'	   => array(
+					'palette'      => array(
 						'#000000',
 						'#ffffff',
 						'#dd3333',
@@ -164,14 +187,14 @@ function starter_customize_register( $wp_customize ) {
 						'#81d742',
 						'#1e73be',
 						'#8224e3',
-					)
+					),
 				)
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'starter_customize_register' );
 
+add_action( 'wp_enqueue_scripts', 'starter_customizer_output', 100 );
 /**
  * Output customizer styles.
  *
@@ -194,7 +217,9 @@ function starter_customizer_output() {
 	 * `$starter_colors` array, and they can be used in multiple ways.
 	 */
 	foreach ( $starter_colors as $id => $hex ) {
+
 		${"$id"} = get_theme_mod( "starter_{$id}_color",  $hex );
+
 	}
 
 	// Ensure $css var is empty.
@@ -241,6 +266,7 @@ function starter_customizer_output() {
 
 		// Add the inline styles, also minify CSS first.
 		wp_add_inline_style( $handle, starter_minify_css( $css ) );
+
 	}
+
 }
-add_action( 'wp_enqueue_scripts', 'starter_customizer_output', 100 );

@@ -11,9 +11,12 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
+
 	die;
+
 }
 
+add_filter( 'genesis_theme_settings_defaults', 'starter_theme_defaults' );
 /**
  * Update Theme Settings upon reset.
  *
@@ -34,8 +37,8 @@ function starter_theme_defaults( $defaults ) {
 	return $defaults;
 
 }
-add_filter( 'genesis_theme_settings_defaults', 'starter_theme_defaults' );
 
+add_action( 'after_switch_theme', 'starter_theme_setting_defaults' );
 /**
  * Update Theme Settings upon activation.
  */
@@ -53,16 +56,17 @@ function starter_theme_setting_defaults() {
 			'posts_nav'                 => 'numeric',
 			'site_layout'               => 'content-sidebar',
 		) );
+
 	}
 
 	update_option( 'posts_per_page', 8 );
 
 }
-add_action( 'after_switch_theme', 'starter_theme_setting_defaults' );
 
+add_filter( 'simple_social_default_styles', 'starter_social_default_styles' );
 /**
  * Starter Pro Simple Social Icon Defaults.
-
+ *
  * @param  array $defaults Default Simple Social Icons settings.
  * @return array Custom settings.
  */
@@ -87,9 +91,9 @@ function starter_social_default_styles( $defaults ) {
 		'twitter'                => '#',
 		'youtube'                => '#',
 	);
+
 	$args = wp_parse_args( $args, $defaults );
 
 	return $args;
 
 }
-add_filter( 'simple_social_default_styles', 'starter_social_default_styles' );

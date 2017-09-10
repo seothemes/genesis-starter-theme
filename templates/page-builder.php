@@ -15,7 +15,9 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
+
 	die;
+
 }
 
 // Get site-header.
@@ -24,13 +26,11 @@ get_header();
 // Custom loop, remove all hooks except entry content.
 if ( have_posts() ) :
 
-	while ( have_posts() ) : the_post();
+	the_post();
 
-		do_action( 'genesis_entry_content' );
+	do_action( 'genesis_entry_content' );
 
-	endwhile; // End of post.
-
-endif; // End loop.
+endif;
 
 // Get site-footer.
 get_footer();

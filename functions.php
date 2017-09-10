@@ -9,13 +9,20 @@
  * @license      GPL-2.0+
  */
 
+ // If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+
+	die;
+
+}
+
 // Child theme (do not remove).
 include_once( get_template_directory() . '/lib/init.php' );
 
 // Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.com/themes/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.1.0' );
+define( 'CHILD_THEME_VERSION', '2.2.0' );
 
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'genesis-starter' ) );
@@ -28,6 +35,26 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+// Reposition primary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
+// Change order of main stylesheet to override plugin styles.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+
+// Enable shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
+
+// Force Gravity Forms to disable CSS output.
+add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
+
+/*
+ * This theme styles the visual editor to resemble the theme style,
+ * specifically font, colors, and column width.
+ */
+add_editor_style( get_stylesheet_directory_uri() . '/assets/styles/min/editor-style.min.css' );
+
 // Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
 
@@ -39,7 +66,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	'menu-primary',
 	'menu-secondary',
-	'site-inner',
 	'footer-widgets',
 	'footer',
 ) );
@@ -56,7 +82,7 @@ add_theme_support( 'genesis-accessibility', array(
 
 // Enable custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
-	'primary' 	=> __( 'Header Menu', 'genesis-starter' ),
+	'primary'   => __( 'Header Menu', 'genesis-starter' ),
 	'secondary' => __( 'After Header Menu', 'genesis-starter' ),
 ) );
 
@@ -111,18 +137,22 @@ add_theme_support( 'custom-logo', array(
 	'header-text' => array( '.site-title', '.site-description' ),
 ) );
 
+// Display custom logo in site title area.
+add_action( 'genesis_site_title', 'the_custom_logo', 0 );
+
 // Enable support for custom header image or video.
 add_theme_support( 'custom-header', array(
-	'header-selector' 	 => '.front-page-1',
-	'default_image'    	 => get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
+	'header-selector'    => '.hero',
+	'default_image'      => get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
 	'header-text'        => true,
 	'default-text-color' => '30353a',
-	'width'           	 => 1920,
-	'height'          	 => 1080,
-	'flex-height'     	 => true,
-	'flex-width'		 => true,
+	'width'              => 1920,
+	'height'             => 1080,
+	'flex-height'        => true,
+	'flex-width'         => true,
 	'uploads'            => true,
-	'video'				 => true,
+	'video'              => true,
+	'wp-head-callback'   => 'starter_custom_header_callback',
 ) );
 
 // Register default header (just in case).
@@ -142,9 +172,11 @@ genesis_register_layout( 'custom-layout', array(
 
 // Register front page widget areas.
 genesis_register_sidebar( array(
-	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'genesis-starter' ),
-	'description' => __( 'Front page 1 widget area.', 'genesis-starter' ),
+	'id'           => 'front-page-1',
+	'name'         => __( 'Front Page 1', 'genesis-starter' ),
+	'description'  => __( 'Front page 1 widget area.', 'genesis-starter' ),
+	'before_title' => '<h1 itemprop="headline">',
+	'after_title'  => '</h1>',
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-2',
@@ -167,47 +199,10 @@ genesis_register_sidebar( array(
 	'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
 ) );
 
-// Enable shortcodes in text widgets.
-add_filter( 'widget_text', 'do_shortcode' );
-
-// Remove Genesis blog and archive page templates.
-add_filter( 'theme_page_templates', 'starter_remove_templates' );
-
-// Remove blog metabox from admin.
-add_action( 'genesis_admin_before_metaboxes', 'starter_remove_metaboxes' );
-
-// Remove content-sidebar-wrap.
-add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
-
-// Force Gravity Forms to disable CSS output.
-add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
-
-// Display custom logo in site title area.
-add_action( 'genesis_site_title', 'the_custom_logo', 0 );
-
-// Reposition primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-// Fix Simple Social Icons styles.
-add_action( 'wp_head', 'starter_simple_social_icons_css' );
-add_action( 'wp_head', 'starter_remove_ssi_inline_styles', 1 );
-
-// Change order of main stylesheet to override plugin styles.
-remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
-
 /**
  * Enqueue theme scripts and styles.
  *
- * Add any custom scripts or styles by enqueueing them inside this
- * function. It looks like there is a lot happening here but it's
- * actually pretty simple. Here's what's going on:
- *
- * - Remove Simple Social Icons styles, theme includes the CSS.
- * - Add Google Fonts. Replace this with your own custom fonts.
- * - Add minified version of the responsive menu script.
- * - Add theme settings to menu script by localizing it.
+ * @return void
  */
 function starter_scripts_styles() {
 
@@ -226,7 +221,7 @@ function starter_scripts_styles() {
 	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Localize responsive menus script.
-	wp_localize_script( 'starter-menus', 'genesis_responsive_menu',	array(
+	wp_localize_script( 'starter-menus', 'genesis_responsive_menu', array(
 		'mainMenu'         => __( 'Menu', 'genesis-starter' ),
 		'subMenu'          => __( 'Menu', 'genesis-starter' ),
 		'menuIconClass'    => null,
@@ -241,8 +236,17 @@ function starter_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 
-// Load theme includes.
+// Load page header.
+include_once( get_stylesheet_directory() . '/includes/header.php' );
+
+// Load default settings.
 include_once( get_stylesheet_directory() . '/includes/defaults.php' );
+
+// Load helper functions.
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
+
+// Load Customizer settings.
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
+
+// Load recommended plugins.
 include_once( get_stylesheet_directory() . '/includes/plugins.php' );

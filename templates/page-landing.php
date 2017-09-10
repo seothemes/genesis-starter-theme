@@ -12,6 +12,7 @@
  * @link    https://seothemes.com/themes/genesis-starter
  */
 
+add_filter( 'body_class', 'starter_add_body_class' );
 /**
  * Add landing page body class to the head.
  *
@@ -25,18 +26,21 @@ function starter_add_body_class( $classes ) {
 	return $classes;
 
 }
-add_filter( 'body_class', 'starter_add_body_class' );
+
+add_action( 'wp_enqueue_scripts', 'starter_dequeue_skip_links' );
+/**
+ * Dequeue Skip Links Script.
+ *
+ * @return void
+ */
+function starter_dequeue_skip_links() {
+
+	wp_dequeue_script( 'skip-links' );
+
+}
 
 // Remove Skip Links.
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
-
-/**
- * Dequeue Skip Links Script.
- */
-function starter_dequeue_skip_links() {
-	wp_dequeue_script( 'skip-links' );
-}
-add_action( 'wp_enqueue_scripts', 'starter_dequeue_skip_links' );
 
 // Force full width content layout.
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
@@ -58,7 +62,6 @@ remove_theme_support( 'genesis-footer-widgets' );
 // Remove site footer elements.
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
-remove_action( 'genesis_footer', 'starter_footer_menu', 7 );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Run the Genesis loop.

@@ -35,36 +35,38 @@ function starter_register_required_plugins() {
 	$plugins = array();
 
 	$plugins[] = array(
-		'name'      => 'Simple Social Icons',
-		'slug'      => 'simple-social-icons',
-		'required'  => false,
+		'name'     => 'Simple Social Icons',
+		'slug'     => 'simple-social-icons',
+		'required' => false,
 	);
 
 	$plugins[] = array(
-		'name'      => 'Widget Importer & Exporter',
-		'slug'      => 'widget-importer-exporter',
-		'required'  => false,
+		'name'     => 'Widget Importer & Exporter',
+		'slug'     => 'widget-importer-exporter',
+		'required' => false,
 	);
 
 	$plugins[] = array(
-		'name'      => 'WordPress Importer',
-		'slug'      => 'wordpress-importer',
-		'required'  => false,
+		'name'     => 'WordPress Importer',
+		'slug'     => 'wordpress-importer',
+		'required' => false,
 	);
 
 	$plugins[] = array(
-		'name'      => 'WP Featherlight',
-		'slug'      => 'wp-featherlight',
-		'required'  => false,
+		'name'     => 'WP Featherlight',
+		'slug'     => 'wp-featherlight',
+		'required' => false,
 	);
 
 	// Check if WooCommerce is installed.
 	if ( class_exists( 'WooCommerce' ) ) {
+
 		$plugins[] = array(
 			'name'     => 'Genesis Connect WooCommerce',
 			'slug'     => 'genesis-connect-woocommerce',
 			'required' => true,
 		);
+
 	}
 
 	/*
