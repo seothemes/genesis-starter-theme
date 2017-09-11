@@ -82,6 +82,7 @@ theme/
 ├── includes/
 │   ├── customize.php
 │   ├── defaults.php
+│   ├── header.php
 │   ├── helpers.php
 │   └── plugins.php
 ├── languages/
@@ -91,6 +92,7 @@ theme/
 │   └── page-builder.php
 ├── .editorconfig
 ├── .gitignore
+├── 404.php
 ├── CHANGELOG.md
 ├── front-page.php
 ├── functions.php

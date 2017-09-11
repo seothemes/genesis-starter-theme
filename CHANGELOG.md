@@ -1,5 +1,22 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.1] - 2017-09-11
+* Add structural wrap hooks function
+* Improve styling for accessibility
+* Update front page template
+
+## [2.2.0] - 2017-09-10
+* Add page-header section
+* Add custom 404 template
+* Avoid hijacking the genesis flow on front page template
+* Add custom header callback
+* Add function to prevent updates
+* Add editor style CSS
+* Add column class variable to utilities.scss
+* Update standards and restructure helper functions
+* Remove gravity forms json file
+* Fix responsive menu margin
+
 ## [2.1.0] - 2017-07-18
 * Add RGBA customizer color settings
 * Add custom page layout

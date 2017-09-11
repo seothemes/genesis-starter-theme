@@ -17,386 +17,446 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: functions.php:59
+#: 404.php:34
+msgid "Sitemap"
+msgstr ""
+
+#: functions.php:93
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:94
 msgid "After Header Menu"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:171
 msgid "Hero Image"
 msgstr ""
 
-#: functions.php:226, functions.php:227
+#: functions.php:177
+msgid "Custom Layout"
+msgstr ""
+
+#: functions.php:184
+msgid "Front Page 1"
+msgstr ""
+
+#: functions.php:185
+msgid "Front page 1 widget area."
+msgstr ""
+
+#: functions.php:191
+msgid "Front Page 2"
+msgstr ""
+
+#: functions.php:192
+msgid "Front page 2 widget area."
+msgstr ""
+
+#: functions.php:196
+msgid "Front Page 3"
+msgstr ""
+
+#: functions.php:197
+msgid "Front page 3 widget area."
+msgstr ""
+
+#: functions.php:201
+msgid "Front Page 4"
+msgstr ""
+
+#: functions.php:202
+msgid "Front page 4 widget area."
+msgstr ""
+
+#: functions.php:206
+msgid "Front Page 5"
+msgstr ""
+
+#: functions.php:207
+msgid "Front page 5 widget area."
+msgstr ""
+
+#: functions.php:233, functions.php:234
 msgid "Menu"
 msgstr ""
 
-#: includes/plugins.php:401
+#: includes/header.php:96
+msgid "Latest Posts"
+msgstr ""
+
+#: includes/header.php:100
+msgid "Not found, error 404"
+msgstr ""
+
+#: includes/header.php:104
+msgid "Search Results for:"
+msgstr ""
+
+#: includes/plugins.php:409
 msgid "Install Required Plugins"
 msgstr ""
 
-#: includes/plugins.php:402
+#: includes/plugins.php:410
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/plugins.php:404
+#: includes/plugins.php:412
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: includes/plugins.php:406
+#: includes/plugins.php:414
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: includes/plugins.php:407
+#: includes/plugins.php:415
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: includes/plugins.php:408
+#: includes/plugins.php:416
 msgid "/*translators:1:pluginnames.*/This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:414
+#: includes/plugins.php:422
 msgid "/*translators:1:pluginnames.*/This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:420
+#: includes/plugins.php:428
 msgid "/*translators:1:pluginnames.*/The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:426
+#: includes/plugins.php:434
 msgid "/*translators:1:pluginnames.*/There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:432
+#: includes/plugins.php:440
 msgid "/*translators:1:pluginnames.*/The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:438
+#: includes/plugins.php:446
 msgid "/*translators:1:pluginnames.*/The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:444
+#: includes/plugins.php:452
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:449
+#: includes/plugins.php:457
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:454
+#: includes/plugins.php:462
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:459
+#: includes/plugins.php:467
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: includes/plugins.php:460, includes/plugins.php:901, includes/plugins.php:2607, includes/plugins.php:3654
+#: includes/plugins.php:468, includes/plugins.php:909, includes/plugins.php:2615, includes/plugins.php:3662
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: includes/plugins.php:461, includes/plugins.php:3233
+#: includes/plugins.php:469, includes/plugins.php:3241
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: includes/plugins.php:462, includes/plugins.php:3026
+#: includes/plugins.php:470, includes/plugins.php:3034
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:464
+#: includes/plugins.php:472
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: includes/plugins.php:466
+#: includes/plugins.php:474
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
-#: includes/plugins.php:468
+#: includes/plugins.php:476
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: includes/plugins.php:469
+#: includes/plugins.php:477
 msgid "Dismiss this notice"
 msgstr ""
 
-#: includes/plugins.php:470
+#: includes/plugins.php:478
 msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
-#: includes/plugins.php:471
+#: includes/plugins.php:479
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: includes/plugins.php:596
+#: includes/plugins.php:604
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: includes/plugins.php:597
+#: includes/plugins.php:605
 msgid "Update Required"
 msgstr ""
 
-#: includes/plugins.php:1008
+#: includes/plugins.php:1016
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: includes/plugins.php:1008, includes/plugins.php:1011
+#: includes/plugins.php:1016, includes/plugins.php:1019
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: includes/plugins.php:1011
+#: includes/plugins.php:1019
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: includes/plugins.php:1195, includes/plugins.php:3022
+#: includes/plugins.php:1203, includes/plugins.php:3030
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: includes/plugins.php:2056
+#: includes/plugins.php:2064
 msgid "TGMPA v%s"
 msgstr ""
 
-#: includes/plugins.php:2347
+#: includes/plugins.php:2355
 msgid "Required"
 msgstr ""
 
-#: includes/plugins.php:2350
+#: includes/plugins.php:2358
 msgid "Recommended"
 msgstr ""
 
-#: includes/plugins.php:2366
+#: includes/plugins.php:2374
 msgid "WordPress Repository"
 msgstr ""
 
-#: includes/plugins.php:2369
+#: includes/plugins.php:2377
 msgid "External Source"
 msgstr ""
 
-#: includes/plugins.php:2372
+#: includes/plugins.php:2380
 msgid "Pre-Packaged"
 msgstr ""
 
-#: includes/plugins.php:2389
+#: includes/plugins.php:2397
 msgid "Not Installed"
 msgstr ""
 
-#: includes/plugins.php:2393
+#: includes/plugins.php:2401
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: includes/plugins.php:2395
+#: includes/plugins.php:2403
 msgid "Active"
 msgstr ""
 
-#: includes/plugins.php:2401
+#: includes/plugins.php:2409
 msgid "Required Update not Available"
 msgstr ""
 
-#: includes/plugins.php:2404
+#: includes/plugins.php:2412
 msgid "Requires Update"
 msgstr ""
 
-#: includes/plugins.php:2407
+#: includes/plugins.php:2415
 msgid "Update recommended"
 msgstr ""
 
-#: includes/plugins.php:2416
+#: includes/plugins.php:2424
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: includes/plugins.php:2462
+#: includes/plugins.php:2470
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:2466
+#: includes/plugins.php:2474
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:2470
+#: includes/plugins.php:2478
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:2474
+#: includes/plugins.php:2482
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins.php:2556
+#: includes/plugins.php:2564
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: includes/plugins.php:2564
+#: includes/plugins.php:2572
 msgid "Installed version:"
 msgstr ""
 
-#: includes/plugins.php:2572
+#: includes/plugins.php:2580
 msgid "Minimum required version:"
 msgstr ""
 
-#: includes/plugins.php:2584
+#: includes/plugins.php:2592
 msgid "Available version:"
 msgstr ""
 
-#: includes/plugins.php:2607
+#: includes/plugins.php:2615
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: includes/plugins.php:2621
+#: includes/plugins.php:2629
 msgid "Plugin"
 msgstr ""
 
-#: includes/plugins.php:2622
+#: includes/plugins.php:2630
 msgid "Source"
 msgstr ""
 
-#: includes/plugins.php:2623
+#: includes/plugins.php:2631
 msgid "Type"
 msgstr ""
 
-#: includes/plugins.php:2627
+#: includes/plugins.php:2635
 msgid "Version"
 msgstr ""
 
-#: includes/plugins.php:2628
+#: includes/plugins.php:2636
 msgid "Status"
 msgstr ""
 
-#: includes/plugins.php:2677
+#: includes/plugins.php:2685
 msgid "Install %2$s"
 msgstr ""
 
-#: includes/plugins.php:2682
+#: includes/plugins.php:2690
 msgid "Update %2$s"
 msgstr ""
 
-#: includes/plugins.php:2688
+#: includes/plugins.php:2696
 msgid "Activate %2$s"
 msgstr ""
 
-#: includes/plugins.php:2758
+#: includes/plugins.php:2766
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: includes/plugins.php:2791
+#: includes/plugins.php:2799
 msgid "Install"
 msgstr ""
 
-#: includes/plugins.php:2797
+#: includes/plugins.php:2805
 msgid "Update"
 msgstr ""
 
-#: includes/plugins.php:2800
+#: includes/plugins.php:2808
 msgid "Activate"
 msgstr ""
 
-#: includes/plugins.php:2831
+#: includes/plugins.php:2839
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: includes/plugins.php:2833
+#: includes/plugins.php:2841
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: includes/plugins.php:2874
+#: includes/plugins.php:2882
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: includes/plugins.php:2876
+#: includes/plugins.php:2884
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: includes/plugins.php:2982
+#: includes/plugins.php:2990
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: includes/plugins.php:3008
+#: includes/plugins.php:3016
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: includes/plugins.php:3232
+#: includes/plugins.php:3240
 msgid "Plugin activation failed."
 msgstr ""
 
-#: includes/plugins.php:3572
+#: includes/plugins.php:3580
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/plugins.php:3575
+#: includes/plugins.php:3583
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: includes/plugins.php:3577
+#: includes/plugins.php:3585
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: includes/plugins.php:3581
+#: includes/plugins.php:3589
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: includes/plugins.php:3583
+#: includes/plugins.php:3591
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: includes/plugins.php:3583, includes/plugins.php:3591
+#: includes/plugins.php:3591, includes/plugins.php:3599
 msgid "Show Details"
 msgstr ""
 
-#: includes/plugins.php:3583, includes/plugins.php:3591
+#: includes/plugins.php:3591, includes/plugins.php:3599
 msgid "Hide Details"
 msgstr ""
 
-#: includes/plugins.php:3584
+#: includes/plugins.php:3592
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: includes/plugins.php:3586
+#: includes/plugins.php:3594
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/plugins.php:3589
+#: includes/plugins.php:3597
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: includes/plugins.php:3591
+#: includes/plugins.php:3599
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: includes/plugins.php:3592
+#: includes/plugins.php:3600
 msgid "All installations have been completed."
 msgstr ""
 
-#: includes/plugins.php:3594
+#: includes/plugins.php:3602
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
