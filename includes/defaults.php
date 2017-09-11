@@ -97,3 +97,68 @@ function starter_social_default_styles( $defaults ) {
 	return $args;
 
 }
+
+add_action( 'after_switch_theme', 'starter_excerpt_metabox' );
+/**
+ * Display excerpt metabox by default.
+ *
+ * Business Pro adds support for excerpts on pages to be used as
+ * subtitles on the front end of the site. The excerpt metabox
+ * is hidden by default on the page edit screen which can cause
+ * some confusion for users when they want to edit or remove the
+ * excerpt. To make it easier, we want to show the excerpt metabox
+ * by default and that's what this function is for. It only runs
+ * after switching theme so the current user's screen options are
+ * updated, allowing them to hide the metabox if not used.
+ *
+ * @since 2.3.0
+ *
+ * @return void
+ */
+function starter_excerpt_metabox() {
+
+	// Get current user ID.
+	$user_id = get_current_user_id();
+
+	// Create array of post types to include.
+	$post_types = array(
+		'page',
+		'post',
+		'portfolio',
+	);
+
+	// Loop through each post type and update user meta.
+	foreach ( $post_types as $post_type ) {
+
+		// Create variables.
+		$meta_key   = 'metaboxhidden_' . $post_type;
+		$prev_value = get_user_meta( $user_id, $meta_key, true );
+
+		// Check if value is an array.
+		if ( ! is_array( $prev_value ) ) {
+
+			$prev_value = array(
+				'genesis_inpost_seo_box',
+				'postcustom',
+				'postexcerpt',
+				'commentstatusdiv',
+				'commentsdiv',
+				'slugdiv',
+				'authordiv',
+				'genesis_inpost_scripts_box',
+			);
+
+		}
+
+		// Empty array to prevent errors.
+		$meta_value = array();
+
+		// Remove excerpt from array.
+		$meta_value = array_diff( $prev_value, array( 'postexcerpt' ) );
+
+		// Update user meta with new value.
+		update_user_meta( $user_id, $meta_key, $meta_value, $prev_value );
+
+	}
+
+}
