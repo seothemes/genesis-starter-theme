@@ -118,6 +118,9 @@
     position: absolute;
     left: 0;
     top: 100%;
+    @include breakpoint(sm) {
+        margin: 0 -5vw;
+    }
     @include breakpoint(md) {
         border: none;
         position: relative;
@@ -189,7 +192,8 @@
     position: relative;
     line-height: 1;
     color: $dark;
-    &:hover {
+    &:hover,
+    &:focus {
         background: none;
         outline: none;
         box-shadow: none;
@@ -211,7 +215,7 @@
         transition: background 0s 0.2s;
         width: 2.5rem;
         margin-left: 0.236em;
-        margin-top: 0.7rem;
+        margin-top: 0.8rem;
         border-radius: $site-radius;
         &::before,
         &::after {
@@ -251,10 +255,10 @@
 .sub-menu-toggle {
     position: absolute;
     right: 0;
-    top: 0.5em;
+    top: 0.25em;
     background: none;
-    padding: 0.5em;
-    margin: 0 -0.5em;
+    padding: 0.75em;
+    margin: 0 -0.75em;
     @include breakpoint(md) {
         display: none;
     }

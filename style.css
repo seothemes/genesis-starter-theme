@@ -981,6 +981,7 @@ img.alignright {
 	line-height: 1;
 	color: #30353a
 }
+.menu-toggle:focus,
 .menu-toggle:hover {
 	background: 0 0;
 	outline: 0;
@@ -1004,8 +1005,8 @@ img.alignright {
 	width: 25px;
 	width: 2.5rem;
 	margin-left: .236em;
-	margin-top: 7px;
-	margin-top: .7rem;
+	margin-top: 8px;
+	margin-top: .8rem;
 	border-radius: .1rem
 }
 .menu-toggle span::after,
@@ -1062,10 +1063,10 @@ img.alignright {
 .sub-menu-toggle {
 	position: absolute;
 	right: 0;
-	top: .5em;
+	top: .25em;
 	background: 0 0;
-	padding: .5em;
-	margin: 0 -.5em
+	padding: .75em;
+	margin: 0 -.75em
 }
 .sub-menu-toggle:focus,
 .sub-menu-toggle:hover {
@@ -1886,6 +1887,10 @@ p.entry-meta {
 	.after-entry,
 	.author-box {
 		margin-bottom: 4rem
+	}
+	.nav-primary,
+	.nav-secondary {
+		margin: 0 -5vw
 	}
 	.nav-footer .menu {
 		margin-bottom: 1.5em
