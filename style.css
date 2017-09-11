@@ -309,6 +309,7 @@ a {
 	color: #a0a8af;
 	word-wrap: break-word
 }
+a:focus,
 a:hover {
 	color: #30353a
 }
@@ -432,15 +433,20 @@ input[type=submit] {
 	line-height: 1;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
-	box-shadow: inset 0 0 0 9rem rgba(48,53,58,0)
+	box-shadow: inset 0 0 0 9rem rgba(255,255,255,0)
 }
+.button:focus,
 .button:hover,
+button:focus,
 button:hover,
+input[type=button]:focus,
 input[type=button]:hover,
+input[type=reset]:focus,
 input[type=reset]:hover,
+input[type=submit]:focus,
 input[type=submit]:hover {
 	color: #fff;
-	box-shadow: inset 0 0 0 9rem rgba(48,53,58,.1)
+	box-shadow: inset 0 0 0 9rem rgba(255,255,255,.2)
 }
 .button.secondary,
 button.secondary,
@@ -458,15 +464,10 @@ input[type=submit].small {
 	font-size: 1.2rem
 }
 .button:disabled,
-.button:disabled:hover,
 button:disabled,
-button:disabled:hover,
 input[type=button]:disabled,
-input[type=button]:disabled:hover,
 input[type=reset]:disabled,
-input[type=reset]:disabled:hover,
-input[type=submit]:disabled,
-input[type=submit]:disabled:hover {
+input[type=submit]:disabled {
 	background-color: #f4f5f6;
 	border-width: 0;
 	color: #6a7681;
@@ -590,19 +591,18 @@ th {
 	padding: 0
 }
 .site-inner {
-	clear: both;
-	padding: 5vw 0;
-	word-wrap: break-word
+	clear: both
 }
 .page-builder .site-inner {
-	padding: 0;
 	border-top: 1px solid #f4f5f6;
 	border-top: .1rem solid #f4f5f6;
 	border-bottom: 1px solid #f4f5f6;
 	border-bottom: .1rem solid #f4f5f6
 }
 .content-sidebar-wrap {
-	max-width: 1280px
+	max-width: 1280px;
+	padding-top: 5%;
+	padding-bottom: 5%
 }
 .gallery,
 .gallery-row {
@@ -817,6 +817,7 @@ img.alignright {
 	margin: 0 auto;
 	padding: 60px 0;
 	padding: 6rem 0;
+	background-color: #fff;
 	background-size: cover;
 	background-position: center;
 	position: relative
@@ -829,7 +830,7 @@ img.alignright {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(48,53,58,.5);
+	background-color: rgba(48,53,58,0);
 	z-index: 0
 }
 .page-header .wrap {
@@ -838,13 +839,12 @@ img.alignright {
 .page-header h1 {
 	width: 100%;
 	margin-bottom: 0;
-	text-transform: capitalize;
-	color: #fff
+	text-transform: capitalize
 }
 .page-header p {
 	width: 100%;
-	margin: 1em 0 0;
-	color: #fff
+	margin: 10px 0 0;
+	margin: 1rem 0 0
 }
 .page-header .widget {
 	background: 0 0
@@ -887,6 +887,7 @@ img.alignright {
 	padding: .5em 0;
 	color: #30353a
 }
+.menu-item a:focus,
 .menu-item a:hover,
 .menu-item.current-menu-item > a {
 	color: #a0a8af
@@ -1348,13 +1349,17 @@ p.entry-meta {
 	font-size: 1.8rem
 }
 .site-footer > .wrap {
-	text-align: center;
-	position: relative;
+	margin: 0 auto;
 	padding: 5vw;
+	text-align: center;
 	font-size: 16px;
-	font-size: 1.6rem
+	font-size: 1.6rem;
+	position: relative
 }
-.site-footer p:last-of-type {
+.site-footer > .wrap:last-of-type {
+	margin-bottom: 0
+}
+.site-footer > p:last-of-type {
 	margin-bottom: 0
 }
 .footer-widgets {
@@ -1802,7 +1807,8 @@ p.entry-meta {
 	.wrap {
 		width: 90%;
 		max-width: 1280px;
-		padding: 0
+		padding-left: 0;
+		padding-right: 0
 	}
 	.five-sixths,
 	.four-fifths,
@@ -1898,6 +1904,8 @@ p.entry-meta {
 		padding: 4rem
 	}
 	.site-footer > .wrap {
+		width: 90%;
+		max-width: 1280px;
 		padding: 6rem 0
 	}
 	.site-footer .widget-area {
@@ -1940,7 +1948,7 @@ p.entry-meta {
 	}
 }
 @media (min-width:896px) {
-	.site-inner {
+	.content-sidebar-wrap {
 		padding: 4rem 0
 	}
 	.content-sidebar-wrap {
@@ -1977,6 +1985,9 @@ p.entry-meta {
 	.sidebar-content .content {
 		width: -webkit-calc(75% - 4rem);
 		width: calc(75% - 4rem)
+	}
+	.home .content {
+		width: 100%
 	}
 	.site-header > .wrap {
 		padding: 0;
@@ -2055,7 +2066,7 @@ p.entry-meta {
 	}
 	.nav-secondary {
 		width: 100%;
-		border-bottom: .1rem solid #f4f5f6
+		border-top: .1rem solid #f4f5f6
 	}
 	.menu-toggle {
 		display: none

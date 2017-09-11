@@ -76,6 +76,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 6rem 0;
+    background-color: $white;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -87,7 +88,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($dark, 0.5);
+        background-color: rgba($dark, 0);
         z-index: 0;
     }
     .wrap {
@@ -97,12 +98,10 @@
         width: 100%;
         margin-bottom: 0;
         text-transform: capitalize;
-        color: $white;
     }
     p {
         width: 100%;
-        margin: 1em 0 0;
-        color: $white;
+        margin: 1rem 0 0;
     }
     .widget {
         background: transparent;

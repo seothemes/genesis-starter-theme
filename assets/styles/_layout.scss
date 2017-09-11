@@ -9,7 +9,8 @@
     @include breakpoint(sm) {
         width: 90%;
         max-width: map-get($breakpoints, xl);
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
     .wrap {
         max-width: 100%;
@@ -20,13 +21,7 @@
 
 .site-inner {
     clear: both;
-    padding: 5vw 0;
-    word-wrap: break-word;
-    @include breakpoint(md) {
-        padding: 4rem 0;
-    }
     .page-builder & {
-        padding: 0;
         border-top: $site-border;
         border-bottom: $site-border;
     }
@@ -34,6 +29,11 @@
 
 .content-sidebar-wrap {
     max-width: map-get($breakpoints, xl);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    @include breakpoint(md) {
+        padding: 4rem 0;
+    }
     @include breakpoint(md) {
         display: flex;
         flex-wrap: wrap;
@@ -64,7 +64,12 @@
 		.content {
 			width: calc(75% - 4rem);
 		}
-	}
+    }
+    .home {
+        .content {
+            width: 100%;
+        }
+    }
 }
 
 

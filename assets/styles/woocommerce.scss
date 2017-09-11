@@ -473,10 +473,11 @@
         width: auto;
         height: auto;
         line-height: 1;
+        box-shadow: inset 0 0 0 9rem rgba($white, 0);
         &:hover {
             color: $white;
             background: $accent;
-            box-shadow: inset 0 0 0 9rem rgba($dark, 0.1);
+            box-shadow: inset 0 0 0 9rem rgba($white, 0.2);
         }
         &.disabled,
         &:disabled,

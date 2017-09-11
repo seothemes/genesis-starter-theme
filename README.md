@@ -46,7 +46,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 
 The following instructions require the use of a text editor with search and replace functionality. You will need to perform a search and replace on all files in the theme folder. If using NPM, the theme should be renamed before running `npm install`. You do not want to edit any files in the `node_modules` directory.
 
-1. Search and replace `genesis-starter` with your theme slug.
+1. Search and replace `genesis-starter` with your theme text domain.
 2. Search and replace `starter_` with your theme function prefix.
 3. Search and replace `Genesis Starter` with your theme name.
 

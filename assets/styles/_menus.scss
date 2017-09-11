@@ -44,6 +44,7 @@
         }
     }
     a:hover,
+    a:focus,
     &.current-menu-item>a {
         color: $accent;
     }
@@ -155,7 +156,7 @@
     width: 100%;
     @include breakpoint(md) {
         width: 100%;
-        border-bottom: $site-border;
+        border-top: $site-border;
     }
 }
 
