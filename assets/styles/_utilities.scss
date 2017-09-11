@@ -21,6 +21,7 @@ $breakpoints: (
 
 $dark:   #30353a;
 $accent: #a0a8af;
+$border: #f0f1f2;
 $light:  #f4f5f6;
 $white:  #ffffff;
 
@@ -35,7 +36,7 @@ $bold:    	   700;
 /* ### Other */
 
 $site-radius: 0.1rem;
-$site-border: 0.1rem solid $light;
+$site-border: 0.1rem solid $border;
 
 /**
  * ### Columns (including fifths)

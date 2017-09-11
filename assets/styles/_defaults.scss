@@ -51,6 +51,7 @@ a {
     &:hover,
     &:focus {
         color: $dark;
+        outline: none;
     }
 }
 
@@ -146,7 +147,7 @@ textarea {
     line-height: 2;
     &:focus {
         outline: none;
-        border: $site-border;
+        border-color: $accent;
     }
 }
 
@@ -204,6 +205,9 @@ input[type="submit"] {
     }
     &.small {
         font-size: 1.2rem;
+    }
+    &.large {
+        font-size: 1.8rem;
     }
     &:disabled {
         background-color: $light;

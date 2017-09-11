@@ -15,28 +15,35 @@
 --------------------------------------------- */
 
 .breadcrumb {
-    padding: 1em 7.5vw;
+    padding: 1em 6vw;
     background-color: $white;
     border-bottom: $site-border;
     font-size: 1.4rem;
     width: 100%;
     @include breakpoint(sm) {
-        padding: 1em 6rem
-    }
-    a {
-        text-decoration: underline;
+        padding: 1em 6rem;
     }
 }
 
 .after-entry,
 .author-box {
     margin-bottom: 5%;
+    background-color: $white;
+    padding: 6vw;
     @include breakpoint(sm) {
         margin-bottom: 4rem;
+        padding: 6rem;
     }
 }
 
 .author-box {
+    .entry + & {
+        margin-top: 6vw;
+        @include breakpoint(sm) {
+            margin-top: 4rem;
+            margin-bottom: 0;
+        }
+    }
     p:last-of-type {
         margin-bottom: 0;
     }
@@ -56,8 +63,8 @@
     input[type="submit"] {
         display: none;
     }
-    .entry-content & {
-        margin-bottom: 1em;
+    .entry & {
+        margin-bottom: 4rem;
     }
 }
 
@@ -65,8 +72,8 @@
 /* ## Titles
 --------------------------------------------- */
 
-.author-box-title {
-    font-size: 2rem;
+.author-box-content {
+    font-size: 1.6rem;
 }
 
 .entry-title {

@@ -10,6 +10,9 @@
     padding: 6rem 0;
     background-color: $white;
     border-bottom: $site-border;
+    @include breakpoint(sm) {
+        padding: 6rem 0 2rem;
+    }
     .wrap {
         @include breakpoint(sm) {
             display: flex;

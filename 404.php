@@ -26,14 +26,24 @@ function starter_404() {
 		'context' => 'entry-404',
 	) );
 
-		/* translators: %s: URL for current website. */
-		echo apply_filters( 'genesis_404_entry_content', '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), trailingslashit( home_url() ) ) . '</p>' );
+	genesis_markup( array(
+		'open'    => '<div %s>',
+		'context' => 'entry-content',
+	) );
 
-		get_search_form();
+	/* translators: %s: URL for current website. */
+	echo apply_filters( 'genesis_404_entry_content', '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), trailingslashit( home_url() ) ) . '</p>' );
 
-		echo '<h2>' . __( 'Sitemap', 'genesis-starter' ) . '</h2>';
+	get_search_form();
 
-		genesis_sitemap( 'h3' );
+	echo '<h2>' . __( 'Sitemap', 'genesis-starter' ) . '</h2>';
+
+	genesis_sitemap( 'h3' );
+
+	genesis_markup( array(
+		'close'   => '</div>',
+		'context' => 'entry-content',
+	) );
 
 	genesis_markup( array(
 		'close' => '</article>',

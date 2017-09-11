@@ -59,7 +59,6 @@ h6 {
 	clear: both;
 	line-height: 1.4;
 	margin: 0 0 0.75em;
-	padding: 1.5em 0 0;
 	font-family: $font-heading;
 }
 
@@ -72,42 +71,41 @@ h6:first-child {
 	padding-top: 0;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    font-weight: $bolder;
+    line-height: 1.236rem; // Golden ratio.
+    margin: 0 0 0.618em;
+}
+
 h1 {
-	font-size: 24px;
-	font-size: 1.5rem;
-	font-weight: 300;
+    font-size: 2em;
 }
 
 h2 {
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-weight: 300;
+    font-size: 1.6em;
 }
 
 h3 {
-	font-size: 18px;
-	font-size: 1.125rem;
-	font-weight: 300;
+    font-size: 1.4em;
 }
 
 h4 {
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: 800;
+    font-size: 1.2em;
 }
 
 h5 {
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-weight: 800;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
+    font-size: 1.1em;
 }
 
 h6 {
-	font-size: 15px;
-	font-size: 0.9375rem;
-	font-weight: 800;
+    font-size: 1em;
 }
 
 p {
@@ -123,8 +121,7 @@ i {
 }
 
 blockquote {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 1.8rem;
 	font-style: italic;
 	line-height: 1.7;
 	margin: 0;
@@ -160,8 +157,13 @@ kbd,
 tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 1.4rem;
+	padding: 2em;
+	display: inline-block;
+}
+
+code {
+	padding: 1em !important;
 }
 
 abbr,
@@ -224,7 +226,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5em 1em;
 	padding: 0;
 }
 
@@ -245,7 +247,7 @@ ol li:before {
 	content: counter(item);
 	counter-increment: item;
 	font-weight: 800;
-	left: -1.5em;
+	left: -1em;
 	position: absolute;
 }
 
@@ -317,6 +319,36 @@ a:focus {
 	color: #000;
 	-webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
 	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+}
+
+.button {
+    background-color: $dark;
+    border: 0;
+    border-radius: $site-radius;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: $bold;
+    padding: 1em 2em;
+    text-decoration: none;
+    $white-space: nowrap;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    @include transition;
+    box-shadow: inset 0 0 0 9rem rgba($white, 0);
+    &:hover,
+    &:focus {
+        color: $white;
+        box-shadow: inset 0 0 0 9rem rgba($white, 0.2);
+    }
+    &.secondary {
+        background-color: $accent;
+    }
+    &.small {
+        font-size: 1.2rem;
+    }
 }
 
 /* Fixes linked images */

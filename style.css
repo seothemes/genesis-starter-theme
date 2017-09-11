@@ -311,7 +311,8 @@ a {
 }
 a:focus,
 a:hover {
-	color: #30353a
+	color: #30353a;
+	outline: 0
 }
 ol,
 ul {
@@ -324,8 +325,8 @@ li {
 hr {
 	border: 0;
 	border-collapse: collapse;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2;
 	clear: both;
 	padding: 1em 0 0;
 	margin: 0 0 2em
@@ -341,8 +342,8 @@ i {
 	font-style: italic
 }
 blockquote {
-	border-left: 1px solid #f4f5f6;
-	border-left: .1rem solid #f4f5f6;
+	border-left: 1px solid #f0f1f2;
+	border-left: .1rem solid #f0f1f2;
 	margin: 1em 0;
 	padding: 0 1em
 }
@@ -379,8 +380,8 @@ input,
 select,
 textarea {
 	background-color: #fff;
-	border: 1px solid #f4f5f6;
-	border: .1rem solid #f4f5f6;
+	border: 1px solid #f0f1f2;
+	border: .1rem solid #f0f1f2;
 	border-radius: .1rem;
 	padding: .5em 1em;
 	width: 100%;
@@ -390,12 +391,11 @@ input:focus,
 select:focus,
 textarea:focus {
 	outline: 0;
-	border: 1px solid #f4f5f6;
-	border: .1rem solid #f4f5f6
+	border-color: #a0a8af
 }
 :focus {
-	outline: 1px solid #f4f5f6;
-	outline: .1rem solid #f4f5f6
+	outline: 1px solid #f0f1f2;
+	outline: .1rem solid #f0f1f2
 }
 input[type=checkbox],
 input[type=image],
@@ -463,6 +463,14 @@ input[type=submit].small {
 	font-size: 12px;
 	font-size: 1.2rem
 }
+.button.large,
+button.large,
+input[type=button].large,
+input[type=reset].large,
+input[type=submit].large {
+	font-size: 18px;
+	font-size: 1.8rem
+}
 .button:disabled,
 button:disabled,
 input[type=button]:disabled,
@@ -518,8 +526,8 @@ video {
 }
 table {
 	background-color: #fff;
-	border: 1px solid #f4f5f6;
-	border: .1rem solid #f4f5f6;
+	border: 1px solid #f0f1f2;
+	border: .1rem solid #f0f1f2;
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 1;
@@ -528,17 +536,17 @@ table {
 	width: 100%
 }
 tbody {
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2
 }
 td,
 th {
 	text-align: left;
 	padding: .618em;
-	border-top: 1px solid #f4f5f6;
-	border-top: .1rem solid #f4f5f6;
-	border-right: 1px solid #f4f5f6;
-	border-right: .1rem solid #f4f5f6
+	border-top: 1px solid #f0f1f2;
+	border-top: .1rem solid #f0f1f2;
+	border-right: 1px solid #f0f1f2;
+	border-right: .1rem solid #f0f1f2
 }
 .screen-reader-shortcut,
 .screen-reader-text,
@@ -594,10 +602,10 @@ th {
 	clear: both
 }
 .page-builder .site-inner {
-	border-top: 1px solid #f4f5f6;
-	border-top: .1rem solid #f4f5f6;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6
+	border-top: 1px solid #f0f1f2;
+	border-top: .1rem solid #f0f1f2;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2
 }
 .content-sidebar-wrap {
 	max-width: 1280px;
@@ -647,20 +655,22 @@ th {
 	margin-left: 2rem
 }
 .breadcrumb {
-	padding: 1em 7.5vw;
+	padding: 1em 6vw;
 	background-color: #fff;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2;
 	font-size: 14px;
 	font-size: 1.4rem;
 	width: 100%
 }
-.breadcrumb a {
-	text-decoration: underline
-}
 .after-entry,
 .author-box {
-	margin-bottom: 5%
+	margin-bottom: 5%;
+	background-color: #fff;
+	padding: 6vw
+}
+.entry + .author-box {
+	margin-top: 6vw
 }
 .author-box p:last-of-type {
 	margin-bottom: 0
@@ -683,12 +693,13 @@ th {
 .search-form input[type=submit] {
 	display: none
 }
-.entry-content .search-form {
-	margin-bottom: 1em
+.entry .search-form {
+	margin-bottom: 40px;
+	margin-bottom: 4rem
 }
-.author-box-title {
-	font-size: 20px;
-	font-size: 2rem
+.author-box-content {
+	font-size: 16px;
+	font-size: 1.6rem
 }
 .entry-title a {
 	color: #30353a;
@@ -760,8 +771,8 @@ img.alignright {
 	width: 100%;
 	z-index: 100;
 	background-color: #fff;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2
 }
 .site-header > .wrap {
 	position: relative;
@@ -815,8 +826,7 @@ img.alignright {
 .page-header {
 	width: 100%;
 	margin: 0 auto;
-	padding: 60px 0;
-	padding: 6rem 0;
+	padding: 6vw 0;
 	background-size: cover;
 	background-position: center;
 	position: relative
@@ -843,8 +853,7 @@ img.alignright {
 }
 .page-header p {
 	width: 100%;
-	margin: 10px 0 0;
-	margin: 1rem 0 0
+	margin: 1em 0 0
 }
 .page-header .widget {
 	background: 0 0
@@ -925,10 +934,10 @@ img.alignright {
 	margin: 0;
 	padding: 0 5vw;
 	background-color: #fff;
-	border-top: 1px solid #f4f5f6;
-	border-top: .1rem solid #f4f5f6;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6;
+	border-top: 1px solid #f0f1f2;
+	border-top: .1rem solid #f0f1f2;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2;
 	display: none;
 	position: absolute;
 	left: 0;
@@ -989,8 +998,8 @@ img.alignright {
 	color: #30353a
 }
 .menu-toggle:focus {
-	outline: 1px solid #f4f5f6;
-	outline: .1rem solid #f4f5f6;
+	outline: 1px solid #f0f1f2;
+	outline: .1rem solid #f0f1f2;
 	background: 0 0
 }
 .menu-toggle span {
@@ -1091,7 +1100,7 @@ img.alignright {
 .entry {
 	background-color: #fff;
 	margin-bottom: 5vw;
-	padding: 7.5vw
+	padding: 6vw
 }
 .entry:last-of-type {
 	margin-bottom: 0
@@ -1111,6 +1120,11 @@ img.alignright {
 	margin-left: 40px;
 	margin-left: 4rem
 }
+.error404 .entry-content ol,
+.error404 .entry-content ul {
+	margin-bottom: 40px;
+	margin-bottom: 4rem
+}
 .entry-content ol > li {
 	list-style-type: decimal
 }
@@ -1129,9 +1143,16 @@ img.alignright {
 	display: block;
 	padding: 10px 20px;
 	padding: 1rem 2rem;
-	border: 1px solid #f4f5f6;
-	border: .1rem solid #f4f5f6;
-	margin-top: 1em
+	border: 1px solid #f0f1f2;
+	border: .1rem solid #f0f1f2;
+	margin-top: 1em;
+	font-size: 16px;
+	font-size: 1.6rem
+}
+.entry-content input,
+.entry-content select,
+.entry-content textarea {
+	margin-bottom: 1em
 }
 .entry-content > :last-child {
 	margin-bottom: 0
@@ -1159,8 +1180,8 @@ p.entry-meta {
 	text-transform: capitalize
 }
 .entry-footer {
-	border-top: 1px solid #f4f5f6;
-	border-top: .1rem solid #f4f5f6;
+	border-top: 1px solid #f0f1f2;
+	border-top: .1rem solid #f0f1f2;
 	margin-top: 5vw;
 	padding-top: 5vw
 }
@@ -1210,7 +1231,7 @@ p.entry-meta {
 	font-size: 1.6rem;
 	margin-top: 40px;
 	margin-top: 4rem;
-	padding: 7.5vw
+	padding: 6vw
 }
 .comment-respond .form-submit {
 	margin-bottom: 0
@@ -1271,7 +1292,7 @@ p.entry-meta {
 	margin-bottom: 0
 }
 .widget {
-	margin-bottom: 7.5vw;
+	margin-bottom: 6vw;
 	word-wrap: break-word;
 	background-color: #fff
 }
@@ -1283,7 +1304,7 @@ p.entry-meta {
 	margin-top: 5vw;
 	font-size: 16px;
 	font-size: 1.6rem;
-	padding: 7.5vw
+	padding: 6vw
 }
 .widget p:last-of-type {
 	margin-bottom: 0
@@ -1321,28 +1342,6 @@ p.entry-meta {
 .widget_calendar th {
 	text-align: center
 }
-.sidebar-primary .widget:first-of-type {
-	background-color: #30353a;
-	color: #fff
-}
-.sidebar-primary .widget:first-of-type .widget-title,
-.sidebar-primary .widget:first-of-type h3 {
-	color: #fff;
-	margin-bottom: .5em
-}
-.sidebar-primary .widget:first-of-type input {
-	width: 100%
-}
-.sidebar-primary .widget:first-of-type input[type=button],
-.sidebar-primary .widget:first-of-type input[type=submit] {
-	background-color: #a0a8af;
-	width: 100%
-}
-.sidebar-primary .widget:first-of-type input[type=button]:hover,
-.sidebar-primary .widget:first-of-type input[type=submit]:hover {
-	color: #30353a;
-	background-color: #fff
-}
 .site-footer {
 	width: 100%;
 	background-color: #fff;
@@ -1366,8 +1365,8 @@ p.entry-meta {
 .footer-widgets {
 	padding: 60px 0;
 	padding: 6rem 0;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2;
 	background-color: #fff
 }
 .footer-widgets .widget-area {
@@ -1525,8 +1524,8 @@ p.entry-meta {
 	margin: 1rem 0
 }
 .gsection h2 {
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6;
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2;
 	padding-bottom: 10px;
 	padding-bottom: 1rem
 }
@@ -1656,8 +1655,8 @@ p.entry-meta {
 	padding: 60px 0;
 	padding: 6rem 0;
 	background-color: #fff;
-	border-bottom: 1px solid #f4f5f6;
-	border-bottom: .1rem solid #f4f5f6
+	border-bottom: 1px solid #f0f1f2;
+	border-bottom: .1rem solid #f0f1f2
 }
 .front-page-1 {
 	padding: 20vw 0;
@@ -1736,26 +1735,6 @@ p.entry-meta {
 	.gallery-item {
 		width: 48.717948717948715%;
 		margin-bottom: 2.564102564102564%
-	}
-	.sidebar-primary {
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		-webkit-justify-content: space-between;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
-		-webkit-box-align: stretch;
-		-webkit-align-items: stretch;
-		-ms-flex-align: stretch;
-		align-items: stretch
-	}
-	.sidebar-primary .widget {
-		width: 42.5vw
 	}
 	.ginput_container input.large,
 	.ginput_container select.large,
@@ -1886,7 +1865,15 @@ p.entry-meta {
 	}
 	.after-entry,
 	.author-box {
-		margin-bottom: 4rem
+		margin-bottom: 4rem;
+		padding: 6rem
+	}
+	.entry + .author-box {
+		margin-top: 4rem;
+		margin-bottom: 0
+	}
+	.page-header {
+		padding: 6rem 0
 	}
 	.nav-primary,
 	.nav-secondary {
@@ -1941,6 +1928,13 @@ p.entry-meta {
 	}
 	.footer-widgets .widget-area:first-of-type {
 		margin-left: 0
+	}
+	.front-page-1,
+	.front-page-2,
+	.front-page-3,
+	.front-page-4,
+	.front-page-5 {
+		padding: 6rem 0 2rem
 	}
 	.front-page-1 .wrap,
 	.front-page-2 .wrap,
@@ -2039,7 +2033,7 @@ p.entry-meta {
 		width: 20rem;
 		z-index: 99;
 		background-color: #fff;
-		border: .1rem solid #f4f5f6;
+		border: .1rem solid #f0f1f2;
 		padding: .5em 0
 	}
 	.sub-menu li:first-of-type {
@@ -2055,7 +2049,7 @@ p.entry-meta {
 		padding-left: 0;
 		left: -.1rem;
 		top: -.5em;
-		border: .1rem solid #f4f5f6
+		border: .1rem solid #f0f1f2
 	}
 	.nav-primary,
 	.nav-secondary {
@@ -2078,7 +2072,7 @@ p.entry-meta {
 	}
 	.nav-secondary {
 		width: 100%;
-		border-top: .1rem solid #f4f5f6
+		border-top: .1rem solid #f0f1f2
 	}
 	.menu-toggle {
 		display: none
@@ -2090,15 +2084,12 @@ p.entry-meta {
 		margin: 4rem 0 0
 	}
 	.widget {
-		margin-bottom: 0
+		margin-bottom: 4rem
 	}
-	.sidebar-primary {
-		display: block
+	.widget:last-of-type {
+		margin-bottom: 4rem
 	}
-	.sidebar-primary .widget {
-		width: 100%
-	}
-	.sidebar-primary .widget:first-of-type {
+	.sidebar .widget:first-of-type {
 		margin-top: 0
 	}
 	.front-page-1 .wrap {
@@ -2169,7 +2160,7 @@ p.entry-meta {
 	}
 	blockquote,
 	pre {
-		border: .1rem solid #f4f5f6;
+		border: .1rem solid #f0f1f2;
 		page-break-inside: avoid
 	}
 	.content,

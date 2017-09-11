@@ -4,7 +4,7 @@
 .entry {
     background-color: $white;
     margin-bottom: 5vw;
-    padding: 7.5vw;
+    padding: 6vw;
     @include breakpoint(sm) {
         padding: 6rem;
         margin-bottom: 4rem;
@@ -20,6 +20,9 @@
     ul {
         margin-bottom: 1em;
         margin-left: 4rem;
+        .error404 & {
+            margin-bottom: 4rem;
+        }
     }
     ol>li {
         list-style-type: decimal;
@@ -40,6 +43,12 @@
         padding: 1rem 2rem;
         border: $site-border;
         margin-top: 1em;
+        font-size: 1.6rem;
+    }
+    input,
+    select,
+    textarea {
+        margin-bottom: 1em;
     }
     >*:last-child {
         margin-bottom: 0;
@@ -134,7 +143,7 @@ p.entry-meta {
     background-color: #fff;
     font-size: 1.6rem;
     margin-top: 4rem;
-    padding: 7.5vw;
+    padding: 6vw;
     @include breakpoint(sm) {
         padding: 6rem;
     }

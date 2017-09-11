@@ -5,16 +5,16 @@
 .woocommerce {
     .content {
         background-color: $white;
-		padding: 0 7.5vw 7.5vw;
+		padding: 6vw;
 		@include breakpoint(sm) {
-			padding: 0 6rem 6rem;
+			padding: 6rem;
         }
     }
 	.breadcrumb {
-		margin: 0 -7.5vw 7.5vw;
+		margin: -6vw -6vw 6vw;
 		width: calc(100vw - 15vw);
 		@include breakpoint(sm) {
-			margin: 0 -6rem 6rem;
+			margin: -6rem -6rem 6rem;
 			width: calc(100% + 12rem);
 		}
 	}
@@ -378,9 +378,6 @@
         padding: 0;
         div.form-row {
             margin-bottom: 0;
-            &.place-order {
-                background-color: $light;
-            }
         }
         ul.payment_methods {
             border-color: $light;
@@ -400,6 +397,17 @@
     }
 }
 
+.select2-container .select2-selection--single {
+    height: 5rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 4.8rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 4.8rem;
+}
 
 /* ### WooCommerce Cart Page */
 
@@ -458,6 +466,10 @@
     button.button,
     input.button,
     input.button[type="submit"],
+    a.button.alt,
+    button.button.alt,
+    input.button.alt,
+    input.button[type="submit"].alt,
     #respond input#submit {
         background: $accent;
         border: 0;
@@ -683,9 +695,6 @@
             float: right;
             display: block;
         }
-    }
-    a {
-        font-weight: $bolder;
     }
 }
 
