@@ -1366,8 +1366,7 @@ p.entry-meta {
 	padding: 60px 0;
 	padding: 6rem 0;
 	border-bottom: 1px solid #f0f1f2;
-	border-bottom: .1rem solid #f0f1f2;
-	background-color: #fff
+	border-bottom: .1rem solid #f0f1f2
 }
 .footer-widgets .widget-area {
 	margin: 0 auto 40px;

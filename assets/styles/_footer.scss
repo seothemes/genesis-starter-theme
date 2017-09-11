@@ -39,7 +39,6 @@
 .footer-widgets {
     padding: 6rem 0;
     border-bottom: $site-border;
-    background-color: $white;
     .wrap {
         @include breakpoint(sm) {
             display: flex;
