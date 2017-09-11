@@ -35,13 +35,21 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+// Change order of main stylesheet to override plugin styles.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+
 // Reposition primary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
-// Change order of main stylesheet to override plugin styles.
-remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+// Reposition the secondary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_after_header_wrap', 'genesis_do_subnav' );
+
+// Reposition footer widgets inside site footer.
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_before_footer_wrap', 'genesis_footer_widget_areas', 5 );
 
 // Enable shortcodes in text widgets.
 add_filter( 'widget_text', 'do_shortcode' );
@@ -236,17 +244,17 @@ function starter_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 
-// Load page header.
-include_once( get_stylesheet_directory() . '/includes/header.php' );
-
-// Load default settings.
-include_once( get_stylesheet_directory() . '/includes/defaults.php' );
-
 // Load helper functions.
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
 
+// Load page header.
+include_once( get_stylesheet_directory() . '/includes/header.php' );
+
 // Load Customizer settings.
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
+
+// Load default settings.
+include_once( get_stylesheet_directory() . '/includes/defaults.php' );
 
 // Load recommended plugins.
 include_once( get_stylesheet_directory() . '/includes/plugins.php' );

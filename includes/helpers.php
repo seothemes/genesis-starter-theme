@@ -16,6 +16,21 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
+add_filter( 'genesis_attr_site-title', 'starter_schema_site_title' );
+/**
+ * Correct site title schema.
+ *
+ * @since  2.3.0
+ * @param  array $attr Array of attributes.
+ * @return array
+ */
+function starter_schema_site_title( $attr ) {
+
+	$attr['itemprop'] = 'name';
+
+	return $attr;
+}
+
 add_filter( 'theme_page_templates', 'starter_remove_templates' );
 /**
  * Remove Page Templates.
@@ -30,7 +45,6 @@ add_filter( 'theme_page_templates', 'starter_remove_templates' );
 function starter_remove_templates( $page_templates ) {
 
 	unset( $page_templates['page_archive.php'] );
-
 	unset( $page_templates['page_blog.php'] );
 
 	return $page_templates;
@@ -218,14 +232,7 @@ function starter_is_woocommerce_page() {
 
 	}
 
-	if ( is_woocommerce()
-	  || is_shop()
-	  || is_product_category()
-	  || is_product_tag()
-	  || is_product()
-	  || is_cart()
-	  || is_checkout()
-	  || is_account_page() ) {
+	if ( is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
 
 		return true;
 
@@ -306,4 +313,53 @@ function starter_dont_update_theme( $request, $url ) {
 
 	return $request;
 
+}
+
+add_action( 'init', 'starter_structural_wrap_hooks' );
+/**
+ * Add hooks immediately before and after Genesis structural wraps.
+ *
+ * @since   2.3.0
+ *
+ * @version 1.1.0
+ * @author  Tim Jensen
+ * @link    https://timjensen.us/add-hooks-before-genesis-structural-wraps
+ *
+ * @return void
+ */
+function starter_structural_wrap_hooks() {
+
+	$wraps = get_theme_support( 'genesis-structural-wraps' );
+
+	foreach ( $wraps[0] as $context ) {
+
+		/**
+		 * Inserts an action hook before the opening div and after the closing div
+		 * for each of the structural wraps.
+		 *
+		 * @param string $output          HTML markup for opening or closing the structural wrap.
+		 * @param string $original_output Either 'open' or 'close'.
+		 *
+		 * @return string
+		 */
+		add_filter( "genesis_structural_wrap-{$context}", function ( $output, $original_output ) use ( $context ) {
+
+			$position = ( 'open' === $original_output ) ? 'before' : 'after';
+
+			ob_start();
+
+			do_action( "genesis_{$position}_{$context}_wrap" );
+
+			if ( 'open' === $original_output ) {
+
+				return ob_get_clean() . $output;
+
+			} else {
+
+				return $output . ob_get_clean();
+
+			}
+
+		}, 10, 2 );
+	}
 }
