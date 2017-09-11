@@ -817,7 +817,6 @@ img.alignright {
 	margin: 0 auto;
 	padding: 60px 0;
 	padding: 6rem 0;
-	background-color: #fff;
 	background-size: cover;
 	background-position: center;
 	position: relative
@@ -830,11 +829,12 @@ img.alignright {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(48,53,58,0);
-	z-index: 0
+	background-color: rgba(255,255,255,.95);
+	z-index: 1
 }
 .page-header .wrap {
-	position: relative
+	position: relative;
+	z-index: 2
 }
 .page-header h1 {
 	width: 100%;
@@ -1359,7 +1359,7 @@ p.entry-meta {
 .site-footer > .wrap:last-of-type {
 	margin-bottom: 0
 }
-.site-footer > p:last-of-type {
+.site-footer p:last-of-type {
 	margin-bottom: 0
 }
 .footer-widgets {
@@ -1661,6 +1661,7 @@ p.entry-meta {
 .front-page-1 {
 	padding: 20vw 0;
 	position: relative;
+	background-color: #30353a;
 	clear: both
 }
 .front-page-1:after,
@@ -1678,6 +1679,12 @@ p.entry-meta {
 }
 .front-page-1 .widget p:last-of-type {
 	margin-bottom: 1.382em
+}
+.front-page-1 h1 {
+	margin: 0 0 .618em
+}
+.front-page-1 p {
+	margin: 0 0 1.382em
 }
 .wp-custom-header {
 	position: absolute;
@@ -2088,24 +2095,6 @@ p.entry-meta {
 	}
 	.sidebar-primary .widget:first-of-type {
 		margin-top: 0
-	}
-	.front-page-1 .widget,
-	.front-page-2 .widget,
-	.front-page-3 .widget,
-	.front-page-4 .widget,
-	.front-page-5 .widget {
-		-webkit-box-flex: 1;
-		-webkit-flex: 1;
-		-ms-flex: 1;
-		flex: 1;
-		margin-left: 2.564102564102564%
-	}
-	.front-page-1 .widget:first-of-type,
-	.front-page-2 .widget:first-of-type,
-	.front-page-3 .widget:first-of-type,
-	.front-page-4 .widget:first-of-type,
-	.front-page-5 .widget:first-of-type {
-		margin-left: 0
 	}
 	.front-page-1 .wrap {
 		max-width: 768px

@@ -16,20 +16,12 @@
             flex-wrap: wrap;
         }
     }
-    .widget {
-        @include breakpoint(md) {
-            flex: 1;
-            margin-left: 2.564102564102564%;
-            &:first-of-type {
-                margin-left: 0;
-            }
-        }
-    }
 }
 
 .front-page-1 {
     padding: 20vw 0;
     position: relative;
+    background-color: $dark;
     @include clearfix;
     @include breakpoint(sm) {
         padding: 15vh 0;
@@ -46,6 +38,12 @@
         p:last-of-type {
             margin-bottom: 1.382em;
         }
+    }
+    h1 {
+        margin: 0 0 0.618em;
+    }
+    p {
+        margin: 0 0 1.382em;
     }
 }
 

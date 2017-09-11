@@ -35,6 +35,12 @@ function starter_register_required_plugins() {
 	$plugins = array();
 
 	$plugins[] = array(
+		'name'     => 'Genesis Widget Column Classes',
+		'slug'     => 'genesis-widget-column-classes',
+		'required' => false,
+	);
+
+	$plugins[] = array(
 		'name'     => 'Simple Social Icons',
 		'slug'     => 'simple-social-icons',
 		'required' => false,

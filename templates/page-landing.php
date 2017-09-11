@@ -50,6 +50,14 @@ remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
+// Remove default page header.
+remove_action( 'genesis_after_header', 'starter_page_header_open', 20 );
+remove_action( 'genesis_after_header', 'starter_page_header_title', 24 );
+remove_action( 'genesis_after_header', 'starter_page_header_close', 28 );
+
+// Add title back (removed in /includes/header.php).
+add_action( 'genesis_entry_header', 'genesis_do_post_title' );
+
 // Remove navigation.
 remove_theme_support( 'genesis-menus' );
 

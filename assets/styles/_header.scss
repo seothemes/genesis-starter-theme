@@ -76,7 +76,6 @@
     width: 100%;
     margin: 0 auto;
     padding: 6rem 0;
-    background-color: $white;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -88,11 +87,12 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($dark, 0);
-        z-index: 0;
+        background-color: rgba($white, 0.95);
+        z-index: 1;
     }
     .wrap {
         position: relative;
+        z-index: 2;
     }
     h1 {
         width: 100%;
