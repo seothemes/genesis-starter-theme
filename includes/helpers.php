@@ -16,7 +16,24 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-add_filter( 'genesis_attr_site-title', 'starter_schema_site_title' );
+add_filter( 'genesis_attr_title-area', 'starter_title_area_schema' );
+/**
+ * Add schema microdata to title-area.
+ *
+ * @since  2.3.0
+ * @param  array $attr Array of attributes.
+ * @return array
+ */
+function starter_title_area_schema( $attr ) {
+
+	$attr['itemscope'] = 'itemscope';
+	$attr['itemtype']  = 'http://schema.org/Organization';
+
+	return $attr;
+
+}
+
+add_filter( 'genesis_attr_site-title', 'starter_site_title_schema' );
 /**
  * Correct site title schema.
  *
@@ -24,7 +41,7 @@ add_filter( 'genesis_attr_site-title', 'starter_schema_site_title' );
  * @param  array $attr Array of attributes.
  * @return array
  */
-function starter_schema_site_title( $attr ) {
+function starter_site_title_schema( $attr ) {
 
 	$attr['itemprop'] = 'name';
 
@@ -67,6 +84,30 @@ function starter_remove_metaboxes( $hook ) {
 
 }
 
+add_filter( 'excerpt_more', 'starter_read_more' );
+add_filter( 'the_content_more_link', 'starter_read_more' );
+add_filter( 'get_the_content_more_link', 'starter_read_more' );
+/**
+ * Accessible read more link.
+ *
+ * The below code modifies the default read more link when
+ * using the WordPress More Tag to break a post on your site.
+ * Instead of seeing 'Read more', screen readers will instead
+ * see 'Read more about (entry title)'.
+ *
+ * @since  2.3.0
+ *
+ * @return string
+ */
+function starter_read_more() {
+
+	return sprintf( '&hellip; <a href="%s" class="more-link">%s</a>',
+		get_the_permalink(),
+		genesis_a11y_more_link( __( 'Read more', 'business-pro' ) )
+	);
+
+}
+
 /**
  * Sanitize RGBA values.
  *
@@ -104,8 +145,8 @@ function sanitize_rgba_color( $color ) {
  * Minify CSS helper function.
  *
  * @author Gary Jones
- * @link https://github.com/GaryJones/Simple-PHP-CSS-Minification
- * @param string $css The CSS to minify.
+ * @link   https://github.com/GaryJones/Simple-PHP-CSS-Minification
+ * @param  string $css The CSS to minify.
  * @return string Minified CSS.
  */
 function starter_minify_css( $css ) {
@@ -170,6 +211,8 @@ add_action( 'wp_head', 'starter_simple_social_icons_css' );
  * style for your icons, even if you have multiple on one page.
  * This function allows us to output different styles for each
  * widget that is output on the front end.
+ *
+ * @return void
  */
 function starter_simple_social_icons_css() {
 
