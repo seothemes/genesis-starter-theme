@@ -767,12 +767,15 @@ img.alignright {
 	background-color: transparent
 }
 .site-header {
-	position: relative;
+	position: absolute;
 	width: 100%;
 	z-index: 100;
 	background-color: #fff;
 	border-bottom: 1px solid #f0f1f2;
 	border-bottom: .1rem solid #f0f1f2
+}
+.fixed-header .site-header {
+	position: fixed
 }
 .site-header > .wrap {
 	position: relative;
@@ -803,7 +806,12 @@ img.alignright {
 	flex: 1;
 	padding: .618em 0;
 	max-width: 180px;
-	max-width: 18rem
+	max-width: 18rem;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease
+}
+.fixed-header .shrink .title-area {
+	padding: .382em 0
 }
 .site-title {
 	font-size: 24px;
@@ -826,7 +834,8 @@ img.alignright {
 .page-header {
 	width: 100%;
 	margin: 0 auto;
-	padding: 6vw 0;
+	padding: -webkit-calc(6vw + 7rem) 0 6vw;
+	padding: calc(6vw + 7rem) 0 6vw;
 	background-size: cover;
 	background-position: center;
 	position: relative
@@ -1658,7 +1667,8 @@ p.entry-meta {
 	border-bottom: .1rem solid #f0f1f2
 }
 .front-page-1 {
-	padding: 20vw 0;
+	padding: -webkit-calc(20vw + 7rem) 0 20vw;
+	padding: calc(20vw + 7rem) 0 20vw;
 	position: relative;
 	background-color: #30353a;
 	clear: both
@@ -1676,8 +1686,9 @@ p.entry-meta {
 .front-page-1 .widget {
 	background-color: transparent
 }
-.front-page-1 .widget p:last-of-type {
-	margin-bottom: 1.382em
+.front-page-1 .widget:last-of-type {
+	margin-bottom: 10px;
+	margin-bottom: 1rem
 }
 .front-page-1 h1 {
 	margin: 0 0 .618em
@@ -1872,7 +1883,7 @@ p.entry-meta {
 		margin-bottom: 0
 	}
 	.page-header {
-		padding: 6rem 0
+		padding: 18rem 0 6rem
 	}
 	.nav-primary,
 	.nav-secondary {
@@ -1949,7 +1960,8 @@ p.entry-meta {
 		flex-wrap: wrap
 	}
 	.front-page-1 {
-		padding: 15vh 0
+		padding: -webkit-calc(20vh + 12rem) 0 20vh;
+		padding: calc(20vh + 12rem) 0 20vh
 	}
 }
 @media (min-width:896px) {
