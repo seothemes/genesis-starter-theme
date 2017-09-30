@@ -237,18 +237,18 @@ function starter_simple_social_icons_css() {
 		// CSS to output.
 		$css = '#' . $obj->id_base . '-' . $key . ' ul li a,
 		#' . $obj->id_base . '-' . $key . ' ul li a:hover {
-		background-color: ' . $instance['background_color'] . ';
-		border-radius: ' . $instance['border_radius'] . 'px;
-		color: ' . $instance['icon_color'] . ';
-		border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid;
-		font-size: ' . $font_size . 'px;
-		padding: ' . $icon_padding . 'px;
+			background-color: ' . $instance['background_color'] . ';
+			border-radius: ' . $instance['border_radius'] . 'px;
+			color: ' . $instance['icon_color'] . ';
+			border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid;
+			font-size: ' . $font_size . 'px;
+			padding: ' . $icon_padding . 'px;
 		}
 		
 		#' . $obj->id_base . '-' . $key . ' ul li a:hover {
-		background-color: ' . $instance['background_color_hover'] . ';
-		border-color: ' . $instance['border_color_hover'] . ';
-		color: ' . $instance['icon_color_hover'] . ';
+			background-color: ' . $instance['background_color_hover'] . ';
+			border-color: ' . $instance['border_color_hover'] . ';
+			color: ' . $instance['icon_color_hover'] . ';
 		}';
 
 		// Minify.
@@ -283,6 +283,80 @@ function starter_is_woocommerce_page() {
 
 		return false;
 
+	}
+
+}
+
+add_action( 'genesis_after_header', 'starter_page_header_open', 20 );
+/**
+ * Opening page header markup.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function starter_page_header_open() {
+
+	echo '<section class="page-header" role="banner"><div class="wrap">';
+
+}
+
+add_action( 'genesis_after_header', 'starter_page_header_close', 28 );
+/**
+ * Closing page header markup.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function starter_page_header_close() {
+
+	echo '</div></section>';
+
+}
+
+add_action( 'genesis_after_header', 'starter_page_header_title', 24 );
+/**
+ * Get the correct page header title.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function starter_page_header_title() {
+
+	// Add post titles back inside posts loop.
+	if ( is_home() || is_archive() || is_category() || is_tag() || is_tax() || is_search() || is_page_template( 'page_blog.php' ) ) {
+
+		add_action( 'genesis_entry_header', 'genesis_do_post_title', 2 );
+
+	}
+
+	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+
+		printf( '<h1 itemprop="headline">%s</h1>', get_the_title( get_option( 'woocommerce_shop_page_id' ) ) );
+
+	} elseif ( 'posts' === get_option( 'show_on_front' ) && is_home() ) {
+
+		printf( '<h1 itemprop="headline">%s</h1>', esc_html( apply_filters( 'starter_latest_posts_title', __( 'Latest Posts', 'genesis-starter' ) ) ) );
+
+	} elseif ( is_404() ) {
+
+		printf( '<h1 itemprop="headline">%s</h1>', esc_html( apply_filters( 'genesis_404_entry_title', __( 'Not found, error 404', 'genesis-starter' ) ) ) );
+
+	} elseif ( is_search() ) {
+
+		printf( '<h1 itemprop="headline">%s %s</h1></div>', apply_filters( 'genesis_search_title_text', __( 'Search Results for:', 'genesis-starter' ) ), get_search_query() );
+
+	} elseif ( is_single() || is_singular() ) {
+
+		the_title( '<h1 itemprop="headline">', '</h1>', true );
+
+		if ( has_excerpt() ) {
+
+			printf( '<p itemprop="description">%s</p>', esc_html( strip_tags( get_the_excerpt() ) ) );
+
+		}
 	}
 
 }
@@ -328,6 +402,57 @@ function starter_custom_header_callback() {
 
 }
 
+add_action( 'init', 'starter_structural_wrap_hooks' );
+/**
+ * Add hooks immediately before and after Genesis structural wraps.
+ *
+ * @since   2.3.0
+ *
+ * @version 1.1.0
+ * @author  Tim Jensen
+ * @link    https://timjensen.us/add-hooks-before-genesis-structural-wraps
+ *
+ * @return void
+ */
+function starter_structural_wrap_hooks() {
+
+	$wraps = get_theme_support( 'genesis-structural-wraps' );
+
+	foreach ( $wraps[0] as $context ) {
+
+		/**
+		 * Inserts an action hook before the opening div and after the closing div
+		 * for each of the structural wraps.
+		 *
+		 * @param string $output   HTML for opening or closing the structural wrap.
+		 * @param string $original Either 'open' or 'close'.
+		 *
+		 * @return string
+		 */
+		add_filter( "genesis_structural_wrap-{$context}", function ( $output, $original ) use ( $context ) {
+
+			$position = ( 'open' === $original ) ? 'before' : 'after';
+
+			ob_start();
+
+			do_action( "genesis_{$position}_{$context}_wrap" );
+
+			if ( 'open' === $original ) {
+
+				return ob_get_clean() . $output;
+
+			} else {
+
+				return $output . ob_get_clean();
+
+			}
+
+		}, 10, 2 );
+
+	}
+
+}
+
 add_filter( 'http_request_args', 'starter_dont_update_theme', 5, 2 );
 /**
  * Don't Update Theme.
@@ -356,53 +481,4 @@ function starter_dont_update_theme( $request, $url ) {
 
 	return $request;
 
-}
-
-add_action( 'init', 'starter_structural_wrap_hooks' );
-/**
- * Add hooks immediately before and after Genesis structural wraps.
- *
- * @since   2.3.0
- *
- * @version 1.1.0
- * @author  Tim Jensen
- * @link    https://timjensen.us/add-hooks-before-genesis-structural-wraps
- *
- * @return void
- */
-function starter_structural_wrap_hooks() {
-
-	$wraps = get_theme_support( 'genesis-structural-wraps' );
-
-	foreach ( $wraps[0] as $context ) {
-
-		/**
-		 * Inserts an action hook before the opening div and after the closing div
-		 * for each of the structural wraps.
-		 *
-		 * @param string $output          HTML markup for opening or closing the structural wrap.
-		 * @param string $original_output Either 'open' or 'close'.
-		 *
-		 * @return string
-		 */
-		add_filter( "genesis_structural_wrap-{$context}", function ( $output, $original_output ) use ( $context ) {
-
-			$position = ( 'open' === $original_output ) ? 'before' : 'after';
-
-			ob_start();
-
-			do_action( "genesis_{$position}_{$context}_wrap" );
-
-			if ( 'open' === $original_output ) {
-
-				return ob_get_clean() . $output;
-
-			} else {
-
-				return $output . ob_get_clean();
-
-			}
-
-		}, 10, 2 );
-	}
 }

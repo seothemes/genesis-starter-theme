@@ -35,6 +35,30 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+// Remove default titles.
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
+remove_action( 'genesis_before_loop', 'genesis_do_date_archive_title' );
+remove_action( 'genesis_before_loop', 'genesis_do_blog_template_heading' );
+remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
+remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
+remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
+
+// Add custom titles.
+add_action( 'genesis_after_header', 'genesis_do_posts_page_heading', 24 );
+add_action( 'genesis_after_header', 'genesis_do_date_archive_title', 24 );
+add_action( 'genesis_after_header', 'genesis_do_blog_template_heading', 24 );
+add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description', 24 );
+add_action( 'genesis_after_header', 'genesis_do_author_title_description', 24 );
+add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description', 24 );
+
+// Remove search results and shop page titles.
+add_filter( 'woocommerce_show_page_title', '__return_null' );
+add_filter( 'genesis_search_title_output', '__return_false' );
+
 // Change order of main stylesheet to override plugin styles.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
@@ -56,12 +80,6 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 // Force Gravity Forms to disable CSS output.
 add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
-
-/*
- * This theme styles the visual editor to resemble the theme style,
- * specifically font, colors, and column width.
- */
-add_editor_style( get_stylesheet_directory_uri() . '/assets/styles/min/editor-style.min.css' );
 
 // Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
@@ -246,9 +264,6 @@ add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 
 // Load helper functions.
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
-
-// Load page header.
-include_once( get_stylesheet_directory() . '/includes/header.php' );
 
 // Load Customizer settings.
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
