@@ -111,7 +111,7 @@ add_action( 'after_switch_theme', 'starter_excerpt_metabox' );
  * after switching theme so the current user's screen options are
  * updated, allowing them to hide the metabox if not used.
  *
- * @since 2.3.0
+ * @since 2.2.1
  *
  * @return void
  */

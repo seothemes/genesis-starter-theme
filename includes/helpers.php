@@ -22,7 +22,7 @@ add_filter( 'body_class', 'starter_fixed_header_class' );
  *
  * Checks if theme supports a fixed header and if so, adds a 'fixed-header'
  * class to the body. To enable a fixed header simply add theme support e.g:
- * `add_theme_support( 'fixed-header' );` 
+ * `add_theme_support( 'fixed-header' );`
  *
  * @param  array $classes Body classes.
  * @return array
@@ -43,7 +43,7 @@ add_filter( 'genesis_attr_title-area', 'starter_title_area_schema' );
 /**
  * Add schema microdata to title-area.
  *
- * @since  2.3.0
+ * @since  2.2.1
  * @param  array $attr Array of attributes.
  * @return array
  */
@@ -60,7 +60,7 @@ add_filter( 'genesis_attr_site-title', 'starter_site_title_schema' );
 /**
  * Correct site title schema.
  *
- * @since  2.3.0
+ * @since  2.2.1
  * @param  array $attr Array of attributes.
  * @return array
  */
@@ -118,7 +118,7 @@ add_filter( 'get_the_content_more_link', 'starter_read_more' );
  * Instead of seeing 'Read more', screen readers will instead
  * see 'Read more about (entry title)'.
  *
- * @since  2.3.0
+ * @since  2.2.1
  *
  * @return string
  */

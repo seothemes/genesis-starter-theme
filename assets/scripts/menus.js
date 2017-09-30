@@ -11,20 +11,6 @@
 
 	'use strict';
 
-	/**
-	 * Add shrink class to header on scroll.
-	 */
-	$( window ).scroll( function() {
-		var scroll = $( window ).scrollTop();
-		var height = $( '.page-header' ).outerHeight();
-		var header = $( '.site-header' ).outerHeight();
-		if ( scroll >= header) {
-			$( '.site-header' ).addClass( 'shrink' );
-		} else {
-			$( '.site-header' ).removeClass( 'shrink' );
-		}
-	} );
-
 	var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? '' : genesis_responsive_menu,
 		genesisMenusUnchecked  = genesisMenuParams.menuClasses,
 		genesisMenus           = {},

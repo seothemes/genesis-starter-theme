@@ -243,6 +243,9 @@ function starter_scripts_styles() {
 	// Google fonts.
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
+	// Enqueue custom theme scripts.
+	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/scripts/min/theme.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
 	// Enqueue responsive menu script.
 	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
