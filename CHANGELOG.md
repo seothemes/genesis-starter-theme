@@ -1,5 +1,13 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.2] - 2017-09-30
+* Add support for fixed header
+* Add theme.js file
+* Add LICENSE.md file
+* Update README.md
+* Remove /inludes/header.php - moved to /includes/helpers.php and /functions.php
+* Remove editor styles
+
 ## [2.2.1] - 2017-09-11
 * Add structural wrap hooks function
 * Improve styling for accessibility
