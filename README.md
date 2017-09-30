@@ -1,6 +1,6 @@
 # Genesis Starter Theme
 
-A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with a modern development workflow. Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
+A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with development automation tools. Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 
 
 ![Screenshot](https://s3-us-west-1.amazonaws.com/seo-themes/screenshot.png)
@@ -8,20 +8,77 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 
 ## Features
 
-* Fully responsive, lightweight menus with pure CSS menu-toggle buttons that combine into one on small screens.
-* Superfish menu for keyboard navigation and other accessibility enhancements.
-* Accessible skip links and read more links with descriptive screen-reader text.
-* Mobile-first, flexbox-based CSS with combined rules, selectors and media queries for the smallest minification possible.
-* Robust Gulpfile included for automatically compiling assets, optimizing images, i18n, theme zip packaging and more.
-* Sass/SCSS partials, variables, mixins and functions included.
-* Custom logo, header and background support with postMessage transport.
-* Custom colors with RGBA/transparency settings.
-* Front page Hero section widget area with custom background image or video upload.
-* Flexbox-based widget areas that automatically adjust column widths.
-* Built in support for [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/), [Gravity Forms](http://www.gravityforms.com/) plugins.
-* Gravity Forms and Simple Social Icons CSS/SCSS reset.
+#### Automation
+
+* BrowserSync to inject CSS and reload browser when file changes
+* Automatically compile Sass, output minified and non-minifed stylesheets
+* Combines CSS rules, selectors and media queries for the smallest minification possible
+* Automatically optimizes PNG and JPG images
+* Automatically translates theme into POT file
+* Automatically minify JavaScript into min directory
+* Task for packaging theme into a distribution ZIP file
+* Helpful Sass/SCSS partials, variables, mixins and functions included
 * Contains POT file for internationalization (i18n)
 
+#### Scripts & Styles
+
+* 100% mobile-first, flexbox-based CSS 
+* Pure CSS menu-toggle and sub-menu toggle buttons
+* Includes the Genesis Responsive menu script
+* Menu's combine into one on smaller screens
+* Superfish menu for keyboard navigation and other accessibility enhancements
+* Enqueues basic Google Font
+
+#### Plugins
+
+* Includes TGM Plugin Activation script for recommended plugins
+* Full support for WooCommerce
+* Only recommends Genesis Connect if WooCommerce is active
+* Only loads WooCommerce styles on WooCommerce pages
+* Uses Genesis Widget Column Classes for flexible layouts
+* Built in support for [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/) and [Gravity Forms](http://www.gravityforms.com/) plugins
+* Removes Gravity Forms and Simple Social Icons default stylesheets
+* Adds mobile-first, flexbox Gravity Forms and Simple Social Icons SCSS
+* Includes workaround to allow for different styling on multiple Simple Social Icons widgets
+
+#### Customizer
+
+* Custom Logo instead of Custom Header for better SEO
+* Custom Header for uploading a page header background image or YouTube video
+* Custom Colors with RGBA/transparency option
+* Custom Layout included to easily extend the Genesis page layouts
+* Includes CSS minification function to compress all inline CSS output by Customizer
+
+#### Optimization
+
+* Removes secondary sidebar widget area
+* Removes the unnecessary (and discouraged) blog and archive templates
+* Removes blog metabox from Genesis theme settings
+* Removes all three-column page layouts
+* Corrects the site title and logo schema microdata
+* Corrects the Front Page 1 widget title schema microdata 
+
+#### Modification
+
+* Reposition child theme stylesheet to a later priority to override plugins
+* Reposition primary navigation menu to the header right area
+* Reposition the secondary navigation menu after the header
+* Reposition footer widgets inside site footer for better semantics
+* Reposition page title inside a custom 'page header' section
+
+#### Templates
+
+* Includes a widgetized, full-width front-page template
+* Includes a full-width Page Builder template for use with plugins
+* Includes a blank landing page template
+* Includes a 404 page template to correct page title (until next Genesis update)
+
+#### Advanced
+
+* Follows WordPress coding standards _and_ StudioPress best practices
+* Accessible skip links and read more links with descriptive screen-reader text
+* Additional hooks added before and after Genesis structural wraps
+* Includes a function to prevent automatic updates
 
 ## Recommendations
 
@@ -82,7 +139,6 @@ theme/
 ├── includes/
 │   ├── customize.php
 │   ├── defaults.php
-│   ├── header.php
 │   ├── helpers.php
 │   └── plugins.php
 ├── languages/
@@ -98,6 +154,7 @@ theme/
 ├── functions.php
 ├── gulpfile.js
 ├── languages.pot
+├── LICENSE.md
 ├── package.json
 ├── README.md
 ├── screenshot.png
@@ -151,8 +208,35 @@ If your local development URL is `my-site.dev`, update the file to read:
 By default, BrowserSync is configured to use an SSL certificate for local development. If using a Non-HTTPS local site, remove the HTTPS BrowserSync configuration and uncomment the HTTP settings.
 
 
-
-
 ## Support
 
 Please visit https://seothemes.com/support/ for theme support.
+
+
+## Authors
+
+- **Lee Anthony** - [SEO Themes](https://seothemes.com/)
+
+See also the list of [contributors](https://github.com/seothemes/genesis-starter/graphs/contributors) who participated in this project.
+
+
+## License
+
+This project is licensed under the GNU General Public License - see the LICENSE.md file for details.
+
+
+## Acknowledgments
+
+A shout out to anyone who's code was used:
+
+- Gary Jones
+- Tim Jensen
+- Craig Watson
+- Bill Erickson
+- Sridhar Katakam
+- Chinmoy Paul
+- Nathan Rice
+- Calvin Koepke
+- Jen Baumann
+- Brian Gardner
+- Robin Cornett
