@@ -2,11 +2,14 @@
 --------------------------------------------- */
 
 .site-header {
-    position: relative;
+    position: absolute;
     width: 100%;
     z-index: 100;
     background-color: $white;
     border-bottom: $site-border;
+    .fixed-header & {
+        position: fixed;
+    }
     >.wrap {
         position: relative;
         display: flex;
@@ -32,6 +35,7 @@
     flex: 1;
     padding: 0.618em 0;
     max-width: 18rem;
+    @include transition;
     @include breakpoint(md) {
         padding: 1.382em 0;
         max-width: 24rem;
@@ -39,6 +43,9 @@
     @include breakpoint(lg) {
         padding: 1.618em 0;
         max-width: 24rem;
+    }
+    .fixed-header .shrink & {
+        padding: 0.382em 0;
     }
 }
 
@@ -75,12 +82,12 @@
 .page-header {
     width: 100%;
     margin: 0 auto;
-    padding: 6vw 0;
+    padding: calc(6vw + 7rem) 0 6vw;
     background-size: cover;
     background-position: center;
     position: relative;
     @include breakpoint(sm) {
-        padding: 6rem 0;
+        padding: 18rem 0 6rem;
     }
     &:before {
         content: "";

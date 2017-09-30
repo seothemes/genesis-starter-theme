@@ -16,6 +16,29 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
+add_filter( 'body_class', 'starter_fixed_header_class' );
+/**
+ * Add fixed header class.
+ *
+ * Checks if theme supports a fixed header and if so, adds a 'fixed-header'
+ * class to the body. To enable a fixed header simply add theme support e.g:
+ * `add_theme_support( 'fixed-header' );` 
+ *
+ * @param  array $classes Body classes.
+ * @return array
+ */
+function starter_fixed_header_class( $classes ) {
+
+	if ( current_theme_supports( 'fixed-header' ) ) {
+
+		$classes[] = 'fixed-header';
+
+	}
+
+	return $classes;
+
+}
+
 add_filter( 'genesis_attr_title-area', 'starter_title_area_schema' );
 /**
  * Add schema microdata to title-area.

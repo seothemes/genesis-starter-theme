@@ -22,12 +22,12 @@
 }
 
 .front-page-1 {
-    padding: 20vw 0;
+    padding: calc(20vw + 7rem) 0 20vw;
     position: relative;
     background-color: $dark;
     @include clearfix;
     @include breakpoint(sm) {
-        padding: 15vh 0;
+        padding: calc(20vh + 12rem) 0 20vh;
     }
     .wrap {
         position: relative;
@@ -38,8 +38,8 @@
     }
     .widget {
         background-color: transparent;
-        p:last-of-type {
-            margin-bottom: 1.382em;
+        &:last-of-type {
+            margin-bottom: 1rem; // For heading line height.
         }
     }
     h1 {
