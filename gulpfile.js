@@ -89,48 +89,11 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 /**
- * Compile editor stylesheet.
- *
- * https://www.npmjs.com/package/gulp-sass
- */
-gulp.task( 'editor', function () {
-
-	/**
-	 * Process WooCommerce styles.
-	 */
-	gulp.src( 'assets/styles/editor-style.scss' )
-	
-	// Notify on error
-	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
-
-	// Process sass
-	.pipe( sass( {
-		outputStyle: 'compressed'
-	} ) )
-
-	// Add .min suffix.
-	.pipe( rename( { suffix: '.min' } ) )
-
-	// Output non minified css to theme directory.
-	.pipe( gulp.dest( 'assets/styles/min/' ) )
-
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
-
-	// Filtering stream to only css files.
-	.pipe( filter( '**/*.css' ) )
-
-	// Notify on successful compile (uncomment for notifications).
-	.pipe( notify( "Compiled: <%= file.relative %>" ) );
-
-} );
-
-/**
  * Compile WooCommerce styles.
  *
  * https://www.npmjs.com/package/gulp-sass
  */
-gulp.task( 'woocommerce', [ 'editor' ], function () {
+gulp.task( 'woocommerce', function () {
 
 	/**
 	 * Process WooCommerce styles.
