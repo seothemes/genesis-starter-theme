@@ -17,6 +17,7 @@ var autoprefixer = require( 'autoprefixer' ),
 	beautify  	 = require( 'gulp-cssbeautify' ),
 	cache        = require( 'gulp-cached' ),
 	cleancss 	 = require( 'gulp-clean-css' ),
+	csscomb      = require( 'gulp-csscomb' ),
 	cssnano 	 = require( 'gulp-cssnano' ),
 	filter       = require( 'gulp-filter' ),
 	imagemin     = require( 'gulp-imagemin' ),
@@ -189,9 +190,7 @@ gulp.task( 'styles', [ 'woocommerce' ], function () {
 	] ) )
 
 	// Format non-minified stylesheet.
-	.pipe ( cleancss( { 
-		format: format
-	} ) )
+	.pipe( csscomb() )
 
 	// Output non minified css to theme directory.
 	.pipe( gulp.dest( './' ) )
