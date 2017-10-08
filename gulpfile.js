@@ -153,7 +153,7 @@ gulp.task('styles', ['woocommerce'], function () {
 		// Parse with PostCSS plugins.
 		.pipe(postcss([
 			autoprefixer({
-				browsers: AUTOPREFIXER_BROWSERS
+				browsers: 'last 2 versions'
 			}),
 			mqpacker({
 				sort: true
