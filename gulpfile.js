@@ -9,361 +9,352 @@
  */
 
 // Require our dependencies.
-var args         = require( 'yargs' ).argv,
-	autoprefixer = require( 'autoprefixer' ),
-	browsersync  = require( 'browser-sync' ),
-	bump         = require( 'gulp-bump' ),
-	changecase   = require( 'change-case' ),
-	mqpacker 	 = require( 'css-mqpacker' ),
-	fs           = require( 'fs' ),
-	gulp         = require( 'gulp' ),
-	beautify  	 = require( 'gulp-cssbeautify' ),
-	cache        = require( 'gulp-cached' ),
-	cleancss 	 = require( 'gulp-clean-css' ),
-	csscomb      = require( 'gulp-csscomb' ),
-	cssnano 	 = require( 'gulp-cssnano' ),
-	filter       = require( 'gulp-filter' ),
-	imagemin     = require( 'gulp-imagemin' ),
-	notify       = require( 'gulp-notify' ),
-	pixrem 		 = require( 'gulp-pixrem' ),
-	plumber      = require( 'gulp-plumber' ),
-	postcss 	 = require( 'gulp-postcss' ),
-	rename       = require( 'gulp-rename' ),
-	replace 	 = require( 'gulp-replace' ),
-	s3           = require( 'gulp-s3-publish' ),
-	sass         = require( 'gulp-sass' ),
-	sort 		 = require( 'gulp-sort' ),
-	sourcemaps   = require( 'gulp-sourcemaps' ),
-	uglify       = require( 'gulp-uglify' ),
-	wpPot 		 = require( 'gulp-wp-pot' ),
-	zip 		 = require( 'gulp-zip' );
+var args         = require('yargs').argv,
+	autoprefixer = require('autoprefixer'),
+	browsersync  = require('browser-sync'),
+	bump         = require('gulp-bump'),
+	changecase   = require('change-case'),
+	del          = require('del'),
+	mqpacker     = require('css-mqpacker'),
+	fs           = require('fs'),
+	gulp         = require('gulp'),
+	beautify     = require('gulp-cssbeautify'),
+	cache        = require('gulp-cached'),
+	cleancss     = require('gulp-clean-css'),
+	csscomb      = require('gulp-csscomb'),
+	cssnano      = require('gulp-cssnano'),
+	filter       = require('gulp-filter'),
+	imagemin     = require('gulp-imagemin'),
+	notify       = require('gulp-notify'),
+	pixrem       = require('gulp-pixrem'),
+	plumber      = require('gulp-plumber'),
+	postcss      = require('gulp-postcss'),
+	rename       = require('gulp-rename'),
+	replace      = require('gulp-replace'),
+	s3           = require('gulp-s3-publish'),
+	sass         = require('gulp-sass'),
+	sort         = require('gulp-sort'),
+	sourcemaps   = require('gulp-sourcemaps'),
+	uglify       = require('gulp-uglify'),
+	wpPot        = require('gulp-wp-pot'),
+	zip          = require('gulp-zip');
 
 // Set assets paths.
 var paths = {
-	all:     [ './**/*', '!./node_modules/', '!./node_modules/**' ],
-	concat:  [ 'assets/scripts/menus.js', 'assets/scripts/superfish.js' ],
-	images:  [ 'assets/images/*', '!assets/images/*.svg' ],
-	php:     [ './*.php', './**/*.php', './**/**/*.php' ],
-	scripts: [ 'assets/scripts/*.js', '!assets/scripts/min/' ],
-	styles:  [ 'assets/styles/*.scss', '!assets/styles/min/' ]
+	all:     ['./**/*', '!./node_modules/', '!./node_modules/**', '!./assets/images/**'],
+	concat:  ['assets/scripts/menus.js', 'assets/scripts/superfish.js'],
+	images:  ['assets/images/*', '!assets/images/*.svg'],
+	php:     ['./*.php', './**/*.php', './**/**/*.php'],
+	scripts: ['assets/scripts/*.js', '!assets/scripts/min/'],
+	styles:  ['assets/styles/*.scss', '!assets/styles/min/']
 };
 
-// CSS formatting.
-var format = {
-	breaks: {
-		afterAtRule: true,
-		afterBlockBegins: true,
-		afterBlockEnds: true,
-		afterComment: true,
-		afterProperty: true,
-		afterRuleBegins: true,
-		afterRuleEnds: true,
-		beforeBlockEnds: true,
-		betweenSelectors: true
-	},
-	indentBy: 1,
-	indentWith: 'tab',
-	spaces: {
-		aroundSelectorRelation: true,
-		beforeBlockBegins: true,
-		beforeValue: true
-	},
-	wrapAt: false
-}
-
 // Set AWS S3 settings from private keys.
-aws = JSON.parse( fs.readFileSync( './aws.json' ) );
-
-/**
- * Autoprefixed browser support.
- *
- * https://github.com/ai/browserslist
- */
-const AUTOPREFIXER_BROWSERS = [
-	'last 2 versions',
-	'> 0.25%',
-	'ie >= 8',
-	'ie_mob >= 9',
-	'ff >= 28',
-	'chrome >= 40',
-	'safari >= 6',
-	'opera >= 22',
-	'ios >= 6',
-	'android >= 4',
-	'bb >= 9'
-];
+aws = JSON.parse(fs.readFileSync('./aws.json'));
 
 /**
  * Compile WooCommerce styles.
  *
  * https://www.npmjs.com/package/gulp-sass
  */
-gulp.task( 'woocommerce', function () {
+gulp.task('woocommerce', function () {
 
 	/**
 	 * Process WooCommerce styles.
 	 */
-	gulp.src( 'assets/styles/woocommerce.scss' )
+	gulp.src('assets/styles/woocommerce.scss')
 
-	// Notify on error
-	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		// Notify on error
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 
-	// Process sass
-	.pipe( sass( {
-		outputStyle: 'expanded'
-	} ) )
+		// Process sass
+		.pipe(sass({
+			outputStyle: 'expanded'
+		}))
 
-	// Pixel fallbacks for rem units.
-	.pipe( pixrem() )
+		// Pixel fallbacks for rem units.
+		.pipe(pixrem())
 
-	// Parse with PostCSS plugins.
-	.pipe( postcss( [
-		autoprefixer( {
-			browsers: AUTOPREFIXER_BROWSERS
-		} ),
-		mqpacker( {
-			sort: true
-		} ),
-	] ) )
+		// Parse with PostCSS plugins.
+		.pipe(postcss([
+			autoprefixer({
+				browsers: 'last 2 versions'
+			}),
+			mqpacker({
+				sort: true
+			}),
+		]))
 
-	// Combine similar rules.
-	.pipe ( cleancss( {
-		level: {
-			2: {
-				all: true
+		// Combine similar rules.
+		.pipe(cleancss({
+			level: {
+				2: {
+					all: true
+				}
 			}
-		}
-	} ) )
+		}))
 
-	// Minify and optimize style.css again.
-	.pipe( cssnano( {
-		safe: false,
-		discardComments: {
-			removeAll: true,
-		},
-	} ) )
+		// Minify and optimize style.css again.
+		.pipe(cssnano({
+			safe: false,
+			discardComments: {
+				removeAll: true,
+			},
+		}))
 
-	// Add .min suffix.
-	.pipe( rename( { suffix: '.min' } ) )
+		// Add .min suffix.
+		.pipe(rename({
+			suffix: '.min'
+		}))
 
-	// Output non minified css to theme directory.
-	.pipe( gulp.dest( 'assets/styles/min/' ) )
+		// Output non minified css to theme directory.
+		.pipe(gulp.dest('assets/styles/min/'))
 
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe(browsersync.reload({
+			stream: true
+		}))
 
-	// Filtering stream to only css files.
-	.pipe( filter( '**/*.css' ) )
+		// Filtering stream to only css files.
+		.pipe(filter('**/*.css'))
 
-	// Notify on successful compile (uncomment for notifications).
-	.pipe( notify( "Compiled: <%= file.relative %>" ) );
+		// Notify on successful compile (uncomment for notifications).
+		.pipe(notify("Compiled: <%= file.relative %>"));
 
-} );
+});
 
 /**
  * Compile Sass.
  *
  * https://www.npmjs.com/package/gulp-sass
  */
-gulp.task( 'styles', [ 'woocommerce' ], function () {
+gulp.task('styles', ['woocommerce'], function () {
 
-	gulp.src( 'assets/styles/style.scss' )
+	gulp.src('assets/styles/style.scss')
 
-	// Notify on error
-	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		// Notify on error
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 
-	// Source maps init
-	.pipe( sourcemaps.init() )
+		// Source maps init
+		.pipe(sourcemaps.init())
 
-	// Process sass
-	.pipe( sass( {
-		outputStyle: 'expanded'
-	} ) )
+		// Process sass
+		.pipe(sass({
+			outputStyle: 'expanded'
+		}))
 
-	// Pixel fallbacks for rem units.
-	.pipe( pixrem() )
+		// Pixel fallbacks for rem units.
+		.pipe(pixrem())
 
-	// Parse with PostCSS plugins.
-	.pipe( postcss( [
-		autoprefixer( {
-			browsers: AUTOPREFIXER_BROWSERS
-		} ),
-		mqpacker( {
-			sort: true
-		} ),
-	] ) )
+		// Parse with PostCSS plugins.
+		.pipe(postcss([
+			autoprefixer({
+				browsers: AUTOPREFIXER_BROWSERS
+			}),
+			mqpacker({
+				sort: true
+			}),
+		]))
 
-	// Format non-minified stylesheet.
-	.pipe( csscomb() )
+		// Format non-minified stylesheet.
+		.pipe(csscomb())
 
-	// Output non minified css to theme directory.
-	.pipe( gulp.dest( './' ) )
+		// Output non minified css to theme directory.
+		.pipe(gulp.dest('./'))
 
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe(browsersync.reload({
+			stream: true
+		}))
 
-	// Process sass again.
-	.pipe( sass( {
-		outputStyle: 'compressed'
-	} ) )
+		// Process sass again.
+		.pipe(sass({
+			outputStyle: 'compressed'
+		}))
 
-	// Combine similar rules.
-	.pipe ( cleancss( {
-		level: {
-			2: {
-				all: true
+		// Combine similar rules.
+		.pipe(cleancss({
+			level: {
+				2: {
+					all: true
+				}
 			}
-		}
-	} ) )
+		}))
 
-	// Minify and optimize style.css again.
-	.pipe( cssnano( {
-		safe: false,
-		discardComments: {
-			removeAll: true,
-		},
-	} ) )
+		// Minify and optimize style.css again.
+		.pipe(cssnano({
+			safe: false,
+			discardComments: {
+				removeAll: true,
+			},
+		}))
 
-	// Add .min suffix.
-	.pipe( rename( { suffix: '.min' } ) )
+		// Add .min suffix.
+		.pipe(rename({
+			suffix: '.min'
+		}))
 
-	// Write source map.
-	.pipe( sourcemaps.write( './' ) )
+		// Write source map.
+		.pipe(sourcemaps.write('./'))
 
-	// Output the compiled sass to this directory.
-	.pipe( gulp.dest( 'assets/styles/min' ) )
+		// Output the compiled sass to this directory.
+		.pipe(gulp.dest('assets/styles/min'))
 
-	// Filtering stream to only css files.
-	.pipe( filter( '**/*.css' ) )
+		// Filtering stream to only css files.
+		.pipe(filter('**/*.css'))
 
-	// Notify on successful compile (uncomment for notifications).
-	.pipe( notify( "Compiled: <%= file.relative %>" ) );
+		// Notify on successful compile (uncomment for notifications).
+		.pipe(notify("Compiled: <%= file.relative %>"));
 
-} );
+});
 
 /**
  * Minify javascript files.
  *
  * https://www.npmjs.com/package/gulp-uglify
  */
-gulp.task( 'scripts', function () {
+gulp.task('scripts', function () {
 
-	gulp.src( paths.scripts )
+	gulp.src(paths.scripts)
 
-	// Notify on error.
-	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		// Notify on error.
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 
-	// Cache files to avoid processing files that haven't changed.
-	.pipe( cache( 'scripts' ) )
+		// Cache files to avoid processing files that haven't changed.
+		.pipe(cache('scripts'))
 
-	// Add .min suffix.
-	.pipe( rename( { suffix: '.min' } ) )
+		// Add .min suffix.
+		.pipe(rename({
+			suffix: '.min'
+		}))
 
-	// Minify.
-	.pipe( uglify() )
+		// Minify.
+		.pipe(uglify())
 
-	// Output the processed js to this directory.
-	.pipe( gulp.dest( 'assets/scripts/min' ) )
+		// Output the processed js to this directory.
+		.pipe(gulp.dest('assets/scripts/min'))
 
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe(browsersync.reload({
+			stream: true
+		}))
 
-	// Notify on successful compile.
-	.pipe( notify( "Minified: <%= file.relative %>" ) );
+		// Notify on successful compile.
+		.pipe(notify("Minified: <%= file.relative %>"));
 
-} );
+});
 
 /**
  * Optimize images.
  *
  * https://www.npmjs.com/package/gulp-imagemin
  */
-gulp.task( 'images', function () {
+gulp.task('images', function () {
 
-	return gulp.src( paths.images )
+	return gulp.src(paths.images)
 
-	// Notify on error.
-	.pipe( plumber( {errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		// Notify on error.
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 
-	// Cache files to avoid processing files that haven't changed.
-	.pipe( cache( 'images' ) )
+		// Cache files to avoid processing files that haven't changed.
+		.pipe(cache('images'))
 
-	// Optimize images.
-	.pipe( imagemin( {
-		progressive: true
-	} ) )
+		// Optimize images.
+		.pipe(imagemin({
+			progressive: true
+		}))
 
-	// Output the optimized images to this directory.
-	.pipe( gulp.dest( 'assets/images' ) )
+		// Output the optimized images to this directory.
+		.pipe(gulp.dest('assets/images'))
 
-	// Inject changes via browsersync.
-	.pipe( browsersync.reload( { stream: true } ) )
+		// Inject changes via browsersync.
+		.pipe(browsersync.reload({
+			stream: true
+		}))
 
-	// Notify on successful compile.
-	.pipe( notify( "Optimized: <%= file.relative %>" ) );
+		// Notify on successful compile.
+		.pipe(notify("Optimized: <%= file.relative %>"));
 
-} );
+});
 
 /**
  * Scan the theme and create a POT file.
  *
  * https://www.npmjs.com/package/gulp-wp-pot
  */
-gulp.task( 'i18n', function() {
+gulp.task('translate', function () {
 
-	return gulp.src( paths.php )
+	return gulp.src(paths.php)
 
-	.pipe( plumber( { errorHandler: notify.onError( "Error: <%= error.message %>" ) } ) )
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 
-	.pipe( sort() )
+		.pipe(sort())
 
-	.pipe( wpPot( {
-		domain: 'genesis-starter',
-		destFile:'genesis-starter.pot',
-		package: 'Genesis Starter',
-		bugReport: 'https://seothemes.com/support',
-		lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
-		team: 'Seo Themes <seothemeswp@gmail.com>'
-	} ) )
+		.pipe(wpPot({
+			domain: 'genesis-starter',
+			destFile: 'genesis-starter.pot',
+			package: 'Genesis Starter',
+			bugReport: 'https://seothemes.com/support',
+			lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
+			team: 'Seo Themes <seothemeswp@gmail.com>'
+		}))
 
-	.pipe( gulp.dest( './languages/' ) );
+		.pipe(gulp.dest('./languages/'));
 
-} );
+});
 
 /**
  * Package theme.
  *
  * https://www.npmjs.com/package/gulp-zip
  */
-gulp.task( 'zip', function() {
+gulp.task('zip', function () {
 
-	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**', '!./aws.json' ] )
-	.pipe( zip( __dirname.split( "/" ).pop() + '.zip' ) )
-	.pipe( gulp.dest( '../' ) );
+	gulp.src(['./**/*', '!./node_modules/', '!./node_modules/**', '!./aws.json'])
+		.pipe(zip(__dirname.split("/").pop() + '.zip'))
+		.pipe(gulp.dest('../'));
 
-} );
+});
 
 /**
  * Publish packaged theme to S3.
  *
  * https://www.npmjs.com/package/gulp-s3
  */
-gulp.task( 'publish', function() {
+gulp.task('publish', function () {
 
-	gulp.src( '../genesis-starter.zip' )
-		.pipe( s3( aws ) );
+	gulp.src('../genesis-starter.zip')
+		.pipe(s3(aws));
 
-} );
+});
 
 /**
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
+ *
+ * If you are not using a self-signed certificate, use the below config:
+ *
+ * browsersync( {
+ *	    proxy: 'genesis-starter.dev',
+ *	    notify: false,
+ *	    open: false,
+ * } );
  */
-gulp.task( 'watch', function() {
+gulp.task('watch', function () {
 
 	// HTTPS (optional).
-	browsersync( {
+	browsersync({
 		proxy: 'https://genesis-starter.dev',
 		port: 8000,
 		notify: false,
@@ -372,22 +363,15 @@ gulp.task( 'watch', function() {
 			"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
 			"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
 		}
-	} );
-
-	// Non HTTPS.
-	//  browsersync( {
-	// 	    proxy: 'genesis-starter.dev',
-	// 	    notify: false,
-	// 	    open: false,
-	//  } );
+	});
 
 	// Run tasks when files change.
-	gulp.watch( paths.styles, [ 'styles' ] );
-	gulp.watch( paths.scripts, [ 'scripts' ] );
-	gulp.watch( paths.images, [ 'images' ] );
-	gulp.watch( paths.php ).on( 'change', browsersync.reload );
+	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.scripts, ['scripts']);
+	gulp.watch(paths.images, ['images']);
+	gulp.watch(paths.php).on('change', browsersync.reload);
 
-} );
+});
 
 /**
  * Rename theme.
@@ -395,62 +379,75 @@ gulp.task( 'watch', function() {
  * https://www.npmjs.com/package/change-case
  * https://www.npmjs.com/package/yargs
  */
-gulp.task( 'rename', function() {
-	
-	var old_name   = 'Genesis Starter',
+gulp.task('rename', function () {
+
+	var old_name = 'Genesis Starter',
 		old_domain = 'genesis-starter',
 		old_prefix = 'starter_';
 
-	var new_name   = changecase.titleCase( args.to ),
-		new_domain = changecase.paramCase( args.to ),
-		new_prefix = changecase.snakeCase( args.to ) + '_';
+	var new_name = changecase.titleCase(args.to),
+		new_domain = changecase.paramCase(args.to),
+		new_prefix = changecase.snakeCase(args.to) + '_';
 
-	gulp.src( paths.all )
-		.pipe( replace( old_name, new_name ) )
-		.pipe( replace( old_domain, new_domain ) )
-		.pipe( replace( old_prefix, new_prefix ) )
-		.pipe( gulp.dest( './' ) );
+	del(['./languages/' + old_domain + '.pot']);
 
-} );
+	gulp.src(paths.all)
+		.pipe(replace(old_name, new_name))
+		.pipe(replace(old_domain, new_domain))
+		.pipe(replace(old_prefix, new_prefix))
+		.pipe(gulp.dest('./'));
+
+});
 
 /**
  * Bump version.
  *
  * https://www.npmjs.com/package/gulp-bump
  */
-gulp.task( 'bump', function() {
+gulp.task('bump', function () {
 
-	if ( args.major ) {
+	if (args.major) {
 		var kind = 'major';
 	}
 
-	if ( args.minor ) {
+	if (args.minor) {
 		var kind = 'minor';
 	}
 
-	if ( args.patch ) {
+	if (args.patch) {
 		var kind = 'patch';
 	}
 
-	gulp.src( [ './package.json', './style.css' ] )
-		.pipe( bump( { type: kind, version: args.to } ) )
-		.pipe( gulp.dest( './' ) );
+	gulp.src(['./package.json', './style.css'])
+		.pipe(bump({
+			type: kind,
+			version: args.to
+		}))
+		.pipe(gulp.dest('./'));
 
-	gulp.src( [ './functions.php' ] )
-		.pipe( bump( { key: "'CHILD_THEME_VERSION',", type: kind, version: args.to } ) )
-		.pipe( gulp.dest( './' ) );
+	gulp.src(['./functions.php'])
+		.pipe(bump({
+			key: "'CHILD_THEME_VERSION',",
+			type: kind,
+			version: args.to
+		}))
+		.pipe(gulp.dest('./'));
 
-	gulp.src( './assets/styles/style.scss' )
-		.pipe( bump( { type: kind, version: args.to } ) )
-		.pipe( gulp.dest( './assets/styles/' ) );
+	gulp.src('./assets/styles/style.scss')
+		.pipe(bump({
+			type: kind,
+			version: args.to
+		}))
+		.pipe(gulp.dest('./assets/styles/'));
 
 });
 
 /**
  * Create default task.
  */
-gulp.task( 'default', [ 'watch' ], function() {
+gulp.task('default', ['watch'], function () {
 
-	gulp.start( 'styles', 'scripts', 'images' );
+	gulp.start('styles', 'scripts', 'images');
 
-} );
+});
+

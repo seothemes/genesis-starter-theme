@@ -8,6 +8,7 @@
     "browser-sync": "*",
     "change-case": "^3.0.1",
     "css-mqpacker": "*",
+    "del": "^3.0.0",
     "fs": "0.0.1-security",
     "gulp": "*",
     "gulp-autoprefixer": "*",
