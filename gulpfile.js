@@ -1,4 +1,4 @@
-//process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
+// process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
 
 /**		
  * Genesis Starter.		
@@ -12,6 +12,7 @@
 var args         = require( 'yargs' ).argv,
 	autoprefixer = require( 'autoprefixer' ),
 	browsersync  = require( 'browser-sync' ),
+	bump         = require( 'gulp-bump' ),
 	changecase   = require( 'change-case' ),
 	mqpacker 	 = require( 'css-mqpacker' ),
 	fs           = require( 'fs' ),
@@ -413,8 +414,43 @@ gulp.task( 'rename', function() {
 } );
 
 /**
+ * Manually bumps version.
+ *
+ * https://www.npmjs.com/package/gulp-bump
+ */
+gulp.task( 'bump', function() {
+
+	if ( args.major ) {
+		var kind = 'major';
+	}
+
+	if ( args.minor ) {
+		var kind = 'minor';
+	}
+
+	if ( args.patch ) {
+		var kind = 'patch';
+	}
+
+	gulp.src( [ './package.json', './style.css' ] )
+		.pipe( bump( { type: kind, version: args.to } ) )
+		.pipe( gulp.dest( './' ) );
+
+	gulp.src( [ './functions.php' ] )
+		.pipe( bump( { key: "'CHILD_THEME_VERSION',", type: kind, version: args.to } ) )
+		.pipe( gulp.dest( './' ) );
+
+	gulp.src( './assets/styles/style.scss' )
+		.pipe( bump( { type: kind, version: args.to } ) )
+		.pipe( gulp.dest( './assets/styles/' ) );
+
+});
+
+/**
  * Create default task.
  */
 gulp.task( 'default', [ 'watch' ], function() {
+
 	gulp.start( 'styles', 'scripts', 'images' );
+
 } );

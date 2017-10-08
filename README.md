@@ -181,23 +181,23 @@ You now have all the necessary dependencies to run the build process.
 
 ### Build commands
 
-* `gulp styles`  — Compile, autoprefix and minify Sass files.
+* `gulp styles` — Compile, autoprefix and minify Sass files.
 * `gulp scripts` — Minify javascript files.
-* `gulp images`  — Compress and optimize images.
-* `gulp watch`   — Compile assets when file changes are made, start Browsersync
-* `gulp`         — Default task - runs all of the above tasks.
+* `gulp images` — Compress and optimize images.
+* `gulp watch` — Compile assets when file changes are made, start Browsersync
+* `gulp` — (Default task) runs all of the above tasks.
 
 
 #### Additional commands
 
-* `gulp i18n`   — Scan the theme and create `languages.pot` POT file.
-* `gulp zip`    — Package theme into zip file for distribution, ignoring `node_modules`.
-* `gulp rename` - Rename theme Title, Text Domain and Function Prefix using the **--name** flag. See below example:
-
-```shell
-# @ themes/your-theme-name/
-$ gulp rename --name your-theme-name
-```
+* `gulp i18n` — Scan the theme and create `languages.pot` POT file.
+* `gulp zip` — Package theme into zip file for distribution, ignoring `node_modules`.
+* `gulp bump` - Bumps version number in all files. See options in example below.
+  - `--major` version when you make incompatible API changes
+  - `--minor` version when you add functionality in a backwards-compatible manner
+  - `--patch` version when you make backwards-compatible bug fixes
+  - `--to` allows you to define a custom version number, e.g. `gulp bump --to 0.1.0`
+* `gulp rename` - Rename theme Title, Text Domain and Function Prefix using the **--name** flag, e.g. `gulp rename --name your-theme-name`
 
 
 ### Using Browsersync
