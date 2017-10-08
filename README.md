@@ -197,7 +197,8 @@ You now have all the necessary dependencies to run the build process.
   - `--minor` version when you add functionality in a backwards-compatible manner
   - `--patch` version when you make backwards-compatible bug fixes
   - `--to` allows you to define a custom version number, e.g. `gulp bump --to 0.1.0`
-* `gulp rename` - Rename theme Title, Text Domain and Function Prefix using the **--name** flag, e.g. `gulp rename --name your-theme-name`
+* `gulp rename` - Rename theme Title, Text Domain and Function Prefix.
+  - `--to` name for your theme e.g: `gulp rename --to your-theme-name`
 
 
 ### Using Browsersync

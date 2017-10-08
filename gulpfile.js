@@ -401,9 +401,9 @@ gulp.task( 'rename', function() {
 		old_domain = 'genesis-starter',
 		old_prefix = 'starter_';
 
-	var new_name   = changecase.titleCase( args.name ),
-		new_domain = changecase.paramCase( args.name ),
-		new_prefix = changecase.snakeCase( args.name ) + '_';
+	var new_name   = changecase.titleCase( args.to ),
+		new_domain = changecase.paramCase( args.to ),
+		new_prefix = changecase.snakeCase( args.to ) + '_';
 
 	gulp.src( paths.all )
 		.pipe( replace( old_name, new_name ) )
@@ -414,7 +414,7 @@ gulp.task( 'rename', function() {
 } );
 
 /**
- * Manually bumps version.
+ * Bump version.
  *
  * https://www.npmjs.com/package/gulp-bump
  */
