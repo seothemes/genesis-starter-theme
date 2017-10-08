@@ -389,12 +389,12 @@ gulp.task( 'watch', function() {
 } );
 
 /**
- * Build theme.
+ * Rename theme.
  *
  * https://www.npmjs.com/package/change-case
  * https://www.npmjs.com/package/yargs
  */
-gulp.task( 'build', function() {
+gulp.task( 'rename', function() {
 	
 	var old_name   = 'Genesis Starter',
 		old_domain = 'genesis-starter',
@@ -402,7 +402,7 @@ gulp.task( 'build', function() {
 
 	var new_name   = changecase.titleCase( args.name ),
 		new_domain = changecase.paramCase( args.name ),
-		new_prefix = changecase.snakeCase( args.name + '_' );
+		new_prefix = changecase.snakeCase( args.name ) + '_';
 
 	gulp.src( paths.all )
 		.pipe( replace( old_name, new_name ) )

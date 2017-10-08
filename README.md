@@ -107,6 +107,8 @@ The following instructions require the use of a text editor with search and repl
 2. Search and replace `starter_` with your theme function prefix.
 3. Search and replace `Genesis Starter` with your theme name.
 
+You can also use the Gulp [rename](#additional-commands) task included with the theme.
+
 
 ## Customization
 
@@ -179,18 +181,23 @@ You now have all the necessary dependencies to run the build process.
 
 ### Build commands
 
-* `gulp styles` — Compile, autoprefix and minify Sass files.
+* `gulp styles`  — Compile, autoprefix and minify Sass files.
 * `gulp scripts` — Minify javascript files.
-* `gulp images` — Compress and optimize images.
-* `gulp watch` — Compile assets when file changes are made, start Browsersync
-* `gulp` — Default task - runs all of the above tasks.
+* `gulp images`  — Compress and optimize images.
+* `gulp watch`   — Compile assets when file changes are made, start Browsersync
+* `gulp`         — Default task - runs all of the above tasks.
 
 
 #### Additional commands
 
-* `gulp i18n` — Scan the theme and create `languages.pot` POT file.
-* `gulp zip` — Package theme into zip file for distribution, ignoring `node_modules`.
-* `gulp bump` - Bumps theme version in `package.json`, `style.css`, `style.scss` and `functions.php`. 
+* `gulp i18n`   — Scan the theme and create `languages.pot` POT file.
+* `gulp zip`    — Package theme into zip file for distribution, ignoring `node_modules`.
+* `gulp rename` - Rename theme Title, Text Domain and Function Prefix using the **--name** flag. See below example:
+
+```shell
+# @ themes/your-theme-name/
+$ gulp rename --name your-theme-name
+```
 
 
 ### Using Browsersync
