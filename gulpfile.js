@@ -41,7 +41,7 @@ var args         = require('yargs').argv,
 
 // Set assets paths.
 var paths = {
-	all:     ['./**/*', '!./node_modules/', '!./node_modules/**', '!./assets/images/**'],
+	all:     ['./**/*', '!./node_modules/', '!./node_modules/**', '!./screenshot.png', '!./assets/images/**'],
 	concat:  ['assets/scripts/menus.js', 'assets/scripts/superfish.js'],
 	images:  ['assets/images/*', '!assets/images/*.svg'],
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
