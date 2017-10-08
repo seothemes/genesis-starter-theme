@@ -6,6 +6,7 @@
   "dependencies": {
     "autoprefixer": "^6.3.1",
     "browser-sync": "*",
+    "change-case": "^3.0.1",
     "css-mqpacker": "*",
     "fs": "0.0.1-security",
     "gulp": "*",
@@ -30,7 +31,8 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "*",
     "gulp-wp-pot": "^1.1.1",
-    "gulp-zip": "*"
+    "gulp-zip": "*",
+    "yargs": "^9.0.1"
   },
   "devDependencies": {},
   "scripts": {

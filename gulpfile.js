@@ -9,8 +9,10 @@
  */
 
 // Require our dependencies.
-var autoprefixer = require( 'autoprefixer' ),
+var args         = require( 'yargs' ).argv,
+	autoprefixer = require( 'autoprefixer' ),
 	browsersync  = require( 'browser-sync' ),
+	changecase   = require( 'change-case' ),
 	mqpacker 	 = require( 'css-mqpacker' ),
 	fs           = require( 'fs' ),
 	gulp         = require( 'gulp' ),
@@ -37,6 +39,7 @@ var autoprefixer = require( 'autoprefixer' ),
 
 // Set assets paths.
 var paths = {
+	all:     [ './**/*', '!./node_modules/', '!./node_modules/**' ],
 	concat:  [ 'assets/scripts/menus.js', 'assets/scripts/superfish.js' ],
 	images:  [ 'assets/images/*', '!assets/images/*.svg' ],
 	php:     [ './*.php', './**/*.php', './**/**/*.php' ],
@@ -382,6 +385,30 @@ gulp.task( 'watch', function() {
 	gulp.watch( paths.scripts, [ 'scripts' ] );
 	gulp.watch( paths.images, [ 'images' ] );
 	gulp.watch( paths.php ).on( 'change', browsersync.reload );
+
+} );
+
+/**
+ * Build theme.
+ *
+ * https://www.npmjs.com/package/change-case
+ * https://www.npmjs.com/package/yargs
+ */
+gulp.task( 'build', function() {
+	
+	var old_name   = 'Genesis Starter',
+		old_domain = 'genesis-starter',
+		old_prefix = 'starter_';
+
+	var new_name   = changecase.titleCase( args.name ),
+		new_domain = changecase.paramCase( args.name ),
+		new_prefix = changecase.snakeCase( args.name + '_' );
+
+	gulp.src( paths.all )
+		.pipe( replace( old_name, new_name ) )
+		.pipe( replace( old_domain, new_domain ) )
+		.pipe( replace( old_prefix, new_prefix ) )
+		.pipe( gulp.dest( './' ) );
 
 } );
 
