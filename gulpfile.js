@@ -49,9 +49,6 @@ var paths = {
 	styles:  ['assets/styles/*.scss', '!assets/styles/min/']
 };
 
-// Set AWS S3 settings from private keys.
-aws = JSON.parse(fs.readFileSync('./aws.json'));
-
 /**
  * Compile WooCommerce styles.
  *
