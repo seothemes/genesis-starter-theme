@@ -1,16 +1,18 @@
 <?php
 /**
+ * Genesis Starter
+ *
  * Template Name: Page Builder
  *
  * This file adds the page builder template to the Genesis Starter
  * theme. It removes everything between the site header and footer
  * leaving a blank template perfect for page builder plugins.
  *
- * @package      Genesis Starter
- * @link         https://seothemes.com/themes/genesis-starter
- * @author       Seo Themes
- * @copyright    Copyright © 2017 Seo Themes
- * @license      GPL-2.0+
+ * @package   GenesisStarter
+ * @link      https://seothemes.com/themes/genesis-starter
+ * @author    SEO Themes
+ * @copyright Copyright © 2017 SEO Themes
+ * @license   GPL-2.0+
  */
 
 // If this file is called directly, abort.
@@ -21,9 +23,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Remove default page header.
-remove_action( 'genesis_after_header', 'starter_page_header_open', 20 );
-remove_action( 'genesis_after_header', 'starter_page_header_title', 24 );
-remove_action( 'genesis_after_header', 'starter_page_header_close', 28 );
+remove_action( 'genesis_after_header', 'genesis_starter_page_header_open', 20 );
+remove_action( 'genesis_after_header', 'genesis_starter_page_header_title', 24 );
+remove_action( 'genesis_after_header', 'genesis_starter_page_header_close', 28 );
 
 // Get site-header.
 get_header();

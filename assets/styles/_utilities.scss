@@ -1,14 +1,4 @@
-/* # Variables
------------------------------------------------------------------------*/
-
-/**
- * ### Breakpoints
- * 
- * Based on the most common 16:9 screen resolutions.
- *
- * @link https://pacoup.com/2011/06/12/list-of-true-169-resolutions/
- */
-
+// Breakpoints. 
 $breakpoints: (
 	xs: 512px,
 	sm: 768px,
@@ -17,35 +7,25 @@ $breakpoints: (
 	xl: 1280px
 );
 
-/* ### Colors */
-
+// Colors.
 $dark:   #30353a;
 $accent: #a0a8af;
 $border: #f0f1f2;
 $light:  #f4f5f6;
 $white:  #ffffff;
 
-/* ### Typography */
-
+// Typography.
 $font-heading: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 $font-body:    'Source Sans Pro', Helvetica, Arial, sans-serif;
 $normal:  	   400;
 $bolder:  	   600;
 $bold:    	   700;
 
-/* ### Other */
-
+// Site.
 $site-radius: 0.1rem;
 $site-border: 0.1rem solid $border;
 
-/**
- * ### Columns (including fifths)
- *
- * Why not just memorize them?
- *
- * @link https://gist.github.com/wpsmith/6201969
- */
-
+// Columns.
 $margin:        2.564102564102564%;
 $one-half:      48.71794871794871%;
 $one-third:     31.62393162393162%;
@@ -63,11 +43,7 @@ $three-sixths:  48.71794871794871%;
 $four-sixths:   65.81196581196582%;
 $five-sixths:   82.90598290598291%;
 
-/* # Mixins
------------------------------------------------------------------------*/
-
-/* ### Media Queries */
-
+// Media Queries.
 @mixin breakpoint( $breakpoint ) {
 
     @if map-has-key( $breakpoints, $breakpoint ) {
@@ -89,8 +65,7 @@ $five-sixths:   82.90598290598291%;
     }
 }
 
-/* ### Clearfix */
-
+// Clearfix.
 @mixin clearfix {
 	clear: both;
 
@@ -102,8 +77,7 @@ $five-sixths:   82.90598290598291%;
 	}
 }
 
-/* ### Transitions */
-
+// Transitions.
 @mixin transition {
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;

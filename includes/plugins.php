@@ -2,11 +2,11 @@
 /**
  * This file registers the required plugins for this theme.
  *
- * @package      Genesis Starter
- * @link         https://seothemes.com/themes/genesis-starter
- * @author       Seo Themes
- * @copyright    Copyright © 2017 Seo Themes
- * @license      GPL-2.0+
+ * @package   GenesisStarter
+ * @link      https://seothemes.com/themes/genesis-starter
+ * @author    SEO Themes
+ * @copyright Copyright © 2017 SEO Themes
+ * @license   GPL-2.0+
  */
 
 // If this file is called directly, abort.
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function starter_register_required_plugins() {
+function genesis_starter_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -3590,7 +3590,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								// Automatic activation strings.
 								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'genesis-starter' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'genesis-starter' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'genesis-starter' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'genesis-starter' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'genesis-starter' ) . ' <a href="#" class="hide-if-no-js" onclick="%1$s"><span>' . esc_html__( 'Show Details', 'genesis-starter' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'genesis-starter' ) . '</span>.</a>';
 								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations and activations have been completed.', 'genesis-starter' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
 								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'genesis-starter' );
@@ -3598,7 +3598,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								// Default installation strings.
 								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'genesis-starter' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'genesis-starter' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'genesis-starter' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'genesis-starter' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'genesis-starter' ) . ' <a href="#" class="hide-if-no-js" onclick="%1$s"><span>' . esc_html__( 'Show Details', 'genesis-starter' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'genesis-starter' ) . '</span>.</a>';
 								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations have been completed.', 'genesis-starter' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
 								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'genesis-starter' );
@@ -3844,4 +3844,4 @@ if ( ! class_exists( 'TGMPA_Utils' ) ) {
 } // End of class_exists wrapper
 
 // Add custom plugins to register hook
-add_action( 'tgmpa_register', 'starter_register_required_plugins' );
+add_action( 'tgmpa_register', 'genesis_starter_register_required_plugins' );

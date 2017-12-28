@@ -2,10 +2,10 @@
 /**
  * Genesis Starter Theme.
  *
- * @package      Genesis Starter
+ * @package      GenesisStarter
  * @link         https://seothemes.com/themes/genesis-starter
- * @author       Seo Themes
- * @copyright    Copyright © 2017 Seo Themes
+ * @author       SEO Themes
+ * @copyright    Copyright © 2017 SEO Themes
  * @license      GPL-2.0+
  */
 
@@ -22,7 +22,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.com/themes/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.2.3' );
+define( 'CHILD_THEME_VERSION', '2.2.4' );
 
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'genesis-starter' ) );
@@ -34,52 +34,6 @@ unregister_sidebar( 'sidebar-alt' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
-
-// Remove default titles.
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
-remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
-remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
-remove_action( 'genesis_before_loop', 'genesis_do_date_archive_title' );
-remove_action( 'genesis_before_loop', 'genesis_do_blog_template_heading' );
-remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
-remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
-remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
-remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
-
-// Add custom titles.
-add_action( 'genesis_after_header', 'genesis_do_posts_page_heading', 24 );
-add_action( 'genesis_after_header', 'genesis_do_date_archive_title', 24 );
-add_action( 'genesis_after_header', 'genesis_do_blog_template_heading', 24 );
-add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description', 24 );
-add_action( 'genesis_after_header', 'genesis_do_author_title_description', 24 );
-add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description', 24 );
-
-// Remove search results and shop page titles.
-add_filter( 'woocommerce_show_page_title', '__return_null' );
-add_filter( 'genesis_search_title_output', '__return_false' );
-
-// Change order of main stylesheet to override plugin styles.
-remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
-
-// Reposition primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-// Reposition the secondary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_after_header_wrap', 'genesis_do_subnav' );
-
-// Reposition footer widgets inside site footer.
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_before_footer_wrap', 'genesis_footer_widget_areas', 5 );
-
-// Enable shortcodes in text widgets.
-add_filter( 'widget_text', 'do_shortcode' );
-
-// Force Gravity Forms to disable CSS output.
-add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
 
 // Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
@@ -178,7 +132,7 @@ add_theme_support( 'custom-header', array(
 	'flex-width'         => true,
 	'uploads'            => true,
 	'video'              => true,
-	'wp-head-callback'   => 'starter_custom_header_callback',
+	'wp-head-callback'   => 'genesis_starter_custom_header',
 ) );
 
 // Register default header (just in case).
@@ -196,7 +150,7 @@ genesis_register_layout( 'custom-layout', array(
 	'img'   => get_stylesheet_directory_uri() . '/assets/images/custom-layout.gif',
 ) );
 
-// Register front page widget areas.
+// Register Front Page 1 widget area.
 genesis_register_sidebar( array(
 	'id'           => 'front-page-1',
 	'name'         => __( 'Front Page 1', 'genesis-starter' ),
@@ -204,37 +158,70 @@ genesis_register_sidebar( array(
 	'before_title' => '<h1 itemprop="headline">',
 	'after_title'  => '</h1>',
 ) );
+
+// Register Front Page 2 widget area.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-2',
 	'name'        => __( 'Front Page 2', 'genesis-starter' ),
 	'description' => __( 'Front page 2 widget area.', 'genesis-starter' ),
 ) );
+
+// Register Front Page 3 widget area.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-3',
 	'name'        => __( 'Front Page 3', 'genesis-starter' ),
 	'description' => __( 'Front page 3 widget area.', 'genesis-starter' ),
 ) );
+
+// Register Front Page 4 widget area.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-4',
 	'name'        => __( 'Front Page 4', 'genesis-starter' ),
 	'description' => __( 'Front page 4 widget area.', 'genesis-starter' ),
 ) );
+
+// Register Front Page 5 widget area.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-5',
 	'name'        => __( 'Front Page 5', 'genesis-starter' ),
 	'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
 ) );
 
+// Change order of main stylesheet to override plugin styles.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+
+// Reposition primary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_after_title_area', 'genesis_do_nav' );
+
+// Reposition the secondary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_after_header_wrap', 'genesis_do_subnav' );
+
+// Reposition footer widgets inside site footer.
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_before_footer_wrap', 'genesis_footer_widget_areas', 5 );
+
+// Enable shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
+
+// Force Gravity Forms to disable CSS output.
+add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
+
+add_action( 'wp_enqueue_scripts', 'genesis_starter_scripts_styles', 99 );
 /**
  * Enqueue theme scripts and styles.
  *
  * @return void
  */
-function starter_scripts_styles() {
+function genesis_starter_scripts_styles() {
 
 	// Conditionally load WooCommerce styles.
-	if ( starter_is_woocommerce_page() ) {
+	if ( genesis_starter_is_woocommerce_page() ) {
+
 		wp_enqueue_style( 'starter-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
+
 	}
 
 	// Remove Simple Social Icons CSS (included with theme).
@@ -263,10 +250,15 @@ function starter_scripts_styles() {
 		),
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'starter_scripts_styles', 999 );
 
 // Load helper functions.
 include_once( get_stylesheet_directory() . '/includes/helpers.php' );
+
+// Load miscellaneous functions.
+include_once( get_stylesheet_directory() . '/includes/extras.php' );
+
+// Load page header.
+include_once( get_stylesheet_directory() . '/includes/header.php' );
 
 // Load Customizer settings.
 include_once( get_stylesheet_directory() . '/includes/customize.php' );

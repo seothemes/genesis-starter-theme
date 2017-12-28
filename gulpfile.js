@@ -1,11 +1,11 @@
-// process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
+//process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
 
 /**		
  * Genesis Starter.		
  *		
  * This file adds gulp tasks to the Genesis Starter theme.		
  *		
- * @author Seo themes		
+ * @author SEO themes		
  */
 
 // Require our dependencies.
@@ -306,7 +306,7 @@ gulp.task('translate', function () {
 			package: 'Genesis Starter',
 			bugReport: 'https://seothemes.com/support',
 			lastTranslator: 'Lee Anthony <seothemeswp@gmail.com>',
-			team: 'Seo Themes <seothemeswp@gmail.com>'
+			team: 'SEO Themes <seothemeswp@gmail.com>'
 		}))
 
 		.pipe(gulp.dest('./languages/'));
@@ -381,20 +381,26 @@ gulp.task('watch', function () {
  */
 gulp.task('rename', function () {
 
-	var old_name = 'Genesis Starter',
+	var old_proxy = 'genesis-starter.dev',
+		old_name = 'Genesis Starter',
 		old_domain = 'genesis-starter',
-		old_prefix = 'starter_';
+		old_prefix = 'genesis_starter_',
+		old_package = 'GenesisStarter';
 
-	var new_name = changecase.titleCase(args.to),
-		new_domain = changecase.paramCase(args.to),
-		new_prefix = changecase.snakeCase(args.to) + '_';
+	var new_proxy = args.to + '.dev',
+		new_name = changecase.titleCase(args.to) + ' Pro',
+		new_domain = changecase.paramCase(args.to) + '-pro',
+		new_prefix = changecase.snakeCase(args.to) + '_pro',
+		new_package = changecase.pascalCase(args.to) + 'Pro';
 
 	del(['./languages/' + old_domain + '.pot']);
 
 	gulp.src(paths.all)
+		.pipe(replace(old_proxy, new_proxy))	
 		.pipe(replace(old_name, new_name))
 		.pipe(replace(old_domain, new_domain))
 		.pipe(replace(old_prefix, new_prefix))
+		.pipe(replace(old_package, new_package))
 		.pipe(gulp.dest('./'));
 
 });

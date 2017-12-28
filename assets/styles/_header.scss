@@ -76,6 +76,18 @@
 }
 
 
+/* ## Header Right
+--------------------------------------------- */
+
+.header-widget-area {
+    .widget {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
 /* ## Page Header
 --------------------------------------------- */
 

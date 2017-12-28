@@ -5,21 +5,22 @@
  * This file adds the 404 page template to the Genesis Starter Theme.
  *
  * @package Genesis Starter
- * @author  SeoThemes
+ * @author  SEOThemes
  * @license GPL-2.0+
  * @link    https://seothemes.com/themes/genesis-starter/
+ * @todo    Delete file when Genesis 2.6 is released.
  */
 
 // Remove default loop.
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
-add_action( 'genesis_loop', 'starter_404' );
+add_action( 'genesis_loop', 'genesis_starter_404' );
 /**
  * This function outputs a 404 "Not Found" error message.
  *
  * @since 1.6
  */
-function starter_404() {
+function genesis_starter_404() {
 
 	genesis_markup( array(
 		'open' => '<article class="entry">',

@@ -1,18 +1,19 @@
 {
   "name": "genesis-starter",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "The Genesis Starter theme for the Genesis Framework.",
   "main": "gulpfile.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "autoprefixer": "^6.3.1",
-    "browser-sync": "*",
+    "browser-sync": "^2.21.0",
     "change-case": "^3.0.1",
     "css-mqpacker": "*",
     "del": "^3.0.0",
     "fs": "0.0.1-security",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-bump": "^2.8.0",
+    "gulp-bump": "^2.9.0",
     "gulp-cached": "*",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
@@ -31,13 +32,12 @@
     "gulp-s3-publish": "^2.0.0",
     "gulp-sass": "*",
     "gulp-sort": "^1.1.1",
-    "gulp-sourcemaps": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.2",
     "gulp-uglify": "*",
     "gulp-wp-pot": "^1.1.1",
     "gulp-zip": "*",
     "yargs": "^9.0.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"No test specified\""
   },
@@ -48,7 +48,7 @@
   "keywords": [
     "theme"
   ],
-  "author": "SeoThemes",
+  "author": "SEOThemes",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/seothemes/genesis-starter/issues"

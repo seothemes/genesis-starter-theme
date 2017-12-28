@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Lee Anthony <seothemeswp@gmail.com>\n"
-"Language-Team: Seo Themes <seothemeswp@gmail.com>\n"
+"Language-Team: SEO Themes <seothemeswp@gmail.com>\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
@@ -17,80 +17,84 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:39
+#: 404.php:40
 msgid "Sitemap"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:65
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:66
 msgid "After Header Menu"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:143
 msgid "Hero Image"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:149
 msgid "Custom Layout"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:156
 msgid "Front Page 1"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:157
 msgid "Front page 1 widget area."
 msgstr ""
 
-#: functions.php:209
+#: functions.php:165
 msgid "Front Page 2"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:166
 msgid "Front page 2 widget area."
 msgstr ""
 
-#: functions.php:214
+#: functions.php:172
 msgid "Front Page 3"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:173
 msgid "Front page 3 widget area."
 msgstr ""
 
-#: functions.php:219
+#: functions.php:179
 msgid "Front Page 4"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:180
 msgid "Front page 4 widget area."
 msgstr ""
 
-#: functions.php:224
+#: functions.php:186
 msgid "Front Page 5"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:187
 msgid "Front page 5 widget area."
 msgstr ""
 
-#: functions.php:251, functions.php:252
+#: functions.php:241, functions.php:242
 msgid "Menu"
 msgstr ""
 
-#: includes/helpers.php:341
+#: includes/customize.php:56
+msgid " Color"
+msgstr ""
+
+#: includes/header.php:121
 msgid "Latest Posts"
 msgstr ""
 
-#: includes/helpers.php:345
+#: includes/header.php:130
 msgid "Not found, error 404"
 msgstr ""
 
-#: includes/helpers.php:349
-msgid "Search Results for:"
+#: includes/header.php:139
+msgid "Search results for: "
 msgstr ""
 
 #: includes/plugins.php:411
