@@ -1,5 +1,15 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.4] - 2017-12-28
+* Fix incorrect schema when title moved outside of entry
+
+## [2.2.3] - 2017-10-08
+* Add support for fixed header
+* Add gulp rename task
+* Add gulp bump task
+* Update gulp build task
+* Remove aws.json file from gulp publish task
+
 ## [2.2.2] - 2017-09-30
 * Add support for fixed header
 * Add theme.js file
