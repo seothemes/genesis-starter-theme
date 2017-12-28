@@ -11,34 +11,34 @@
  * @license   GPL-2.0+
  */
 
-add_action( 'genesis_loop', 'genesis_starter_front_page_loop' );
-/**
- * Front page content.
- *
- * @since  2.0.0
- *
- * @return void
- */
-function genesis_starter_front_page_loop() {
+// Check if any front page widgets are active.
+if ( is_active_sidebar( 'front-page-1' ) ||
+		is_active_sidebar( 'front-page-2' ) ||
+		is_active_sidebar( 'front-page-3' ) ||
+		is_active_sidebar( 'front-page-4' ) ||
+		is_active_sidebar( 'front-page-5' ) ) {
 
-	// Check if any front page widgets are active.
-	if ( is_active_sidebar( 'front-page-1' ) ||
-		 is_active_sidebar( 'front-page-2' ) ||
-		 is_active_sidebar( 'front-page-3' ) ||
-		 is_active_sidebar( 'front-page-4' ) ||
-		 is_active_sidebar( 'front-page-5' ) ) {
+	// Force full-width-content layout.
+	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-		// Force full-width-content layout.
-		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+	// Remove default page header.
+	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
 
-		// Remove default page header.
-		remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
+	// Remove content-sidebar-wrap.
+	add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 
-		// Remove content-sidebar-wrap.
-		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
+	// Remove default loop.
+	remove_action( 'genesis_loop', 'genesis_do_loop' );
 
-		// Remove default loop.
-		remove_action( 'genesis_loop', 'genesis_do_loop' );
+	add_action( 'genesis_loop', 'genesis_starter_front_page_loop' );
+	/**
+	 * Front page content.
+	 *
+	 * @since  2.0.0
+	 *
+	 * @return void
+	 */
+	function genesis_starter_front_page_loop() {
 
 		// Front page 1 widget area.
 		genesis_widget_area( 'front-page-1', array(
