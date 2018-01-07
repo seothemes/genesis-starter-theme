@@ -339,27 +339,19 @@ gulp.task('publish', function () {
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
- *
- * If you are not using a self-signed certificate, use the below config:
- *
- * browsersync( {
- *	    proxy: 'genesis-starter.dev',
- *	    notify: false,
- *	    open: false,
- * } );
  */
 gulp.task('watch', function () {
 
 	// HTTPS (optional).
 	browsersync({
-		proxy: 'https://genesis-starter.dev',
+		proxy: 'http://genesis-starter.dev',
 		port: 8000,
 		notify: false,
 		open: false,
-		https: {
-			"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
-			"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
-		}
+		// https: {
+		// 	"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
+		// 	"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
+		// }
 	});
 
 	// Run tasks when files change.
