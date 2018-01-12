@@ -213,7 +213,7 @@ If your local development URL is `my-site.dev`, update the file to read:
 ...
 ```
 
-By default, BrowserSync is configured to use an SSL certificate for local development. If using a Non-HTTPS local site, remove the HTTPS BrowserSync configuration and uncomment the HTTP settings.
+By default, BrowserSync is configured to use a HTTP connection. If you are using an SSL certificate for local development uncomment the HTTPS settings and change the proxy URL accordingly.
 
 
 ## Support
