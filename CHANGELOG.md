@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.5] - 2017-01-12
+* Add secondary color to Customizer
+* Change default HTTP connection method for BrowserSync
+
 ## [2.2.4] - 2017-12-28
 * Fix incorrect schema when title moved outside of entry
 
