@@ -20,7 +20,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Add any theme custom colors here.
  */
 $genesis_starter_colors = array(
-	'primary' => '#b0b5ba',
+	'primary'   => '#b0b5ba',
+	'secondary' => 'rgba(255, 255, 255, 0.95)',
 );
 
 add_action( 'customize_register', 'genesis_starter_customize_register' );
@@ -153,6 +154,14 @@ function genesis_starter_customizer_output() {
 		}		
 
 		', $primary ) : '';
+
+	$css .= ( $genesis_starter_colors['secondary'] !== $secondary ) ? sprintf( '
+
+		.page-header:before {
+			background-color: %1$s;
+		}
+
+		', $secondary ) : '';
 
 	// Style handle is the name of the theme.
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
