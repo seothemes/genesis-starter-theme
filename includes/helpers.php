@@ -177,6 +177,6 @@ function genesis_starter_custom_header() {
 
 	}
 
-	return printf( '<style type="text/css">.page-header{background-image: url(%s);}</style>' . "\n", esc_url( $url ) );
+	return has_header_image() ? printf( '<style type="text/css">.page-header{background-image: url(%s);}</style>' . "\n", esc_url( $url ) ) : '';
 
 }
