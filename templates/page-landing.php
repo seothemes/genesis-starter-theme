@@ -52,9 +52,7 @@ remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
 // Remove default page header.
-remove_action( 'genesis_after_header', 'genesis_starter_page_header_open', 20 );
-remove_action( 'genesis_after_header', 'genesis_starter_page_header_title', 24 );
-remove_action( 'genesis_after_header', 'genesis_starter_page_header_close', 28 );
+remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
 
 // Add title back (removed in /includes/header.php).
 add_action( 'genesis_entry_header', 'genesis_do_post_title' );
