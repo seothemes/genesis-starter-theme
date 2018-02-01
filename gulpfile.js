@@ -21,6 +21,7 @@ var args         = require('yargs').argv,
 	beautify     = require('gulp-cssbeautify'),
 	cache        = require('gulp-cached'),
 	cleancss     = require('gulp-clean-css'),
+	concat       = require('gulp-concat'),
 	csscomb      = require('gulp-csscomb'),
 	cssnano      = require('gulp-cssnano'),
 	filter       = require('gulp-filter'),
@@ -42,10 +43,10 @@ var args         = require('yargs').argv,
 // Set assets paths.
 var paths = {
 	all:     ['./**/*', '!./node_modules/', '!./node_modules/**', '!./screenshot.png', '!./assets/images/**'],
-	concat:  ['assets/scripts/menus.js', 'assets/scripts/superfish.js'],
+	concat:  ['assets/scripts/concat/*.js'],
 	images:  ['assets/images/*', '!assets/images/*.svg'],
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
-	scripts: ['assets/scripts/*.js', '!assets/scripts/min/'],
+	scripts: ['assets/scripts/scripts.js', 'assets/scripts/customize.js'],
 	styles:  ['assets/styles/*.scss', '!assets/styles/min/']
 };
 
@@ -65,6 +66,9 @@ gulp.task('woocommerce', function () {
 		.pipe(plumber({
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
+
+		// Initialize source map.
+		.pipe(sourcemaps.init())
 
 		// Process sass
 		.pipe(sass({
@@ -106,6 +110,11 @@ gulp.task('woocommerce', function () {
 			suffix: '.min'
 		}))
 
+		// Write source map.
+		.pipe(sourcemaps.write('./', {
+			includeContent: false,
+		}))
+
 		// Output non minified css to theme directory.
 		.pipe(gulp.dest('assets/styles/min/'))
 
@@ -136,7 +145,7 @@ gulp.task('styles', ['woocommerce'], function () {
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
 
-		// Source maps init
+		// Initialize source map.
 		.pipe(sourcemaps.init())
 
 		// Process sass
@@ -196,7 +205,9 @@ gulp.task('styles', ['woocommerce'], function () {
 		}))
 
 		// Write source map.
-		.pipe(sourcemaps.write('./'))
+		.pipe(sourcemaps.write('./', {
+			includeContent: false,
+		}))
 
 		// Output the compiled sass to this directory.
 		.pipe(gulp.dest('assets/styles/min'))
@@ -210,11 +221,38 @@ gulp.task('styles', ['woocommerce'], function () {
 });
 
 /**
+ * Concat javascript files.
+ *
+ * https://www.npmjs.com/package/gulp-uglify
+ */
+gulp.task('concat', function () {
+
+	gulp.src(paths.concat)
+
+		// Notify on error.
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
+
+		// Concatenate scripts.
+		.pipe(concat('scripts.js'))
+
+		// Output the processed js to this directory.
+		.pipe(gulp.dest('assets/scripts'))
+
+		// Inject changes via browsersync.
+		.pipe(browsersync.reload({
+			stream: true
+		}))
+
+} );
+
+/**
  * Minify javascript files.
  *
  * https://www.npmjs.com/package/gulp-uglify
  */
-gulp.task('scripts', function () {
+gulp.task('scripts', ['concat'], function () {
 
 	gulp.src(paths.scripts)
 
@@ -222,6 +260,9 @@ gulp.task('scripts', function () {
 		.pipe(plumber({
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
+
+		// Source maps init.
+		.pipe(sourcemaps.init())
 
 		// Cache files to avoid processing files that haven't changed.
 		.pipe(cache('scripts'))
@@ -233,6 +274,11 @@ gulp.task('scripts', function () {
 
 		// Minify.
 		.pipe(uglify())
+
+		// Write source map.
+		.pipe(sourcemaps.write('./', {
+			includeContent: false,
+		}))
 
 		// Output the processed js to this directory.
 		.pipe(gulp.dest('assets/scripts/min'))
