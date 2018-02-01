@@ -98,7 +98,10 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    @include breakpoint(sm) {
+    @include breakpoint(md) {
+        padding: 17rem 0 6rem;
+    }
+    @include breakpoint(lg) {
         padding: 18rem 0 6rem;
     }
     &:before {
@@ -111,6 +114,14 @@
         bottom: 0;
         background-color: rgba($white, 0.95);
         z-index: 1;
+    }
+    .has-nav-secondary & {
+        @include breakpoint(md) {
+            padding-top: 23rem;
+        }
+        @include breakpoint(lg) {
+            padding-top: 25rem;
+        }
     }
     .wrap {
         position: relative;
