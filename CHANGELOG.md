@@ -1,5 +1,19 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.6] - 2017-02-01
+* Add basic support and styling for Gutenberg
+* Add support for WooCommerce gallery features
+* Add asset concatenation gulp task/combine front-end JS into single file
+* Add Blank Page page template
+* Add sourcemaps for WooCommerce styles
+* Add Customizer data and jsbeautify config
+* Fix page-header removal in all page templates
+* Fix page-header CSS being output when no header image is set
+* Fix strings in functions for gulp rename issue
+* Fix page-header height when nav-secondary is active
+* Remove theme support for title-tag to fix SEO settings conflict
+* Remove Gravity Forms CSS override
+
 ## [2.2.5] - 2017-01-12
 * Add secondary color to Customizer
 * Change default HTTP connection method for BrowserSync

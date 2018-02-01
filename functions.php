@@ -22,7 +22,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Define theme constants.
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_URL', 'https://seothemes.com/themes/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.2.5' );
+define( 'CHILD_THEME_VERSION', '2.2.6' );
 
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'genesis-starter', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'genesis-starter' ) );
@@ -38,8 +38,11 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 // Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
 
-// Enable support for WooCommerce.
+// Enable support for WooCommerce and WooCommerce features.
 add_theme_support( 'woocommerce' );
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 // Enable support for structural wraps.
 add_theme_support( 'genesis-structural-wraps', array(
@@ -50,7 +53,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer',
 ) );
 
-// Enable Accessibility support.
+// Enable support for Accessibility enhancements.
 add_theme_support( 'genesis-accessibility', array(
 	'404-page',
 	'drop-down-menu',
@@ -60,19 +63,27 @@ add_theme_support( 'genesis-accessibility', array(
 	'skip-links',
 ) );
 
-// Enable custom navigation menus.
+// Enable support for custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
 	'primary'   => __( 'Header Menu', 'genesis-starter' ),
 	'secondary' => __( 'After Header Menu', 'genesis-starter' ),
 ) );
 
-// Enable viewport meta tag for mobile browsers.
+// Enable support for viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
 
-// Enable footer widgets.
+// Enable support for Genesis footer widgets.
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-// Enable HTML5 markup structure.
+// Enable support for Gutenberge wide images.
+add_theme_support( 'gutenberg', array(
+	'wide-images' => true,
+) );
+
+// Enable support for default posts and comments RSS feed links.
+add_theme_support( 'automatic-feed-links' );
+
+// Enable support for HTML5 markup structure.
 add_theme_support( 'html5', array(
 	'caption',
 	'comment-form',
@@ -97,18 +108,15 @@ add_theme_support( 'post-formats', array(
 // Enable support for post thumbnails.
 add_theme_support( 'post-thumbnails' );
 
-// Enable automatic output of WordPress title tags.
-add_theme_support( 'title-tag' );
-
-// Enable selective refresh and Customizer edit icons.
+// Enable support for selective refresh and Customizer edit icons.
 add_theme_support( 'customize-selective-refresh-widgets' );
 
-// Enable theme support for custom background image.
+// Enable support for custom background image.
 add_theme_support( 'custom-background', array(
 	'default-color' => 'f4f5f6',
 ) );
 
-// Enable logo option in Customizer > Site Identity.
+// Enable support for logo option in Customizer > Site Identity.
 add_theme_support( 'custom-logo', array(
 	'height'      => 60,
 	'width'       => 240,
@@ -206,9 +214,6 @@ add_action( 'genesis_before_footer_wrap', 'genesis_footer_widget_areas', 5 );
 // Enable shortcodes in text widgets.
 add_filter( 'widget_text', 'do_shortcode' );
 
-// Force Gravity Forms to disable CSS output.
-add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
-
 add_action( 'wp_enqueue_scripts', 'genesis_starter_scripts_styles', 99 );
 /**
  * Enqueue theme scripts and styles.
@@ -217,27 +222,28 @@ add_action( 'wp_enqueue_scripts', 'genesis_starter_scripts_styles', 99 );
  */
 function genesis_starter_scripts_styles() {
 
-	// Conditionally load WooCommerce styles.
-	if ( genesis_starter_is_woocommerce_page() ) {
-
-		wp_enqueue_style( 'starter-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
-
-	}
-
 	// Remove Simple Social Icons CSS (included with theme).
 	wp_dequeue_style( 'simple-social-icons-font' );
 
 	// Google fonts.
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
-	// Enqueue custom theme scripts.
-	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/scripts/min/theme.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	// Conditionally load WooCommerce styles.
+	if ( genesis_starter_is_woocommerce_page() ) {
+
+		wp_enqueue_style( 'genesis-starter-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
+
+	}
+
+	// Check if debugging is enabled.
+	$suffix = defined( SCRIPT_DEBUG ) && SCRIPT_DEBUG ? '' : 'min.';
+	$folder = defined( SCRIPT_DEBUG ) && SCRIPT_DEBUG ? '' : 'min/';
 
 	// Enqueue responsive menu script.
-	wp_enqueue_script( 'starter-menus', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/scripts/' . $folder . 'scripts.' . $suffix . 'js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-	// Localize responsive menus script.
-	wp_localize_script( 'starter-menus', 'genesis_responsive_menu', array(
+	// Localize responsive menu script.
+	wp_localize_script( 'genesis-starter', 'genesis_responsive_menu', array(
 		'mainMenu'         => __( 'Menu', 'genesis-starter' ),
 		'subMenu'          => __( 'Menu', 'genesis-starter' ),
 		'menuIconClass'    => null,

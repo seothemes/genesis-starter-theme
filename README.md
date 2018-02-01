@@ -86,6 +86,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * WordPress > 4.8
 * Genesis Framework > 2.4
 * Node.js > 6.9
+* NPM > 5.6.0
 * Gulp.js > 3.9 
 
 
@@ -137,17 +138,25 @@ theme/
 │   ├── fonts/
 │   ├── images/
 │   ├── scripts/
+│   ├── scripts/
+│   │   ├── concat/
+│   │   └── min/
 │   └── styles/
+│       └── min/
 ├── includes/
 │   ├── customize.php
 │   ├── defaults.php
+│   ├── extras.php
+│   ├── header.php
 │   ├── helpers.php
-│   └── plugins.php
+│   ├── plugins.php
+│   └── rgba.php
 ├── languages/
 │   └── genesis-starter.pot
 ├── templates/
-│   ├── page-landing.php
-│   └── page-builder.php
+│   ├── page-blank.php
+│   ├── page-builder.php
+│   └── page-landing.php
 ├── .editorconfig
 ├── .gitignore
 ├── 404.php
@@ -155,12 +164,14 @@ theme/
 ├── front-page.php
 ├── functions.php
 ├── gulpfile.js
-├── languages.pot
 ├── LICENSE.md
+├── package.lock.json
 ├── package.json
 ├── README.md
+├── sample.xml
 ├── screenshot.png
-└── style.css
+├── style.css
+└── widgets.wie
 ```
 
 

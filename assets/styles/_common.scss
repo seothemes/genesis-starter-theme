@@ -2,164 +2,321 @@
 --------------------------------------------- */
 
 .avatar {
-    border-radius: 50%;
-    margin-right: 2rem;
-    float: left;
-    .alignright & {
-        margin-left: 2rem;
-    }
+	border-radius: 50%;
+	margin-right: 2rem;
+	float: left;
+	.alignright & {
+		margin-left: 2rem;
+	}
 }
-
 
 /* ## Genesis
 --------------------------------------------- */
 
 .breadcrumb {
-    padding: 1em 6vw;
-    background-color: $white;
-    border-bottom: $site-border;
-    font-size: 1.4rem;
-    width: 100%;
-    @include breakpoint(sm) {
-        padding: 1em 6rem;
-    }
+	padding: 1em 6vw;
+	background-color: $white;
+	border-bottom: $site-border;
+	font-size: 1.4rem;
+	width: 100%;
+	@include breakpoint(sm) {
+		padding: 1em 6rem;
+	}
 }
 
 .after-entry,
 .author-box {
-    margin-bottom: 5%;
-    background-color: $white;
-    padding: 6vw;
-    @include breakpoint(sm) {
-        margin-bottom: 4rem;
-        padding: 6rem;
-    }
+	margin-bottom: 5%;
+	background-color: $white;
+	padding: 6vw;
+	@include breakpoint(sm) {
+		margin-bottom: 4rem;
+		padding: 6rem;
+	}
 }
 
 .author-box {
-    .entry + & {
-        margin-top: 6vw;
-        @include breakpoint(sm) {
-            margin-top: 4rem;
-            margin-bottom: 0;
-        }
-    }
-    p:last-of-type {
-        margin-bottom: 0;
-    }
+	.entry+& {
+		margin-top: 6vw;
+		@include breakpoint(sm) {
+			margin-top: 4rem;
+			margin-bottom: 0;
+		}
+	}
+	p:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 /* ## Search Form
 --------------------------------------------- */
 
 .search-form {
-    display: block;
-    width: 100%;
-    position: relative;
-    @include clearfix;
-    input[type="search"] {
-        width: 100%;
-    }
-    input[type="submit"] {
-        display: none;
-    }
-    .entry & {
-        margin-bottom: 4rem;
-    }
+	display: block;
+	width: 100%;
+	position: relative;
+	@include clearfix;
+	input[type="search"] {
+		width: 100%;
+	}
+	input[type="submit"] {
+		display: none;
+	}
+	.entry & {
+		margin-bottom: 4rem;
+	}
 }
-
 
 /* ## Titles
 --------------------------------------------- */
 
 .author-box-content {
-    font-size: 1.6rem;
+	font-size: 1.6rem;
 }
 
 .entry-title {
-    a {
-        color: $dark;
-        text-decoration: none;
-        font-family: $font-heading;
-        &:hover {
-            color: $accent;
-        }
-    }
+	a {
+		color: $dark;
+		text-decoration: none;
+		font-family: $font-heading;
+		&:hover {
+			color: $accent;
+		}
+	}
 }
-
 
 /* ## WordPress
 --------------------------------------------- */
 
 a {
-    &.aligncenter img {
-        display: block;
-        margin: 0 auto;
-    }
-    &.alignnone {
-        display: inline-block;
-    }
+	&.aligncenter img {
+		display: block;
+		margin: 0 auto;
+	}
+	&.alignnone {
+		display: inline-block;
+	}
 }
 
 .alignleft {
-    float: left;
-    text-align: left;
+	float: left;
+	text-align: left;
 }
 
 .alignright {
-    float: right;
-    text-align: right;
+	float: right;
+	text-align: right;
 }
 
 a {
-    &.alignleft,
-    &.alignnone,
-    &.alignright {
-        max-width: 100%;
-    }
+	&.alignleft,
+	&.alignnone,
+	&.alignright {
+		max-width: 100%;
+	}
 }
 
 img.centered,
 .aligncenter {
-    display: block;
-    margin: 0 auto 1em;
+	display: block;
+	margin: 0 auto 1em;
 }
 
 img.alignnone,
 .alignnone {
-    margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-    margin: 0 1em 1em 0;
+	margin: 0 1em 1em 0;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-    margin: 0 0 1em 1em;
+	margin: 0 0 1em 1em;
 }
 
 .wp-caption-text {
-    font-size: 1.4rem;
-    margin: 0;
-    text-align: center;
+	font-size: 1.4rem;
+	margin: 0;
+	text-align: center;
 }
 
 .entry-content {
-    p.wp-caption-text {
-        margin-bottom: 0;
-    }
-    .wp-audio-shortcode,
-    .wp-playlist,
-    .wp-video {
-        margin: 0 0 1em;
-    }
+	p.wp-caption-text {
+		margin-bottom: 0;
+	}
+	.wp-audio-shortcode,
+	.wp-playlist,
+	.wp-video {
+		margin: 0 0 1em;
+	}
 }
 
 .sticky,
 .bypostauthor {
-    background-color: transparent;
+	background-color: transparent;
+}
+
+/* ## Gutenberg
+--------------------------------------------- */
+
+.entry-content {
+    .alignwide {
+        width: 120%;
+        max-width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        img {
+            width: 100%;
+            display: inline-block;
+            margin: 1.618em auto;
+        }
+    }
+    .alignfull {
+        max-width: none;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+        position: relative;
+        .content-sidebar &,
+        .sidebar-content & {
+            max-width: calc(100% + 12rem);
+        }
+        img {
+            width: 100%;
+            display: inline-block;
+            margin: 1.618em auto;
+        }
+    }
+}
+
+.wp-block-image {
+	figcaption {
+		margin: 0 auto 2em;
+	}
+}
+
+.wp-block-button {
+	background: transparent;
+	display: block;
+	text-align: center;
+	width: 100%;
+	@include clearfix;
+	a {
+		display: inline-block;
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+}
+
+.wp-block-pullquote {
+	>p {
+		font-family: $font-body;
+		font-weight: $normal;
+	}
+	cite {
+		font-style: normal;
+	}
+}
+
+.wp-block-gallery {
+    .blocks-gallery-item {
+        width: $one-half;
+        margin: 0 0 $margin $margin;
+        text-align: center;
+        display: block;
+        &:nth-of-type(odd) {
+            margin-left: 0;
+            clear: both;
+        }
+        @include breakpoint(xs) {
+            margin-left: $margin;
+            margin-bottom: $margin;
+            &:nth-of-type(odd) {
+                margin-left: $margin;
+            }
+        }
+        img {
+            margin: 0;
+        }
+    }
+    @include breakpoint(xs) {
+        &.columns-2 .blocks-gallery-item {
+            width: $one-half;
+            margin-left: $margin;
+            &:nth-of-type(odd) {
+                margin-left: 0;
+            }
+        }
+        &.columns-3 .blocks-gallery-item {
+            width: $one-third;
+            &:nth-of-type(odd) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(3n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-4 .blocks-gallery-item {
+            width: $one-fourth;
+            &:nth-of-type(3n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(4n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-5 .blocks-gallery-item {
+            width: $one-fifth;
+            &:nth-of-type(4n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(5n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-6 .blocks-gallery-item {
+            width: $one-sixth;
+            &:nth-of-type(5n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(6n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-7 .blocks-gallery-item {
+            width: $one-seventh;
+            &:nth-of-type(6n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(7n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-8 .blocks-gallery-item {
+            width: $one-eighth;
+            &:nth-of-type(7n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(8n + 1) {
+                margin-left: 0;
+            }
+        }
+        &.columns-9 .blocks-gallery-item {
+            width: $one-ninth;
+            &:nth-of-type(8n + 1) {
+                margin-left: $margin;
+            }
+            &:nth-of-type(9n + 1) {
+                margin-left: 0;
+            }
+        }
+    }
 }
