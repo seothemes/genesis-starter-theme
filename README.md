@@ -201,7 +201,7 @@ You now have all the necessary dependencies to run the build process.
 
 #### Additional commands
 
-* `gulp i18n` — Scan the theme and create `languages.pot` POT file.
+* `gulp translate` — Scan the theme and create `languages.pot` POT file.
 * `gulp zip` — Package theme into zip file for distribution, ignoring `node_modules`.
 * `gulp bump` - Bumps version number in all files. See options in example below.
   - `--major` version when you make incompatible API changes
