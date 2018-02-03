@@ -29,6 +29,12 @@
     @include breakpoint(sm) {
         padding: calc(20vh + 12rem) 0 20vh;
     }
+    @include breakpoint(md) {
+        padding: calc(20vh + 12rem) 0 20vh;
+    }
+    @include breakpoint(lg) {
+        padding: calc(20vh + 12rem) 0 20vh;
+    }
     .wrap {
         position: relative;
         text-align: center;

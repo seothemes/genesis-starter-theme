@@ -2845,6 +2845,9 @@ p.entry-meta {
 	.sidebar .widget:first-of-type {
 		margin-top: 0;
 	}
+	.front-page-1 {
+		padding: calc(20vh + 12rem) 0 20vh;
+	}
 	.front-page-1 .wrap {
 		max-width: 768px;
 	}
@@ -2863,6 +2866,9 @@ p.entry-meta {
 	}
 	.menu-item a {
 		padding: 1.82em 1.25em;
+	}
+	.front-page-1 {
+		padding: calc(20vh + 12rem) 0 20vh;
 	}
 }
 
