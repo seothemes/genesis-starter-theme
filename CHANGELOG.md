@@ -1,6 +1,6 @@
 # Genesis Starter Theme Changelog
 
-## [2.2.6] - 2017-02-01
+## [2.2.6] - 2018-02-01
 * Add basic support and styling for Gutenberg
 * Add support for WooCommerce gallery features
 * Add asset concatenation gulp task/combine front-end JS into single file
