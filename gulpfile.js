@@ -38,7 +38,8 @@ var args         = require('yargs').argv,
 	sourcemaps   = require('gulp-sourcemaps'),
 	uglify       = require('gulp-uglify'),
 	wpPot        = require('gulp-wp-pot'),
-	zip          = require('gulp-zip');
+	zip          = require('gulp-zip'),
+	focus        = require('postcss-focus');
 
 // Set assets paths.
 var paths = {
@@ -86,6 +87,7 @@ gulp.task('woocommerce', function () {
 			mqpacker({
 				sort: true
 			}),
+			focus(),
 		]))
 
 		// Combine similar rules.
@@ -164,6 +166,7 @@ gulp.task('styles', ['woocommerce'], function () {
 			mqpacker({
 				sort: true
 			}),
+			focus(),
 		]))
 
 		// Format non-minified stylesheet.

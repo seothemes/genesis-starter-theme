@@ -36,6 +36,7 @@
     "gulp-uglify": "*",
     "gulp-wp-pot": "^1.1.1",
     "gulp-zip": "*",
+    "postcss-focus": "*",
     "yargs": "^9.0.1"
   },
   "scripts": {

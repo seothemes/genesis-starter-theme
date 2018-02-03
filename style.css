@@ -1111,7 +1111,8 @@ th {
 	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
 
-.entry-title a:hover {
+.entry-title a:hover,
+.entry-title a:focus {
 	color: #a0a8af;
 }
 
@@ -1806,7 +1807,8 @@ p.entry-meta {
 }
 
 .archive-pagination a:hover,
-.archive-pagination .active a {
+.archive-pagination .active a,
+.archive-pagination a:focus {
 	background-color: #a0a8af;
 	color: #ffffff;
 }
@@ -2329,6 +2331,7 @@ p.entry-meta {
 	background-color: #ffffff;
 	border-bottom: 1px solid #f0f1f2;
 	border-bottom: 0.1rem solid #f0f1f2;
+	position: relative;
 }
 
 .front-page-1 {
