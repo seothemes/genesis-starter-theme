@@ -38,6 +38,9 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 // Enable support for page excerpts.
 add_post_type_support( 'page', 'excerpt' );
 
+// Enable shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
+
 // Enable support for WooCommerce and WooCommerce features.
 add_theme_support( 'woocommerce' );
 add_theme_support( 'wc-product-gallery-zoom' );
@@ -158,43 +161,6 @@ genesis_register_layout( 'custom-layout', array(
 	'img'   => get_stylesheet_directory_uri() . '/assets/images/custom-layout.gif',
 ) );
 
-// Register Front Page 1 widget area.
-genesis_register_sidebar( array(
-	'id'           => 'front-page-1',
-	'name'         => __( 'Front Page 1', 'genesis-starter' ),
-	'description'  => __( 'Front page 1 widget area.', 'genesis-starter' ),
-	'before_title' => '<h1 itemprop="headline">',
-	'after_title'  => '</h1>',
-) );
-
-// Register Front Page 2 widget area.
-genesis_register_sidebar( array(
-	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'genesis-starter' ),
-	'description' => __( 'Front page 2 widget area.', 'genesis-starter' ),
-) );
-
-// Register Front Page 3 widget area.
-genesis_register_sidebar( array(
-	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'genesis-starter' ),
-	'description' => __( 'Front page 3 widget area.', 'genesis-starter' ),
-) );
-
-// Register Front Page 4 widget area.
-genesis_register_sidebar( array(
-	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'genesis-starter' ),
-	'description' => __( 'Front page 4 widget area.', 'genesis-starter' ),
-) );
-
-// Register Front Page 5 widget area.
-genesis_register_sidebar( array(
-	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'genesis-starter' ),
-	'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
-) );
-
 // Change order of main stylesheet to override plugin styles.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
@@ -210,9 +176,6 @@ add_action( 'genesis_after_header_wrap', 'genesis_do_subnav' );
 // Reposition footer widgets inside site footer.
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_before_footer_wrap', 'genesis_footer_widget_areas', 5 );
-
-// Enable shortcodes in text widgets.
-add_filter( 'widget_text', 'do_shortcode' );
 
 add_action( 'wp_enqueue_scripts', 'genesis_starter_scripts_styles', 99 );
 /**
@@ -262,6 +225,9 @@ include_once( get_stylesheet_directory() . '/includes/helpers.php' );
 
 // Load miscellaneous functions.
 include_once( get_stylesheet_directory() . '/includes/extras.php' );
+
+// Load widget areas.
+include_once( get_stylesheet_directory() . '/includes/widgets.php' );
 
 // Load page header.
 include_once( get_stylesheet_directory() . '/includes/header.php' );
