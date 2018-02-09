@@ -16,6 +16,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Automatically optimizes PNG and JPG images
 * Automatically translates theme into POT file
 * Automatically minify JavaScript into min directory
+* Automatically adds _:focus_ rules after every _:hover_ rule
 * Task for packaging theme into a distribution ZIP file
 * Helpful Sass/SCSS partials, variables, mixins and functions included
 * Contains POT file for internationalization (i18n)
