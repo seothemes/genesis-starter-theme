@@ -1,5 +1,14 @@
 # Genesis Starter Theme Changelog
 
+## [2.2.7] - 2018-02-09
+* Add and run PostCSS auto focus gulp function
+* Add support for search and 404 page settings
+* Move widget area functions to own file
+* Update README.md for postcss-focus gulp function
+* Fix home page hero height at bigger breakpoints
+* Fix date typo in changelog
+* Fix Task 'i18n' is not in your gulpfile
+
 ## [2.2.6] - 2018-02-01
 * Add basic support and styling for Gutenberg
 * Add support for WooCommerce gallery features
