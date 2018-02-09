@@ -385,33 +385,6 @@ gulp.task('publish', function () {
 });
 
 /**
- * Process tasks and reload browsers on file changes.
- *
- * https://www.npmjs.com/package/browser-sync
- */
-gulp.task('watch', function () {
-
-	// HTTPS (optional).
-	browsersync({
-		proxy: 'http://genesis-starter.dev',
-		port: 8000,
-		notify: false,
-		open: false,
-		// https: {
-		// 	"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
-		// 	"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
-		// }
-	});
-
-	// Run tasks when files change.
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.images, ['images']);
-	gulp.watch(paths.php).on('change', browsersync.reload);
-
-});
-
-/**
  * Rename theme.
  *
  * https://www.npmjs.com/package/change-case
@@ -483,6 +456,33 @@ gulp.task('bump', function () {
 			version: args.to
 		}))
 		.pipe(gulp.dest('./assets/styles/'));
+
+});
+
+/**
+ * Process tasks and reload browsers on file changes.
+ *
+ * https://www.npmjs.com/package/browser-sync
+ */
+gulp.task('watch', function () {
+
+	// HTTPS (optional).
+	browsersync({
+		proxy: 'http://genesis-starter.dev',
+		port: 8000,
+		notify: false,
+		open: false,
+		// https: {
+		// 	"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
+		// 	"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
+		// }
+	});
+
+	// Run tasks when files change.
+	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.scripts, ['scripts']);
+	gulp.watch(paths.images, ['images']);
+	gulp.watch(paths.php).on('change', browsersync.reload);
 
 });
 

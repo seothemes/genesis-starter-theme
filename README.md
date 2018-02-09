@@ -5,7 +5,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 
 ![Screenshot](https://s3-us-west-1.amazonaws.com/seo-themes/screenshot.png)
 
-
 ## Features
 
 #### Automation
@@ -15,9 +14,11 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Combines CSS rules, selectors and media queries for the smallest minification possible
 * Automatically optimizes PNG and JPG images
 * Automatically translates theme into POT file
-* Automatically minify JavaScript into min directory
+* Automatically concatenate JavaScript files into single file
+* Automatically minify JavaScript files
 * Automatically adds _:focus_ rules after every _:hover_ rule
-* Task for packaging theme into a distribution ZIP file
+* Gulp task for packaging theme into a distribution ZIP file
+* Gulp task for bumping theme version
 * Helpful Sass/SCSS partials, variables, mixins and functions included
 * Contains POT file for internationalization (i18n)
 
@@ -38,7 +39,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Only loads WooCommerce styles on WooCommerce pages
 * Uses Genesis Widget Column Classes for flexible layouts
 * Built in support for [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/) and [Gravity Forms](http://www.gravityforms.com/) plugins
-* Removes Gravity Forms and Simple Social Icons default stylesheets
+* Removes Simple Social Icons default stylesheets
 * Adds mobile-first, flexbox Gravity Forms and Simple Social Icons SCSS
 * Includes workaround to allow for different styling on multiple Simple Social Icons widgets
 
@@ -90,7 +91,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * NPM > 5.6.0
 * Gulp.js > 3.9 
 
-
 ## Installation
 
 1. Upload and install Genesis
@@ -99,7 +99,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 4. *Important* Delete unwanted existing posts, pages, comments & widgets
 5. Import sample.xml from Tools > Import
 6. Import widgets.wie from Tools > Widget Importer & Exporter
-
 
 ## Renaming
 
@@ -111,7 +110,6 @@ The following instructions require the use of a text editor with search and repl
 
 You can also use the Gulp [rename](#additional-commands) task included with the theme.
 
-
 ## Customization
 
 1. Go to Appearance > Customize > Site Identity to upload a logo
@@ -121,7 +119,6 @@ You can also use the Gulp [rename](#additional-commands) task included with the 
 5. Go to Appearance > Customize > Site Layout and configure to your liking
 6. Go to Genesis > Theme Settings to enable Breadcrumbs on pages
 
-
 ## Widget Areas
 
 * Header right
@@ -129,7 +126,6 @@ You can also use the Gulp [rename](#additional-commands) task included with the 
 * Before footer
 * Front page (default 5) 
 * Footer (default 3)
-
 
 ## Structure
 
@@ -151,7 +147,8 @@ theme/
 │   ├── header.php
 │   ├── helpers.php
 │   ├── plugins.php
-│   └── rgba.php
+│   ├── rgba.php
+│   └── widgets.php
 ├── languages/
 │   └── genesis-starter.pot
 ├── templates/
@@ -174,7 +171,6 @@ theme/
 ├── style.css
 └── widgets.wie
 ```
-
 
 ## Development
 
@@ -199,7 +195,6 @@ You now have all the necessary dependencies to run the build process.
 * `gulp watch` — Compile assets when file changes are made, start Browsersync
 * `gulp` — (Default task) runs all of the above tasks.
 
-
 #### Additional commands
 
 * `gulp translate` — Scan the theme and create `languages.pot` POT file.
@@ -211,7 +206,6 @@ You now have all the necessary dependencies to run the build process.
   - `--to` allows you to define a custom version number, e.g. `gulp bump --to 0.1.0`
 * `gulp rename` - Rename theme Title, Text Domain and Function Prefix.
   - `--to` name for your theme e.g: `gulp rename --to your-theme-name`
-
 
 ### Using Browsersync
 
@@ -227,11 +221,9 @@ If your local development URL is `my-site.dev`, update the file to read:
 
 By default, BrowserSync is configured to use a HTTP connection. If you are using an SSL certificate for local development uncomment the HTTPS settings and change the proxy URL accordingly.
 
-
 ## Support
 
 Please visit https://seothemes.com/support/ for theme support.
-
 
 ## Authors
 
@@ -239,11 +231,9 @@ Please visit https://seothemes.com/support/ for theme support.
 
 See also the list of [contributors](https://github.com/seothemes/genesis-starter/graphs/contributors) who participated in this project.
 
-
 ## License
 
 This project is licensed under the GNU General Public License - see the LICENSE.md file for details.
-
 
 ## Acknowledgments
 
