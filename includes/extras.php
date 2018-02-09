@@ -129,6 +129,42 @@ function genesis_starter_remove_metaboxes( $hook ) {
 
 }
 
+add_filter( 'genesis_site_layout', 'genesis_starter_page_layouts' );
+/**
+ * Set page layout for special page templates.
+ *
+ * This allows users to choose the page layout for the search results
+ * page and the error 404 page by creating the pages with the same
+ * slug. Featured images and excerpts are also used from them.
+ *
+ * @since 2.2.7
+ *
+ * @return string
+ */
+function genesis_starter_page_layouts() {
+
+	if ( is_search() ) {
+
+		$page   = get_page_by_path( 'search' );
+		$field  = genesis_get_custom_field( '_genesis_layout', $page->ID );
+		$layout = $field ? $field : genesis_get_option( 'site_layout' );
+
+		return $layout;
+
+	}
+
+	if ( is_404() ) {
+
+		$page   = get_page_by_path( 'error' );
+		$field  = genesis_get_custom_field( '_genesis_layout', $page->ID );
+		$layout = $field ? $field : genesis_get_option( 'site_layout' );
+
+		return $layout;
+
+	}
+
+}
+
 add_action( 'wp_head', 'genesis_starter_remove_ssi_inline_styles', 1 );
 /**
  * Remove Simple Social Icons inline CSS.

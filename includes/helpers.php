@@ -163,6 +163,14 @@ function genesis_starter_custom_header() {
 
 		$id = get_option( 'page_for_posts' );
 
+	} elseif ( is_search() ) {
+
+		$id = get_page_by_path( 'search' );
+
+	} elseif ( is_404() ) {
+
+		$id = get_page_by_path( 'error' );
+
 	} elseif ( is_singular() ) {
 
 		$id = get_the_id();

@@ -140,7 +140,11 @@ function genesis_starter_page_title() {
 			'context' => 'entry-title',
 		) );
 
-	} elseif ( is_single() || is_singular() ) {
+	} elseif ( is_page_template( 'page_blog.php' ) ) {
+
+		do_action( 'genesis_archive_title_descriptions', get_the_title(), '', 'posts-page-description' );
+
+	}  elseif ( is_single() || is_singular() ) {
 
 		genesis_do_post_title();
 
@@ -169,6 +173,26 @@ function genesis_starter_page_excerpt() {
 	} elseif ( is_home() ) {
 
 		printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( get_option( 'page_for_posts' ) ) ) );
+
+	} elseif ( is_search() ) {
+
+		$id = get_page_by_path( 'search' );
+
+		if ( has_excerpt( $id ) ) {
+
+			printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( $id ) ) );
+
+		}
+
+	} elseif ( is_404() ) {
+
+		$id = get_page_by_path( 'error' );
+
+		if ( has_excerpt( $id ) ) {
+
+			printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( $id ) ) );
+
+		}
 
 	} elseif ( ( is_single() || is_singular() ) && ! is_singular( 'product' ) && has_excerpt() ) {
 
