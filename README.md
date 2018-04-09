@@ -14,7 +14,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Combines CSS rules, selectors and media queries for the smallest minification possible
 * Automatically optimizes PNG and JPG images
 * Automatically translates theme into POT file
-* Automatically concatenate JavaScript files into single file
 * Automatically minify JavaScript files
 * Automatically adds _:focus_ rules after every _:hover_ rule
 * Gulp task for packaging theme into a distribution ZIP file
@@ -136,7 +135,6 @@ theme/
 │   ├── images/
 │   ├── scripts/
 │   ├── scripts/
-│   │   ├── concat/
 │   │   └── min/
 │   └── styles/
 │       └── min/
@@ -157,11 +155,10 @@ theme/
 │   └── page-landing.php
 ├── .editorconfig
 ├── .gitignore
-├── 404.php
 ├── CHANGELOG.md
 ├── front-page.php
 ├── functions.php
-├── gulpfile.js
+├── Gulpfile.js
 ├── LICENSE.md
 ├── package.lock.json
 ├── package.json

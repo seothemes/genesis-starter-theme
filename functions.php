@@ -202,8 +202,11 @@ function genesis_starter_scripts_styles() {
 	$suffix = defined( SCRIPT_DEBUG ) && SCRIPT_DEBUG ? '' : 'min.';
 	$folder = defined( SCRIPT_DEBUG ) && SCRIPT_DEBUG ? '' : 'min/';
 
-	// Enqueue responsive menu script.
+	// Enqueue custom theme scripts.
 	wp_enqueue_script( 'genesis-starter', get_stylesheet_directory_uri() . '/assets/scripts/' . $folder . 'scripts.' . $suffix . 'js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
+	// Enqueue responsive menu script.
+	wp_enqueue_script( 'genesis-menus', get_stylesheet_directory_uri() . '/assets/scripts/' . $folder . 'menus.' . $suffix . 'js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Localize responsive menu script.
 	wp_localize_script( 'genesis-starter', 'genesis_responsive_menu', array(

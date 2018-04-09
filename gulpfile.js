@@ -21,7 +21,6 @@ var args         = require('yargs').argv,
 	beautify     = require('gulp-cssbeautify'),
 	cache        = require('gulp-cached'),
 	cleancss     = require('gulp-clean-css'),
-	concat       = require('gulp-concat'),
 	csscomb      = require('gulp-csscomb'),
 	cssnano      = require('gulp-cssnano'),
 	filter       = require('gulp-filter'),
@@ -44,10 +43,9 @@ var args         = require('yargs').argv,
 // Set assets paths.
 var paths = {
 	all:     ['./**/*', '!./node_modules/', '!./node_modules/**', '!./screenshot.png', '!./assets/images/**'],
-	concat:  ['assets/scripts/concat/*.js'],
 	images:  ['assets/images/*', '!assets/images/*.svg'],
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
-	scripts: ['assets/scripts/scripts.js', 'assets/scripts/customize.js'],
+	scripts: ['assets/scripts/*.js', '!assets/scripts/customize.js'],
 	styles:  ['assets/styles/*.scss', '!assets/styles/min/']
 };
 
@@ -211,38 +209,11 @@ gulp.task('styles', ['woocommerce'], function () {
 });
 
 /**
- * Concat javascript files.
- *
- * https://www.npmjs.com/package/gulp-uglify
- */
-gulp.task('concat', function () {
-
-	gulp.src(paths.concat)
-
-		// Notify on error.
-		.pipe(plumber({
-			errorHandler: notify.onError("Error: <%= error.message %>")
-		}))
-
-		// Concatenate scripts.
-		.pipe(concat('scripts.js'))
-
-		// Output the processed js to this directory.
-		.pipe(gulp.dest('assets/scripts'))
-
-		// Inject changes via browsersync.
-		.pipe(browsersync.reload({
-			stream: true
-		}))
-
-} );
-
-/**
  * Minify javascript files.
  *
  * https://www.npmjs.com/package/gulp-uglify
  */
-gulp.task('scripts', ['concat'], function () {
+gulp.task('scripts', function () {
 
 	gulp.src(paths.scripts)
 
