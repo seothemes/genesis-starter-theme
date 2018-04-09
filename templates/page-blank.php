@@ -22,8 +22,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-// Remove default page header.
-remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
+// Remove default hero section.
+remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_hero_section' );
 
 // Custom loop, remove all hooks except entry content.
 if ( have_posts() ) :

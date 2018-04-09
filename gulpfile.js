@@ -468,14 +468,14 @@ gulp.task('watch', function () {
 
 	// HTTPS (optional).
 	browsersync({
-		proxy: 'http://genesis-starter.dev',
+		proxy: 'https://genesis-starter.dev',
 		port: 8000,
 		notify: false,
 		open: false,
-		// https: {
-		// 	"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
-		// 	"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
-		// }
+		https: {
+			"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
+			"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
+		}
 	});
 
 	// Run tasks when files change.

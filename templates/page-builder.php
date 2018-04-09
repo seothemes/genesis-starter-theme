@@ -22,8 +22,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-// Remove default page header.
-remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
+// Remove default hero section.
+remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_hero_section' );
 
 // Get site-header.
 get_header();

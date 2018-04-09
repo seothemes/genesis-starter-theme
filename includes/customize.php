@@ -157,7 +157,7 @@ function genesis_starter_customizer_output() {
 
 	$css .= ( $genesis_starter_colors['secondary'] !== $secondary ) ? sprintf( '
 
-		.page-header:before {
+		.hero-section:before {
 			background-color: %1$s;
 		}
 

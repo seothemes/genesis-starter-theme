@@ -21,8 +21,8 @@ if ( is_active_sidebar( 'front-page-1' ) ||
 	// Force full-width-content layout.
 	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-	// Remove default page header.
-	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
+	// Remove default hero section.
+	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_hero_section' );
 
 	// Remove content-sidebar-wrap.
 	add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
@@ -42,7 +42,7 @@ if ( is_active_sidebar( 'front-page-1' ) ||
 
 		// Front page 1 widget area.
 		genesis_widget_area( 'front-page-1', array(
-			'before' => '<div class="front-page-1 page-header" role="banner"><div class="wrap">',
+			'before' => '<div class="front-page-1 hero-section" role="banner"><div class="wrap">',
 			'after'  => '</div></div>',
 		) );
 

@@ -1349,9 +1349,9 @@ img.alignright,
 	margin-bottom: 0;
 }
 
-/* ## Page Header
+/* ## Hero Section
 --------------------------------------------- */
-.page-header {
+.hero-section {
 	width: 100%;
 	margin: 0 auto;
 	padding: calc(6vw + 7rem) 0 6vw;
@@ -1360,7 +1360,7 @@ img.alignright,
 	position: relative;
 }
 
-.page-header:before {
+.hero-section:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -1372,23 +1372,23 @@ img.alignright,
 	z-index: 1;
 }
 
-.page-header .wrap {
+.hero-section .wrap {
 	position: relative;
 	z-index: 2;
 }
 
-.page-header h1 {
+.hero-section h1 {
 	width: 100%;
 	margin-bottom: 0;
 	text-transform: capitalize;
 }
 
-.page-header p {
+.hero-section p {
 	width: 100%;
 	margin: 1em 0 0;
 }
 
-.page-header .widget {
+.hero-section .widget {
 	background: transparent;
 }
 
@@ -2762,10 +2762,10 @@ p.entry-meta {
 		font-size: 1.6rem;
 		line-height: 1.382;
 	}
-	.page-header {
+	.hero-section {
 		padding: 17rem 0 6rem;
 	}
-	.has-nav-secondary .page-header {
+	.has-nav-secondary .hero-section {
 		padding-top: 23rem;
 	}
 	.menu-item {
@@ -2861,10 +2861,10 @@ p.entry-meta {
 		padding: 1.618em 0;
 		max-width: 24rem;
 	}
-	.page-header {
+	.hero-section {
 		padding: 18rem 0 6rem;
 	}
-	.has-nav-secondary .page-header {
+	.has-nav-secondary .hero-section {
 		padding-top: 25rem;
 	}
 	.menu-item a {

@@ -46,7 +46,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 #### Customizer
 
 * Custom Logo instead of Custom Header for better SEO
-* Custom Header for uploading a page header background image or YouTube video
+* Custom Header for uploading a hero section background image or YouTube video
 * Custom Colors with RGBA/transparency option
 * Custom Layout included to easily extend the Genesis page layouts
 * Includes CSS minification function to compress all inline CSS output by Customizer
@@ -66,7 +66,7 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Reposition primary navigation menu to the header right area
 * Reposition the secondary navigation menu after the header
 * Reposition footer widgets inside site footer for better semantics
-* Reposition page title inside a custom 'page header' section
+* Reposition page title inside a custom 'hero section' section
 
 #### Templates
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * This file adds the page header to the Genesis Starter Theme.
+ * This file adds the hero section to the Genesis Starter Theme.
  *
  * @package   GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
@@ -23,7 +23,7 @@ add_filter( 'genesis_attr_entry', 'genesis_starter_entry_attr' );
  * Since the entry-title is repositioned outside of the entry article, we need
  * to add some additional microdata so that it is still picked up as a part
  * of the entry. By adding the itemref attribute, we are telling search
- * engines to check the page-header element for additional elements.
+ * engines to check the hero-section element for additional elements.
  *
  * @since  2.2.4
  *
@@ -34,15 +34,15 @@ add_filter( 'genesis_attr_entry', 'genesis_starter_entry_attr' );
  */
 function genesis_starter_entry_attr( $atts ) {
 
-	$atts['itemref'] = 'page-header';
+	$atts['itemref'] = 'hero-section';
 
 	return $atts;
 
 }
 
-add_action( 'genesis_before', 'genesis_starter_page_header_setup' );
+add_action( 'genesis_before', 'genesis_starter_hero_section_setup' );
 /**
- * Set up page header.
+ * Set up hero section.
  *
  * Removes and repositions the title on all possible types of pages. Wrapped
  * up into one function so it can easily be unhooked from genesis_before.
@@ -51,9 +51,9 @@ add_action( 'genesis_before', 'genesis_starter_page_header_setup' );
  *
  * @return void
  */
-function genesis_starter_page_header_setup() {
+function genesis_starter_hero_section_setup() {
 
-	// Remove default page header.
+	// Remove default hero section.
 	remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
@@ -69,12 +69,12 @@ function genesis_starter_page_header_setup() {
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
-	// Add custom page header.
-	add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
-	add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );
-	add_action( 'genesis_starter_page_header', 'genesis_do_taxonomy_title_description' );
-	add_action( 'genesis_starter_page_header', 'genesis_do_author_title_description' );
-	add_action( 'genesis_starter_page_header', 'genesis_do_cpt_archive_title_description' );
+	// Add custom hero section.
+	add_action( 'genesis_starter_hero_section', 'genesis_do_posts_page_heading' );
+	add_action( 'genesis_starter_hero_section', 'genesis_do_date_archive_title' );
+	add_action( 'genesis_starter_hero_section', 'genesis_do_taxonomy_title_description' );
+	add_action( 'genesis_starter_hero_section', 'genesis_do_author_title_description' );
+	add_action( 'genesis_starter_hero_section', 'genesis_do_cpt_archive_title_description' );
 
 	// Remove search results and shop page titles.
 	add_filter( 'woocommerce_show_page_title', '__return_null' );
@@ -120,11 +120,11 @@ function genesis_starter_title_toggle() {
 
 }
 
-add_action( 'genesis_starter_page_header', 'genesis_starter_page_title', 10 );
+add_action( 'genesis_starter_hero_section', 'genesis_starter_page_title', 10 );
 /**
- * Display title in page header.
+ * Display title in hero section.
  *
- * Works out the correct title to display in the page header on a per page
+ * Works out the correct title to display in the hero section on a per page
  * basis. Also adds the entry title back in to the entry inside the loop.
  *
  * @since  2.2.4
@@ -190,7 +190,7 @@ function genesis_starter_page_title() {
 
 }
 
-add_action( 'genesis_starter_page_header', 'genesis_starter_page_excerpt', 20 );
+add_action( 'genesis_starter_hero_section', 'genesis_starter_page_excerpt', 20 );
 /**
  * Display page excerpt.
  *
@@ -239,30 +239,30 @@ function genesis_starter_page_excerpt() {
 	}
 }
 
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_page_header' );
+add_action( 'genesis_before_content_sidebar_wrap', 'genesis_starter_hero_section' );
 /**
- * Display the page header.
+ * Display the hero section.
  *
- * Conditionally outputs the opening and closing page header markup and runs
- * genesis_starter_page_header which all of our header functions are hooked to.
+ * Conditionally outputs the opening and closing hero section markup and runs
+ * genesis_starter_hero_section which all of our header functions are hooked to.
  *
  * @since  2.2.4
  *
  * @return void
  */
-function genesis_starter_page_header() {
+function genesis_starter_hero_section() {
 
 	// Output opening markup.
-	if ( apply_filters( 'genesis_starter_page_header_open', true ) ) {
+	if ( apply_filters( 'genesis_starter_hero_section_open', true ) ) {
 
 		?>
-		<section id="page-header" class="page-header" role="banner"><div class="wrap">
+		<section id="hero-section" class="hero-section" role="banner"><div class="wrap">
 		<?php
 
 	}
 
 	/**
-	 * Do page header hook.
+	 * Do hero section hook.
 	 *
 	 * @hooked genesis_starter_page_title - 10
 	 * @hooked genesis_starter_page_excerpt - 20
@@ -273,10 +273,10 @@ function genesis_starter_page_header() {
 	 * @hooked genesis_do_author_title_description
 	 * @hooked genesis_do_cpt_archive_title_description
 	 */
-	do_action( 'genesis_starter_page_header' );
+	do_action( 'genesis_starter_hero_section' );
 
 	// Output closing markup.
-	if ( apply_filters( 'genesis_starter_page_header_close', true ) ) {
+	if ( apply_filters( 'genesis_starter_hero_section_close', true ) ) {
 
 		?>
 		</div></section>

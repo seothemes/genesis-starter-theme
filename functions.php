@@ -229,8 +229,8 @@ include_once( get_stylesheet_directory() . '/includes/extras.php' );
 // Load widget areas.
 include_once( get_stylesheet_directory() . '/includes/widgets.php' );
 
-// Load page header.
-include_once( get_stylesheet_directory() . '/includes/header.php' );
+// Load hero section.
+include_once( get_stylesheet_directory() . '/includes/hero.php' );
 
 // Load Customizer settings.
 include_once( get_stylesheet_directory() . '/includes/customize.php' );
