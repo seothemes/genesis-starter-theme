@@ -68,7 +68,7 @@ gulp.task('woocommerce', function () {
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
 
-		// Initialize source map.
+		// Source maps init
 		.pipe(sourcemaps.init())
 
 		// Process sass
@@ -82,7 +82,10 @@ gulp.task('woocommerce', function () {
 		// Parse with PostCSS plugins.
 		.pipe(postcss([
 			autoprefixer({
-				browsers: 'last 2 versions'
+				browsers: [
+					'last 2 versions',
+					'ie 10'
+				]
 			}),
 			mqpacker({
 				sort: true
@@ -90,22 +93,8 @@ gulp.task('woocommerce', function () {
 			focus(),
 		]))
 
-		// Combine similar rules.
-		.pipe(cleancss({
-			level: {
-				2: {
-					all: true
-				}
-			}
-		}))
-
-		// Minify and optimize style.css again.
-		.pipe(cssnano({
-			safe: false,
-			discardComments: {
-				removeAll: true,
-			},
-		}))
+		// Format non-minified stylesheet.
+		.pipe(csscomb())
 
 		// Add .min suffix.
 		.pipe(rename({
@@ -113,9 +102,7 @@ gulp.task('woocommerce', function () {
 		}))
 
 		// Write source map.
-		.pipe(sourcemaps.write('./', {
-			includeContent: false,
-		}))
+		.pipe(sourcemaps.write('./'))
 
 		// Output non minified css to theme directory.
 		.pipe(gulp.dest('assets/styles/min/'))
@@ -373,18 +360,6 @@ gulp.task('zip', function () {
 });
 
 /**
- * Publish packaged theme to S3.
- *
- * https://www.npmjs.com/package/gulp-s3
- */
-gulp.task('publish', function () {
-
-	gulp.src('../genesis-starter.zip')
-		.pipe(s3(aws));
-
-});
-
-/**
  * Rename theme.
  *
  * https://www.npmjs.com/package/change-case
@@ -468,14 +443,14 @@ gulp.task('watch', function () {
 
 	// HTTPS (optional).
 	browsersync({
-		proxy: 'https://genesis-starter.dev',
+		proxy: 'http://genesis-starter.dev',
 		port: 8000,
 		notify: false,
 		open: false,
-		https: {
-			"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
-			"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
-		}
+		// https: {
+		// 	"key": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.key",
+		// 	"cert": "/Users/seothemes/.valet/Certificates/genesis-starter.dev.crt"
+		// }
 	});
 
 	// Run tasks when files change.
