@@ -107,14 +107,6 @@
             top: 1em;
         }
     }
-    &.full-width-content,
-    &.columns-4 {
-        ul.products li.product {
-            @include breakpoint(sm) {
-                width: $one-fourth;
-            }
-        }
-    }
     ul.products {
         @include breakpoint(sm) {
             display: flex;
@@ -127,6 +119,14 @@
                 display: none;
             }
         }
+        &[class*=columns-] li.product {
+            @media (max-width: map-get($breakpoints,sm)) {
+                width: 48%;
+            }
+            @media (max-width: map-get($breakpoints,xs)) {
+                width: 100%;
+            }
+        }
         li.product {
             display: flex;
             flex-wrap: wrap;
@@ -136,8 +136,6 @@
             text-align: center;
             background-color: $white;
             @include breakpoint(sm) {
-                width: $one-third;
-                margin-left: $margin;
                 margin-bottom: $margin;
                 margin-right: 0;
             }
