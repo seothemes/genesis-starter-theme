@@ -1,8 +1,10 @@
 <?php
 /**
- * This file adds the hero section to the Genesis Starter Theme.
+ * Genesis Starter Theme
  *
- * @package   GenesisStarter
+ * This file adds the hero section to the Genesis Starter theme.
+ *
+ * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
  * @copyright Copyright © 2017 SEO Themes

@@ -1,17 +1,24 @@
 <?php
 /**
- * Genesis Starter
+ * Genesis Starter Theme
+ *
+ * This file adds the landing page template to the Genesis Starter theme.
  *
  * Template Name: Landing Page
  *
- * This file adds the landing page template to the Genesis Starter Theme.
- *
- * @package   GenesisStarter
+ * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
  * @copyright Copyright © 2017 SEO Themes
  * @license   GPL-2.0+
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+
+	die;
+
+}
 
 add_filter( 'body_class', 'genesis_starter_landing_page_body_class' );
 /**

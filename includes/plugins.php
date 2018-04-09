@@ -1,8 +1,10 @@
 <?php
 /**
- * This file registers the required plugins for this theme.
+ * Genesis Starter Theme
  *
- * @package   GenesisStarter
+ * This file registers the required plugins for the Genesis Starter theme.
+ *
+ * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
  * @copyright Copyright © 2017 SEO Themes

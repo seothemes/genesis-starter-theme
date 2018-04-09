@@ -1,8 +1,10 @@
 <?php
 /**
+ * Genesis Starter Theme
+ *
  * This file adds customizer settings to the Genesis Starter theme.
  *
- * @package   GenesisStarter
+ * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
  * @copyright Copyright © 2017 SEO Themes
