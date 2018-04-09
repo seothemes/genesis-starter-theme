@@ -82,6 +82,44 @@ function genesis_starter_page_header_setup() {
 
 }
 
+add_action( 'genesis_before_content', 'genesis_starter_remove_404_title' );
+/**
+ * Remove default title of 404 pages.
+ *
+ * @since  1.0.0
+ *
+ * @return void
+ */
+function genesis_starter_remove_404_title() {
+
+	if ( is_404() ) {
+
+		add_filter( 'genesis_markup_entry-title_open', '__return_false' );
+		add_filter( 'genesis_markup_entry-title_content', '__return_false' );
+		add_filter( 'genesis_markup_entry-title_close', '__return_false' );
+
+	}
+
+}
+
+add_action( 'be_title_toggle_remove', 'genesis_starter_title_toggle' );
+/**
+ * Integrate with Genesis Title Toggle plugin
+ *
+ * @since  1.0.0
+ *
+ * @author Bill Erickson
+ * @link   https://www.billerickson.net/code/genesis-title-toggle-theme-integration
+ *
+ * @return void
+ */
+function genesis_starter_title_toggle() {
+
+	remove_action( 'genesis_starter_hero_section', 'genesis_starter_page_title', 10 );
+	remove_action( 'genesis_starter_hero_section', 'genesis_starter_page_excerpt', 20 );
+
+}
+
 add_action( 'genesis_starter_page_header', 'genesis_starter_page_title', 10 );
 /**
  * Display title in page header.
