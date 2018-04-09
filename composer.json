@@ -1,0 +1,28 @@
+{
+    "name": "seothemes/genesis-starter",
+    "type": "project",
+    "description": "A starter theme for the Genesis Framework with modern build tools.",
+    "keywords": [
+        "WordPress",
+        "wordpress-theme-development",
+        "genesis-framework"
+    ],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "SEO Themes",
+            "homepage": "https://seothemes.com",
+            "role": "Developer"
+        }
+    ],
+	"support": {
+		"issues": "https://github.com/seothemes/genesis-starter/issues",
+		"source": "https://github.com/seothemes/genesis-starter"
+    },
+    "require": {},
+    "config": {
+        "sort-order": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
