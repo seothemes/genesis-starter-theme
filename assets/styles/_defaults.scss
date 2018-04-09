@@ -1,99 +1,111 @@
-/* ## Typography
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
 --------------------------------------------- */
 
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-::selection {
-    background-color: $dark;
-    color: $white;
-}
-
 html {
-    font-size: 62.5%; // 10px browser default.
-    max-width: 100vw;
-    overflow-x: hidden;
+	font-size: 62.5%; /* 10px browser default */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Chrome fix */
+body > div {
+	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 body {
-    background-color: $light;
-    color: $dark;
-    font-family: $font-body;
-    font-size: 1.8rem;
-    font-weight: $normal;
-    line-height: 1.618; // Golden ratio.
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    max-width: 100vw;
-    overflow-x: hidden;
-    @include breakpoint(sm) {
-        font-size: 2rem;
-    }
+	background-color: #fff;
+	color: #333;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 1.625;
+	margin: 0;
 }
 
-body>div {
-    font-size: 1.8rem;
-    @include breakpoint(sm) {
-        font-size: 2rem;
-    }
-}
-
-p {
-    margin: 0 0 1.382em;
-    padding: 0;
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	transition: all 0.2s ease-in-out;
 }
 
 a {
-    color: $accent;
-    word-wrap: break-word;
-    &:hover,
-    &:focus {
-        color: $dark;
-        outline: none;
-    }
+	color: #0073e5;
+	text-decoration: underline;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+a:focus,
+a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+p {
+	margin: 0 0 30px;
+	padding: 0;
 }
 
 ol,
 ul {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 li {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 hr {
-    border: 0;
-    border-collapse: collapse;
-    border-bottom: $site-border;
-    clear: both;
-    padding: 1em 0 0;
-    margin: 0 0 2em;
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid #eee;
+	clear: both;
+	margin: 30px 0;
 }
 
 b,
 strong {
-    font-weight: $bolder;
+	font-weight: 700;
 }
 
 blockquote,
 cite,
 em,
 i {
-    font-style: italic;
+	font-style: italic;
+}
+
+mark {
+	background: #ddd;
+	color: #333;
 }
 
 blockquote {
-    border-left: $site-border;
-    margin: 1em 0;
-    padding: 0 1em;
+	margin: 30px;
 }
 
+blockquote::before {
+	content: "\201C";
+	display: block;
+	font-size: 30px;
+	font-size: 3rem;
+	height: 0;
+	left: -20px;
+	position: relative;
+	top: -10px;
+}
 
-/* ## Headings
+/* Headings
 --------------------------------------------- */
 
 h1,
@@ -102,141 +114,52 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-heading;
-    font-weight: $bolder;
-    line-height: 1.236; // Golden ratio.
-    margin: 0 0 0.618em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0 0 20px;
 }
 
 h1 {
-    font-size: 2em;
+	font-size: 30px;
+	font-size: 3rem;
 }
 
 h2 {
-    font-size: 1.6em;
+	font-size: 27px;
+	font-size: 2.7rem;
+}
+
+.entry-content h3,
+.entry-content h4 {
+	font-weight: 600;
 }
 
 h3 {
-    font-size: 1.4em;
+	font-size: 24px;
+	font-size: 2.4rem;
 }
 
 h4 {
-    font-size: 1.2em;
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.entry-content h4 {
+	margin-top: 40px;
 }
 
 h5 {
-    font-size: 1.1em;
+	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 h6 {
-    font-size: 1em;
+	font-size: 16px;
+	font-size: 1.6rem;
 }
 
-
-/* ## Forms
---------------------------------------------- */
-
-input,
-select,
-textarea {
-    background-color: $white;
-    border: $site-border;
-    border-radius: $site-radius;
-    padding: 0.5em 1em;
-    width: 100%;
-    line-height: 2;
-    &:focus {
-        outline: none;
-        border-color: $accent;
-    }
-}
-
-:focus {
-    outline: $site-border;
-}
-
-input[type="checkbox"],
-input[type="image"],
-input[type="radio"] {
-    width: auto;
-}
-
-input[type="search"] {
-    -webkit-appearance: none;
-}
-
-::-moz-placeholder {
-    color: $dark;
-    opacity: 1;
-}
-
-::-webkit-input-placeholder {
-    color: $dark;
-}
-
-.button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    background-color: $dark;
-    border: 0;
-    border-radius: $site-radius;
-    color: $white;
-    cursor: pointer;
-    font-size: 1.6rem;
-    font-weight: $bold;
-    padding: 1em 2em;
-    text-decoration: none;
-    $white-space: nowrap;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    line-height: 1;
-    @include transition;
-    box-shadow: inset 0 0 0 9rem rgba($white, 0);
-    &:hover,
-    &:focus {
-        color: $white;
-        box-shadow: inset 0 0 0 9rem rgba($white, 0.2);
-    }
-    &.secondary {
-        background-color: $accent;
-    }
-    &.small {
-        font-size: 1.2rem;
-    }
-    &.large {
-        font-size: 1.8rem;
-    }
-    &:disabled {
-        background-color: $light;
-        border-width: 0;
-        color: darken($light, 50%);
-        cursor: not-allowed;
-    }
-    +button,
-    +.button {
-        margin-top: 1em;
-        clear: both;
-        @include breakpoint(xs) {
-            margin-top: 0;
-            clear: none;
-        }
-    }
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button {
-    display: none;
-}
-
-fieldset {
-    margin-bottom: 1em;
-}
-
-
-/* ## Objects
+/* Objects
 --------------------------------------------- */
 
 embed,
@@ -244,93 +167,266 @@ iframe,
 img,
 object,
 video,
-.wp-caption,
-.wp-video-shortcode {
-    max-width: 100%;
-    display: block;
+.wp-caption {
+	max-width: 100%;
 }
 
 img {
-    height: auto;
+	height: auto;
+	vertical-align: top;
 }
 
 figure {
-    margin: 0;
+	margin: 0;
 }
 
-video {
-    object-fit: cover;
+/* Gallery
+--------------------------------------------- */
+
+.gallery {
+	overflow: hidden;
 }
 
-.wp-video-shortcode {
-    width: auto !important;
+.gallery img {
+	border: 1px solid #eee;
+	height: auto;
+	padding: 4px;
 }
 
+.gallery img:focus,
+.gallery img:hover {
+	border: 1px solid #999;
+	outline: none;
+}
 
-/* ## Tables
+.gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1) {
+	clear: left;
+}
+
+.gallery-item {
+	float: left;
+	margin: 0 0 30px;
+	text-align: center;
+}
+
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	color: #333;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 400;
+	padding: 15px;
+	width: 100%;
+}
+
+input:focus,
+textarea:focus {
+	border: 1px solid #999;
+	outline: none;
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+::-moz-placeholder {
+	color: #333;
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: #333;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	background-color: #333;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 600;
+	padding: 15px 30px;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+}
+
+button:focus,
+button:hover,
+input[type="button"]:focus,
+input[type="button"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+.button:focus,
+.button:hover {
+	background-color: #0073e5;
+	color: #fff;
+}
+
+.entry-content .button:focus,
+.entry-content .button:hover {
+	color: #fff;
+}
+
+.button {
+	display: inline-block;
+}
+
+a.button.small,
+button.small,
+input[type="button"].small,
+input[type="reset"].small,
+input[type="submit"].small {
+	padding: 8px 16px;
+}
+
+.site-container button:disabled,
+.site-container button:disabled:hover,
+.site-container input:disabled,
+.site-container input:disabled:hover,
+.site-container input[type="button"]:disabled,
+.site-container input[type="button"]:disabled:hover,
+.site-container input[type="reset"]:disabled,
+.site-container input[type="reset"]:disabled:hover,
+.site-container input[type="submit"]:disabled,
+.site-container input[type="submit"]:disabled:hover {
+	background-color: #eee;
+	border-width: 0;
+	color: #777;
+	cursor: not-allowed;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+/* Tables
 --------------------------------------------- */
 
 table {
-    background-color: $white;
-    border: $site-border;
-    border-collapse: collapse;
-    border-spacing: 0;
-    line-height: 1;
-    margin-bottom: 4rem;
-    width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 40px;
+	width: 100%;
+	word-break: break-all;
 }
 
 tbody {
-    border-bottom: $site-border;
+	border-bottom: 1px solid #eee;
 }
 
 td,
 th {
-    text-align: left;
-    padding: 0.618em;
-    border-top: $site-border;
-    border-right: $site-border;
+	text-align: left;
 }
 
+td {
+	border-top: 1px solid #eee;
+	padding: 6px;
+}
 
-/* ## Accessibility
+th {
+	font-weight: 400;
+	padding: 0 6px;
+}
+
+td:first-child,
+th:first-child {
+	padding-left: 0;
+}
+
+/* Screen Reader Text
 --------------------------------------------- */
 
-.screen-reader-text,
-.screen-reader-text span,
 .screen-reader-shortcut,
-.wp-custom-logo .site-title,
-.wp-custom-logo .site-description {
-    position: absolute !important;
-    clip: rect(0, 0, 0, 0);
-    height: 0.1rem;
-    width: 0.1rem;
-    border: 0;
-    overflow: hidden;
+.screen-reader-text,
+.screen-reader-text span {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
 .screen-reader-text:focus,
-.screen-reader-shortcut:focus {
-    clip: auto !important;
-    height: auto;
-    width: auto;
-    display: block;
-    padding: 1rem 2rem;
-    z-index: 100000;
-    text-decoration: none;
-    box-shadow: 0 0 0.2rem 0.2rem rgba($dark, 0.1);
+.screen-reader-shortcut:focus,
+.widget_search input[type="submit"]:focus {
+	background: #fff;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+	clip: auto !important;
+	color: #333;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	height: auto;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 .more-link {
-    position: relative;
-    font-style: normal;
-}
-
-.genesis-skip-link {
-    margin: 0;
-    li {
-        height: 0;
-        width: 0;
-        list-style: none;
-    }
+	position: relative;
 }

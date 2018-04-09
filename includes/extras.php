@@ -50,6 +50,13 @@ function genesis_starter_body_class( $classes ) {
 
 	}
 
+	if ( is_page_template( 'page_blog.php' ) ) {
+
+		$classes[] = 'blog';
+		$classes = array_diff( $classes, ['page'] );
+		
+	}
+
 	return $classes;
 
 }
@@ -88,45 +95,6 @@ function genesis_starter_site_title_schema( $attr ) {
 	$attr['itemprop'] = 'name';
 
 	return $attr;
-}
-
-add_filter( 'theme_page_templates', 'genesis_starter_remove_templates' );
-/**
- * Remove Page Templates.
- *
- * The Genesis Blog & Archive templates are not needed and can
- * create problems for users so it's safe to remove them. If
- * you need to use these templates, simply remove this function.
- *
- * @since  2.2.1
- *
- * @param  array $page_templates All page templates.
- *
- * @return array Modified templates.
- */
-function genesis_starter_remove_templates( $page_templates ) {
-
-	unset( $page_templates['page_archive.php'] );
-	unset( $page_templates['page_blog.php'] );
-
-	return $page_templates;
-
-}
-
-add_action( 'genesis_admin_before_metaboxes', 'genesis_starter_remove_metaboxes' );
-/**
- * Remove blog metabox.
- *
- * Also remove the Genesis blog settings metabox from the
- * Genesis admin settings screen as it is no longer required
- * if the Blog page template has been removed.
- *
- * @param string $hook The metabox hook.
- */
-function genesis_starter_remove_metaboxes( $hook ) {
-
-	remove_meta_box( 'genesis-theme-settings-blogpage', $hook, 'main' );
-
 }
 
 add_filter( 'genesis_site_layout', 'genesis_starter_page_layouts' );

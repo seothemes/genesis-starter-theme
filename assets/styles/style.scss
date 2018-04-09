@@ -4,87 +4,88 @@
  * Description: Starter theme for the Genesis Framework.
  * Author:      SEO Themes
  * Author URI:  http://www.seothemes.com/
- * Version:     2.2.7
+ * Version:     2.6.0
  * Text Domain: genesis-starter
  * Tags:        one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready.
  * Template:    genesis
- * Template     Version: 2.5.2
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * GitHub URI:  https://github.com/seothemes/genesis-starter
  */
 
-/* # Table of Contents
-
-- Utilities
-	- Variables
-	- Mixins
-	- Functions
-- Reset
+/* Table of Contents
+- HTML5 Reset
 	- Baseline Normalize
 	- Box Sizing
 	- Float Clearing
 - Defaults
-	- Typography
+	- Typographical Elements
 	- Headings
-	- Forms
 	- Objects
-	- Tables
-	- Accessibility
-- Layout
-	- Site Containers
-	- Content Width
-	- Column Classes
 	- Gallery
-- Common
-	- Avatars
+	- Forms
+	- Tables
+	- Screen Reader Text
+- Structure and Layout
+	- Site Container
+	- Site Inner
+- Common Classes
+	- Avatar
 	- Genesis
 	- Search Form
 	- Titles
 	- WordPress
-	- Gutenberg
-- Header
-	- Before Header
-	- Site Header
+- Widgets
+	- Featured Content
+- Plugins
+	- Genesis eNews Extended
+	- Genesis Simple FAQ
+	- Jetpack
+- Skip Links
+- Site Header
 	- Title Area
-	- Widget Area
-	- Hero Section
-- Menus
-	- Menus
-	- Sub Menus
-	- Specific Menus
-	- Menu Toggles
-- Content
-	- Entries
+- Site Navigation
+	- Responsive Menu
+	- Header Menu
+	- Footer Menu
+- Content Area
+	- Entry Content
 	- Entry Meta
 	- Pagination
-	- Comments
-- Sidebars
-	- Widgets
-	- Sidebars
-- Footer
-	- Site Footer
-	- Footer Widgets
-- Plugins
-	- Simple Social Icons
-	- Gravity Forms
-- Home
-	- Front Page
-	- Custom Header
-- Print
-	- Print Styles
+	- Entry Comments
+- Sidebar
+- Footer Widgets
+- Site Footer
+- Media Queries
+	- Min-width: 960px
+		- Site Header
+		- Genesis Menu
+		- Responsive Menu
+		- Header Menu
+		- Site Inner
+		- Content
+		- Sidebar
+		- Author Box
+		- After Entry
+		- Column Classes
+		- Entry Misc.
+		- Footer Widgets
+- Print Styles
 */
 
 @import 'utilities';
-@import 'reset';
+@import 'html5-reset';
 @import 'defaults';
-@import 'layout';
-@import 'common';
-@import 'header';
-@import 'menus';
-@import 'content';
-@import 'sidebars';
-@import 'footer';
+@import 'structure-layout';
+@import 'common-classes';
+@import 'widgets';
 @import 'plugins';
-@import 'home';
-@import 'print';
+@import 'skip-links';
+@import 'site-header';
+@import 'site-navigation';
+@import 'content-area';
+@import 'sidebar';
+@import 'footer-widgets';
+@import 'site-footer';
+@import 'media-queries';
+@import 'print-styles';
