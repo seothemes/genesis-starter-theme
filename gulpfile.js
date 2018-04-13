@@ -480,6 +480,7 @@ gulp.task('watch', function () {
 
 	// Run tasks when files change.
 	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.concat, ['scripts']);
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.images, ['images']);
 	gulp.watch(paths.php).on('change', browsersync.reload);
