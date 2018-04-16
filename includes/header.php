@@ -172,7 +172,13 @@ function genesis_starter_page_excerpt() {
 
 	} elseif ( is_home() ) {
 
-		printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( get_option( 'page_for_posts' ) ) ) );
+		$id = get_option( 'page_for_posts' );
+
+		if ( has_excerpt( $id ) ) {
+
+			printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( $id ) ) );
+
+		}
 
 	} elseif ( is_search() ) {
 
