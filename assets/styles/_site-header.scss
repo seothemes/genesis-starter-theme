@@ -1,10 +1,16 @@
 /* Site Header
 ---------------------------------------------------------------------------------------------------- */
 
+/* Site Header
+---------------------------------------------- */
+
 .site-header {
-	background-color: #fff;
-	box-shadow: 0 0 20px rgba(0,0,0,0.05);
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
 	padding: 0 30px;
+	background-color: $site-header--background-color;
+	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
 }
 
 /* Title Area
@@ -12,38 +18,46 @@
 
 .title-area {
 	float: left;
-	padding-bottom: 25px;
 	padding-top: 25px;
-}
+	padding-bottom: 25px;
 
-.wp-custom-logo .title-area {
-	max-width: 350px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	.wp-custom-logo & {
+		max-width: 350px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 }
 
 .site-title {
-	font-size: 20px;
-	font-size: 2rem;
-	font-weight: 600;
-	line-height: 1;
 	margin-bottom: 0;
+	font-size: $site-title--font-size;
+	font-weight: $font-weight--bold;
+	line-height: $line-height--smaller;
+
+	a,
+	a:focus,
+	a:hover {
+		color: $site-title__link--font-color;
+		text-decoration: none;
+	}
+
+	.wp-custom-logo & {
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		position: absolute !important;
+		width: 1px;
+		height: 1px;
+		border: 0;
+		word-wrap: normal !important;
+	}
 }
 
-.site-title a,
-.site-title a:focus,
-.site-title a:hover {
-	color: #333;
-	text-decoration: none;
-}
-
-.site-description,
-.wp-custom-logo .site-title {
-	border: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
+.site-description {
 	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
 	position: absolute !important;
 	width: 1px;
+	height: 1px;
+	border: 0;
 	word-wrap: normal !important;
 }

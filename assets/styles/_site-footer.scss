@@ -2,15 +2,14 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #fff;
-	border-top: 1px solid #eee;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.5;
 	padding: 30px;
+	border-top: $border-width $border-style $border-color;
+	background-color: #fff;
+	font-size: $site-footer--font-size;
+	line-height: $line-height--medium;
 	text-align: center;
-}
 
-.site-footer p {
-	margin-bottom: 0;
+	p {
+		margin-bottom: 0;
+	}
 }

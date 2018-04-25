@@ -125,7 +125,7 @@ gulp.task('woocommerce', function () {
  */
 gulp.task('styles', ['woocommerce'], function () {
 
-	gulp.src('assets/styles/style.scss')
+	gulp.src('assets/styles/index.scss')
 
 		// Notify on error
 		.pipe(plumber({
@@ -157,6 +157,14 @@ gulp.task('styles', ['woocommerce'], function () {
 		// Format non-minified stylesheet.
 		.pipe(csscomb())
 
+		// Rename to style.css.
+		.pipe(rename('style.css'))
+		
+		// Write source map.
+		.pipe(sourcemaps.write('./', {
+			includeContent: false,
+		}))
+
 		// Output non minified css to theme directory.
 		.pipe(gulp.dest('./'))
 
@@ -164,41 +172,6 @@ gulp.task('styles', ['woocommerce'], function () {
 		.pipe(browsersync.reload({
 			stream: true
 		}))
-
-		// Process sass again.
-		.pipe(sass({
-			outputStyle: 'compressed'
-		}))
-
-		// Combine similar rules.
-		.pipe(cleancss({
-			level: {
-				2: {
-					all: true
-				}
-			}
-		}))
-
-		// Minify and optimize style.css again.
-		.pipe(cssnano({
-			safe: false,
-			discardComments: {
-				removeAll: true,
-			},
-		}))
-
-		// Add .min suffix.
-		.pipe(rename({
-			suffix: '.min'
-		}))
-
-		// Write source map.
-		.pipe(sourcemaps.write('./', {
-			includeContent: false,
-		}))
-
-		// Output the compiled sass to this directory.
-		.pipe(gulp.dest('assets/styles/min'))
 
 		// Filtering stream to only css files.
 		.pipe(filter('**/*.css'))

@@ -1,0 +1,22 @@
+/* Hero Section
+---------------------------------------------------------------------------------------------------- */
+
+.hero-section {
+	padding: 12rem 0 2rem;
+	background-position: center;
+	background-size: cover;
+
+	@include breakpoint(sm) {
+		margin-bottom: 5rem;
+		padding: 15rem 0 5rem;
+	}
+
+	.wrap {
+		padding: 0 3rem;
+
+		@include breakpoint(sm) {
+			width: 65%;
+			margin: 0 auto;
+		}
+	}
+}

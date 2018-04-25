@@ -23,9 +23,11 @@ Color.prototype.toString = function( flag ) {
 
 	// Proceed with stock color.js hex output.
 	var hex = parseInt( this._color, 10 ).toString( 16 );
-	if ( this.error ) { return ''; }
-	if ( hex.length < 6 ) {
-		for ( var i = 6 - hex.length - 1; i >= 0; i-- ) {
+	if ( this.error ) {
+		return '';
+	}
+	if ( 6 > hex.length ) {
+		for ( var i = 6 - hex.length - 1; 0 <= i; i-- ) {
 			hex = '0' + hex;
 		}
 	}
@@ -43,7 +45,10 @@ function acp_get_alpha_value_from_color( value ) {
 	value = value.replace( / /g, '' );
 
 	if ( value.match( /rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/ ) ) {
-		alphaVal = parseFloat( value.match( /rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/ )[1] ).toFixed(2) * 100;
+		alphaVal =
+			parseFloat(
+				value.match( /rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/ )[1]
+			).toFixed( 2 ) * 100;
 		alphaVal = parseInt( alphaVal );
 	} else {
 		alphaVal = 100;
@@ -55,7 +60,12 @@ function acp_get_alpha_value_from_color( value ) {
 /**
  * Force update the alpha value of the color picker object and maybe the alpha slider.
  */
- function acp_update_alpha_value_on_color_control( alpha, $control, $alphaSlider, update_slider ) {
+function acp_update_alpha_value_on_color_control(
+	alpha,
+	$control,
+	$alphaSlider,
+	update_slider
+) {
 	var iris, colorPicker, color;
 
 	iris = $control.data( 'a8cIris' );
@@ -101,8 +111,17 @@ jQuery( document ).ready( function( $ ) {
 	$( '.alpha-color-control' ).each( function() {
 
 		// Scope the vars.
-		var $control, startingColor, paletteInput, showOpacity, defaultColor, palette,
-			colorPickerOptions, $container, $alphaSlider, alphaVal, sliderOptions;
+		var $control,
+			startingColor,
+			paletteInput,
+			showOpacity,
+			defaultColor,
+			palette,
+			colorPickerOptions,
+			$container,
+			$alphaSlider,
+			alphaVal,
+			sliderOptions;
 
 		// Store the control instance.
 		$control = $( this );
@@ -112,11 +131,11 @@ jQuery( document ).ready( function( $ ) {
 
 		// Get some data off the control.
 		paletteInput = $control.attr( 'data-palette' );
-		showOpacity  = $control.attr( 'data-show-opacity' );
+		showOpacity = $control.attr( 'data-show-opacity' );
 		defaultColor = $control.attr( 'data-default-color' );
 
 		// Process the palette.
-		if ( paletteInput.indexOf( '|' ) !== -1 ) {
+		if ( -1 !== paletteInput.indexOf( '|' ) ) {
 			palette = paletteInput.split( '|' );
 		} else if ( 'false' == paletteInput ) {
 			palette = false;
@@ -146,7 +165,10 @@ jQuery( document ).ready( function( $ ) {
 				$transparency = $container.find( '.transparency' );
 
 				// Always show the background color of the opacity slider at 100% opacity.
-				$transparency.css( 'background-color', ui.color.toString( 'no-alpha' ) );
+				$transparency.css(
+					'background-color',
+					ui.color.toString( 'no-alpha' )
+				);
 			},
 			palettes: palette // Use the passed in palette.
 		};
@@ -157,12 +179,14 @@ jQuery( document ).ready( function( $ ) {
 		$container = $control.parents( '.wp-picker-container:first' );
 
 		// Insert our opacity slider.
-		$( '<div class="alpha-color-picker-container">' +
+		$(
+			'<div class="alpha-color-picker-container">' +
 				'<div class="min-click-zone click-zone"></div>' +
 				'<div class="max-click-zone click-zone"></div>' +
 				'<div class="alpha-slider"></div>' +
 				'<div class="transparency"></div>' +
-			'</div>' ).appendTo( $container.find( '.wp-picker-holder' ) );
+				'</div>'
+		).appendTo( $container.find( '.wp-picker-holder' ) );
 
 		$alphaSlider = $container.find( '.alpha-slider' );
 
@@ -175,8 +199,12 @@ jQuery( document ).ready( function( $ ) {
 				var value = $( this ).slider( 'value' );
 
 				// Set up initial values.
-				$( this ).find( '.ui-slider-handle' ).text( value );
-				$( this ).siblings( '.transparency ').css( 'background-color', startingColor );
+				$( this )
+					.find( '.ui-slider-handle' )
+					.text( value );
+				$( this )
+					.siblings( '.transparency ' )
+					.css( 'background-color', startingColor );
 			},
 			value: alphaVal,
 			range: 'max',
@@ -196,10 +224,20 @@ jQuery( document ).ready( function( $ ) {
 
 		// Bind event handlers for the click zones.
 		$container.find( '.min-click-zone' ).on( 'click', function() {
-			acp_update_alpha_value_on_color_control( 0, $control, $alphaSlider, true );
+			acp_update_alpha_value_on_color_control(
+				0,
+				$control,
+				$alphaSlider,
+				true
+			);
 		});
 		$container.find( '.max-click-zone' ).on( 'click', function() {
-			acp_update_alpha_value_on_color_control( 100, $control, $alphaSlider, true );
+			acp_update_alpha_value_on_color_control(
+				100,
+				$control,
+				$alphaSlider,
+				true
+			);
 		});
 
 		// Bind event handler for clicking on a palette color.
@@ -215,7 +253,7 @@ jQuery( document ).ready( function( $ ) {
 			// for example rgba(20, 80, 100, 0.3) becomes rgba(20, 80, 100, 0.298039).
 			// To compensante for this we round the opacity value on RGBa colors here
 			// and save it a second time to the color picker object.
-			if ( alpha != 100 ) {
+			if ( 100 != alpha ) {
 				color = color.replace( /[^,]+(?=\))/, ( alpha / 100 ).toFixed( 2 ) );
 			}
 
@@ -257,11 +295,17 @@ jQuery( document ).ready( function( $ ) {
 		$alphaSlider.slider().on( 'slide', function( event, ui ) {
 			var alpha = parseFloat( ui.value ) / 100.0;
 
-			acp_update_alpha_value_on_color_control( alpha, $control, $alphaSlider, false );
+			acp_update_alpha_value_on_color_control(
+				alpha,
+				$control,
+				$alphaSlider,
+				false
+			);
 
 			// Change value shown on slider handle.
-			$( this ).find( '.ui-slider-handle' ).text( ui.value );
+			$( this )
+				.find( '.ui-slider-handle' )
+				.text( ui.value );
 		});
-
 	});
 });
