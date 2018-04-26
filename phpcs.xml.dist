@@ -32,7 +32,7 @@
 	<!-- Check all globals have the expected prefix. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="CHILD_THEME, CHILD_TEXT_DOMAIN, genesis"/>
+			<property name="prefixes" type="array" value="CHILD, genesis"/>
 		</properties>
 	</rule>
 	<!-- Allow theme-specific exceptions to WordPress filename rules. -->

@@ -4,7 +4,7 @@
  *
  * This file contains the core functionality for the Genesis Starter theme.
  *
- * @package   SEOThemes\Library
+ * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
  * @copyright Copyright © 2017 SEO Themes
@@ -17,9 +17,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 
 }
-
-// Load Genesis Framework (do not remove).
-require_once get_template_directory() . '/lib/init.php';
 
 // Load SEOThemes Library (do not remove).
 require_once get_stylesheet_directory() . '/lib/init.php';
