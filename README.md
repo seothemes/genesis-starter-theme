@@ -206,7 +206,7 @@ You now have all the necessary dependencies to run the build process.
 
 ### Using Browsersync
 
-To use Browsersync you need to update the proxy URL in `gulpfile.js` to reflect your local development hostname.
+To use Browsersync you need to update the proxy URL in `Gulpfile.js` to reflect your local development hostname.
 
 If your local development URL is `my-site.dev`, update the file to read:
 

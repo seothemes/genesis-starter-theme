@@ -8,5 +8,5 @@ node_modules
 vendor
 
 # Ignore auto-generated lock files.
-package-lock.json
+#package-lock.json
 composer.lock
