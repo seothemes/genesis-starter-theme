@@ -138,7 +138,7 @@ gulp.task('woocommerce', function () {
  *
  * https://www.npmjs.com/package/gulp-sass
  */
-gulp.task('styles', ['woocommerce'], function () {
+gulp.task('styles', gulp.series('woocommerce', function() {
 
 	gulp.src('assets/styles/style.scss')
 
@@ -221,7 +221,7 @@ gulp.task('styles', ['woocommerce'], function () {
 		// Notify on successful compile (uncomment for notifications).
 		.pipe(notify("Compiled: <%= file.relative %>"));
 
-});
+}));
 
 /**
  * Concat javascript files.
@@ -255,7 +255,7 @@ gulp.task('concat', function () {
  *
  * https://www.npmjs.com/package/gulp-uglify
  */
-gulp.task('scripts', ['concat'], function () {
+gulp.task('scripts', gulp.series('concat', function() {
 
 	gulp.src(paths.scripts)
 
@@ -294,7 +294,7 @@ gulp.task('scripts', ['concat'], function () {
 		// Notify on successful compile.
 		.pipe(notify("Minified: <%= file.relative %>"));
 
-});
+}));
 
 /**
  * Optimize images.
@@ -479,10 +479,10 @@ gulp.task('watch', function () {
 	});
 
 	// Run tasks when files change.
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.concat, ['scripts']);
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.images, ['images']);
+	gulp.watch(paths.styles, gulp.series('styles'));
+	gulp.watch(paths.concat, gulp.series('scripts'));
+	gulp.watch(paths.scripts, gulp.series('scripts'));
+	gulp.watch(paths.images, gulp.series('images'));
 	gulp.watch(paths.php).on('change', browsersync.reload);
 
 });
@@ -490,9 +490,8 @@ gulp.task('watch', function () {
 /**
  * Create default task.
  */
-gulp.task('default', ['watch'], function () {
+gulp.task('default', gulp.series('watch', function() {
 
 	gulp.start('styles', 'scripts', 'images');
 
-});
-
+}));
