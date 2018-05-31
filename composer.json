@@ -19,11 +19,11 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/seothemes/child-theme-library"
+      "url": "https://github.com/seothemes/child-theme-library.git"
     }
   ],
   "require": {
-    "seothemes/child-theme-library": "^0.0.1",
+    "seothemes/child-theme-library": "dev-master",
     "mnsami/composer-custom-directory-installer": "1.1.*"
   },
   "require-dev": {
@@ -43,5 +43,10 @@
     "installer-paths":{
       "./lib/": ["seothemes/child-theme-library"]
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "yarn install && sh setup.sh"
+    ]
   }
 }

@@ -59,13 +59,25 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 
 ## Installation
 
-Make sure to do a "recursive" Git clone so that the child theme library will be added as a sub-module.
+1. Do a "recursive" Git clone so that the child theme library will be added as a sub-module:
 
 ```shell
-git clone --recurse-submodules https://github.com/seothemes/genesis-starter.git
+git clone --recurse-submodules https://github.com/seothemes/genesis-starter.git theme-name
 ```
 
-Run the setup script and follow the command prompt.
+2. Navigate into the theme directory:
+
+```shell
+cd theme-name
+```
+
+Install node modules:
+
+```shell
+yarn install
+```
+
+Run the setup script and follow the command prompt:
 
 ```shell
 sh setup.sh
