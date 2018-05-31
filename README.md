@@ -4,85 +4,6 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 
 Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 
-
-![Screenshot](https://s3-us-west-1.amazonaws.com/seo-themes/screenshot.png)
-
-## Features
-
-#### Automation
-
-* BrowserSync to inject CSS and reload browser when file changes
-* Automatically compile Sass, output minified and non-minifed stylesheets
-* Combines CSS rules, selectors and media queries for the smallest minification possible
-* Automatically optimizes PNG and JPG images
-* Automatically translates theme into POT file
-* Automatically minify JavaScript files
-* Automatically adds _:focus_ rules after every _:hover_ rule
-* Gulp task for packaging theme into a distribution ZIP file
-* Gulp task for bumping theme version
-* Helpful Sass/SCSS partials, variables, mixins and functions included
-* Contains POT file for internationalization (i18n)
-
-#### Scripts & Styles
-
-* 100% mobile-first, flexbox-based CSS 
-* Pure CSS menu-toggle and sub-menu toggle buttons
-* Includes the Genesis Responsive menu script
-* Menu's combine into one on smaller screens
-* Superfish menu for keyboard navigation and other accessibility enhancements
-* Enqueues basic Google Font
-
-#### Plugins
-
-* Includes TGM Plugin Activation script for recommended plugins
-* Full support for WooCommerce
-* Only recommends Genesis Connect if WooCommerce is active
-* Only loads WooCommerce styles on WooCommerce pages
-* Uses Genesis Widget Column Classes for flexible layouts
-* Built in support for [Simple Social Icons](https://en-au.wordpress.org/plugins/simple-social-icons/) and [Gravity Forms](http://www.gravityforms.com/) plugins
-* Removes Simple Social Icons default stylesheets
-* Adds mobile-first, flexbox Gravity Forms and Simple Social Icons SCSS
-* Includes workaround to allow for different styling on multiple Simple Social Icons widgets
-
-#### Customizer
-
-* Custom Logo instead of Custom Header for better SEO
-* Custom Header for uploading a hero section background image or YouTube video
-* Custom Colors with RGBA/transparency option
-* Custom Layout included to easily extend the Genesis page layouts
-* Includes CSS minification function to compress all inline CSS output by Customizer
-
-#### Optimization
-
-* Removes secondary sidebar widget area
-* Removes the unnecessary (and discouraged) blog and archive templates
-* Removes blog metabox from Genesis theme settings
-* Removes all three-column page layouts
-* Corrects the site title and logo schema microdata
-* Corrects the Front Page 1 widget title schema microdata 
-
-#### Modification
-
-* Reposition child theme stylesheet to a later priority to override plugins
-* Reposition primary navigation menu to the header right area
-* Reposition the secondary navigation menu after the header
-* Reposition footer widgets inside site footer for better semantics
-* Reposition page title inside a custom 'hero section' section
-
-#### Templates
-
-* Includes a widgetized, full-width front-page template
-* Includes a full-width Page Builder template for use with plugins
-* Includes a blank landing page template
-* Includes a 404 page template to correct page title (until next Genesis update)
-
-#### Advanced
-
-* Follows WordPress coding standards _and_ StudioPress best practices
-* Accessible skip links and read more links with descriptive screen-reader text
-* Additional hooks added before and after Genesis structural wraps
-* Includes a function to prevent automatic updates
-
 ## Recommendations
 
 * PHP > 7.0
@@ -150,16 +71,6 @@ Run the setup script and follow the command prompt.
 sh setup.sh
 ```
 
-## Renaming
-
-The following instructions require the use of a text editor with search and replace functionality. You will need to perform a search and replace on all files in the theme folder. If using NPM, the theme should be renamed before running `npm install`. You do not want to edit any files in the `node_modules` directory.
-
-1. Search and replace `genesis-starter` with your theme text domain.
-2. Search and replace `genesis_starter_` with your theme function prefix.
-3. Search and replace `Genesis Starter` with your theme name.
-
-You can also use the Gulp [rename](#additional-commands) task included with the theme.
-
 ## Customization
 
 1. Go to Appearance > Customize > Site Identity to upload a logo
@@ -188,51 +99,7 @@ theme/
 │   └── scss/
 ├── config/
 │   └── config.php
-├── lib/
-│   ├── admin/
-│   │   ├── customizer-output.php
-│   │   └── customizer-settings.php
-│   ├── classes/
-│   │   ├── class-child-theme-demo-import.php
-│   │   ├── class-child-theme-rgba-customizer-control.php
-│   │   └── class-child-theme-tgm-plugin-activation.php
-│   ├── css/
-│   │   ├── customizer.css
-│   │   └── load-styles.php
-│   ├── functions/
-│   │   ├── attributes.php
-│   │   ├── autoload.php
-│   │   ├── defaults.php
-│   │   ├── general.php
-│   │   ├── hero.php
-│   │   ├── layout.php
-│   │   ├── markup.php
-│   │   ├── plugins.php
-│   │   ├── setup.php
-│   │   ├── templates.php
-│   │   ├── upgrade.php
-│   │   └── utilities.php
-│   ├── js/
-│   │   ├── customizer.js
-│   │   ├── load-scripts.php
-│   │   └── menus.js
-│   ├── languages/
-│   │   └── genesis-starter-theme.pot
-│   ├── shortcodes/
-│   │   └── footer.php
-│   ├── structure/
-│   │   ├── footer.php
-│   │   ├── header.php
-│   │   └── menu.php
-│   ├── views/
-│   │   ├── page-grid.php
-│   │   ├── page-blog.php
-│   │   ├── page-front.php
-│   │   ├── page-full.php
-│   │   ├── page-landing.php
-│   │   └── page-sitemap.php
-│   └── widgets/
-│       └── widgets.php
+├── lib/ # (https://github.com/seothemes/child-theme-library.git)
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitignore

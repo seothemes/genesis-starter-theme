@@ -1,6 +1,6 @@
 {
-  "name": "seothemes/genesis-starter",
-  "type": "project",
+  "name": "seothemes/genesis-starter-theme",
+  "type": "wordpress-theme",
   "description":
     "A starter theme for the Genesis Framework with modern build tools.",
   "keywords": ["WordPress", "wordpress-theme-development", "genesis-framework"],
@@ -19,10 +19,13 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/seothemes/updevtools"
+      "url": "https://github.com/seothemes/child-theme-library"
     }
   ],
-  "require": {},
+  "require": {
+    "seothemes/child-theme-library": "^0.0.1",
+    "mnsami/composer-custom-directory-installer": "1.1.*"
+  },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
     "squizlabs/php_codesniffer": "^3.2.3",
@@ -35,5 +38,10 @@
     "sort-order": true
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "extra":{
+    "installer-paths":{
+      "./lib/": ["seothemes/child-theme-library"]
+    }
+  }
 }
