@@ -1,6 +1,8 @@
 # Genesis Starter Theme
 
-A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with development automation tools. Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
+A search engine optimized, mobile-first, flexbox-based starter theme for the Genesis Framework with development automation tools.
+
+Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 
 
 ![Screenshot](https://s3-us-west-1.amazonaws.com/seo-themes/screenshot.png)
@@ -88,7 +90,51 @@ A search engine optimized, mobile-first, flexbox-based starter theme for the Gen
 * Genesis Framework > 2.4
 * Node.js > 6.9
 * NPM > 5.6.0
-* Gulp.js > 3.9 
+* Gulp.js > 3.9
+
+### Requirements
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th align="left" width="25%">Requirement</th>
+			<th align="left" width="25%">How to Check</th>
+			<th align="left" width="50%">How to Install</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>PHP >= 5.3</td>
+			<td><code>php -v</code></td>
+			<td><a href="http://php.net/manual/en/install.php" target="_blank">php.net</a></td>
+		</tr>
+		<tr>
+			<td>Node.js 6.x</td>
+			<td><code>node -v</code></td>
+			<td><a href="http://nodejs.org/" target="_blank">nodejs.org</a></td>
+		</tr>
+		<tr>
+			<td>yarn 0.2.x</td>
+			<td><code>yarn -v</code></td>
+			<td><code><a href="https://yarnpkg.com/en/docs/instal" target="_blank">Install Yarn</a></code></td>
+		</tr>
+		<tr>
+			<td>Gulp CLI</td>
+			<td><code>gulp -v</code></td>
+			<td><code>npm install -g gulp-cli</td>
+		</tr>
+		<tr>
+            <td>WordPress >= 4.8</td>
+            <td><code>php -v</code></td>
+            <td><a href="https://codex.wordpress.org/Installing_WordPress" target="_blank">WordPress.org</a></td>
+        </tr>
+        <tr>
+            <td>Genesis >= 2.6</td>
+            <td><code>php -v</code></td>
+            <td><a href="http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=" target="_blank">Genesis Framework</a></td>
+        </tr>
+	</tbody>
+</table>
 
 ## Installation
 
@@ -133,40 +179,81 @@ theme/
 ├── assets/
 │   ├── fonts/
 │   ├── images/
-│   ├── scripts/
-│   ├── scripts/
-│   │   └── min/
-│   └── styles/
-│       └── min/
-├── includes/
-│   ├── customize.php
-│   ├── defaults.php
-│   ├── extras.php
-│   ├── header.php
-│   ├── helpers.php
-│   ├── plugins.php
-│   ├── rgba.php
-│   └── widgets.php
-├── languages/
-│   └── genesis-starter.pot
-├── templates/
-│   ├── page-blank.php
-│   ├── page-builder.php
-│   └── page-landing.php
+│   ├── js/
+│   └── scss/
+├── config/
+│   └── config.php
+├── lib/
+│   ├── admin/
+│   │   ├── customizer-output.php
+│   │   └── customizer-settings.php
+│   ├── classes/
+│   │   ├── class-child-theme-demo-import.php
+│   │   ├── class-child-theme-rgba-customizer-control.php
+│   │   └── class-child-theme-tgm-plugin-activation.php
+│   ├── css/
+│   │   ├── customizer.css
+│   │   └── load-styles.php
+│   ├── functions/
+│   │   ├── attributes.php
+│   │   ├── autoload.php
+│   │   ├── defaults.php
+│   │   ├── general.php
+│   │   ├── hero.php
+│   │   ├── layout.php
+│   │   ├── markup.php
+│   │   ├── plugins.php
+│   │   ├── setup.php
+│   │   ├── templates.php
+│   │   ├── upgrade.php
+│   │   └── utilities.php
+│   ├── js/
+│   │   ├── customizer.js
+│   │   ├── load-scripts.php
+│   │   └── menus.js
+│   ├── languages/
+│   │   └── genesis-starter-theme.pot
+│   ├── shortcodes/
+│   │   └── footer.php
+│   ├── structure/
+│   │   ├── footer.php
+│   │   ├── header.php
+│   │   └── menu.php
+│   ├── views/
+│   │   ├── page-grid.php
+│   │   ├── page-blog.php
+│   │   ├── page-front.php
+│   │   ├── page-full.php
+│   │   ├── page-landing.php
+│   │   └── page-sitemap.php
+│   └── widgets/
+│       └── widgets.php
+├── .csscomb.json
 ├── .editorconfig
 ├── .gitignore
+├── .gitmodules
+├── .jsbeautifyrc
+├── .jshintrc
+├── .stylelintignore
+├── .stylelintscssrc.js
 ├── CHANGELOG.md
-├── front-page.php
+├── composer.json
+├── customizer.dat
 ├── functions.php
 ├── Gulpfile.js
 ├── LICENSE.md
-├── package.lock.json
 ├── package.json
+├── package.lock.json
+├── phpcs.xml.dist
 ├── README.md
 ├── sample.xml
 ├── screenshot.png
+├── setup.sh
 ├── style.css
-└── widgets.wie
+├── stylelint.config.js
+├── widgets.wie
+├── woocommerce.css
+└── yarn.lock
 ```
 
 ## Development
