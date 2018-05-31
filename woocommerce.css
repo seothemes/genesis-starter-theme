@@ -715,7 +715,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 600px) {
 	.woocommerce form .form-row-first,
 	.woocommerce-page form .form-row-first,
 	.woocommerce #reviews #comments .star-rating {
@@ -748,7 +748,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 }
 
-@media only screen and (min-width: 96rem) {
+@media only screen and (min-width: 960px) {
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
 	}
@@ -766,7 +766,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 }
 
-@media only screen and (min-width: 114rem) {
+@media only screen and (min-width: 1140px) {
 	.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
 	}

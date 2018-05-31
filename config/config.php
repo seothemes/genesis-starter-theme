@@ -41,23 +41,36 @@ return [
 	|--------------------------------------------------------------------------
 	*/
 	'colors' => [
+		'background' => [
+			'value' => 'rgba(255,255,255,1)',
+			'css'   => [
+				'rule' => [
+					'selectors'  => [
+						'body',
+					],
+					'properties' => [
+						'background-color',
+					],
+				],
+			],
+		],
 		'link' => [
-			'hex' => '#0073e5',
-			'css' => [
+			'value' => 'rgba(0,115,229,1)',
+			'css'   => [
 				'rule' => [
 					'selectors'  => [
 						'a',
-						'entry-title a:focus',
-						'entry-title a:hover',
-						'genesis-nav-menu a:focus',
-						'genesis-nav-menu a:hover',
-						'genesis-nav-menu .current-menu-item > a',
-						'genesis-nav-menu .sub-menu .current-menu-item > a:focus',
-						'genesis-nav-menu .sub-menu .current-menu-item > a:hover',
-						'menu-toggle:focus',
-						'menu-toggle:hover',
-						'sub-menu-toggle:focus',
-						'sub-menu-toggle:hover',
+						'.entry-title a:focus',
+						'.entry-title a:hover',
+						'.genesis-nav-menu a:focus',
+						'.genesis-nav-menu a:hover',
+						'.genesis-nav-menu .current-menu-item > a',
+						'.genesis-nav-menu .sub-menu .current-menu-item > a:focus',
+						'.genesis-nav-menu .sub-menu .current-menu-item > a:hover',
+						'.menu-toggle:focus',
+						'.menu-toggle:hover',
+						'.sub-menu-toggle:focus',
+						'.sub-menu-toggle:hover',
 					],
 					'properties' => [
 						'color',
@@ -66,8 +79,8 @@ return [
 			],
 		],
 		'accent' => [
-			'hex' => '#0073e5',
-			'css' => [
+			'value' => '#0073e5',
+			'css'   => [
 				'rule' => [
 					'selectors'  => [
 						'button:focus',
@@ -331,7 +344,7 @@ return [
 		],
 		'menu' => [
 			'handle'    => CHILD_THEME_HANDLE . '-menu',
-			'src'       => CHILD_THEME_LIB . '/js/menu.js',
+			'src'       => CHILD_THEME_URI . '/lib/js/menu.js',
 			'deps'      => [
 				'jquery',
 			],
@@ -351,7 +364,7 @@ return [
 	'styles' => [
 		'woocommerce' => [
 			'handle' => CHILD_THEME_HANDLE . '-woocommerce',
-			'src'    => CHILD_THEME_LIB . '/woocommerce.css',
+			'src'    => CHILD_THEME_URI . '/woocommerce.css',
 			'deps'   => [],
 			'ver'    => CHILD_THEME_VERSION,
 			'media'  => null,
