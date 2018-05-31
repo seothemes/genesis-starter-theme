@@ -2,14 +2,14 @@
 # Theme setup.
 
 # Defaults
-default_name="Genesis Starter"
-default_id="genesis_starter"
+default_name="Genesis Starter Theme"
+default_id="genesis-starter-theme"
 default_url="https://genesis-starter.test"
-default_locale="en"
 
 # Directories
 basedir="$( cd "$( dirname "$0" )" && pwd )/."
 assetsdir="$basedir/assets"
+sassdir="$basedir/assets/scss"
 basedir_all_files="$basedir/."
 setup_script="$basedir/setup.sh"
 
@@ -35,11 +35,12 @@ ${txtreset}"
 
 echo "1) Set name for your theme. (Default: $default_name)"
 read name
+
 # use default if empty
 if test -n "$name"; then
   echo ""
 else
-  id=$default_name
+  name=$default_name
 fi
 
 echo "2) Set unique id for your theme. Use only a-z and _. (Default: $default_id)"
@@ -82,8 +83,15 @@ echo "
 Run setup:
 =========="
 
+# ----------------------------------------------------------------
+# Search & Replace Name
+# ----------------------------------------------------------------
+
 # style.css
 find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
+
+# style.scss
+find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
 
 # PHP files
 find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
@@ -91,7 +99,14 @@ find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_
 # README.md
 find "$basedir" -name 'README.md' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
 
+# package.json
+find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
+
 echo "--> Search & replace name ... ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Search & Replace ID
+# ----------------------------------------------------------------
 
 # PHP files
 find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
@@ -99,24 +114,24 @@ find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_
 # style.css
 find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
 
-# bower.json
-find "$basedir" -name 'bower.json' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
+# style.scss
+find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
 
 # package.json
 find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
 
-# README.md
-find "$basedir" -name 'README.md' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
-
 echo "--> Search & replace id ..... ${green}done${txtreset}"
 
-# manifest.json
-find "$assetsdir" -name 'manifest.json' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
+# ----------------------------------------------------------------
+# Change dev URL
+# ----------------------------------------------------------------
+
+# Gulpfile.js
+find "$basedir" -name 'Gulpfile.js' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
 
 echo "--> Change url .............. ${green}done${txtreset}"
 
 echo "--> ${green}Setup complete!${txtreset}"
 
-echo "--> setup.sh removed"
-rm "$setup_script"
-
+# echo "--> setup.sh removed"
+# rm "$setup_script"

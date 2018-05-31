@@ -22,7 +22,7 @@ toolkit.extendConfig(
 			license: pkg.license,
 			licenseuri: pkg.theme.licenseuri,
 			tags: pkg.theme.tags,
-			textdomain: pkg.name,
+			textdomain: pkg.theme.textdomain,
 			domainpath: pkg.theme.domainpath,
 			template: pkg.theme.template,
 			notes: pkg.theme.notes
@@ -40,7 +40,7 @@ toolkit.extendConfig(
 			basefontsize: 10, // Used by postcss-pxtorem.
 			scss: {
 				'style': {
-					src: 'assets/scss/index.scss',
+					src: 'assets/scss/style.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				},

@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.0.0",
+  "version": "3.0.0-beta",
   "description": "A config based Genesis child theme with Gulp and Sass.",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   },
   "theme": {
     "name": "Genesis Starter Theme",
-    "uri": "http://www.seothemes.com/themes/genesis-starter/",
+    "uri": "https://seothemes.com/themes/genesis-starter-theme/",
     "authoruri": "https://seothemes.com",
     "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
     "domainpath": "/languages",

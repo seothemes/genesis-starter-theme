@@ -138,12 +138,17 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 
 ## Installation
 
-1. Upload and install Genesis
-2. Upload, install and activate Genesis Starter
-3. Install and activate recommended plugins
-4. *Important* Delete unwanted existing posts, pages, comments & widgets
-5. Import sample.xml from Tools > Import
-6. Import widgets.wie from Tools > Widget Importer & Exporter
+Make sure to do a "recursive" Git clone so that the child theme library will be added as a sub-module.
+
+```shell
+git clone --recurse-submodules https://github.com/seothemes/genesis-starter.git
+```
+
+Run the setup script and follow the command prompt.
+
+```shell
+sh setup.sh
+```
 
 ## Renaming
 

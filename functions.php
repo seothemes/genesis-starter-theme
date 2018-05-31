@@ -2,12 +2,12 @@
 /**
  * Genesis Starter Theme
  *
- * This file contains the core functionality for the Genesis Starter theme.
+ * This file contains the core functionality for the Genesis Starter Theme.
  *
  * @package   SEOThemes\GenesisStarter
  * @link      https://seothemes.com/themes/genesis-starter
  * @author    SEO Themes
- * @copyright Copyright © 2017 SEO Themes
+ * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-2.0+
  */
 
