@@ -59,6 +59,8 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 
 ## Installation
 
+### Git
+
 1. Do a "recursive" Git clone so that the child theme library will be added as a sub-module:
 
 ```shell
@@ -71,16 +73,56 @@ git clone --recurse-submodules https://github.com/seothemes/genesis-starter.git 
 cd theme-name
 ```
 
-Install node modules:
+3. Install node modules:
 
 ```shell
 yarn install
 ```
 
-Run the setup script and follow the command prompt:
+4. *(Optional)* Run the setup script and follow the command prompt:
 
 ```shell
 sh setup.sh
+```
+
+5. Run Gulp:
+
+```shell
+gulp
+```
+
+### Composer
+
+1. Open your project in the Terminal and from `wp-content/themes`, clone this repo:
+
+```shell
+git clone https://github.com/seothemes/genesis-starter.git theme-name
+```
+
+2. Navigate into the theme directory:
+
+```shell
+cd theme-name
+```
+
+3. Install Composer dependencies:
+
+```shell
+composer install
+```
+
+This does a number of things. First, it creates the `vendor/` directory where it installs some helpful Composer packages. Then, it installs our [child theme library](https://github.com/seothemes/child-theme-library) into the empty `lib/` directory. Finally it runs the `yarn install` command to install node modules.
+
+4. *(Optional)* Run the setup script and follow the command prompt:
+
+```shell
+sh setup.sh
+```
+
+5. Run Gulp:
+
+```shell
+gulp
 ```
 
 ## Customization
