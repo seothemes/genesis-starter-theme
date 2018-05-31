@@ -53,8 +53,9 @@ toolkit.extendConfig(
 		},
 		dest: {
             i18npo: './lib/languages/',
+            i18nmo: './lib/languages/',
 			images: './assets/images/',
-			js: './assets/js/min/'
+			js: './assets/js/'
 		},
 		server: {
             proxy: 'https://genesis-starter.test',
