@@ -1,0 +1,23 @@
+/* ## Genesis Simple FAQ
+--------------------------------------------- */
+
+.gs-faq__question {
+	background: transparent;
+	border-bottom: 1px solid #eee;
+	color: #333;
+	padding-left: 0;
+	padding-right: 0;
+	&:focus, &:hover {
+		background: transparent;
+		color: #0073e5;
+	}
+	&::after {
+		content: "\f132";
+		font-family: "dashicons";
+		float: right;
+	}
+	&.gs-faq--expanded::after {
+		content: "\f460";
+	}
+}
+

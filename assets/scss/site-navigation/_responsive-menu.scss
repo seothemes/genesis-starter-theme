@@ -1,0 +1,98 @@
+/* ## Responsive Menu
+--------------------------------------------- */
+
+.menu .menu-item {
+	&:focus {
+		position: static;
+	}
+	> a:focus + ul.sub-menu, &.sfHover > ul.sub-menu {
+		left: auto;
+		opacity: 1;
+	}
+}
+
+.genesis-responsive-menu {
+	display: none;
+	position: relative;
+	.genesis-nav-menu .menu-item:hover > .sub-menu {
+		display: none;
+	}
+}
+
+.menu-toggle, .sub-menu-toggle {
+	background-color: transparent;
+	border-width: 0;
+	color: #333;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	visibility: visible;
+}
+
+.menu-toggle {
+	&:focus, &:hover {
+		background-color: transparent;
+		border-width: 0;
+		color: #0073e5;
+	}
+}
+
+.sub-menu-toggle {
+	&:focus, &:hover {
+		background-color: transparent;
+		border-width: 0;
+		color: #0073e5;
+	}
+}
+
+.menu-toggle {
+	float: right;
+	line-height: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 15px 0;
+	position: relative;
+	z-index: 1000;
+	&.activated::before {
+		content: "\f335";
+	}
+}
+
+.site-header .menu-toggle::before {
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	text-rendering: auto;
+	top: 1px;
+}
+
+.sub-menu-toggle {
+	float: right;
+	padding: 9px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.sub-menu .sub-menu-toggle {
+	padding: 12px 10px;
+}
+
+.sub-menu-toggle {
+	&::before {
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-transform: rotate(0);
+		-ms-transform: rotate(0);
+		transform: rotate(0);
+		transition: transform .25s ease-in-out;
+	}
+	&.activated::before {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+}
+

@@ -6,10 +6,9 @@
 
 'use strict';
 
-let gulp    = require( 'gulp' ),
-	csscomb = require( 'gulp-csscomb' ),
-	pkg     = require( './package.json' ),
-	toolkit = require( 'gulp-wp-toolkit' );
+var gulp    = require( 'gulp' ),
+	toolkit = require( 'gulp-wp-toolkit' ),
+	pkg     = require( './package.json' );
 
 toolkit.extendConfig(
 	{
@@ -31,46 +30,41 @@ toolkit.extendConfig(
 		src: {
 			php: ['**/*.php', '!vendor/**'],
 			images: 'assets/images/**/*',
-			scss: 'assets/styles/**/*.scss',
+			scss: 'assets/scss/**/*.scss',
 			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
-			js: ['assets/scripts/**/*.js', '!node_modules/**'],
+			js: ['assets/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: 'languages/'
+			i18n: 'lib/languages/'
 		},
 		css: {
 			basefontsize: 10, // Used by postcss-pxtorem.
 			scss: {
 				'style': {
-					src: 'assets/styles/index.scss',
+					src: 'assets/scss/index.scss',
 					dest: './',
-					outputStyle: 'expanded',
+					outputStyle: 'expanded'
 				},
-				'style.min': {
-					src: 'assets/styles/index.scss',
-					dest: './assets/styles/min/',
-					outputStyle: 'compressed',
+				'woocommerce': {
+					src: 'assets/scss/woocommerce/index.scss',
+					dest: './',
+					outputStyle: 'expanded'
 				}
-			},
-		},
-		js: {
-			'theme': [
-				'scripts/scripts/scripts.js'
-			]
+			}
 		},
 		dest: {
+            i18npo: './lib/languages/',
 			images: './assets/images/',
-			js: './assets/scripts/min/'
+			js: './assets/js/min/'
 		},
 		server: {
-			url: 'https://genesis-starter.test'
+            proxy: 'https://genesis-starter.test',
+            port: '8000',
+            https: {
+                'key': '/Users/seothemes/.valet/Certificates/genesis-starter.test.key',
+                'cert': '/Users/seothemes/.valet/Certificates/genesis-starter.test.crt'
+            }
 		}
 	}
 );
 
-toolkit.extendTasks( gulp, {
-	csscomb: function() {
-			return gulp.src('./style.css')
-				.pipe(csscomb())
-				.pipe(gulp.dest('./'));
-		},
-} );
+toolkit.extendTasks( gulp );

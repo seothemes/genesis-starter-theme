@@ -1,0 +1,38 @@
+/* ## Titles
+--------------------------------------------- */
+
+.archive-description .entry-title, .archive-title, .author-box-title {
+	font-size: 20px;
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.entry-title {
+	font-size: 30px;
+	font-size: 3rem;
+	margin-bottom: 10px;
+	a {
+		color: #333;
+		text-decoration: none;
+	}
+}
+
+.sidebar .widget-title a {
+	color: #333;
+	text-decoration: none;
+}
+
+.entry-title a {
+	&:focus, &:hover {
+		color: #0073e5;
+	}
+}
+
+.widget-title {
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+

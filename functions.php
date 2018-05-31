@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-// Load SEOThemes Library (do not remove).
+// Load Child Theme Library (do not remove).
 require_once get_stylesheet_directory() . '/lib/init.php';
 
 /*

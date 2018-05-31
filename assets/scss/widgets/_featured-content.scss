@@ -1,0 +1,24 @@
+/* ## Featured Content
+--------------------------------------------- */
+
+.featured-content {
+	.entry {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 20px;
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+	}
+	.entry-image {
+		height: 75px;
+		width: 75px;
+	}
+	.entry-title {
+		font-size: 16px;
+		font-size: 1.6rem;
+		margin-bottom: 5px;
+		margin-top: 10px;
+	}
+}
+
