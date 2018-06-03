@@ -60,7 +60,7 @@ toolkit.extendConfig(
 		},
 		server: {
             proxy: 'http://genesis-starter.test',
-            port: '8000',
+            port: '8000'
             // https: {
             //     'key': '/Users/seothemes/.valet/Certificates/genesis-starter.test.key',
             //     'cert': '/Users/seothemes/.valet/Certificates/genesis-starter.test.crt'

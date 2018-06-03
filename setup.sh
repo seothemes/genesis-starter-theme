@@ -4,6 +4,9 @@
 # Defaults
 default_name="Genesis Starter Theme"
 default_id="genesis-starter-theme"
+default_author="SEO Themes"
+default_author_url="https://seothemes.com"
+default_package="SEOThemes\GenesisStarterTheme"
 default_url="https://genesis-starter.test"
 
 # Directories
@@ -53,7 +56,37 @@ else
   id=$default_id
 fi
 
-echo "3) Set local development url. (Default: $default_url)"
+echo "3) Set the author name for your theme. Use only a-z and _. (Default: $default_author)"
+read author
+
+# use default if empty
+if test -n "$author"; then
+  echo ""
+else
+  author=$default_author
+fi
+
+echo "4) Set the author URL for your theme. Use only a-z and _. (Default: $default_author_url)"
+read author_url
+
+# use default if empty
+if test -n "$author_url"; then
+  echo ""
+else
+  author_url=$default_author_url
+fi
+
+echo "5) Set the package name for your theme. Use only a-z and _. (Default: $default_package)"
+read package
+
+# use default if empty
+if test -n "$package"; then
+  echo ""
+else
+  package=$default_package
+fi
+
+echo "6) Set local development url. (Default: $default_url)"
 read url
 
 # use default if empty
@@ -64,10 +97,13 @@ else
 fi
 
 while true; do
-read -p "4) Is following information correct?
+read -p "9) Is following information correct?
 
 name: ${bold}${pink}$name${txtreset} (Default: $default_name)
 id: ${bold}${pink}$id${txtreset} (Default: $default_id)
+author: ${bold}${pink}$author${txtreset} (Default: $default_author)
+author_url: ${bold}${pink}$author_url${txtreset} (Default: $default_author_url)
+package: ${bold}${pink}$package${txtreset} (Default: $default_package)
 url: ${bold}${pink}$url${txtreset} (Default: $default_url)
 
 Proceed to install? [y/N]
@@ -121,6 +157,60 @@ find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_id|$i
 find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
 
 echo "--> Search & replace id ..... ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Change author
+# ----------------------------------------------------------------
+
+# PHP files
+find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
+
+# style.css
+find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
+
+# style.scss
+find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
+
+# package.json
+find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
+
+echo "--> Change author name .............. ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Change author URL
+# ----------------------------------------------------------------
+
+# PHP files
+find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
+
+# style.css
+find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
+
+# style.scss
+find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
+
+# package.json
+find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
+
+echo "--> Change author URL .............. ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Change package
+# ----------------------------------------------------------------
+
+# PHP files
+find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# style.css
+find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# style.scss
+find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# package.json
+find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+echo "--> Change package name .............. ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change dev URL

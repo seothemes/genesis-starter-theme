@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [3.0.0-beta] - 2018-06-01
+* Switch to Child Theme Library
+* Switch to Gulp WP Toolkit
+
 ## [2.2.7] - 2018-02-09
 * Add and run PostCSS auto focus gulp function
 * Add support for search and 404 page settings

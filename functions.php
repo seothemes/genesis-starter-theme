@@ -2,17 +2,17 @@
 /**
  * Genesis Starter Theme
  *
- * This file contains the core functionality for the Genesis Starter Theme.
+ * This file contains the core functionality for this child theme.
  *
- * @package   SEOThemes\GenesisStarter
- * @link      https://seothemes.com/themes/genesis-starter
+ * @package   SEOThemes\ChildThemeLibrary
+ * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-2.0+
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 
 	die;
 
