@@ -1,0 +1,22 @@
+/* # WooCommerce Product
+---------------------------------------------------------------------------------------------------- */
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: #0073e5;
+	line-height: 1.5;
+}
+
+.woocommerce div.product form.cart .button {
+	line-height: 1.5;
+}
+
+.woocommerce div.product form.cart .variations {
+	table-layout: fixed;
+}
+
+.woocommerce .woocommerce-variation-price {
+	margin-bottom: 20px;
+}
+
+

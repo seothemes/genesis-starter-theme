@@ -1,7 +1,15 @@
-# Ignore OS generated files
+# Ignore OS generated files.
 .DS_Store
 
 # Ignore node_modules.
-node_modules/
-aws.json
-ssl.json
+node_modules
+
+# Ignore vendor directory.
+vendor
+
+# Ignore auto-generated lock files.
+package-lock.json
+composer.lock
+
+# Ignore editor files.
+.idea

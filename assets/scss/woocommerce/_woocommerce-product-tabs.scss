@@ -1,0 +1,54 @@
+/* # WooCommerce Product Tabs
+---------------------------------------------------------------------------------------------------- */
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border-color: #eee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	border: 1px solid #eee;
+	background-color: #fff;
+	border-bottom: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+	display: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:last-child {
+	border-bottom: 1px solid #eee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+	border-bottom-color: #eee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	display: block;
+	padding: 0.5em 1em;
+	color: #000;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+	color: #0073e5;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a::after {
+	content: "\f147";
+	display: block;
+	float: right;
+	font-family: "dashicons";
+}
+
+

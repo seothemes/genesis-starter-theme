@@ -1,0 +1,167 @@
+@media (min-width: 960px) {
+	/* ## Site Header
+	--------------------------------------------- */
+	.site-header {
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+	}
+	/* ## Genesis Menu
+	--------------------------------------------- */
+	.genesis-nav-menu {
+		.menu-item {
+			display: inline-block;
+			&:focus, &:hover {
+				position: relative;
+			}
+		}
+		> {
+			.menu-bold > a {
+				font-weight: 700;
+			}
+			.menu-highlight > a {
+				background-color: #333;
+				border-radius: 3px;
+				color: #fff;
+				font-weight: 600;
+				margin-left: 15px;
+				padding-left: 20px;
+				padding-right: 20px;
+				&:focus, &:hover {
+					background-color: #0073e5;
+				}
+			}
+		}
+		.sub-menu {
+			width: 180px;
+			a {
+				width: 180px;
+				border: 1px solid #eee;
+				border-top: 0;
+				padding-bottom: 15px;
+				padding-top: 15px;
+			}
+			border-top: 1px solid #eee;
+			opacity: 0;
+			padding-left: 0;
+			position: absolute;
+			transition: opacity .4s ease-in-out;
+			.sub-menu {
+				margin: -46px 0 0 179px;
+			}
+		}
+	}
+	/* ## Responsive Menu
+	--------------------------------------------- */
+	.genesis-responsive-menu {
+		display: block;
+		padding-top: 15px;
+	}
+	.menu-toggle, .sub-menu-toggle {
+		display: none;
+		visibility: hidden;
+	}
+	/* ## Header Menu
+	--------------------------------------------- */
+	.nav-primary {
+		clear: none;
+		float: right;
+		width: auto;
+		.genesis-nav-menu a {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	/* ## Site-Inner
+	--------------------------------------------- */
+	.site-inner {
+		margin-top: 70px;
+		max-width: 1140px;
+	}
+	/* ## Content
+	--------------------------------------------- */
+	.content {
+		float: left;
+		width: 65%;
+	}
+	.sidebar-content .content {
+		float: right;
+	}
+	.full-width-content .content, .landing-page .content {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/* ## Sidebar
+	--------------------------------------------- */
+	.sidebar {
+		float: right;
+		width: 30%;
+	}
+	.sidebar-content .sidebar {
+		float: left;
+	}
+	/* ## Author Box
+	--------------------------------------------- */
+	.author-box {
+		background-color: #f5f5f5;
+		padding: 30px;
+	}
+	/* ## After Entry
+	--------------------------------------------- */
+	.after-entry {
+		padding: 40px 60px;
+		.enews {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	/* ## Column Classes
+	--------------------------------------------- */
+	.five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds {
+		float: left;
+		margin-left: 2.564102564102564%;
+	}
+	.one-half, .three-sixths, .two-fourths {
+		width: 48.717948717948715%;
+	}
+	.one-third, .two-sixths {
+		width: 31.623931623931625%;
+	}
+	.four-sixths, .two-thirds {
+		width: 65.81196581196582%;
+	}
+	.one-fourth {
+		width: 23.076923076923077%;
+	}
+	.three-fourths {
+		width: 74.35897435897436%;
+	}
+	.one-sixth {
+		width: 14.52991452991453%;
+	}
+	.five-sixths {
+		width: 82.90598290598291%;
+	}
+	.first {
+		clear: both;
+		margin-left: 0;
+	}
+	/* ## Entry Misc.
+	--------------------------------------------- */
+	.after-entry, .archive-description, .author-box, .comment-respond, .entry, .entry-comments, .entry-pings {
+		margin-bottom: 60px;
+	}
+	/* ## Footer Widgets
+	--------------------------------------------- */
+	.footer-widgets .wrap {
+		max-width: 1140px;
+	}
+	.footer-widget-area {
+		float: left;
+		margin-bottom: 0;
+		width: 33.33%;
+		/* fallback for older browsers */
+		width: calc(100% / 3);
+	}
+}

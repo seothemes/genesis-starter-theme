@@ -1,0 +1,34 @@
+.widget {
+	margin-bottom: 40px;
+	p:last-child {
+		margin-bottom: 0;
+	}
+	ul > li {
+		&:last-of-type {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		margin-bottom: 10px;
+	}
+	ol > li {
+		list-style-position: inside;
+		list-style-type: decimal;
+		padding-left: 20px;
+		text-indent: -20px;
+	}
+	li li {
+		border: 0;
+		margin: 0 0 0 30px;
+		padding: 0;
+	}
+}
+
+.widget_calendar {
+	table {
+		width: 100%;
+	}
+	td, th {
+		text-align: center;
+	}
+}
+

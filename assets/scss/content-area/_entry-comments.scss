@@ -1,0 +1,51 @@
+/* ## Entry Comments
+--------------------------------------------- */
+
+.comment-respond, .entry-comments, .entry-pings {
+	font-size: 18px;
+	font-size: 1.8rem;
+	margin-bottom: 40px;
+}
+
+.comment-list {
+	li {
+		padding: 40px 0 0 30px;
+	}
+	.depth-1 {
+		padding-left: 0;
+	}
+	.bypostauthor {
+	}
+}
+
+.comment-header {
+	margin-bottom: 30px;
+}
+
+.comment-content {
+	clear: both;
+	ul > li {
+		list-style-type: disc;
+	}
+}
+
+.comment-respond {
+	input {
+		&[type="email"], &[type="text"], &[type="url"] {
+			width: 50%;
+		}
+	}
+	label {
+		display: block;
+		margin-right: 12px;
+	}
+}
+
+.comment-header p {
+	margin-bottom: 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+

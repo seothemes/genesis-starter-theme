@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [3.0.0-beta] - 2018-06-01
+* Switch to Child Theme Library
+* Switch to Gulp WP Toolkit
+
 ## [2.2.7] - 2018-02-09
 * Add and run PostCSS auto focus gulp function
 * Add support for search and 404 page settings
@@ -16,10 +20,10 @@
 * Add Blank Page page template
 * Add sourcemaps for WooCommerce styles
 * Add Customizer data and jsbeautify config
-* Fix page-header removal in all page templates
-* Fix page-header CSS being output when no header image is set
+* Fix hero-section removal in all page templates
+* Fix hero-section CSS being output when no header image is set
 * Fix strings in functions for gulp rename issue
-* Fix page-header height when nav-secondary is active
+* Fix hero-section height when nav-secondary is active
 * Remove theme support for title-tag to fix SEO settings conflict
 * Remove Gravity Forms CSS override
 
@@ -51,7 +55,7 @@
 * Update front page template
 
 ## [2.2.0] - 2017-09-10
-* Add page-header section
+* Add hero-section section
 * Add custom 404 template
 * Avoid hijacking the genesis flow on front page template
 * Add custom header callback
@@ -171,7 +175,7 @@
 
 ## [1.3.1] - 2017-02-26
 * Add readme & changelog
-* Update gulpfile.js to enable theme packaging
+* Update Gulpfile.js to enable theme packaging
 * Remove font variables in functions.php
 
 ## [1.3.0] - 2017-02-26
