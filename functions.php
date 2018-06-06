@@ -4,7 +4,7 @@
  *
  * This file contains the core functionality for this child theme.
  *
- * @package   SEOThemes\ChildThemeLibrary
+ * @package   SEOThemes\GenesisStarterTheme
  * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
