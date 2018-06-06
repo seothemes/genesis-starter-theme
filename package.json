@@ -11,7 +11,7 @@
   "main": "Gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-wp-toolkit": "^2.1"
+    "gulp-wp-toolkit": "^2.3.2"
   },
   "theme": {
     "name": "Genesis Starter Theme",

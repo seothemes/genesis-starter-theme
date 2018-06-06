@@ -26,13 +26,13 @@ return [
 	|--------------------------------------------------------------------------
 	*/
 	'autoload'            => [
-		'/functions',
-		'/structure',
-		'/shortcodes',
-		'/widgets',
-		'/admin',
-		'/css',
-		'/js',
+		'/lib/functions',
+		'/lib/structure',
+		'/lib/shortcodes',
+		'/lib/widgets',
+		'/lib/admin',
+		'/lib/css',
+		'/lib/js',
 	],
 
 	/*
@@ -102,7 +102,6 @@ return [
 						'.genesis-nav-menu > .menu-highlight.current-menu-item > a',
 					],
 					'properties' => [
-						'color',
 						'background-color',
 					],
 				],
@@ -128,7 +127,7 @@ return [
 	| Demo Import
 	|--------------------------------------------------------------------------
 	*/
-	'demo-import' => [
+	'demo-import'         => [
 		'local_import_file'            => CHILD_THEME_DIR . '/sample.xml',
 		'local_import_widget_file'     => CHILD_THEME_DIR . '/widgets.wie',
 		'local_import_customizer_file' => CHILD_THEME_DIR . '/customizer.dat',
@@ -285,6 +284,11 @@ return [
 	*/
 	'plugins'             => [
 		[
+			'name'     => 'Genesis eNews Extended',
+			'slug'     => 'genesis-enews-extended',
+			'required' => false,
+		],
+		[
 			'name'     => 'Genesis Widget Column Classes',
 			'slug'     => 'genesis-widget-column-classes',
 			'required' => false,
@@ -344,7 +348,6 @@ return [
 		'menuClasses'      => [
 			'combine' => [
 				'.nav-primary',
-				'.nav-secondary',
 			],
 		],
 	],
@@ -366,7 +369,7 @@ return [
 			'ver'       => CHILD_THEME_VERSION,
 			'in_footer' => true,
 		],
-		'menu' => [
+		'menu'    => [
 			'src'       => CHILD_THEME_URI . '/lib/js/menu.js',
 			'deps'      => 'jquery',
 			'ver'       => CHILD_THEME_VERSION,
@@ -392,27 +395,27 @@ return [
 	*/
 	'simple-social-icons' => [
 		// 'title'                  => '',
-		'new_window' => 1,
-		// 'size'                   => 36,
+		'new_window'             => 1,
+		'size'                   => 40,
 		// 'border_radius'          => 3,
 		// 'border_width'           => 0,
 		// 'border_color'           => '#ffffff',
 		// 'border_color_hover'     => '#ffffff',
-		// 'icon_color'             => '#ffffff',
+		'icon_color'             => '#333333',
 		// 'icon_color_hover'       => '#ffffff',
-		// 'background_color'       => '#999999',
-		// 'background_color_hover' => '#666666',
+		'background_color'       => '#f5f5f5',
+		'background_color_hover' => '#333333',
 		// 'alignment'              => 'alignleft',
 		// 'behance'                => '',
 		// 'bloglovin'              => '',
 		// 'dribbble'               => '',
 		// 'email'                  => '',
-		'facebook'   => '#',
+		// 'facebook'   => '#',
 		// 'flickr'                 => '',
 		// 'github'                 => '',
-		'gplus'      => '#',
+		// 'gplus'      => '#',
 		// 'instagram'              => '',
-		'linkedin'   => '#',
+		// 'linkedin'   => '#',
 		// 'medium'                 => '',
 		// 'periscope'              => '',
 		// 'phone'                  => '',
@@ -421,10 +424,10 @@ return [
 		// 'snapchat'               => '',
 		// 'stumbleupon'            => '',
 		// 'tumblr'                 => '',
-		'twitter'    => '#',
+		// 'twitter'    => '#',
 		// 'vimeo'                  => '',
 		// 'xing'                   => '',
-		'youtube'    => '#',
+		// 'youtube'    => '#',
 	],
 
 	/*
@@ -549,7 +552,7 @@ return [
 		'gutenberg'                => [
 			'wide-images' => true,
 		],
-		'hero-section',
+		// 'hero-section',
 		'html5'                    => [
 			'caption',
 			'comment-form',
@@ -588,20 +591,20 @@ return [
 	*/
 	'widget-areas'        => [
 		// 'header-right'   => null,
-		// 'sidebar'        => null,
+		'sidebar'        => null,
 		// 'sidebar-alt'    => null,
-		// 'after-entry'    => null,
+		'after-entry'    => null,
 		'footer-1'       => null,
 		'footer-2'       => null,
 		'footer-3'       => null,
-		'footer-4'       => null,
 		'before-header'  => 'genesis_before_header_wrap',
-		'front-page-1'   => 'front_page_widgets',
-		'front-page-2'   => 'front_page_widgets',
-		'front-page-3'   => 'front_page_widgets',
-		'front-page-4'   => 'front_page_widgets',
 		'before-footer'  => 'genesis_before_footer_wrap',
 		'footer-credits' => 'genesis_after_footer_wrap',
+		// 'front-page-1'   => 'front_page_widgets',
+		// 'front-page-2'   => 'front_page_widgets',
+		// 'front-page-3'   => 'front_page_widgets',
+		// 'front-page-4'   => 'front_page_widgets',
+		// 'front-page-5'   => 'front_page_widgets',
 	],
 
 	/*
@@ -642,23 +645,23 @@ return [
 		// 'Genesis_User_Profile_Widget',
 
 		// WooCommerce.
-		// 'WC_Widget_Products',
-		// 'WC_Widget_Recent_Products',
-		// 'WC_Widget_Featured_Products',
-		// 'WC_Widget_Product_Categories',
-		// 'WC_Widget_Product_Tag_Cloud',
-		// 'WC_Widget_Cart',
-		// 'WC_Widget_Layered_Nav',
-		// 'WC_Widget_Layered_Nav_Filters',
-		// 'WC_Widget_Price_Filter',
-		// 'WC_Widget_Rating_Filter',
-		// 'WC_Widget_Product_Search',
-		// 'WC_Widget_Top_Rated_Products',
-		// 'WC_Widget_Recent_Reviews',
-		// 'WC_Widget_Recently_Viewed',
-		// 'WC_Widget_Best_Sellers',
-		// 'WC_Widget_Onsale',
-		// 'WC_Widget_Random_Products',
+		'WC_Widget_Products',
+		'WC_Widget_Recent_Products',
+		'WC_Widget_Featured_Products',
+		'WC_Widget_Product_Categories',
+		'WC_Widget_Product_Tag_Cloud',
+		'WC_Widget_Cart',
+		'WC_Widget_Layered_Nav',
+		'WC_Widget_Layered_Nav_Filters',
+		'WC_Widget_Price_Filter',
+		'WC_Widget_Rating_Filter',
+		'WC_Widget_Product_Search',
+		'WC_Widget_Top_Rated_Products',
+		'WC_Widget_Recent_Reviews',
+		'WC_Widget_Recently_Viewed',
+		'WC_Widget_Best_Sellers',
+		'WC_Widget_Onsale',
+		'WC_Widget_Random_Products',
 
 	]
 
