@@ -2,9 +2,7 @@
 
 This is a developer-friendly starter theme used for creating Premium child themes for the Genesis Framework. 
 
-It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) which contains all of the theme's logic which can be customized from the theme's configuration file.
-
-It uses the [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images.
+It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) which contains all of the theme's logic which can be customized from the theme's configuration file. [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) is used to automate mundane build tasks like compiling SCSS and minifying images.
 
 Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 
@@ -142,6 +140,7 @@ theme/
 ├── .stylelintscssrc.js
 ├── CHANGELOG.md
 ├── composer.json
+├── composer.lock
 ├── customizer.dat
 ├── functions.php
 ├── Gulpfile.js
@@ -183,6 +182,7 @@ A shout out to anyone who's code was used:
 - Tim Jensen
 - Craig Watson
 - Sridhar Katakam
+- Christoph Herr
 - Bill Erickson
 - Chinmoy Paul
 - Nathan Rice
