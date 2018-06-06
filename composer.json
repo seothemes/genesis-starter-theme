@@ -16,17 +16,12 @@
     "issues": "https://github.com/seothemes/genesis-starter/issues",
     "source": "https://github.com/seothemes/genesis-starter"
   },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/seothemes/child-theme-library.git"
-    }
-  ],
   "require": {
     "seothemes/child-theme-library": "dev-master",
     "mnsami/composer-custom-directory-installer": "1.1.*"
   },
   "require-dev": {},
+  "suggest": {},
   "config": {
     "sort-order": true
   },
@@ -38,9 +33,14 @@
     }
   },
   "scripts": {
+    "post-create-project-cmd": [
+      "yarn install"
+    ],
     "post-install-cmd": [
-      "yarn install",
-      "sh setup.sh"
+      "yarn install"
+    ],
+    "post-update-cmd": [
+      "yarn install"
     ]
   }
 }

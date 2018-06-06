@@ -86,7 +86,7 @@ else
   package=$default_package
 fi
 
-echo "6) Set local development url. (Default: $default_url)"
+echo "6) Set local development url. Note: An SSL is required to use HTTPS (Default: $default_url)"
 read url
 
 # use default if empty

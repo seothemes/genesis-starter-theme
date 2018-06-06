@@ -30,14 +30,14 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 			<td><a href="http://nodejs.org/" target="_blank">nodejs.org</a></td>
 		</tr>
 		<tr>
-			<td>yarn 0.2.x</td>
+			<td>Yarn 0.2.x</td>
 			<td><code>yarn -v</code></td>
-			<td><code><a href="https://yarnpkg.com/en/docs/instal" target="_blank">Install Yarn</a></code></td>
+			<td><a href="https://yarnpkg.com/lang/en/docs/install/#mac-stable" target="_blank">yarnpkg.com</a></td>
 		</tr>
 		<tr>
 			<td>Gulp CLI</td>
 			<td><code>gulp -v</code></td>
-			<td><code>npm install -g gulp-cli</td>
+			<td><a href="https://gulpjs.com/" target="_blank">gulpjs.com</a></td>
 		</tr>
 		<tr>
             <td>WordPress >= 4.8</td>
@@ -54,67 +54,59 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 
 ## Installation
 
-### Git
+### Composer
 
-1. Do a "recursive" Git clone so that the child theme library will be added as a sub-module (change "your-theme-name" where necessary):
+Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-git clone --recurse-submodules https://github.com/seothemes/genesis-starter.git your-theme-name
+composer create-project seothemes/genesis-starter-theme your-theme-name dev-master
 ```
 
-2. Navigate into the theme directory:
+Navigate into the theme root directory:
 
 ```shell
 cd your-theme-name
 ```
 
-3. Install node modules:
-
-```shell
-yarn install
-```
-
-4. *(Optional)* Run the setup script and follow the command prompt:
+Run the setup script to rename the theme:
 
 ```shell
 sh setup.sh
 ```
 
-5. Run Gulp:
+Run Gulp to kick-off development:
 
 ```shell
 gulp
 ```
 
-### Composer
+### Git
 
-1. Open your project in the Terminal and from `wp-content/themes`, clone this repo (change "your-theme-name" where necessary):
+Do a "recursive" Git clone so that the child theme library will be added as a sub-module (change "your-theme-name" where necessary):
 
 ```shell
-git clone https://github.com/seothemes/genesis-starter.git theme-name
+git clone --recurse-submodules https://github.com/seothemes/genesis-starter-theme.git your-theme-name
 ```
 
-2. Navigate into the theme directory:
+Navigate into the theme directory:
 
 ```shell
 cd your-theme-name
 ```
 
-3. Install Composer dependencies:
-
-```shell
-composer install
-```
-
-This does a number of things. First, it creates the `vendor/` directory where it installs some helpful Composer packages. Then, it installs our [child theme library](https://github.com/seothemes/child-theme-library) into the empty `lib/` directory. Finally it runs the `yarn install` command to install node modules.
-
-4. *(Optional)* Run the setup script and follow the command prompt:
+Run the setup script to rename the theme:
 
 ```shell
 sh setup.sh
 ```
 
-5. Run Gulp:
+Install node modules:
+
+```shell
+yarn install
+```
+
+Run Gulp to kick-off development:
 
 ```shell
 gulp
@@ -122,11 +114,11 @@ gulp
 
 ### Manual
 
-1. Download the zip file and upload to your WordPress installation.
+Download the zip file and upload to your WordPress installation.
 
-2. Replace any occurrences of 'Genesis Starter Theme' with your theme name and 'genesis-starter-theme' with your theme's ID.
+Replace any occurrences of 'Genesis Starter Theme' with your theme name and 'genesis-starter-theme' with your theme's ID.
 
-3. Open the theme in your Terminal and run `Gulp` to kick off the build process.
+Open the theme in your Terminal and run `Gulp` to kick off the build process.
 
 ## Structure
 
