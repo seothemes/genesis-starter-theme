@@ -11,7 +11,10 @@
   "main": "Gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-wp-toolkit": "^2.3.2"
+    "gulp-wp-toolkit": "^2.3.2",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-order": "^0.8.1"
   },
   "theme": {
     "name": "Genesis Starter Theme",

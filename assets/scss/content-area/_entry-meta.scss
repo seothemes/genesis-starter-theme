@@ -1,27 +1,29 @@
 /* ## Entry Meta
 --------------------------------------------- */
 
-p.entry-meta {
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: 0;
+.entry-meta {
+
+	p {
+		margin-bottom: 0;
+		font-size: $entry-meta--font-size;
+	}
+
+	.entry-header & {
+		margin-bottom: 20px;
+	}
+
+	.entry-footer & {
+		padding-top: 20px;
+		border-top: $border-width $border-style $border-color;
+	}
 }
 
-.entry-header .entry-meta {
-	margin-bottom: 20px;
-}
-
-.entry-footer .entry-meta {
-	border-top: 1px solid #eee;
-	padding-top: 20px;
-}
-
-.entry-categories, .entry-tags {
+.entry-categories,
+.entry-tags {
 	display: block;
 }
 
-.entry-comments-link::before {
-	content: "\2014";
+.entry-comments-link:before {
 	margin: 0 6px 0 2px;
+	content: "\2014";
 }
-

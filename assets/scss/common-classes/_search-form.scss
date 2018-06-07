@@ -6,21 +6,21 @@
 }
 
 .entry-content .search-form {
-	margin-bottom: 40px;
 	width: 50%;
+	margin-bottom: 40px;
 }
 
-.post-password-form input[type="submit"], .search-form input[type="submit"] {
+.post-password-form input[type="submit"],
+.search-form input[type="submit"] {
 	margin-top: 10px;
 }
 
 .widget_search input[type="submit"] {
-	border: 0;
 	clip: rect(0, 0, 0, 0);
+	position: absolute;
+	width: 1px;
 	height: 1px;
 	margin: -1px;
 	padding: 0;
-	position: absolute;
-	width: 1px;
+	border: 0;
 }
-

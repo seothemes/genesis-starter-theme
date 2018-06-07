@@ -3,8 +3,20 @@
 
 .nav-primary {
 	clear: left;
-	padding-bottom: 15px;
-	padding-top: 15px;
 	width: 100%;
-}
 
+	@media only screen and (min-width: $standard-screen-width) {
+		float: right;
+		clear: none;
+		width: auto;
+		padding-top: 15px;
+	}
+
+	.genesis-nav-menu a {
+
+		@media only screen and (min-width: $standard-screen-width) {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+}

@@ -2,51 +2,47 @@
 --------------------------------------------- */
 
 html {
-	font-size: 62.5%;
-	/* 10px browser default */
+	font-size: 62.5%; /* 10px browser default */
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 /* Chrome fix */
+body > div {
+	font-size: $body--font-size;
+}
 
 body {
-	> div {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
-	background-color: #fff;
-	color: #333;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
-	font-size: 1.8rem;
-	font-weight: 400;
-	line-height: 1.625;
 	margin: 0;
+	color: $body--font-color;
+	background-color: $body--background-color;
+	font-family: $body--font-family;
+	font-size: $body--font-size;
+	font-weight: $font-weight--regular;
+	line-height: $line-height--normal;
 }
 
-button {
-	transition: all 0.2s ease-in-out;
-}
-
-input {
-	&:focus, &[type="button"], &[type="reset"], &[type="submit"] {
-		transition: all 0.2s ease-in-out;
-	}
-}
-
-textarea:focus, .button, .gallery img {
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
 	transition: all 0.2s ease-in-out;
 }
 
 a {
-	color: #0073e5;
+	color: $link--font-color;
 	text-decoration: underline;
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	&:focus, &:hover {
-		color: #333;
-		text-decoration: none;
-	}
+}
+
+a:focus,
+a:hover {
+	color: $link--font-color-hover;
+	text-decoration: none;
 }
 
 p {
@@ -54,7 +50,8 @@ p {
 	padding: 0;
 }
 
-ol, ul {
+ol,
+ul {
 	margin: 0;
 	padding: 0;
 }
@@ -64,37 +61,40 @@ li {
 }
 
 hr {
-	border: 0;
-	border-collapse: collapse;
-	border-top: 1px solid #eee;
 	clear: both;
 	margin: 30px 0;
+	border: 0;
+	border-top: $border-width $border-style $border-color;
+	border-collapse: collapse;
 }
 
-b, strong {
-	font-weight: 700;
+b,
+strong {
+	font-weight: $font-weight--bold;
 }
 
-blockquote, cite, em, i {
+blockquote,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
 mark {
-	background: #ddd;
-	color: #333;
+	background: $mark--background-color;
 }
 
 blockquote {
 	margin: 30px;
-	&::before {
-		content: "\201C";
+
+	&:before {
 		display: block;
-		font-size: 30px;
-		font-size: 3rem;
-		height: 0;
-		left: -20px;
 		position: relative;
 		top: -10px;
+		left: -20px;
+		height: 0;
+		font-size: 30px;
+		font-size: 3rem;
+		content: "\201C";
 	}
 }
-

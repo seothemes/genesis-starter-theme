@@ -1,37 +1,37 @@
 /* ## Headings
 --------------------------------------------- */
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 400;
-	line-height: 1.2;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0 0 20px;
+	font-family: $headings--font-family;
+	font-weight: $font-weight--regular;
+	line-height: $line-height--small;
 }
 
 h1 {
-	font-size: 30px;
-	font-size: 3rem;
+	font-size: $h1--font-size;
 }
 
 h2 {
-	font-size: 27px;
-	font-size: 2.7rem;
+	font-size: $h2--font-size;
 }
 
-.entry-content {
-	h3, h4 {
-		font-weight: 600;
-	}
+.entry-content h3,
+.entry-content h4 {
+	font-weight: $font-weight--semibold;
 }
 
 h3 {
-	font-size: 24px;
-	font-size: 2.4rem;
+	font-size: $h3--font-size;
 }
 
 h4 {
-	font-size: 20px;
-	font-size: 2rem;
+	font-size: $h4--font-size;
 }
 
 .entry-content h4 {
@@ -39,12 +39,9 @@ h4 {
 }
 
 h5 {
-	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: $h5--font-size;
 }
 
 h6 {
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: $h6--font-size;
 }
-

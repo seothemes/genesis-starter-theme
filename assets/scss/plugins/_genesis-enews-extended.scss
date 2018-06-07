@@ -1,32 +1,41 @@
 /* ## Genesis eNews Extended
 --------------------------------------------- */
 
-.after-entry .enews {
-	text-align: center;
-	padding: 10px;
+.enews {
+
+	form + p {
+		margin-top: 20px;
+	}
+
+	.after-entry & {
+		padding: 10px;
+		text-align: center;
+
+		@media only screen and (min-width: $standard-screen-width) {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	.sidebar & {
+		padding: 30px;
+		background-color: $enews__sidebar--background-color;
+	}
 }
 
-.sidebar .enews {
-	background-color: #f5f5f5;
-	padding: 30px;
-}
+.enews-widget {
 
-.enews-widget input {
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: 10px;
-}
+	input {
+		margin-bottom: 10px;
+		font-size: $enews-widget__input--font-size;
+	}
 
-.after-entry .enews-widget input {
-	text-align: center;
-}
+	input[type="submit"] {
+		width: 100%;
+		margin: 0;
+	}
 
-.enews-widget input[type="submit"] {
-	margin: 0;
-	width: 100%;
+	.after-entry & input {
+		text-align: center;
+	}
 }
-
-.enews form + p {
-	margin-top: 20px;
-}
-

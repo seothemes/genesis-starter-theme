@@ -1,0 +1,40 @@
+/* # WooCommerce Product
+---------------------------------------------------------------------------------------------------- */
+
+.woocommerce {
+
+	div.product {
+
+		p.price,
+		span.price {
+			color: #0073e5;
+			line-height: 1.5;
+		}
+
+		form.cart {
+
+			.button {
+				line-height: 1.5;
+			}
+
+			.variations {
+				table-layout: fixed;
+			}
+		}
+	}
+
+	.woocommerce-variation-price {
+		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (min-width: $small-screen-width) {
+
+	.woocommerce ul.products li.product .button,
+	.woocommerce .woocommerce-ordering,
+	.woocommerce-page ul.products li.product .button,
+	.woocommerce-page .woocommerce-ordering {
+		width: auto;
+		margin-right: auto;
+	}
+}

@@ -2,42 +2,39 @@
 ---------------------------------------------------------------------------------------------------- */
 
 @media print {
-	* {
+
+	*,
+	*:before,
+	*:after {
+		color: #333 !important;
 		background: transparent !important;
 		box-shadow: none !important;
-		color: #333 !important;
 		text-shadow: none !important;
-		&::before, &::after {
-			background: transparent !important;
-			box-shadow: none !important;
-			color: #333 !important;
-			text-shadow: none !important;
-		}
 	}
-	a {
+
+	a,
+	a:visited {
 		text-decoration: underline;
-		&:visited {
-			text-decoration: underline;
-		}
-		&[href]::after {
-			content: " (" attr(href) ")";
-		}
 	}
-	abbr[title]::after {
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
 		content: " (" attr(title) ")";
 	}
-	a {
-		&[href^="javascript:"]::after, &[href^="#"]::after {
-			content: "";
-		}
-	}
-	.site-title > a::after {
+
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after,
+	.site-title > a:after {
 		content: "";
 	}
 	thead {
 		display: table-header-group;
 	}
-	img, tr {
+	img,
+	tr {
 		page-break-inside: avoid;
 	}
 	img {
@@ -46,24 +43,46 @@
 	@page {
 		margin: 2cm 0.5cm;
 	}
-
-	p, h2, h3 {
+	p,
+	h2,
+	h3 {
 		orphans: 3;
 		widows: 3;
 	}
-	blockquote, pre {
+	blockquote,
+	pre {
 		border: 1px solid #999;
 		page-break-inside: avoid;
 	}
-	.content, .content-sidebar {
+	.content,
+	.content-sidebar {
 		width: 100%;
 	}
-	button, input, select, textarea, .breadcrumb, .comment-edit-link, .comment-form, .comment-list .reply a, .comment-reply-title, .edit-link, .entry-comments-link, .entry-footer, .genesis-box, .header-widget-area, .hidden-print, .home-top, .nav-primary, .nav-secondary, .post-edit-link, .sidebar {
+	button,
+	input,
+	select,
+	textarea,
+	.breadcrumb,
+	.comment-edit-link,
+	.comment-form,
+	.comment-list .reply a,
+	.comment-reply-title,
+	.edit-link,
+	.entry-comments-link,
+	.entry-footer,
+	.genesis-box,
+	.header-widget-area,
+	.hidden-print,
+	.home-top,
+	.nav-primary,
+	.nav-secondary,
+	.post-edit-link,
+	.sidebar {
 		display: none !important;
 	}
 	.title-area {
-		text-align: center;
 		width: 100%;
+		text-align: center;
 	}
 	.site-title > a {
 		margin: 0;
@@ -71,14 +90,19 @@
 		text-indent: 0;
 	}
 	.site-inner {
-		padding-top: 0;
 		position: relative;
 		top: -100px;
+		padding-top: 0;
 	}
 	.author-box {
 		margin-bottom: 0;
 	}
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		orphans: 3;
 		page-break-after: avoid;
 		page-break-inside: avoid;
@@ -88,10 +112,14 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 	}
-	blockquote, pre, table {
+	blockquote,
+	pre,
+	table {
 		page-break-inside: avoid;
 	}
-	dl, ol, ul {
+	dl,
+	ol,
+	ul {
 		page-break-before: avoid;
 	}
 }

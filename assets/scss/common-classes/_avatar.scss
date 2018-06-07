@@ -2,19 +2,19 @@
 --------------------------------------------- */
 
 .avatar {
-	border-radius: 50%;
 	float: left;
-}
+	border-radius: 50%;
 
-.author-box .avatar, .alignleft .avatar {
-	margin-right: 20px;
-}
+	.author-box &,
+	.alignleft & {
+		margin-right: 20px;
+	}
 
-.alignright .avatar {
-	margin-left: 20px;
-}
+	.alignright & {
+		margin-left: 20px;
+	}
 
-.comment .avatar {
-	margin: 0 15px 20px 0;
+	.comment & {
+		margin: 0 15px 20px 0;
+	}
 }
-

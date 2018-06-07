@@ -1,34 +1,41 @@
 .widget {
 	margin-bottom: 40px;
-	p:last-child {
+
+	p:last-child,
+	ul > li:last-of-type {
 		margin-bottom: 0;
 	}
+
 	ul > li {
-		&:last-of-type {
-			margin-bottom: 0;
-			padding-bottom: 0;
-		}
 		margin-bottom: 10px;
 	}
+
+	ul > li:last-of-type {
+		padding-bottom: 0;
+	}
+
 	ol > li {
-		list-style-position: inside;
-		list-style-type: decimal;
 		padding-left: 20px;
 		text-indent: -20px;
+		list-style-position: inside;
+		list-style-type: decimal;
 	}
+
 	li li {
-		border: 0;
 		margin: 0 0 0 30px;
 		padding: 0;
+		border: 0;
 	}
 }
 
 .widget_calendar {
+
 	table {
 		width: 100%;
 	}
-	td, th {
+
+	td,
+	th {
 		text-align: center;
 	}
 }
-

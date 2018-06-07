@@ -2,23 +2,25 @@
 --------------------------------------------- */
 
 .featured-content {
+
 	.entry {
-		border-bottom: 1px solid #eee;
 		margin-bottom: 20px;
-		&:last-of-type {
-			border-bottom: none;
-			margin-bottom: 0;
-		}
+		border-bottom: $border-width $border-style $border-color;
 	}
+
+	.entry:last-of-type {
+		margin-bottom: 0;
+		border-bottom: none;
+	}
+
 	.entry-image {
-		height: 75px;
 		width: 75px;
+		height: 75px;
 	}
+
 	.entry-title {
-		font-size: 16px;
-		font-size: 1.6rem;
-		margin-bottom: 5px;
 		margin-top: 10px;
+		margin-bottom: 5px;
+		font-size: $featured-content__entry-title--font-size;
 	}
 }
-

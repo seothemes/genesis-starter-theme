@@ -1,20 +1,27 @@
 /* ## Entry Comments
 --------------------------------------------- */
 
-.comment-respond, .entry-comments, .entry-pings {
-	font-size: 18px;
-	font-size: 1.8rem;
+.entry-comments {
 	margin-bottom: 40px;
+	font-size: $comments--font-size;
+
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
+	}
 }
 
 .comment-list {
+
 	li {
 		padding: 40px 0 0 30px;
 	}
+
 	.depth-1 {
 		padding-left: 0;
 	}
+
 	.bypostauthor {
+		font-size: inherit;
 	}
 }
 
@@ -24,17 +31,26 @@
 
 .comment-content {
 	clear: both;
+
 	ul > li {
 		list-style-type: disc;
 	}
 }
 
 .comment-respond {
-	input {
-		&[type="email"], &[type="text"], &[type="url"] {
-			width: 50%;
-		}
+	margin-bottom: 40px;
+	font-size: $comments--font-size;
+
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
 	}
+
+	input[type="email"],
+	input[type="text"],
+	input[type="url"] {
+		width: 50%;
+	}
+
 	label {
 		display: block;
 		margin-right: 12px;
@@ -45,7 +61,15 @@
 	margin-bottom: 0;
 }
 
-.entry-pings .reply {
-	display: none;
-}
+.entry-pings {
+	margin-bottom: 40px;
+	font-size: $comments--font-size;
 
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
+	}
+
+	.reply {
+		display: none;
+	}
+}

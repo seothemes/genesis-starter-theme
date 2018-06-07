@@ -1,8 +1,8 @@
 # Genesis Starter Theme
 
-This is a developer-friendly starter theme used for creating Premium child themes for the Genesis Framework. 
+This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. 
 
-It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) which contains all of the theme's logic which can be customized from the theme's configuration file. [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) is used to automate mundane build tasks like compiling SCSS and minifying images.
+It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's configuration file. [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) is used to automate mundane build tasks like compiling SCSS and minifying images.
 
 Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
 

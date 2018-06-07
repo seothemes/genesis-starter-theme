@@ -1,27 +1,56 @@
 /* ## Genesis
 --------------------------------------------- */
 
-.after-entry, .archive-description, .author-box {
-	margin-bottom: 40px;
-}
-
 .after-entry {
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+	margin-bottom: 40px;
 	padding: 20px 30px;
+	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
+
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
+		padding: 40px 60px;
+	}
+
 	.widget:last-of-type {
 		margin-bottom: 0;
 	}
 }
 
 .breadcrumb {
-	border-bottom: 1px solid #eee;
-	font-size: 16px;
-	font-size: 1.6rem;
 	margin-bottom: 40px;
 	padding-bottom: 10px;
+	border-bottom: $border-width $border-style $border-color;
+	font-size: $breadcrumb--font-size;
 }
 
-.archive-description p:last-child, .author-box p:last-child {
-	margin-bottom: 0;
+.archive-description {
+	margin-bottom: 40px;
+
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry-title {
+		margin-bottom: 10px;
+		font-size: $archive-author-box__entry-title--font-size;
+		font-weight: $font-weight--semibold;
+	}
 }
 
+.author-box {
+	margin-bottom: 40px;
+
+	@media only screen and (min-width: $standard-screen-width) {
+		margin-bottom: 60px;
+		padding: 30px;
+		background-color: $author-box--background-color;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -2,22 +2,25 @@
 --------------------------------------------- */
 
 .gs-faq__question {
-	background: transparent;
-	border-bottom: 1px solid #eee;
-	color: #333;
-	padding-left: 0;
 	padding-right: 0;
-	&:focus, &:hover {
+	padding-left: 0;
+	border-bottom: $border-width $border-style $border-color;
+	color: $gs-faq__question--font-color;
+	background: transparent;
+
+	&:focus,
+	&:hover {
+		color: $gs-faq__question--font-color-hover;
 		background: transparent;
-		color: #0073e5;
 	}
-	&::after {
-		content: "\f132";
-		font-family: "dashicons";
+
+	&:after {
 		float: right;
+		font-family: dashicons;
+		content: "\f132";
 	}
-	&.gs-faq--expanded::after {
+
+	&.gs-faq--expanded:after {
 		content: "\f460";
 	}
 }
-

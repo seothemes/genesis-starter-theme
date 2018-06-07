@@ -1,171 +1,161 @@
 /* ## Forms
 --------------------------------------------- */
 
-input, select, textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #333;
-	font-size: 18px;
-	font-size: 1.8rem;
-	font-weight: 400;
-	padding: 15px;
+input,
+select,
+textarea {
 	width: 100%;
+	padding: 15px;
+	border: $border-width $border-style $light-grey;
+	color: $forms--font-color;
+	background-color: $forms__background-color;
+	font-size: $forms--font-size;
+	font-weight: $font-weight--regular;
 }
 
-input:focus, textarea:focus {
-	border: 1px solid #999;
+input:focus,
+textarea:focus {
+	border: $border-width $border-style $medium-grey;
 	outline: none;
 }
 
-input {
-	&[type="checkbox"], &[type="image"], &[type="radio"] {
-		width: auto;
-	}
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
 }
 
 ::-moz-placeholder {
-	color: #333;
 	opacity: 1;
+	color: $dark-grey;
 }
 
 ::-webkit-input-placeholder {
-	color: #333;
+	color: $dark-grey;
 }
 
 button {
-	background-color: #333;
-	border: 0;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	font-size: 1.6rem;
-	font-weight: 600;
-	padding: 15px 30px;
-	text-align: center;
-	text-decoration: none;
-	white-space: normal;
 	width: auto;
-}
-
-input {
-	&[type="button"], &[type="reset"], &[type="submit"] {
-		background-color: #333;
-		border: 0;
-		color: #fff;
-		cursor: pointer;
-		font-size: 16px;
-		font-size: 1.6rem;
-		font-weight: 600;
-		padding: 15px 30px;
-		text-align: center;
-		text-decoration: none;
-		white-space: normal;
-		width: auto;
-	}
-}
-
-.button {
-	background-color: #333;
-	border: 0;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	font-size: 1.6rem;
-	font-weight: 600;
 	padding: 15px 30px;
-	text-align: center;
-	text-decoration: none;
+	border: 0;
+	color: $button--font-color;
+	background-color: $button--background-color;
+	font-size: $button--font-size;
+	font-weight: $font-weight--semibold;
 	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		color: $button--font-color-hover;
+		background-color: $button--background-color-hover;
+	}
+
+	&.small {
+		padding: 8px 16px;
+	}
+}
+
+input[type="button"] {
 	width: auto;
-}
+	padding: 15px 30px;
+	border: 0;
+	color: $button--font-color;
+	background-color: $button--background-color;
+	font-size: $button--font-size;
+	font-weight: $font-weight--semibold;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
 
-button {
-	&:focus, &:hover {
-		background-color: #0073e5;
-		color: #fff;
+	&:focus,
+	&:hover {
+		color: $button--font-color-hover;
+		background-color: $button--background-color-hover;
 	}
-}
 
-input {
-	&[type="button"] {
-		&:focus, &:hover {
-			background-color: #0073e5;
-			color: #fff;
-		}
-	}
-	&[type="reset"] {
-		&:focus, &:hover {
-			background-color: #0073e5;
-			color: #fff;
-		}
-	}
-	&[type="submit"] {
-		&:focus, &:hover {
-			background-color: #0073e5;
-			color: #fff;
-		}
+	&.small {
+		padding: 8px 16px;
 	}
 }
 
-.button {
-	&:focus, &:hover {
-		background-color: #0073e5;
-		color: #fff;
+input[type="reset"] {
+	width: auto;
+	padding: 15px 30px;
+	border: 0;
+	color: $button--font-color;
+	background-color: $button--background-color;
+	font-size: $button--font-size;
+	font-weight: $font-weight--semibold;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		color: $button--font-color-hover;
+		background-color: $button--background-color-hover;
+	}
+
+	&.small {
+		padding: 8px 16px;
 	}
 }
 
-.entry-content .button {
-	&:focus, &:hover {
-		color: #fff;
+input[type="submit"] {
+	width: auto;
+	padding: 15px 30px;
+	border: 0;
+	color: $button--font-color;
+	background-color: $button--background-color;
+	font-size: $button--font-size;
+	font-weight: $font-weight--semibold;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		color: $button--font-color-hover;
+		background-color: $button--background-color-hover;
+	}
+
+	&.small {
+		padding: 8px 16px;
 	}
 }
 
 .button {
 	display: inline-block;
+	width: auto;
+	padding: 15px 30px;
+	border: 0;
+	color: $button--font-color;
+	background-color: $button--background-color;
+	font-size: $button--font-size;
+	font-weight: $font-weight--semibold;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		color: $button--font-color-hover;
+		background-color: $button--background-color-hover;
+	}
+
+	.entry-content &:focus,
+	.entry-content &:hover {
+		color: $button--font-color-hover;
+	}
 }
 
-a.button.small, button.small {
+a.button.small {
 	padding: 8px 16px;
 }
 
-input {
-	&[type="button"].small, &[type="reset"].small, &[type="submit"].small {
-		padding: 8px 16px;
-	}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
 }
-
-.site-container {
-	button:disabled {
-		background-color: #eee;
-		border-width: 0;
-		color: #777;
-		cursor: not-allowed;
-		&:hover {
-			background-color: #eee;
-			border-width: 0;
-			color: #777;
-			cursor: not-allowed;
-		}
-	}
-	input {
-		&:disabled, &[type="button"]:disabled, &[type="reset"]:disabled, &[type="submit"]:disabled {
-			background-color: #eee;
-			border-width: 0;
-			color: #777;
-			cursor: not-allowed;
-			&:hover {
-				background-color: #eee;
-				border-width: 0;
-				color: #777;
-				cursor: not-allowed;
-			}
-		}
-	}
-}
-
-input[type="search"] {
-	&::-webkit-search-cancel-button, &::-webkit-search-results-button {
-		display: none;
-	}
-}
-

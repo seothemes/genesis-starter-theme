@@ -1,0 +1,24 @@
+/* # WooCommerce Product Gallery
+---------------------------------------------------------------------------------------------------- */
+
+.woocommerce {
+
+	.woocommerce-product-gallery__wrapper {
+		margin: 0;
+	}
+
+	.woocommerce-product-gallery__trigger {
+		border-width: 0;
+	}
+
+	.woocommerce-product-gallery {
+		overflow: hidden;
+
+		.flex-control-nav {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	}
+}

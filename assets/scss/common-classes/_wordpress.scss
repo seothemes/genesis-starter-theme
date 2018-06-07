@@ -1,14 +1,13 @@
 /* ## WordPress
 --------------------------------------------- */
 
-a {
-	&.aligncenter img {
-		display: block;
-		margin: 0 auto;
-	}
-	&.alignnone {
-		display: inline-block;
-	}
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
 }
 
 .alignleft {
@@ -21,43 +20,49 @@ a {
 	text-align: right;
 }
 
-a {
-	&.alignleft, &.alignnone, &.alignright {
-		max-width: 100%;
-	}
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
 }
 
-img.centered, .aligncenter {
+img.centered,
+.aligncenter {
 	display: block;
 	margin: 0 auto 30px;
 }
 
-img.alignnone, .alignnone {
+img.alignnone,
+.alignnone {
 	margin-bottom: 15px;
 }
 
-a.alignleft, img.alignleft, .wp-caption.alignleft {
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
 	margin: 0 20px 20px 0;
 }
 
-a.alignright, img.alignright, .wp-caption.alignright {
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
 	margin: 0 0 20px 20px;
 }
 
-.gallery-caption, .wp-caption-text {
-	font-size: 14px;
-	font-size: 1.4rem;
-	font-weight: 600;
+.gallery-caption,
+.wp-caption-text {
 	margin: 0;
+	font-size: $entry-content__caption--font-size;
+	font-weight: $font-weight--semibold;
 	text-align: center;
 }
 
-.entry-content {
-	p.wp-caption-text {
-		margin-bottom: 0;
-	}
-	.wp-audio-shortcode, .wp-playlist, .wp-video {
-		margin: 0 0 30px;
-	}
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
 }
 
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video {
+	margin: 0 0 30px;
+}

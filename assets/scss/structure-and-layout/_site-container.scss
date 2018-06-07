@@ -2,12 +2,29 @@
 --------------------------------------------- */
 
 .site-container {
+	word-wrap: break-word;
 	-webkit-animation: fadein 1s;
 	animation: fadein 1s;
-	word-wrap: break-word;
+
+	button:disabled,
+	button:disabled:hover,
+	input:disabled,
+	input:disabled:hover,
+	input[type="button"]:disabled,
+	input[type="button"]:disabled:hover,
+	input[type="reset"]:disabled,
+	input[type="reset"]:disabled:hover,
+	input[type="submit"]:disabled,
+	input[type="submit"]:disabled:hover {
+		border-width: 0;
+		color: $disabled--font-color;
+		background-color: $disabled--background-color;
+		cursor: not-allowed;
+	}
 }
 
 @keyframes fadein {
+
 	from {
 		opacity: 0;
 	}
@@ -18,6 +35,7 @@
 }
 
 @-webkit-keyframes fadein {
+
 	from {
 		opacity: 0;
 	}

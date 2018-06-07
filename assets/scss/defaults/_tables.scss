@@ -2,33 +2,34 @@
 --------------------------------------------- */
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	line-height: 2;
-	margin-bottom: 40px;
 	width: 100%;
+	margin-bottom: 40px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	line-height: 2;
 	word-break: break-all;
 }
 
 tbody {
-	border-bottom: 1px solid #eee;
-}
-
-td, th {
-	text-align: left;
+	border-bottom: $border-width $border-style $border-color;
 }
 
 td {
-	border-top: 1px solid #eee;
 	padding: 6px;
+	border-top: $border-width $border-style $border-color;
+	text-align: left;
+
+	&:first-child {
+		padding-left: 0;
+	}
 }
 
 th {
-	font-weight: 400;
 	padding: 0 6px;
-}
+	font-weight: $font-weight--regular;
+	text-align: left;
 
-td:first-child, th:first-child {
-	padding-left: 0;
+	&:first-child {
+		padding-left: 0;
+	}
 }
-
