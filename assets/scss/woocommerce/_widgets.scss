@@ -9,13 +9,13 @@
 	width: 100%;
 
 	input[type="submit"] {
-		border: 0;
 		clip: rect(0, 0, 0, 0);
+		position: absolute;
+		width: 1px;
 		height: 1px;
 		margin: -1px;
 		padding: 0;
-		position: absolute;
-		width: 1px;
+		border: 0;
 	}
 }
 
@@ -80,7 +80,7 @@
 	}
 
 	.ui-slider .ui-slider-handle {
-		top: -.28em;
+		top: -0.28em;
 	}
 
 	.price_slider_amount .button {
@@ -91,9 +91,9 @@
 
 .woocommerce {
 
-	.widget_layered_nav ul li.chosen a::before,
-	.widget_layered_nav_filters ul li a::before,
-	.widget_rating_filter ul li.chosen a::before {
+	.widget_layered_nav ul li.chosen a:before,
+	.widget_layered_nav_filters ul li a:before,
+	.widget_rating_filter ul li.chosen a:before {
 		color: #0073e5;
 	}
 }

@@ -11,10 +11,10 @@
 		line-height: 1;
 	}
 
-	a.button.loading::after,
-	button.button.loading::after,
-	input.button.loading::after,
-	#respond input#submit.loading::after {
+	a.button.loading:after,
+	button.button.loading:after,
+	input.button.loading:after,
+	#respond input#submit.loading:after {
 		top: 1em;
 	}
 
