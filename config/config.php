@@ -24,6 +24,11 @@ return [
 	|--------------------------------------------------------------------------
 	| Autoload
 	|--------------------------------------------------------------------------
+	|
+	| List of directories for the Child Theme Library to load automatically.
+	| The Child Theme Library will load every PHP file in the list below.
+	| Note: Removing the default directories may cause theme to break.
+	|
 	*/
 	'autoload'            => [
 		'/lib/functions',
@@ -39,6 +44,11 @@ return [
 	|--------------------------------------------------------------------------
 	| Colors
 	|--------------------------------------------------------------------------
+	|
+	| Custom color config to be consumed by the Child Theme Library's logic
+	| for the Customizer. Each color needs a name, value and an optional
+	| array of CSS rules which are output on the frontend of the site.
+	|
 	*/
 	'colors'              => [
 		'background' => [
@@ -113,6 +123,11 @@ return [
 	|--------------------------------------------------------------------------
 	| Default Headers
 	|--------------------------------------------------------------------------
+	|
+	| Defines the default header settings to be registered in the Customizer
+	| Header Media section. This theme includes an example hero.jpg image
+	| located in the theme's ./assets/images/ directory to be replaced.
+	|
 	*/
 	'default-headers'     => [
 		'child' => [
@@ -126,6 +141,11 @@ return [
 	|--------------------------------------------------------------------------
 	| Demo Import
 	|--------------------------------------------------------------------------
+	|
+	| These settings are passed to the One Click Demo Import plugin to tell
+	| it where to look for the theme's sample content files - sample.xml,
+	| widgets.wie and customizer.dat which are in the root by default.
+	|
 	*/
 	'demo-import'         => [
 		'local_import_file'            => CHILD_THEME_DIR . '/sample.xml',
@@ -252,6 +272,11 @@ return [
 	|--------------------------------------------------------------------------
 	| Map Style
 	|--------------------------------------------------------------------------
+	|
+	| Allows users to register custom map styles with the Google Map plugin
+	| by providing an id, name and path to a JSON file containing custom
+	| styles. http://snazzymaps.com/style/151/ultra-light-with-labels
+	|
 	*/
 	'map-style'           => [
 		'id'    => '123456789',
@@ -352,8 +377,8 @@ return [
 	|--------------------------------------------------------------------------
 	|
 	| Sets the responsive menu settings used for the Genesis Responsive Menu
-	| script.
-	|
+	| script. This allows users to change the menu toggle button text and
+	| choose which menu to combine into one when using a mobile device.
 	|
 	*/
 	'responsive-menu'     => [
@@ -616,13 +641,14 @@ return [
 	|--------------------------------------------------------------------------
 	|
 	| Provides an easy way to remove unused widgets from the dashboard. This
-	| config is not used in Premium Genesis child themes but is left here
+	| config is not used in premium Genesis child themes but is left here
 	| as an example for developers who might find this function useful.
 	|
 	*/
 	'widgets'             => [
-
-		// Core.
+		// 'Genesis_Featured_Page',
+		// 'Genesis_Featured_Post',
+		// 'Genesis_User_Profile_Widget',
 		// 'WP_Widget_Pages',
 		// 'WP_Widget_Calendar',
 		// 'WP_Widget_Archives',
@@ -641,31 +667,23 @@ return [
 		// 'WP_Widget_Tag_Cloud',
 		// 'WP_Nav_Menu_Widget',
 		// 'WP_Widget_Custom_HTML',
-
-		// Genesis.
-		// 'Genesis_Featured_Page',
-		// 'Genesis_Featured_Post',
-		// 'Genesis_User_Profile_Widget',
-
-		// WooCommerce.
-		'WC_Widget_Products',
-		'WC_Widget_Recent_Products',
-		'WC_Widget_Featured_Products',
-		'WC_Widget_Product_Categories',
-		'WC_Widget_Product_Tag_Cloud',
-		'WC_Widget_Cart',
-		'WC_Widget_Layered_Nav',
-		'WC_Widget_Layered_Nav_Filters',
-		'WC_Widget_Price_Filter',
-		'WC_Widget_Rating_Filter',
-		'WC_Widget_Product_Search',
-		'WC_Widget_Top_Rated_Products',
-		'WC_Widget_Recent_Reviews',
-		'WC_Widget_Recently_Viewed',
-		'WC_Widget_Best_Sellers',
-		'WC_Widget_Onsale',
-		'WC_Widget_Random_Products',
-
+		// 'WC_Widget_Products',
+		// 'WC_Widget_Recent_Products',
+		// 'WC_Widget_Featured_Products',
+		// 'WC_Widget_Product_Categories',
+		// 'WC_Widget_Product_Tag_Cloud',
+		// 'WC_Widget_Cart',
+		// 'WC_Widget_Layered_Nav',
+		// 'WC_Widget_Layered_Nav_Filters',
+		// 'WC_Widget_Price_Filter',
+		// 'WC_Widget_Rating_Filter',
+		// 'WC_Widget_Product_Search',
+		// 'WC_Widget_Top_Rated_Products',
+		// 'WC_Widget_Recent_Reviews',
+		// 'WC_Widget_Recently_Viewed',
+		// 'WC_Widget_Best_Sellers',
+		// 'WC_Widget_Onsale',
+		// 'WC_Widget_Random_Products',
 	]
 
 ];

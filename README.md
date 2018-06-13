@@ -177,14 +177,14 @@ This project is licensed under the GNU General Public License - see the LICENSE.
 
 A shout out to anyone who's code was used:
 
-<a href="https://github.com/garyjones/" target="_blank">Gary Jones</a>
-<a href="https://github.com/craigsimps/" target="_blank">Craig Simpson</a>
-<a href="https://github.com/christophherr/" target="_blank">Christoph Herr</a>
-<a href="https://github.com/timothyjensen/" target="_blank">Tim Jensen</a>
-<a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>
-<a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>
-<a href="https://github.com/cpaul007/" target="_blank">Chinmoy Paul</a>
-<a href="https://github.com/cjkoepke/" target="_blank">Calvin Koepke</a>
-<a href="https://github.com/nathanrice/" target="_blank">Nathan Rice</a>
-<a href="https://github.com/dreamwhisper/" target="_blank">Jen Baumann</a>
+<a href="https://github.com/garyjones/" target="_blank">Gary Jones</a>, 
+<a href="https://github.com/craigsimps/" target="_blank">Craig Simpson</a>, 
+<a href="https://github.com/christophherr/" target="_blank">Christoph Herr</a>, 
+<a href="https://github.com/timothyjensen/" target="_blank">Tim Jensen</a>, 
+<a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>, 
+<a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>, 
+<a href="https://github.com/cpaul007/" target="_blank">Chinmoy Paul</a>, 
+<a href="https://github.com/cjkoepke/" target="_blank">Calvin Koepke</a>, 
+<a href="https://github.com/nathanrice/" target="_blank">Nathan Rice</a>, 
+<a href="https://github.com/dreamwhisper/" target="_blank">Jen Baumann</a>, 
 <a href="https://github.com/bgardner/" target="_blank">Brian Gardner</a>
