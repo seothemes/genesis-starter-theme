@@ -1197,6 +1197,10 @@ img.alignright,
 	box-shadow: 0 0 20px rgba(51, 51, 51, 0.075);
 }
 
+.has-sticky-header .site-header {
+	position: fixed;
+}
+
 .page-boxed .site-header {
 	max-width: 1024px;
 }
@@ -1980,9 +1984,6 @@ img.alignright,
 	.after-entry .enews {
 		padding-right: 30px;
 		padding-left: 30px;
-	}
-	.site-header {
-		position: fixed;
 	}
 	.hero-section {
 		padding: 16rem 0 10rem;

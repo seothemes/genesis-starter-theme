@@ -5,7 +5,7 @@
 	background-color: $site-header--background-color;
 	box-shadow: $box-shadow;
 
-	@include breakpoint(sm) {
+	.has-sticky-header & {
 		position: fixed;
 	}
 
