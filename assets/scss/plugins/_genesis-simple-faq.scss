@@ -27,9 +27,9 @@
 	margin-top: 10px;
 	padding-right: 0;
 	padding-left: 0;
-	border-bottom: $border-width $border-style $border-color;
+	border-bottom: $border;
 	color: $gs-faq__question--font-color;
-	background: transparent;
+	background: $gs-faq__question--background-color;
 	text-align: left;
 	white-space: normal;
 	justify-content: space-between;
@@ -37,11 +37,10 @@
 	&:focus,
 	&:hover {
 		color: $gs-faq__question--font-color-hover;
-		background: transparent;
+		background: $gs-faq__question--background-color-hover;
 	}
 
 	&:after {
-		font-family: dashicons;
 		content: "+";
 	}
 

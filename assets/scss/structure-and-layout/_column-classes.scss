@@ -1,0 +1,77 @@
+/* ## Column Classes
+--------------------------------------------- */
+
+@include breakpoint(sm) {
+
+	.one-half,
+	.one-third,
+	.one-fourth,
+	.one-fifth,
+	.one-sixth,
+	.two-thirds,
+	.two-fourths,
+	.two-fifths,
+	.two-sixths,
+	.three-fourths,
+	.three-fifths,
+	.three-sixths,
+	.four-fifths,
+	.four-sixths,
+	.five-sixths {
+		float: left;
+		margin-left: $margin-left;
+	}
+
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+		width: $one-half;
+	}
+
+	.one-third,
+	.two-sixths {
+		width: $one-third;
+	}
+
+	.four-sixths,
+	.two-thirds {
+		width: $two-thirds;
+	}
+
+	.one-fourth {
+		width: $one-fourth;
+	}
+
+	.three-fourths {
+		width: $three-fourths;
+	}
+
+	.one-fifth {
+		width: $one-fifth;
+	}
+
+	.two-fifths {
+		width: $two-fifths;
+	}
+
+	.three-fifths {
+		width: $three-fifths;
+	}
+
+	.four-fifths {
+		width: $four-fifths;
+	}
+
+	.one-sixth {
+		width: $one-sixth;
+	}
+
+	.five-sixths {
+		width: $five-sixths;
+	}
+
+	.first {
+		clear: both;
+		margin-left: 0;
+	}
+}

@@ -20,6 +20,13 @@ body {
 	font-size: $body--font-size;
 	font-weight: $font-weight--regular;
 	line-height: $line-height--normal;
+
+	&.page-boxed {
+		max-width: map_get($breakpoints, md);
+		margin: 0 auto;
+		background-color: $page-boxed--background-color;
+		box-shadow: $box-shadow;
+	}
 }
 
 button,
@@ -30,13 +37,13 @@ input[type="submit"],
 textarea:focus,
 .button,
 .gallery img {
-	transition: all 0.2s ease-in-out;
+	transition: all $transition;
 }
 
 a {
 	color: $link--font-color;
 	text-decoration: underline;
-	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	transition: color $transition, background-color $transition;
 
 	&:focus,
 	&:hover {
@@ -65,7 +72,7 @@ hr {
 	clear: both;
 	margin: 30px 0;
 	border: 0;
-	border-top: $border-width $border-style $border-color;
+	border-top: $border;
 	border-collapse: collapse;
 }
 
@@ -94,8 +101,7 @@ blockquote {
 		top: -10px;
 		left: -20px;
 		height: 0;
-		font-size: 30px;
-		font-size: 3rem;
+		font-size: $blockquote__before--font-size;
 		content: "\201C";
 	}
 }

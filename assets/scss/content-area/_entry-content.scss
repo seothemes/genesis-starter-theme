@@ -7,6 +7,10 @@
 	@include breakpoint(sm) {
 		margin-bottom: 60px;
 	}
+
+	.page &:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 .entry-content {

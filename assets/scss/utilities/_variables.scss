@@ -7,20 +7,6 @@ $breakpoints: (
 	xl: 1280px
 );
 
-// Genesis Column Classes.
-$margin-left: 2.564102564102564%;
-$one-half: 48.717948717948715%;
-$one-third: 31.623931623931625%;
-$one-fourth: 23.076923076923077%;
-$one-fifth: 17.9487179487179488%;
-$one-sixth: 14.52991452991453%;
-$two-thirds: 65.81196581196582%;
-$two-fifths: 38.4615384615384616%;
-$three-fourths: 74.35897435897436%;
-$three-fifths: 58.9743589743589744%;
-$four-fifths: 79.4871794871794872%;
-$five-sixths: 82.90598290598291%;
-
 // Base Colors.
 $black: #000;
 $dark-grey: #333;
@@ -37,7 +23,7 @@ $overlay: rgba($dark-grey, 0.2);
 $base-font: "Source Sans Pro", sans-serif;
 
 // Transitions.
-$transition: 0.2s ease;
+$transition: 0.2s ease-in-out;
 
 // Border styles.
 $border-width: 1px;
@@ -47,7 +33,29 @@ $border: $border-width $border-style $border-color;
 
 // Box Shadow.
 $box-shadow-blur-radius: 20px;
-$box-shadow-opacity: 0.05;
+$box-shadow-opacity: 0.075;
+$box-shadow: 0 0 $box-shadow-blur-radius rgba($dark-grey, $box-shadow-opacity);
+
+// Genesis Column Classes.
+$margin-left: 2.564102564102564%;
+$one-half: 48.71794871794871%;
+$one-third: 31.62393162393162%;
+$one-fifth: 17.94871794871794%;
+$one-fourth: 23.07692307692307%;
+$one-sixth: 14.52991452991453%;
+$one-seventh: 12.08791208791208%;
+$one-eighth: 10.25641025641025%;
+$one-ninth: 8.831908831908832%;
+$two-thirds: 65.81196581196582%;
+$two-fourths: 48.71794871794871%;
+$two-fifths: 38.46153846153846%;
+$two-sixths: 31.62393162393162%;
+$three-fourths: 74.35897435897436%;
+$three-fifths: 58.97435897435897%;
+$three-sixths: 48.71794871794871%;
+$four-fifths: 79.48717948717948%;
+$four-sixths: 65.81196581196582%;
+$five-sixths: 82.90598290598291%;
 
 // Font sizes.
 $body--font-size: 1.8rem;
@@ -58,7 +66,9 @@ $h4--font-size: 2rem;
 $h5--font-size: 1.8rem;
 $h6--font-size: 1.6rem;
 $button--font-size: 1.6rem;
-$archive-author-box__entry-title--font-size: 2rem;
+$hero-section__h1--font-size: $h1--font-size * 1.5;
+$archive-description__entry-title--font-size: 2rem;
+$author-box-title--font-size: $archive-description__entry-title--font-size;
 $breadcrumb--font-size: 1.6rem;
 $entry-title--font-size: 3rem;
 $featured-content__entry-title--font-size: 1.6rem;
@@ -72,15 +82,16 @@ $entry-meta--font-size: 1.6rem;
 $comments--font-size: 1.8rem;
 $footer-widgets--font-size: 1.8rem;
 $site-footer--font-size: 1.5rem;
-$forms--font-size: 1.8rem;
+$form--font-size: 1.8rem;
 $widget-title--font-size: 1.8rem;
 $archive-pagination--font-size: 1.6rem;
 $blockquote__before--font-size: 3rem;
 $after-entry__breadcrumb--font-size: 1.6rem;
+$screen-reader--font-size-focus: 1em;
 
 // Font families.
 $body--font-family: $base-font;
-$headings--font-family: $base-font;
+$heading--font-family: $base-font;
 
 // Font weights.
 $font-weight--regular: 400;
@@ -88,7 +99,7 @@ $font-weight--semibold: 600;
 $font-weight--bold: 700;
 
 // Line heights.
-$line-height--big: 20px;
+$line-height--big: 2;
 $line-height--large: 1.75;
 $line-height--normal: 1.625;
 $line-height--medium: 1.5;
@@ -113,7 +124,7 @@ $sub-menu-toggle--font-color: $dark-grey;
 $sub-menu-toggle--font-color-hover: $blue;
 $menu-highlight__link--font-color: $white;
 $sidebar__widget-title--font-color: $dark-grey;
-$forms--font-color: $dark-grey;
+$form--font-color: $dark-grey;
 $archive-pagination--font-color: $dark-grey;
 $archive-pagination--font-color-hover: $white;
 $gs-faq__question--font-color: $dark-grey;
@@ -122,11 +133,18 @@ $disabled--font-color: $mid-grey;
 
 // Background colors.
 $body--background-color: $white;
+$page-boxed--background-color: $lightest-grey;
+$site-container--background-color: $white;
 $site-header--background-color: $white;
 $mark--background-color: $light-grey;
 $button--background-color: $dark-grey;
 $button--background-color-hover: $blue;
 $genesis-nav-menu__sub-menu__link--background-color: $white;
+$nav-primary--background-color: $white;
+$nav-secondary--background-color: $white;
+$menu-toggle--background-color: transparent;
+$sub-menu-toggle--background-color: transparent;
+$hero-section--background-color: $white;
 $footer-widgets--background-color: $white;
 $site-footer--background-color: $white;
 $menu-highlight__link--background-color: $dark-grey;
@@ -139,12 +157,14 @@ $archive-pagination--background-color: $lightest-grey;
 $archive-pagination--background-color-hover: $dark-grey;
 $enews__sidebar--background-color: $lightest-grey;
 $disabled--background-color: $lighter-grey;
+$gs-faq__question--background-color: transparent;
+$gs-faq__question--background-color-hover: $gs-faq__question--background-color;
 
 // WooCommerce.
 $shop-page-navigation-link--font-size: 1.6rem;
 $cart-table-td--font-size: 1.8rem;
-$forms-button--font-size: 1.6rem;
-$forms-quantity-qty--font-size: 2rem;
+$form-button--font-size: 1.6rem;
+$form-quantity-qty--font-size: 2rem;
 $account-page-address-title-h3--font-size: 2.6rem;
 $breadcrumb-breadcrumb--font-size: 1.8rem;
 $widgets-price-filter-price-slider-amount-button--font-size: 1.6rem;

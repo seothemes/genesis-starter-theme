@@ -242,7 +242,7 @@ return [
 		'full-width-content',
 		'content-sidebar',
 		'sidebar-content',
-		'narrow-content',
+		'center-content',
 		// 'content-sidebar-sidebar',
 		// 'sidebar-sidebar-content',
 		// 'sidebar-content-sidebar',

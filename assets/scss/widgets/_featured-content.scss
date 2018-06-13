@@ -5,7 +5,7 @@
 
 	.entry {
 		margin-bottom: 20px;
-		border-bottom: $border-width $border-style $border-color;
+		border-bottom: $border;
 
 		&:last-of-type {
 			margin-bottom: 0;

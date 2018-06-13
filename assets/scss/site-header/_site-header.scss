@@ -1,11 +1,16 @@
 .site-header {
+	position: absolute;
+	z-index: 9999;
 	width: 100%;
 	background-color: $site-header--background-color;
-	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
+	box-shadow: $box-shadow;
 
 	@include breakpoint(sm) {
 		position: fixed;
-		z-index: 9999;
+	}
+
+	.page-boxed & {
+		max-width: map_get($breakpoints, md);
 	}
 
 	> .wrap {

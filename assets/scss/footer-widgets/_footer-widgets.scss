@@ -23,7 +23,7 @@
 
 	@include breakpoint( sm ) {
 		float: left;
-		width: 30%;
+		width: $one-third;
 		margin-bottom: 0;
 	}
 

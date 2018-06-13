@@ -44,7 +44,7 @@
 				position: absolute;
 				width: 180px;
 				padding-left: 0;
-				border-top: $border-width $border-style $border-color;
+				border-top: $border;
 				opacity: 0;
 				transition: opacity 0.4s ease-in-out;
 			}
@@ -60,8 +60,8 @@
 	padding: 1.25em 0 1.25em 1.25em;
 	border-width: 0;
 	color: $menu-toggle--font-color;
-	background-color: transparent;
-	line-height: 1;
+	background-color: $menu-toggle--background-color;
+	line-height: $line-height--smaller;
 	text-align: center;
 
 	@include breakpoint(sm) {
@@ -72,7 +72,7 @@
 	&:hover {
 		border-width: 0;
 		color: $menu-toggle--font-color-hover;
-		background-color: transparent;
+		background-color: $menu-toggle--background-color;
 
 		span,
 		span:before,
@@ -131,7 +131,7 @@
 	width: 3.6rem;
 	height: 3.6rem;
 	padding: 0;
-	background: none;
+	background: $sub-menu-toggle--background-color;
 
 	@include breakpoint(sm) {
 		display: none;

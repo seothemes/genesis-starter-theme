@@ -2,6 +2,7 @@
 --------------------------------------------- */
 
 .site-container {
+	background-color: $site-container--background-color;
 	word-wrap: break-word;
 	-webkit-animation: fadein 1s;
 	animation: fadein 1s;
@@ -69,7 +70,7 @@
 			flex-direction: row-reverse;
 		}
 
-		.narrow-content &,
+		.center-content &,
 		.full-width-content & {
 			justify-content: center;
 		}

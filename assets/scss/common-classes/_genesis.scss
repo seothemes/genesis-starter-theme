@@ -4,7 +4,7 @@
 .after-entry {
 	margin-bottom: 40px;
 	padding: 20px 30px;
-	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
+	box-shadow: $box-shadow;
 
 	@include breakpoint( sm ) {
 		margin-bottom: 60px;
@@ -19,7 +19,7 @@
 .breadcrumb {
 	margin-bottom: 40px;
 	padding-bottom: 10px;
-	border-bottom: $border-width $border-style $border-color;
+	border-bottom: $border;
 	font-size: $breadcrumb--font-size;
 }
 
@@ -36,7 +36,7 @@
 
 	.entry-title {
 		margin-bottom: 10px;
-		font-size: $archive-author-box__entry-title--font-size;
+		font-size: $archive-description__entry-title--font-size;
 		font-weight: $font-weight--semibold;
 	}
 }

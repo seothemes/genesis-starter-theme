@@ -7,9 +7,9 @@ textarea {
 	width: 100%;
 	padding: 15px;
 	border: $border-width $border-style $light-grey;
-	color: $forms--font-color;
+	color: $form--font-color;
 	background-color: $forms__background-color;
-	font-size: $forms--font-size;
+	font-size: $form--font-size;
 	font-weight: $font-weight--regular;
 
 	&:focus,

@@ -82,7 +82,7 @@
 		text-decoration: none;
 
 		@include breakpoint(sm) {
-			padding: 1em;
+			padding: 1.2em 0.8em;
 		}
 	}
 
@@ -109,9 +109,9 @@
 			position: absolute;
 			width: 180px;
 			padding-left: 0;
-			border-top: $border-width $border-style $border-color;
+			border-top: $border;
 			opacity: 0;
-			transition: opacity 0.4s ease-in-out;
+			transition: opacity $transition;
 		}
 
 		&:focus-within {
@@ -127,7 +127,7 @@
 			@include breakpoint(sm) {
 				width: 180px;
 				padding: 1em;
-				border: $border-width $border-style $border-color;
+				border: $border;
 				border-top: 0;
 			}
 		}
