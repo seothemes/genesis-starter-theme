@@ -219,6 +219,9 @@ echo "--> Change package name .............. ${green}done${txtreset}"
 # Gulpfile.js
 find "$basedir" -name 'Gulpfile.js' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
 
+# gulpfile.js
+find "$basedir" -name 'gulpfile.js' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
+
 echo "--> Change url .............. ${green}done${txtreset}"
 
 echo "--> ${green}Setup complete!${txtreset}"

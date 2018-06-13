@@ -2,9 +2,9 @@
 
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. 
 
-It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's configuration file. [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) is used to automate mundane build tasks like compiling SCSS and minifying images.
+It uses the <a href="https://github.com/seothemes/child-theme-library" target="_blank">Child Theme Library</a> to control all of the theme's logic which can be customized from the child theme's configuration file. Styling is based on the latest version of the <a href="https://demo.studiopress.com/genesis-sample" target="_blank">Genesis Sample Theme</a>. This theme uses <a href="https://github.com/craigsimps/gulp-wp-toolkit" target="_blank">Gulp WP Toolkit</a> to automate mundane build tasks like compiling SCSS and minifying images.
 
-Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/genesis-starter)
+Check out the live demo <a href="https://demo.seothemes.com/genesis-starter" target="_blank">here</a>.
 
 ### Requirements
 
@@ -40,19 +40,19 @@ Demo - [https://demo.seothemes.com/genesis-starter](https://demo.seothemes.com/g
 		<tr>
             <td>WordPress >= 4.8</td>
             <td><code>Admin Footer</code></td>
-            <td><a href="https://codex.wordpress.org/Installing_WordPress" target="_blank">WordPress.org</a></td>
+            <td><a href="https://codex.wordpress.org/Installing_WordPress" target="_blank">wordpress.org</a></td>
         </tr>
         <tr>
             <td>Genesis >= 2.6</td>
             <td><code>Theme Page</code></td>
-            <td><a href="http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=" target="_blank">Genesis Framework</a></td>
+            <td><a href="http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=" target="_blank">studiopress.com</a></td>
         </tr>
 	</tbody>
 </table>
 
 ## Installation
 
-### Composer
+### Composer (recommended)
 
 Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
@@ -72,7 +72,7 @@ Run the setup script to rename the theme:
 sh setup.sh
 ```
 
-Run Gulp to kick-off development:
+Run default Gulp task to kick-off development:
 
 ```shell
 gulp
@@ -80,13 +80,13 @@ gulp
 
 ### Git
 
-Do a "recursive" Git clone so that the child theme library will be added as a sub-module (change "your-theme-name" where necessary):
+Do a "recursive" Git clone so that the child theme library will be added as a sub-module (replace `your-theme-name` below with the name of your theme):
 
 ```shell
 git clone --recurse-submodules https://github.com/seothemes/genesis-starter-theme.git your-theme-name
 ```
 
-Navigate into the theme directory:
+Navigate into the theme root directory:
 
 ```shell
 cd your-theme-name
@@ -98,13 +98,13 @@ Run the setup script to rename the theme:
 sh setup.sh
 ```
 
-Install node modules:
+Install node modules with yarn:
 
 ```shell
 yarn install
 ```
 
-Run Gulp to kick-off development:
+Run default Gulp task to kick-off development:
 
 ```shell
 gulp
@@ -116,7 +116,7 @@ Download the zip file and upload to your WordPress installation.
 
 Replace any occurrences of 'Genesis Starter Theme' with your theme name and 'genesis-starter-theme' with your theme's ID.
 
-Open the theme in your Terminal and run `Gulp` to kick off the build process.
+Open the theme in your Terminal and run `gulp` to kick off the build process.
 
 ## Structure
 
@@ -129,7 +129,7 @@ theme/
 │   └── scss/
 ├── config/
 │   └── config.php
-├── lib/ # (https://github.com/seothemes/child-theme-library.git)
+├── [lib/](https://github.com/seothemes/child-theme-library.git)
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitignore
@@ -165,9 +165,9 @@ Please visit https://github.com/seothemes/genesis-starter-theme/issues/ to open 
 
 ## Authors
 
-- **Lee Anthony** - [SEO Themes](https://seothemes.com/)
+<a href="https://github.com/seothemes/" target="_blank">Lee Anthony</a>
 
-See also the list of [contributors](https://github.com/seothemes/genesis-starter/graphs/contributors) who participated in this project.
+See also the list of <a href="https://github.com/seothemes/genesis-starter/graphs/contributors" target="_blank">contributors</a> who participated in this project.
 
 ## License
 
@@ -177,16 +177,14 @@ This project is licensed under the GNU General Public License - see the LICENSE.
 
 A shout out to anyone who's code was used:
 
-- Gary Jones
-- Craig Simpson
-- Tim Jensen
-- Craig Watson
-- Sridhar Katakam
-- Christoph Herr
-- Bill Erickson
-- Chinmoy Paul
-- Nathan Rice
-- Calvin Koepke
-- Jen Baumann
-- Brian Gardner
-- Robin Cornett
+<a href="https://github.com/garyjones/" target="_blank">Gary Jones</a>
+<a href="https://github.com/craigsimps/" target="_blank">Craig Simpson</a>
+<a href="https://github.com/christophherr/" target="_blank">Christoph Herr</a>
+<a href="https://github.com/timothyjensen/" target="_blank">Tim Jensen</a>
+<a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>
+<a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>
+<a href="https://github.com/cpaul007/" target="_blank">Chinmoy Paul</a>
+<a href="https://github.com/cjkoepke/" target="_blank">Calvin Koepke</a>
+<a href="https://github.com/nathanrice/" target="_blank">Nathan Rice</a>
+<a href="https://github.com/dreamwhisper/" target="_blank">Jen Baumann</a>
+<a href="https://github.com/bgardner/" target="_blank">Brian Gardner</a>
