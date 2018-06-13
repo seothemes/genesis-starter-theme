@@ -4,13 +4,8 @@
 .screen-reader-shortcut,
 .screen-reader-text,
 .screen-reader-text span {
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	position: absolute !important;
-	width: 1px;
-	height: 1px;
-	border: 0;
-	word-wrap: normal !important;
+
+	@include screen-reader-text;
 }
 
 .screen-reader-shortcut:focus,

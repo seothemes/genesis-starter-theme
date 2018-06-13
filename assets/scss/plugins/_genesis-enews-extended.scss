@@ -11,7 +11,7 @@
 		padding: 10px;
 		text-align: center;
 
-		@media only screen and (min-width: $standard-screen-width) {
+		@include breakpoint(sm) {
 			padding-right: 30px;
 			padding-left: 30px;
 		}
@@ -28,14 +28,14 @@
 	input {
 		margin-bottom: 10px;
 		font-size: $enews-widget__input--font-size;
-	}
 
-	input[type="submit"] {
-		width: 100%;
-		margin: 0;
-	}
+		&[type="submit"] {
+			width: 100%;
+			margin: 0;
+		}
 
-	.after-entry & input {
-		text-align: center;
+		.after-entry & {
+			text-align: center;
+		}
 	}
 }

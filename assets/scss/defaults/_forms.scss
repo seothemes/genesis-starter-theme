@@ -11,12 +11,12 @@ textarea {
 	background-color: $forms__background-color;
 	font-size: $forms--font-size;
 	font-weight: $font-weight--regular;
-}
 
-input:focus,
-textarea:focus {
-	border: $border-width $border-style $medium-grey;
-	outline: none;
+	&:focus,
+	&:focus {
+		border: $border-width $border-style $medium-grey;
+		outline: none;
+	}
 }
 
 input[type="checkbox"],
@@ -34,98 +34,10 @@ input[type="radio"] {
 	color: $dark-grey;
 }
 
-button {
-	width: auto;
-	padding: 15px 30px;
-	border: 0;
-	color: $button--font-color;
-	background-color: $button--background-color;
-	font-size: $button--font-size;
-	font-weight: $font-weight--semibold;
-	white-space: normal;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:focus,
-	&:hover {
-		color: $button--font-color-hover;
-		background-color: $button--background-color-hover;
-	}
-
-	&.small {
-		padding: 8px 16px;
-	}
-}
-
-input[type="button"] {
-	width: auto;
-	padding: 15px 30px;
-	border: 0;
-	color: $button--font-color;
-	background-color: $button--background-color;
-	font-size: $button--font-size;
-	font-weight: $font-weight--semibold;
-	white-space: normal;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:focus,
-	&:hover {
-		color: $button--font-color-hover;
-		background-color: $button--background-color-hover;
-	}
-
-	&.small {
-		padding: 8px 16px;
-	}
-}
-
-input[type="reset"] {
-	width: auto;
-	padding: 15px 30px;
-	border: 0;
-	color: $button--font-color;
-	background-color: $button--background-color;
-	font-size: $button--font-size;
-	font-weight: $font-weight--semibold;
-	white-space: normal;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:focus,
-	&:hover {
-		color: $button--font-color-hover;
-		background-color: $button--background-color-hover;
-	}
-
-	&.small {
-		padding: 8px 16px;
-	}
-}
-
-input[type="submit"] {
-	width: auto;
-	padding: 15px 30px;
-	border: 0;
-	color: $button--font-color;
-	background-color: $button--background-color;
-	font-size: $button--font-size;
-	font-weight: $font-weight--semibold;
-	white-space: normal;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:focus,
-	&:hover {
-		color: $button--font-color-hover;
-		background-color: $button--background-color-hover;
-	}
-
-	&.small {
-		padding: 8px 16px;
-	}
-}
-
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .button {
 	display: inline-block;
 	width: auto;
@@ -145,14 +57,17 @@ input[type="submit"] {
 		background-color: $button--background-color-hover;
 	}
 
-	.entry-content &:focus,
-	.entry-content &:hover {
-		color: $button--font-color-hover;
+	&.small {
+		padding: 8px 16px;
 	}
-}
 
-a.button.small {
-	padding: 8px 16px;
+	.entry-content {
+
+		&:focus,
+		&:hover {
+			color: $button--font-color-hover;
+		}
+	}
 }
 
 input[type="search"]::-webkit-search-cancel-button,

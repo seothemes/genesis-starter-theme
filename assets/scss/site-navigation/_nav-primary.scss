@@ -1,0 +1,15 @@
+/* ## Primary Navigation
+--------------------------------------------- */
+
+.nav-primary {
+	width: 100%;
+	background-color: $white;
+
+	@include breakpoint( sm ) {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: auto;
+		background-color: transparent;
+	}
+}

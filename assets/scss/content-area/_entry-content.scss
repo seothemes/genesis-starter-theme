@@ -4,7 +4,7 @@
 .entry {
 	margin-bottom: 40px;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint(sm) {
 		margin-bottom: 60px;
 	}
 }
@@ -25,12 +25,13 @@
 				a {
 					color: $white;
 					text-decoration: underline;
+
+					&:focus,
+					&:hover {
+						text-decoration: none;
+					}
 				}
 
-				a:focus,
-				a:hover {
-					text-decoration: none;
-				}
 			}
 		}
 	}
@@ -64,6 +65,12 @@
 		font-weight: $font-weight--semibold;
 		text-align: center;
 	}
+}
+
+.entry-image-link {
+	display: block;
+
+	@include clearfix;
 }
 
 .content .sticky {

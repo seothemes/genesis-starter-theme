@@ -45,3 +45,33 @@
 	}
 }
 
+.wrap,
+.content-sidebar-wrap {
+	width: 90%;
+	max-width: map_get($breakpoints, xl);
+	margin: 0 auto;
+
+	.wrap {
+		width: 100%;
+		min-width: 100%;
+	}
+}
+
+.content-sidebar-wrap {
+	margin: 6rem auto;
+
+	@include breakpoint(sm) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.sidebar-content & {
+			flex-direction: row-reverse;
+		}
+
+		.narrow-content &,
+		.full-width-content & {
+			justify-content: center;
+		}
+	}
+}

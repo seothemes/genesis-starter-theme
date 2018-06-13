@@ -1,0 +1,90 @@
+// Media Queries.
+@mixin breakpoint( $breakpoint ) {
+
+	@if map-has-key($breakpoints, $breakpoint) {
+
+		@media (min-width: #{ map-get($breakpoints, $breakpoint) }) {
+
+			@content;
+		}
+
+	} @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+
+		@media (min-width: $breakpoint) {
+
+			@content;
+		}
+
+	} @else {
+
+		@warn "No value could be retrieved from `#{$breakpoint}`. "
+			+ "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+	}
+}
+
+// Clearfix.
+@mixin clearfix {
+	clear: both;
+
+	&:before,
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
+// Flexfix.
+@mixin flexfix {
+
+	&:before,
+	&:after {
+		position: absolute;
+	}
+}
+
+// Transitions.
+@mixin transition {
+	-webkit-transition: all $transition;
+	-moz-transition: all $transition;
+	-o-transition: all $transition;
+	transition: all $transition;
+}
+
+// Overlay.
+@mixin overlay {
+	position: relative;
+
+	&:before {
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $overlay;
+		content: "";
+		pointer-events: none;
+	}
+}
+
+// Center.
+@mixin center {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+// Screen reader text.
+@mixin screen-reader-text {
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	word-wrap: normal !important;
+}

@@ -52,7 +52,7 @@
 }
 
 
-@media only screen and (min-width: $standard-screen-width) {
+@include breakpoint( sm ) {
 
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
@@ -75,7 +75,7 @@
 
 }
 
-@media only screen and (min-width: $large-screen-width) {
+@include breakpoint(map_get($breakpoints,lg)) {
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;

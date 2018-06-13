@@ -41,6 +41,9 @@
     ],
     "post-update-cmd": [
       "yarn install"
+    ],
+    "stylelint": [
+      "stylelint './assets/scss/**/*.scss' --fix"
     ]
   }
 }

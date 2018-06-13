@@ -2,16 +2,8 @@
 	font-size: $sidebar--font-size;
 	line-height: $line-height--medium;
 
-	@media only screen and (min-width: $standard-screen-width) {
-		float: right;
+	@include breakpoint( sm ) {
 		width: 30%;
-	}
-
-	.sidebar-content & {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			float: left;
-		}
 	}
 
 	.widget {

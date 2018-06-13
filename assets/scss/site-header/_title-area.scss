@@ -2,9 +2,9 @@
 --------------------------------------------- */
 
 .title-area {
-	float: left;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	display: flex;
+	align-items: center;
+	height: 6.2rem;
 
 	.wp-custom-logo & {
 		width: 100%;

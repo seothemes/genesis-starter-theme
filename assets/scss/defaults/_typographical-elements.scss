@@ -37,13 +37,14 @@ a {
 	color: $link--font-color;
 	text-decoration: underline;
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+	&:focus,
+	&:hover {
+		color: $link--font-color-hover;
+		text-decoration: none;
+	}
 }
 
-a:focus,
-a:hover {
-	color: $link--font-color-hover;
-	text-decoration: none;
-}
 
 p {
 	margin: 0 0 30px;

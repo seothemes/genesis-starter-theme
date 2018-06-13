@@ -17,9 +17,8 @@
 .genesis-responsive-menu {
 	display: none;
 	position: relative;
-	padding-bottom: 15px;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint(sm) {
 		display: block;
 	}
 
@@ -41,7 +40,7 @@
 			padding-left: 15px;
 			opacity: 1;
 
-			@media only screen and (min-width: $standard-screen-width) {
+			@include breakpoint(sm) {
 				position: absolute;
 				width: 180px;
 				padding-left: 0;
@@ -56,21 +55,16 @@
 .menu-toggle {
 	display: block;
 	visibility: visible;
-	float: right;
-	overflow: hidden;
 	position: relative;
 	z-index: 1000;
-	margin: 0 auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 15px 0;
+	padding: 1.25em 0 1.25em 1.25em;
 	border-width: 0;
 	color: $menu-toggle--font-color;
 	background-color: transparent;
-	line-height: $line-height--big;
+	line-height: 1;
 	text-align: center;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint(sm) {
 		display: none;
 	}
 
@@ -79,64 +73,106 @@
 		border-width: 0;
 		color: $menu-toggle--font-color-hover;
 		background-color: transparent;
+
+		span,
+		span:before,
+		span:after {
+			background-color: $link--font-color;
+		}
 	}
 
-	&.activated:before {
-		content: "\f335";
+	span,
+	span:before,
+	span:after {
+		display: block;
+		position: absolute;
+		width: 15px;
+		height: 2px;
+		background-color: $dark-grey;
+		content: "";
+		transition: background-color $transition;
 	}
 
-	.site-header &:before {
-		float: left;
-		position: relative;
+	span {
 		top: 1px;
-		margin-right: 5px;
-		text-rendering: auto;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+
+		&:before {
+			top: -4px;
+		}
+
+		&:after {
+			bottom: -4px;
+		}
+	}
+
+	&.activated {
+
+		span {
+			background-color: transparent;
+
+			&:before {
+				top: 0;
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 }
 
 .sub-menu-toggle {
-	display: block;
-	visibility: visible;
-	float: right;
-	overflow: hidden;
-	position: absolute;
-	z-index: 100;
-	top: 0;
-	right: 0;
-	margin: 0 auto;
-	padding: 9px 10px;
-	border-width: 0;
-	color: $sub-menu-toggle--font-color;
-	background-color: transparent;
-	text-align: center;
+	position: relative;
+	width: 3.6rem;
+	height: 3.6rem;
+	padding: 0;
+	background: none;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint(sm) {
 		display: none;
 	}
 
-	&:focus,
-	&:hover {
-		border-width: 0;
-		color: $sub-menu-toggle--font-color-hover;
-		background-color: transparent;
+	&:hover,
+	&:focus {
+		background: none;
+	}
+
+	&:before,
+	&:after {
+		display: block;
+		position: absolute;
+		width: 0.8rem;
+		height: 2px;
+		background-color: $dark-grey;
+		content: "";
 	}
 
 	&:before {
-		display: inline-block;
-		transition: transform 0.25s ease-in-out;
-		-webkit-transform: rotate(0);
-		-ms-transform: rotate(0);
-		transform: rotate(0);
-		text-rendering: auto;
+		left: 1.2rem;
+		transform: rotate(45deg);
 	}
 
-	.sub-menu & {
-		padding: 12px 10px;
+	&:after {
+		right: 1.2rem;
+		transform: rotate(-45deg);
 	}
 
-	&.activated:before {
-		-webkit-transform: rotate(180deg);
-		-ms-transform: rotate(180deg);
-		transform: rotate(180deg);
+	&.activated {
+
+		&:before {
+			left: 1.2rem;
+			transform: rotate(-45deg);
+		}
+
+		&:after {
+			right: 1.2rem;
+			transform: rotate(45deg);
+		}
+
 	}
 }

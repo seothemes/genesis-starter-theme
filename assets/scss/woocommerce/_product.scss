@@ -28,7 +28,7 @@
 	}
 }
 
-@media only screen and (min-width: $small-screen-width) {
+@include breakpoint( xs ) {
 
 	.woocommerce ul.products li.product .button,
 	.woocommerce .woocommerce-ordering,

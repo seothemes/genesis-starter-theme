@@ -7,19 +7,18 @@
 	img {
 		height: auto;
 		padding: 4px;
-		border: $border-width $border-style $border-color;
-	}
 
-	img:focus,
-	img:hover {
-		border: $border-width $border-style $medium-grey;
-		outline: none;
+		&:focus,
+		&:hover {
+			border: $border-width $border-style $medium-grey;
+			outline: none;
+		}
 	}
 }
 
 .gallery-item {
 	float: left;
-	margin: 0 0 30px;
+	margin: 0;
 	text-align: center;
 
 	.gallery-columns-1 & {

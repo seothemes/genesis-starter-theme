@@ -44,5 +44,5 @@
 .woocommerce.full-width-content .content,
 .woocommerce-page.full-width-content .content {
 	width: 100%;
-	max-width: 1140px;
+	max-width: map_get($breakpoints, lg);
 }

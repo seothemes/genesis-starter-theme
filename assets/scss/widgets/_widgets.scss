@@ -1,30 +1,33 @@
 .widget {
-	margin-bottom: 40px;
 
-	p:last-child,
-	ul > li:last-of-type {
-		margin-bottom: 0;
-	}
+	.sidebar & {
+		margin-bottom: 40px;
 
-	ul > li {
-		margin-bottom: 10px;
-	}
+		p:last-child,
+		ul > li:last-of-type {
+			margin-bottom: 0;
+		}
 
-	ul > li:last-of-type {
-		padding-bottom: 0;
-	}
+		ul > li {
+			margin-bottom: 10px;
 
-	ol > li {
-		padding-left: 20px;
-		text-indent: -20px;
-		list-style-position: inside;
-		list-style-type: decimal;
-	}
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
 
-	li li {
-		margin: 0 0 0 30px;
-		padding: 0;
-		border: 0;
+		ol > li {
+			padding-left: 20px;
+			text-indent: -20px;
+			list-style-position: inside;
+			list-style-type: decimal;
+		}
+
+		li li {
+			margin: 0 0 0 30px;
+			padding: 0;
+			border: 0;
+		}
 	}
 }
 

@@ -6,11 +6,11 @@
 	.entry {
 		margin-bottom: 20px;
 		border-bottom: $border-width $border-style $border-color;
-	}
 
-	.entry:last-of-type {
-		margin-bottom: 0;
-		border-bottom: none;
+		&:last-of-type {
+			margin-bottom: 0;
+			border-bottom: none;
+		}
 	}
 
 	.entry-image {

@@ -4,45 +4,59 @@
 	line-height: 1;
 
 	.menu-item {
-		display: block;
-		float: none;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
 		position: relative;
 
-		@media only screen and (min-width: $standard-screen-width) {
+		@include breakpoint(sm) {
 			display: inline-block;
 		}
-	}
 
-	.menu-item:focus,
-	.menu-item:hover {
-		position: relative;
-	}
+		&:focus,
+		&:hover {
+			position: relative;
 
-	@media only screen and (min-width: $standard-screen-width) {
+			@include breakpoint(sm) {
 
-		.menu-item:focus .sub-menu:focus,
-		.menu-item:hover .sub-menu:hover {
-			z-index: 100;
+				.sub-menu:focus,
+				.sub-menu:hover {
+					z-index: 100;
+				}
+			}
+
+			> .sub-menu {
+				display: block;
+				left: auto;
+				opacity: 1;
+			}
 		}
 	}
 
-	.menu-item:focus > .sub-menu,
-	.menu-item:hover > .sub-menu {
-		display: block;
-		left: auto;
-		opacity: 1;
+	> .menu-item {
+
+		&:first-of-type {
+
+			> a {
+
+				@include breakpoint(sm) {
+					padding-left: 0;
+				}
+			}
+		}
 	}
 
 	> .menu-bold > a {
 
-		@media only screen and (min-width: $standard-screen-width) {
+		@include breakpoint(sm) {
 			font-weight: $font-weight--bold;
 		}
 	}
 
 	> .menu-highlight > a {
 
-		@media only screen and (min-width: $standard-screen-width) {
+		@include breakpoint(sm) {
 			margin-left: 15px;
 			padding-right: 20px;
 			padding-left: 20px;
@@ -50,26 +64,26 @@
 			color: $menu-highlight__link--font-color;
 			background-color: $menu-highlight__link--background-color;
 			font-weight: $font-weight--semibold;
-		}
-	}
 
-	> .menu-highlight > a:focus,
-	> .menu-highlight > a:hover {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			background-color: $menu-highlight__link--background-color-hover;
+			&:focus,
+			&:hover {
+				background-color: $menu-highlight__link--background-color-hover;
+			}
 		}
 	}
 
 	a {
 		display: block;
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding: 1em 0;
 		outline-offset: -1px;
 		color: $genesis-nav-menu--font-color;
 		font-size: $genesis-nav-menu--font-size;
 		font-weight: $font-weight--regular;
 		text-decoration: none;
+
+		@include breakpoint(sm) {
+			padding: 1em;
+		}
 	}
 
 	a:focus,
@@ -91,7 +105,7 @@
 		padding-left: 15px;
 		opacity: 1;
 
-		@media only screen and (min-width: $standard-screen-width) {
+		@include breakpoint(sm) {
 			position: absolute;
 			width: 180px;
 			padding-left: 0;
@@ -100,17 +114,19 @@
 			transition: opacity 0.4s ease-in-out;
 		}
 
+		&:focus-within {
+			opacity: 1;
+		}
+
 		a {
 			position: relative;
-			width: 100%;
 			background-color: $genesis-nav-menu__sub-menu__link--background-color;
 			font-size: $genesis-nav-menu__sub-menu__link--font-size;
 			word-wrap: break-word;
 
-			@media only screen and (min-width: $standard-screen-width) {
+			@include breakpoint(sm) {
 				width: 180px;
-				padding-top: 15px;
-				padding-bottom: 15px;
+				padding: 1em;
 				border: $border-width $border-style $border-color;
 				border-top: 0;
 			}
@@ -118,13 +134,9 @@
 
 		.sub-menu {
 
-			@media only screen and (min-width: $standard-screen-width) {
+			@include breakpoint(sm) {
 				margin: -46px 0 0 179px;
 			}
 		}
-	}
-
-	.sub-menu:focus-within {
-		opacity: 1;
 	}
 }

@@ -221,6 +221,11 @@ return [
 			'height' => 380,
 			'crop'   => true,
 		],
+		'hero'     => [
+			'width'  => 1280,
+			'height' => 720,
+			'crop'   => true,
+		],
 	],
 
 	/*
@@ -266,7 +271,8 @@ return [
 	*/
 	'page-templates'      => [
 		'page-blog.php'    => __( 'Blog', 'child-theme-library' ),
-		'page-front.php'   => __( 'Front Page', 'child-theme-library' ),
+		'page-contact.php' => __( 'Contact Page', 'child-theme-library' ),
+		'page-boxed.php'   => __( 'Boxed Template', 'child-theme-library' ),
 		'page-full.php'    => __( 'Full Width', 'child-theme-library' ),
 		'page-landing.php' => __( 'Landing Page', 'child-theme-library' ),
 		'page-sitemap.php' => __( 'Sitemap', 'child-theme-library' ),
@@ -289,8 +295,18 @@ return [
 			'required' => false,
 		],
 		[
+			'name'     => 'Genesis Simple FAQ',
+			'slug'     => 'genesis-simple-faq',
+			'required' => false,
+		],
+		[
 			'name'     => 'Genesis Widget Column Classes',
 			'slug'     => 'genesis-widget-column-classes',
+			'required' => false,
+		],
+		[
+			'name'     => 'Google Map',
+			'slug'     => 'ank-google-map',
 			'required' => false,
 		],
 		[
@@ -348,6 +364,7 @@ return [
 		'menuClasses'      => [
 			'combine' => [
 				'.nav-primary',
+				'.nav-secondary',
 			],
 		],
 	],
@@ -363,19 +380,13 @@ return [
 	|
 	*/
 	'scripts'             => [
-		'library' => [
-			'src'       => CHILD_THEME_URI . '/lib/js/library.js',
-			'deps'      => 'jquery',
-			'ver'       => CHILD_THEME_VERSION,
-			'in_footer' => true,
-		],
-		'menu'    => [
+		'menu'   => [
 			'src'       => CHILD_THEME_URI . '/lib/js/menu.js',
 			'deps'      => 'jquery',
 			'ver'       => CHILD_THEME_VERSION,
 			'in_footer' => true,
 		],
-		'script'  => [
+		'script' => [
 			'src'       => CHILD_THEME_ASSETS . '/js/script.js',
 			'deps'      => 'jquery',
 			'ver'       => CHILD_THEME_VERSION,
@@ -441,12 +452,6 @@ return [
 	|
 	*/
 	'styles'              => [
-		'library'     => [
-			'src'   => CHILD_THEME_URI . '/lib/css/library.css',
-			'deps'  => [],
-			'ver'   => CHILD_THEME_VERSION,
-			'media' => null,
-		],
 		'woocommerce' => [
 			'src'   => CHILD_THEME_URI . '/woocommerce.css',
 			'deps'  => [],
@@ -536,7 +541,6 @@ return [
 			'skip-links',
 		],
 		'genesis-after-entry-widget-area',
-		//'genesis-footer-widgets'          => 4,
 		'genesis-menus'            => [
 			'primary'   => __( 'Header Menu', 'child-theme-library' ),
 			'secondary' => __( 'After Header Menu', 'child-theme-library' ),
@@ -544,7 +548,6 @@ return [
 		'genesis-responsive-viewport',
 		'genesis-structural-wraps' => [
 			'header',
-			'menu-primary',
 			'menu-secondary',
 			'footer-widgets',
 			'footer',
@@ -552,7 +555,7 @@ return [
 		'gutenberg'                => [
 			'wide-images' => true,
 		],
-		// 'hero-section',
+		'hero-section',
 		'html5'                    => [
 			'caption',
 			'comment-form',
@@ -599,12 +602,12 @@ return [
 		'footer-3'       => null,
 		'before-header'  => 'genesis_before_header_wrap',
 		'before-footer'  => 'genesis_before_footer_wrap',
-		'footer-credits' => 'genesis_after_footer_wrap',
-		// 'front-page-1'   => 'front_page_widgets',
-		// 'front-page-2'   => 'front_page_widgets',
-		// 'front-page-3'   => 'front_page_widgets',
-		// 'front-page-4'   => 'front_page_widgets',
-		// 'front-page-5'   => 'front_page_widgets',
+		'footer-credits' => 'genesis_footer',
+		'front-page-1'   => 'front_page_widgets',
+		'front-page-2'   => 'front_page_widgets',
+		'front-page-3'   => 'front_page_widgets',
+		'front-page-4'   => 'front_page_widgets',
+		'front-page-5'   => 'front_page_widgets',
 	],
 
 	/*

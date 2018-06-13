@@ -1,11 +1,20 @@
 .site-header {
-	padding: 0 30px;
+	width: 100%;
 	background-color: $site-header--background-color;
 	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint(sm) {
 		position: fixed;
 		z-index: 9999;
-		width: 100%;
+	}
+
+	> .wrap {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		justify-content: space-between;
+		align-items: center;
+
+		@include flexfix;
 	}
 }

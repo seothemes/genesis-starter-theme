@@ -5,7 +5,7 @@
 	margin-bottom: 40px;
 	font-size: $comments--font-size;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 	}
 }
@@ -41,7 +41,7 @@
 	margin-bottom: 40px;
 	font-size: $comments--font-size;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 	}
 
@@ -65,7 +65,7 @@
 	margin-bottom: 40px;
 	font-size: $comments--font-size;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 	}
 

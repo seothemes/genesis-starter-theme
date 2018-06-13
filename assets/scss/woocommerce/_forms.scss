@@ -80,7 +80,7 @@
 	}
 }
 
-@media only screen and (min-width: $small-screen-width) {
+@include breakpoint( xs ) {
 
 	.woocommerce form .form-row-first,
 	.woocommerce-page form .form-row-first,

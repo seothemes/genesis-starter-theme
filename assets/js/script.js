@@ -1,61 +1,87 @@
 /**
- * Genesis Sample entry point.
- *
- * @package GenesisSample\JS
- * @author  StudioPress
- * @license GPL-2.0+
+ * Custom JavaScript.
  */
 
-var genesisSample = ( function( $ ) {
-    'use strict';
+( function( document, $ ) {
+	'use strict';
 
-    /**
-     * Adjust site inner margin top to compensate for sticky header height.
-     *
-     * @since 2.6.0
-     */
-    var moveContentBelowFixedHeader = function() {
-            var siteInnerMarginTop = 0;
+	/**
+	 * Append span to menu toggle.
+	 */
+	$( document ).ready( function() {
+		$('.menu-toggle').append('<span></span>');
+	} );
 
-            if( $('.site-header').css('position') === 'fixed' ) {
-                siteInnerMarginTop = $('.site-header').outerHeight();
-            }
+	/**
+	 * Add shrink class to header on scroll.
+	 */
+	$( window ).scroll( function() {
+		var scroll = $( window ).scrollTop();
+		var header = $( '.site-header' ).outerHeight();
+		if ( scroll >= header ) {
+			$( '.site-header' ).addClass( 'shrink' );
+		} else {
+			$( '.site-header' ).removeClass( 'shrink' );
+		}
+	});
 
-            $('.site-inner').css('margin-top', siteInnerMarginTop);
-        },
+	/**
+	 * Smooth scrolling.
+	 */
+	// Select all links with hashes
+	$( 'a[href*="#"]' )
 
-        /**
-         * Initialize Genesis Sample.
-         *
-         * Internal functions to execute on document load can be called here.
-         *
-         * @since 2.6.0
-         */
-        init = function() {
-            // Run on first load.
-            moveContentBelowFixedHeader();
+	// Remove links that don't actually link to anything
+		.not( '[href="#"]' )
+		.not( '[href="#0"]' )
 
-            // Run after window resize.
-            $( window ).resize(function() {
-                moveContentBelowFixedHeader();
-            });
+		// Remove WooCommerce tabs
+		.not( '[href*="#tab-"]' )
+		.click( function( event ) {
 
-            // Run after the Customizer updates.
-            // 1.5s delay is to allow logo area reflow.
-            if (typeof wp != "undefined" && typeof wp.customize != "undefined") {
-                wp.customize.bind( 'change', function ( setting ) {
-                    setTimeout(function() {
-                        moveContentBelowFixedHeader();
-                    }, 1500);
-                });
-            }
-        };
+			// On-page links
+			if (
+				location.pathname.replace( /^\//, '' ) ==
+				this.pathname.replace( /^\//, '' ) &&
+				location.hostname == this.hostname
+			) {
 
-    // Expose the init function only.
-    return {
-        init: init
-    };
+				// Figure out element to scroll to
+				var target = $( this.hash );
+				target = target.length ?
+					target :
+					$( '[name=' + this.hash.slice( 1 ) + ']' );
 
-})( jQuery );
+				// Does a scroll target exist?
+				if ( target.length ) {
 
-jQuery( window ).on( 'load', genesisSample.init );
+					// Only prevent default if animation is actually gonna happen
+					event.preventDefault();
+					$( 'html, body' ).animate(
+						{
+							scrollTop: target.offset().top
+						},
+						1000,
+						function() {
+
+							// Callback after animation, must change focus!
+							var $target = $( target );
+							$target.focus();
+
+							// Checking if the target was focused
+							if ( $target.is( ':focus' ) ) {
+								return false;
+							} else {
+
+								// Adding tabindex for elements not focusable
+								$target.attr( 'tabindex', '-1' );
+
+								// Set focus again
+								$target.focus();
+							}
+						}
+					);
+				}
+			}
+		});
+}( document, jQuery ) );

@@ -1,0 +1,12 @@
+/* ## Google Map
+--------------------------------------------- */
+
+.agm-canvas {
+
+	.hero-section & {
+		position: absolute;
+		height: 100% !important;
+
+		@include center;
+	}
+}

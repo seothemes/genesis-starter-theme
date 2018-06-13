@@ -3,11 +3,11 @@
 
 .search-form {
 	overflow: hidden;
-}
 
-.entry-content .search-form {
-	width: 50%;
-	margin-bottom: 40px;
+	.entry-content & {
+		width: 50%;
+		margin-bottom: 40px;
+	}
 }
 
 .post-password-form input[type="submit"],

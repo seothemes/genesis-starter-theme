@@ -6,7 +6,7 @@
 	padding: 20px 30px;
 	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 		padding: 40px 60px;
 	}
@@ -26,7 +26,7 @@
 .archive-description {
 	margin-bottom: 40px;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 	}
 
@@ -44,7 +44,7 @@
 .author-box {
 	margin-bottom: 40px;
 
-	@media only screen and (min-width: $standard-screen-width) {
+	@include breakpoint( sm ) {
 		margin-bottom: 60px;
 		padding: 30px;
 		background-color: $author-box--background-color;

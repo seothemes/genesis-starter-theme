@@ -21,21 +21,21 @@ h2 {
 	font-size: $h2--font-size;
 }
 
-.entry-content h3,
-.entry-content h4 {
-	font-weight: $font-weight--semibold;
-}
-
 h3 {
 	font-size: $h3--font-size;
+
+	.entry-content & {
+		font-weight: $font-weight--semibold;
+	}
 }
 
 h4 {
 	font-size: $h4--font-size;
-}
 
-.entry-content h4 {
-	margin-top: 40px;
+	.entry-content & {
+		margin-top: 4rem;
+		font-weight: $font-weight--semibold;
+	}
 }
 
 h5 {
