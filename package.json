@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.0.0-beta",
+  "version": "3.0.0",
   "description": "A config based Genesis child theme with Gulp and Sass.",
   "repository": {
     "type": "git",
