@@ -4,7 +4,8 @@
 .hero-section {
 	position: relative;
 	padding: 12rem 0 6rem;
-	color: $hero-section--background-color;
+	color: $hero-section--color;
+	background-color: $hero-section--background-color;
 	background-position: center;
 	background-size: cover;
 	text-align: center;
