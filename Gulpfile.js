@@ -7,8 +7,9 @@
 'use strict';
 
 var gulp    = require( 'gulp' ),
+	pkg     = require( './package.json' ),
 	toolkit = require( 'gulp-wp-toolkit' ),
-	pkg     = require( './package.json' );
+	zip     = require( 'gulp-zip' );
 
 toolkit.extendConfig(
 	{
@@ -34,7 +35,19 @@ toolkit.extendConfig(
 			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
 			js: ['assets/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: 'lib/languages/'
+			i18n: 'lib/languages/',
+			zip: [
+				'./**/*',
+				'!./*.zip',
+				'!./node_modules',
+				'!./node_modules/**/*',
+				'!./vendor',
+				'!./vendor/**/*',
+				'!./git',
+				'!./git/**/*',
+				'!./lib/.git',
+				'!./lib/.git/**/*'
+			]
 		},
 		css: {
 			basefontsize: 10, // Used by postcss-pxtorem.
@@ -69,4 +82,10 @@ toolkit.extendConfig(
 	}
 );
 
-toolkit.extendTasks( gulp );
+toolkit.extendTasks( gulp, {
+	'zip': function() {
+		return gulp.src(toolkit.config.src.zip, {base: './'}).
+		pipe(zip(pkg.name + '-' + pkg.version + '.zip')).
+		pipe(gulp.dest('../'));
+	}
+} );
