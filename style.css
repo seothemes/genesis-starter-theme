@@ -4,7 +4,7 @@
  * Author: SEO Themes
  * Author URI: https://seothemes.com
  * Description: A config based Genesis child theme with Gulp and Sass.
- * Version: 3.0.0
+ * Version: 3.0.1
  * License: GPL-2.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -27,6 +27,7 @@
 	- Tables
 	- Screen Reader Text
 - Structure and Layout
+	- Column Classes
 	- Site Container
 	- Site Inner
 - Common Classes
@@ -35,27 +36,32 @@
 	- Search Form
 	- Titles
 	- WordPress
+	- Gutenberg
 - Widgets
 	- Featured Content
 - Plugins
 	- Genesis eNews Extended
 	- Genesis Simple FAQ
+	- Google Map
 	- Jetpack
 - Skip Links
 - Site Header
+	- Before Footer
 	- Title Area
+	- Hero Section
 - Site Navigation
 	- Responsive Menu
-	- Header Menu
-	- Footer Menu
+	- Primary Menu
+	- Secondary Menu
 - Content Area
 	- Entry Content
 	- Entry Meta
 	- Pagination
 	- Entry Comments
 - Sidebar
-- Footer Widgets
 - Site Footer
+	- Before Footer
+	- Footer Widgets
 - Print Styles
 */
 /* # HTML5 Reset
@@ -444,14 +450,15 @@ h6 {
 --------------------------------------------- */
 embed,
 iframe,
-img,
 object,
 video,
 .wp-caption {
+	width: 100%;
 	max-width: 100%;
 }
 
 img {
+	max-width: 100%;
 	height: auto;
 	vertical-align: top;
 }
@@ -773,6 +780,9 @@ th:first-child {
 
 /* ## Column Classes
 --------------------------------------------- */
+.full-width {
+	width: 100%;
+}
 
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
@@ -991,6 +1001,97 @@ img.alignright,
 	margin: 0 0 30px;
 }
 
+.post-edit-link {
+	display: none;
+}
+
+.single .post-edit-link {
+	display: block;
+}
+
+/* ## Gutenberg
+--------------------------------------------- */
+.alignwide {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	max-width: 1024px;
+	-webkit-transform: translate(-50%);
+	        transform: translate(-50%);
+}
+
+.alignwide img {
+	display: inline-block;
+	margin: 1.618em auto;
+}
+
+.alignfull {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	max-width: none;
+	margin-left: -50vw;
+}
+
+.content-sidebar .alignfull,
+.sidebar-content .alignfull {
+	max-width: calc(100% + 12rem);
+}
+
+.alignfull img {
+	display: inline-block;
+	width: 100%;
+	margin: 1.618em auto;
+}
+
+.wp-block-image figcaption {
+	margin: 0 auto 2em;
+}
+
+.wp-block-button {
+	display: block;
+	width: 100%;
+	background: transparent;
+	text-align: center;
+	clear: both;
+}
+
+.wp-block-button:before,
+.wp-block-button:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.wp-block-button a {
+	display: inline-block;
+}
+
+.wp-block-button a:hover,
+.wp-block-button a:focus {
+	color: #ffffff;
+}
+
+.wp-block-pullquote > p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+
+.wp-block-pullquote cite {
+	font-style: normal;
+}
+
+.wp-block-gallery .blocks-gallery-image {
+	margin-right: 0;
+}
+
+.blocks-gallery-image {
+	display: block;
+	width: 100%;
+	margin: 0 0 6vw;
+	text-align: center;
+}
+
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
 .sidebar .widget {
@@ -1189,6 +1290,8 @@ img.alignright,
 
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
+/* ## Before Header
+--------------------------------------------- */
 .site-header {
 	position: absolute;
 	z-index: 9999;
@@ -1842,8 +1945,12 @@ img.alignright,
 	padding: 6rem 0;
 }
 
-/* # Footer Widgets
+/* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
+/* ## Before Footer
+--------------------------------------------- */
+/* ## Footer Widgets
+--------------------------------------------- */
 .footer-widgets {
 	clear: both;
 	padding: 60px 0;
@@ -1875,8 +1982,6 @@ img.alignright,
 	margin-bottom: 0;
 }
 
-/* # Site Footer
----------------------------------------------------------------------------------------------------- */
 .site-footer {
 	border-top: 1px solid #eeeeee;
 	font-size: 1.5rem;
@@ -1894,6 +1999,17 @@ img.alignright,
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 512px) {
+	.blocks-gallery-image {
+		width: 48.71795%;
+		margin-bottom: 2.5641%;
+	}
+	.blocks-gallery-image:nth-of-type(odd) {
+		clear: both;
+		margin-left: 0;
+	}
+}
 
 @media (min-width: 896px) {
 	.content-sidebar-wrap {
@@ -1981,6 +2097,83 @@ img.alignright,
 		margin-bottom: 60px;
 		padding: 30px;
 		background-color: #f5f5f5;
+	}
+	.blocks-gallery-image {
+		margin-bottom: 2.5641%;
+		margin-left: 2.5641%;
+	}
+	.blocks-gallery-image:nth-of-type(odd) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-2 .blocks-gallery-image {
+		width: 48.71795%;
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-2 .blocks-gallery-image:nth-of-type(odd) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-3 .blocks-gallery-image {
+		width: 31.62393%;
+	}
+	.wp-block-gallery.columns-3 .blocks-gallery-image:nth-of-type(odd) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-3 .blocks-gallery-image:nth-of-type(3n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-4 .blocks-gallery-image {
+		width: 23.07692%;
+	}
+	.wp-block-gallery.columns-4 .blocks-gallery-image:nth-of-type(3n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-4 .blocks-gallery-image:nth-of-type(4n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-5 .blocks-gallery-image {
+		width: 17.94872%;
+	}
+	.wp-block-gallery.columns-5 .blocks-gallery-image:nth-of-type(4n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-5 .blocks-gallery-image:nth-of-type(5n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-6 .blocks-gallery-image {
+		width: 14.52991%;
+	}
+	.wp-block-gallery.columns-6 .blocks-gallery-image:nth-of-type(5n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-6 .blocks-gallery-image:nth-of-type(6n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-7 .blocks-gallery-image {
+		width: 12.08791%;
+	}
+	.wp-block-gallery.columns-7 .blocks-gallery-image:nth-of-type(6n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-7 .blocks-gallery-image:nth-of-type(7n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-8 .blocks-gallery-image {
+		width: 10.25641%;
+	}
+	.wp-block-gallery.columns-8 .blocks-gallery-image:nth-of-type(7n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-8 .blocks-gallery-image:nth-of-type(8n + 1) {
+		margin-left: 0;
+	}
+	.wp-block-gallery.columns-9 .blocks-gallery-image {
+		width: 8.83191%;
+	}
+	.wp-block-gallery.columns-9 .blocks-gallery-image:nth-of-type(8n + 1) {
+		margin-left: 2.5641%;
+	}
+	.wp-block-gallery.columns-9 .blocks-gallery-image:nth-of-type(9n + 1) {
+		margin-left: 0;
 	}
 	.after-entry .enews {
 		padding-right: 30px;

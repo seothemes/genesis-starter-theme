@@ -66,3 +66,11 @@ img.alignright,
 .entry-content .wp-video {
 	margin: 0 0 30px;
 }
+
+.post-edit-link {
+	display: none;
+
+	.single & {
+		display: block;
+	}
+}

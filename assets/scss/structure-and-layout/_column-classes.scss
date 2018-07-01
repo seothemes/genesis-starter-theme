@@ -1,6 +1,10 @@
 /* ## Column Classes
 --------------------------------------------- */
 
+.full-width {
+	width: 100%;
+}
+
 @include breakpoint(sm) {
 
 	.one-half,

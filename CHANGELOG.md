@@ -1,6 +1,9 @@
 # Genesis Starter Theme Changelog
 
-## [3.0.0-beta] - 2018-06-01
+## [3.0.1] - 2018-07-01
+
+
+## [3.0.0] - 2018-06-01
 * Switch to Child Theme Library
 * Switch to Gulp WP Toolkit
 

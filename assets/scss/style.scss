@@ -12,6 +12,7 @@
 	- Tables
 	- Screen Reader Text
 - Structure and Layout
+	- Column Classes
 	- Site Container
 	- Site Inner
 - Common Classes
@@ -20,27 +21,32 @@
 	- Search Form
 	- Titles
 	- WordPress
+	- Gutenberg
 - Widgets
 	- Featured Content
 - Plugins
 	- Genesis eNews Extended
 	- Genesis Simple FAQ
+	- Google Map
 	- Jetpack
 - Skip Links
 - Site Header
+	- Before Footer
 	- Title Area
+	- Hero Section
 - Site Navigation
 	- Responsive Menu
-	- Header Menu
-	- Footer Menu
+	- Primary Menu
+	- Secondary Menu
 - Content Area
 	- Entry Content
 	- Entry Meta
 	- Pagination
 	- Entry Comments
 - Sidebar
-- Footer Widgets
 - Site Footer
+	- Before Footer
+	- Footer Widgets
 - Print Styles
 */
 
@@ -57,6 +63,5 @@
 @import "content-area/index";
 @import "sidebar/index";
 @import "front-page/index";
-@import "footer-widgets/index";
 @import "site-footer/index";
 @import "print-styles/index";

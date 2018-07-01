@@ -3,14 +3,15 @@
 
 embed,
 iframe,
-img,
 object,
 video,
 .wp-caption {
+	width: 100%;
 	max-width: 100%;
 }
 
 img {
+	max-width: 100%;
 	height: auto;
 	vertical-align: top;
 }
