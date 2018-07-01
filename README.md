@@ -23,6 +23,11 @@ Check out the live demo <a href="https://demo.seothemes.com/genesis-starter" tar
 			<td><a href="http://php.net/manual/en/install.php" target="_blank">php.net</a></td>
 		</tr>
 		<tr>
+			<td>Composer >= 1.5.0</td>
+			<td><code>composer --version</code></td>
+			<td><a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx" target="_blank">getcomposer.org</a></td>
+		</tr>
+		<tr>
 			<td>Node.js 6.x</td>
 			<td><code>node -v</code></td>
 			<td><a href="http://nodejs.org/" target="_blank">nodejs.org</a></td>
@@ -184,7 +189,7 @@ A shout out to anyone who's code was used:
 <a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>, 
 <a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>, 
 <a href="https://github.com/cpaul007/" target="_blank">Chinmoy Paul</a>, 
-<a href="https://github.com/cjkoepke/" target="_blank">Calvin Koepke</a>, 
 <a href="https://github.com/nathanrice/" target="_blank">Nathan Rice</a>, 
 <a href="https://github.com/dreamwhisper/" target="_blank">Jen Baumann</a>, 
+<a href="https://github.com/nickcernis/" target="_blank">Nick Cernis</a>, 
 <a href="https://github.com/bgardner/" target="_blank">Brian Gardner</a>
