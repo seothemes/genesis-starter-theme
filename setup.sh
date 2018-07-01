@@ -11,6 +11,7 @@ default_url="https://genesis-starter.test"
 
 # Directories
 basedir="$( cd "$( dirname "$0" )" && pwd )/."
+configdir="$basedir/config"
 assetsdir="$basedir/assets"
 sassdir="$basedir/assets/scss"
 basedir_all_files="$basedir/."
@@ -200,6 +201,9 @@ echo "--> Change author URL .............. ${green}done${txtreset}"
 
 # PHP files
 find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# Config
+find "$configdir" -name '*.php' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
 
 # style.css
 find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
