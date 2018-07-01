@@ -5,7 +5,7 @@
 
 	&,
 	td {
-		border-color: #eee;
+		border-color: $lighter-grey;
 		border-radius: 0;
 		line-height: 1.75;
 		word-break: normal;
@@ -25,13 +25,11 @@
 
 	td {
 		padding: 10px 12px;
-		font-size: 18px;
 		font-size: 1.8rem;
 
 		&.actions .coupon .input-text {
 			width: 100% !important;
 			margin-bottom: 10px;
-			font-size: 18px;
 			font-size: 1.8rem;
 
 			@include breakpoint( xs ) {

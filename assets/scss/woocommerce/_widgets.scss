@@ -34,7 +34,7 @@
 	}
 
 	.total {
-		border-top: 1px solid #eee;
+		border-top: 1px solid $lighter-grey;
 	}
 
 	.buttons a {
@@ -72,11 +72,11 @@
 .woocommerce.widget_price_filter {
 
 	.price_slider_wrapper .ui-widget-content {
-		background-color: #eee;
+		background-color: $lighter-grey;
 	}
 
 	.ui-slider .ui-slider-range {
-		background-color: #0073e5;
+		background-color: $blue;
 	}
 
 	.ui-slider .ui-slider-handle {
@@ -84,7 +84,6 @@
 	}
 
 	.price_slider_amount .button {
-		font-size: 16px;
 		font-size: 1.6rem;
 	}
 }
@@ -94,7 +93,7 @@
 	.widget_layered_nav ul li.chosen a:before,
 	.widget_layered_nav_filters ul li a:before,
 	.widget_rating_filter ul li.chosen a:before {
-		color: #0073e5;
+		color: $blue;
 	}
 }
 
@@ -109,7 +108,6 @@
 -------------------------------------------------- */
 
 .woocommerce.widget_recent_reviews .reviewer {
-	font-size: 12px;
 	font-size: 1.2rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;

@@ -12,8 +12,8 @@
 		&:disabled,
 		&:disabled[disabled] {
 			padding: 16px 24px;
-			color: #fff;
-			background-color: #000;
+			color: $white;
+			background-color: $dark-grey;
 		}
 
 		&.alt {
@@ -25,8 +25,8 @@
 			&[disabled]:disabled,
 			&[disabled]:disabled:hover {
 				padding: 16px 24px;
-				color: #fff;
-				background-color: #000;
+				color: $white;
+				background-color: $dark-grey;
 			}
 		}
 	}

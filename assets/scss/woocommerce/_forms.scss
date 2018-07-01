@@ -16,9 +16,8 @@
 		padding: 15px 20px;
 		border: 0;
 		border-radius: 0;
-		color: #fff;
-		background-color: #333;
-		font-size: 16px;
+		color: $white;
+		background-color: $dark-grey;
 		font-size: 1.6rem;
 		font-weight: 600;
 		text-align: center;
@@ -28,8 +27,8 @@
 
 		&:hover,
 		&:focus {
-			color: #fff;
-			background-color: #0073e5;
+			color: $white;
+			background-color: $blue;
 		}
 	}
 
@@ -41,7 +40,6 @@
 		width: 70px;
 		margin-right: 5px;
 		padding: 12px 5px;
-		font-size: 20px;
 		font-size: 2rem;
 		line-height: 1.5;
 	}
@@ -61,7 +59,7 @@
 		.form-row.woocommerce-validated input.input-text,
 		.form-row.woocommerce-validated select,
 		.form-row.woocommerce-validated .select2-container {
-			border-color: #eee;
+			border-color: $lighter-grey;
 			border-radius: 0;
 		}
 	}
@@ -109,7 +107,7 @@
 	td.actions .coupon .input-text {
 		width: 150px;
 		padding: 5px 20px;
-		border-color: #eee;
+		border-color: $lighter-grey;
 	}
 
 	input {

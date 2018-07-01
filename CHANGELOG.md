@@ -1,7 +1,15 @@
 # Genesis Starter Theme Changelog
 
 ## [3.0.1] - 2018-07-01
-
+* Add and clean up WooCommerce Sass
+* Add Gutenberg Sass
+* Add Gulp zip task
+* Add .gitattributes
+* Add and run stylelint
+* Update widget content
+* Update readme to include composer requirements
+* Fix hero section Sass variables
+* Fix sticky header setting CSS
 
 ## [3.0.0] - 2018-06-01
 * Switch to Child Theme Library

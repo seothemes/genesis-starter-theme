@@ -22,18 +22,16 @@
 
 		h3,
 		.price .from {
-			color: #000;
+			color: $dark-grey;
 		}
 
 		h3:hover,
 		.price {
-			color: #0073e5;
+			color: $blue;
 		}
 
 		/* MS Edge Bug Fix */
 		a {
-			-webkit-transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
-			-ms-transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
 			transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
 		}
 	}
@@ -55,9 +53,8 @@
 			span {
 				display: inline-block;
 				padding: 8px 12px;
-				color: #333;
-				background-color: #f5f5f5;
-				font-size: 16px;
+				color: $dark-grey;
+				background-color: $lightest-grey;
 				font-size: 1.6rem;
 				font-weight: 600;
 				line-height: 1.625;
@@ -68,8 +65,8 @@
 			a:focus,
 			a:hover,
 			span.current {
-				color: #fff;
-				background-color: #333;
+				color: $white;
+				background-color: $dark-grey;
 			}
 		}
 	}

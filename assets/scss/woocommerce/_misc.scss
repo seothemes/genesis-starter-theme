@@ -4,13 +4,13 @@
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
-	border-top-color: #0073e5;
-	background-color: #f5f5f5;
+	border-top-color: $blue;
+	background-color: $lightest-grey;
 
 	&:before,
 	&:before,
 	&:before {
-		color: #0073e5;
+		color: $blue;
 	}
 }
 

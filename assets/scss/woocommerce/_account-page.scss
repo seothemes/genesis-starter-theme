@@ -4,7 +4,6 @@
 .woocommerce-account {
 
 	.woocommerce-Address-title h3 {
-		font-size: 26px;
 		font-size: 2.6rem;
 	}
 
@@ -35,7 +34,7 @@
 .woocommerce-MyAccount-navigation {
 	margin-bottom: 40px;
 	padding: 20px;
-	border: 1px solid #eee;
+	border: 1px solid $lighter-grey;
 
 	ul {
 		margin-bottom: 0;
@@ -51,7 +50,7 @@
 			}
 
 			&.is-active > a {
-				color: #333;
+				color: $dark-grey;
 				font-weight: 700;
 			}
 		}

@@ -65,7 +65,7 @@ Loaded on WooCommerce pages */
 
 .woocommerce ul.products li.product h3,
 .woocommerce ul.products li.product .price .from {
-	color: #000000;
+	color: #333333;
 }
 
 .woocommerce ul.products li.product h3:hover,
@@ -98,7 +98,6 @@ Loaded on WooCommerce pages */
 	padding: 8px 12px;
 	color: #333333;
 	background-color: #f5f5f5;
-	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 600;
 	line-height: 1.625;
@@ -178,7 +177,7 @@ Loaded on WooCommerce pages */
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
 	display: block;
 	padding: 0.5em 1em;
-	color: #000000;
+	color: #333333;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
@@ -237,14 +236,12 @@ Loaded on WooCommerce pages */
 
 .woocommerce-cart table.cart td {
 	padding: 10px 12px;
-	font-size: 18px;
 	font-size: 1.8rem;
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
 	width: 100% !important;
 	margin-bottom: 10px;
-	font-size: 18px;
 	font-size: 1.8rem;
 }
 
@@ -324,7 +321,6 @@ Loaded on WooCommerce pages */
 	border-radius: 0;
 	color: #ffffff;
 	background-color: #333333;
-	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 600;
 	text-align: center;
@@ -363,7 +359,6 @@ Loaded on WooCommerce pages */
 	width: 70px;
 	margin-right: 5px;
 	padding: 12px 5px;
-	font-size: 20px;
 	font-size: 2rem;
 	line-height: 1.5;
 }
@@ -437,7 +432,7 @@ Loaded on WooCommerce pages */
 .woocommerce #respond input#submit:disabled[disabled] {
 	padding: 16px 24px;
 	color: #ffffff;
-	background-color: #000000;
+	background-color: #333333;
 }
 
 .woocommerce a.button.alt.disabled,
@@ -466,13 +461,12 @@ Loaded on WooCommerce pages */
 .woocommerce #respond input#submit.alt[disabled]:disabled:hover {
 	padding: 16px 24px;
 	color: #ffffff;
-	background-color: #000000;
+	background-color: #333333;
 }
 
 /* # WooCommerce Account Page
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce-account .woocommerce-Address-title h3 {
-	font-size: 26px;
 	font-size: 2.6rem;
 }
 
@@ -549,13 +543,12 @@ Loaded on WooCommerce pages */
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce .woocommerce-breadcrumb {
 	margin-bottom: 40px;
-	font-size: 18px;
 	font-size: 1.8rem;
 }
 
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce .woocommerce-breadcrumb a {
-	color: #000000;
+	color: #333333;
 }
 
 .woocommerce .woocommerce-breadcrumb a {
@@ -701,7 +694,6 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 
 .woocommerce .widget_price_filter .price_slider_amount .button,
 .woocommerce.widget_price_filter .price_slider_amount .button {
-	font-size: 16px;
 	font-size: 1.6rem;
 }
 
@@ -720,7 +712,6 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 /* Woo Recent Reviews
 -------------------------------------------------- */
 .woocommerce.widget_recent_reviews .reviewer {
-	font-size: 12px;
 	font-size: 1.2rem;
 	letter-spacing: 1px;
 	letter-spacing: 0.1rem;

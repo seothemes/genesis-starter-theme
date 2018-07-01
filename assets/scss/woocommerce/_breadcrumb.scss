@@ -3,12 +3,11 @@
 
 .woocommerce .woocommerce-breadcrumb {
 	margin-bottom: 40px;
-	font-size: 18px;
 	font-size: 1.8rem;
 
 	&,
 	a {
-		color: #000;
+		color: $dark-grey;
 	}
 
 	a {
@@ -16,7 +15,7 @@
 
 		&:focus,
 		&:hover {
-			color: #0073e5;
+			color: $blue;
 		}
 	}
 }
