@@ -8,7 +8,7 @@
  * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
- * @license   GPL-2.0+
+ * @license   GPL-2.0-or-later
  */
 
 // If this file is called directly, abort.

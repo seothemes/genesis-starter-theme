@@ -8,7 +8,7 @@
  * @link      https://github.com/seothemes/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
- * @license   GPL-2.0+
+ * @license   GPL-2.0-or-later
  */
 
 // If this file is called directly, abort.
@@ -27,10 +27,11 @@ return [
 	|
 	| List of directories for the Child Theme Library to load automatically.
 	| The Child Theme Library will load every PHP file in the list below.
-	| Note: Removing the default directories may cause theme to break.
+	| Note: Removing the default files might cause the theme to break.
 	|
 	*/
 	'autoload'            => [
+		// 'vendor/autoload',
 		'lib/functions/setup',
 		'lib/functions/utilities',
 		'lib/functions/attributes',
@@ -43,16 +44,15 @@ return [
 		'lib/functions/plugins',
 		'lib/functions/templates',
 		'lib/functions/upgrade',
-		'lib/admin/customizer-output',
-		'lib/admin/customizer-settings',
-		'lib/admin/customizer',
 		'lib/css/load-styles',
 		'lib/js/load-scripts',
+		'lib/widgets/widget-areas',
+		'lib/widgets/widgets',
+		'lib/admin/customizer-output',
+		'lib/admin/customizer-settings',
 		'lib/structure/footer',
 		'lib/structure/header',
 		'lib/structure/menu',
-		'lib/widgets/widget-areas',
-		'lib/widgets/widgets',
 	],
 
 	/*
@@ -67,23 +67,23 @@ return [
 	*/
 	'colors'              => [
 		'background' => [
-			'value' => 'rgba(255,255,255,1)',
-			'css'   => [
-				'rule' => [
-					'selectors'  => [
+			'default' => 'rgba(255,255,255,1)',
+			'output'  => [
+				[
+					'elements'   => [
 						'body',
 					],
 					'properties' => [
-						'background-color',
+						'background-color' => '%s',
 					],
 				],
 			],
 		],
 		'link'       => [
-			'value' => 'rgba(0,115,229,1)',
-			'css'   => [
-				'rule' => [
-					'selectors'  => [
+			'default' => 'rgba(0,115,229,1)',
+			'output'  => [
+				[
+					'elements'   => [
 						'a',
 						'.entry-title a:focus',
 						'.entry-title a:hover',
@@ -98,16 +98,16 @@ return [
 						'.sub-menu-toggle:hover',
 					],
 					'properties' => [
-						'color',
+						'color' => '%s',
 					],
 				],
 			],
 		],
 		'accent'     => [
-			'value' => '#0073e5',
-			'css'   => [
-				'rule' => [
-					'selectors'  => [
+			'default' => '#0073e5',
+			'output'  => [
+				[
+					'elements'   => [
 						'button:focus',
 						'button:hover',
 						'input[type="button"]:focus',
@@ -127,7 +127,7 @@ return [
 						'.genesis-nav-menu > .menu-highlight.current-menu-item > a',
 					],
 					'properties' => [
-						'background-color',
+						'background-color' => '%s',
 					],
 				],
 			],
@@ -180,7 +180,7 @@ return [
 	|
 	| Controls the Genesis default settings. The commented out settings below
 	| are the default settings currently in Genesis. To override a setting,
-	| uncomment the setting's line and change the value to your liking.
+	| uncomment the setting's line and change the values to your liking.
 	|
 	*/
 	'genesis-settings'    => [
@@ -247,7 +247,7 @@ return [
 	|
 	| Provides an easy way to add custom image sizes to your WordPress site.
 	| Each item in this array will create a new custom image size, based
-	| on the 'height', 'width' and 'crop' parameters specified below.
+	| on the height, width & crop parameters that are specified below.
 	|
 	*/
 	'image-sizes'         => [
@@ -304,16 +304,16 @@ return [
 	| Page Templates
 	|--------------------------------------------------------------------------
 	|
-	| Custom page templates can be defined here. To register a custom page
-	| template, create an additional key => value pair with your file's
-	| full extension and the name, and add the file to ./templates/.
+	| Allows the Child Theme Library to register custom page templates that
+	| are located more than one level deep in the theme's file structure,
+	| since WordPress only checks direct sub-directories of the theme.
 	|
 	*/
 	'page-templates'      => [
 		'page-blog.php'    => __( 'Blog', 'child-theme-library' ),
 		'page-contact.php' => __( 'Contact Page', 'child-theme-library' ),
 		'page-boxed.php'   => __( 'Boxed Template', 'child-theme-library' ),
-		'page-full.php'    => __( 'Full Width', 'child-theme-library' ),
+		'page-builder.php' => __( 'Page Builder', 'child-theme-library' ),
 		'page-landing.php' => __( 'Landing Page', 'child-theme-library' ),
 		'page-sitemap.php' => __( 'Sitemap', 'child-theme-library' ),
 	],
@@ -340,6 +340,11 @@ return [
 			'required' => false,
 		],
 		[
+			'name'     => 'Genesis Testimonial Slider',
+			'slug'     => 'wpstudio-testimonial-slider',
+			'required' => false,
+		],
+		[
 			'name'     => 'Genesis Widget Column Classes',
 			'slug'     => 'genesis-widget-column-classes',
 			'required' => false,
@@ -350,18 +355,18 @@ return [
 			'required' => false,
 		],
 		[
+			'name'     => 'Icon Widget',
+			'slug'     => 'icon-widget',
+			'required' => false,
+		],
+		[
+			'name'     => 'One Click Demo Import',
+			'slug'     => 'one-click-demo-import',
+			'required' => false,
+		],
+		[
 			'name'     => 'Simple Social Icons',
 			'slug'     => 'simple-social-icons',
-			'required' => false,
-		],
-		[
-			'name'     => 'Widget Importer & Exporter',
-			'slug'     => 'widget-importer-exporter',
-			'required' => false,
-		],
-		[
-			'name'     => 'WordPress Importer',
-			'slug'     => 'wordpress-importer',
 			'required' => false,
 		],
 		[
@@ -421,7 +426,7 @@ return [
 	*/
 	'scripts'             => [
 		'menu'   => [
-			'src'       => CHILD_THEME_URI . '/lib/js/menu.js',
+			'src'       => CHILD_THEME_ASSETS . '/js/menus.js',
 			'deps'      => 'jquery',
 			'ver'       => CHILD_THEME_VERSION,
 			'in_footer' => true,
@@ -563,7 +568,7 @@ return [
 		],
 		'custom-header'            => [
 			'header-selector'  => '.hero-section',
-			'default_image'    => CHILD_THEME_DIR . '/assets/images/hero.jpg',
+			'default_image'    => CHILD_THEME_ASSETS . '/images/hero.jpg',
 			'width'            => 1280,
 			'height'           => 720,
 			'flex-height'      => true,
@@ -583,7 +588,7 @@ return [
 		'genesis-after-entry-widget-area',
 		'genesis-menus'            => [
 			'primary'   => __( 'Header Menu', 'child-theme-library' ),
-			'secondary' => __( 'After Header Menu', 'child-theme-library' ),
+			// 'secondary' => __( 'After Header Menu', 'child-theme-library' ),
 		],
 		'genesis-responsive-viewport',
 		'genesis-structural-wraps' => [
@@ -603,17 +608,17 @@ return [
 			'gallery',
 			'search-form',
 		],
-		'post-formats'             => [
-			'aside',
-			'audio',
-			'chat',
-			'gallery',
-			'image',
-			'link',
-			'quote',
-			'status',
-			'video',
-		],
+		// 'post-formats'             => [
+		// 	'aside',
+		// 	'audio',
+		// 	'chat',
+		// 	'gallery',
+		// 	'image',
+		// 	'link',
+		// 	'quote',
+		// 	'status',
+		// 	'video',
+		// ],
 		'post-thumbnails',
 		'woocommerce',
 		'wc-product-gallery-zoom',
@@ -640,8 +645,8 @@ return [
 		'footer-1'       => null,
 		'footer-2'       => null,
 		'footer-3'       => null,
-		'before-header'  => 'genesis_before_header_wrap',
-		'before-footer'  => 'genesis_before_footer_wrap',
+		// 'before-header'  => 'genesis_before_header_wrap',
+		// 'before-footer'  => 'genesis_before_footer_wrap',
 		'footer-credits' => 'genesis_footer',
 		'front-page-1'   => 'child_theme_front_page_widgets',
 		'front-page-2'   => 'child_theme_front_page_widgets',
