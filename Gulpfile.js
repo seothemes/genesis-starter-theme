@@ -35,7 +35,7 @@ toolkit.extendConfig(
 			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
 			js: ['assets/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: 'lib/languages/',
+			i18n: './assets/lang/',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -66,8 +66,8 @@ toolkit.extendConfig(
 			}
 		},
 		dest: {
-            i18npo: './lib/languages/',
-            i18nmo: './lib/languages/',
+            i18npo: './assets/lang/',
+            i18nmo: './assets/lang/',
 			images: './assets/images/',
 			js: './assets/js/'
 		},

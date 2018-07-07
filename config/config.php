@@ -532,7 +532,7 @@ return [
 	*/
 	'textdomain'          => [
 		'domain' => 'child-theme-library',
-		'path'   => apply_filters( 'child_theme_textdomain', CHILD_THEME_LIB . '/languages', 'child-theme-library' ),
+		'path'   => apply_filters( 'child_theme_textdomain', CHILD_THEME_ASSETS . '/lang', 'child-theme-library' ),
 	],
 
 	/*
@@ -643,11 +643,11 @@ return [
 		'before-header'  => 'genesis_before_header_wrap',
 		'before-footer'  => 'genesis_before_footer_wrap',
 		'footer-credits' => 'genesis_footer',
-		'front-page-1'   => 'front_page_widgets',
-		'front-page-2'   => 'front_page_widgets',
-		'front-page-3'   => 'front_page_widgets',
-		'front-page-4'   => 'front_page_widgets',
-		'front-page-5'   => 'front_page_widgets',
+		'front-page-1'   => 'child_theme_front_page_widgets',
+		'front-page-2'   => 'child_theme_front_page_widgets',
+		'front-page-3'   => 'child_theme_front_page_widgets',
+		'front-page-4'   => 'child_theme_front_page_widgets',
+		'front-page-5'   => 'child_theme_front_page_widgets',
 	],
 
 	/*
@@ -699,6 +699,6 @@ return [
 		// 'WC_Widget_Best_Sellers',
 		// 'WC_Widget_Onsale',
 		// 'WC_Widget_Random_Products',
-	]
+	],
 
 ];
