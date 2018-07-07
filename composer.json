@@ -44,6 +44,9 @@
     ],
     "stylelint": [
       "stylelint './assets/scss/**/*.scss' --fix"
+    ],
+    "phpcs": [
+      "phpcs"
     ]
   }
 }
