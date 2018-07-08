@@ -29,8 +29,8 @@ msgstr ""
 msgid "Boxed Template"
 msgstr ""
 
-#: config/config.php:316
-msgid "Full Width"
+#: config/config.php:316, lib/views/page-builder.php:9
+msgid "Page Builder"
 msgstr ""
 
 #: config/config.php:317, lib/views/page-landing.php:9
@@ -41,16 +41,12 @@ msgstr ""
 msgid "Sitemap"
 msgstr ""
 
-#: config/config.php:400, config/config.php:401
+#: config/config.php:405, config/config.php:406
 msgid "Menu"
 msgstr ""
 
-#: config/config.php:585
+#: config/config.php:590
 msgid "Header Menu"
-msgstr ""
-
-#: config/config.php:586
-msgid "After Header Menu"
 msgstr ""
 
 #: lib/admin/customizer-settings.php:57
@@ -71,8 +67,4 @@ msgstr ""
 
 #: lib/views/page-blog.php:9
 msgid "Blog Page"
-msgstr ""
-
-#: lib/views/page-builder.php:9
-msgid "Page Builder"
 msgstr ""

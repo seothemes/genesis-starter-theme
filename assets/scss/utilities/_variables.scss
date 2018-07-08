@@ -26,6 +26,7 @@ $base-font: "Source Sans Pro", sans-serif;
 $transition: 0.2s ease-in-out;
 
 // Border styles.
+$border-radius: 0;
 $border-width: 1px;
 $border-style: solid;
 $border-color: $lighter-grey;
@@ -94,6 +95,7 @@ $body--font-family: $base-font;
 $heading--font-family: $base-font;
 
 // Font weights.
+$font-weight--light: 400;
 $font-weight--regular: 400;
 $font-weight--semibold: 600;
 $font-weight--bold: 700;
