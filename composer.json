@@ -17,8 +17,7 @@
     "source": "https://github.com/seothemes/genesis-starter"
   },
   "require": {
-    "seothemes/child-theme-library": "dev-master",
-    "mnsami/composer-custom-directory-installer": "1.1.*"
+    "seothemes/child-theme-library": "dev-reorg"
   },
   "require-dev": {},
   "suggest": {},
@@ -27,19 +26,11 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "extra":{
-    "installer-paths":{
-      "./lib/": ["seothemes/child-theme-library"]
-    }
-  },
   "scripts": {
     "post-create-project-cmd": [
       "yarn install"
     ],
     "post-install-cmd": [
-      "yarn install"
-    ],
-    "post-update-cmd": [
       "yarn install"
     ],
     "stylelint": [

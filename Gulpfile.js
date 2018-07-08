@@ -44,6 +44,8 @@ toolkit.extendConfig(
 				'!./node_modules/**/*',
 				'!./vendor',
 				'!./vendor/**/*',
+				'./vendor/composer/**/*',
+				'./vendor/seothemes/**/*',
 				'!./git',
 				'!./git/**/*',
 				'!./lib/.git',
