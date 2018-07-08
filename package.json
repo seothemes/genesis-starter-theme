@@ -11,6 +11,7 @@
   "main": "Gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
     "gulp-zip": "^4.1.0",
     "prettier": "^1.13.4",

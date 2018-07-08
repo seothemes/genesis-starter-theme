@@ -8,6 +8,7 @@
 
 var gulp    = require( 'gulp' ),
 	pkg     = require( './package.json' ),
+	globs   = require( 'gulp-src-ordered-globs' ),
 	toolkit = require( 'gulp-wp-toolkit' ),
 	zip     = require( 'gulp-zip' );
 
@@ -84,7 +85,7 @@ toolkit.extendConfig(
 
 toolkit.extendTasks( gulp, {
 	'zip': function() {
-		return gulp.src(toolkit.config.src.zip, {base: './'}).
+		return globs(toolkit.config.src.zip, {base: './'}).
 		pipe(zip(pkg.name + '-' + pkg.version + '.zip')).
 		pipe(gulp.dest('../'));
 	}
