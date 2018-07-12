@@ -13,58 +13,30 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/config.php:151
+#: config/config.php:130
 msgid "Hero Image"
 msgstr ""
 
-#: config/config.php:313
+#: config/config.php:322
 msgid "Blog"
 msgstr ""
 
-#: config/config.php:314, lib/views/page-contact.php:9
-msgid "Contact Page"
-msgstr ""
-
-#: config/config.php:315, lib/views/page-boxed.php:9
-msgid "Boxed Template"
-msgstr ""
-
-#: config/config.php:316, lib/views/page-builder.php:9
+#: config/config.php:323
 msgid "Page Builder"
 msgstr ""
 
-#: config/config.php:317, lib/views/page-landing.php:9
+#: config/config.php:324
 msgid "Landing Page"
 msgstr ""
 
-#: config/config.php:318, lib/views/page-sitemap.php:9
+#: config/config.php:325
 msgid "Sitemap"
 msgstr ""
 
-#: config/config.php:405, config/config.php:406
+#: config/config.php:412, config/config.php:413
 msgid "Menu"
 msgstr ""
 
-#: config/config.php:590
+#: config/config.php:601
 msgid "Header Menu"
-msgstr ""
-
-#: lib/admin/customizer-settings.php:57
-msgid " Color"
-msgstr ""
-
-#: lib/functions/hero.php:141
-msgid "Latest Posts"
-msgstr ""
-
-#: lib/functions/hero.php:152
-msgid "Not found, error 404"
-msgstr ""
-
-#: lib/functions/hero.php:163
-msgid "Search results for: "
-msgstr ""
-
-#: lib/views/page-blog.php:9
-msgid "Blog Page"
 msgstr ""

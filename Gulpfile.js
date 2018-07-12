@@ -40,16 +40,16 @@ toolkit.extendConfig(
 			zip: [
 				'./**/*',
 				'!./*.zip',
+				'!./git',
+				'!./git/**/*',
 				'!./node_modules',
 				'!./node_modules/**/*',
 				'!./vendor',
 				'!./vendor/**/*',
-				'./vendor/composer/**/*',
-				'./vendor/seothemes/**/*',
-				'!./git',
-				'!./git/**/*',
-				'!./lib/.git',
-				'!./lib/.git/**/*'
+				'./vendor/composer/*.php',
+				'./vendor/seothemes/child-theme-library/src/*.php',
+				'./vendor/tgmpa/tgm-plugin-activation/languages/*',
+				'./vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php'
 			]
 		},
 		css: {

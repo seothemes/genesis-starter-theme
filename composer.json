@@ -17,9 +17,15 @@
     "source": "https://github.com/seothemes/genesis-starter"
   },
   "require": {
-    "seothemes/child-theme-library": "dev-reorg"
+    "seothemes/child-theme-library": "dev-master",
+    "tgmpa/tgm-plugin-activation": "^2.6.1"
   },
-  "require-dev": {},
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "squizlabs/php_codesniffer": "^3.2.3",
+    "wp-coding-standards/wpcs": "^0.14.1",
+    "roave/security-advisories": "dev-master"
+  },
   "suggest": {},
   "config": {
     "sort-order": true
