@@ -1,5 +1,16 @@
 # Genesis Starter Theme Changelog
 
+## [3.1.0] - 2018-07-12
+* Add contributing guidelines
+* Add gulp-src-ordered-globs as dependency
+* Add TGMPA as composer dependency instead of embedded
+* Update compatibility with child theme library OOP update
+* Update autoload function
+* Update theme images compression
+* Fix Customizer background color element
+* Remove Child Theme Library as git submodule
+* Remove constants from config
+
 ## [3.0.1] - 2018-07-01
 * Add and clean up WooCommerce Sass
 * Add Gutenberg Sass

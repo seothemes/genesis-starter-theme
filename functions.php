@@ -19,7 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Load Child Theme Library (do not remove).
-require_once get_stylesheet_directory() . '/lib/init.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+}
 
 /*
 |--------------------------------------------------------------------------

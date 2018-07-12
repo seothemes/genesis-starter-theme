@@ -4,12 +4,14 @@
  *
  * This file contains the config passed to the Child Theme Library.
  *
- * @package   SEOThemes\GenesisStarterTheme\Config
+ * @package   SEOThemes\GenesisStarterTheme
  * @link      https://github.com/seothemes/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-2.0-or-later
  */
+
+namespace SEOThemes\GenesisStarterTheme;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,34 +28,11 @@ return [
 	|--------------------------------------------------------------------------
 	|
 	| List of directories for the Child Theme Library to load automatically.
-	| The Child Theme Library will load every PHP file in the list below.
-	| Note: Removing the default files might cause the theme to break.
+	| File names should be the file path from the theme's root directory,
+	| not including the php extension, E.g: 'directory_name/file_name'.
 	|
 	*/
-	'autoload'            => [
-		// 'vendor/autoload',
-		'lib/functions/setup',
-		'lib/functions/utilities',
-		'lib/functions/attributes',
-		'lib/functions/defaults',
-		'lib/functions/demo',
-		'lib/functions/general',
-		'lib/functions/hero',
-		'lib/functions/layout',
-		'lib/functions/markup',
-		'lib/functions/plugins',
-		'lib/functions/templates',
-		'lib/functions/upgrade',
-		'lib/css/load-styles',
-		'lib/js/load-scripts',
-		'lib/widgets/widget-areas',
-		'lib/widgets/widgets',
-		'lib/admin/customizer-output',
-		'lib/admin/customizer-settings',
-		'lib/structure/footer',
-		'lib/structure/header',
-		'lib/structure/menu',
-	],
+	'autoload'            => [],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -72,6 +51,7 @@ return [
 				[
 					'elements'   => [
 						'body',
+						'.site-container',
 					],
 					'properties' => [
 						'background-color' => '%s',
@@ -163,9 +143,9 @@ return [
 	|
 	*/
 	'demo-import'         => [
-		'local_import_file'            => CHILD_THEME_DIR . '/sample.xml',
-		'local_import_widget_file'     => CHILD_THEME_DIR . '/widgets.wie',
-		'local_import_customizer_file' => CHILD_THEME_DIR . '/customizer.dat',
+		'local_import_file'            => get_stylesheet_directory() . '/sample.xml',
+		'local_import_widget_file'     => get_stylesheet_directory() . '/widgets.wie',
+		'local_import_customizer_file' => get_stylesheet_directory() . '/customizer.dat',
 		'import_file_name'             => 'Demo Import',
 		'categories'                   => false,
 		'local_import_redux'           => false,
@@ -296,7 +276,37 @@ return [
 	'map-style'           => [
 		'id'    => '123456789',
 		'name'  => 'Ultra Light',
-		'style' => CHILD_THEME_DIR . '/map.json',
+		'style' => get_stylesheet_directory() . '/map.json',
+	],
+
+	/*
+	|--------------------------------------------------------------------------
+	| Modules
+	|--------------------------------------------------------------------------
+	|
+	| List of Child Theme Library modules to enable/disable. Each module is
+	| independent of other modules however please note that removing the
+	| default modules can cause your site to not function as expected.
+	|
+	*/
+	'modules'             => [
+		'Setup',
+		'Utilities',
+		'Attributes',
+		'Defaults',
+		'DemoImport',
+		'HeroSection',
+		'Layout',
+		'Markup',
+		'Plugins',
+		'Templates',
+		'Enqueue',
+		'Shortcodes',
+		'Widgets',
+		'WidgetAreas',
+		'Admin',
+		'Customizer',
+		'Structure',
 	],
 
 	/*
@@ -311,8 +321,6 @@ return [
 	*/
 	'page-templates'      => [
 		'page-blog.php'    => __( 'Blog', 'child-theme-library' ),
-		'page-contact.php' => __( 'Contact Page', 'child-theme-library' ),
-		'page-boxed.php'   => __( 'Boxed Template', 'child-theme-library' ),
 		'page-builder.php' => __( 'Page Builder', 'child-theme-library' ),
 		'page-landing.php' => __( 'Landing Page', 'child-theme-library' ),
 		'page-sitemap.php' => __( 'Sitemap', 'child-theme-library' ),
@@ -426,15 +434,15 @@ return [
 	*/
 	'scripts'             => [
 		'menu'   => [
-			'src'       => CHILD_THEME_ASSETS . '/js/menus.js',
+			'src'       => get_stylesheet_directory_uri() . '/assets/js/menus.js',
 			'deps'      => 'jquery',
-			'ver'       => CHILD_THEME_VERSION,
+			'ver'       => wp_get_theme()->get( 'Version' ),
 			'in_footer' => true,
 		],
 		'script' => [
-			'src'       => CHILD_THEME_ASSETS . '/js/script.js',
+			'src'       => get_stylesheet_directory_uri() . '/assets/js/script.js',
 			'deps'      => 'jquery',
-			'ver'       => CHILD_THEME_VERSION,
+			'ver'       => wp_get_theme()->get( 'Version' ),
 			'in_footer' => true,
 		],
 	],
@@ -498,9 +506,9 @@ return [
 	*/
 	'styles'              => [
 		'woocommerce' => [
-			'src'   => CHILD_THEME_URI . '/woocommerce.css',
+			'src'   => get_stylesheet_directory_uri() . '/woocommerce.css',
 			'deps'  => [],
-			'ver'   => CHILD_THEME_VERSION,
+			'ver'   => wp_get_theme()->get( 'Version' ),
 			'media' => null,
 		],
 	],
@@ -537,7 +545,7 @@ return [
 	*/
 	'textdomain'          => [
 		'domain' => 'child-theme-library',
-		'path'   => apply_filters( 'child_theme_textdomain', CHILD_THEME_ASSETS . '/lang', 'child-theme-library' ),
+		'path'   => apply_filters( 'child_theme_textdomain', get_stylesheet_directory_uri() . '/assets/lang', 'child-theme-library' ),
 	],
 
 	/*
@@ -568,14 +576,18 @@ return [
 		],
 		'custom-header'            => [
 			'header-selector'  => '.hero-section',
-			'default_image'    => CHILD_THEME_ASSETS . '/images/hero.jpg',
+			'default_image'    => get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
+			'header-text'      => false,
 			'width'            => 1280,
 			'height'           => 720,
 			'flex-height'      => true,
 			'flex-width'       => true,
 			'uploads'          => true,
 			'video'            => true,
-			'wp-head-callback' => 'SEOThemes\ChildThemeLibrary\Utilities\custom_header',
+			'wp-head-callback' => [
+				'SEOThemes\ChildThemeLibrary\Utilities',
+				'custom_header',
+			],
 		],
 		'genesis-accessibility'    => [
 			'404-page',
@@ -587,7 +599,7 @@ return [
 		],
 		'genesis-after-entry-widget-area',
 		'genesis-menus'            => [
-			'primary'   => __( 'Header Menu', 'child-theme-library' ),
+			'primary' => __( 'Header Menu', 'child-theme-library' ),
 			// 'secondary' => __( 'After Header Menu', 'child-theme-library' ),
 		],
 		'genesis-responsive-viewport',
@@ -609,15 +621,15 @@ return [
 			'search-form',
 		],
 		// 'post-formats'             => [
-		// 	'aside',
-		// 	'audio',
-		// 	'chat',
-		// 	'gallery',
-		// 	'image',
-		// 	'link',
-		// 	'quote',
-		// 	'status',
-		// 	'video',
+		// 'aside',
+		// 'audio',
+		// 'chat',
+		// 'gallery',
+		// 'image',
+		// 'link',
+		// 'quote',
+		// 'status',
+		// 'video',
 		// ],
 		'post-thumbnails',
 		'woocommerce',
