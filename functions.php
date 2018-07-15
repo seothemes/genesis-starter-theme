@@ -18,9 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 }
 
-// Load Child Theme Library (do not remove).
+// Load composer packages (do not remove).
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require __DIR__ . '/vendor/autoload.php';
+
+	require_once __DIR__ . '/vendor/autoload.php';
+
 }
 
 /*

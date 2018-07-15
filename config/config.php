@@ -302,7 +302,6 @@ return [
 		'Templates',
 		'Enqueue',
 		'Shortcodes',
-		'Widgets',
 		'WidgetAreas',
 		'Admin',
 		'Customizer',
@@ -585,7 +584,7 @@ return [
 			'uploads'          => true,
 			'video'            => true,
 			'wp-head-callback' => [
-				'SEOThemes\ChildThemeLibrary\Utilities',
+				'SEOThemes\ChildThemeLibrary\HeroSection',
 				'custom_header',
 			],
 		],
@@ -665,57 +664,6 @@ return [
 		'front-page-3'   => 'child_theme_front_page_widgets',
 		'front-page-4'   => 'child_theme_front_page_widgets',
 		'front-page-5'   => 'child_theme_front_page_widgets',
-	],
-
-	/*
-	|--------------------------------------------------------------------------
-	| Remove Widgets
-	|--------------------------------------------------------------------------
-	|
-	| Provides an easy way to remove unused widgets from the dashboard. This
-	| config is not used in premium Genesis child themes but is left here
-	| as an example for developers who might find this function useful.
-	|
-	*/
-	'widgets'             => [
-		// 'Genesis_Featured_Page',
-		// 'Genesis_Featured_Post',
-		// 'Genesis_User_Profile_Widget',
-		// 'WP_Widget_Pages',
-		// 'WP_Widget_Calendar',
-		// 'WP_Widget_Archives',
-		// 'WP_Widget_Links',
-		// 'WP_Widget_Media_Audio',
-		// 'WP_Widget_Media_Image',
-		// 'WP_Widget_Media_Gallery',
-		// 'WP_Widget_Media_Video',
-		// 'WP_Widget_Meta',
-		// 'WP_Widget_Search',
-		// 'WP_Widget_Text',
-		// 'WP_Widget_Categories',
-		// 'WP_Widget_Recent_Posts',
-		// 'WP_Widget_Recent_Comments',
-		// 'WP_Widget_RSS',
-		// 'WP_Widget_Tag_Cloud',
-		// 'WP_Nav_Menu_Widget',
-		// 'WP_Widget_Custom_HTML',
-		// 'WC_Widget_Products',
-		// 'WC_Widget_Recent_Products',
-		// 'WC_Widget_Featured_Products',
-		// 'WC_Widget_Product_Categories',
-		// 'WC_Widget_Product_Tag_Cloud',
-		// 'WC_Widget_Cart',
-		// 'WC_Widget_Layered_Nav',
-		// 'WC_Widget_Layered_Nav_Filters',
-		// 'WC_Widget_Price_Filter',
-		// 'WC_Widget_Rating_Filter',
-		// 'WC_Widget_Product_Search',
-		// 'WC_Widget_Top_Rated_Products',
-		// 'WC_Widget_Recent_Reviews',
-		// 'WC_Widget_Recently_Viewed',
-		// 'WC_Widget_Best_Sellers',
-		// 'WC_Widget_Onsale',
-		// 'WC_Widget_Random_Products',
 	],
 
 ];
