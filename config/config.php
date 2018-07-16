@@ -26,7 +26,7 @@ return [
 	|
 	*/
 	'autoload'            => [
-		'vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation',
+		'app/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation',
 	],
 
 	/*
@@ -116,13 +116,13 @@ return [
 	|
 	| Defines the default header settings to be registered in the Customizer
 	| Header Media section. This theme includes an example hero.jpg image
-	| located in the theme's ./assets/img/ directory to be replaced.
+	| located in the theme's ./resources/img/ directory to be replaced.
 	|
 	*/
 	'default-headers'     => [
 		'child' => [
-			'url'           => '%2$s/assets/img/hero.jpg',
-			'thumbnail_url' => '%2$s/assets/img/hero.jpg',
+			'url'           => '%2$s/resources/img/hero.jpg',
+			'thumbnail_url' => '%2$s/resources/img/hero.jpg',
 			'description'   => __( 'Hero Image', 'child-theme-library' ),
 		],
 	],
@@ -138,9 +138,9 @@ return [
 	|
 	*/
 	'demo-import'         => [
-		'local_import_file'            => get_stylesheet_directory() . '/assets/demo/sample.xml',
-		'local_import_widget_file'     => get_stylesheet_directory() . '/assets/demo/widgets.wie',
-		'local_import_customizer_file' => get_stylesheet_directory() . '/assets/demo/customizer.dat',
+		'local_import_file'            => get_stylesheet_directory() . '/resources/demo/sample.xml',
+		'local_import_widget_file'     => get_stylesheet_directory() . '/resources/demo/widgets.wie',
+		'local_import_customizer_file' => get_stylesheet_directory() . '/resources/demo/customizer.dat',
 		'import_file_name'             => 'Demo Import',
 		'categories'                   => false,
 		'local_import_redux'           => false,
@@ -245,7 +245,7 @@ return [
 	|
 	| Enable or disable the built in Genesis Framework layouts with this array.
 	| If a custom layout is defined, such as narrow-content, the theme will
-	| search for assets/img/narrow-content.gif as the thumbnail image.
+	| search for resources/img/narrow-content.gif as the thumbnail image.
 	|
 	*/
 	'layouts'             => [
@@ -412,13 +412,13 @@ return [
 	*/
 	'scripts'             => [
 		'menu'   => [
-			'src'       => get_stylesheet_directory_uri() . '/assets/js/menus.js',
+			'src'       => get_stylesheet_directory_uri() . '/resources/js/menus.js',
 			'deps'      => 'jquery',
 			'ver'       => wp_get_theme()->get( 'Version' ),
 			'in_footer' => true,
 		],
 		'script' => [
-			'src'       => get_stylesheet_directory_uri() . '/assets/js/script.js',
+			'src'       => get_stylesheet_directory_uri() . '/resources/js/script.js',
 			'deps'      => 'jquery',
 			'ver'       => wp_get_theme()->get( 'Version' ),
 			'in_footer' => true,
@@ -523,7 +523,7 @@ return [
 	*/
 	'textdomain'          => [
 		'domain' => 'child-theme-library',
-		'path'   => apply_filters( 'child_theme_textdomain', get_stylesheet_directory_uri() . '/assets/lang', 'child-theme-library' ),
+		'path'   => apply_filters( 'child_theme_textdomain', get_stylesheet_directory_uri() . '/resources/lang', 'child-theme-library' ),
 	],
 
 	/*
@@ -554,7 +554,7 @@ return [
 		],
 		'custom-header'            => [
 			'header-selector'  => '.hero-section',
-			'default_image'    => get_stylesheet_directory_uri() . '/assets/img/hero.jpg',
+			'default_image'    => get_stylesheet_directory_uri() . '/resources/img/hero.jpg',
 			'header-text'      => false,
 			'width'            => 1280,
 			'height'           => 720,

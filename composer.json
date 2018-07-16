@@ -50,6 +50,7 @@
   },
   "suggest": {},
   "config": {
+    "vendor-dir": "app",
     "sort-order": true
   },
   "minimum-stability": "dev",
