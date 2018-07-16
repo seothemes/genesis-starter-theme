@@ -65,6 +65,8 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 ```shell
 theme/  
 ├── assets/
+│   ├── build/
+│   ├── demo/
 │   ├── fonts/
 │   ├── img/
 │   ├── js/

@@ -136,9 +136,9 @@ return [
 	|
 	*/
 	'demo-import'         => [
-		'local_import_file'            => get_stylesheet_directory() . '/sample.xml',
-		'local_import_widget_file'     => get_stylesheet_directory() . '/widgets.wie',
-		'local_import_customizer_file' => get_stylesheet_directory() . '/customizer.dat',
+		'local_import_file'            => get_stylesheet_directory() . '/assets/demo/sample.xml',
+		'local_import_widget_file'     => get_stylesheet_directory() . '/assets/demo/widgets.wie',
+		'local_import_customizer_file' => get_stylesheet_directory() . '/assets/demo/customizer.dat',
 		'import_file_name'             => 'Demo Import',
 		'categories'                   => false,
 		'local_import_redux'           => false,
