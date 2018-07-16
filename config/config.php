@@ -25,7 +25,9 @@ return [
 	| not including the php extension, E.g: 'directory_name/file_name'.
 	|
 	*/
-	'autoload'            => [],
+	'autoload'            => [
+		'vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation',
+	],
 
 	/*
 	|--------------------------------------------------------------------------
