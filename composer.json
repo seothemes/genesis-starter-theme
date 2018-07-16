@@ -4,10 +4,10 @@
   "description":
     "A starter theme for the Genesis Framework with modern build tools.",
   "keywords": ["WordPress", "wordpress-theme-development", "genesis-framework"],
-  "license": "GPL-2.0",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "SEO Themes",
+      "name": "Lee Anthony",
       "homepage": "https://seothemes.com",
       "role": "Developer"
     }
@@ -18,7 +18,7 @@
   },
   "require": {
     "seothemes/child-theme-library": "dev-master",
-    "tgmpa/tgm-plugin-activation": "^2.6.1"
+    "tgmpa/tgm-plugin-activation": "dev-develop"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",

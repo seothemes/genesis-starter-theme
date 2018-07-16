@@ -6,6 +6,7 @@
 	<!-- Prevent sniffs of some directories. -->
 	<exclude-pattern>node_modules/*</exclude-pattern>
     <!--<exclude-pattern>*/vendor/*</exclude-pattern>-->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/vendor/autoload.php</exclude-pattern>
 	<exclude-pattern>*/vendor/composer/*</exclude-pattern>
 	<exclude-pattern>*/vendor/tgmpa/*</exclude-pattern>
