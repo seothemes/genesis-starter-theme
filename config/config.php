@@ -41,7 +41,7 @@ return [
 	*/
 	'colors'              => [
 		'background' => [
-			'default' => 'rgba(255,255,255,1)',
+			'default' => '#ffffff',
 			'output'  => [
 				[
 					'elements'   => [
@@ -55,7 +55,7 @@ return [
 			],
 		],
 		'link'       => [
-			'default' => 'rgba(0,115,229,1)',
+			'default' => '#0073e5',
 			'output'  => [
 				[
 					'elements'   => [
