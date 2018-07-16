@@ -11,12 +11,14 @@
  * @license   GPL-2.0-or-later
  */
 
-// Load composer packages (do not remove).
+// Load child theme (do not remove).
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
 	require_once __DIR__ . '/vendor/autoload.php';
 
-	new SEOThemes\ChildThemeLibrary\Theme();
+	$child_theme = new SEOThemes\ChildThemeLibrary\Theme();
+
+	$child_theme->init( __DIR__ . '/config/config.php' );
 
 }
 

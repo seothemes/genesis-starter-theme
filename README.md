@@ -1,5 +1,7 @@
 # Genesis Starter Theme
 
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
+
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. 
 
 It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's configuration file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
@@ -30,7 +32,7 @@ Install the Genesis Starter Theme using Composer from your WordPress themes dire
 composer create-project seothemes/genesis-starter-theme your-theme-name dev-master
 ```
 
-Navigate into the theme root directory:
+Navigate into the theme's root directory:
 
 ```shell
 cd your-theme-name
@@ -44,13 +46,7 @@ sh setup.sh
 
 ## Development
 
-Navigate into the theme root directory:
-
-```shell
-cd your-theme-name
-```
-
-Run default Gulp task to kick-off development:
+From the theme's root directory run the default Gulp task to kick-off development:
 
 ```shell
 gulp
@@ -63,7 +59,7 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 ## Structure
 
 ```shell
-theme/  
+./
 ├── assets/
 │   ├── build/
 │   ├── demo/
@@ -75,6 +71,8 @@ theme/
 │   └── views/
 ├── config/
 │   └── config.php
+├── src/
+│   └── README.md
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitattributes

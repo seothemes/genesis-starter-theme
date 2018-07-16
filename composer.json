@@ -48,6 +48,11 @@
     "wp-coding-standards/wpcs": "^0.14.1",
     "roave/security-advisories": "dev-master"
   },
+  "autoload": {
+    "psr-4": {
+      "SEOThemes\\GenesisStarterTheme\\": "src/"
+    }
+  },
   "suggest": {},
   "config": {
     "sort-order": true
@@ -56,10 +61,12 @@
   "prefer-stable": true,
   "scripts": {
     "post-create-project-cmd": [
-      "yarn install"
+      "yarn install",
+      "composer dump-autoload"
     ],
     "post-install-cmd": [
-      "yarn install"
+      "yarn install",
+      "composer dump-autoload"
     ],
     "stylelint": [
       "stylelint './assets/scss/**/*.scss' --fix"

@@ -13,6 +13,7 @@ default_url="https://genesis-starter.test"
 basedir="$( cd "$( dirname "$0" )" && pwd )/."
 configdir="$basedir/config"
 assetsdir="$basedir/assets"
+srcdir="$basedir/src"
 sassdir="$basedir/assets/scss"
 basedir_all_files="$basedir/."
 setup_script="$basedir/setup.sh"
@@ -213,6 +214,12 @@ find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_packa
 
 # package.json
 find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# composer.json
+find "$basedir" -name 'composer.json' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+
+# src/README.md
+find "$srcdir" -name 'README.md' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
 
 echo "--> Change package name .............. ${green}done${txtreset}"
 
