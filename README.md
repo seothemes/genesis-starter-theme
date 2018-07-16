@@ -86,7 +86,6 @@ theme/
 ├── composer.json
 ├── composer.lock
 ├── CONTRIBUTING.md
-├── customizer.dat
 ├── functions.php
 ├── Gulpfile.js
 ├── LICENSE.md
@@ -94,12 +93,10 @@ theme/
 ├── package-lock.json
 ├── phpcs.xml.dist
 ├── README.md
-├── sample.xml
 ├── screenshot.png
 ├── setup.sh
 ├── style.css
 ├── stylelint.config.js
-├── widgets.wie
 ├── woocommerce.css
 └── yarn.lock
 ```
