@@ -60,10 +60,7 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 
 ```shell
 ./
-├── app/
-├── config/
-│   └── config.php
-├── resources/
+├── assets/
 │   ├── build/
 │   ├── demo/
 │   ├── fonts/
@@ -72,6 +69,10 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 │   ├── lang/
 │   ├── scss/
 │   └── views/
+├── config/
+│   └── config.php
+├── src/
+│   └── README.md
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitattributes

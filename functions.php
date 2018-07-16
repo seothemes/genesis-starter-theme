@@ -12,9 +12,9 @@
  */
 
 // Load child theme (do not remove).
-if ( file_exists( __DIR__ . '/app/autoload.php' ) ) {
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
-	require_once __DIR__ . '/app/autoload.php';
+	require_once __DIR__ . '/vendor/autoload.php';
 
 	$child_theme = new SEOThemes\ChildThemeLibrary\Theme();
 

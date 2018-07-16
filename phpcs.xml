@@ -5,11 +5,10 @@
 	<file>.</file>
 	<!-- Prevent sniffs of some directories. -->
 	<exclude-pattern>node_modules/*</exclude-pattern>
-    <!--<exclude-pattern>*/vendor/*</exclude-pattern>-->
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<exclude-pattern>*/vendor/autoload.php</exclude-pattern>
-	<exclude-pattern>*/vendor/composer/*</exclude-pattern>
-	<exclude-pattern>*/vendor/tgmpa/*</exclude-pattern>
+    <!--<exclude-pattern>*/app/*</exclude-pattern>-->
+	<exclude-pattern>*/app/autoload.php</exclude-pattern>
+	<exclude-pattern>*/app/composer/*</exclude-pattern>
+	<exclude-pattern>*/app/tgmpa/*</exclude-pattern>
 	<!-- Pass flags to PHPCS:
 		 p: Show progress of the run.
 		 s: Show sniff codes in all reports.
@@ -25,10 +24,10 @@
 	</rule>
 	<!-- PSR 4 file names -->
 	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
-		<exclude-pattern>*/vendor/*</exclude-pattern>
+		<exclude-pattern>*/app/*</exclude-pattern>
 	</rule>
 	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
-		<exclude-pattern>*/vendor/*</exclude-pattern>
+		<exclude-pattern>*/app/*</exclude-pattern>
 	</rule>
 	<!-- Page templates currently use underscores for historic reasons. -->
 	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
