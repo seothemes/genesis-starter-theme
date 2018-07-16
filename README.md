@@ -1,5 +1,7 @@
 # Genesis Starter Theme
 
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
+
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. 
 
 It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's configuration file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
