@@ -66,10 +66,11 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 theme/  
 ├── assets/
 │   ├── fonts/
-│   ├── images/
+│   ├── img/
 │   ├── js/
 │   ├── lang/
-│   └── scss/
+│   ├── scss/
+│   └── views/
 ├── config/
 │   └── config.php
 ├── .csscomb.json

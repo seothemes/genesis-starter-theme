@@ -9,6 +9,7 @@
   "author": "SEO Themes",
   "license": "GPL-2.0-or-later",
   "main": "Gulpfile.js",
+  "scripts": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-src-ordered-globs": "^1.0.3",

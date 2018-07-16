@@ -13,13 +13,6 @@
 
 namespace SEOThemes\GenesisStarterTheme;
 
-// If this file is called directly, abort.
-if ( ! defined( 'ABSPATH' ) ) {
-
-	die;
-
-}
-
 return [
 
 	/*
@@ -121,13 +114,13 @@ return [
 	|
 	| Defines the default header settings to be registered in the Customizer
 	| Header Media section. This theme includes an example hero.jpg image
-	| located in the theme's ./assets/images/ directory to be replaced.
+	| located in the theme's ./assets/img/ directory to be replaced.
 	|
 	*/
 	'default-headers'     => [
 		'child' => [
-			'url'           => '%2$s/assets/images/hero.jpg',
-			'thumbnail_url' => '%2$s/assets/images/hero.jpg',
+			'url'           => '%2$s/assets/img/hero.jpg',
+			'thumbnail_url' => '%2$s/assets/img/hero.jpg',
 			'description'   => __( 'Hero Image', 'child-theme-library' ),
 		],
 	],
@@ -250,7 +243,7 @@ return [
 	|
 	| Enable or disable the built in Genesis Framework layouts with this array.
 	| If a custom layout is defined, such as narrow-content, the theme will
-	| search for assets/images/narrow-content.gif as the thumbnail image.
+	| search for assets/img/narrow-content.gif as the thumbnail image.
 	|
 	*/
 	'layouts'             => [
@@ -261,22 +254,6 @@ return [
 		// 'content-sidebar-sidebar',
 		// 'sidebar-sidebar-content',
 		// 'sidebar-content-sidebar',
-	],
-
-	/*
-	|--------------------------------------------------------------------------
-	| Map Style
-	|--------------------------------------------------------------------------
-	|
-	| Allows users to register custom map styles with the Google Map plugin
-	| by providing an id, name and path to a JSON file containing custom
-	| styles. http://snazzymaps.com/style/151/ultra-light-with-labels
-	|
-	*/
-	'map-style'           => [
-		'id'    => '123456789',
-		'name'  => 'Ultra Light',
-		'style' => get_stylesheet_directory() . '/map.json',
 	],
 
 	/*
@@ -575,7 +552,7 @@ return [
 		],
 		'custom-header'            => [
 			'header-selector'  => '.hero-section',
-			'default_image'    => get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
+			'default_image'    => get_stylesheet_directory_uri() . '/assets/img/hero.jpg',
 			'header-text'      => false,
 			'width'            => 1280,
 			'height'           => 720,
