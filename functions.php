@@ -16,7 +16,9 @@ if ( file_exists( __DIR__ . '/app/autoload.php' ) ) {
 
 	require_once __DIR__ . '/app/autoload.php';
 
-	new SEOThemes\ChildThemeLibrary\Theme();
+	$child_theme = new SEOThemes\ChildThemeLibrary\Theme();
+
+	$child_theme->init( __DIR__ . '/config/config.php' );
 
 }
 

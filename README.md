@@ -30,7 +30,7 @@ Install the Genesis Starter Theme using Composer from your WordPress themes dire
 composer create-project seothemes/genesis-starter-theme your-theme-name dev-master
 ```
 
-Navigate into the theme root directory:
+Navigate into the theme's root directory:
 
 ```shell
 cd your-theme-name
@@ -44,13 +44,7 @@ sh setup.sh
 
 ## Development
 
-Navigate into the theme root directory:
-
-```shell
-cd your-theme-name
-```
-
-Run default Gulp task to kick-off development:
+From the theme's root directory run the default Gulp task to kick-off development:
 
 ```shell
 gulp
@@ -63,8 +57,11 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 ## Structure
 
 ```shell
-theme/  
-├── assets/
+./
+├── app/
+├── config/
+│   └── config.php
+├── resources/
 │   ├── build/
 │   ├── demo/
 │   ├── fonts/
@@ -73,8 +70,6 @@ theme/
 │   ├── lang/
 │   ├── scss/
 │   └── views/
-├── config/
-│   └── config.php
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitattributes
