@@ -38,9 +38,9 @@
     }
   ],
   "require": {
+    "php": "^5.4|^7",
     "seothemes/child-theme-library": "dev-master",
-    "tgmpa/tgm-plugin-activation": "*",
-    "php": ">=5.3"
+    "tgmpa/tgm-plugin-activation": "*"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
