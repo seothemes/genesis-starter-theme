@@ -56,11 +56,19 @@ Refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps/gulp-w
 
 In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be used to generate an archive of your theme, including the required composer package files and no unnecessary files. The list of included files can be modified from the `toolkit.extendConfig.src.zip` config in the Gulpfile.
 
+## Usage
+
+All changes to the child theme should be made via the theme configuration file. An example config can be found [here](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php). The `app` directory is provided if additional functionality is required.
+
 ## Structure
 
 ```shell
 ./
-├── assets/
+├── app/
+│   └── README.md
+├── config/
+│   └── config.php
+├── resources/
 │   ├── build/
 │   ├── demo/
 │   ├── fonts/
@@ -69,10 +77,6 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 │   ├── lang/
 │   ├── scss/
 │   └── views/
-├── config/
-│   └── config.php
-├── src/
-│   └── README.md
 ├── .csscomb.json
 ├── .editorconfig
 ├── .gitattributes

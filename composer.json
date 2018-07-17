@@ -50,7 +50,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SEOThemes\\GenesisStarterTheme\\": "src/"
+      "SEOThemes\\GenesisStarterTheme\\": "app/"
     }
   },
   "suggest": {},

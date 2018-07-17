@@ -1,4 +1,4 @@
-# Source Directory
+# App Directory
 
 This directory holds all of the source code for the theme.
 
