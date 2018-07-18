@@ -1,7 +1,5 @@
 /**
  * Gulp task config file.
- *
- * @package SEOThemes\GenesisStarter
  */
 
 'use strict';
@@ -31,12 +29,12 @@ toolkit.extendConfig(
 		},
 		src: {
 			php: ['**/*.php', '!vendor/**'],
-			images: 'assets/images/**/*',
-			scss: 'assets/scss/**/*.scss',
+			images: 'resources/img/**/*',
+			scss: 'resources/scss/**/*.scss',
 			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
-			js: ['assets/js/**/*.js', '!node_modules/**'],
+			js: ['resources/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: './assets/lang/',
+			i18n: './resources/lang/',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -58,22 +56,22 @@ toolkit.extendConfig(
             remmediaquery: false,
 			scss: {
 				'style': {
-					src: 'assets/scss/style.scss',
+					src: 'resources/scss/style.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				},
 				'woocommerce': {
-					src: 'assets/scss/woocommerce.scss',
+					src: 'resources/scss/woocommerce.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				}
 			}
 		},
 		dest: {
-            i18npo: './assets/lang/',
-            i18nmo: './assets/lang/',
-			images: './assets/images/',
-			js: './assets/js/'
+            i18npo: './resources/lang/',
+            i18nmo: './resources/lang/',
+			images: './resources/img/',
+			js: './resources/js/'
 		},
 		server: {
             proxy: 'https://genesis-starter.test',
