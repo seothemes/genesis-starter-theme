@@ -141,7 +141,7 @@ perl -p -i -e "s|$default_name|$name|g" $readme
 perl -p -i -e "s|$default_name|$name|g" $app_readme
 perl -p -i -e "s|$default_name|$name|g" $changelog
 
-echo "1/7 --> Search & replace name ... ${green}done${txtreset}"
+echo "1/8 --> Search & replace name ... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Search & Replace ID
@@ -155,7 +155,7 @@ perl -p -i -e "s|$default_id|$id|g" $gulpfile
 perl -p -i -e "s|$default_id|$id|g" $readme
 perl -p -i -e "s|$default_id|$id|g" $app_readme
 
-echo "2/7 --> Search & replace id ..... ${green}done${txtreset}"
+echo "2/8 --> Search & replace id ..... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author
@@ -169,7 +169,7 @@ perl -p -i -e "s|$default_author|$author|g" $gulpfile
 perl -p -i -e "s|$default_author|$author|g" $readme
 perl -p -i -e "s|$default_author|$author|g" $app_readme
 
-echo "3/7 --> Change author name ...... ${green}done${txtreset}"
+echo "3/8 --> Change author name ...... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author URL
@@ -183,7 +183,7 @@ perl -p -i -e "s|$default_author_url|$author_url|g" $gulpfile
 perl -p -i -e "s|$default_author_url|$author_url|g" $readme
 perl -p -i -e "s|$default_author_url|$author_url|g" $app_readme
 
-echo "4/7 --> Change author URL ....... ${green}done${txtreset}"
+echo "4/8 --> Change author URL ....... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change namespace
@@ -204,7 +204,7 @@ perl -p -i -e "s|$default_package|$package|g" $gulpfile
 perl -p -i -e "s|$default_package|$package|g" $readme
 perl -p -i -e "s|$default_package|$package|g" $app_readme
 
-echo "5/7 --> Change namespace ........ ${green}done${txtreset}"
+echo "5/8 --> Change namespace ........ ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change dev URL
@@ -212,7 +212,7 @@ echo "5/7 --> Change namespace ........ ${green}done${txtreset}"
 
 perl -p -i -e "s|$default_url|$url|g" $gulpfile
 
-echo "6/7 --> Change dev URL .......... ${green}done${txtreset}"
+echo "6/8 --> Change dev URL .......... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Update defaults
@@ -226,14 +226,15 @@ perl -p -i -e "s|$default_company|$company|g" $setup_sh
 perl -p -i -e "s|$default_package|$package|g" $setup_sh
 perl -p -i -e "s|$default_url|$url|g" $setup_sh
 
-echo "7/7 --> Updating defaults ....... ${green}done${txtreset}"
+echo "7/8 --> Updating defaults ....... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Build theme
 # ----------------------------------------------------------------
 
-# gulp:build
+build="gulp build"
+${build}
 
-# echo "Building theme ................. ${green}done${txtreset}"
+echo "8/8 --> Building theme .......... ${green}done${txtreset}"
 
 echo "${green}Setup complete!${txtreset}"
