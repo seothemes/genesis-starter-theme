@@ -1,46 +1,75 @@
 # App Directory
 
-This directory holds all of the source code for the theme.
-
-Organize your theme's source code by it's single purpose, grouping like features and functionality into individual directories. This architectural structure improves the readability and reusability of your code.
-
-For example, if you need:
+This directory holds all of the source code for your theme. It is pre-configured to use PSR-4 Autoloading for classes with the SEOThemes\GenesisStarterTheme namespace. Files and folders in this directory should be named using the PSR-4 naming convention, e.g `ClassName.php` or `ModuleName/ClassName.php`.
  
-- For custom post type and taxonomy, place those into a `custom` folder.  
-- For metaboxes and settings/options screens, add those into an `admin` folder. 
-- For theme served templates, add a `templates` folder.
-
-Don't forget to separate concerns by keeping the business logic and HTML separate.  A `views` folder is available in the `assets` directory of your theme which should be used to house the HTML view files.
- 
-How about the root of the directory?
-
-At the root of this directory, you typically place the theme's main controller.  This controller handles the routing of various tasks.
-
-## Autoloading
-
-This directory is pre-configured to use PSR-4 Autoloading for class files with the SEOThemes\GenesisStarterTheme namespace. See an example below:
+Below is an example class:
 
 ```php
 <?php
 
 namespace SEOThemes\GenesisStarterTheme;
 
-class Example {
+class ClassName {
 	
 	public function __construct() {
+		
+		echo 'This is an example class';
 		
 	}
 	
 }
 ```
 
-The name of this file must be the same as the class, in this case it would be `Example.php`. The object can then be created from the `functions.php` file, without the use of a `require` statement. E.g:
+The name of this file must be the same as the class, in this case it would be a root level file named `ClassName.php`. Classes in subdirectories should add the name of the subdirectory to the namespace. For example, the `ModuleName/ClassName.php` file should use the following:
+
+ ```php
+ <?php
+ 
+ namespace SEOThemes\GenesisStarterTheme\ModuleName;
+ 
+ class ClassName {
+ 	
+ 	public function __construct() {
+ 		
+ 		echo 'This is an example class in a subdirectory';
+ 		
+ 	}
+ 	
+ }
+ ```
+  
+ These objects can then be created from any PHP file in your theme, without the use of a `require` statement. There are three different options when autoloading the classes:
+
+Creating the object in the same namespace:
 
 ```php
-new Example();
-``` 
+namespace SEOThemes\GenesisStarterTheme;
+new ClassName();
+```
+```php
+namespace SEOThemes\GenesisStarterTheme;
+new ModuleName\ClassName();
+```
 
-*Note: To use a non-prefixed example like above, the functions.php file will also need to contain the SEOThemes\GenesisStarterTheme namespace at the beginning of the file.* 
+Importing/aliasing with the `use` operator:
 
-If namespaces and classes are not your thing, there is also a simple file autoloader provided by the Child Theme Library. To use the file autoloader, add your file names to the 'autoload' config in the theme's configuration file.
+```php
+use SEOThemes\GenesisStarterTheme\ClassName;
+new ClassName();
+```
+```php
+use SEOThemes\GenesisStarterTheme\ModuleName\ClassName;
+new ClassName();
+```
+
+Using the fully qualified class name:
+
+```php
+new SEOThemes\GenesisStarterTheme\ClassName();
+```
+```php
+new SEOThemes\GenesisStarterTheme\ModuleName\ClassName();
+```
+
+If namespaces and classes are not your thing, there is also a simple file autoloader provided by the Child Theme Library. To use the file autoloader, add your file names to the `autoload` config in the theme configuration file. Using the file autoloader doesn't require the use of PSR-4 naming convention, so you are free to use a typical WordPress file name such as `custom-functions.php`. This file can then be automatically loaded by adding `app/custom-functions` to the autoload config array.
     
