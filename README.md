@@ -28,6 +28,16 @@ A zipped, ready-to-install and supported version is a available for purchase at 
 
 Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
+### One-liner:
+
+```shell
+composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd  "$(\ls -1dt ./*/ | head -n 1)" && sh setup.sh
+```
+
+### Individual steps:
+
+Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+
 ```shell
 composer create-project seothemes/genesis-starter-theme your-theme-name dev-master
 ```
