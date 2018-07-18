@@ -13,30 +13,30 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/config.php:131
+#: config/config.php:126
 msgid "Hero Image"
 msgstr ""
 
-#: config/config.php:323
+#: config/config.php:301
 msgid "Blog"
 msgstr ""
 
-#: config/config.php:324
+#: config/config.php:302
 msgid "Page Builder"
 msgstr ""
 
-#: config/config.php:325
+#: config/config.php:303
 msgid "Landing Page"
 msgstr ""
 
-#: config/config.php:326
+#: config/config.php:304
 msgid "Sitemap"
 msgstr ""
 
-#: config/config.php:413, config/config.php:414
+#: config/config.php:391, config/config.php:392
 msgid "Menu"
 msgstr ""
 
-#: config/config.php:602
+#: config/config.php:580
 msgid "Header Menu"
 msgstr ""

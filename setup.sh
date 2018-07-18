@@ -237,4 +237,7 @@ ${build}
 
 echo "8/8 --> Building theme .......... ${green}done${txtreset}"
 
+dump="composer dump-autoload"
+${dump}
+
 echo "${green}Setup complete!${txtreset}"
