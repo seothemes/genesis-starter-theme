@@ -6,17 +6,21 @@ default_name="Genesis Starter Theme"
 default_id="genesis-starter-theme"
 default_author="SEO Themes"
 default_author_url="https://seothemes.com"
-default_package="SEOThemes\GenesisStarterTheme"
-default_url="https://genesis-starter.test"
+default_url="genesis-starter.test"
+default_namespace="SEOThemes\GenesisStarterTheme"
+default_company="${default_namespace%\\*}"
+default_package="${default_namespace#*\\}"
 
-# Directories
-basedir="$( cd "$( dirname "$0" )" && pwd )/."
-configdir="$basedir/config"
-assetsdir="$basedir/assets"
-srcdir="$basedir/src"
-sassdir="$basedir/assets/scss"
-basedir_all_files="$basedir/."
-setup_script="$basedir/setup.sh"
+# Files
+setup_sh="./setup.sh"
+functions_php="./functions.php"
+config_php="./config/config.php"
+package_json="./package.json"
+composer_json="./composer.json"
+gulpfile="./Gulpfile.js"
+readme="./README.md"
+app_readme="./app/README.md"
+changelog="./CHANGELOG.md"
 
 # Text styles
 bold=$(tput bold)
@@ -78,15 +82,18 @@ else
   author_url=$default_author_url
 fi
 
-echo "5) Set the package name for your theme. Use only a-z and _. (Default: $default_package)"
-read package
+echo "5) Set the namespace for your theme. Use only a-z and _. (Default: $default_namespace)"
+read -r namespace
 
 # use default if empty
-if test -n "$package"; then
+if test -n "$namespace"; then
   echo ""
 else
-  package=$default_package
+  namespace=$default_namespace
 fi
+
+company="${namespace%\\*}"
+package="${namespace#*\\}"
 
 echo "6) Set local development url. Note: An SSL is required to use HTTPS (Default: $default_url)"
 read url
@@ -105,7 +112,7 @@ name: ${bold}${pink}$name${txtreset} (Default: $default_name)
 id: ${bold}${pink}$id${txtreset} (Default: $default_id)
 author: ${bold}${pink}$author${txtreset} (Default: $default_author)
 author_url: ${bold}${pink}$author_url${txtreset} (Default: $default_author_url)
-package: ${bold}${pink}$package${txtreset} (Default: $default_package)
+namespace: ${bold}${pink}$company\\$package${txtreset} (Default: $default_namespace)
 url: ${bold}${pink}$url${txtreset} (Default: $default_url)
 
 Proceed to install? [y/N]
@@ -125,117 +132,108 @@ Run setup:
 # Search & Replace Name
 # ----------------------------------------------------------------
 
-# style.css
-find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
+perl -p -i -e "s|$default_name|$name|g" $functions_php
+perl -p -i -e "s|$default_name|$name|g" $config_php
+perl -p -i -e "s|$default_name|$name|g" $package_json
+perl -p -i -e "s|$default_name|$name|g" $composer_json
+perl -p -i -e "s|$default_name|$name|g" $gulpfile
+perl -p -i -e "s|$default_name|$name|g" $readme
+perl -p -i -e "s|$default_name|$name|g" $app_readme
+perl -p -i -e "s|$default_name|$name|g" $changelog
 
-# style.scss
-find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
-
-# PHP files
-find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
-
-# README.md
-find "$basedir" -name 'README.md' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
-
-# package.json
-find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_name|$name|g" {} \;
-
-echo "--> Search & replace name ... ${green}done${txtreset}"
+echo "1/7 --> Search & replace name ... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Search & Replace ID
 # ----------------------------------------------------------------
 
-# PHP files
-find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
+perl -p -i -e "s|$default_id|$id|g" $functions_php
+perl -p -i -e "s|$default_id|$id|g" $config_php
+perl -p -i -e "s|$default_id|$id|g" $package_json
+perl -p -i -e "s|$default_id|$id|g" $composer_json
+perl -p -i -e "s|$default_id|$id|g" $gulpfile
+perl -p -i -e "s|$default_id|$id|g" $readme
+perl -p -i -e "s|$default_id|$id|g" $app_readme
 
-# style.css
-find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
-
-# style.scss
-find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
-
-# package.json
-find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_id|$id|g" {} \;
-
-echo "--> Search & replace id ..... ${green}done${txtreset}"
+echo "2/7 --> Search & replace id ..... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author
 # ----------------------------------------------------------------
 
-# PHP files
-find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
+perl -p -i -e "s|$default_author|$author|g" $functions_php
+perl -p -i -e "s|$default_author|$author|g" $config_php
+perl -p -i -e "s|$default_author|$author|g" $package_json
+perl -p -i -e "s|$default_author|$author|g" $composer_json
+perl -p -i -e "s|$default_author|$author|g" $gulpfile
+perl -p -i -e "s|$default_author|$author|g" $readme
+perl -p -i -e "s|$default_author|$author|g" $app_readme
 
-# style.css
-find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
-
-# style.scss
-find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
-
-# package.json
-find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_author|$author|g" {} \;
-
-echo "--> Change author name .............. ${green}done${txtreset}"
+echo "3/7 --> Change author name ...... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author URL
 # ----------------------------------------------------------------
 
-# PHP files
-find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
+perl -p -i -e "s|$default_author_url|$author_url|g" $functions_php
+perl -p -i -e "s|$default_author_url|$author_url|g" $config_php
+perl -p -i -e "s|$default_author_url|$author_url|g" $package_json
+perl -p -i -e "s|$default_author_url|$author_url|g" $composer_json
+perl -p -i -e "s|$default_author_url|$author_url|g" $gulpfile
+perl -p -i -e "s|$default_author_url|$author_url|g" $readme
+perl -p -i -e "s|$default_author_url|$author_url|g" $app_readme
 
-# style.css
-find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
-
-# style.scss
-find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
-
-# package.json
-find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_author_url|$author_url|g" {} \;
-
-echo "--> Change author URL .............. ${green}done${txtreset}"
+echo "4/7 --> Change author URL ....... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
-# Change package
+# Change namespace
 # ----------------------------------------------------------------
 
-# PHP files
-find "$basedir_all_files" -name '*.php' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
+perl -p -i -e "s|$default_company|$company|g" $functions_php
+perl -p -i -e "s|$default_company|$company|g" $config_php
+perl -p -i -e "s|$default_company|$company|g" $package_json
+perl -p -i -e "s|$default_company|$company|g" $composer_json
+perl -p -i -e "s|$default_company|$company|g" $gulpfile
+perl -p -i -e "s|$default_company|$company|g" $readme
+perl -p -i -e "s|$default_company|$company|g" $app_readme
+perl -p -i -e "s|$default_package|$package|g" $functions_php
+perl -p -i -e "s|$default_package|$package|g" $config_php
+perl -p -i -e "s|$default_package|$package|g" $package_json
+perl -p -i -e "s|$default_package|$package|g" $composer_json
+perl -p -i -e "s|$default_package|$package|g" $gulpfile
+perl -p -i -e "s|$default_package|$package|g" $readme
+perl -p -i -e "s|$default_package|$package|g" $app_readme
 
-# Config
-find "$configdir" -name '*.php' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-# style.css
-find "$basedir" -name 'style.css' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-# style.scss
-find "$sassdir" -name 'style.scss' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-# package.json
-find "$basedir" -name 'package.json' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-# composer.json
-find "$basedir" -name 'composer.json' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-# src/README.md
-find "$srcdir" -name 'README.md' -type f -exec perl -p -i -e "s|$default_package|$package|g" {} \;
-
-echo "--> Change package name .............. ${green}done${txtreset}"
+echo "5/7 --> Change namespace ........ ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change dev URL
 # ----------------------------------------------------------------
 
-# Gulpfile.js
-find "$basedir" -name 'Gulpfile.js' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
+perl -p -i -e "s|$default_url|$url|g" $gulpfile
 
-# gulpfile.js
-find "$basedir" -name 'gulpfile.js' -type f -exec perl -p -i -e "s|$default_url|$url|g" {} \;
+echo "6/7 --> Change dev URL .......... ${green}done${txtreset}"
 
-echo "--> Change url .............. ${green}done${txtreset}"
+# ----------------------------------------------------------------
+# Update defaults
+# ----------------------------------------------------------------
 
-echo "--> ${green}Setup complete!${txtreset}"
+perl -p -i -e "s|$default_name|$name|g" $setup_sh
+perl -p -i -e "s|$default_id|$id|g" $setup_sh
+perl -p -i -e "s|$default_author|$author|g" $setup_sh
+perl -p -i -e "s|$default_author_url|$author_url|g" $setup_sh
+perl -p -i -e "s|$default_company|$company|g" $setup_sh
+perl -p -i -e "s|$default_package|$package|g" $setup_sh
+perl -p -i -e "s|$default_url|$url|g" $setup_sh
 
-# echo "--> setup.sh removed"
-# rm "$setup_script"
+echo "7/7 --> Updating defaults ....... ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Build theme
+# ----------------------------------------------------------------
+
+# gulp:build
+
+# echo "Building theme ................. ${green}done${txtreset}"
+
+echo "${green}Setup complete!${txtreset}"
