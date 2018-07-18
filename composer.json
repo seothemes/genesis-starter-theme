@@ -42,12 +42,7 @@
     "seothemes/child-theme-library": "dev-master",
     "tgmpa/tgm-plugin-activation": "*"
   },
-  "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-    "squizlabs/php_codesniffer": "^3.2.3",
-    "wp-coding-standards/wpcs": "^0.14.1",
-    "roave/security-advisories": "dev-master"
-  },
+  "require-dev": {},
   "autoload": {
     "psr-4": {
       "SEOThemes\\GenesisStarterTheme\\": "app/"
@@ -61,12 +56,10 @@
   "prefer-stable": true,
   "scripts": {
     "post-create-project-cmd": [
-      "yarn install",
-      "composer dump-autoload"
+      "yarn install"
     ],
     "post-install-cmd": [
-      "yarn install",
-      "composer dump-autoload"
+      "yarn install"
     ],
     "stylelint": [
       "stylelint './assets/scss/**/*.scss' --fix"
