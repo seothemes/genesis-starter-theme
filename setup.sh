@@ -10,8 +10,10 @@ default_url="genesis-starter.test"
 default_namespace="SEOThemes\GenesisStarterTheme"
 default_company="${default_namespace%\\*}"
 default_package="${default_namespace#*\\}"
+default_version=`perl -ne 'print if /(?:\"version\": \")(.*?)(?:\")/' './package.json'`
 
 # Files
+bs='\'
 setup_sh="./setup.sh"
 functions_php="./functions.php"
 config_php="./config/config.php"
@@ -39,7 +41,7 @@ echo "${bold}${blue}
 
 ${txtreset}"
 # echo "${bold}
-              # Genesis Starter Theme
+              # Startup Pro
       # ${txtreset}"
 
 echo "1) Set name for your theme. (Default: $default_name)"
@@ -105,24 +107,22 @@ else
   url=$default_url
 fi
 
-while true; do
-read -p "9) Is following information correct?
 
-name: ${bold}${pink}$name${txtreset} (Default: $default_name)
-id: ${bold}${pink}$id${txtreset} (Default: $default_id)
-author: ${bold}${pink}$author${txtreset} (Default: $default_author)
-author_url: ${bold}${pink}$author_url${txtreset} (Default: $default_author_url)
-namespace: ${bold}${pink}$company\\$package${txtreset} (Default: $default_namespace)
-url: ${bold}${pink}$url${txtreset} (Default: $default_url)
+# "version": "1.2.3",
+clean_version="${default_version//\"/}"
+clean_version="${clean_version//version: /}"
+clean_version="${clean_version//,/}"
+clean_version="${clean_version// /}"
 
-Proceed to install? [y/N]
-" yn
-  case $yn in
-    [Yy]* ) break;;
-    [Nn]* ) exit;;
-    * ) echo "Please answer y or n.";;
-  esac
-done
+echo "7) Set version number for your theme. (Default: $clean_version)"
+read version
+
+# use default if empty
+if test -n "$version"; then
+  echo ""
+else
+  version=$clean_version
+fi
 
 echo "
 Run setup:
@@ -141,7 +141,7 @@ perl -p -i -e "s|$default_name|$name|g" $readme
 perl -p -i -e "s|$default_name|$name|g" $app_readme
 perl -p -i -e "s|$default_name|$name|g" $changelog
 
-echo "1/8 --> Search & replace name ... ${green}done${txtreset}"
+echo "1/8 --> Search & replace name ........ ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Search & Replace ID
@@ -155,7 +155,7 @@ perl -p -i -e "s|$default_id|$id|g" $gulpfile
 perl -p -i -e "s|$default_id|$id|g" $readme
 perl -p -i -e "s|$default_id|$id|g" $app_readme
 
-echo "2/8 --> Search & replace id ..... ${green}done${txtreset}"
+echo "2/8 --> Search & replace id .......... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author
@@ -169,7 +169,7 @@ perl -p -i -e "s|$default_author|$author|g" $gulpfile
 perl -p -i -e "s|$default_author|$author|g" $readme
 perl -p -i -e "s|$default_author|$author|g" $app_readme
 
-echo "3/8 --> Change author name ...... ${green}done${txtreset}"
+echo "3/8 --> Change author name ........... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change author URL
@@ -183,28 +183,24 @@ perl -p -i -e "s|$default_author_url|$author_url|g" $gulpfile
 perl -p -i -e "s|$default_author_url|$author_url|g" $readme
 perl -p -i -e "s|$default_author_url|$author_url|g" $app_readme
 
-echo "4/8 --> Change author URL ....... ${green}done${txtreset}"
+echo "4/8 --> Change author URL ............ ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change namespace
 # ----------------------------------------------------------------
 
-perl -p -i -e "s|$default_company|$company|g" $functions_php
-perl -p -i -e "s|$default_company|$company|g" $config_php
-perl -p -i -e "s|$default_company|$company|g" $package_json
-perl -p -i -e "s|$default_company|$company|g" $composer_json
-perl -p -i -e "s|$default_company|$company|g" $gulpfile
-perl -p -i -e "s|$default_company|$company|g" $readme
-perl -p -i -e "s|$default_company|$company|g" $app_readme
-perl -p -i -e "s|$default_package|$package|g" $functions_php
-perl -p -i -e "s|$default_package|$package|g" $config_php
-perl -p -i -e "s|$default_package|$package|g" $package_json
-perl -p -i -e "s|$default_package|$package|g" $composer_json
-perl -p -i -e "s|$default_package|$package|g" $gulpfile
-perl -p -i -e "s|$default_package|$package|g" $readme
-perl -p -i -e "s|$default_package|$package|g" $app_readme
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $functions_php
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $config_php
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $package_json
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $gulpfile
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $readme
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $app_readme
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $composer_json
 
-echo "5/8 --> Change namespace ........ ${green}done${txtreset}"
+perl -p -i -e "s|$default_company|$company|g" $composer_json
+perl -p -i -e "s|$default_package|$package|g" $composer_json
+
+echo "5/8 --> Change namespace ............. ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Change dev URL
@@ -212,7 +208,7 @@ echo "5/8 --> Change namespace ........ ${green}done${txtreset}"
 
 perl -p -i -e "s|$default_url|$url|g" $gulpfile
 
-echo "6/8 --> Change dev URL .......... ${green}done${txtreset}"
+echo "6/8 --> Change dev URL ............... ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Update defaults
@@ -222,11 +218,20 @@ perl -p -i -e "s|$default_name|$name|g" $setup_sh
 perl -p -i -e "s|$default_id|$id|g" $setup_sh
 perl -p -i -e "s|$default_author|$author|g" $setup_sh
 perl -p -i -e "s|$default_author_url|$author_url|g" $setup_sh
-perl -p -i -e "s|$default_company|$company|g" $setup_sh
-perl -p -i -e "s|$default_package|$package|g" $setup_sh
 perl -p -i -e "s|$default_url|$url|g" $setup_sh
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $setup_sh
 
-echo "7/8 --> Updating defaults ....... ${green}done${txtreset}"
+echo "7/8 --> Updating defaults ............ ${green}done${txtreset}"
+
+# ----------------------------------------------------------------
+# Reset version
+# ----------------------------------------------------------------
+
+formatted_version="  \"version\": \"${version}\","
+
+perl -p -i -e "s|$default_version|$formatted_version|g" './package.json'
+
+echo "8/8 --> Updating version ............. ${green}done${txtreset}"
 
 # ----------------------------------------------------------------
 # Build theme
@@ -235,9 +240,10 @@ echo "7/8 --> Updating defaults ....... ${green}done${txtreset}"
 build="gulp build"
 ${build}
 
-echo "8/8 --> Building theme .......... ${green}done${txtreset}"
-
 dump="composer dump-autoload"
 ${dump}
 
-echo "${green}Setup complete!${txtreset}"
+echo "${green}Setup complete, starting BrowserSync...${txtreset}"
+
+serve="gulp serve"
+${serve}
