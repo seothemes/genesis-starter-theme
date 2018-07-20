@@ -114,29 +114,29 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 ## Structure
 
 ```shell
-your-theme-name/      => # → Theme root directory
-├── app/              => # → Theme PHP files
-│   └── README.md     => # → App directory instructions
-├── config/           => # → Theme config directory
-│   └── config.php    => # → Theme settings
-├── resources/        => # → Front-end assets
-│   ├── demo/         => # → Theme demo files
-│   ├── fonts/        => # → Theme fonts
-│   ├── img/          => # → Theme images
-│   ├── js/           => # → Theme JavaScript
-│   ├── lang/         => # → Language translation files
-│   ├── scss/         => # → Sass partials
-│   └── views/        => # → Theme templates
-├── node_modules/     => # → Node.js packages (never edit)
-├── vendor/           => # → Composer packages (never edit)
-├── composer.json     => # → Composer settings (never edit)
-├── functions.php     => # → Composer autoloader
-├── Gulpfile.js       => # → Gulp config
-├── package.json      => # → Node.js dependencies
-├── screenshot.png    => # → Theme screenshot for WP admin
-├── setup.sh          => # → CLI setup script
-├── style.css         => # → Theme stylesheet
-└── woocommerce.css   => # → WooCommerce stylesheet
+your-theme-name/      # → Theme root directory
+├── app/              # → Theme PHP files
+│   └── README.md     # → App directory instructions
+├── config/           # → Theme config directory
+│   └── config.php    # → Theme settings
+├── resources/        # → Front-end assets
+│   ├── demo/         # → Theme demo files
+│   ├── fonts/        # → Theme fonts
+│   ├── img/          # → Theme images
+│   ├── js/           # → Theme JavaScript
+│   ├── lang/         # → Language translation files
+│   ├── scss/         # → Sass partials
+│   └── views/        # → Theme templates
+├── node_modules/     # → Node.js packages (never edit)
+├── vendor/           # → Composer packages (never edit)
+├── composer.json     # → Composer settings (never edit)
+├── functions.php     # → Composer autoloader
+├── Gulpfile.js       # → Gulp config
+├── package.json      # → Node.js dependencies
+├── screenshot.png    # → Theme screenshot for WP admin
+├── setup.sh          # → CLI setup script
+├── style.css         # → Theme stylesheet
+└── woocommerce.css   # → WooCommerce stylesheet
 ```
 
 ## Contributing
