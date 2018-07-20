@@ -83,7 +83,7 @@ sh setup.sh
 
 The Genesis Starter Theme includes a powerful setup script which automates the process of updating theme details:
 
-<img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="600">
+<a href="https://github.com/seothemes/genesis-starter-theme/blob/master/setup.sh" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="500"></a>
 
 It replaces the following information with your own:
 
@@ -145,7 +145,7 @@ Contributions are welcome from everyone. We have [contributing guidelines](https
 
 ## Authors
 
-<img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="256">
+<a href="https://seothemes.com" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="200"></a>
 
 See also the list of [contributors](https://github.com/seothemes/genesis-starter-theme/graphs/contributors) who participated in this project.
 
