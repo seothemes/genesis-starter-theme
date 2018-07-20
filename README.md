@@ -2,19 +2,44 @@
 
 [![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
 
-This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. 
+This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. [Live demo](https://demo.seothemes.com/genesis-starter)
 
-It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's configuration file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
+It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's config file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
 
-Check out the live demo <a href="https://demo.seothemes.com/genesis-starter" target="_blank">here</a>.
+## Table of Contents
 
-A zipped, ready-to-install and supported version is a available for purchase at [seothemes.com](https://seothemes.com/themes/genesis-starter/)
+* [Features](#features)
+* [Requirements](#requirements)
+* [Installation](#installation)
+    * [One line command](#one-line-command)
+    * [Individual commands](#individual-commands)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Development](#development)
+* [Structure](#structure)
+* [Contributing](#contributing)
+* [Authors](#authors)
+* [Special Thanks](#special-thanks)
 
-### Requirements
+## Features
+
+The Genesis Starter Theme aims to modernize, organize and enhance some aspects of Genesis child theme development. Take a look at what is waiting for you:
+
+- [Mobile-first Sass](https://github.com/seothemes/genesis-starter-theme/tree/master/resources/scss) for stylesheets
+- [Gulp](https://gulpjs.com/) for automating development build tasks
+- [Browsersync](https://browsersync.io/) for synchronized browser testing
+- [Config-based](https://www.alainschlesser.com/config-files-for-reusable-code/), OOP modular architecture
+- [CLI setup script](#setup) to automatically update information
+- [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) or [NPM](https://www.npmjs.com/) for managing Node dependencies
+- [Composer](https://getcomposer.org/) for managing PHP dependencies
+- [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading or a basic file autoloader
+- [Namespaced](http://php.net/manual/en/language.namespaces.basics.php) (excluding functions.php)
+
+## Requirements
 
 | Requirement | How to Check | How to Install |
 | :---------- | :----------- | :------------- |
-| PHP >= 5.3 | `php -v` | [php.net](http://php.net/manual/en/install.php) |
+| PHP >= 5.4 | `php -v` | [php.net](http://php.net/manual/en/install.php) |
 | WordPress >= 4.8 | `Admin Footer` | [wordpress.org](https://codex.wordpress.org/Installing_WordPress) |
 | Genesis >= 2.6 | `Theme Page` | [studiopress.com](http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=) |
 | Composer >= 1.5.0 | `composer --version` | [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) |
@@ -26,17 +51,17 @@ A zipped, ready-to-install and supported version is a available for purchase at 
 
 ## Installation
 
-### One-liner:
+### One line command:
 
-Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+Install the latest development version of the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
 composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd "$(\ls -1dt ./*/ | head -n 1)" && sh setup.sh
 ```
 
-### Individual steps:
+### Individual commands:
 
-Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+Install the latest development version of the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
 composer create-project seothemes/genesis-starter-theme your-theme-name dev-master
@@ -48,86 +73,83 @@ Navigate into the theme's root directory:
 cd your-theme-name
 ```
 
-Run the setup script to rename the theme:
+Run the setup script to rename the theme, build the theme assets and kick-off BrowserSync:
 
 ```shell
 sh setup.sh
 ```
 
-From the theme's root directory run the default Gulp task to build the theme assets and kick-off BrowserSync:
+## Setup
 
-```shell
-gulp
-```
+The Genesis Starter Theme includes a powerful setup script which automates the process of updating theme details:
 
-## Development
+<img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="600">
 
-Refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps/gulp-wp-toolkit#tasks) for a complete list of build tasks.
+It replaces the following information with your own:
 
-In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be used to generate an archive of your theme, including the required composer package files and no unnecessary files. The list of included files can be modified from the `toolkit.extendConfig.src.zip` config in the Gulpfile.
+- Theme name
+- Theme textdomain
+- Theme author
+- Theme author URL
+- Theme development URL
+- Theme namespace
+- Theme version
 
 ## Usage
 
-All changes to the child theme should be made via the theme configuration file. An example config can be found [here](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php). The `app` directory is provided if additional functionality is required.
+The Genesis Starter Theme is intended to be used with the [Child Theme Library](https://github.com/seothemes/child-theme-library). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is available [here](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php). 
+
+Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. Gulp reads this file and automatically places the relevant information to the correct locations throughout the theme. 
+
+The `app` directory is provided to house PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Refer to the [App readme](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php) for more information.
+
+Static assets are organized in the `resources` directory. This folder contains theme scripts, styles, images, fonts, views and language translation files.
+
+## Development
+
+Please refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps/gulp-wp-toolkit#tasks) for a complete list of available build tasks.
+
+In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be used to generate an archive of your theme, including the required composer package files and none of the unnecessary files. The list of included files can be modified from the `toolkit.extendConfig.src.zip` config in the Gulpfile.
 
 ## Structure
 
 ```shell
-./
-├── app/
-│   └── README.md
-├── config/
-│   └── config.php
-├── resources/
-│   ├── build/
-│   ├── demo/
-│   ├── fonts/
-│   ├── img/
-│   ├── js/
-│   ├── lang/
-│   ├── scss/
-│   └── views/
-├── .csscomb.json
-├── .editorconfig
-├── .gitattributes
-├── .gitignore
-├── .jsbeautifyrc
-├── .jshintrc
-├── .stylelintignore
-├── CHANGELOG.md
-├── composer.json
-├── composer.lock
-├── CONTRIBUTING.md
-├── functions.php
-├── Gulpfile.js
-├── LICENSE.md
-├── package.json
-├── package-lock.json
-├── phpcs.xml.dist
-├── README.md
-├── screenshot.png
-├── setup.sh
-├── style.css
-├── stylelint.config.js
-├── woocommerce.css
-└── yarn.lock
+your-theme-name/      => # → Theme root directory
+├── app/              => # → Theme PHP files
+│   └── README.md     => # → App directory instructions
+├── config/           => # → Theme config directory
+│   └── config.php    => # → Theme settings
+├── resources/        => # → Front-end assets
+│   ├── demo/         => # → Theme demo files
+│   ├── fonts/        => # → Theme fonts
+│   ├── img/          => # → Theme images
+│   ├── js/           => # → Theme JavaScript
+│   ├── lang/         => # → Language translation files
+│   ├── scss/         => # → Sass partials
+│   └── views/        => # → Theme templates
+├── node_modules/     => # → Node.js packages (never edit)
+├── vendor/           => # → Composer packages (never edit)
+├── composer.json     => # → Composer settings (never edit)
+├── functions.php     => # → Composer autoloader
+├── Gulpfile.js       => # → Gulp config
+├── package.json      => # → Node.js dependencies
+├── screenshot.png    => # → Theme screenshot for WP admin
+├── setup.sh          => # → CLI setup script
+├── style.css         => # → Theme stylesheet
+└── woocommerce.css   => # → WooCommerce stylesheet
 ```
 
-## Support
+## Contributing
 
-Please visit https://github.com/seothemes/genesis-starter-theme/issues/ to open a new issue.
-
-## License
-
-This project is licensed under the GNU General Public License - see the LICENSE.md file for details.
+Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/seothemes/genesis-starter-theme/blob/master/.github/CONTRIBUTING.md) to help you get started.
 
 ## Authors
 
-- **Lee Anthony** - [SEO Themes](https://seothemes.com/)
+<img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="256">
 
 See also the list of [contributors](https://github.com/seothemes/genesis-starter-theme/graphs/contributors) who participated in this project.
 
-## Acknowledgments
+## Special Thanks
 
 A shout out to anyone who's code was used in or provided inspiration to this project:
 
@@ -137,6 +159,5 @@ A shout out to anyone who's code was used in or provided inspiration to this pro
 <a href="https://github.com/timothyjensen/" target="_blank">Tim Jensen</a>, 
 <a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>, 
 <a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>, 
-<a href="https://github.com/cpaul007/" target="_blank">Chinmoy Paul</a>, 
 <a href="https://github.com/nathanrice/" target="_blank">Nathan Rice</a>, 
 <a href="https://github.com/bgardner/" target="_blank">Brian Gardner</a>
