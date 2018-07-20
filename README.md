@@ -26,12 +26,12 @@ A zipped, ready-to-install and supported version is a available for purchase at 
 
 ## Installation
 
-Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
-
 ### One-liner:
 
+Install the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+
 ```shell
-composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd  "$(\ls -1dt ./*/ | head -n 1)" && sh setup.sh
+composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd "$(\ls -1dt ./*/ | head -n 1)" && sh setup.sh
 ```
 
 ### Individual steps:
@@ -54,13 +54,13 @@ Run the setup script to rename the theme:
 sh setup.sh
 ```
 
-## Development
-
-From the theme's root directory run the default Gulp task to kick-off development:
+From the theme's root directory run the default Gulp task to build the theme assets and kick-off BrowserSync:
 
 ```shell
 gulp
 ```
+
+## Development
 
 Refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps/gulp-wp-toolkit#tasks) for a complete list of build tasks.
 

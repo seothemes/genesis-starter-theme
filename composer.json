@@ -1,7 +1,7 @@
 {
   "name": "seothemes/genesis-starter-theme",
   "type": "wordpress-theme",
-  "description": "A starter theme for the Genesis Framework with modern build tools.",
+  "description": "Genesis starter theme with a modern development workflow.",
   "keywords": [
     "WordPress",
     "wordpress-theme-development",
@@ -16,8 +16,8 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/seothemes/genesis-starter/issues",
-    "source": "https://github.com/seothemes/genesis-starter"
+    "issues": "https://github.com/seothemes/genesis-starter-theme/issues",
+    "source": "https://github.com/seothemes/genesis-starter-theme"
   },
   "repositories": [
     {
