@@ -44,6 +44,7 @@ toolkit.extendConfig(
 				'!./node_modules/**/*',
 				'!./vendor',
 				'!./vendor/**/*',
+				'./vendor/autoload.php',
 				'./vendor/composer/*.php',
 				'./vendor/composer/installed.json',
 				'./vendor/seothemes/child-theme-library/src/*.php',
