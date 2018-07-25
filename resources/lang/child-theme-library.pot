@@ -1,8 +1,8 @@
-# Copyright (C) 2018 Genesis Starter Theme 3.1.1
-# This file is distributed under the same license as the Genesis Starter Theme 3.1.1 package.
+# Copyright (C) 2018 Genesis Starter Theme 3.1.2
+# This file is distributed under the same license as the Genesis Starter Theme 3.1.2 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Starter Theme 3.1.1\n"
+"Project-Id-Version: Genesis Starter Theme 3.1.2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
