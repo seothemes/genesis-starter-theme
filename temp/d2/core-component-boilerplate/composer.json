@@ -1,0 +1,32 @@
+{
+    "name": "d2/core-component-boilerplate",
+    "description": "Description of the components expected behavior.",
+    "type": "library",
+    "version": "0.1.0",
+    "homepage": "https://d2themes.com/",
+    "keywords": [
+        "WordPress",
+        "wordpress-theme-development"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Simpson",
+            "homepage": "https://craigsimpson.scot",
+            "role": "Developer"
+        },
+        {
+            "name": "Lee Anthony",
+            "homepage": "https://seothemes.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "d2/core": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "D2\\Core\\": "src/"
+        }
+    }
+}

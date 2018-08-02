@@ -1,0 +1,27 @@
+{
+    "name": "d2/core-simple-social-icons",
+    "description": "Sets default Simple Social Icon values through configuration.",
+    "type": "library",
+    "version": "0.1.0",
+    "homepage": "https://d2themes.com/",
+    "keywords": [
+        "WordPress",
+        "wordpress-theme-development"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Anthony",
+            "homepage": "https://seothemes.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "d2/core": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "D2\\Core\\": "src/"
+        }
+    }
+}
