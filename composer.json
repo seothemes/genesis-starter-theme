@@ -7,7 +7,7 @@
     "wordpress-theme-development",
     "genesis-framework"
   ],
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Lee Anthony",
@@ -19,30 +19,92 @@
     "issues": "https://github.com/seothemes/genesis-starter-theme/issues",
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "tgmpa/tgm-plugin-activation",
-        "version": "2.6.1",
-        "type": "package",
-        "dist": {
-          "url": "https://github.com/TGMPA/TGM-Plugin-Activation/archive/2.6.1.zip",
-          "type": "zip"
-        },
-        "autoload": {
-          "files": []
-        }
-      },
-      "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git"
-    }
-  ],
   "require": {
-    "php": "^5.4|^7",
-    "seothemes/child-theme-library": "dev-master",
-    "tgmpa/tgm-plugin-activation": "*"
+    "php": ">=5.6",
+    "d2/core-asset-loader": "^0.2.0",
+    "d2/core-component-boilerplate": "@dev",
+    "d2/core-constants": "@dev",
+    "d2/core-custom-colors": "@dev",
+    "d2/core-genesis-customizer-panels": "^0.2.0",
+    "d2/core-genesis-layouts": "^0.1.0",
+    "d2/core-genesis-meta-boxes": "^0.1.0",
+    "d2/core-genesis-settings": "@dev",
+    "d2/core-google-fonts": "@dev",
+    "d2/core-hooks": "@dev",
+    "d2/core-image-sizes": "@dev",
+    "d2/core-page-templates": "^0.1.0",
+    "d2/core-plugin-activator": "@dev",
+    "d2/core-simple-social-icons": "@dev",
+    "d2/core-textdomain": "^0.1.0",
+    "d2/core-theme-support": "^0.1.0",
+    "d2/core-widget-areas": "^0.1.0"
   },
   "require-dev": {},
+  "repositories": [
+    {
+      "type": "path",
+      "url": "temp/d2/core-component-boilerplate",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-constants",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-custom-colors",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-genesis-settings",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-google-fonts",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-hooks",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-image-sizes",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-plugin-activator",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "temp/d2/core-simple-social-icons",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "autoload": {
     "psr-4": {
       "SEOThemes\\GenesisStarterTheme\\": "app/"

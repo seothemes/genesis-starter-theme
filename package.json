@@ -1,13 +1,13 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "description": "Genesis starter theme with a modern development workflow.",
   "repository": {
     "type": "git",
     "url": "https://github.com/seothemes/genesis-starter-theme.git"
   },
   "author": "SEO Themes",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "main": "Gulpfile.js",
   "scripts": {},
   "devDependencies": {

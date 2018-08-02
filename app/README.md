@@ -1,6 +1,6 @@
 # App Directory
 
-This directory holds all of the source code for your theme. It is pre-configured to use PSR-4 Autoloading for classes with the SEOThemes\GenesisStarterTheme namespace. Files and folders in this directory should be named using the PSR-4 naming convention, e.g `ClassName.php` or `ModuleName/ClassName.php`.
+This directory holds all of the app-specific source code for your theme. It is pre-configured to use PSR-4 Autoloading for classes with the SEOThemes\GenesisStarterTheme namespace. Files and folders in this directory should be named using the PSR-4 naming convention, e.g `ClassName.php` or `ModuleName/ClassName.php`.
  
 Below is an example class:
 
