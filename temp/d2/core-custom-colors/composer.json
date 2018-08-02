@@ -1,0 +1,26 @@
+{
+  "name": "d2/core-custom-colors",
+  "description": "Add color settings to the Customizer through configuration.",
+  "type": "library",
+  "homepage": "https://d2themes.com/",
+  "keywords": [
+    "WordPress",
+    "wordpress-theme-development"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "seothemes",
+      "homepage": "https://seothemes.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "d2/core": "^0.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "D2\\Core\\": "src/"
+    }
+  }
+}
