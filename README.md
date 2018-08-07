@@ -4,7 +4,7 @@
 
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
 
-It uses Composer to pull in the [D2 Core](https://github.com/d2themes/core) component library which allows the theme's logic to be controlled through the configuration file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
+It uses Composer to pull in the [D2 Core](https://github.com/d2themes/core) component library which provides the logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
 
 ## Table of Contents
 
@@ -85,7 +85,7 @@ The Genesis Starter Theme includes a powerful setup script which automates the p
 
 <a href="https://github.com/seothemes/genesis-starter-theme/blob/master/setup.sh" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="500"></a>
 
-It replaces the following information with your own:
+It replaces the following details with your own:
 
 - Theme name
 - Theme textdomain

@@ -13,6 +13,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: temp/d2/core-custom-colors/src/CustomColors.php:66
-msgid " Color"
+#: config/defaults.php:325
+msgid "Header Menu"
 msgstr ""
