@@ -283,7 +283,7 @@ $d2_simple_social_icons = [
 ];
 
 $d2_textdomain = [
-	TextDomain::DOMAIN => 'generico',
+	TextDomain::DOMAIN => 'genesis-starter-theme',
 ];
 
 $d2_theme_support = [
