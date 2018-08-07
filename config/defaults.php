@@ -14,16 +14,11 @@ namespace SEOThemes\GenesisStarterTheme;
 use D2\Core\AssetLoader;
 use D2\Core\Constants;
 use D2\Core\CustomColors;
-use D2\Core\DemoImport;
-use D2\Core\GenesisAttributes;
-use D2\Core\GenesisCustomizer;
 use D2\Core\GenesisLayout;
-use D2\Core\GenesisMetaBox;
 use D2\Core\GenesisSettings;
 use D2\Core\GoogleFonts;
 use D2\Core\Hooks;
 use D2\Core\ImageSizes;
-use D2\Core\PageTemplate;
 use D2\Core\PluginActivation;
 use D2\Core\SimpleSocialIcons;
 use D2\Core\TextDomain;
@@ -43,7 +38,7 @@ $d2_assets = [
 				AssetLoader::LOCALIZEVAR  => 'generico_menu_params',
 				AssetLoader::LOCALIZEDATA => [
 					'mainMenu'         => __( 'Menu', 'genesis-starter-theme' ),
-					'subMenu'          => __( 'Menu', 'genesis-starter-theme' ),
+					'subMenu'          => __( 'Sub Menu', 'genesis-starter-theme' ),
 					'menuIconClass'    => null,
 					'subMenuIconClass' => null,
 					'menuClasses'      => [
@@ -148,72 +143,7 @@ $d2_custom_colors = [
 	],
 ];
 
-$d2_customizer_panels = [
-	GenesisCustomizer::REMOVE => [
-		GenesisCustomizer::UPDATES,
-		GenesisCustomizer::HEADER,
-		GenesisCustomizer::ADSENSE,
-		GenesisCustomizer::COLORSCHEME,
-		GenesisCustomizer::LAYOUT,
-		GenesisCustomizer::BREADCRUMB,
-		GenesisCustomizer::COMMENTS,
-		GenesisCustomizer::ARCHIVES,
-		GenesisCustomizer::SCRIPTS,
-	],
-];
-
-$d2_demo_import = [
-	DemoImport::IMPORT_SETTINGS => [
-		DemoImport::LOCAL_IMPORT_FILE            => get_stylesheet_directory() . '/resources/demo/sample.xml',
-		DemoImport::LOCAL_IMPORT_WIDGET_FILE     => get_stylesheet_directory() . '/resources/demo/widgets.wie',
-		DemoImport::LOCAL_IMPORT_CUSTOMIZER_FILE => get_stylesheet_directory() . '/resources/demo/customizer.dat',
-		DemoImport::IMPORT_FILE_NAME             => 'Demo Import',
-		DemoImport::CATEGORIES                   => false,
-		DemoImport::LOCAL_IMPORT_REDUX           => false,
-		DemoImport::IMPORT_PREVIEW_IMAGE_URL     => false,
-		DemoImport::IMPORT_NOTICE                => false,
-	],
-	DemoImport::PAGE_SETTINGS   => [
-		DemoImport::SHOW_ON_FRONT            => 'page',
-		DemoImport::PAGE_ON_FRONT            => 'Home',
-		DemoImport::PAGE_FOR_POSTS           => 'Blog',
-		DemoImport::WOOCOMMERCE_SHOP_PAGE_ID => 'Shop',
-	],
-	DemoImport::MENU_SETTINGS   => [
-		[
-			DemoImport::MENU_NAME     => 'Header Menu',
-			DemoImport::MENU_LOCATION => 'primary',
-		],
-	],
-];
-
-$d2_genesis_attributes = [
-	GenesisAttributes::ADD    => [
-		[
-			GenesisAttributes::CONTEXT    => 'site-container',
-			GenesisAttributes::ATTRIBUTES => [
-				'id' => 'top',
-			],
-			GenesisAttributes::CONDITION  => function () {
-				return true;
-			},
-		],
-	],
-	GenesisAttributes::REMOVE => [
-		[
-			GenesisAttributes::CONTEXT    => 'body',
-			GenesisAttributes::ATTRIBUTES => [
-				'class' => 'blog',
-			],
-		],
-	],
-];
-
 $d2_genesis_settings = [
-	GenesisSettings::FORCE    => [
-		GenesisSettings::POSTS_NAV         => 'numeric',
-		GenesisSettings::SEMANTIC_HEADINGS => 0,
-	],
 	GenesisSettings::DEFAULTS => [
 		GenesisSettings::SITE_LAYOUT => 'full-width-content',
 	],
@@ -222,32 +152,74 @@ $d2_genesis_settings = [
 $d2_google_fonts = [
 	GoogleFonts::ENQUEUE => [
 		'Source+Sans+Pro:400,600,700',
-		'Montserrat:400,600',
 	],
 ];
 
 $d2_hooks = [
 	Hooks::ADD    => [
 		[
-			Hooks::TAG         => 'genesis_before',
-			Hooks::CALLBACK    => function () {
-				echo 'Is front page';
-			},
-			Hooks::PRIORITY    => 10,
+			Hooks::TAG         => 'genesis_site_title',
+			Hooks::CALLBACK    => 'the_custom_logo',
+			Hooks::PRIORITY    => 0,
 			Hooks::CONDITIONAL => function () {
-				if ( is_front_page() ) {
-					return true;
-				} else {
-					return false;
+				return has_custom_logo();
+			}
+		],
+		[
+			Hooks::TAG      => 'genesis_markup_title-area_close',
+			Hooks::CALLBACK => function ( $close_html ) {
+				if ( $close_html ) {
+					ob_start();
+					do_action( 'child_theme_after_title_area' );
+					$close_html = $close_html . ob_get_clean();
+				}
+
+				return $close_html;
+			}
+		],
+		[
+			Hooks::TAG      => 'genesis_before',
+			Hooks::CALLBACK => function () {
+				$wraps = get_theme_support( 'genesis-structural-wraps' );
+				foreach ( $wraps[0] as $context ) {
+					add_filter( "genesis_structural_wrap-{$context}", function ( $output, $original ) use ( $context ) {
+						$position = ( 'open' === $original ) ? 'before' : 'after';
+						ob_start();
+						do_action( "child_theme_{$position}_{$context}_wrap" );
+						if ( 'open' === $original ) {
+							return ob_get_clean() . $output;
+						} else {
+							return $output . ob_get_clean();
+						}
+					}, 10, 2 );
 				}
 			}
+		],
+		[
+			Hooks::TAG      => 'child_theme_after_title_area',
+			Hooks::CALLBACK => 'genesis_do_nav',
+		],
+		[
+			Hooks::TAG      => 'child_theme_after_title_area',
+			Hooks::CALLBACK => 'genesis_do_subnav',
+		],
+		[
+			Hooks::TAG      => 'child_theme_before_footer_wrap',
+			Hooks::CALLBACK => 'genesis_footer_widget_areas',
 		],
 	],
 	Hooks::REMOVE => [
 		[
 			Hooks::TAG      => 'genesis_after_header',
 			Hooks::CALLBACK => 'genesis_do_nav',
-			Hooks::PRIORITY => 10,
+		],
+		[
+			Hooks::TAG      => 'genesis_after_header',
+			Hooks::CALLBACK => 'genesis_do_subnav',
+		],
+		[
+			Hooks::TAG      => 'genesis_before_footer',
+			Hooks::CALLBACK => 'genesis_footer_widget_areas',
 		],
 	],
 ];
@@ -269,37 +241,13 @@ $d2_image_sizes = [
 
 $d2_layouts = [
 	GenesisLayout::UNREGISTER => [
-		GenesisLayout::CONTENT_SIDEBAR,
-		GenesisLayout::SIDEBAR_CONTENT,
+		// GenesisLayout::CONTENT_SIDEBAR,
+		// GenesisLayout::SIDEBAR_CONTENT,
 		GenesisLayout::CONTENT_SIDEBAR_SIDEBAR,
 		GenesisLayout::SIDEBAR_SIDEBAR_CONTENT,
 		GenesisLayout::SIDEBAR_CONTENT_SIDEBAR,
-		GenesisLayout::FULL_WIDTH_CONTENT,
+		// GenesisLayout::FULL_WIDTH_CONTENT,
 	]
-];
-
-$d2_meta_boxes = [
-	GenesisMetaBox::REMOVE => [
-		// GenesisMetaBox::VERSION,
-		// GenesisMetaBox::STYLE,
-		// GenesisMetaBox::FEEDS,
-		// GenesisMetaBox::ADSENSE,
-		// GenesisMetaBox::LAYOUT,
-		// GenesisMetaBox::HEADER,
-		// GenesisMetaBox::NAV,
-		// GenesisMetaBox::BREADCRUMB,
-		// GenesisMetaBox::COMMENTS,
-		// GenesisMetaBox::POSTS,
-		// GenesisMetaBox::BLOGPAGE,
-		// GenesisMetaBox::SCRIPTS,
-	],
-];
-
-$d2_page_templates = [
-	PageTemplate::UNREGISTER => [
-		PageTemplate::BLOG,
-		PageTemplate::ARCHIVE,
-	],
 ];
 
 $d2_plugins = [
@@ -340,7 +288,9 @@ $d2_textdomain = [
 
 $d2_theme_support = [
 	ThemeSupport::ADD => [
-		'custom-logo'                 => [
+		'align-wide',
+		'automatic-feed-links',
+		'custom-logo'              => [
 			'height'      => 100,
 			'width'       => 300,
 			'flex-height' => true,
@@ -350,14 +300,18 @@ $d2_theme_support = [
 				'.site-description',
 			],
 		],
-		'html5'                       => [
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
+		'custom-header'            => [
+			'header-selector'  => '.hero-section',
+			'default_image'    => get_stylesheet_directory_uri() . '/resources/img/hero.jpg',
+			'header-text'      => false,
+			'width'            => 1280,
+			'height'           => 720,
+			'flex-height'      => true,
+			'flex-width'       => true,
+			'uploads'          => true,
+			'video'            => true,
 		],
-		'genesis-accessibility'       => [
+		'genesis-accessibility'    => [
 			'404-page',
 			'drop-down-menu',
 			'headings',
@@ -365,21 +319,40 @@ $d2_theme_support = [
 			'search-form',
 			'skip-links',
 		],
-		'genesis-menus'               => [
-			'primary' => __( 'Primary Navigation Menu', 'generico' ),
+		'genesis-after-entry-widget-area',
+		'genesis-footer-widgets'   => 4,
+		'genesis-menus'            => [
+			'primary' => __( 'Header Menu', 'child-theme-library' ),
 		],
-		'genesis-responsive-viewport' => '',
-		'genesis-structural-wraps'    => [
+		'genesis-responsive-viewport',
+		'genesis-structural-wraps' => [
 			'header',
-			'footer'
+			'menu-secondary',
+			'footer-widgets',
+			'footer',
 		],
+		'gutenberg'                => [
+			'wide-images' => true,
+		],
+		'html5'                    => [
+			'caption',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'search-form',
+		],
+		'post-thumbnails',
+		'woocommerce',
+		'wc-product-gallery-zoom',
+		'wc-product-gallery-lightbox',
+		'wc-product-gallery-slider',
+		'wp-block-styles',
 	],
 ];
 
 $d2_widget_areas = [
 	WidgetArea::UNREGISTER => [
 		WidgetArea::HEADER_RIGHT,
-		//WidgetArea::SIDEBAR,
 		WidgetArea::SIDEBAR_ALT,
 	],
 ];
@@ -388,16 +361,11 @@ return [
 	AssetLoader::class       => $d2_assets,
 	Constants::class         => $d2_constants,
 	CustomColors::class      => $d2_custom_colors,
-	DemoImport::class        => $d2_demo_import,
-	GenesisAttributes::class => $d2_genesis_attributes,
-	GenesisCustomizer::class => $d2_customizer_panels,
 	GenesisLayout::class     => $d2_layouts,
-	GenesisMetaBox::class    => $d2_meta_boxes,
 	GenesisSettings::class   => $d2_genesis_settings,
 	GoogleFonts::class       => $d2_google_fonts,
 	Hooks::class             => $d2_hooks,
 	ImageSizes::class        => $d2_image_sizes,
-	PageTemplate::class      => $d2_page_templates,
 	PluginActivation::class  => $d2_plugins,
 	SimpleSocialIcons::class => $d2_simple_social_icons,
 	TextDomain::class        => $d2_textdomain,

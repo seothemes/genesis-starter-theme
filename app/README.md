@@ -71,5 +71,5 @@ new SEOThemes\GenesisStarterTheme\ClassName();
 new SEOThemes\GenesisStarterTheme\ModuleName\ClassName();
 ```
 
-If namespaces and classes are not your thing, there is also a simple file autoloader provided by the Child Theme Library. To use the file autoloader, add your file names to the `autoload` config in the theme configuration file. Using the file autoloader doesn't require the use of PSR-4 naming convention, so you are free to use a typical WordPress file name such as `custom-functions.php`. This file can then be automatically loaded by adding `app/custom-functions` to the autoload config array.
+If namespaces and classes are not your thing, you can create standard files e.g: `custom-functions.php`. This file can then be loaded the usual way using an `include_once` statement.
     
