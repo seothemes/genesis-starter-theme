@@ -14,6 +14,8 @@ namespace SEOThemes\GenesisStarterTheme;
 use D2\Core\AssetLoader;
 use D2\Core\Constants;
 use D2\Core\CustomColors;
+use D2\Core\DemoImport;
+use D2\Core\GenesisAttributes;
 use D2\Core\GenesisCustomizer;
 use D2\Core\GenesisLayout;
 use D2\Core\GenesisMetaBox;
@@ -22,7 +24,7 @@ use D2\Core\GoogleFonts;
 use D2\Core\Hooks;
 use D2\Core\ImageSizes;
 use D2\Core\PageTemplate;
-use D2\Core\PluginActivator;
+use D2\Core\PluginActivation;
 use D2\Core\SimpleSocialIcons;
 use D2\Core\TextDomain;
 use D2\Core\ThemeSupport;
@@ -160,6 +162,53 @@ $d2_customizer_panels = [
 	],
 ];
 
+$d2_demo_import = [
+	DemoImport::IMPORT_SETTINGS => [
+		DemoImport::LOCAL_IMPORT_FILE            => get_stylesheet_directory() . '/resources/demo/sample.xml',
+		DemoImport::LOCAL_IMPORT_WIDGET_FILE     => get_stylesheet_directory() . '/resources/demo/widgets.wie',
+		DemoImport::LOCAL_IMPORT_CUSTOMIZER_FILE => get_stylesheet_directory() . '/resources/demo/customizer.dat',
+		DemoImport::IMPORT_FILE_NAME             => 'Demo Import',
+		DemoImport::CATEGORIES                   => false,
+		DemoImport::LOCAL_IMPORT_REDUX           => false,
+		DemoImport::IMPORT_PREVIEW_IMAGE_URL     => false,
+		DemoImport::IMPORT_NOTICE                => false,
+	],
+	DemoImport::PAGE_SETTINGS   => [
+		DemoImport::SHOW_ON_FRONT            => 'page',
+		DemoImport::PAGE_ON_FRONT            => 'Home',
+		DemoImport::PAGE_FOR_POSTS           => 'Blog',
+		DemoImport::WOOCOMMERCE_SHOP_PAGE_ID => 'Shop',
+	],
+	DemoImport::MENU_SETTINGS   => [
+		[
+			DemoImport::MENU_NAME     => 'Header Menu',
+			DemoImport::MENU_LOCATION => 'primary',
+		],
+	],
+];
+
+$d2_genesis_attributes = [
+	GenesisAttributes::ADD    => [
+		[
+			GenesisAttributes::CONTEXT    => 'site-container',
+			GenesisAttributes::ATTRIBUTES => [
+				'id' => 'top',
+			],
+			GenesisAttributes::CONDITION  => function () {
+				return true;
+			},
+		],
+	],
+	GenesisAttributes::REMOVE => [
+		[
+			GenesisAttributes::CONTEXT    => 'body',
+			GenesisAttributes::ATTRIBUTES => [
+				'class' => 'blog',
+			],
+		],
+	],
+];
+
 $d2_genesis_settings = [
 	GenesisSettings::FORCE    => [
 		GenesisSettings::POSTS_NAV         => 'numeric',
@@ -180,19 +229,25 @@ $d2_google_fonts = [
 $d2_hooks = [
 	Hooks::ADD    => [
 		[
-			Hooks::TYPE          => 'action',
-			Hooks::TAG           => 'genesis_site_title',
-			Hooks::FUNCTION_NAME => 'the_custom_logo',
-			Hooks::PRIORITY      => 0,
-			Hooks::ARGS          => 1,
+			Hooks::TAG         => 'genesis_before',
+			Hooks::CALLBACK    => function () {
+				echo 'Is front page';
+			},
+			Hooks::PRIORITY    => 10,
+			Hooks::CONDITIONAL => function () {
+				if ( is_front_page() ) {
+					return true;
+				} else {
+					return false;
+				}
+			}
 		],
 	],
 	Hooks::REMOVE => [
 		[
-			Hooks::TYPE          => 'action',
-			Hooks::TAG           => 'genesis_after_header',
-			Hooks::FUNCTION_NAME => 'genesis_do_nav',
-			Hooks::PRIORITY      => 10,
+			Hooks::TAG      => 'genesis_after_header',
+			Hooks::CALLBACK => 'genesis_do_nav',
+			Hooks::PRIORITY => 10,
 		],
 	],
 ];
@@ -248,15 +303,27 @@ $d2_page_templates = [
 ];
 
 $d2_plugins = [
-	PluginActivator::REGISTER => [
-		'Genesis eNews Extended',
-		'Genesis Simple FAQ',
-		'Genesis Widget Column Classes',
-		'Icon Widget',
-		'One Click Demo Import',
-		'Simple Social Icons',
-		'WPStudio Testimonial Slider',
-		'WP Featherlight',
+	PluginActivation::REGISTER => [
+		[
+			PluginActivation::NAME     => 'Genesis Widget Column Classes',
+			PluginActivation::SLUG     => 'genesis-widget-column-classes',
+			PluginActivation::REQUIRED => false,
+		],
+		[
+			PluginActivation::NAME     => 'Icon Widget',
+			PluginActivation::SLUG     => 'icon-widget',
+			PluginActivation::REQUIRED => false,
+		],
+		[
+			PluginActivation::NAME     => 'One Click Demo Import',
+			PluginActivation::SLUG     => 'one-click-demo-import',
+			PluginActivation::REQUIRED => false,
+		],
+		[
+			PluginActivation::NAME     => 'Simple Social Icons',
+			PluginActivation::SLUG     => 'simple-social-icons',
+			PluginActivation::REQUIRED => false,
+		],
 	],
 ];
 
@@ -273,6 +340,16 @@ $d2_textdomain = [
 
 $d2_theme_support = [
 	ThemeSupport::ADD => [
+		'custom-logo'                 => [
+			'height'      => 100,
+			'width'       => 300,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => [
+				'.site-title',
+				'.site-description',
+			],
+		],
 		'html5'                       => [
 			'search-form',
 			'comment-form',
@@ -311,6 +388,8 @@ return [
 	AssetLoader::class       => $d2_assets,
 	Constants::class         => $d2_constants,
 	CustomColors::class      => $d2_custom_colors,
+	DemoImport::class        => $d2_demo_import,
+	GenesisAttributes::class => $d2_genesis_attributes,
 	GenesisCustomizer::class => $d2_customizer_panels,
 	GenesisLayout::class     => $d2_layouts,
 	GenesisMetaBox::class    => $d2_meta_boxes,
@@ -319,7 +398,7 @@ return [
 	Hooks::class             => $d2_hooks,
 	ImageSizes::class        => $d2_image_sizes,
 	PageTemplate::class      => $d2_page_templates,
-	PluginActivator::class   => $d2_plugins,
+	PluginActivation::class  => $d2_plugins,
 	SimpleSocialIcons::class => $d2_simple_social_icons,
 	TextDomain::class        => $d2_textdomain,
 	ThemeSupport::class      => $d2_theme_support,
