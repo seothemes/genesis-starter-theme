@@ -1,6 +1,6 @@
 # Genesis Starter Theme
 
-[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
 
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
 

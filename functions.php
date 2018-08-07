@@ -20,10 +20,10 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup' );
  * Child theme setup.
  *
  * Hooking to `genesis_setup` means we don't have to "start the engine"
- * by requiring the `get_template_directory/lib/init.php` file, and
- * it provides us access to all of Genesis once it's been loaded.
+ * by requiring the Genesis `lib/init.php` file, and it provides us
+ * with access to all of Genesis functions once it's been loaded.
  *
- * @since  0.1.0
+ * @since  3.2.0
  *
  * @return void
  */
@@ -35,26 +35,22 @@ function child_theme_setup() {
 	/**
 	 * Set up child theme using d2/core.
 	 *
-	 * Passes all of the theme configuration over to d2/core, which is
-	 * responsible for instantiating components and injecting the correct
-	 * configuration.
-	 *
-	 * Existing core components are loaded using Composer, however you
-	 * can also create theme-specific components by adding a new
-	 * class in /src, and adding it to the configuration file.
+	 * Passes all of the theme configuration over to d2/core, which is responsible
+	 * for instantiating the components and injecting the correct configuration.
+	 * Custom components can be created and loaded from the `app/` directory.
 	 *
 	 * @link https://github.com/d2themes/core
 	 *
 	 * @uses \D2\Core\Theme::setup()
 	 *
-	 * @since 0.1.0
+	 * @since 3.2.0
 	 */
 	\D2\Core\Theme::setup( $config );
 
 	/**
 	 * Hook to execute code after child theme setup.
 	 *
-	 * @since  0.1.0
+	 * @since  3.2.0
 	 */
-	do_action( 'after_child_theme_setup' );
+	do_action( 'child_theme_setup' );
 }
