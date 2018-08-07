@@ -1,6 +1,6 @@
 # Genesis Starter Theme
 
-[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/genesis-starter-theme/blob/master/LICENSE.md)
 
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
 
@@ -99,7 +99,7 @@ It replaces the following details with your own:
 
 The Genesis Starter Theme is intended to be used with [D2 Core Components](https://packagist.org/packages/d2/). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme. 
 
-The `app` directory is provided to house project-specific PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Refer to the [App readme](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php) for more information.
+The `app` directory is provided to house project-specific PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Refer to the [App readme](https://github.com/seothemes/genesis-starter-theme/blob/master/app/README.md) for more information.
 
 Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 
