@@ -1,10 +1,10 @@
 # Genesis Starter Theme
 
-[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/child-theme-library/blob/master/LICENSE.md)
 
-This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. [Live demo](https://demo.seothemes.com/genesis-starter)
+This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
 
-It uses the [Child Theme Library](https://github.com/seothemes/child-theme-library) to control all of the theme's logic which can be customized from the child theme's config file, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
+It uses Composer to pull in the [D2 Core](https://github.com/d2themes/core) component library which provides the logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
 
 ## Table of Contents
 
@@ -32,8 +32,8 @@ The Genesis Starter Theme aims to modernize, organize and enhance some aspects o
 - [CLI setup script](#setup) to automatically update information
 - [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) or [NPM](https://www.npmjs.com/) for managing Node dependencies
 - [Composer](https://getcomposer.org/) for managing PHP dependencies
-- [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading or a basic file autoloader
-- [Namespaced](http://php.net/manual/en/language.namespaces.basics.php) (excluding functions.php)
+- [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading
+- [Namespaced](http://php.net/manual/en/language.namespaces.basics.php) to avoid naming conflicts
 
 ## Requirements
 
@@ -85,7 +85,7 @@ The Genesis Starter Theme includes a powerful setup script which automates the p
 
 <a href="https://github.com/seothemes/genesis-starter-theme/blob/master/setup.sh" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="500"></a>
 
-It replaces the following information with your own:
+It replaces the following details with your own:
 
 - Theme name
 - Theme textdomain
@@ -97,11 +97,11 @@ It replaces the following information with your own:
 
 ## Usage
 
-The Genesis Starter Theme is intended to be used with the [Child Theme Library](https://github.com/seothemes/child-theme-library). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is available [here](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php). 
+The Genesis Starter Theme is intended to be used with [D2 Core Components](https://packagist.org/packages/d2/). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme. 
 
-Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. Gulp reads this file and automatically places the relevant information to the correct locations throughout the theme. 
+The `app` directory is provided to house project-specific PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Refer to the [App readme](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php) for more information.
 
-The `app` directory is provided to house PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Refer to the [App readme](https://github.com/seothemes/child-theme-library/blob/master/docs/example-config.php) for more information.
+Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 
 Static assets are organized in the `resources` directory. This folder contains theme scripts, styles, images, fonts, views and language translation files.
 
@@ -145,7 +145,7 @@ Contributions are welcome from everyone. We have [contributing guidelines](https
 
 ## Authors
 
-<a href="https://seothemes.com" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="200"></a>
+<a href="https://seothemes.com" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="200"></a> &nbsp; <a href="https://github.com/d2themes" target="_blank" rel="nofollow"><img src="https://seothemes.com/wp-content/uploads/2018/08/d2themes.png" alt="D2 Themes logo" width="200"></a>
 
 See also the list of [contributors](https://github.com/seothemes/genesis-starter-theme/graphs/contributors) who participated in this project.
 
@@ -153,9 +153,9 @@ See also the list of [contributors](https://github.com/seothemes/genesis-starter
 
 A shout out to anyone who's code was used in or provided inspiration to this project:
 
+<a href="https://github.com/craigsimps/" target="_blank">Craig Simpson</a>, 
 <a href="https://github.com/christophherr/" target="_blank">Christoph Herr</a>, 
 <a href="https://github.com/garyjones/" target="_blank">Gary Jones</a>, 
-<a href="https://github.com/craigsimps/" target="_blank">Craig Simpson</a>, 
 <a href="https://github.com/timothyjensen/" target="_blank">Tim Jensen</a>, 
 <a href="https://github.com/billerickson/" target="_blank">Bill Erickson</a>, 
 <a href="https://github.com/srikat/" target="_blank">Sridhar Katakam</a>, 

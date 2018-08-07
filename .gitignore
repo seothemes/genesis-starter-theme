@@ -13,3 +13,6 @@ composer.lock
 
 # Ignore editor files.
 .idea
+
+# Ignore temporary files.
+temp

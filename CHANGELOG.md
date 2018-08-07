@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [3.2.0] - 2018-08-07
+* Add d2/core Composer package dependencies
+* Update config to use d2 instead of child theme library
+
 ## [3.1.0] - 2018-07-12
 * Add contributing guidelines
 * Add gulp-src-ordered-globs as dependency

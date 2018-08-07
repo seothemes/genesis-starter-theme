@@ -1,8 +1,8 @@
-# Copyright (C) 2018 Genesis Starter Theme 3.1.2
-# This file is distributed under the same license as the Genesis Starter Theme 3.1.2 package.
+# Copyright (C) 2018 Genesis Starter Theme 3.2.0
+# This file is distributed under the same license as the Genesis Starter Theme 3.2.0 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Starter Theme 3.1.2\n"
+"Project-Id-Version: Genesis Starter Theme 3.2.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,30 +13,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/config.php:126
-msgid "Hero Image"
-msgstr ""
-
-#: config/config.php:301
-msgid "Blog"
-msgstr ""
-
-#: config/config.php:302
-msgid "Page Builder"
-msgstr ""
-
-#: config/config.php:303
-msgid "Landing Page"
-msgstr ""
-
-#: config/config.php:304
-msgid "Sitemap"
-msgstr ""
-
-#: config/config.php:391, config/config.php:392
-msgid "Menu"
-msgstr ""
-
-#: config/config.php:580
+#: config/defaults.php:325
 msgid "Header Menu"
 msgstr ""
