@@ -322,7 +322,7 @@ $d2_theme_support = [
 		'genesis-after-entry-widget-area',
 		'genesis-footer-widgets'   => 4,
 		'genesis-menus'            => [
-			'primary' => __( 'Header Menu', 'child-theme-library' ),
+			'primary' => __( 'Header Menu', 'genesis-starter-theme' ),
 		],
 		'genesis-responsive-viewport',
 		'genesis-structural-wraps' => [

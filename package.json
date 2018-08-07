@@ -26,7 +26,7 @@
     "authoruri": "https://seothemes.com",
     "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
     "domainpath": "/languages",
-    "textdomain": "child-theme-library",
+    "textdomain": "genesis-starter-theme",
     "template": "genesis",
     "tags": "one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready"
   },
