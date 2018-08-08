@@ -1,6 +1,6 @@
 # Genesis Starter Theme
 
-[![WordPress](https://img.shields.io/badge/wordpress-4.9.7%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/genesis-starter-theme/blob/master/LICENSE.md)
+[![WordPress](https://img.shields.io/badge/wordpress-4.9.8%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/genesis-starter-theme/blob/master/LICENSE.md)
 
 This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
 
@@ -114,29 +114,29 @@ In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be 
 ## Structure
 
 ```shell
-your-theme-name/      # → Root directory
-├── app/              # → Theme PHP files
-│   └── README.md     # → App instructions
-├── config/           # → Config directory
-│   └── config.php    # → Theme settings
-├── resources/        # → Front-end assets
-│   ├── demo/         # → Theme demo files
-│   ├── fonts/        # → Theme fonts
-│   ├── img/          # → Theme images
-│   ├── js/           # → Theme JavaScript
-│   ├── lang/         # → Translation files
-│   ├── scss/         # → Sass partials
-│   └── views/        # → Theme templates
-├── node_modules/     # → Node.js packages
-├── vendor/           # → Composer packages
-├── composer.json     # → Composer settings
-├── functions.php     # → Composer autoloader
-├── Gulpfile.js       # → Gulp config
-├── package.json      # → Node.js dependencies
-├── screenshot.png    # → Theme screenshot
-├── setup.sh          # → CLI setup script
-├── style.css         # → Theme stylesheet
-└── woocommerce.css   # → WooCommerce stylesheet
+your-theme-name/    # → Root directory
+├── app/            # → Theme PHP files
+│   └── README.md   # → App instructions
+├── config/         # → Config directory
+│   └── config.php  # → Theme settings
+├── resources/      # → Front-end assets
+│   ├── demo/       # → Theme demo files
+│   ├── fonts/      # → Theme fonts
+│   ├── img/        # → Theme images
+│   ├── js/         # → Theme JavaScript
+│   ├── lang/       # → Translation files
+│   ├── scss/       # → Sass partials
+│   └── views/      # → Theme templates
+├── node_modules/   # → Node.js packages
+├── vendor/         # → Composer packages
+├── composer.json   # → Composer settings
+├── functions.php   # → Composer autoloader
+├── Gulpfile.js     # → Gulp config
+├── package.json    # → Node dependencies
+├── screenshot.png  # → Theme screenshot
+├── setup.sh        # → CLI setup script
+├── style.css       # → Theme stylesheet
+└── woocommerce.css # → WooCommerce styles
 ```
 
 ## Contributing
@@ -145,7 +145,7 @@ Contributions are welcome from everyone. We have [contributing guidelines](https
 
 ## Authors
 
-<a href="https://seothemes.com" target="_blank" style="max-width:50%"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="200"></a> &nbsp; <a href="https://github.com/d2themes" target="_blank" style="max-width:50%"><img src="https://seothemes.com/wp-content/uploads/2018/08/d2themes.png" alt="D2 Themes logo" width="200"></a>
+<a href="https://seothemes.com" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="150"></a> &nbsp; <a href="https://github.com/d2themes" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/08/d2themes.png" alt="D2 Themes logo" width="150"></a>
 
 See also the list of [contributors](https://github.com/seothemes/genesis-starter-theme/graphs/contributors) who participated in this project.
 
