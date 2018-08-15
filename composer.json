@@ -20,7 +20,7 @@
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
   "require": {
-    "php": ">=5.6",
+    "php": ">=5.4",
     "d2/core-asset-loader": "^0.2.0",
     "d2/core-constants": "^0.1.0",
     "d2/core-custom-colors": "^0.1.0",
