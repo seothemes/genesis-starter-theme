@@ -54,6 +54,7 @@
 
 /* # HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
+@import "normalize";
 @import "html5-reset/*";
 
 /* # Defaults
@@ -62,11 +63,13 @@
 
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
+@import "../../node_modules/genesis-column-classes/scss/genesis-column-classes";
 @import "structure-and-layout/*";
 
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
 @import "common-classes/*";
+@import "../../node_modules/wp.scss/wp";
 
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
@@ -106,4 +109,4 @@
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
-@import "print-styles/*";
+@import "../../node_modules/print-styles/scss/print-styles";
