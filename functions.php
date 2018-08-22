@@ -39,9 +39,9 @@ function child_theme_setup() {
 	 * for instantiating the components and injecting the correct configuration.
 	 * Custom components can be created and loaded from the `app/` directory.
 	 *
-	 * @link https://github.com/d2themes/core
+	 * @link  https://github.com/d2themes/core
 	 *
-	 * @uses \D2\Core\Theme::setup()
+	 * @uses  \D2\Core\Theme::setup()
 	 *
 	 * @since 3.2.0
 	 */
