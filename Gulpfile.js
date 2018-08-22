@@ -4,8 +4,9 @@
 
 'use strict';
 
-var gulp    = require( 'gulp' ),
-	pkg     = require( './package.json' ),
+var pkg     = require( './package.json' ),
+    gulp    = require( 'gulp' ),
+	sassdoc = require( 'sassdoc' ),
 	globs   = require( 'gulp-src-ordered-globs' ),
 	toolkit = require( 'gulp-wp-toolkit' ),
 	zip     = require( 'gulp-zip' );
@@ -35,6 +36,7 @@ toolkit.extendConfig(
 			js: ['resources/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
 			i18n: './resources/lang/',
+			sassdoc: './resources/scss/**/*.scss',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -61,12 +63,15 @@ toolkit.extendConfig(
 					dest: './',
 					outputStyle: 'expanded'
 				},
-				'woocommerce': {
-					src: 'resources/scss/woocommerce.scss',
-					dest: './',
-					outputStyle: 'expanded'
-				}
-			}
+                'woocommerce': {
+                    src: 'resources/scss/woocommerce.scss',
+                    dest: './',
+                    outputStyle: 'expanded'
+                }
+			},
+			sassdoc: {
+                dest: './sassdoc'
+            }
 		},
 		dest: {
             i18npo: './resources/lang/',
@@ -92,5 +97,10 @@ toolkit.extendTasks( gulp, {
 		return globs(toolkit.config.src.zip, {base: './'}).
 		pipe(zip(pkg.name + '-' + pkg.version + '.zip')).
 		pipe(gulp.dest('../'));
+	},
+    'sassdoc': function () {
+    	return gulp.src(toolkit.config.src.sassdoc)
+        .pipe(sassdoc(toolkit.config.css.sassdoc))
+        .resume();
 	}
 } );
