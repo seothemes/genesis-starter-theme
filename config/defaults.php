@@ -35,7 +35,7 @@ $d2_assets = [
 			AssetLoader::FOOTER   => true,
 			AssetLoader::ENQUEUE  => true,
 			AssetLoader::LOCALIZE => [
-				AssetLoader::LOCALIZEVAR  => 'generico_menu_params',
+				AssetLoader::LOCALIZEVAR  => 'genesis_responsive_menu',
 				AssetLoader::LOCALIZEDATA => [
 					'mainMenu'         => __( 'Menu', 'genesis-starter-theme' ),
 					'subMenu'          => __( 'Sub Menu', 'genesis-starter-theme' ),
@@ -143,6 +143,12 @@ $d2_custom_colors = [
 	],
 ];
 
+$d2_example = [
+	Example::SUB_CONFIG => [
+		Example::KEY => 'value',
+	],
+];
+
 $d2_genesis_settings = [
 	GenesisSettings::DEFAULTS => [
 		GenesisSettings::SITE_LAYOUT => 'full-width-content',
@@ -196,11 +202,25 @@ $d2_hooks = [
 			}
 		],
 		[
+			Hooks::TAG      => 'genesis_attr_content-sidebar-wrap',
+			Hooks::CALLBACK => function ( $atts ) {
+				$atts['class'] = 'wrap';
+
+				return $atts;
+			},
+		],
+		[
+			Hooks::TAG      => 'admin_init',
+			Hooks::CALLBACK => function () {
+				add_editor_style( 'editor.css' );
+			},
+		],
+		[
 			Hooks::TAG      => 'child_theme_after_title_area',
 			Hooks::CALLBACK => 'genesis_do_nav',
 		],
 		[
-			Hooks::TAG      => 'child_theme_after_title_area',
+			Hooks::TAG      => 'child_theme_after_header_wrap',
 			Hooks::CALLBACK => 'genesis_do_subnav',
 		],
 		[
@@ -243,10 +263,10 @@ $d2_layouts = [
 	GenesisLayout::UNREGISTER => [
 		// GenesisLayout::CONTENT_SIDEBAR,
 		// GenesisLayout::SIDEBAR_CONTENT,
+		// GenesisLayout::FULL_WIDTH_CONTENT,
 		GenesisLayout::CONTENT_SIDEBAR_SIDEBAR,
 		GenesisLayout::SIDEBAR_SIDEBAR_CONTENT,
 		GenesisLayout::SIDEBAR_CONTENT_SIDEBAR,
-		// GenesisLayout::FULL_WIDTH_CONTENT,
 	]
 ];
 
@@ -322,7 +342,8 @@ $d2_theme_support = [
 		'genesis-after-entry-widget-area',
 		'genesis-footer-widgets'   => 4,
 		'genesis-menus'            => [
-			'primary' => __( 'Header Menu', 'genesis-starter-theme' ),
+			'primary'   => __( 'Header Menu', 'genesis-starter-theme' ),
+			'secondary' => __( 'After Header Menu', 'genesis-starter-theme' ),
 		],
 		'genesis-responsive-viewport',
 		'genesis-structural-wraps' => [
@@ -358,17 +379,18 @@ $d2_widget_areas = [
 ];
 
 return [
-	AssetLoader::class        => $d2_assets,
-	Constants::class          => $d2_constants,
-	CustomColors::class       => $d2_custom_colors,
-	GenesisLayout::class      => $d2_layouts,
-	GenesisSettings::class    => $d2_genesis_settings,
-	GoogleFonts::class        => $d2_google_fonts,
-	Hooks::class              => $d2_hooks,
-	ImageSizes::class         => $d2_image_sizes,
-	PluginActivation::class   => $d2_plugins,
-	SimpleSocialIcons::class  => $d2_simple_social_icons,
-	TextDomain::class         => $d2_textdomain,
-	ThemeSupport::class       => $d2_theme_support,
-	WidgetArea::class         => $d2_widget_areas,
+	AssetLoader::class       => $d2_assets,
+	Constants::class         => $d2_constants,
+	CustomColors::class      => $d2_custom_colors,
+	Example::class           => $d2_example,
+	GenesisLayout::class     => $d2_layouts,
+	GenesisSettings::class   => $d2_genesis_settings,
+	GoogleFonts::class       => $d2_google_fonts,
+	Hooks::class             => $d2_hooks,
+	ImageSizes::class        => $d2_image_sizes,
+	PluginActivation::class  => $d2_plugins,
+	SimpleSocialIcons::class => $d2_simple_social_icons,
+	TextDomain::class        => $d2_textdomain,
+	ThemeSupport::class      => $d2_theme_support,
+	WidgetArea::class        => $d2_widget_areas,
 ];
