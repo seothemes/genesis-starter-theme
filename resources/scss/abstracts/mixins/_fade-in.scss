@@ -1,0 +1,13 @@
+/// Helper mixin to generate fade in animation.
+///
+/// @param {Speed} $speed [1s] - Animation speed
+/// @output Fade in animation
+///
+/// @example scss - Example
+///   .foo {
+///     -webkit-animation: fade-in 1s;
+///     animation: fade-in 1s;
+///   }
+@mixin fade-in($speed: 1s) {
+	animation: fade-in $speed;
+}

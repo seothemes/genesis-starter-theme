@@ -1,0 +1,10 @@
+.widget-title {
+	margin-bottom: 20px;
+	font-size: $widget-title--font-size;
+	font-weight: $font-weight--semibold;
+
+	.sidebar & a {
+		color: $sidebar__widget-title--font-color;
+		text-decoration: none;
+	}
+}

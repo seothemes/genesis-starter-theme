@@ -1,0 +1,18 @@
+.avatar {
+	float: left;
+	border-radius: 50%;
+
+	.author-box &,
+	.alignleft & {
+		margin-right: 20px;
+	}
+
+	.alignright & {
+		margin-left: 20px;
+	}
+
+	.comment & {
+		margin: 0 15px 20px 0;
+	}
+
+}

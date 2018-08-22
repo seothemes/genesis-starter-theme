@@ -1,0 +1,19 @@
+.comment-respond {
+	margin-bottom: 40px;
+	font-size: $comments--font-size;
+
+	@include breakpoint(m) {
+		margin-bottom: 60px;
+	}
+
+	input[type="email"],
+	input[type="text"],
+	input[type="url"] {
+		width: 50%;
+	}
+
+	label {
+		display: block;
+		margin-right: 12px;
+	}
+}

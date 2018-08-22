@@ -1,0 +1,12 @@
+// Spacing
+$spacing--xxs: floor($base__font-size / 4);
+$spacing--xs: floor($base__font-size / 3);
+$spacing--s: floor($base__font-size / 2);
+$spacing--m: $base__font-size;
+$spacing--l: floor($base__font-size * 2);
+$spacing--xl: floor($base__font-size * 3);
+$spacing--xxl: floor($base__font-size * 4);
+
+// Padding.
+$button--padding: $spacing--s $spacing--m;
+$front-page-widget--padding: $spacing--xxl 0;

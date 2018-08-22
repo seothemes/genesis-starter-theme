@@ -1,0 +1,106 @@
+.genesis-nav-menu {
+
+	.menu-item:focus {
+		position: static;
+	}
+
+	.menu-item > a:focus + ul.sub-menu,
+	.menu-item.sfHover > ul.sub-menu {
+		left: auto;
+		opacity: 1;
+	}
+
+	.menu-item {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+
+		@include breakpoint(m) {
+			display: inline-block;
+		}
+
+		&:focus,
+		&:hover {
+			position: relative;
+
+			@include breakpoint(m) {
+
+				.sub-menu:focus,
+				.sub-menu:hover {
+					z-index: 100;
+				}
+			}
+
+			> .sub-menu {
+				display: block;
+				left: auto;
+				opacity: 1;
+			}
+		}
+	}
+
+	> .menu-item {
+
+		&:first-of-type {
+
+			> a {
+
+				@include breakpoint(m) {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+
+	> .menu-bold > a {
+
+		@include breakpoint(m) {
+			font-weight: $font-weight--bold;
+		}
+	}
+
+	> .menu-highlight > a {
+
+		@include breakpoint(m) {
+			margin-left: 15px;
+			padding-right: 20px;
+			padding-left: 20px;
+			border-radius: 3px;
+			color: $menu-highlight__link--font-color;
+			background-color: $menu-highlight__link--background-color;
+			font-weight: $font-weight--semibold;
+
+			&:focus,
+			&:hover {
+				background-color: $menu-highlight__link--background-color-hover;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: 1em 0;
+		outline-offset: -1px;
+		color: $genesis-nav-menu--font-color;
+		font-size: $genesis-nav-menu--font-size;
+		font-weight: $font-weight--regular;
+		text-decoration: none;
+
+		@include breakpoint(m) {
+			padding: 1.2em 0.8em;
+		}
+	}
+
+	a:focus,
+	a:hover,
+	.current-menu-item > a,
+	.sub-menu .current-menu-item > a:focus,
+	.sub-menu .current-menu-item > a:hover {
+		color: $genesis-nav-menu--font-color-hover;
+		text-decoration: none;
+	}
+
+
+}

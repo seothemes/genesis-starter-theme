@@ -1,0 +1,45 @@
+input,
+select,
+textarea {
+	width: 100%;
+	padding: $spacing--m;
+	border: $border-width $border-style $light-grey;
+	color: $form--font-color;
+	background-color: $forms__background-color;
+	font-size: $form--font-size;
+	font-weight: $font-weight--regular;
+
+	&:focus,
+	&:focus {
+		border: $border-width $border-style $medium-grey;
+		outline: none;
+	}
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+::-moz-placeholder {
+	opacity: 1;
+	color: $dark-grey;
+}
+
+::-webkit-input-placeholder {
+	color: $dark-grey;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+input:disabled,
+input:disabled:hover {
+	border-width: 0;
+	color: $disabled--font-color;
+	background-color: $disabled--background-color;
+	cursor: not-allowed;
+}

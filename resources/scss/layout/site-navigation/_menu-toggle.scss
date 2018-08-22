@@ -1,0 +1,73 @@
+.menu-toggle {
+	display: block;
+	visibility: visible;
+	position: relative;
+	z-index: 1000;
+	padding: 1.25em 0 1.25em 1.25em;
+	border-width: 0;
+	color: $menu-toggle--font-color;
+	background-color: $menu-toggle--background-color;
+	line-height: $line-height--smaller;
+	text-align: center;
+
+	@include breakpoint(m) {
+		display: none;
+	}
+
+	&:focus,
+	&:hover {
+		border-width: 0;
+		color: $menu-toggle--font-color-hover;
+		background-color: $menu-toggle--background-color;
+
+		span,
+		span:before,
+		span:after {
+			background-color: $link--font-color;
+		}
+	}
+
+	span,
+	span:before,
+	span:after {
+		display: block;
+		position: absolute;
+		width: 15px;
+		height: 2px;
+		background-color: $dark-grey;
+		content: "";
+		transition: background-color $transition;
+	}
+
+	span {
+		top: 1px;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+
+		&:before {
+			top: -4px;
+		}
+
+		&:after {
+			bottom: -4px;
+		}
+	}
+
+	&.activated {
+
+		span {
+			background-color: transparent;
+
+			&:before {
+				top: 0;
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.archive-description {
+	margin-bottom: 40px;
+
+	@include breakpoint(m) {
+		margin-bottom: 60px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry-title {
+		margin-bottom: 10px;
+		font-size: $archive-description__entry-title--font-size;
+		font-weight: $font-weight--semibold;
+	}
+}

@@ -1,0 +1,14 @@
+.after-entry {
+	margin-bottom: 40px;
+	padding: 20px 30px;
+	box-shadow: $box-shadow;
+
+	@include breakpoint(m) {
+		margin-bottom: 60px;
+		padding: 40px 60px;
+	}
+
+	.widget:last-of-type {
+		margin-bottom: 0;
+	}
+}

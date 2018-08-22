@@ -1,0 +1,13 @@
+.footer-widget-area {
+	margin-bottom: 4rem;
+
+	@include breakpoint(m) {
+		margin-bottom: 0;
+
+		@include genesis-column(one-third);
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

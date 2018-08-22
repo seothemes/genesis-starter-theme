@@ -1,0 +1,37 @@
+.screen-reader-shortcut,
+.screen-reader-text,
+.screen-reader-text span {
+
+	@include screen-reader-text;
+}
+
+.screen-reader-shortcut:focus,
+.screen-reader-text:focus,
+.widget_search input[type="submit"]:focus {
+
+	@include screen-reader-text(focus);
+}
+
+.more-link {
+	position: relative;
+}
+
+.genesis-skip-link {
+	margin: 0;
+
+	.skip-link-hidden {
+		display: none;
+		visibility: hidden;
+	}
+
+	li {
+		width: 0;
+		height: 0;
+		list-style: none;
+	}
+}
+
+:focus {
+	outline: #ccc solid 1px;
+	color: $body--font-color;
+}

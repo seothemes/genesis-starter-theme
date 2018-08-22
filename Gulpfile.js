@@ -63,11 +63,11 @@ toolkit.extendConfig(
 					dest: './',
 					outputStyle: 'expanded'
 				},
-                'woocommerce': {
-                    src: 'resources/scss/woocommerce.scss',
-                    dest: './',
-                    outputStyle: 'expanded'
-                }
+				'woocommerce': {
+					src: 'resources/scss/woocommerce.scss',
+					dest: './',
+					outputStyle: 'expanded'
+				}
 			},
 			sassdoc: {
                 dest: './sassdoc'

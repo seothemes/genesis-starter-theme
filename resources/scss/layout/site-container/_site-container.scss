@@ -1,0 +1,6 @@
+.site-container {
+	background-color: $site-container--background-color;
+	word-wrap: break-word;
+
+	@include fade-in(1s);
+}

@@ -1,0 +1,96 @@
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding: 0;
+
+	&:before,
+	li {
+		border-color: $lighter-grey;
+	}
+
+	li {
+		display: block;
+		margin: 0;
+		padding: 0;
+		border: 1px solid $lighter-grey;
+		border-bottom: 0;
+		border-radius: 0;
+		background-color: $white;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid $lighter-grey;
+		}
+
+		&.active {
+			border-bottom-color: $lighter-grey;
+		}
+
+		a {
+			display: block;
+			padding: 0.5em 1em;
+			color: $dark-grey;
+
+			&:focus,
+			&:hover {
+				color: $blue;
+			}
+		}
+
+		&.active a:after {
+			display: block;
+			float: right;
+			font-family: dashicons;
+			content: "\f147";
+		}
+	}
+}
+
+
+@include breakpoint(m) {
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
+		padding: 0 0 0 1em;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li {
+		display: inline-block;
+		margin: 0 -5px;
+		background-color: $lightest-grey;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+		border-bottom: 1px solid $white;
+		background-color: $white;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after {
+		display: none;
+	}
+
+}
+
+@include breakpoint(l) {
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs {
+		padding: 0 0 0 1em;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li {
+		display: inline-block;
+		margin: 0 -5px;
+		background-color: $lightest-grey;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+		border-bottom: 1px solid $white;
+		background-color: $white;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after {
+		display: none;
+	}
+
+}

@@ -1,0 +1,24 @@
+/// Provides an easy way to include a clearfix for containing floats.
+///
+/// @link https://goo.gl/yP5hiZ
+///
+/// @example scss
+///   .element {
+///     @include clearfix;
+///   }
+///
+///   // CSS Output
+///   .element::after {
+///     clear: both;
+///     content: "";
+///     display: block;
+///   }
+@mixin clearfix {
+
+	&:before,
+	&:after {
+		display: block;
+		clear: both;
+		content: " ";
+	}
+}

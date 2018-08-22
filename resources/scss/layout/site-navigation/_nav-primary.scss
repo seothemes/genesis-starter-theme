@@ -1,0 +1,12 @@
+.nav-primary {
+	width: 100%;
+	background-color: $nav-primary--background-color;
+
+	@include breakpoint(m) {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: auto;
+		background-color: transparent;
+	}
+}

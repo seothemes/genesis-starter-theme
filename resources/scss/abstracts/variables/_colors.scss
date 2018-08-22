@@ -1,0 +1,65 @@
+// Base Colors.
+$black: #000;
+$dark-grey: #333;
+$mid-grey: #777;
+$medium-grey: #999;
+$light-grey: #ddd;
+$blue: #0073e5;
+$lighter-grey: #eee;
+$lightest-grey: #f5f5f5;
+$white: #fff;
+$overlay: rgba($dark-grey, 0.2);
+
+// Font colors.
+$body--font-color: $dark-grey;
+$link--font-color: $blue;
+$link--font-color-hover: $dark-grey;
+$button--font-color: $white;
+$button--font-color-hover: $white;
+$hero-section--color: $white;
+$entry-title__link--font-color: $dark-grey;
+$entry-title__link--font-color-hover: $blue;
+$site-title__link--font-color: $dark-grey;
+$genesis-nav-menu--font-color: $dark-grey;
+$genesis-nav-menu--font-color-hover: $blue;
+$menu-toggle--font-color: $dark-grey;
+$menu-toggle--font-color-hover: $blue;
+$sub-menu-toggle--font-color: $dark-grey;
+$sub-menu-toggle--font-color-hover: $blue;
+$menu-highlight__link--font-color: $white;
+$sidebar__widget-title--font-color: $dark-grey;
+$form--font-color: $dark-grey;
+$archive-pagination--font-color: $dark-grey;
+$archive-pagination--font-color-hover: $white;
+$gs-faq__question--font-color: $dark-grey;
+$gs-faq__question--font-color-hover: $blue;
+$disabled--font-color: $mid-grey;
+
+// Background colors.
+$body--background-color: $white;
+$page-boxed--background-color: $lightest-grey;
+$site-container--background-color: $white;
+$site-header--background-color: $white;
+$mark--background-color: $light-grey;
+$button--background-color: $dark-grey;
+$button--background-color-hover: $blue;
+$genesis-nav-menu__sub-menu__link--background-color: $white;
+$nav-primary--background-color: $white;
+$nav-secondary--background-color: $white;
+$menu-toggle--background-color: transparent;
+$sub-menu-toggle--background-color: transparent;
+$hero-section--background-color: $dark-grey;
+$footer-widgets--background-color: $white;
+$site-footer--background-color: $white;
+$menu-highlight__link--background-color: $dark-grey;
+$menu-highlight__link--background-color-hover: $blue;
+$forms__background-color: $white;
+$sticky--background-color: $lightest-grey;
+$author-box--background-color: $lightest-grey;
+$code--background-color: $lightest-grey;
+$archive-pagination--background-color: $lightest-grey;
+$archive-pagination--background-color-hover: $dark-grey;
+$enews__sidebar--background-color: $lightest-grey;
+$disabled--background-color: $lighter-grey;
+$gs-faq__question--background-color: transparent;
+$gs-faq__question--background-color-hover: $gs-faq__question--background-color;

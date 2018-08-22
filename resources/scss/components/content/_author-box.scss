@@ -1,0 +1,15 @@
+.author-box {
+	margin-bottom: 40px;
+
+	@include clearfix;
+
+	@include breakpoint(m) {
+		margin-bottom: 60px;
+		padding: 30px;
+		background-color: $author-box--background-color;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

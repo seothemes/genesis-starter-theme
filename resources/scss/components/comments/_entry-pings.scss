@@ -1,0 +1,12 @@
+.entry-pings {
+	margin-bottom: 40px;
+	font-size: $comments--font-size;
+
+	@include breakpoint(m) {
+		margin-bottom: 60px;
+	}
+
+	.reply {
+		display: none;
+	}
+}

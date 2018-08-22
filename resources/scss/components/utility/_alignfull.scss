@@ -1,0 +1,18 @@
+.alignfull {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	max-width: none;
+	margin-left: -50vw;
+
+	.content-sidebar &,
+	.sidebar-content & {
+		max-width: calc(100% + 12rem);
+	}
+
+	img {
+		display: inline-block;
+		width: 100%;
+		margin: 1.618em auto;
+	}
+}

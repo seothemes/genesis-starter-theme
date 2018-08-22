@@ -1,0 +1,12 @@
+.alignwide {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	max-width: map_get($breakpoints, md);
+	transform: translate(-50%);
+
+	img {
+		display: inline-block;
+		margin: 1.618em auto;
+	}
+}

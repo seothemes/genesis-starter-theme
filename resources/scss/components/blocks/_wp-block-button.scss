@@ -1,0 +1,18 @@
+
+.wp-block-button {
+	display: block;
+	width: 100%;
+	background: transparent;
+	text-align: center;
+
+	@include clearfix;
+
+	a {
+		display: inline-block;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+}

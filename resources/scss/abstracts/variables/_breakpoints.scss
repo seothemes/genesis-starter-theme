@@ -1,0 +1,18 @@
+// Breakpoints.
+$breakpoints: (
+	xxs: 512px,
+	xs: 640px,
+	s: 768px,
+	m: 896px,
+	l: 1024px,
+	xl: 1152px,
+	xxl: 1280px,
+);
+
+$breakpoint--xxs: map_get($breakpoints, xxs);
+$breakpoint--xs: map_get($breakpoints, xs);
+$breakpoint--s: map_get($breakpoints, s);
+$breakpoint--m: map_get($breakpoints, m);
+$breakpoint--l: map_get($breakpoints, l);
+$breakpoint--xl: map_get($breakpoints, xl);
+$breakpoint--xxl: map_get($breakpoints, xxl);

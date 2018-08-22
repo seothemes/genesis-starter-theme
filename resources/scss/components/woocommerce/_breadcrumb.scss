@@ -1,0 +1,18 @@
+.woocommerce .woocommerce-breadcrumb {
+	margin-bottom: 40px;
+	font-size: 1.8rem;
+
+	&,
+	a {
+		color: $dark-grey;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: $blue;
+		}
+	}
+}

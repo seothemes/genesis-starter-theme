@@ -1,0 +1,16 @@
+.title-area {
+	display: flex;
+	align-items: center;
+	height: 6.2rem;
+
+	.wp-custom-logo & {
+		width: 100%;
+		max-width: 350px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		img {
+			width: auto;
+		}
+	}
+}

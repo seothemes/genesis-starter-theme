@@ -1,0 +1,4 @@
+// Box Shadow.
+$box-shadow-blur-radius: 20px;
+$box-shadow-opacity: 0.075;
+$box-shadow: 0 0 $box-shadow-blur-radius rgba($dark-grey, $box-shadow-opacity);

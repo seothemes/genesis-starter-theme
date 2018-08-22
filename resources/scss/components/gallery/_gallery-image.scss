@@ -1,0 +1,15 @@
+.gallery {
+	overflow: hidden;
+
+	img {
+		height: auto;
+		padding: 4px;
+
+		&:focus,
+		&:hover {
+			border: $border-width $border-style $medium-grey;
+			outline: none;
+		}
+	}
+}
+

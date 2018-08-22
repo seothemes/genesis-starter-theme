@@ -1,0 +1,32 @@
+table {
+	width: 100%;
+	margin-bottom: 40px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	line-height: $line-height--big;
+	word-break: break-all;
+}
+
+tbody {
+	border-bottom: $border;
+}
+
+td {
+	padding: 6px;
+	border-top: $border;
+	text-align: left;
+
+	&:first-child {
+		padding-left: 0;
+	}
+}
+
+th {
+	padding: 0 6px;
+	font-weight: $font-weight--regular;
+	text-align: left;
+
+	&:first-child {
+		padding-left: 0;
+	}
+}

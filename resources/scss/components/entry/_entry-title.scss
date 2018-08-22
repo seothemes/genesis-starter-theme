@@ -1,0 +1,15 @@
+.entry-title {
+	margin-bottom: 10px;
+	font-size: $entry-title--font-size;
+
+	a {
+		color: $entry-title__link--font-color;
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: $entry-title__link--font-color-hover;
+		}
+	}
+
+}

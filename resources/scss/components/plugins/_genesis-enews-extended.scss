@@ -1,0 +1,38 @@
+.enews {
+
+	form + p {
+		margin-top: 20px;
+	}
+
+	.after-entry & {
+		padding: 10px;
+		text-align: center;
+
+		@include breakpoint(m) {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	.sidebar & {
+		padding: 30px;
+		background-color: $enews__sidebar--background-color;
+	}
+}
+
+.enews-widget {
+
+	input {
+		margin-bottom: 10px;
+		font-size: $enews-widget__input--font-size;
+
+		&[type="submit"] {
+			width: 100%;
+			margin: 0;
+		}
+
+		.after-entry & {
+			text-align: center;
+		}
+	}
+}

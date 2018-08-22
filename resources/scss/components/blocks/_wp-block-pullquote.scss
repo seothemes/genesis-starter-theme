@@ -1,0 +1,11 @@
+.wp-block-pullquote {
+
+	> p {
+		font-family: $base-font;
+		font-weight: $font-weight--regular;
+	}
+
+	cite {
+		font-style: normal;
+	}
+}

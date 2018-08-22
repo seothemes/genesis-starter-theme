@@ -1,112 +1,188 @@
 /* Table of Contents
-- HTML5 Reset
-	- Baseline Normalize
-	- Box Sizing
-	- Float Clearing
-- Defaults
-	- Typographical Elements
-	- Headings
-	- Objects
-	- Gallery
-	- Forms
-	- Tables
-	- Screen Reader Text
-- Structure and Layout
-	- Column Classes
-	- Site Container
-	- Site Inner
-- Common Classes
-	- Avatar
-	- Genesis
-	- Search Form
-	- Titles
+- Vendor
+	- Normalize
 	- WordPress
-	- Gutenberg
-- Widgets
-	- Featured Content
-- Plugins
-	- Genesis eNews Extended
-	- Genesis Simple FAQ
-	- Google Map
-	- Jetpack
-- Skip Links
-- Site Header
-	- Before Footer
-	- Title Area
-	- Hero Section
-- Site Navigation
-	- Responsive Menu
-	- Primary Menu
-	- Secondary Menu
-- Content Area
-	- Entry Content
-	- Entry Meta
-	- Pagination
-	- Entry Comments
-- Sidebar
-- Site Footer
-	- Before Footer
-	- Footer Widgets
-- Print Styles
+	- Print Styles
+	- Genesis Column Classes
+- Base
+	- Accessibility
+	- Buttons
+	- Forms
+	- Headings
+	- Layout
+	- Lists
+	- Media
+	- Tables
+	- Typography
+- Layouts
+	- Site Container
+	- Site Header
+	- Site Navigation
+	- Site Inner
+	- Site Footer
+- Components
+	- Blocks
+	- Comments
+	- Content
+	- Entry
+	- Gallery
+	- Plugins
+	- Utility
+	- Widgets
+- Pages
+	- Front Page
 */
 
-@import "utilities/*";
+@import "abstracts/variables/index";
+@import "abstracts/functions/*";
+@import "abstracts/mixins/*";
 
-/* # HTML5 Reset
+/* # Vendor
 ---------------------------------------------------------------------------------------------------- */
+
+/* ## Normalize
+--------------------------------------------- */
+
 @import "normalize";
-@import "html5-reset/*";
 
-/* # Defaults
----------------------------------------------------------------------------------------------------- */
-@import "defaults/*";
+/* ## WordPress
+--------------------------------------------- */
 
-/* # Structure and Layout
----------------------------------------------------------------------------------------------------- */
-@import "../../node_modules/genesis-column-classes/scss/genesis-column-classes";
-@import "structure-and-layout/*";
-
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-@import "common-classes/*";
 @import "../../node_modules/wp.scss/wp";
 
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-@import "widgets/*";
+/* ## Print Styles
+--------------------------------------------- */
 
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-@import "plugins/*";
-
-/* # Skip Links
----------------------------------------------------------------------------------------------------- */
-@import "skip-links/*";
-
-/* # Site Header
----------------------------------------------------------------------------------------------------- */
-@import "site-header/*";
-
-/* # Site Navigation
----------------------------------------------------------------------------------------------------- */
-@import "site-navigation/*";
-
-/* # Content Area
----------------------------------------------------------------------------------------------------- */
-@import "content-area/*";
-
-/* # Sidebars
----------------------------------------------------------------------------------------------------- */
-@import "sidebar/*";
-
-/* # Front Page
----------------------------------------------------------------------------------------------------- */
-@import "front-page/*";
-
-/* # Site Footer
----------------------------------------------------------------------------------------------------- */
-@import "site-footer/*";
-
-/* # Print Styles
----------------------------------------------------------------------------------------------------- */
 @import "../../node_modules/print-styles/scss/print-styles";
+
+/* ## Genesis Column Classes
+--------------------------------------------- */
+
+@import "../../node_modules/genesis-column-classes/scss/genesis-column-classes";
+
+/* # Base
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Accessibility
+--------------------------------------------- */
+
+@import "base/accessibility";
+
+/* ## Buttons
+--------------------------------------------- */
+
+@import "base/buttons";
+
+/* ## Forms
+--------------------------------------------- */
+
+@import "base/forms";
+
+/* ## Headings
+--------------------------------------------- */
+
+@import "base/headings";
+
+/* ## Layout
+--------------------------------------------- */
+
+@import "base/layout";
+
+/* ## Lists
+--------------------------------------------- */
+
+@import "base/lists";
+
+/* ## Media
+--------------------------------------------- */
+
+@import "base/media";
+
+/* ## Tables
+--------------------------------------------- */
+
+@import "base/tables";
+
+/* ## Typography
+--------------------------------------------- */
+
+@import "base/typography";
+
+/* # Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Site Container
+--------------------------------------------- */
+
+@import "layout/site-container/*";
+
+/* ## Site Header
+--------------------------------------------- */
+
+@import "layout/site-header/*";
+
+/* ## Site Navigation
+--------------------------------------------- */
+
+@import "layout/site-navigation/*";
+
+/* ## Site Inner
+--------------------------------------------- */
+
+@import "layout/site-inner/*";
+
+/* ## Site Footer
+--------------------------------------------- */
+
+@import "layout/site-footer/*";
+
+/* # Components
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Block
+--------------------------------------------- */
+
+@import "components/blocks/*";
+
+/* ## Comment
+--------------------------------------------- */
+
+@import "components/comments/*";
+
+/* ## Content
+--------------------------------------------- */
+
+@import "components/content/*";
+
+/* ## Entry
+--------------------------------------------- */
+
+@import "components/entry/*";
+
+/* ## Gallery
+--------------------------------------------- */
+
+@import "components/gallery/*";
+
+/* ## Plugin
+--------------------------------------------- */
+
+@import "components/plugins/*";
+
+/* ## Utility
+--------------------------------------------- */
+
+@import "components/utility/*";
+
+/* ## Widget
+--------------------------------------------- */
+
+@import "components/widgets/*";
+
+/* # Pages
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Front Page
+--------------------------------------------- */
+
+@import "pages/front-page";

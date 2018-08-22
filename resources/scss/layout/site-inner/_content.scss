@@ -1,0 +1,10 @@
+.content {
+
+	@include breakpoint(m) {
+		width: 65%;
+	}
+
+	.full-width-content & {
+		width: 100%;
+	}
+}

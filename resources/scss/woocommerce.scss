@@ -1,4 +1,6 @@
 /* Genesis Sample WooCommerce
 Loaded on WooCommerce pages */
-@import "utilities/*";
-@import "woocommerce/*";
+@import "abstracts/variables/index";
+@import "abstracts/functions/*";
+@import "abstracts/mixins/*";
+@import "components/woocommerce/*";
