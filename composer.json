@@ -21,24 +21,22 @@
   },
   "require": {
     "php": ">=5.4",
-    "d2/core-asset-loader": "^0.2.0",
-    "d2/core-constants": "^0.1.0",
-    "d2/core-custom-colors": "^0.1.0",
-    "d2/core-genesis-layouts": "^0.1.0",
-    "d2/core-genesis-settings": "^0.1.0",
-    "d2/core-google-fonts": "^0.1.0",
-    "d2/core-hooks": "^0.2.0",
-    "d2/core-image-sizes": "^0.2.0",
-    "d2/core-plugin-activation": "^0.2.0",
-    "d2/core-simple-social-icons": "^0.1.0",
-    "d2/core-textdomain": "^0.1.0",
-    "d2/core-theme-support": "^0.1.0",
-    "d2/core-widget-areas": "^0.1.0"
+    "seothemes/core": "@dev",
+    "tgmpa/tgm-plugin-activation": "dev-develop"
   },
   "require-dev": {},
+  "repositories": [
+    {
+      "type": "path",
+      "url": "temp/seothemes/core",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "autoload": {
     "psr-4": {
-      "SEOThemes\\GenesisStarterTheme\\": "app/"
+      "SeoThemes\\GenesisStarterTheme\\": "app/"
     }
   },
   "suggest": {},

@@ -2,30 +2,30 @@
 /**
  * Genesis Starter Theme
  *
- * @package   SEOThemes\GenesisStarterTheme
+ * @package   SeoThemes\GenesisStarterTheme
  * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-3.0-or-later
  */
 
-namespace SEOThemes\GenesisStarterTheme;
+namespace SeoThemes\GenesisStarterTheme;
 
-use D2\Core\AssetLoader;
-use D2\Core\Constants;
-use D2\Core\CustomColors;
-use D2\Core\GenesisLayout;
-use D2\Core\GenesisSettings;
-use D2\Core\GoogleFonts;
-use D2\Core\Hooks;
-use D2\Core\ImageSizes;
-use D2\Core\PluginActivation;
-use D2\Core\SimpleSocialIcons;
-use D2\Core\TextDomain;
-use D2\Core\ThemeSupport;
-use D2\Core\WidgetArea;
+use SeoThemes\Core\AssetLoader;
+use SeoThemes\Core\Constants;
+use SeoThemes\Core\CustomColors;
+use SeoThemes\Core\GenesisSettings;
+use SeoThemes\Core\GoogleFonts;
+use SeoThemes\Core\Hooks;
+use SeoThemes\Core\ImageSizes;
+use SeoThemes\Core\PageLayouts;
+use SeoThemes\Core\PluginActivation;
+use SeoThemes\Core\SimpleSocialIcons;
+use SeoThemes\Core\TextDomain;
+use SeoThemes\Core\ThemeSupport;
+use SeoThemes\Core\WidgetArea;
 
-$d2_assets = [
+$core_assets = [
 	AssetLoader::SCRIPTS => [
 		[
 			AssetLoader::HANDLE   => 'menus',
@@ -61,7 +61,7 @@ $d2_assets = [
 	],
 ];
 
-$d2_constants = [
+$core_constants = [
 	Constants::DEFINE => [
 		'CHILD_THEME_NAME'    => wp_get_theme()->get( 'Name' ),
 		'CHILD_THEME_URL'     => wp_get_theme()->get( 'ThemeURI' ),
@@ -73,7 +73,7 @@ $d2_constants = [
 	],
 ];
 
-$d2_custom_colors = [
+$core_custom_colors = [
 	'background' => [
 		'default' => '#ffffff',
 		'output'  => [
@@ -143,25 +143,25 @@ $d2_custom_colors = [
 	],
 ];
 
-$d2_example = [
+$core_example = [
 	Example::SUB_CONFIG => [
 		Example::KEY => 'value',
 	],
 ];
 
-$d2_genesis_settings = [
+$core_genesis_settings = [
 	GenesisSettings::DEFAULTS => [
 		GenesisSettings::SITE_LAYOUT => 'full-width-content',
 	],
 ];
 
-$d2_google_fonts = [
+$core_google_fonts = [
 	GoogleFonts::ENQUEUE => [
 		'Source+Sans+Pro:400,600,700',
 	],
 ];
 
-$d2_hooks = [
+$core_hooks = [
 	Hooks::ADD    => [
 		[
 			Hooks::TAG         => 'genesis_site_title',
@@ -244,7 +244,7 @@ $d2_hooks = [
 	],
 ];
 
-$d2_image_sizes = [
+$core_image_sizes = [
 	ImageSizes::ADD => [
 		'featured' => [
 			'width'  => 620,
@@ -259,18 +259,18 @@ $d2_image_sizes = [
 	],
 ];
 
-$d2_layouts = [
-	GenesisLayout::UNREGISTER => [
-		// GenesisLayout::CONTENT_SIDEBAR,
-		// GenesisLayout::SIDEBAR_CONTENT,
-		// GenesisLayout::FULL_WIDTH_CONTENT,
-		GenesisLayout::CONTENT_SIDEBAR_SIDEBAR,
-		GenesisLayout::SIDEBAR_SIDEBAR_CONTENT,
-		GenesisLayout::SIDEBAR_CONTENT_SIDEBAR,
+$core_layouts = [
+	PageLayouts::UNREGISTER => [
+		// PageLayouts::CONTENT_SIDEBAR,
+		// PageLayouts::SIDEBAR_CONTENT,
+		// PageLayouts::FULL_WIDTH_CONTENT,
+		PageLayouts::CONTENT_SIDEBAR_SIDEBAR,
+		PageLayouts::SIDEBAR_SIDEBAR_CONTENT,
+		PageLayouts::SIDEBAR_CONTENT_SIDEBAR,
 	]
 ];
 
-$d2_plugins = [
+$core_plugins = [
 	PluginActivation::REGISTER => [
 		[
 			PluginActivation::NAME     => 'Genesis Widget Column Classes',
@@ -295,18 +295,18 @@ $d2_plugins = [
 	],
 ];
 
-$d2_simple_social_icons = [
+$core_simple_social_icons = [
 	SimpleSocialIcons::DEFAULTS => [
 		SimpleSocialIcons::NEW_WINDOW => 1,
 		SimpleSocialIcons::SIZE       => 40,
 	],
 ];
 
-$d2_textdomain = [
+$core_textdomain = [
 	TextDomain::DOMAIN => 'genesis-starter-theme',
 ];
 
-$d2_theme_support = [
+$core_theme_support = [
 	ThemeSupport::ADD => [
 		'align-wide',
 		'automatic-feed-links',
@@ -371,7 +371,7 @@ $d2_theme_support = [
 	],
 ];
 
-$d2_widget_areas = [
+$core_widget_areas = [
 	WidgetArea::UNREGISTER => [
 		WidgetArea::HEADER_RIGHT,
 		WidgetArea::SIDEBAR_ALT,
@@ -379,18 +379,18 @@ $d2_widget_areas = [
 ];
 
 return [
-	AssetLoader::class       => $d2_assets,
-	Constants::class         => $d2_constants,
-	CustomColors::class      => $d2_custom_colors,
-	Example::class           => $d2_example,
-	GenesisLayout::class     => $d2_layouts,
-	GenesisSettings::class   => $d2_genesis_settings,
-	GoogleFonts::class       => $d2_google_fonts,
-	Hooks::class             => $d2_hooks,
-	ImageSizes::class        => $d2_image_sizes,
-	PluginActivation::class  => $d2_plugins,
-	SimpleSocialIcons::class => $d2_simple_social_icons,
-	TextDomain::class        => $d2_textdomain,
-	ThemeSupport::class      => $d2_theme_support,
-	WidgetArea::class        => $d2_widget_areas,
+	AssetLoader::class       => $core_assets,
+	Constants::class         => $core_constants,
+	CustomColors::class      => $core_custom_colors,
+	Example::class           => $core_example,
+	GenesisSettings::class   => $core_genesis_settings,
+	GoogleFonts::class       => $core_google_fonts,
+	Hooks::class             => $core_hooks,
+	ImageSizes::class        => $core_image_sizes,
+	PageLayouts::class       => $core_layouts,
+	PluginActivation::class  => $core_plugins,
+	SimpleSocialIcons::class => $core_simple_social_icons,
+	TextDomain::class        => $core_textdomain,
+	ThemeSupport::class      => $core_theme_support,
+	WidgetArea::class        => $core_widget_areas,
 ];
