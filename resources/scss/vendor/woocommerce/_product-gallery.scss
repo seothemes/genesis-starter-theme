@@ -1,0 +1,18 @@
+.woocommerce {
+
+	.woocommerce-product-gallery__wrapper {
+		margin: 0;
+	}
+
+	.woocommerce-product-gallery__trigger {
+		border-width: 0;
+	}
+
+	.woocommerce-product-gallery {
+		overflow: hidden;
+
+		.flex-control-nav {
+			user-select: none;
+		}
+	}
+}

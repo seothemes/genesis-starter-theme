@@ -1,0 +1,122 @@
+.woocommerce {
+
+	a.button,
+	a.button.alt,
+	button.button,
+	button.button.alt,
+	input.button,
+	input.button.alt,
+	input.button[type="submit"],
+	#respond input#submit,
+	#respond input#submit.alt {
+		width: auto;
+		padding: 15px 20px;
+		border: 0;
+		border-radius: 0;
+		color: $color--white;
+		background-color: $color--dark-gray;
+		font-size: 1.6rem;
+		font-weight: 600;
+		text-align: center;
+		white-space: normal;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $color--white;
+			background-color: $color--accent;
+		}
+	}
+
+	#reviews #comment {
+		height: 150px;
+	}
+
+	.quantity .qty {
+		width: 70px;
+		margin-right: 5px;
+		padding: 12px 5px;
+		font-size: 2rem;
+		line-height: 1.5;
+	}
+
+	form {
+
+		.form-row input.input-text,
+		.form-row textarea {
+			padding: 8px 20px;
+			line-height: 1.5;
+		}
+
+		&.checkout_coupon,
+		&.login,
+		&.register,
+		.form-row .select2-container,
+		.form-row.woocommerce-validated input.input-text,
+		.form-row.woocommerce-validated select,
+		.form-row.woocommerce-validated .select2-container {
+			border-color: $color--lighter-gray;
+			border-radius: 0;
+		}
+	}
+
+	.coupon {
+		line-height: 1;
+
+		.input-text {
+			height: 48px;
+		}
+	}
+
+	input.button,
+	input.button[type="submit"] {
+		width: 100% !important;
+	}
+}
+
+@include grid-media($screen--xs) {
+
+	.woocommerce form .form-row-first,
+	.woocommerce-page form .form-row-first,
+	.woocommerce #reviews #comments .star-rating {
+		float: left;
+		width: 47%;
+	}
+
+	.woocommerce form .form-row-last,
+	.woocommerce-page form .form-row-last {
+		float: right;
+		width: 47%;
+	}
+
+	.woocommerce input.button,
+	.woocommerce input.button[type="submit"],
+	.woocommerce-cart table.cart td.actions .coupon .input-text {
+		width: auto !important;
+	}
+}
+
+.woocommerce-cart table.cart,
+.woocommerce-checkout table.cart,
+#add_payment_method table.cart {
+
+	td.actions .coupon .input-text {
+		width: 150px;
+		padding: 5px 20px;
+		border-color: $color--lighter-gray;
+	}
+
+	input {
+		vertical-align: top;
+	}
+}
+
+.woocommerce form .form-row-first,
+.woocommerce form .form-row-last,
+.woocommerce #reviews #comments .star-rating,
+.woocommerce-page form .form-row-first,
+.woocommerce-page form .form-row-last {
+	float: none;
+	width: 100%;
+}

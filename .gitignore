@@ -5,7 +5,7 @@
 node_modules
 
 # Ignore vendor directory.
-vendor
+./vendor
 
 # Ignore auto-generated lock files.
 package-lock.json

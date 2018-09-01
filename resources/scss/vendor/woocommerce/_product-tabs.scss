@@ -1,0 +1,96 @@
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding: 0;
+
+	&:before,
+	li {
+		border-color: $color--lighter-gray;
+	}
+
+	li {
+		display: block;
+		margin: 0;
+		padding: 0;
+		border: 1px solid $color--lighter-gray;
+		border-bottom: 0;
+		border-radius: 0;
+		background-color: $color--white;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid $color--lighter-gray;
+		}
+
+		&.active {
+			border-bottom-color: $color--lighter-gray;
+		}
+
+		a {
+			display: block;
+			padding: 0.5em 1em;
+			color: $color--dark-gray;
+
+			&:focus,
+			&:hover {
+				color: $color--accent;
+			}
+		}
+
+		&.active a:after {
+			display: block;
+			float: right;
+			font-family: dashicons;
+			content: "\f147";
+		}
+	}
+}
+
+
+@include grid-media($screen--m) {
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
+		padding: 0 0 0 1em;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li {
+		display: inline-block;
+		margin: 0 -5px;
+		background-color: $color--lightest-gray;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+		border-bottom: 1px solid $color--white;
+		background-color: $color--white;
+	}
+
+	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after {
+		display: none;
+	}
+
+}
+
+@include grid-media($screen--l) {
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs {
+		padding: 0 0 0 1em;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li {
+		display: inline-block;
+		margin: 0 -5px;
+		background-color: $color--lightest-gray;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+		border-bottom: 1px solid $color--white;
+		background-color: $color--white;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after {
+		display: none;
+	}
+
+}

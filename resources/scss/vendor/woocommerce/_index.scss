@@ -1,0 +1,31 @@
+////
+/// WooCommerce specific styles.
+///
+/// @group  Vendor
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+// Abstracts
+@import "../../../../node_modules/bourbon/core/bourbon";
+@import "../../../../node_modules/bourbon-neat/core/neat";
+@import "../../abstracts/variables";
+@import "../../abstracts/functions";
+@import "../../abstracts/mixins";
+
+// WooCommerce
+@import "globals";
+@import "product-gallery";
+@import "shop-page";
+@import "product";
+@import "product-tabs";
+@import "checkout";
+@import "cart-page";
+@import "payment";
+@import "forms";
+@import "disabled-buttons";
+@import "account-page";
+@import "breadcrumb";
+@import "reviews";
+@import "misc";
+@import "widgets";
