@@ -1,0 +1,65 @@
+////
+/// Comment component.
+///
+/// This is the component for handling individual comments in a comments list.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+.comment {
+
+	// Comment list wrapper.
+	&-list {}
+
+	// Comment header.
+	&-header {}
+
+	// Comment author.
+	&-author {}
+
+	// Comment author link.
+	&-author-link {}
+
+	// Comment author says.
+	.says {}
+
+	// Comment meta.
+	&-meta {}
+
+	// Comment time.
+	&-time {}
+
+	// Comment time link.
+	&-time-link {}
+
+	// Comment edit link.
+	&-edit-link {}
+
+	// Comment content.
+	&-content {}
+
+	// Comment reply.
+	&-reply {}
+
+	// Comment reply link.
+	&-reply-link {}
+
+	// Comment reply title.
+	&-reply-title {}
+
+	// Comment respond.
+	&-respond {}
+
+	// Comment logged in as.
+	.logged-in-as {}
+
+	// Comment reply form.
+	&-form {}
+
+	// Comment form comment.
+	&-form-comment {}
+
+	// Comment form submit.
+	.form-submit {}
+}

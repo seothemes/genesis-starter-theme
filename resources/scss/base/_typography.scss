@@ -1,46 +1,46 @@
-html {
-	font-size: $rem-scale; /* 10px browser default */
-
-	@include font-smoothing;
-}
-
-/* Chrome fix */
-body > div {
-	font-size: $body--font-size;
-}
-
+////
+/// Typography.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
 body {
 	margin: 0;
-	color: $body--font-color;
-	background-color: $body--background-color;
-	font-family: $body--font-family;
-	font-size: $body--font-size;
+	color: $color--darker-gray;
+	background-color: $color--white;
+	font-family: $font-family--body;
+	font-size: $base__font-size;
 	font-weight: $font-weight--regular;
-	line-height: $line-height--normal;
+	line-height: $line-height--m;
+
+	// Chrome fix
+	> div {
+		font-size: $base__font-size;
+	}
 }
 
 a {
-	color: $link--font-color;
-	text-decoration: underline;
-	transition: color $transition, background-color $transition;
+	color: $color--accent;
+	text-decoration: none;
 
 	&:focus,
 	&:hover {
-		color: $link--font-color-hover;
-		text-decoration: none;
+		color: $color--accent;
+		text-decoration: underline;
 	}
 }
 
 p {
-	margin: 0 0 30px;
+	margin: 0 0 $spacing--s;
 	padding: 0;
 }
 
 hr {
 	clear: both;
-	margin: 30px 0;
+	margin: $spacing--m 0;
 	border: 0;
-	border-top: $border;
+	border-top: $base__border;
 	border-collapse: collapse;
 }
 
@@ -57,19 +57,41 @@ i {
 }
 
 mark {
-	background: $mark--background-color;
+	background: $color--mark;
 }
 
 blockquote {
-	margin: 30px;
+	margin: $spacing--m;
 
 	&:before {
 		display: block;
 		position: relative;
-		top: -10px;
-		left: -20px;
+		top: -1em;
+		left: -2em;
 		height: 0;
-		font-size: $blockquote__before--font-size;
-		content: "\201C";
+		font-size: $font-size--h1;
+		content: "“";
+	}
+}
+
+code,
+kbd,
+samp {
+	padding: 0.05em 0.5em;
+	background-color: $color--lightest-gray;
+	font-size: 90%;
+}
+
+pre {
+	overflow-x: scroll;
+	padding: 1em;
+	background-color: $color--lightest-gray;
+
+	code,
+	kbd,
+	samp {
+		padding: 0;
+		background-color: transparent;
+		font-size: 90%;
 	}
 }

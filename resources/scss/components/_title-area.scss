@@ -1,0 +1,35 @@
+////
+/// Title area component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+.title-area {
+
+	.wp-custom-logo & {}
+}
+
+// Site title.
+.site-title {
+
+	.wp-custom-logo & {
+
+		@include hide-visually;
+	}
+}
+
+// Site description.
+.site-description {
+
+	.wp-custom-logo & {
+
+		@include hide-visually;
+	}
+}
+
+// Custom logo.
+.custom-logo-link {}
+
+// Custom logo.
+.custom-logo {}

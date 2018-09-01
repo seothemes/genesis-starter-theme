@@ -1,0 +1,18 @@
+////
+/// Abstracts imports.
+///
+/// The `abstracts/` folder gathers all Sass tools and helpers used across the project.
+/// Every global variable, function, mixin and placeholder should be put in here.
+///
+/// The rule of thumb for this folder is that it should not output a single line of
+/// CSS when compiled on its own. These are nothing but Sass helpers.
+///
+/// @group  Abstracts
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   http://sass-guidelin.es/#abstracts-folder
+////
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "../../../node_modules/bourbon-neat/core/neat";
+@import "variables";
+@import "functions";
+@import "mixins";

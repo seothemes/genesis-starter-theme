@@ -1,0 +1,61 @@
+////
+/// Grid.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+@include grid-media($screen--m) {
+
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+		width: $two-fourths;
+	}
+
+	.one-third,
+	.two-sixths {
+		width: $two-sixths;
+	}
+
+	.four-sixths,
+	.two-thirds {
+		width: $two-thirds;
+	}
+
+	.one-fourth {
+		width: $one-fourth;
+	}
+
+	.three-fourths {
+		width: $three-fourths;
+	}
+
+	.one-fifth {
+		width: $one-fifth;
+	}
+
+	.two-fifths {
+		width: $two-fifths;
+	}
+
+	.three-fifths {
+		width: $three-fifths;
+	}
+
+	.four-fifths {
+		width: $four-fifths;
+	}
+
+	.one-sixth {
+		width: $one-sixth;
+	}
+
+	.five-sixths {
+		width: $five-sixths;
+	}
+
+	.first {
+		clear: both;
+	}
+}

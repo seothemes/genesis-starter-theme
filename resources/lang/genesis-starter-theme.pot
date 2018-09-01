@@ -13,18 +13,18 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/assets.php:28
+#: config/defaults.php:40
 msgid "Menu"
 msgstr ""
 
-#: config/assets.php:29
+#: config/defaults.php:41
 msgid "Sub Menu"
 msgstr ""
 
-#: config/theme-support.php:52
+#: config/defaults.php:345
 msgid "Header Menu"
 msgstr ""
 
-#: config/theme-support.php:53
+#: config/defaults.php:346
 msgid "After Header Menu"
 msgstr ""

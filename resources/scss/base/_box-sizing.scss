@@ -1,0 +1,21 @@
+////
+/// Box Sizing.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+html {
+	overflow-x: hidden;
+	box-sizing: border-box;
+	max-width: 100vw;
+	font-size: $rems; // 10px browser default
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}

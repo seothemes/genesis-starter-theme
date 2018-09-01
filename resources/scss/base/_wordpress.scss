@@ -1,0 +1,56 @@
+////
+/// WordPress.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+.align {
+
+	&center,
+	&left,
+	&right {
+		display: block;
+		float: none;
+		margin: 0 auto $spacing--s;
+	}
+
+	&left {
+
+		@include grid-media($screen--m) {
+			float: left;
+			margin: 0 $spacing--s $spacing--s 0;
+		}
+	}
+
+	&right {
+
+		@include grid-media($screen--m) {
+			float: right;
+			margin: 0 0 $spacing--s $spacing--s;
+		}
+	}
+
+	&wide,
+	&full {
+		position: relative;
+		left: 50%;
+		width: 100vw;
+
+		img {
+			display: inline-block;
+			width: 100%;
+			margin: $spacing--s auto;
+		}
+	}
+
+	&wide {
+		max-width: 120%;
+		transform: translate(-50%);
+	}
+
+	&full {
+		max-width: none;
+		margin-left: -50vw;
+	}
+}

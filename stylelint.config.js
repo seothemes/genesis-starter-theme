@@ -10,6 +10,7 @@ module.exports = {
 	plugins: 'stylelint-order',
 	ignoreFiles: [ 'style.min.css' ],
 	rules: {
+		'block-no-empty': null,
 		'font-family-no-missing-generic-family-keyword': null,
 		'max-line-length': 255,
 		'no-duplicate-selectors': null,

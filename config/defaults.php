@@ -89,7 +89,7 @@ $core_custom_colors = [
 		],
 	],
 	'link'       => [
-		'default' => '#0073e5',
+		'default' => '#07e',
 		'output'  => [
 			[
 				'elements'   => [
@@ -113,7 +113,7 @@ $core_custom_colors = [
 		],
 	],
 	'accent'     => [
-		'default' => '#0073e5',
+		'default' => '#07e',
 		'output'  => [
 			[
 				'elements'   => [

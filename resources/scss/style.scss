@@ -1,188 +1,24 @@
-/* Table of Contents
-- Vendor
-	- Normalize
-	- WordPress
-	- Print Styles
-	- Genesis Column Classes
-- Base
-	- Accessibility
-	- Buttons
-	- Forms
-	- Headings
-	- Layout
-	- Lists
-	- Media
-	- Tables
-	- Typography
-- Layouts
-	- Site Container
-	- Site Header
-	- Site Navigation
-	- Site Inner
-	- Site Footer
-- Components
-	- Blocks
-	- Comments
-	- Content
-	- Entry
-	- Gallery
-	- Plugins
-	- Utility
-	- Widgets
-- Pages
-	- Front Page
-*/
-
-@import "abstracts/variables/index";
-@import "abstracts/functions/*";
-@import "abstracts/mixins/*";
-
-/* # Vendor
----------------------------------------------------------------------------------------------------- */
-
-/* ## Normalize
---------------------------------------------- */
-
-@import "normalize";
-
-/* ## WordPress
---------------------------------------------- */
-
-@import "../../node_modules/wp.scss/wp";
-
-/* ## Print Styles
---------------------------------------------- */
-
-@import "../../node_modules/print-styles/scss/print-styles";
-
-/* ## Genesis Column Classes
---------------------------------------------- */
-
-@import "../../node_modules/genesis-column-classes/scss/genesis-column-classes";
-
-/* # Base
----------------------------------------------------------------------------------------------------- */
-
-/* ## Accessibility
---------------------------------------------- */
-
-@import "base/accessibility";
-
-/* ## Buttons
---------------------------------------------- */
-
-@import "base/buttons";
-
-/* ## Forms
---------------------------------------------- */
-
-@import "base/forms";
-
-/* ## Headings
---------------------------------------------- */
-
-@import "base/headings";
-
-/* ## Layout
---------------------------------------------- */
-
-@import "base/layout";
-
-/* ## Lists
---------------------------------------------- */
-
-@import "base/lists";
-
-/* ## Media
---------------------------------------------- */
-
-@import "base/media";
-
-/* ## Tables
---------------------------------------------- */
-
-@import "base/tables";
-
-/* ## Typography
---------------------------------------------- */
-
-@import "base/typography";
-
-/* # Layout
----------------------------------------------------------------------------------------------------- */
-
-/* ## Site Container
---------------------------------------------- */
-
-@import "layout/site-container/*";
-
-/* ## Site Header
---------------------------------------------- */
-
-@import "layout/site-header/*";
-
-/* ## Site Navigation
---------------------------------------------- */
-
-@import "layout/site-navigation/*";
-
-/* ## Site Inner
---------------------------------------------- */
-
-@import "layout/site-inner/*";
-
-/* ## Site Footer
---------------------------------------------- */
-
-@import "layout/site-footer/*";
-
-/* # Components
----------------------------------------------------------------------------------------------------- */
-
-/* ## Block
---------------------------------------------- */
-
-@import "components/blocks/*";
-
-/* ## Comment
---------------------------------------------- */
-
-@import "components/comments/*";
-
-/* ## Content
---------------------------------------------- */
-
-@import "components/content/*";
-
-/* ## Entry
---------------------------------------------- */
-
-@import "components/entry/*";
-
-/* ## Gallery
---------------------------------------------- */
-
-@import "components/gallery/*";
-
-/* ## Plugin
---------------------------------------------- */
-
-@import "components/plugins/*";
-
-/* ## Utility
---------------------------------------------- */
-
-@import "components/utility/*";
-
-/* ## Widget
---------------------------------------------- */
-
-@import "components/widgets/*";
-
-/* # Pages
----------------------------------------------------------------------------------------------------- */
-
-/* ## Front Page
---------------------------------------------- */
-
-@import "pages/front-page";
+////
+/// Primary screen stylesheet.
+///
+/// This is the primary stylesheet. We don't actually write any styles here.
+/// Instead, we import all of our styles from partials within the sub-folders.
+/// This file is set up based on the Inverted Triangle CSS (ITCSS) system,
+/// which gets more specific as we drill down each layer.  This keeps your
+/// style code lean and organized.
+///
+/// The bulk of your code should be within the `/components` folder.  By
+/// default, we follow the Block-Element-Modifier (BEM) system in our HTML.
+/// Each "block" is a "component" in our CSS.
+///
+/// @group  Styles
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   http://sass-guidelin.es/#main-file
+////
+@import "abstracts/index";
+@import "base/index";
+@import "layout/index";
+@import "components/index";
+@import "pages/index";
+@import "theme/index";
+@import "vendor/index";

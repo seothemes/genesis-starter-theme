@@ -1,0 +1,21 @@
+////
+/// Sub menu component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+.sub-menu {
+
+	// Sub menu menu item.
+	.menu-item {}
+
+	// Sub sub menu.
+	& & {}
+
+	// Sub menu toggle.
+	&-toggle {
+
+		&.activated {}
+	}
+}

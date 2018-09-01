@@ -1,0 +1,89 @@
+////
+/// Form.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+#{$all-text-inputs},
+select {
+	width: 100%;
+	padding: 1em;
+	border: $base__border;
+	box-shadow: none;
+	color: $color--darker-gray;
+	background-color: $color--white;
+	font-size: $font-size--min;
+
+	&:focus {
+		border-color: $color--darker-gray;
+		outline: none;
+	}
+
+	&:disabled,
+	&:disabled:hover {
+		border-width: 0;
+		color: $color--medium-gray;
+		background-color: $color--lighter-gray;
+		cursor: not-allowed;
+	}
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+	margin-right: 1em;
+}
+
+input[type="color"] {
+	min-height: 3em;
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button {
+		display: none;
+	}
+}
+
+::placeholder {
+	color: $color--light-gray;
+}
+
+::-moz-placeholder {
+	opacity: 1;
+	color: $color--dark-gray;
+}
+
+::-webkit-input-placeholder {
+	color: $color--dark-gray;
+}
+
+fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: 0.01em 0 0 0;
+	border: 0;
+
+	body:not(:-moz-handler-blocked) & {
+		display: table-cell;
+	}
+}
+
+legend {
+	display: table;
+	float: left;
+	width: 100%;
+	margin: 0 0 $spacing--s;
+	padding: 0;
+	font-family: $font-family--heading;
+	font-size: $font-size--h5;
+	font-weight: $font-weight--semibold;
+
+	+ * {
+		clear: both;
+	}
+}

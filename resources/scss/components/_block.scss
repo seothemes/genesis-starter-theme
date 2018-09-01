@@ -1,0 +1,154 @@
+////
+/// Gutenberg block component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+.wp-block {
+
+	// Audio block.
+	&-audio {}
+
+	// Button block.
+	&-button {
+
+		&__link {}
+	}
+
+	// Categories block.
+	&-categories {
+
+		&-list {}
+
+		&-dropdown {}
+	}
+
+	// Code block.
+	&-code {}
+
+	// Columns block.
+	&-columns {
+
+		&.has-2-columns {}
+
+		&-column {}
+	}
+
+	// Cover image block.
+	&-cover-image {
+
+		&.has-parallax {}
+
+		&.has-background-dim {}
+
+		&-text {}
+
+		&.has-left-content {}
+
+		&.has-right-content {}
+
+		&.has-left-content &-text {}
+
+		&.has-right-content &-text {}
+
+		&.alignleft,
+		&.alignright {}
+	}
+
+	// Embed block.
+	&-embed {
+
+		&-vimeo {}
+
+		&-youtube {}
+
+		&.is-type-image {}
+
+		&.is-type-audio {}
+
+		&.is-type-rich {}
+
+		&.is-type-video {}
+
+		&.is-provider-vimeo {}
+	}
+
+	// File block.
+	&-file {
+
+		&.aligncenter {}
+
+		&.alignright {}
+
+		&__button {}
+	}
+
+	// Gallery block.
+	&-gallery {
+
+		&.is-cropped {}
+
+		&.columns-1 {}
+
+		&.columns-2 {}
+
+		&.columns-3 {}
+
+		.blocks-gallery-item {}
+
+		&.is-cropped .blocks-gallery-item {}
+
+		.blocks-gallery-item {}
+
+		&.columns-1 .blocks-gallery-item {}
+
+		&.alignleft,
+		&.alignright {}
+	}
+
+	// Image block.
+	&-image {
+
+		&.aligncenter {}
+
+		&.is-resized {}
+	}
+
+	// Latest posts block.
+	&-latest-posts {
+
+		&.alignleft {}
+
+		&.alignright {}
+
+		&.is-grid {}
+
+		&__post-date {}
+	}
+
+	// Preformatted block.
+	&-preformatted {}
+
+	// Pullquote block.
+	&-pullquote {
+
+		&.alignleft,
+		&.alignright {}
+	}
+
+	// Quote block.
+	&-quote {}
+
+	// Separator block.
+	&-separator {}
+
+	// Subhead block.
+	&-subhead {}
+
+	// Table block.
+	&-table {}
+
+	// Verse block.
+	&-verse {}
+}

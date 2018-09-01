@@ -1,15 +1,21 @@
+////
+/// Accessibility.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
 .screen-reader-shortcut,
 .screen-reader-text,
 .screen-reader-text span {
 
-	@include screen-reader-text;
-}
+	@include hide-visually;
 
-.screen-reader-shortcut:focus,
-.screen-reader-text:focus,
-.widget_search input[type="submit"]:focus {
+	&:active,
+	&:focus {
 
-	@include screen-reader-text(focus);
+		@include hide-visually("unhide");
+	}
 }
 
 .more-link {
@@ -19,11 +25,6 @@
 .genesis-skip-link {
 	margin: 0;
 
-	.skip-link-hidden {
-		display: none;
-		visibility: hidden;
-	}
-
 	li {
 		width: 0;
 		height: 0;
@@ -32,6 +33,6 @@
 }
 
 :focus {
-	outline: #ccc solid 1px;
-	color: $body--font-color;
+	outline: $base__border;
+	color: $color--dark-gray;
 }

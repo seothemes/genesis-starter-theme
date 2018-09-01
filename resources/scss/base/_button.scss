@@ -1,0 +1,37 @@
+////
+/// Button.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+#{$all-buttons},
+.button {
+	display: inline-block;
+	width: auto;
+	padding: 1em 2em;
+	border: 0;
+	border-radius: $border--radius;
+	color: $color--white;
+	background-color: $color--darker-gray;
+	font-size: $font-size--min;
+	font-weight: $font-weight--semibold;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		background-color: $color--accent;
+	}
+
+	&:disabled {
+
+		&,
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+}

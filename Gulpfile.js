@@ -6,7 +6,6 @@
 
 var pkg     = require( './package.json' ),
     gulp    = require( 'gulp' ),
-	sassdoc = require( 'sassdoc' ),
 	globs   = require( 'gulp-src-ordered-globs' ),
 	toolkit = require( 'gulp-wp-toolkit' ),
 	zip     = require( 'gulp-zip' );
@@ -64,7 +63,7 @@ toolkit.extendConfig(
 					outputStyle: 'expanded'
 				},
 				'woocommerce': {
-					src: 'resources/scss/woocommerce.scss',
+					src: 'resources/scss/vendor/woocommerce/_index.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				}

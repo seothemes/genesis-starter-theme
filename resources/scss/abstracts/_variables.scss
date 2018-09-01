@@ -1,0 +1,222 @@
+////
+/// Variables.
+///
+/// @group  Abstracts
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+// ------------------------------------------------------------------
+// Breakpoints
+// ------------------------------------------------------------------
+
+$screen--xxs: (
+	media: 512px,
+);
+
+$screen--xs: (
+	media: 640px,
+);
+
+$screen--s: (
+	media: 768px,
+);
+
+$screen--m: (
+	media: 896px,
+);
+
+$screen--l: (
+	media: 1024px,
+);
+
+$screen--xl: (
+	media: 1152px,
+);
+
+$screen--xxl: (
+	media: 1280px,
+);
+
+// ------------------------------------------------------------------
+// Spacing
+// ------------------------------------------------------------------
+
+$base__spacing: 4rem;
+
+$spacing--xxs: $base__spacing / 6;
+$spacing--xs: $base__spacing / 4;
+$spacing--s: $base__spacing / 2;
+$spacing--m: $base__spacing;
+$spacing--l: $base__spacing * 2;
+$spacing--xl: $base__spacing * 4;
+$spacing--xxl: $base__spacing * 6;
+
+// ------------------------------------------------------------------
+// Layout
+// ------------------------------------------------------------------
+
+$width--sidebar: 30rem;
+$width--content: calc(100% - (#{$width--sidebar} + #{$spacing--m}));
+
+// ------------------------------------------------------------------
+// Typography
+// ------------------------------------------------------------------
+
+$rems: 62.5%;
+
+$base__font-size: 1.8rem;
+
+$font-size--min: 1.6rem;
+$font-size--h1: $base__font-size * 2;
+$font-size--h2: $base__font-size * 1.75;
+$font-size--h3: $base__font-size * 1.5;
+$font-size--h4: $base__font-size * 1.25;
+$font-size--h5: $base__font-size * 1.125;
+$font-size--h6: $base__font-size * 1;
+
+// Font families
+$font-family--body: $font-stack-system;
+$font-family--heading: $font-stack-system;
+
+// Font weights
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--semibold: 600;
+$font-weight--bold: 700;
+
+// Line heights
+$line-height--xxl: $golden * 1.5;
+$line-height--xl: $golden * 1.25;
+$line-height--l: $golden * 1.125;
+$line-height--m: $golden;
+$line-height--s: $golden / 1.125;
+$line-height--xs: $golden / 1.25;
+$line-height--xxs: $golden / 1.5;
+
+// ------------------------------------------------------------------
+// Colors
+// ------------------------------------------------------------------
+
+// Base Colors
+$color--white: #fff;
+$color--black: #000;
+$color--accent: #07e;
+$color--mark: #ff9;
+$color--darkest-gray: #222;
+$color--darker-gray: #444;
+$color--dark-gray: #666;
+$color--medium-gray: #888;
+$color--light-gray: #aaa;
+$color--lighter-gray: #ccc;
+$color--lightest-gray: #eee;
+
+// Social
+$color--dribbble: #ea4c89;
+$color--email: #049fb3;
+$color--facebook: #3b5998;
+$color--flickr: #ff0084;
+$color--github: #333;
+$color--gplus: #dd4b39;
+$color--linkedin: #007bb6;
+$color--pinterest: #bd081c;
+$color--rss: #f60;
+$color--stumbleupon: #eb4823;
+$color--tumblr: #32506d;
+$color--twitter: #1da1f2;
+$color--vimeo: #aad450;
+$color--youtube: #f00;
+$color--snapchat: #fffc00;
+$color--instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+
+// ------------------------------------------------------------------
+// Borders
+// ------------------------------------------------------------------
+
+$border--radius: 0;
+$border--width: 1px;
+$border--style: solid;
+$border--color: $color--lighter-gray;
+
+$base__border: $border--width $border--style $border--color;
+
+// ------------------------------------------------------------------
+// Box Shadow
+// ------------------------------------------------------------------
+
+$box-shadow--blur-radius: 20px;
+$box-shadow--opacity: 0.075;
+
+$base__box-shadow: 0 0 $box-shadow--blur-radius rgba($color--dark-gray, $box-shadow--opacity);
+
+// ------------------------------------------------------------------
+// Columns
+// ------------------------------------------------------------------
+
+$genesis-columns: (
+	gutter-size: 2.564102564102564%,
+	one-half: 48.71794871794871%,
+	one-third: 31.62393162393162%,
+	one-fifth: 17.94871794871794%,
+	one-fourth: 23.07692307692307%,
+	one-sixth: 14.52991452991453%,
+	one-seventh: 12.08791208791208%,
+	one-eighth: 10.25641025641025%,
+	one-ninth: 8.831908831908832%,
+	two-thirds: 65.81196581196582%,
+	two-fourths: 48.71794871794871%,
+	two-fifths: 38.46153846153846%,
+	two-sixths: 31.62393162393162%,
+	three-fourths: 74.35897435897436%,
+	three-fifths: 58.97435897435897%,
+	three-sixths: 48.71794871794871%,
+	four-fifths: 79.48717948717948%,
+	four-sixths: 65.81196581196582%,
+	five-sixths: 82.90598290598291,
+);
+
+$gutter-size: map_get($genesis-columns, gutter-size);
+$one-half: map_get($genesis-columns, one-half);
+$one-third: map_get($genesis-columns, one-third);
+$one-fifth: map_get($genesis-columns, one-fifth);
+$one-fourth: map_get($genesis-columns, one-fourth);
+$one-sixth: map_get($genesis-columns, one-sixth);
+$one-seventh: map_get($genesis-columns, one-seventh);
+$one-eighth: map_get($genesis-columns, one-eighth);
+$one-ninth: map_get($genesis-columns, one-ninth);
+$two-thirds: map_get($genesis-columns, two-thirds);
+$two-fourths: map_get($genesis-columns, two-fourths);
+$two-fifths: map_get($genesis-columns, two-fifths);
+$two-sixths: map_get($genesis-columns, two-sixths);
+$three-fourths: map_get($genesis-columns, three-fourths);
+$three-fifths: map_get($genesis-columns, three-fifths);
+$three-sixths: map_get($genesis-columns, three-sixths);
+$four-fifths: map_get($genesis-columns, four-fifths);
+$four-sixths: map_get($genesis-columns, four-sixths);
+$five-sixths: map_get($genesis-columns, five-sixths);
+
+// ------------------------------------------------------------------
+// Z Index
+// ------------------------------------------------------------------
+
+$z-index: (
+	1: 10,
+	2: 20,
+	3: 30,
+	4: 40,
+	5: 50,
+	6: 60,
+	7: 70,
+	8: 80,
+	9: 90,
+);
+
+$z-index--1: map_get($z-index, 1);
+$z-index--2: map_get($z-index, 2);
+$z-index--3: map_get($z-index, 3);
+$z-index--4: map_get($z-index, 4);
+$z-index--5: map_get($z-index, 5);
+$z-index--6: map_get($z-index, 6);
+$z-index--7: map_get($z-index, 7);
+$z-index--8: map_get($z-index, 8);
+$z-index--9: map_get($z-index, 9);
