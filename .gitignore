@@ -5,7 +5,8 @@
 node_modules
 
 # Ignore vendor directory.
-./vendor
+vendor
+!resources/scss/vendor
 
 # Ignore auto-generated lock files.
 package-lock.json
