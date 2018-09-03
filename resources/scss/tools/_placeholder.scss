@@ -1,0 +1,40 @@
+////
+/// Breakpoint
+///
+/// Helper mixin to generate media queries.
+///
+/// @param {Breakpoint} $breakpoint [m] - Breakpoint size
+/// @param {Query} $query [min-width] - Min width or max width
+/// @output Media query
+///
+/// @example scss - Media query `.foo`
+///   .foo {
+///     display: none;
+///     @include breakpoint(s) {
+///       display: block;
+///     }
+///   }
+////
+
+@mixin placeholder {
+
+	&::-webkit-input-placeholder {
+
+		@content;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+
+		@content;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+
+		@content;
+	}
+}

@@ -1,0 +1,55 @@
+////
+/// Color settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Palette
+$colors: (
+	primary: dodgerblue,
+	accent: orange,
+	success: mediumseagreen,
+	warning: gold,
+	error: crimson,
+	white: white,
+	black: black,
+);
+
+$color--primary: map_get($colors, primary);
+$color--primary: map_get($colors, accent);
+$color--success: map_get($colors, success);
+$color--warning: map_get($colors, warning);
+$color--error: map_get($colors, error);
+$color--white: map_get($colors, white);
+$color--black: map_get($colors, black);
+
+// Grayscale
+$color--gray-90: mix($color--white, $color--black, 0.9);
+$color--gray-80: mix($color--white, $color--black, 0.8);
+$color--gray-70: mix($color--white, $color--black, 0.7);
+$color--gray-60: mix($color--white, $color--black, 0.6);
+$color--gray-50: mix($color--white, $color--black, 0.5);
+$color--gray-40: mix($color--white, $color--black, 0.4);
+$color--gray-30: mix($color--white, $color--black, 0.3);
+$color--gray-20: mix($color--white, $color--black, 0.2);
+$color--gray-10: mix($color--white, $color--black, 0.1);
+
+// Social
+$color--dribbble: #ea4c89;
+$color--email: #049fb3;
+$color--facebook: #3b5998;
+$color--flickr: #ff0084;
+$color--github: #333;
+$color--gplus: #dd4b39;
+$color--linkedin: #007bb6;
+$color--pinterest: #bd081c;
+$color--rss: #f60;
+$color--stumbleupon: #eb4823;
+$color--tumblr: #32506d;
+$color--twitter: #1da1f2;
+$color--vimeo: #aad450;
+$color--youtube: #f00;
+$color--snapchat: #fffc00;
+$color--instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);

@@ -5,26 +5,26 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-#{$all-text-inputs},
-select {
+
+input,
+select,
+textarea {
 	width: 100%;
 	padding: 1em;
-	border: $base__border;
+	border: $border;
 	box-shadow: none;
-	color: $color--darker-gray;
-	background-color: $color--white;
-	font-size: $font-size--min;
+	font-size: $font-size--m;
 
 	&:focus {
-		border-color: $color--darker-gray;
+		border-color: $color--primary;
 		outline: none;
 	}
 
 	&:disabled,
 	&:disabled:hover {
-		border-width: 0;
-		color: $color--medium-gray;
-		background-color: $color--lighter-gray;
+		border-color: $color--gray-60;
+		color: $color--gray-40;
+		background-color: $color--gray-20;
 		cursor: not-allowed;
 	}
 }
@@ -33,11 +33,11 @@ input[type="checkbox"],
 input[type="image"],
 input[type="radio"] {
 	width: auto;
-	margin-right: 1em;
+	margin-right: $spacing--s;
 }
 
 input[type="color"] {
-	min-height: 3em;
+	min-height: $spacing--xl;
 }
 
 input[type="search"] {
@@ -50,16 +50,8 @@ input[type="search"] {
 }
 
 ::placeholder {
-	color: $color--light-gray;
-}
-
-::-moz-placeholder {
-	opacity: 1;
-	color: $color--dark-gray;
-}
-
-::-webkit-input-placeholder {
-	color: $color--dark-gray;
+	opacity: 1; // Firefox fix
+	color: $color--gray-40;
 }
 
 fieldset {
@@ -80,7 +72,7 @@ legend {
 	margin: 0 0 $spacing--s;
 	padding: 0;
 	font-family: $font-family--heading;
-	font-size: $font-size--h5;
+	font-size: $font-size--l;
 	font-weight: $font-weight--semibold;
 
 	+ * {

@@ -25,7 +25,7 @@
 	}
 
 	.total {
-		border-top: 1px solid $color--lighter-gray;
+		border-top: 1px solid $color--gray-20;
 	}
 
 	.buttons a {
@@ -57,11 +57,11 @@
 .woocommerce.widget_price_filter {
 
 	.price_slider_wrapper .ui-widget-content {
-		background-color: $color--lighter-gray;
+		background-color: $color--gray-20;
 	}
 
 	.ui-slider .ui-slider-range {
-		background-color: $color--accent;
+		background-color: $color--primary;
 	}
 
 	.ui-slider .ui-slider-handle {
@@ -78,7 +78,7 @@
 	.widget_layered_nav ul li.chosen a:before,
 	.widget_layered_nav_filters ul li a:before,
 	.widget_rating_filter ul li.chosen a:before {
-		color: $color--accent;
+		color: $color--primary;
 	}
 }
 

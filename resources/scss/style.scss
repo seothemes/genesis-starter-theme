@@ -15,10 +15,12 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   http://sass-guidelin.es/#main-file
 ////
-@import "abstracts/index";
-@import "base/index";
-@import "layout/index";
-@import "components/index";
-@import "pages/index";
-@import "theme/index";
-@import "vendor/index";
+
+@import "settings/_index";
+@import "tools/_index";
+@import "generic/_index";
+@import "elements/_index";
+@import "objects/_index";
+@import "components/_index";
+@import "utilities/_index";
+@import "vendor/_index";

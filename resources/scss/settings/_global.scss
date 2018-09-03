@@ -1,0 +1,36 @@
+////
+/// Media query breakpoint settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Scales
+$phi: 1.61803398875;
+$scale: ($phi / 10) + 1;
+
+// Typography
+$font-size: 1.6rem;
+
+// Grid
+$grid-columns: 12;
+
+// Layout
+$width--sidebar: 30rem;
+$width--content: calc(100% - (#{$width--sidebar} + #{$font-size}));
+
+// Borders
+$border--radius: 0;
+$border--width: 1px;
+$border--style: solid;
+$border--color: $color--gray-20;
+$border: $border--width $border--style $border--color;
+
+// Shadows
+$box-shadow--x: 0;
+$box-shadow--y: $font-size;
+$box-shadow--blur: $font-size * 2;
+$box-shadow--spread: 0;
+$box-shadow--color: $color--gray-20;
+$box-shadow: $box-shadow--x $box-shadow--y $box-shadow--blur $box-shadow--spread $box-shadow--color;

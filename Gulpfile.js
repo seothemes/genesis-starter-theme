@@ -63,7 +63,7 @@ toolkit.extendConfig(
 					outputStyle: 'expanded'
 				},
 				'woocommerce': {
-					src: 'resources/scss/vendor/woocommerce/_index.scss',
+					src: 'resources/scss/vendor/woocommerce/__index.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				}

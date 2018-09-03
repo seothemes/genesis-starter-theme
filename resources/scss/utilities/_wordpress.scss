@@ -17,7 +17,7 @@
 
 	&left {
 
-		@include grid-media($screen--m) {
+		@include media(m) {
 			float: left;
 			margin: 0 $spacing--s $spacing--s 0;
 		}
@@ -25,7 +25,7 @@
 
 	&right {
 
-		@include grid-media($screen--m) {
+		@include media(m) {
 			float: right;
 			margin: 0 0 $spacing--s $spacing--s;
 		}

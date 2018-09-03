@@ -5,16 +5,20 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-#{$all-buttons},
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
 .button {
 	display: inline-block;
 	width: auto;
-	padding: 1em 2em;
+	padding: $spacing--m $spacing--l;
 	border: 0;
 	border-radius: $border--radius;
 	color: $color--white;
-	background-color: $color--darker-gray;
-	font-size: $font-size--min;
+	background-color: $color--gray-70;
+	font-size: $font-size--m;
 	font-weight: $font-weight--semibold;
 	white-space: normal;
 	text-decoration: none;
@@ -22,7 +26,7 @@
 
 	&:focus,
 	&:hover {
-		background-color: $color--accent;
+		background-color: $color--primary;
 	}
 
 	&:disabled {
@@ -31,6 +35,7 @@
 		&:hover,
 		&:focus {
 			opacity: 0.5;
+			background-color: $color--gray-50;
 			cursor: not-allowed;
 		}
 	}

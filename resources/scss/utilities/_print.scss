@@ -10,7 +10,7 @@
 	*,
 	*:before,
 	*:after {
-		color: $color--darkest-gray !important;
+		color: $color--gray-80 !important;
 		background: transparent !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
@@ -61,7 +61,7 @@
 
 	blockquote,
 	pre {
-		border: $base__border;
+		border: $border;
 		page-break-inside: avoid;
 	}
 

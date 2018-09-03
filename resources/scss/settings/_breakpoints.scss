@@ -1,0 +1,25 @@
+////
+/// Media query breakpoint settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+$breakpoint--xxs: 512px;
+$breakpoint--xs: 640px;
+$breakpoint--s: 768px;
+$breakpoint--m: 896px;
+$breakpoint--l: 1024px;
+$breakpoint--xl: 1152px;
+$breakpoint--xxl: 1280px;
+
+$breakpoints: (
+	xxs: $breakpoint--xxs,
+	xs: $breakpoint--xs,
+	s: $breakpoint--s,
+	m: $breakpoint--m,
+	l: $breakpoint--l,
+	xl: $breakpoint--xl,
+	xxl: $breakpoint--xxl,
+);

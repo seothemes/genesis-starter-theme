@@ -1,0 +1,16 @@
+////
+/// Setting imports.
+///
+/// Settings handle the configuration and don't output CSS. This is a good place
+/// to define things like variables.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+@import "breakpoints";
+@import "colors";
+@import "global";
+@import "spacing";
+@import "typography";

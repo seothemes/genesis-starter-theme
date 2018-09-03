@@ -1,0 +1,37 @@
+////
+/// Hide Visually
+///
+/// @group  Abstracts
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+@mixin hide($focus: null) {
+
+	@if null == $focus {
+		overflow: hidden;
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute !important;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		clip-path: inset(50%);
+		word-wrap: normal !important;
+	} @else if focus == $focus or true == $focus {
+		display: block;
+		clip: auto !important;
+		z-index: 100000;
+		top: 5px;
+		left: 5px;
+		width: auto;
+		height: auto;
+		padding: $spacing--m $spacing--l;
+		color: $color--gray-80;
+		background-color: $color--gray-10;
+		clip-path: none;
+		font-size: 1em;
+		line-height: normal;
+		text-decoration: none;
+	}
+}

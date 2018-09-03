@@ -4,7 +4,7 @@
 
 	&,
 	a {
-		color: $color--dark-gray;
+		color: $color--gray-70;
 	}
 
 	a {
@@ -12,7 +12,7 @@
 
 		&:focus,
 		&:hover {
-			color: $color--accent;
+			color: $color--primary;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 	&,
 	td {
-		border-color: $color--lighter-gray;
+		border-color: $color--gray-20;
 		border-radius: 0;
 		line-height: 1.75;
 		word-break: normal;
@@ -29,7 +29,7 @@
 			margin-bottom: 10px;
 			font-size: 1.8rem;
 
-			@include grid-media($screen--xs) {
+			@include media(xs) {
 				margin-bottom: 0;
 			}
 		}

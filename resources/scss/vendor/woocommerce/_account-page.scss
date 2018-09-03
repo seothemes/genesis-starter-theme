@@ -31,7 +31,7 @@
 .woocommerce-MyAccount-navigation {
 	margin-bottom: 40px;
 	padding: 20px;
-	border: 1px solid $color--lighter-gray;
+	border: 1px solid $color--gray-20;
 
 	ul {
 		margin-bottom: 0;
@@ -47,7 +47,7 @@
 			}
 
 			&.is-active > a {
-				color: $color--dark-gray;
+				color: $color--gray-70;
 				font-weight: 700;
 			}
 		}

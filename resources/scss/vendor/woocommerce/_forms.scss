@@ -14,7 +14,7 @@
 		border: 0;
 		border-radius: 0;
 		color: $color--white;
-		background-color: $color--dark-gray;
+		background-color: $color--gray-70;
 		font-size: 1.6rem;
 		font-weight: 600;
 		text-align: center;
@@ -25,7 +25,7 @@
 		&:hover,
 		&:focus {
 			color: $color--white;
-			background-color: $color--accent;
+			background-color: $color--primary;
 		}
 	}
 
@@ -56,7 +56,7 @@
 		.form-row.woocommerce-validated input.input-text,
 		.form-row.woocommerce-validated select,
 		.form-row.woocommerce-validated .select2-container {
-			border-color: $color--lighter-gray;
+			border-color: $color--gray-20;
 			border-radius: 0;
 		}
 	}
@@ -75,7 +75,7 @@
 	}
 }
 
-@include grid-media($screen--xs) {
+@include media(xs) {
 
 	.woocommerce form .form-row-first,
 	.woocommerce-page form .form-row-first,
@@ -104,7 +104,7 @@
 	td.actions .coupon .input-text {
 		width: 150px;
 		padding: 5px 20px;
-		border-color: $color--lighter-gray;
+		border-color: $color--gray-20;
 	}
 
 	input {

@@ -3,14 +3,14 @@
 
 	&:before,
 	li {
-		border-color: $color--lighter-gray;
+		border-color: $color--gray-20;
 	}
 
 	li {
 		display: block;
 		margin: 0;
 		padding: 0;
-		border: 1px solid $color--lighter-gray;
+		border: 1px solid $color--gray-20;
 		border-bottom: 0;
 		border-radius: 0;
 		background-color: $color--white;
@@ -21,21 +21,21 @@
 		}
 
 		&:last-child {
-			border-bottom: 1px solid $color--lighter-gray;
+			border-bottom: 1px solid $color--gray-20;
 		}
 
 		&.active {
-			border-bottom-color: $color--lighter-gray;
+			border-bottom-color: $color--gray-20;
 		}
 
 		a {
 			display: block;
 			padding: 0.5em 1em;
-			color: $color--dark-gray;
+			color: $color--gray-70;
 
 			&:focus,
 			&:hover {
-				color: $color--accent;
+				color: $color--primary;
 			}
 		}
 
@@ -49,7 +49,7 @@
 }
 
 
-@include grid-media($screen--m) {
+@include media(m) {
 
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
@@ -58,7 +58,7 @@
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li {
 		display: inline-block;
 		margin: 0 -5px;
-		background-color: $color--lightest-gray;
+		background-color: $color--gray-10;
 	}
 
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
@@ -72,7 +72,7 @@
 
 }
 
-@include grid-media($screen--l) {
+@include media(l) {
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
@@ -81,7 +81,7 @@
 	.woocommerce div.product .woocommerce-tabs ul.tabs li {
 		display: inline-block;
 		margin: 0 -5px;
-		background-color: $color--lightest-gray;
+		background-color: $color--gray-10;
 	}
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs li.active {

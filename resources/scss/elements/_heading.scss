@@ -11,32 +11,32 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 $spacing--s;
+	margin: 0 0 $spacing--m;
 	font-family: $font-family--heading;
 	font-weight: $font-weight--regular;
 	line-height: $line-height--s;
 }
 
 h1 {
-	font-size: $font-size--h1;
+	font-size: $font-size--xxxxl;
 }
 
 h2 {
-	font-size: $font-size--h2;
+	font-size: $font-size--xxxl;
 }
 
 h3 {
-	font-size: $font-size--h3;
+	font-size: $font-size--xxl;
 }
 
 h4 {
-	font-size: $font-size--h4;
+	font-size: $font-size--xl;
 }
 
 h5 {
-	font-size: $font-size--h5;
+	font-size: $font-size--l;
 }
 
 h6 {
-	font-size: $font-size--h6;
+	font-size: $font-size--m;
 }

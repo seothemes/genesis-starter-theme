@@ -5,18 +5,11 @@
 /// of the design is some type of component, whether it's a one-off or reusable
 /// block of code.
 ///
-/// For small components, there is the `components/` folder. While `layout/` is
-/// macro (defining the global wireframe), `components/` is more focused on
-/// widgets. It contains all kind of specific modules like a slider, a
-/// loader, a widget, and basically anything along those lines.
-///
-/// There are usually a lot of files in components/ since the whole
-/// site/application should be mostly composed of tiny modules.
-///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   http://sass-guidelin.es/#components-folder
+/// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
+
 @import "title-area";
 @import "menu";
 @import "sub-menu";

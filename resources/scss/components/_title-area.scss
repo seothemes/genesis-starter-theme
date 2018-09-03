@@ -15,7 +15,7 @@
 
 	.wp-custom-logo & {
 
-		@include hide-visually;
+		@include hide;
 	}
 }
 
@@ -24,7 +24,7 @@
 
 	.wp-custom-logo & {
 
-		@include hide-visually;
+		@include hide;
 	}
 }
 

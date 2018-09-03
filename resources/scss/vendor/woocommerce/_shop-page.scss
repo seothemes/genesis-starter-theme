@@ -19,12 +19,12 @@
 
 		h3,
 		.price .from {
-			color: $color--dark-gray;
+			color: $color--gray-70;
 		}
 
 		h3:hover,
 		.price {
-			color: $color--accent;
+			color: $color--primary;
 		}
 
 		/* MS Edge Bug Fix */
@@ -50,8 +50,8 @@
 			span {
 				display: inline-block;
 				padding: 8px 12px;
-				color: $color--dark-gray;
-				background-color: $color--lightest-gray;
+				color: $color--gray-70;
+				background-color: $color--gray-10;
 				font-size: 1.6rem;
 				font-weight: 600;
 				line-height: 1.625;
@@ -63,7 +63,7 @@
 			a:hover,
 			span.current {
 				color: $color--white;
-				background-color: $color--dark-gray;
+				background-color: $color--gray-70;
 			}
 		}
 	}

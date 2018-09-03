@@ -1,13 +1,13 @@
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
-	border-top-color: $color--accent;
-	background-color: $color--lightest-gray;
+	border-top-color: $color--primary;
+	background-color: $color--gray-10;
 
 	&:before,
 	&:before,
 	&:before {
-		color: $color--accent;
+		color: $color--primary;
 	}
 }
 
@@ -19,7 +19,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	width: 100%;
 	margin-bottom: 20px;
 
-	@include grid-media($screen--xs) {
+	@include media(xs) {
 		width: auto;
 		margin-bottom: 0;
 	}

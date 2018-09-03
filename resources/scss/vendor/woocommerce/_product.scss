@@ -4,7 +4,7 @@
 
 		p.price,
 		span.price {
-			color: $color--accent;
+			color: $color--primary;
 			line-height: 1.5;
 		}
 
@@ -25,7 +25,7 @@
 	}
 }
 
-@include grid-media($screen--xs) {
+@include media(xs) {
 
 	.woocommerce ul.products li.product .button,
 	.woocommerce .woocommerce-ordering,

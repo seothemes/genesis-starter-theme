@@ -7,26 +7,26 @@
 ////
 body {
 	margin: 0;
-	color: $color--darker-gray;
+	color: $color--gray-70;
 	background-color: $color--white;
 	font-family: $font-family--body;
-	font-size: $base__font-size;
+	font-size: $font-size--m;
 	font-weight: $font-weight--regular;
 	line-height: $line-height--m;
 
 	// Chrome fix
 	> div {
-		font-size: $base__font-size;
+		font-size: $font-size--m;
 	}
 }
 
 a {
-	color: $color--accent;
+	color: $color--primary;
 	text-decoration: none;
 
 	&:focus,
 	&:hover {
-		color: $color--accent;
+		color: $color--primary;
 		text-decoration: underline;
 	}
 }
@@ -40,7 +40,7 @@ hr {
 	clear: both;
 	margin: $spacing--m 0;
 	border: 0;
-	border-top: $base__border;
+	border-top: $border;
 	border-collapse: collapse;
 }
 
@@ -56,10 +56,6 @@ i {
 	font-style: italic;
 }
 
-mark {
-	background: $color--mark;
-}
-
 blockquote {
 	margin: $spacing--m;
 
@@ -69,7 +65,7 @@ blockquote {
 		top: -1em;
 		left: -2em;
 		height: 0;
-		font-size: $font-size--h1;
+		font-size: $font-size--xxxxl;
 		content: "“";
 	}
 }
@@ -78,14 +74,14 @@ code,
 kbd,
 samp {
 	padding: 0.05em 0.5em;
-	background-color: $color--lightest-gray;
+	background-color: $color--gray-10;
 	font-size: 90%;
 }
 
 pre {
 	overflow-x: scroll;
-	padding: 1em;
-	background-color: $color--lightest-gray;
+	padding: $spacing--m;
+	background-color: $color--gray-10;
 
 	code,
 	kbd,

@@ -10,7 +10,7 @@
 		&:disabled[disabled] {
 			padding: 16px 24px;
 			color: $color--white;
-			background-color: $color--dark-gray;
+			background-color: $color--gray-70;
 		}
 
 		&.alt {
@@ -23,7 +23,7 @@
 			&[disabled]:disabled:hover {
 				padding: 16px 24px;
 				color: $color--white;
-				background-color: $color--dark-gray;
+				background-color: $color--gray-70;
 			}
 		}
 	}

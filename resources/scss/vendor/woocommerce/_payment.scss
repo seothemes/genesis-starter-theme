@@ -3,10 +3,10 @@
 #add_payment_method #payment {
 	padding: 30px;
 	border-radius: 0;
-	background-color: $color--lightest-gray;
+	background-color: $color--gray-10;
 
 	div.payment_box {
-		background-color: $color--lighter-gray;
+		background-color: $color--gray-20;
 	}
 
 	div.payment_box:before {
@@ -14,6 +14,6 @@
 	}
 
 	ul.payment_methods {
-		border-color: $color--lighter-gray;
+		border-color: $color--gray-20;
 	}
 }

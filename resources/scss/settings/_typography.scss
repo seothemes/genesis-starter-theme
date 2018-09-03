@@ -1,0 +1,61 @@
+////
+/// Media query breakpoint settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Font sizes
+$font-sizes: (
+	xxxxs: $font-size / ($scale / 5),
+	xxxs: $font-size / ($scale / 4),
+	xxs: $font-size / ($scale / 3),
+	xs: $font-size / ($scale / 2),
+	s: $font-size / ($scale / 1),
+	m: $font-size,
+	l: $font-size * ($scale * 1),
+	xl: $font-size * ($scale * 2),
+	xxl: $font-size * ($scale * 3),
+	xxxl: $font-size * ($scale * 4),
+	xxxxl: $font-size * ($scale * 5),
+);
+
+$font-size--xxxxs: map_get($font-sizes, xxxxs);
+$font-size--xxxs: map_get($font-sizes, xxxs);
+$font-size--xxs: map_get($font-sizes, xxs);
+$font-size--xs: map_get($font-sizes, xs);
+$font-size--s: map_get($font-sizes, s);
+$font-size--m: map_get($font-sizes, m);
+$font-size--l: map_get($font-sizes, l);
+$font-size--xl: map_get($font-sizes, xl);
+$font-size--xxl: map_get($font-sizes, xxl);
+$font-size--xxxl: map_get($font-sizes, xxxl);
+$font-size--xxxxl: map_get($font-sizes, xxxxl);
+
+// Font stacks
+$font-stack--sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-stack--serif: "Georgia", "Times", "Times New Roman", serif;
+$font-stack--monospaced: "Consolas", "monaco", monospace;
+
+// Font families
+$font-family--heading: $font-stack--sans-serif;
+$font-family--body: $font-stack--sans-serif;
+$font-family--code: $font-stack--monospaced;
+
+// Font weights
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--semibold: 600;
+$font-weight--bold: 700;
+
+// Line height
+$line-height--xxxs: $phi / ($scale / 4);
+$line-height--xxs: $phi / ($scale / 3);
+$line-height--xs: $phi / ($scale / 2);
+$line-height--s: $phi / ($scale / 1);
+$line-height--m: $phi;
+$line-height--l: $phi * ($scale * 1);
+$line-height--xl: $phi * ($scale * 2);
+$line-height--xxl: $phi * ($scale * 3);
+$line-height--xxxl: $phi * ($scale * 4);

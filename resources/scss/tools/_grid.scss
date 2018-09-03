@@ -1,0 +1,131 @@
+////
+/// Breakpoint
+///
+/// Helper mixin to generate media queries.
+///
+/// @param {Breakpoint} $breakpoint [m] - Breakpoint size
+/// @param {Query} $query [min-width] - Min width or max width
+/// @output Media query
+///
+/// @example scss - Media query `.foo`
+///   .foo {
+///     display: none;
+///     @include breakpoint(s) {
+///       display: block;
+///     }
+///   }
+////
+
+@function round-width ($i) {
+	$width: floor(100 * $i * 100/ $grid-columns) / 100;
+
+	@return $width#{"%"};
+}
+
+@mixin grid {
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	> * {
+		float: left;
+		margin-right: $spacing--m;
+		margin-bottom: $spacing--m;
+	}
+
+	@supports (grid-area: auto) {
+		display: grid;
+		grid-column-gap: $spacing--m;
+		grid-row-gap: $spacing--m;
+
+		&:after,
+		&:before {
+			content: none;
+		}
+
+		> * {
+			margin-right: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+@mixin grid-auto($min-width, $fallback: 3) {
+
+	> * {
+		float: left;
+		width: calc(100% / #{$fallback} - #{$spacing--m});
+
+		&:nth-child(#{$fallback}n + 1) {
+			clear: both;
+		}
+	}
+
+	@supports (grid-area: auto) {
+		grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+
+		> * {
+			width: auto;
+			margin: 0;
+		}
+	}
+}
+
+@mixin grid-layout($cols...) {
+	$i: 1;
+
+	@each $col in $cols {
+
+		> :nth-of-type(#{$i}) {
+			width: calc(#{round-width(nth($col, 1))} - #{$spacing--m});
+		}
+		$i: $i + 1;
+	}
+
+	@supports (grid-area: auto) {
+		$i: 1;
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		@each $col in $cols {
+
+			> :nth-of-type(#{$i}) {
+				grid-column-end: span nth($col, 1);
+
+				@if length($col) > 1 {
+					grid-row-end: span nth($col, 2);
+				}
+			}
+			$i: $i + 1;
+		}
+
+		> :nth-child(n) {
+			width: auto;
+			margin: 0;
+		}
+	}
+}
+
+@mixin grid-advanced($cols...) {
+
+	@supports (grid-area: auto) {
+		$i: 1;
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		@each $col in $cols {
+
+			> :nth-of-type(#{$i}) {
+				grid-column-start: nth($col, 1);
+				grid-column-end: nth($col, 2);
+				grid-row-start: nth($col, 3);
+				grid-row-end: nth($col, 4);
+			}
+			$i: $i + 1;
+		}
+	}
+}
