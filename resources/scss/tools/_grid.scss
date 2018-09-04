@@ -1,19 +1,9 @@
 ////
-/// Breakpoint
+/// Grid mixins
 ///
-/// Helper mixin to generate media queries.
-///
-/// @param {Breakpoint} $breakpoint [m] - Breakpoint size
-/// @param {Query} $query [min-width] - Min width or max width
-/// @output Media query
-///
-/// @example scss - Media query `.foo`
-///   .foo {
-///     display: none;
-///     @include breakpoint(s) {
-///       display: block;
-///     }
-///   }
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
 @function round-width ($i) {

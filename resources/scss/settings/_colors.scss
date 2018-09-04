@@ -7,23 +7,23 @@
 ////
 
 // Palette
-$colors: (
-	primary: dodgerblue,
-	accent: orange,
-	success: mediumseagreen,
-	warning: gold,
-	error: crimson,
-	white: white,
-	black: black,
-);
+$color--primary: #1e90ff;
+$color--accent: #ffa500;
+$color--success: #59b377;
+$color--warning: #ffee58;
+$color--error: #dc4649;
+$color--white: #fff;
+$color--black: #1e1f22;
 
-$color--primary: map_get($colors, primary);
-$color--primary: map_get($colors, accent);
-$color--success: map_get($colors, success);
-$color--warning: map_get($colors, warning);
-$color--error: map_get($colors, error);
-$color--white: map_get($colors, white);
-$color--black: map_get($colors, black);
+$colors: (
+	primary: $color--primary,
+	accent: $color--accent,
+	success: $color--success,
+	warning: $color--warning,
+	error: $color--error,
+	white: $color--white,
+	black: $color--black,
+);
 
 // Grayscale
 $color--gray-90: mix($color--white, $color--black, 0.9);
