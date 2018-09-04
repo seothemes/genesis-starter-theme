@@ -6,31 +6,27 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
-// Scales
-$phi: 1.61803398875;
-$scale: ($phi / 10) + 1;
-
 // Typography
-$font-size: 1.6rem;
+$base--font-size: 1.6rem;
 
 // Grid
-$grid-columns: 12;
+$base--grid-columns: 12;
 
 // Layout
-$width--sidebar: 30rem;
-$width--content: calc(100% - (#{$width--sidebar} + #{$font-size}));
+$base--width--sidebar: 30rem;
+$base--width--content: calc(100% - (#{$base--width--sidebar} + #{$base--font-size}));
 
 // Borders
-$border--radius: 0;
-$border--width: 1px;
-$border--style: solid;
-$border--color: $color--gray-20;
-$border: $border--width $border--style $border--color;
+$base--border--radius: 0;
+$base--border--width: 1px;
+$base--border--style: solid;
+$base--border--color: $color--gray-20;
+$base--border: $base--border--width $base--border--style $base--border--color;
 
 // Shadows
-$box-shadow--x: 0;
-$box-shadow--y: $font-size;
-$box-shadow--blur: $font-size * 2;
-$box-shadow--spread: 0;
-$box-shadow--color: $color--gray-20;
-$box-shadow: $box-shadow--x $box-shadow--y $box-shadow--blur $box-shadow--spread $box-shadow--color;
+$base--box-shadow--x: 0;
+$base--box-shadow--y: $base--font-size;
+$base--box-shadow--blur: $base--font-size * 2;
+$base--box-shadow--spread: 0;
+$base--box-shadow--color: $color--gray-20;
+$base--box-shadow: $base--box-shadow--x $base--box-shadow--y $base--box-shadow--blur $base--box-shadow--spread $base--box-shadow--color;

@@ -13,7 +13,7 @@ $color--success: #59b377;
 $color--warning: #ffee58;
 $color--error: #dc4649;
 $color--white: #fff;
-$color--black: #1e1f22;
+$color--black: #121214;
 
 $colors: (
 	primary: $color--primary,
@@ -26,15 +26,15 @@ $colors: (
 );
 
 // Grayscale
-$color--gray-90: mix($color--white, $color--black, 0.9);
-$color--gray-80: mix($color--white, $color--black, 0.8);
-$color--gray-70: mix($color--white, $color--black, 0.7);
-$color--gray-60: mix($color--white, $color--black, 0.6);
-$color--gray-50: mix($color--white, $color--black, 0.5);
-$color--gray-40: mix($color--white, $color--black, 0.4);
-$color--gray-30: mix($color--white, $color--black, 0.3);
-$color--gray-20: mix($color--white, $color--black, 0.2);
-$color--gray-10: mix($color--white, $color--black, 0.1);
+$color--gray-90: lighten($color--black, 10%);
+$color--gray-80: lighten($color--black, 20%);
+$color--gray-70: lighten($color--black, 30%);
+$color--gray-60: lighten($color--black, 40%);
+$color--gray-50: lighten($color--black, 50%);
+$color--gray-40: lighten($color--black, 60%);
+$color--gray-30: lighten($color--black, 70%);
+$color--gray-20: lighten($color--black, 80%);
+$color--gray-10: lighten($color--black, 90%);
 
 // Social
 $color--dribbble: #ea4c89;

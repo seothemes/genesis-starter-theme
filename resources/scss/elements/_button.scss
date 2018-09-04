@@ -6,18 +6,15 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"],
+#{$all-buttons},
 .button {
 	display: inline-block;
 	width: auto;
 	padding: $spacing--m $spacing--l;
 	border: 0;
-	border-radius: $border--radius;
+	border-radius: $base--border--radius;
 	color: $color--white;
-	background-color: $color--gray-70;
+	background-color: $color--gray-80;
 	font-size: $font-size--m;
 	font-weight: $font-weight--semibold;
 	white-space: normal;

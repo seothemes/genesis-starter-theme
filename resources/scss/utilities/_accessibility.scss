@@ -9,12 +9,12 @@
 .screen-reader-text,
 .screen-reader-text span {
 
-	@include hide;
+	@include hide-visually;
 
 	&:active,
 	&:focus {
 
-		@include hide(focus);
+		@include hide-visually(unhide);
 	}
 }
 
@@ -33,6 +33,6 @@
 }
 
 :focus {
-	outline: $border;
+	outline: $base--border;
 	color: $color--gray-70;
 }

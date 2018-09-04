@@ -14,7 +14,7 @@ table {
 }
 
 tbody {
-	border-bottom: $border;
+	border-bottom: $base--border;
 }
 
 th,
@@ -32,5 +32,5 @@ th {
 }
 
 td {
-	border-top: $border;
+	border-top: $base--border;
 }
