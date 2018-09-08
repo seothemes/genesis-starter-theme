@@ -10,5 +10,10 @@
 
 	@include media(m) {
 		flex: 1;
+		margin-left: $spacing--l;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
 	}
 }
