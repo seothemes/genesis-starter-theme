@@ -16,12 +16,11 @@ default_version=`perl -ne 'print if /(?:\"version\": \")(.*?)(?:\")/' './package
 bs='\'
 setup_sh="./setup.sh"
 functions_php="./functions.php"
-config_php="./config/config.php"
+config_php="./config/defaults.php"
 package_json="./package.json"
 composer_json="./composer.json"
 gulpfile="./Gulpfile.js"
 readme="./README.md"
-app_readme="./app/README.md"
 changelog="./CHANGELOG.md"
 
 # Text styles
@@ -138,7 +137,6 @@ perl -p -i -e "s|$default_name|$name|g" $package_json
 perl -p -i -e "s|$default_name|$name|g" $composer_json
 perl -p -i -e "s|$default_name|$name|g" $gulpfile
 perl -p -i -e "s|$default_name|$name|g" $readme
-perl -p -i -e "s|$default_name|$name|g" $app_readme
 perl -p -i -e "s|$default_name|$name|g" $changelog
 
 echo "1/8 --> Search & replace name ........ ${green}done${txtreset}"
@@ -153,7 +151,6 @@ perl -p -i -e "s|$default_id|$id|g" $package_json
 perl -p -i -e "s|$default_id|$id|g" $composer_json
 perl -p -i -e "s|$default_id|$id|g" $gulpfile
 perl -p -i -e "s|$default_id|$id|g" $readme
-perl -p -i -e "s|$default_id|$id|g" $app_readme
 
 echo "2/8 --> Search & replace id .......... ${green}done${txtreset}"
 
@@ -167,7 +164,6 @@ perl -p -i -e "s|$default_author|$author|g" $package_json
 perl -p -i -e "s|$default_author|$author|g" $composer_json
 perl -p -i -e "s|$default_author|$author|g" $gulpfile
 perl -p -i -e "s|$default_author|$author|g" $readme
-perl -p -i -e "s|$default_author|$author|g" $app_readme
 
 echo "3/8 --> Change author name ........... ${green}done${txtreset}"
 
@@ -181,7 +177,6 @@ perl -p -i -e "s|$default_author_url|$author_url|g" $package_json
 perl -p -i -e "s|$default_author_url|$author_url|g" $composer_json
 perl -p -i -e "s|$default_author_url|$author_url|g" $gulpfile
 perl -p -i -e "s|$default_author_url|$author_url|g" $readme
-perl -p -i -e "s|$default_author_url|$author_url|g" $app_readme
 
 echo "4/8 --> Change author URL ............ ${green}done${txtreset}"
 
@@ -194,7 +189,6 @@ perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $package_json
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $gulpfile
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $readme
-perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $app_readme
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $composer_json
 
 perl -p -i -e "s|$default_company|$company|g" $composer_json

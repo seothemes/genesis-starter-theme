@@ -13,7 +13,6 @@
   "dependencies": {},
   "devDependencies": {
     "bourbon": "^5.1.0",
-    "bourbon-neat": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
