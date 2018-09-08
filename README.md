@@ -103,9 +103,9 @@ It replaces the following details with your own:
 
 The Genesis Starter Theme is intended to be used with [D2 Core Components](https://packagist.org/packages/d2/). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme.
 
-Components can be added or removed depending on the requirements of your project. For example, to remove the PluginActivation component, run `composer remove d2/core-plugin-activation` from your theme's root directory, then remove it's config key from the return statement in `config/defaults.php`.
+Components are only loaded when a config key is provided. They can be added or removed depending on the requirements of your project. For example, to remove the PluginActivation component, simply remove it's config key from the return statement in `config/defaults.php`.
 
-The `app` directory is provided to house project-specific PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Custom components can be created in the same way other `D2 Core Components` are, by first creating a class which extends the `D2 Core` class and then adding it's configuration to the theme's config file. An [Example Component](https://github.com/seothemes/genesis-starter-theme/blob/master/app/Example.php) is included with the theme to get you started.
+The `app` directory is provided to house project-specific PHP files if additional functionality is required. It comes pre-configured with PSR-4 autoloading. Custom components can be created in the same way other Core components are, by first creating a class which extends the `Component` class and then adding it's configuration to the theme's config file. An [Example Component](https://github.com/seothemes/genesis-starter-theme/blob/master/app/Example.php) is included with the theme to get you started.
 
 Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 

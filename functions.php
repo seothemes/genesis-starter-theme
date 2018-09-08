@@ -35,7 +35,7 @@ function child_theme_setup() {
 	$config = require_once __DIR__ . '/config/defaults.php';
 
 	/**
-	 * Set up child theme using d2/core.
+	 * Set up child theme using seothemes/core.
 	 *
 	 * Passes all of the theme configuration over to the core, which is responsible
 	 * for instantiating the components and injecting the correct configuration.
