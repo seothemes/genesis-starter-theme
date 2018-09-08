@@ -19,14 +19,14 @@ use SeoThemes\Core\Component;
  * Example config (usually located at config/defaults.php):
  *
  * ```
- * $d2_example = [
+ * $core_example = [
  *     Example::SUB_CONFIG => [
  *         Example::KEY => 'value',
  *     ],
  * ];
  *
  * return [
- *     Example::class => $d2_example,
+ *     Example::class => $core_example,
  * ];
  * ```
  */
