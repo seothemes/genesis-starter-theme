@@ -101,7 +101,7 @@ It replaces the following details with your own:
 
 ## Usage
 
-The Genesis Starter Theme is intended to be used with [D2 Core Components](https://packagist.org/packages/d2/). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme.
+The Genesis Starter Theme is intended to be used with [SEO Themes Core](https://packagist.org/packages/seothemes/core). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme.
 
 Components are only loaded when a config key is provided. They can be added or removed depending on the requirements of your project. For example, to remove the PluginActivation component, simply remove it's config key from the return statement in `config/defaults.php`.
 
