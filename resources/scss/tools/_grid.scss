@@ -13,6 +13,7 @@
 }
 
 @mixin grid {
+
 	&:before,
 	&:after {
 		display: table;

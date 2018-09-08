@@ -37,18 +37,26 @@
 
 		@include margin(null auto);
 
-		@include media(m) {
-			display: block;
-			width: auto;
-			margin: 0;
-			padding: $spacing--m $spacing--s;
-		}
-
 		@include media(m, max-width) {
 
 			.no-js & {
 				width: 100%;
 				padding: 0;
+			}
+		}
+
+		@include media(m) {
+			display: block;
+			width: auto;
+			margin: 0;
+			padding: $spacing--m $spacing--s;
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+
+			&:first-of-type {
+				padding-left: 0;
 			}
 		}
 	}

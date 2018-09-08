@@ -27,13 +27,6 @@
 		display: flex;
 		position: relative;
 	}
-
-	.menu > .menu-item {
-
-		&:last-of-type {
-			padding-right: 0;
-		}
-	}
 }
 
 // Secondary nav layout.
@@ -47,13 +40,6 @@
 
 		@include media(m) {
 			justify-content: flex-start;
-		}
-
-		> .menu-item {
-
-			&:first-of-type {
-				padding-left: 0;
-			}
 		}
 	}
 }
