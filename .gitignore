@@ -12,6 +12,10 @@ vendor
 package-lock.json
 composer.lock
 
+# Ignore generated stylesheets
+style.css
+woocommerce.css
+
 # Ignore editor files.
 .idea
 
