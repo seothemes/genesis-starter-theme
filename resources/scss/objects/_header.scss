@@ -1,0 +1,26 @@
+////
+/// Header layout.
+///
+/// @group  Layout
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-header {
+	position: relative;
+	border-bottom: $base--border;
+
+	.wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		@include media(m) {
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+// Header widget area layout.
+.header-widget-area {}

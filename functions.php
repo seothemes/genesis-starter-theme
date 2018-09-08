@@ -6,16 +6,18 @@
  * Customizations should be made in the form of a core-functionality
  * plugin so that the theme can be updated without losing changes.
  *
- * @package   SEOThemes\GenesisStarterTheme
+ * @package   SeoThemes\GenesisStarterTheme
  * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-3.0-or-later
  */
 
-namespace SEOThemes\GenesisStarterTheme;
+namespace SeoThemes\GenesisStarterTheme;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup' );
+use SeoThemes\Core\Theme;
+
+add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup', 15 );
 /**
  * Child theme setup.
  *
@@ -33,24 +35,15 @@ function child_theme_setup() {
 	$config = require_once __DIR__ . '/config/defaults.php';
 
 	/**
-	 * Set up child theme using d2/core.
+	 * Set up child theme using seothemes/core.
 	 *
-	 * Passes all of the theme configuration over to d2/core, which is responsible
+	 * Passes all of the theme configuration over to the core, which is responsible
 	 * for instantiating the components and injecting the correct configuration.
 	 * Custom components can be created and loaded from the `app/` directory.
 	 *
-	 * @link  https://github.com/d2themes/core
-	 *
-	 * @uses  \D2\Core\Theme::setup()
+	 * @link  https://github.com/seothemes/core
 	 *
 	 * @since 3.2.0
 	 */
-	\D2\Core\Theme::setup( $config );
-
-	/**
-	 * Hook to execute code after child theme setup.
-	 *
-	 * @since  3.2.0
-	 */
-	do_action( 'child_theme_setup' );
+	Theme::setup( $config );
 }

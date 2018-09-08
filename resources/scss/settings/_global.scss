@@ -1,0 +1,30 @@
+////
+/// Global base settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Borders
+$base--border--radius: 0;
+$base--border--width: 1px;
+$base--border--style: solid;
+$base--border--color: $color--gray-20;
+$base--border: $base--border--width $base--border--style $base--border--color;
+
+// Shadows
+$base--box-shadow--x: 0;
+$base--box-shadow--y: 0;
+$base--box-shadow--blur: $base--font-size;
+$base--box-shadow--spread: 0;
+$base--box-shadow--color: $color--black;
+$base--box-shadow--opacity: 0.1;
+$base--box-shadow: $base--box-shadow--x $base--box-shadow--y $base--box-shadow--blur $base--box-shadow--spread rgba($base--box-shadow--color, $base--box-shadow--opacity);
+
+// Transition
+$base--transition-property: all;
+$base--transition-duration: 0.2s;
+$base--transition-timing-function: ease;
+$base--transition-delay: 0;
+$base--transition: $base--transition-property $base--transition-duration $base--transition-timing-function $base--transition-delay;

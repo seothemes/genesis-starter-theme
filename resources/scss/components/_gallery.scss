@@ -1,0 +1,98 @@
+////
+/// Gallery layout.
+///
+/// @group  Layout
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+
+	// Gallery item.
+	&-item {
+		width: $one-half;
+		margin-bottom: $layout--grid-gutter;
+
+		.gallery-columns-1 & {
+			width: 100%;
+		}
+
+		@include media(m) {
+			margin-left: $layout--grid-gutter;
+
+			.gallery-columns-1 & {
+				margin-left: 0;
+			}
+
+			.gallery-columns-2 & {
+				width: $one-half;
+
+				&:nth-of-type(2n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-3 & {
+				width: $one-third;
+
+				&:nth-of-type(3n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-4 & {
+				width: $one-fourth;
+
+				&:nth-of-type(4n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-5 & {
+				width: $one-fifth;
+
+				&:nth-of-type(5n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-6 & {
+				width: $one-sixth;
+
+				&:nth-of-type(6n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-7 & {
+				width: $one-seventh;
+
+				&:nth-of-type(7n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-8 & {
+				width: $one-eighth;
+
+				&:nth-of-type(8n + 1) {
+					margin-left: 0;
+				}
+			}
+
+			.gallery-columns-9 & {
+				width: $one-ninth;
+
+				&:nth-of-type(9n + 1) {
+					margin-left: 0;
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}

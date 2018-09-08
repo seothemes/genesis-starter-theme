@@ -7,7 +7,12 @@ var genesis_starter_theme = (function ($) {
      * @since 0.1.0
      */
     var functionName = function () {
-            // Empty function, do all the things.
+
+            // Remove no-js body class.
+            $('body').removeClass('no-js');
+
+            // Initialize fitVids script.
+            $('.site-container').fitVids();
         },
 
         /**

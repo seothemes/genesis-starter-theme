@@ -1,0 +1,22 @@
+////
+/// Footer layout.
+///
+/// @group  Layout
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-footer {
+	margin-top: auto;
+	border-top: $base--border;
+}
+
+// Footer widgets layout.
+.footer-widgets {
+	padding: $spacing--m 0;
+}
+
+// Footer credits layout.
+.footer-credits {
+	padding: $spacing--s 0;
+}

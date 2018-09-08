@@ -1,0 +1,35 @@
+////
+/// Widget component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.widget {
+	margin-bottom: $spacing--m;
+
+	// Widget wrapper.
+	&-wrap {}
+
+	// Widget title.
+	&-title {}
+
+	// Featured content widget.
+	&.featured-content {
+
+		.entry {
+
+			@include clearfix;
+		}
+
+		.entry-image {
+			max-width: $spacing--xxl;
+		}
+
+		.entry-title {
+			margin-bottom: $spacing--xxs;
+			font-size: $base--font-size;
+		}
+	}
+}

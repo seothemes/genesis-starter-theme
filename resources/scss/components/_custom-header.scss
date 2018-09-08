@@ -1,0 +1,22 @@
+////
+/// Custom header component.
+///
+/// This handles the output of `the_custom_header_markup()` from core WP's
+/// `custom-header` feature.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.wp-custom-header {
+
+	// Video play/pause button.
+	&-video-button {}
+
+	// Video play button.
+	&-video-play {}
+
+	// Video pause button.
+	&-video-pause {}
+}

@@ -2,16 +2,16 @@
 /**
  * Example of how to create a custom component which accepts a config.
  *
- * @package   SEOThemes\GenesisStarterTheme
+ * @package   SeoThemes\GenesisStarterTheme
  * @link      https://seothemes.com/genesis-starter-theme
  * @author    SEO Themes
  * @copyright Copyright © 2018 SEO Themes
  * @license   GPL-3.0-or-later
  */
 
-namespace SEOThemes\GenesisStarterTheme;
+namespace SeoThemes\GenesisStarterTheme;
 
-use D2\Core\Core;
+use SeoThemes\Core\Component;
 
 /**
  * Example of how to create a custom component.
@@ -19,18 +19,18 @@ use D2\Core\Core;
  * Example config (usually located at config/defaults.php):
  *
  * ```
- * $d2_example = [
+ * $core_example = [
  *     Example::SUB_CONFIG => [
  *         Example::KEY => 'value',
  *     ],
  * ];
  *
  * return [
- *     Example::class => $d2_example,
+ *     Example::class => $core_example,
  * ];
  * ```
  */
-class Example extends Core {
+class Example extends Component {
 
 	const SUB_CONFIG = 'sub-config';
 	const KEY = 'key';

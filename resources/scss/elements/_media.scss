@@ -1,0 +1,30 @@
+////
+/// Media.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+embed,
+iframe,
+object,
+video,
+.wp-caption {
+	width: 100%;
+	max-width: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+figure {
+	margin: 0;
+}
+
+iframe {
+	border: 0;
+}

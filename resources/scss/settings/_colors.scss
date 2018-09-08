@@ -1,0 +1,55 @@
+////
+/// Color settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Palette
+$color--primary: #1e90ff;
+$color--accent: #ffa500;
+$color--success: #59b377;
+$color--warning: #ffee58;
+$color--error: #dc4649;
+$color--white: #fff;
+$color--black: #121214;
+
+$colors: (
+	primary: $color--primary,
+	accent: $color--accent,
+	success: $color--success,
+	warning: $color--warning,
+	error: $color--error,
+	white: $color--white,
+	black: $color--black,
+);
+
+// Grayscale
+$color--gray-90: lighten($color--black, 10%);
+$color--gray-80: lighten($color--black, 20%);
+$color--gray-70: lighten($color--black, 30%);
+$color--gray-60: lighten($color--black, 40%);
+$color--gray-50: lighten($color--black, 50%);
+$color--gray-40: lighten($color--black, 60%);
+$color--gray-30: lighten($color--black, 70%);
+$color--gray-20: lighten($color--black, 80%);
+$color--gray-10: lighten($color--black, 90%);
+
+// Social
+$color--dribbble: #ea4c89;
+$color--email: #049fb3;
+$color--facebook: #3b5998;
+$color--flickr: #ff0084;
+$color--github: #333;
+$color--gplus: #dd4b39;
+$color--linkedin: #007bb6;
+$color--pinterest: #bd081c;
+$color--rss: #f60;
+$color--stumbleupon: #eb4823;
+$color--tumblr: #32506d;
+$color--twitter: #1da1f2;
+$color--vimeo: #aad450;
+$color--youtube: #f00;
+$color--snapchat: #fffc00;
+$color--instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);

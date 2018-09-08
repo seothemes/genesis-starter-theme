@@ -1,0 +1,29 @@
+////
+/// Pagination component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.pagination {
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+	}
+
+	li {
+		margin-right: $spacing--s;
+	}
+
+	// Active item.
+	.active {}
+
+	// Previous item.
+	&-prev {}
+
+	// Next item.
+	&-next {}
+}

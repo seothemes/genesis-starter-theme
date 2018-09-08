@@ -1,0 +1,17 @@
+////
+/// Breadcrumb component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.breadcrumb {
+	margin: 0 0 $spacing--m;
+
+	// Link wrapper.
+	&-link-wrap {}
+
+	// Breadcrumb separator.
+	&-separator {}
+}

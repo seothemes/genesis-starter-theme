@@ -1,0 +1,30 @@
+////
+/// List.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+ul,
+ol,
+dl {
+	margin: 0 0 $spacing--m;
+	padding: 0;
+	list-style-position: inside;
+
+	ul,
+	ol,
+	dl {
+		margin: $spacing--s $spacing--m;
+	}
+}
+
+dd,
+dt {
+	margin: 0;
+}
+
+dt {
+	font-weight: $font-weight--semibold;
+}

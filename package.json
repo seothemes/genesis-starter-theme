@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Genesis starter theme with a modern development workflow.",
   "repository": {
     "type": "git",
@@ -10,7 +10,10 @@
   "license": "GPL-3.0-or-later",
   "main": "Gulpfile.js",
   "scripts": {},
+  "dependencies": {},
   "devDependencies": {
+    "bourbon": "^5.1.0",
+    "bourbon-neat": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
@@ -29,6 +32,5 @@
     "textdomain": "genesis-starter-theme",
     "template": "genesis",
     "tags": "one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready"
-  },
-  "dependencies": {}
+  }
 }

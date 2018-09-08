@@ -1,5 +1,13 @@
 # Genesis Starter Theme Changelog
 
+## [3.3.0] - 2018-09-08
+* Switch to seothemes/core composer package
+* Add Bourbon node package
+* Update Sass to ITCSS
+* Update styles, only provide base styling
+* Update Gutenberg compatibility
+* Remove hero image
+
 ## [3.2.0] - 2018-08-07
 * Add d2/core Composer package dependencies
 * Update config to use d2 instead of child theme library

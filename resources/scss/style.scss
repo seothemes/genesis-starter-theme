@@ -1,109 +1,27 @@
-/* Table of Contents
-- HTML5 Reset
-	- Baseline Normalize
-	- Box Sizing
-	- Float Clearing
-- Defaults
-	- Typographical Elements
-	- Headings
-	- Objects
-	- Gallery
-	- Forms
-	- Tables
-	- Screen Reader Text
-- Structure and Layout
-	- Column Classes
-	- Site Container
-	- Site Inner
-- Common Classes
-	- Avatar
-	- Genesis
-	- Search Form
-	- Titles
-	- WordPress
-	- Gutenberg
-- Widgets
-	- Featured Content
-- Plugins
-	- Genesis eNews Extended
-	- Genesis Simple FAQ
-	- Google Map
-	- Jetpack
-- Skip Links
-- Site Header
-	- Before Footer
-	- Title Area
-	- Hero Section
-- Site Navigation
-	- Responsive Menu
-	- Primary Menu
-	- Secondary Menu
-- Content Area
-	- Entry Content
-	- Entry Meta
-	- Pagination
-	- Entry Comments
-- Sidebar
-- Site Footer
-	- Before Footer
-	- Footer Widgets
-- Print Styles
-*/
+////
+/// Primary screen stylesheet.
+///
+/// This is the primary stylesheet. We don't actually write any styles here.
+/// Instead, we import all of our styles from partials within the sub-folders.
+/// This file is set up based on the Inverted Triangle CSS (ITCSS) system,
+/// which gets more specific as we drill down each layer.  This keeps your
+/// style code lean and organized.
+///
+/// The bulk of your code should be within the `/components` folder.  By
+/// default, we follow the Block-Element-Modifier (BEM) system in our HTML.
+/// Each "block" is a "component" in our CSS.
+///
+/// @group  Styles
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   http://sass-guidelin.es/#main-file
+////
 
-@import "utilities/*";
-
-/* # HTML5 Reset
----------------------------------------------------------------------------------------------------- */
-@import "html5-reset/*";
-
-/* # Defaults
----------------------------------------------------------------------------------------------------- */
-@import "defaults/*";
-
-/* # Structure and Layout
----------------------------------------------------------------------------------------------------- */
-@import "structure-and-layout/*";
-
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-@import "common-classes/*";
-
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-@import "widgets/*";
-
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-@import "plugins/*";
-
-/* # Skip Links
----------------------------------------------------------------------------------------------------- */
-@import "skip-links/*";
-
-/* # Site Header
----------------------------------------------------------------------------------------------------- */
-@import "site-header/*";
-
-/* # Site Navigation
----------------------------------------------------------------------------------------------------- */
-@import "site-navigation/*";
-
-/* # Content Area
----------------------------------------------------------------------------------------------------- */
-@import "content-area/*";
-
-/* # Sidebars
----------------------------------------------------------------------------------------------------- */
-@import "sidebar/*";
-
-/* # Front Page
----------------------------------------------------------------------------------------------------- */
-@import "front-page/*";
-
-/* # Site Footer
----------------------------------------------------------------------------------------------------- */
-@import "site-footer/*";
-
-/* # Print Styles
----------------------------------------------------------------------------------------------------- */
-@import "print-styles/*";
+@import "../../node_modules/bourbon/core/bourbon";
+@import "settings/_index";
+@import "tools/_index";
+@import "generic/_index";
+@import "elements/_index";
+@import "objects/_index";
+@import "components/_index";
+@import "utilities/_index";
+@import "vendor/_index";

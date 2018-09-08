@@ -4,8 +4,8 @@
 
 'use strict';
 
-var gulp    = require( 'gulp' ),
-	pkg     = require( './package.json' ),
+var pkg     = require( './package.json' ),
+    gulp    = require( 'gulp' ),
 	globs   = require( 'gulp-src-ordered-globs' ),
 	toolkit = require( 'gulp-wp-toolkit' ),
 	zip     = require( 'gulp-zip' );
@@ -35,6 +35,7 @@ toolkit.extendConfig(
 			js: ['resources/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
 			i18n: './resources/lang/',
+			sassdoc: './resources/scss/**/*.scss',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -47,7 +48,7 @@ toolkit.extendConfig(
 				'./vendor/autoload.php',
 				'./vendor/composer/*.php',
 				'./vendor/composer/installed.json',
-				'./vendor/d2/**/src/*.php',
+				'./vendor/seothemes/core/src/*.php',
 				'./vendor/tgmpa/tgm-plugin-activation/languages/*',
 				'./vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php'
 			]
@@ -62,11 +63,14 @@ toolkit.extendConfig(
 					outputStyle: 'expanded'
 				},
 				'woocommerce': {
-					src: 'resources/scss/woocommerce.scss',
+					src: 'resources/scss/vendor/woocommerce/__index.scss',
 					dest: './',
 					outputStyle: 'expanded'
 				}
-			}
+			},
+			sassdoc: {
+                dest: './sassdoc'
+            }
 		},
 		dest: {
             i18npo: './resources/lang/',
@@ -75,14 +79,14 @@ toolkit.extendConfig(
 			js: './resources/js/'
 		},
 		server: {
-            proxy: 'http://genesis-starter.test',
+            proxy: 'https://genesis-starter.test',
 			host: 'genesis-starter.test',
 			open: 'external',
-            port: '8000'
-            // https: {
-            // 	   'key': '/Users/seothemes/.valet/Certificates/genesis-starter.test.key',
-            // 	   'cert': '/Users/seothemes/.valet/Certificates/genesis-starter.test.crt'
-            // }
+            port: '8000',
+            https: {
+            	   'key': '/Users/seothemes/.valet/Certificates/genesis-starter.test.key',
+            	   'cert': '/Users/seothemes/.valet/Certificates/genesis-starter.test.crt'
+            }
 		}
 	}
 );
@@ -92,5 +96,10 @@ toolkit.extendTasks( gulp, {
 		return globs(toolkit.config.src.zip, {base: './'}).
 		pipe(zip(pkg.name + '-' + pkg.version + '.zip')).
 		pipe(gulp.dest('../'));
+	},
+    'sassdoc': function () {
+    	return gulp.src(toolkit.config.src.sassdoc)
+        .pipe(sassdoc(toolkit.config.css.sassdoc))
+        .resume();
 	}
 } );

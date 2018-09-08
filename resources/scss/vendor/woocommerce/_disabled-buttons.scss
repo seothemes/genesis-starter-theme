@@ -1,0 +1,30 @@
+.woocommerce {
+
+	a.button,
+	button.button,
+	input.button,
+	#respond input#submit {
+
+		&.disabled,
+		&:disabled,
+		&:disabled[disabled] {
+			padding: 16px 24px;
+			color: $color--white;
+			background-color: $color--gray-70;
+		}
+
+		&.alt {
+
+			&.disabled,
+			&.disabled:hover,
+			&:disabled,
+			&:disabled:hover,
+			&[disabled]:disabled,
+			&[disabled]:disabled:hover {
+				padding: 16px 24px;
+				color: $color--white;
+				background-color: $color--gray-70;
+			}
+		}
+	}
+}

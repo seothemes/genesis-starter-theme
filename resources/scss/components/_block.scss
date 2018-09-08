@@ -1,0 +1,171 @@
+////
+/// Gutenberg block component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.wp-block {
+
+	// Audio block.
+	&-audio {}
+
+	// Button block.
+	&-button {
+
+		&__link {}
+	}
+
+	// Categories block.
+	&-categories {
+
+		&-list {}
+
+		&-dropdown {}
+	}
+
+	// Code block.
+	&-code {}
+
+	// Columns block.
+	&-columns {
+
+		@include media(m, max-width) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-column {
+
+		@include media(m, max-width) {
+			flex: none;
+			width: 100%;
+		}
+
+		@include media(m) {
+			margin-left: $layout--grid-gutter;
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+	}
+
+	// Cover image block.
+	&-cover-image {
+
+		&.has-parallax {}
+
+		&.has-background-dim {}
+
+		&-text {}
+
+		&.has-left-content {}
+
+		&.has-right-content {}
+
+		&.has-left-content &-text {}
+
+		&.has-right-content &-text {}
+	}
+
+	// Embed block.
+	&-embed {
+
+		@include margin($spacing--m null);
+	}
+
+	// File block.
+	&-file {
+
+		&__button {}
+	}
+
+	// Gallery block.
+	&-gallery {
+
+		@include margin($spacing--m null);
+
+		&.is-cropped {}
+
+		&.columns-1 {}
+
+		&.columns-2 {}
+
+		&.columns-3 {}
+
+		.blocks-gallery-item {}
+
+		&.is-cropped .blocks-gallery-item {}
+
+		.blocks-gallery-item {
+
+			img {
+				align-self: center;
+			}
+		}
+
+		&.columns-1 .blocks-gallery-item {}
+	}
+
+	// Image block.
+	&-image {
+
+		@include margin($spacing--m null);
+
+		&.alignleft {
+			margin-right: $spacing--m;
+		}
+
+		&.alignright {
+			margin-left: $spacing--m;
+		}
+
+		&.alignwide {
+			max-width: 120%;
+		}
+
+		&.alignfull {
+			max-width: none;
+		}
+	}
+
+	// Latest posts block.
+	&-latest-posts {
+
+		&.is-grid {}
+
+		&__post-date {}
+	}
+
+	// Preformatted block.
+	&-preformatted {}
+
+	// Pullquote block.
+	&-pullquote {
+		border-left: 0;
+
+		@include margin($spacing--l null);
+
+		&.aligncenter {
+
+			@include margin($spacing--l null);
+		}
+	}
+
+	// Quote block.
+	&-quote {}
+
+	// Separator block.
+	&-separator {}
+
+	// Subhead block.
+	&-subhead {}
+
+	// Table block.
+	&-table {}
+
+	// Verse block.
+	&-verse {}
+}

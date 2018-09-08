@@ -1,0 +1,62 @@
+////
+/// Alignment classes.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.align {
+
+	&center,
+	&left,
+	&right {
+		display: block;
+		float: none;
+		margin: 0 auto $spacing--m;
+	}
+
+	&left {
+
+		@include media(m) {
+			float: left;
+			margin: 0 $spacing--m $spacing--m 0;
+		}
+	}
+
+	&right {
+
+		@include media(m) {
+			float: right;
+			margin: 0 0 $spacing--m $spacing--m;
+		}
+	}
+
+	&center {
+
+		@include clearfix;
+	}
+
+	&wide,
+	&full {
+		position: relative;
+		left: 50%;
+		width: 100vw;
+
+		img {
+			display: inline-block;
+			width: 100%;
+			margin: $spacing--m auto;
+		}
+	}
+
+	&wide {
+		max-width: 120%;
+		transform: translate(-50%);
+	}
+
+	&full {
+		max-width: none;
+		margin-left: -50vw;
+	}
+}

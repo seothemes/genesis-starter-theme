@@ -1,0 +1,60 @@
+////
+/// Title area component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.title-area {
+	line-height: $line-height--heading;
+
+	@include padding($spacing--s null);
+
+	@include media(m) {
+
+		@include padding($spacing--m null);
+	}
+}
+
+// Site title.
+.site-title {
+	margin: 0;
+	font-weight: $font-weight--semibold;
+
+	.wp-custom-logo & {
+
+		@include hide-visually;
+	}
+
+	a {
+		color: $color--gray-80;
+
+		&:hover,
+		&:focus {
+			color: $color--primary;
+		}
+	}
+}
+
+// Site description.
+.site-description {
+	margin: 0;
+	font-size: smaller;
+
+	.wp-custom-logo & {
+
+		@include hide-visually;
+	}
+}
+
+// Custom logo.
+.custom-logo {
+	width: 100%;
+	max-width: $layout--width--logo;
+
+	&-link {
+		display: flex;
+		align-items: center;
+	}
+}
