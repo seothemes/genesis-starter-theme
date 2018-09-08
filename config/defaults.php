@@ -171,6 +171,18 @@ $core_google_fonts = [
 $core_hooks = [
 	Hooks::ADD    => [
 		[
+			Hooks::TAG         => 'genesis_doctype',
+			Hooks::CALLBACK    => function () {
+				ob_start();
+				genesis_html5_doctype();
+				$markup = ob_get_clean();
+				echo str_replace( '<html', '<html class="admin-bar-showing" ', $markup );
+			},
+			Hooks::CONDITIONAL => function () {
+				return is_admin_bar_showing();
+			},
+		],
+		[
 			Hooks::TAG      => 'wp_enqueue_scripts',
 			Hooks::CALLBACK => 'genesis_enqueue_main_stylesheet',
 			Hooks::PRIORITY => 99,
@@ -192,7 +204,7 @@ $core_hooks = [
 			Hooks::TAG      => 'genesis_before',
 			Hooks::CALLBACK => function () {
 				?>
-				<script>
+                <script>
                     //<![CDATA[
                     (function () {
                         var c = document.body.classList;
@@ -200,7 +212,7 @@ $core_hooks = [
                         c.add('js');
                     })();
                     //]]>
-				</script>
+                </script>
 				<?php
 			},
 			Hooks::PRIORITY => 1,
@@ -294,6 +306,13 @@ $core_hooks = [
 		],
 	],
 	Hooks::REMOVE => [
+		[
+			Hooks::TAG         => 'genesis_doctype',
+			Hooks::CALLBACK    => 'genesis_do_doctype',
+			Hooks::CONDITIONAL => function () {
+				return is_admin_bar_showing();
+			}
+		],
 		[
 			Hooks::TAG      => 'genesis_meta',
 			Hooks::CALLBACK => 'genesis_load_stylesheet',

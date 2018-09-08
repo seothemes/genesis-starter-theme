@@ -14,6 +14,10 @@ html {
 	font-size: 62.5%; // 10px browser default
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+
+	&.admin-bar-showing {
+		height: calc(100% - 32px);
+	}
 }
 
 *,
