@@ -48,7 +48,7 @@ toolkit.extendConfig(
 				'./vendor/autoload.php',
 				'./vendor/composer/*.php',
 				'./vendor/composer/installed.json',
-				'./vendor/d2/**/src/*.php',
+				'./vendor/seothemes/core/src/*.php',
 				'./vendor/tgmpa/tgm-plugin-activation/languages/*',
 				'./vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php'
 			]
