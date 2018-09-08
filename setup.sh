@@ -19,6 +19,7 @@ functions_php="./functions.php"
 config_php="./config/defaults.php"
 package_json="./package.json"
 composer_json="./composer.json"
+example="./app/Example.php"
 gulpfile="./Gulpfile.js"
 readme="./README.md"
 changelog="./CHANGELOG.md"
@@ -138,6 +139,7 @@ perl -p -i -e "s|$default_name|$name|g" $composer_json
 perl -p -i -e "s|$default_name|$name|g" $gulpfile
 perl -p -i -e "s|$default_name|$name|g" $readme
 perl -p -i -e "s|$default_name|$name|g" $changelog
+perl -p -i -e "s|$default_name|$name|g" $example
 
 echo "1/8 --> Search & replace name ........ ${green}done${txtreset}"
 
@@ -151,6 +153,7 @@ perl -p -i -e "s|$default_id|$id|g" $package_json
 perl -p -i -e "s|$default_id|$id|g" $composer_json
 perl -p -i -e "s|$default_id|$id|g" $gulpfile
 perl -p -i -e "s|$default_id|$id|g" $readme
+perl -p -i -e "s|$default_id|$id|g" $example
 
 echo "2/8 --> Search & replace id .......... ${green}done${txtreset}"
 
@@ -164,6 +167,7 @@ perl -p -i -e "s|$default_author|$author|g" $package_json
 perl -p -i -e "s|$default_author|$author|g" $composer_json
 perl -p -i -e "s|$default_author|$author|g" $gulpfile
 perl -p -i -e "s|$default_author|$author|g" $readme
+perl -p -i -e "s|$default_author|$author|g" $example
 
 echo "3/8 --> Change author name ........... ${green}done${txtreset}"
 
@@ -177,6 +181,7 @@ perl -p -i -e "s|$default_author_url|$author_url|g" $package_json
 perl -p -i -e "s|$default_author_url|$author_url|g" $composer_json
 perl -p -i -e "s|$default_author_url|$author_url|g" $gulpfile
 perl -p -i -e "s|$default_author_url|$author_url|g" $readme
+perl -p -i -e "s|$default_author_url|$author_url|g" $example
 
 echo "4/8 --> Change author URL ............ ${green}done${txtreset}"
 
@@ -190,6 +195,7 @@ perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $gulpfile
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $readme
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $composer_json
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $example
 
 perl -p -i -e "s|$default_company|$company|g" $composer_json
 perl -p -i -e "s|$default_package|$package|g" $composer_json
@@ -223,7 +229,8 @@ echo "7/8 --> Updating defaults ............ ${green}done${txtreset}"
 
 formatted_version="  \"version\": \"${version}\","
 
-perl -p -i -e "s|$default_version|$formatted_version|g" './package.json'
+perl -p -i -e "s|$default_version|$formatted_version|g" $package_json
+perl -p -i -e "s|$default_version|$formatted_version|g" $example
 
 echo "8/8 --> Updating version ............. ${green}done${txtreset}"
 
