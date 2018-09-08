@@ -10,12 +10,12 @@
 .button {
 	display: inline-block;
 	width: auto;
+	margin: 0 0 $spacing--s;
 	padding: $spacing--m $spacing--l;
 	border: 0;
 	border-radius: $base--border--radius;
 	color: $color--white;
 	background-color: $color--gray-80;
-	font-size: $font-size--m;
 	font-weight: $font-weight--semibold;
 	white-space: normal;
 	text-decoration: none;
@@ -23,6 +23,8 @@
 
 	&:focus,
 	&:hover {
+		outline: none;
+		color: $color--white;
 		background-color: $color--primary;
 	}
 

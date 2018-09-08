@@ -6,14 +6,26 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+::placeholder {
+	opacity: 1; // Firefox fix
+	color: $color--gray-40;
+}
+
+label {
+	display: block;
+	margin: 0 0 $spacing--s;
+}
+
 input,
 select,
 textarea {
 	width: 100%;
+	margin: 0 0 $spacing--s;
 	padding: 1em;
 	border: $base--border;
+	border-radius: $base--border--radius;
+	background-clip: padding-box; // Remove iOS box shadow
 	box-shadow: none;
-	font-size: $font-size--m;
 
 	&:focus {
 		border-color: $color--primary;
@@ -27,6 +39,10 @@ textarea {
 		background-color: $color--gray-20;
 		cursor: not-allowed;
 	}
+}
+
+select {
+	height: 2em;
 }
 
 input[type="checkbox"],
@@ -49,11 +65,6 @@ input[type="search"] {
 	}
 }
 
-::placeholder {
-	opacity: 1; // Firefox fix
-	color: $color--gray-40;
-}
-
 fieldset {
 	min-width: 0;
 	margin: 0;
@@ -72,7 +83,7 @@ legend {
 	margin: 0 0 $spacing--s;
 	padding: 0;
 	font-family: $font-family--heading;
-	font-size: $font-size--l;
+	font-size: $font-size--h5;
 	font-weight: $font-weight--semibold;
 
 	+ * {

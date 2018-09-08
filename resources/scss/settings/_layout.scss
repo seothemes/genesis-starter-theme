@@ -1,0 +1,37 @@
+////
+/// Layout and width settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Grid settings.
+$layout--grid-columns: 12;
+$layout--grid-gutter: $spacing--l;
+
+// Width settings.
+$layout--width--wrap: $breakpoint--xl;
+$layout--width--logo: $breakpoint--xxxxs;
+$layout--width--sidebar: 30rem;
+$layout--width--content: calc(100% - (#{$layout--width--sidebar} + #{$spacing--l}));
+
+// Genesis column classes.
+$one-half: calc((100% - (#{$layout--grid-gutter} * 1)) / 2);
+$one-third: calc((100% - (#{$layout--grid-gutter} * 2)) / 3);
+$one-fourth: calc((100% - (#{$layout--grid-gutter} * 3)) / 4);
+$one-fifth: calc((100% - (#{$layout--grid-gutter} * 4)) / 5);
+$one-sixth: calc((100% - (#{$layout--grid-gutter} * 5)) / 6);
+$one-seventh: calc((100% - (#{$layout--grid-gutter} * 6)) / 7);
+$one-eighth: calc((100% - (#{$layout--grid-gutter} * 7)) / 8);
+$one-ninth: calc((100% - (#{$layout--grid-gutter} * 8)) / 9);
+$two-thirds: calc(#{$one-third} * 2 + #{$layout--grid-gutter});
+$two-fourths: calc(#{$one-fourth} * 2 + #{$layout--grid-gutter});
+$two-fifths: calc(#{$one-fifth} * 2 + #{$layout--grid-gutter});
+$two-sixths: calc(#{$one-sixth} * 2 + #{$layout--grid-gutter});
+$three-fourths: calc(#{$one-fourth} * 3 + (#{$layout--grid-gutter} * 2));
+$three-fifths: calc(#{$one-fifth} * 3 + (#{$layout--grid-gutter} * 2));
+$three-sixths: calc(#{$one-sixth} * 3 + (#{$layout--grid-gutter} * 2));
+$four-fifths: calc(#{$one-fifth} * 4 + (#{$layout--grid-gutter} * 3));
+$four-sixths: calc(#{$one-sixth} * 4 + (#{$layout--grid-gutter} * 3));
+$five-sixths: calc(#{$one-sixth} * 5 + (#{$layout--grid-gutter} * 4));

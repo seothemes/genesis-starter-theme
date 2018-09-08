@@ -5,10 +5,18 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-.site-footer {}
+
+.site-footer {
+	margin-top: auto;
+	border-top: $base--border;
+}
 
 // Footer widgets layout.
-.footer-widgets {}
+.footer-widgets {
+	padding: $spacing--m 0;
+}
 
 // Footer credits layout.
-.footer-credits {}
+.footer-credits {
+	padding: $spacing--s 0;
+}

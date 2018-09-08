@@ -5,4 +5,9 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-.avatar {}
+
+.avatar {
+	float: left;
+	max-width: $spacing--xl;
+	margin-right: $spacing--m;
+}

@@ -1,9 +1,12 @@
 ////
-/// Search form component.
+/// Border mixin
 ///
-/// @group  Components
+/// @group  Tools
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.search-form {}
+@mixin border( $values ) {
+
+	@include _directional-property(border, null, $values);
+}

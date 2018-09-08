@@ -6,15 +6,30 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
-$breakpoint--xxs: 512px;
-$breakpoint--xs: 640px;
-$breakpoint--s: 768px;
-$breakpoint--m: 896px;
-$breakpoint--l: 1024px;
-$breakpoint--xl: 1152px;
-$breakpoint--xxl: 1280px;
+/// Based on 16:9 screen resolutions
+///
+/// @link https://pacoup.com/2011/06/12/list-of-true-169-resolutions/
+$base--breakpoint: 896px;
+$base--breakpoint-increment: 128px;
 
+$breakpoint--xxxxs: $base--breakpoint - ($base--breakpoint-increment * 5);
+$breakpoint--xxxs: $base--breakpoint - ($base--breakpoint-increment * 4);
+$breakpoint--xxs: $base--breakpoint - ($base--breakpoint-increment * 3);
+$breakpoint--xs: $base--breakpoint - ($base--breakpoint-increment * 2);
+$breakpoint--s: $base--breakpoint - $base--breakpoint-increment;
+$breakpoint--m: $base--breakpoint;
+$breakpoint--l: $base--breakpoint + $base--breakpoint-increment;
+$breakpoint--xl: $base--breakpoint + ($base--breakpoint-increment * 2);
+$breakpoint--xxl: $base--breakpoint + ($base--breakpoint-increment * 3);
+$breakpoint--xxxl: $base--breakpoint + ($base--breakpoint-increment * 4);
+$breakpoint--xxxxl: $base--breakpoint + ($base--breakpoint-increment * 5);
+
+/// Stored in map for media query mixin
+///
+/// map-get($breakpoints, m);
 $breakpoints: (
+	xxxxs: $breakpoint--xxxxs,
+	xxxs: $breakpoint--xxxs,
 	xxs: $breakpoint--xxs,
 	xs: $breakpoint--xs,
 	s: $breakpoint--s,
@@ -22,4 +37,6 @@ $breakpoints: (
 	l: $breakpoint--l,
 	xl: $breakpoint--xl,
 	xxl: $breakpoint--xxl,
+	xxxl: $breakpoint--xxxl,
+	xxxxl: $breakpoint--xxxxl,
 );

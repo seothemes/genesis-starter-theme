@@ -5,6 +5,7 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 table {
 	width: 100%;
 	margin: $spacing--s 0;
@@ -13,24 +14,13 @@ table {
 	word-break: break-all;
 }
 
-tbody {
-	border-bottom: $base--border;
-}
-
 th,
 td {
-	padding: 0.5em;
+	padding: $spacing--s;
+	border: $base--border;
 	text-align: left;
-
-	&:first-child {
-		padding-left: 0;
-	}
 }
 
 th {
 	font-weight: $font-weight--semibold;
-}
-
-td {
-	border-top: $base--border;
 }

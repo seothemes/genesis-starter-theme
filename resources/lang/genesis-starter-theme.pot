@@ -21,10 +21,14 @@ msgstr ""
 msgid "Sub Menu"
 msgstr ""
 
-#: config/defaults.php:345
+#: config/defaults.php:335
+msgid "Center Content"
+msgstr ""
+
+#: config/defaults.php:429
 msgid "Header Menu"
 msgstr ""
 
-#: config/defaults.php:346
+#: config/defaults.php:430
 msgid "After Header Menu"
 msgstr ""

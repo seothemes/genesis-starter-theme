@@ -5,17 +5,21 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
+ul,
 ol,
-ul {
-	margin: 0;
+dl {
+	margin: 0 0 $spacing--m;
 	padding: 0;
+	list-style-position: inside;
+
+	ul,
+	ol,
+	dl {
+		margin: $spacing--s $spacing--m;
+	}
 }
 
-li {
-	list-style-type: none;
-}
-
-dl,
 dd,
 dt {
 	margin: 0;

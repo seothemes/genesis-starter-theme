@@ -17,7 +17,7 @@ namespace SeoThemes\GenesisStarterTheme;
 
 use SeoThemes\Core\Theme;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup', 15 );
 /**
  * Child theme setup.
  *

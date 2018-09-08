@@ -1,10 +1,11 @@
 ////
-/// WordPress.
+/// Alignment classes.
 ///
 /// @group  Base
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 .align {
 
 	&center,
@@ -12,14 +13,14 @@
 	&right {
 		display: block;
 		float: none;
-		margin: 0 auto $spacing--s;
+		margin: 0 auto $spacing--m;
 	}
 
 	&left {
 
 		@include media(m) {
 			float: left;
-			margin: 0 $spacing--s $spacing--s 0;
+			margin: 0 $spacing--m $spacing--m 0;
 		}
 	}
 
@@ -27,8 +28,13 @@
 
 		@include media(m) {
 			float: right;
-			margin: 0 0 $spacing--s $spacing--s;
+			margin: 0 0 $spacing--m $spacing--m;
 		}
+	}
+
+	&center {
+
+		@include clearfix;
 	}
 
 	&wide,
@@ -40,7 +46,7 @@
 		img {
 			display: inline-block;
 			width: 100%;
-			margin: $spacing--s auto;
+			margin: $spacing--m auto;
 		}
 	}
 

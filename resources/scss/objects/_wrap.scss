@@ -5,8 +5,22 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 .wrap {
+	width: 90%;
+	max-width: $layout--width--wrap;
+
+	@include margin(null auto);
+
+	@include media(m) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 
 	// Sub wrap.
-	.wrap {}
+	.wrap {
+		width: 100%;
+		max-width: 100%;
+	}
 }

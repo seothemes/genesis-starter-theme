@@ -5,13 +5,58 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 .genesis-nav-menu {}
 
 // Primary nav layout.
-.nav-primary {}
+.nav-primary {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100vw;
+
+	@include media(m) {
+		display: flex !important;
+		position: relative;
+		top: auto;
+		width: auto;
+	}
+
+	.no-js & {
+		display: flex;
+		position: relative;
+	}
+
+	.menu > .menu-item {
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+}
 
 // Secondary nav layout.
-.nav-secondary {}
+.nav-secondary {
+
+	@include media(m) {
+		border-top: $base--border;
+	}
+
+	.menu {
+
+		@include media(m) {
+			justify-content: flex-start;
+		}
+
+		> .menu-item {
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+		}
+	}
+}
 
 // Footer nav layout.
 .nav-footer {}

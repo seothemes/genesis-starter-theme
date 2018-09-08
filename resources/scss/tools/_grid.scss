@@ -7,7 +7,7 @@
 ////
 
 @function round-width ($i) {
-	$width: floor(100 * $i * 100/ $grid-columns) / 100;
+	$width: floor(100 * $i * 100/ $layout--grid-columns) / 100;
 
 	@return $width#{"%"};
 }
@@ -80,7 +80,7 @@
 
 	@supports (grid-area: auto) {
 		$i: 1;
-		grid-template-columns: repeat($grid-columns, 1fr);
+		grid-template-columns: repeat($layout--grid-columns, 1fr);
 
 		@each $col in $cols {
 
@@ -105,7 +105,7 @@
 
 	@supports (grid-area: auto) {
 		$i: 1;
-		grid-template-columns: repeat($grid-columns, 1fr);
+		grid-template-columns: repeat($layout--grid-columns, 1fr);
 
 		@each $col in $cols {
 

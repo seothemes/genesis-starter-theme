@@ -1,10 +1,11 @@
 ////
-/// Accessibility.
+/// Accessibility classes.
 ///
 /// @group  Base
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 .screen-reader-shortcut,
 .screen-reader-text,
 .screen-reader-text span {
@@ -15,6 +16,12 @@
 	&:focus {
 
 		@include hide-visually(unhide);
+
+		position: absolute;
+		padding: $spacing--s;
+		color: $color--white;
+		background-color: $color--gray-80;
+		text-decoration: none;
 	}
 }
 

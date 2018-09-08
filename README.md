@@ -2,9 +2,13 @@
 
 [![WordPress](https://img.shields.io/badge/wordpress-4.9.8%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/genesis-starter-theme/blob/master/LICENSE.md)
 
-This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework. Check out the [live demo](https://demo.seothemes.com/genesis-starter).
+This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework.
 
-It uses Composer to pull in the [D2 Core](https://github.com/d2themes/core) component library which provides the PHP logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images. Design and styles are based on the latest version of the [Genesis Sample Theme](https://demo.studiopress.com/genesis-sample). 
+It uses Composer to pull in the [Core](https://github.com/seothemes/core) component library which provides the PHP logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images.
+
+Check out the [live demo](https://demo.seothemes.com/genesis-starter)
+
+<img src="https://seothemes.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-08-at-4.57.05-pm.png" alt="Genesis Starter Theme screenshot" width="500">
 
 ## Table of Contents
 
@@ -25,14 +29,14 @@ It uses Composer to pull in the [D2 Core](https://github.com/d2themes/core) comp
 
 The Genesis Starter Theme aims to modernize, organize and enhance some aspects of Genesis child theme development. Take a look at what is waiting for you:
 
-- [Mobile-first Sass](https://github.com/seothemes/genesis-starter-theme/tree/master/resources/scss) for stylesheets
+- [Bourbon](https://github.com/seothemes/genesis-starter-theme/tree/master/resources/scss) as a lightweight Sass toolkit
 - [Gulp](https://gulpjs.com/) for automating development build tasks
 - [Browsersync](https://browsersync.io/) for synchronized browser testing
 - [Config-based](https://www.alainschlesser.com/config-files-for-reusable-code/), OOP modular architecture
 - [CLI setup script](#setup) to automatically update information
 - [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) or [NPM](https://www.npmjs.com/) for managing Node dependencies
 - [Composer](https://getcomposer.org/) for managing PHP dependencies
-- [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading
+- [PSR-4](https://www.php-fig.org/psr/psr-4/) class autoloading
 - [Namespaced](http://php.net/manual/en/language.namespaces.basics.php) to avoid naming conflicts
 
 ## Requirements

@@ -7,35 +7,28 @@
 ////
 
 // Font sizes
-$font-size--xxxxs: modular-scale(-5, $base--font-size);
-$font-size--xxxs: modular-scale(-4, $base--font-size);
-$font-size--xxs: modular-scale(-3, $base--font-size);
-$font-size--xs: modular-scale(-2, $base--font-size);
-$font-size--s: modular-scale(-1, $base--font-size);
-$font-size--m: modular-scale(0, $base--font-size);
-$font-size--l: modular-scale(1, $base--font-size);
-$font-size--xl: modular-scale(2, $base--font-size);
-$font-size--xxl: modular-scale(3, $base--font-size);
-$font-size--xxxl: modular-scale(4, $base--font-size);
-$font-size--xxxxl: modular-scale(5, $base--font-size);
+$base--font-size: 1.6rem;
+
+$font-size--h1: modular-scale(5, $base--font-size, $minor-third);
+$font-size--h2: modular-scale(4, $base--font-size, $minor-third);
+$font-size--h3: modular-scale(3, $base--font-size, $minor-third);
+$font-size--h4: modular-scale(2, $base--font-size, $minor-third);
+$font-size--h5: modular-scale(1, $base--font-size, $minor-third);
+$font-size--h6: modular-scale(0, $base--font-size, $minor-third);
 
 $font-sizes: (
-	xxxxs: $font-size--xxxxs,
-	xxxs: $font-size--xxxs,
-	xxs: $font-size--xxs,
-	xs: $font-size--xs,
-	s: $font-size--s,
-	m: $font-size--m,
-	l: $font-size--l,
-	xl: $font-size--xl,
-	xxl: $font-size--xxl,
-	xxxl: $font-size--xxxl,
-	xxxxl: $font-size--xxxxl,
+	h1: $font-size--h1,
+	h2: $font-size--h2,
+	h3: $font-size--h3,
+	h4: $font-size--h4,
+	h5: $font-size--h5,
+	h6: $font-size--h6,
 );
 
 // Font families
-$font-family--heading: $font-stack-system;
-$font-family--body: $font-stack-system;
+$base--font-family: $font-stack-system;
+
+$font-family--heading: $base--font-family;
 $font-family--code: $font-stack-consolas;
 
 // Font weights
@@ -45,12 +38,6 @@ $font-weight--semibold: 600;
 $font-weight--bold: 700;
 
 // Line height
-$line-height--xxxs: modular-scale(-4, $golden);
-$line-height--xxs: modular-scale(-3, $golden);
-$line-height--xs: modular-scale(-2, $golden);
-$line-height--s: modular-scale(-1, $golden);
-$line-height--m: modular-scale(0, $golden);
-$line-height--l: modular-scale(1, $golden);
-$line-height--xl: modular-scale(2, $golden);
-$line-height--xxl: modular-scale(3, $golden);
-$line-height--xxxl: modular-scale(4, $golden);
+$base--line-height: modular-scale(0, $golden);
+
+$line-height--heading: modular-scale(-1, $golden);

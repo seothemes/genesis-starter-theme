@@ -37,7 +37,7 @@ $core_assets = [
 			AssetLoader::LOCALIZE => [
 				AssetLoader::LOCALIZEVAR  => 'genesis_responsive_menu',
 				AssetLoader::LOCALIZEDATA => [
-					'mainMenu'         => __( 'Menu', 'genesis-starter-theme' ),
+					'mainMenu'         => '<span class="hamburger"></span><span class="screen-reader-text">' . __( 'Menu', 'genesis-starter-theme' ) . '</span>',
 					'subMenu'          => __( 'Sub Menu', 'genesis-starter-theme' ),
 					'menuIconClass'    => null,
 					'subMenuIconClass' => null,
@@ -51,9 +51,17 @@ $core_assets = [
 			],
 		],
 		[
-			AssetLoader::HANDLE  => 'script',
+			AssetLoader::HANDLE  => 'fitvids',
 			AssetLoader::URL     => AssetLoader::path( '/resources/js/script.js' ),
 			AssetLoader::DEPS    => [ 'jquery' ],
+			AssetLoader::VERSION => wp_get_theme()->get( 'Version' ),
+			AssetLoader::FOOTER  => true,
+			AssetLoader::ENQUEUE => true,
+		],
+		[
+			AssetLoader::HANDLE  => 'script',
+			AssetLoader::URL     => AssetLoader::path( '/resources/js/jquery.fitvids.js' ),
+			AssetLoader::DEPS    => [ 'fitvids' ],
 			AssetLoader::VERSION => wp_get_theme()->get( 'Version' ),
 			AssetLoader::FOOTER  => true,
 			AssetLoader::ENQUEUE => true,
@@ -89,11 +97,13 @@ $core_custom_colors = [
 		],
 	],
 	'link'       => [
-		'default' => '#07e',
+		'default' => '#0077ee',
 		'output'  => [
 			[
 				'elements'   => [
 					'a',
+					'.site-title a:focus',
+					'.site-title a:hover',
 					'.entry-title a:focus',
 					'.entry-title a:hover',
 					'.genesis-nav-menu a:focus',
@@ -113,27 +123,24 @@ $core_custom_colors = [
 		],
 	],
 	'accent'     => [
-		'default' => '#07e',
+		'default' => '#0077ee',
 		'output'  => [
 			[
 				'elements'   => [
 					'button:focus',
 					'button:hover',
-					'input[type="button"]:focus',
-					'input[type="button"]:hover',
-					'input[type="reset"]:focus',
-					'input[type="reset"]:hover',
-					'input[type="submit"]:focus',
-					'input[type="submit"]:hover',
-					'input[type="reset"]:focus',
-					'input[type="reset"]:hover',
-					'input[type="submit"]:focus',
-					'input[type="submit"]:hover',
+					'[type="button"]:focus',
+					'[type="button"]:hover',
+					'[type="reset"]:focus',
+					'[type="reset"]:hover',
+					'[type="submit"]:focus',
+					'[type="submit"]:hover',
+					'[type="reset"]:focus',
+					'[type="reset"]:hover',
+					'[type="submit"]:focus',
+					'[type="submit"]:hover',
 					'.button:focus',
 					'.button:hover',
-					'.genesis-nav-menu > .menu-highlight > a:hover',
-					'.genesis-nav-menu > .menu-highlight > a:focus',
-					'.genesis-nav-menu > .menu-highlight.current-menu-item > a',
 				],
 				'properties' => [
 					'background-color' => '%s',
@@ -163,6 +170,41 @@ $core_google_fonts = [
 
 $core_hooks = [
 	Hooks::ADD    => [
+		[
+			Hooks::TAG      => 'wp_enqueue_scripts',
+			Hooks::CALLBACK => 'genesis_enqueue_main_stylesheet',
+			Hooks::PRIORITY => 99,
+		],
+		[
+			Hooks::TAG      => 'body_class',
+			Hooks::CALLBACK => function ( $classes ) {
+				if ( is_home() || is_search() || is_author() || is_date() || is_category() || is_tag() || is_page_template( 'page_blog.php' ) ) {
+					$classes[] = 'post-grid';
+				}
+
+				$classes[] = 'no-js';
+
+				return $classes;
+
+			},
+		],
+		[
+			Hooks::TAG      => 'genesis_before',
+			Hooks::CALLBACK => function () {
+				?>
+				<script>
+                    //<![CDATA[
+                    (function () {
+                        var c = document.body.classList;
+                        c.remove('no-js');
+                        c.add('js');
+                    })();
+                    //]]>
+				</script>
+				<?php
+			},
+			Hooks::PRIORITY => 1,
+		],
 		[
 			Hooks::TAG         => 'genesis_site_title',
 			Hooks::CALLBACK    => 'the_custom_logo',
@@ -210,6 +252,29 @@ $core_hooks = [
 			},
 		],
 		[
+			Hooks::TAG      => 'genesis_structural_wrap-footer',
+			Hooks::CALLBACK => function ( $output, $original_output ) {
+				if ( 'open' == $original_output ) {
+					$output = '<div class="footer-credits">' . $output;
+				} elseif ( 'close' == $original_output ) {
+					$backtotop = '<a href="#" rel="nofollow" class="backtotop">Return to top</a>';
+					$output    = $backtotop . $output . $output;
+				}
+
+				return $output;
+			},
+			Hooks::PRIORITY => 10,
+			Hooks::ARGS     => 2,
+		],
+		[
+			Hooks::TAG      => 'genesis_before',
+			Hooks::CALLBACK => function () {
+				if ( 'center-content' === genesis_site_layout() ) {
+					add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
+				}
+			}
+		],
+		[
 			Hooks::TAG      => 'admin_init',
 			Hooks::CALLBACK => function () {
 				add_editor_style( 'editor.css' );
@@ -229,6 +294,10 @@ $core_hooks = [
 		],
 	],
 	Hooks::REMOVE => [
+		[
+			Hooks::TAG      => 'genesis_meta',
+			Hooks::CALLBACK => 'genesis_load_stylesheet',
+		],
 		[
 			Hooks::TAG      => 'genesis_after_header',
 			Hooks::CALLBACK => 'genesis_do_nav',
@@ -260,6 +329,13 @@ $core_image_sizes = [
 ];
 
 $core_layouts = [
+	PageLayouts::REGISTER   => [
+		[
+			'id'    => 'center-content',
+			'label' => __( 'Center Content', 'genesis-starter-theme' ),
+			'img'   => get_stylesheet_directory_uri() . '/resources/img/center-content.gif',
+		]
+	],
 	PageLayouts::UNREGISTER => [
 		// PageLayouts::CONTENT_SIDEBAR,
 		// PageLayouts::SIDEBAR_CONTENT,
@@ -267,7 +343,7 @@ $core_layouts = [
 		PageLayouts::CONTENT_SIDEBAR_SIDEBAR,
 		PageLayouts::SIDEBAR_SIDEBAR_CONTENT,
 		PageLayouts::SIDEBAR_CONTENT_SIDEBAR,
-	]
+	],
 ];
 
 $core_plugins = [
@@ -295,6 +371,14 @@ $core_plugins = [
 	],
 ];
 
+if ( class_exists( 'WooCommerce' ) ) {
+	$core_plugins[ PluginActivation::REGISTER ][] = [
+		PluginActivation::NAME     => 'Genesis Connect for WooCommerce',
+		PluginActivation::SLUG     => 'genesis-connect-woocommerce',
+		PluginActivation::REQUIRED => false,
+	];
+}
+
 $core_simple_social_icons = [
 	SimpleSocialIcons::DEFAULTS => [
 		SimpleSocialIcons::NEW_WINDOW => 1,
@@ -308,9 +392,9 @@ $core_textdomain = [
 
 $core_theme_support = [
 	ThemeSupport::ADD => [
-		'align-wide',
-		'automatic-feed-links',
-		'custom-logo'              => [
+		'align-wide'                  => null,
+		'automatic-feed-links'        => null,
+		'custom-logo'                 => [
 			'height'      => 100,
 			'width'       => 300,
 			'flex-height' => true,
@@ -320,7 +404,7 @@ $core_theme_support = [
 				'.site-description',
 			],
 		],
-		'custom-header'            => [
+		'custom-header'               => [
 			'header-selector' => '.hero-section',
 			'default_image'   => get_stylesheet_directory_uri() . '/resources/img/hero.jpg',
 			'header-text'     => false,
@@ -331,7 +415,7 @@ $core_theme_support = [
 			'uploads'         => true,
 			'video'           => true,
 		],
-		'genesis-accessibility'    => [
+		'genesis-accessibility'       => [
 			'404-page',
 			'drop-down-menu',
 			'headings',
@@ -340,22 +424,22 @@ $core_theme_support = [
 			'skip-links',
 		],
 		'genesis-after-entry-widget-area',
-		'genesis-footer-widgets'   => 4,
-		'genesis-menus'            => [
+		'genesis-footer-widgets'      => 3,
+		'genesis-menus'               => [
 			'primary'   => __( 'Header Menu', 'genesis-starter-theme' ),
 			'secondary' => __( 'After Header Menu', 'genesis-starter-theme' ),
 		],
-		'genesis-responsive-viewport',
-		'genesis-structural-wraps' => [
+		'genesis-responsive-viewport' => null,
+		'genesis-structural-wraps'    => [
 			'header',
 			'menu-secondary',
 			'footer-widgets',
 			'footer',
 		],
-		'gutenberg'                => [
+		'gutenberg'                   => [
 			'wide-images' => true,
 		],
-		'html5'                    => [
+		'html5'                       => [
 			'caption',
 			'comment-form',
 			'comment-list',
@@ -363,11 +447,11 @@ $core_theme_support = [
 			'search-form',
 		],
 		'post-thumbnails',
-		'woocommerce',
-		'wc-product-gallery-zoom',
-		'wc-product-gallery-lightbox',
-		'wc-product-gallery-slider',
-		'wp-block-styles',
+		'woocommerce'                 => null,
+		'wc-product-gallery-zoom'     => null,
+		'wc-product-gallery-lightbox' => null,
+		'wc-product-gallery-slider'   => null,
+		'wp-block-styles'             => null,
 	],
 ];
 

@@ -5,4 +5,10 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-.footer-widget-area {}
+
+.footer-widget-area {
+
+	@include media(m) {
+		flex: 1;
+	}
+}

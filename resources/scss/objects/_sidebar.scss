@@ -5,10 +5,24 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 .sidebar {
 
-	.content-sidebar &,
-	.sidebar-content & {}
+	@include margin($spacing--m null);
 
-	.full-width-content & {}
+	@include media(m) {
+
+		@include margin($spacing--l null);
+	}
+
+	.content-sidebar &,
+	.sidebar-content & {
+
+		@include media(m) {
+			width: $layout--width--sidebar;
+		}
+	}
+
+	.full-width-content & {
+	}
 }

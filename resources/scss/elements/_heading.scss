@@ -5,38 +5,39 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 $spacing--s;
+	margin: 0 0 $spacing--m;
 	font-family: $font-family--heading;
 	font-weight: $font-weight--semibold;
-	line-height: $line-height--s;
+	line-height: $line-height--heading;
 }
 
 h1 {
-	font-size: $font-size--xxxxl;
+	font-size: $font-size--h1;
 }
 
 h2 {
-	font-size: $font-size--xxxl;
+	font-size: $font-size--h2;
 }
 
 h3 {
-	font-size: $font-size--xxl;
+	font-size: $font-size--h3;
 }
 
 h4 {
-	font-size: $font-size--xl;
+	font-size: $font-size--h4;
 }
 
 h5 {
-	font-size: $font-size--l;
+	font-size: $font-size--h5;
 }
 
 h6 {
-	font-size: $font-size--m;
+	font-size: $font-size--h6;
 }

@@ -21,19 +21,10 @@
   },
   "require": {
     "php": ">=5.4",
-    "seothemes/core": "@dev",
+    "seothemes/core": "dev-master",
     "tgmpa/tgm-plugin-activation": "dev-develop"
   },
   "require-dev": {},
-  "repositories": [
-    {
-      "type": "path",
-      "url": "temp/seothemes/core",
-      "options": {
-        "symlink": true
-      }
-    }
-  ],
   "autoload": {
     "psr-4": {
       "SeoThemes\\GenesisStarterTheme\\": "app/"

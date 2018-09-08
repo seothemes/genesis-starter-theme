@@ -5,19 +5,16 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
 body {
+	height: 100%;
 	margin: 0;
 	color: $color--gray-80;
 	background-color: $color--white;
-	font-family: $font-family--body;
-	font-size: $font-size--m;
+	font-family: $base--font-family;
+	font-size: $base--font-size;
 	font-weight: $font-weight--regular;
-	line-height: $line-height--m;
-
-	// Chrome fix
-	> div {
-		font-size: $font-size--m;
-	}
+	line-height: $base--line-height;
 }
 
 a {
@@ -32,15 +29,16 @@ a {
 }
 
 p {
-	margin: 0 0 $spacing--s;
+	margin: 0 0 $spacing--m;
 	padding: 0;
 }
 
 hr {
 	clear: both;
-	margin: $spacing--m 0;
+	margin: 0 0 $spacing--m;
+	padding: $spacing--m 0 0;
 	border: 0;
-	border-top: $base--border;
+	border-bottom: $base--border;
 	border-collapse: collapse;
 }
 
@@ -57,16 +55,16 @@ i {
 }
 
 blockquote {
-	margin: $spacing--m;
+	border-left: $base__border;
 
-	&:before {
-		display: block;
-		position: relative;
-		top: -1em;
-		left: -2em;
-		height: 0;
-		font-size: $font-size--xxxxl;
-		content: "“";
+	@include margin($spacing--m auto);
+	@include padding($spacing--m);
+
+	p {
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }
 

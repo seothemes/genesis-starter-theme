@@ -10,11 +10,12 @@
 @import "../../../../node_modules/bourbon/core/bourbon";
 @import "../../settings/breakpoints";
 @import "../../settings/colors";
+@import "../../settings/typography";
 @import "../../settings/global";
 @import "../../settings/spacing";
-@import "../../settings/typography";
-@import "../../tools/media-query";
-@import "../../tools/grid-layout";
+@import "../../tools/media";
+@import "../../tools/grid";
+@import "../../tools/border";
 
 // WooCommerce
 @import "globals";
