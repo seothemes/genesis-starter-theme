@@ -14,12 +14,14 @@ namespace SeoThemes\GenesisStarterTheme;
 use SeoThemes\Core\AssetLoader;
 use SeoThemes\Core\Constants;
 use SeoThemes\Core\CustomColors;
+use SeoThemes\Core\Customizer;
 use SeoThemes\Core\GenesisSettings;
 use SeoThemes\Core\GoogleFonts;
 use SeoThemes\Core\Hooks;
 use SeoThemes\Core\ImageSizes;
 use SeoThemes\Core\PageLayouts;
 use SeoThemes\Core\PluginActivation;
+use SeoThemes\Core\PostTypeSupport;
 use SeoThemes\Core\SimpleSocialIcons;
 use SeoThemes\Core\TextDomain;
 use SeoThemes\Core\ThemeSupport;
@@ -81,26 +83,47 @@ $core_constants = [
 	],
 ];
 
+$core_customizer = [
+	Customizer::SECTIONS => [
+		[
+			Customizer::ID    => 'single_posts',
+			Customizer::TITLE => __( 'Single Posts', 'display-pro' ),
+			Customizer::PANEL => 'genesis',
+		],
+	],
+	Customizer::FIELDS   => [
+		[
+			Customizer::CONTROL_TYPE  => 'checkbox',
+			Customizer::SETTINGS      => 'single_post_featured_image',
+			Customizer::LABEL         => __( 'Display featured image?', 'display-pro' ),
+			Customizer::SECTION       => 'single_posts',
+			Customizer::DEFAULT_VALUE => true,
+		],
+	],
+];
+
 $core_custom_colors = [
-	'background' => [
-		'default' => '#ffffff',
-		'output'  => [
+	[
+		CustomColors::ID            => 'background',
+		CustomColors::DEFAULT_COLOR => '#ffffff',
+		CustomColors::OUTPUT        => [
 			[
-				'elements'   => [
+				CustomColors::ELEMENTS   => [
 					'body',
 					'.site-container',
 				],
-				'properties' => [
+				CustomColors::PROPERTIES => [
 					'background-color' => '%s',
 				],
 			],
 		],
 	],
-	'link'       => [
-		'default' => '#0077ee',
-		'output'  => [
+	[
+		CustomColors::ID            => 'link',
+		CustomColors::DEFAULT_COLOR => '#0077ee',
+		CustomColors::OUTPUT        => [
 			[
-				'elements'   => [
+				CustomColors::ELEMENTS   => [
 					'a',
 					'.site-title a:focus',
 					'.site-title a:hover',
@@ -116,17 +139,18 @@ $core_custom_colors = [
 					'.sub-menu-toggle:focus',
 					'.sub-menu-toggle:hover',
 				],
-				'properties' => [
+				CustomColors::PROPERTIES => [
 					'color' => '%s',
 				],
 			],
 		],
 	],
-	'accent'     => [
-		'default' => '#0077ee',
-		'output'  => [
+	[
+		CustomColors::ID            => 'accent',
+		CustomColors::DEFAULT_COLOR => '#0077ee',
+		CustomColors::OUTPUT        => [
 			[
-				'elements'   => [
+				CustomColors::ELEMENTS   => [
 					'button:focus',
 					'button:hover',
 					'[type="button"]:focus',
@@ -142,7 +166,7 @@ $core_custom_colors = [
 					'.button:focus',
 					'.button:hover',
 				],
-				'properties' => [
+				CustomColors::PROPERTIES => [
 					'background-color' => '%s',
 				],
 			],
@@ -269,7 +293,7 @@ $core_hooks = [
 				if ( 'open' == $original_output ) {
 					$output = '<div class="footer-credits">' . $output;
 				} elseif ( 'close' == $original_output ) {
-					$backtotop = '<a href="#" rel="nofollow" class="backtotop">Return to top</a>';
+					$backtotop = '<a href="#" rel="nofollow" class="backtotop">' . __( 'Return to top', 'genesis-starter-theme' ) . '</a>';
 					$output    = $backtotop . $output . $output;
 				}
 
@@ -398,6 +422,15 @@ if ( class_exists( 'WooCommerce' ) ) {
 	];
 }
 
+$core_post_type_support = [
+	PostTypeSupport::ADD => [
+		[
+			PostTypeSupport::POST_TYPE => 'page',
+			PostTypeSupport::SUPPORTS  => 'excerpt',
+		],
+	],
+];
+
 $core_simple_social_icons = [
 	SimpleSocialIcons::DEFAULTS => [
 		SimpleSocialIcons::NEW_WINDOW => 1,
@@ -484,6 +517,7 @@ $core_widget_areas = [
 return [
 	AssetLoader::class       => $core_assets,
 	Constants::class         => $core_constants,
+	Customizer::class        => $core_customizer,
 	CustomColors::class      => $core_custom_colors,
 	Example::class           => $core_example,
 	GenesisSettings::class   => $core_genesis_settings,
@@ -492,6 +526,7 @@ return [
 	ImageSizes::class        => $core_image_sizes,
 	PageLayouts::class       => $core_layouts,
 	PluginActivation::class  => $core_plugins,
+	PostTypeSupport::class   => $core_post_type_support,
 	SimpleSocialIcons::class => $core_simple_social_icons,
 	TextDomain::class        => $core_textdomain,
 	ThemeSupport::class      => $core_theme_support,

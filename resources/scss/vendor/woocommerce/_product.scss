@@ -25,7 +25,7 @@
 	}
 }
 
-@include media(xs) {
+@include mq(xs) {
 
 	.woocommerce ul.products li.product .button,
 	.woocommerce .woocommerce-ordering,

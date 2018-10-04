@@ -16,7 +16,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@include media(m) {
+		@include mq(m) {
 			flex-wrap: nowrap;
 		}
 	}

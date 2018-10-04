@@ -1323,6 +1323,10 @@ csscomb@^3.1.7:
     gonzales-pe "3.0.0-28"
     vow "0.4.4"
 
+cssesc@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-1.0.1.tgz#ef7bd8d0229ed6a3a7051ff7771265fe7330e0a8"
+
 cssnano@^3.8.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
@@ -2784,6 +2788,10 @@ graceful-fs@~1.2.0:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+gridkit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gridkit/-/gridkit-1.0.0.tgz#6384c31e50f9e15722273f230abb9f2f0248b548"
 
 growly@^1.3.0:
   version "1.3.0"
@@ -4340,6 +4348,10 @@ lodash@^4.0.0, lodash@^4.1.0, lodash@^4.13.1, lodash@^4.17.4, lodash@^4.3.0, lod
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
+lodash@^4.17.10:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+
 lodash@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-1.0.2.tgz#8f57560c83b59fc270bd3d561b690043430e2551"
@@ -4695,6 +4707,10 @@ mixin-deep@^1.2.0:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mqkit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mqkit/-/mqkit-1.0.0.tgz#98820e32304fc64ae013a6952255a59b58f86350"
 
 ms@2.0.0:
   version "2.0.0"
@@ -5711,6 +5727,14 @@ postcss-selector-parser@^3.1.0, postcss-selector-parser@^3.1.1:
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
   dependencies:
     dot-prop "^4.1.1"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
+postcss-selector-parser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-4.0.0.tgz#50c6570f40579036d8e63f23e6c0626fe5743527"
+  dependencies:
+    cssesc "^1.0.1"
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
@@ -6952,6 +6976,14 @@ stylelint-config-wordpress@^13.0.0:
     stylelint-config-recommended "^2.1.0"
     stylelint-scss "^2.1.0"
 
+stylelint-config-wordpress@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-wordpress/-/stylelint-config-wordpress-13.1.0.tgz#235810d711f1d5682123914bc13c6c2af47d4fc4"
+  dependencies:
+    stylelint-config-recommended "^2.1.0"
+    stylelint-config-recommended-scss "^3.2.0"
+    stylelint-scss "^3.3.0"
+
 stylelint-order@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-0.8.1.tgz#35f71af3a15954154e0e99e5646ba3d6fbe34f8d"
@@ -6968,6 +7000,16 @@ stylelint-scss@^2.1.0:
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-selector-parser "^3.1.1"
+    postcss-value-parser "^3.3.0"
+
+stylelint-scss@^3.3.0:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.3.1.tgz#5061bca7cc586eb05972caa31b5e627fa3296235"
+  dependencies:
+    lodash "^4.17.10"
+    postcss-media-query-parser "^0.2.3"
+    postcss-resolve-nested-selector "^0.1.1"
+    postcss-selector-parser "^4.0.0"
     postcss-value-parser "^3.3.0"
 
 stylelint@^8.1.1:

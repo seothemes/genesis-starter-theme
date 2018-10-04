@@ -9,6 +9,9 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
-@import "media";
-@import "grid";
-@import "border";
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "extends";
+@import "../../../node_modules/gridkit/core/gridkit";
+@import "../../../node_modules/mqkit/mq";

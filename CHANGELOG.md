@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [3.3.1] - 2018-10-04
+* Switch to gridkit and mqkit sass packages
+* Fix .entry-title-link selector
+
 ## [3.3.0] - 2018-09-08
 * Switch to seothemes/core composer package
 * Add Bourbon node package

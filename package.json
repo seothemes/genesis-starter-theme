@@ -1,6 +1,6 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Genesis starter theme with a modern development workflow.",
   "repository": {
     "type": "git",
@@ -13,13 +13,16 @@
   "dependencies": {},
   "devDependencies": {
     "bourbon": "^5.1.0",
+    "gridkit": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
     "gulp-zip": "^4.1.0",
+    "mqkit": "^1.0.0",
     "prettier": "^1.13.4",
     "prettier-stylelint": "^0.4.2",
     "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-wordpress": "^13.1.0",
     "stylelint-order": "^0.8.1"
   },
   "theme": {

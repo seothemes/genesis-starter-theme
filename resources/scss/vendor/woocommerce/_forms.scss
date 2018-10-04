@@ -75,7 +75,7 @@
 	}
 }
 
-@include media(xs) {
+@include mq(xs) {
 
 	.woocommerce form .form-row-first,
 	.woocommerce-page form .form-row-first,

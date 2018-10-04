@@ -11,7 +11,7 @@
 
 	@include padding($spacing--s null);
 
-	@include media(m) {
+	@include mq(m) {
 
 		@include padding($spacing--m null);
 	}
@@ -51,7 +51,7 @@
 // Custom logo.
 .custom-logo {
 	width: 100%;
-	max-width: $layout--width--logo;
+	max-width: $mq-xxxxs;
 
 	&-link {
 		display: flex;

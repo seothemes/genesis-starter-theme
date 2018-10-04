@@ -1,12 +1,7 @@
 ////
-/// Border mixin
+/// Custom extends.
 ///
 /// @group  Tools
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
-
-@mixin border( $values ) {
-
-	@include _directional-property(border, null, $values);
-}

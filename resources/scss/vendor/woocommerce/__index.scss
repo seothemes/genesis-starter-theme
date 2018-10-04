@@ -8,14 +8,8 @@
 
 // Abstracts
 @import "../../../../node_modules/bourbon/core/bourbon";
-@import "../../settings/breakpoints";
-@import "../../settings/colors";
-@import "../../settings/typography";
-@import "../../settings/global";
-@import "../../settings/spacing";
-@import "../../tools/media";
-@import "../../tools/grid";
-@import "../../tools/border";
+@import "../../settings/_index";
+@import "../../tools/_index";
 
 // WooCommerce
 @import "globals";

@@ -11,7 +11,7 @@
 
 	@include margin($spacing--m null);
 
-	@include media(m) {
+	@include mq(m) {
 
 		@include margin($spacing--l null);
 	}
@@ -20,14 +20,14 @@
 	.sidebar-content &,
 	.center-content & {
 
-		@include media(m) {
+		@include mq(m) {
 			width: $layout--width--content;
 		}
 	}
 
 	.sidebar-content & {
 
-		@include media(m) {
+		@include mq(m) {
 			order: 1;
 		}
 	}

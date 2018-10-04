@@ -19,7 +19,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	width: 100%;
 	margin-bottom: 20px;
 
-	@include media(xs) {
+	@include mq(xs) {
 		width: auto;
 		margin-bottom: 0;
 	}

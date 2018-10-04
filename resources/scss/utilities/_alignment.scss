@@ -1,7 +1,7 @@
 ////
 /// Alignment classes.
 ///
-/// @group  Base
+/// @group  Utilities
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
@@ -18,7 +18,7 @@
 
 	&left {
 
-		@include media(m) {
+		@include mq(m) {
 			float: left;
 			margin: 0 $spacing--m $spacing--m 0;
 		}
@@ -26,7 +26,7 @@
 
 	&right {
 
-		@include media(m) {
+		@include mq(m) {
 			float: right;
 			margin: 0 0 $spacing--m $spacing--m;
 		}
@@ -42,6 +42,15 @@
 		position: relative;
 		left: 50%;
 		width: 100vw;
+
+		.content-sidebar &,
+		.sidebar-content & {
+			left: auto;
+			width: 100%;
+			max-width: 100%;
+			margin-left: 0;
+			transform: none;
+		}
 
 		img {
 			display: inline-block;

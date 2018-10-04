@@ -16,7 +16,7 @@
 	left: 0;
 	width: 100vw;
 
-	@include media(m) {
+	@include mq(m) {
 		display: flex !important;
 		position: relative;
 		top: auto;
@@ -32,13 +32,13 @@
 // Secondary nav layout.
 .nav-secondary {
 
-	@include media(m) {
+	@include mq(m) {
 		border-top: $base--border;
 	}
 
 	.menu {
 
-		@include media(m) {
+		@include mq(m) {
 			justify-content: flex-start;
 		}
 	}

@@ -13,7 +13,7 @@
 
 	@include border($base--border null);
 
-	@include media(m) {
+	@include mq(m) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
@@ -37,7 +37,7 @@
 
 		@include margin(null auto);
 
-		@include media(m, max-width) {
+		@include mq($until: m) {
 
 			.no-js & {
 				width: 100%;
@@ -45,7 +45,7 @@
 			}
 		}
 
-		@include media(m) {
+		@include mq(m) {
 			display: block;
 			width: auto;
 			margin: 0;
@@ -83,7 +83,7 @@
 
 		@include size($spacing--m * $perfect-fifth);
 
-		@include media(m) {
+		@include mq(m) {
 			display: none;
 		}
 

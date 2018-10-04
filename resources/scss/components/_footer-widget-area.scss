@@ -8,7 +8,7 @@
 
 .footer-widget-area {
 
-	@include media(m) {
+	@include mq(m) {
 		flex: 1;
 		margin-left: $spacing--l;
 

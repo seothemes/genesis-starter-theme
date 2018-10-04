@@ -49,7 +49,7 @@
 }
 
 
-@include media(m) {
+@include mq(m) {
 
 	.full-width-content.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;
@@ -72,7 +72,7 @@
 
 }
 
-@include media(l) {
+@include mq(l) {
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0 0 0 1em;

@@ -13,14 +13,14 @@
 	// Gallery item.
 	&-item {
 		width: $one-half;
-		margin-bottom: $layout--grid-gutter;
+		margin-bottom: $gutter;
 
 		.gallery-columns-1 & {
 			width: 100%;
 		}
 
-		@include media(m) {
-			margin-left: $layout--grid-gutter;
+		@include mq(m) {
+			margin-left: $gutter;
 
 			.gallery-columns-1 & {
 				margin-left: 0;

@@ -1,0 +1,38 @@
+////
+/// Custom mixins.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+////
+/// Hover focus mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin hover-focus {
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		@content;
+	}
+}
+
+////
+/// Border mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin border( $values ) {
+
+	@include _directional-property(border, null, $values);
+}

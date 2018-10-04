@@ -31,20 +31,20 @@
 	// Columns block.
 	&-columns {
 
-		@include media(m, max-width) {
+		@include mq($until: m) {
 			flex-wrap: wrap;
 		}
 	}
 
 	&-column {
 
-		@include media(m, max-width) {
+		@include mq($until: m) {
 			flex: none;
 			width: 100%;
 		}
 
-		@include media(m) {
-			margin-left: $layout--grid-gutter;
+		@include mq(m) {
+			margin-left: $gutter;
 
 			&:first-of-type {
 				margin-left: 0;

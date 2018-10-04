@@ -8,11 +8,11 @@
 
 .wrap {
 	width: 90%;
-	max-width: $layout--width--wrap;
+	max-width: $mq-xl;
 
 	@include margin(null auto);
 
-	@include media(m) {
+	@include mq(m) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
