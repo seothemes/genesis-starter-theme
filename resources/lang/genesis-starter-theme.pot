@@ -1,8 +1,8 @@
-# Copyright (C) 2018 Genesis Starter Theme 3.3.1
-# This file is distributed under the same license as the Genesis Starter Theme 3.3.1 package.
+# Copyright (C) 2018 Genesis Starter Theme 3.3.2
+# This file is distributed under the same license as the Genesis Starter Theme 3.3.2 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Starter Theme 3.3.1\n"
+"Project-Id-Version: Genesis Starter Theme 3.3.2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,18 +21,26 @@ msgstr ""
 msgid "Sub Menu"
 msgstr ""
 
+#: config/defaults.php:90
+msgid "Single Posts"
+msgstr ""
+
+#: config/defaults.php:98
+msgid "Display featured image?"
+msgstr ""
+
 #: config/defaults.php:296
 msgid "Return to top"
 msgstr ""
 
-#: config/defaults.php:378
+#: config/defaults.php:389
 msgid "Center Content"
 msgstr ""
 
-#: config/defaults.php:481
+#: config/defaults.php:492
 msgid "Header Menu"
 msgstr ""
 
-#: config/defaults.php:482
+#: config/defaults.php:493
 msgid "After Header Menu"
 msgstr ""

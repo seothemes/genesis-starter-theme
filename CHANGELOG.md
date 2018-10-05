@@ -1,5 +1,9 @@
 # Genesis Starter Theme Changelog
 
+## [3.3.2] - 2018-10-05
+* Add featured image display setting for single posts
+* Fix text domains in config
+
 ## [3.3.1] - 2018-10-04
 * Switch to gridkit and mqkit sass packages
 * Fix .entry-title-link selector

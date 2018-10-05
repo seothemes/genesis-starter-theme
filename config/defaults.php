@@ -87,7 +87,7 @@ $core_customizer = [
 	Customizer::SECTIONS => [
 		[
 			Customizer::ID    => 'single_posts',
-			Customizer::TITLE => __( 'Single Posts', 'display-pro' ),
+			Customizer::TITLE => __( 'Single Posts', 'genesis-starter-theme' ),
 			Customizer::PANEL => 'genesis',
 		],
 	],
@@ -95,7 +95,7 @@ $core_customizer = [
 		[
 			Customizer::CONTROL_TYPE  => 'checkbox',
 			Customizer::SETTINGS      => 'single_post_featured_image',
-			Customizer::LABEL         => __( 'Display featured image?', 'display-pro' ),
+			Customizer::LABEL         => __( 'Display featured image?', 'genesis-starter-theme' ),
 			Customizer::SECTION       => 'single_posts',
 			Customizer::DEFAULT_VALUE => true,
 		],
@@ -315,6 +315,17 @@ $core_hooks = [
 			Hooks::CALLBACK => function () {
 				add_editor_style( 'editor.css' );
 			},
+		],
+		[
+			Hooks::TAG      => 'genesis_entry_content',
+			Hooks::CALLBACK => function () {
+				if ( is_singular( 'post' ) && get_theme_mod( 'single_post_featured_image', true ) ) {
+					printf( "<p>%s</p>", genesis_get_image( [
+						'size' => 'hero',
+					] ) );
+				}
+			},
+			Hooks::PRIORITY => 0,
 		],
 		[
 			Hooks::TAG      => 'child_theme_after_title_area',
