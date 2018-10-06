@@ -4708,9 +4708,9 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-mqkit@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mqkit/-/mqkit-1.0.0.tgz#98820e32304fc64ae013a6952255a59b58f86350"
+mqkit@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/mqkit/-/mqkit-1.0.3.tgz#3746948e8a2d27f34270177fc2ec296b4fab8826"
 
 ms@2.0.0:
   version "2.0.0"

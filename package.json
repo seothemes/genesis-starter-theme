@@ -18,7 +18,7 @@
     "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
     "gulp-zip": "^4.1.0",
-    "mqkit": "^1.0.0",
+    "mqkit": "^1.0.3",
     "prettier": "^1.13.4",
     "prettier-stylelint": "^0.4.2",
     "stylelint-config-recommended-scss": "^3.2.0",
