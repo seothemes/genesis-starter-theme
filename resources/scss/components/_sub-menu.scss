@@ -16,7 +16,7 @@
 	@include mq(m) {
 		position: absolute;
 		width: auto;
-		margin-left: -$spacing--s;
+		margin-left: -$spacing--m;
 		border: $base--border;
 		background-color: $color--white;
 	}
@@ -45,7 +45,11 @@
 
 		@include mq(m) {
 			width: auto;
-			padding: $spacing--s;
+			padding: $spacing--s $spacing--m;
+		}
+
+		&-has-children {
+			position: relative;
 		}
 	}
 
@@ -75,8 +79,7 @@
 			display: none;
 		}
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			background-color: transparent;
 		}
 

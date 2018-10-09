@@ -36,3 +36,24 @@
 
 	@include _directional-property(border, null, $values);
 }
+
+////
+/// Overlay mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin overlay {
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		display: block;
+		background-color: rgba($color--gray-10, 0.82);
+		content: "";
+
+		@include position(absolute, 0 0 0 0);
+	}
+}

@@ -16,13 +16,22 @@ $font-size--h4: modular-scale(2, $base--font-size, $minor-third);
 $font-size--h5: modular-scale(1, $base--font-size, $minor-third);
 $font-size--h6: modular-scale(0, $base--font-size, $minor-third);
 
+//$font-sizes: (
+//	h1: $font-size--h1,
+//	h2: $font-size--h2,
+//	h3: $font-size--h3,
+//	h4: $font-size--h4,
+//	h5: $font-size--h5,
+//	h6: $font-size--h6,
+//) !default;
+
 $font-sizes: (
-	h1: $font-size--h1,
-	h2: $font-size--h2,
-	h3: $font-size--h3,
-	h4: $font-size--h4,
-	h5: $font-size--h5,
-	h6: $font-size--h6,
+	h1: 2.3em,
+	h2: 1.8em,
+	h3: 1.5em,
+	h4: 1.3em,
+	h5: 1.2em,
+	h6: 1.1em,
 );
 
 // Font families
@@ -32,6 +41,7 @@ $font-family--heading: $base--font-family;
 $font-family--code: $font-stack-consolas;
 
 // Font weights
+$font-weight--extralight: 200;
 $font-weight--light: 300;
 $font-weight--regular: 400;
 $font-weight--medium: 500;

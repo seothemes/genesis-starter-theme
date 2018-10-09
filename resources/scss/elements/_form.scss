@@ -82,9 +82,9 @@ legend {
 	width: 100%;
 	margin: 0 0 $spacing--s;
 	padding: 0;
-	font-family: $font-family--heading;
 	font-size: $font-size--h5;
-	font-weight: $font-weight--semibold;
+
+	@include heading;
 
 	+ * {
 		clear: both;

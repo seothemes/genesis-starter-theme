@@ -1,3 +1,5 @@
+@import "../../elements/button";
+
 .woocommerce {
 
 	a.button,
@@ -9,24 +11,8 @@
 	input.button[type="submit"],
 	#respond input#submit,
 	#respond input#submit.alt {
-		width: auto;
-		padding: 15px 20px;
-		border: 0;
-		border-radius: 0;
-		color: $color--white;
-		background-color: $color--gray-70;
-		font-size: 1.6rem;
-		font-weight: 600;
-		text-align: center;
-		white-space: normal;
-		text-decoration: none;
-		cursor: pointer;
 
-		&:hover,
-		&:focus {
-			color: $color--white;
-			background-color: $color--primary;
-		}
+		@include button;
 	}
 
 	#reviews #comment {

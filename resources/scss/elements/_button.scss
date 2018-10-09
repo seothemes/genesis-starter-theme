@@ -6,26 +6,26 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-#{$all-buttons},
-.button {
+@mixin button {
 	display: inline-block;
 	width: auto;
-	margin: 0 0 $spacing--s;
-	padding: $spacing--m $spacing--l;
+	padding: $spacing--m * $major-second $spacing--l * $major-second;
 	border: 0;
 	border-radius: $base--border--radius;
 	color: $color--white;
-	background-color: $color--gray-80;
+	background-color: $color--black;
+	font-size: $base--font-size / $major-second;
 	font-weight: $font-weight--semibold;
+	line-height: 1;
 	white-space: normal;
 	text-decoration: none;
 	cursor: pointer;
 
-	&:focus,
-	&:hover {
+	@include hover-focus {
 		outline: none;
 		color: $color--white;
 		background-color: $color--primary;
+		text-decoration: none;
 	}
 
 	&:disabled {
@@ -38,4 +38,9 @@
 			cursor: not-allowed;
 		}
 	}
+}
+
+#{$all-buttons} {
+
+	@include button;
 }

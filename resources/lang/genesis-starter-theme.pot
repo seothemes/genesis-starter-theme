@@ -13,34 +13,58 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/defaults.php:42
+#: config/defaults.php:44
 msgid "Menu"
 msgstr ""
 
-#: config/defaults.php:43
+#: config/defaults.php:45
 msgid "Sub Menu"
 msgstr ""
 
-#: config/defaults.php:90
+#: config/defaults.php:103
 msgid "Single Posts"
 msgstr ""
 
-#: config/defaults.php:98
+#: config/defaults.php:111
 msgid "Display featured image?"
 msgstr ""
 
-#: config/defaults.php:296
+#: config/defaults.php:344
 msgid "Return to top"
 msgstr ""
 
-#: config/defaults.php:389
+#: config/defaults.php:462
 msgid "Center Content"
 msgstr ""
 
-#: config/defaults.php:492
+#: config/defaults.php:576
 msgid "Header Menu"
 msgstr ""
 
-#: config/defaults.php:493
+#: config/defaults.php:577
 msgid "After Header Menu"
+msgstr ""
+
+#: config/defaults.php:609
+msgid "Front Page 1"
+msgstr ""
+
+#: config/defaults.php:610
+msgid "Front Page 1 widget area."
+msgstr ""
+
+#: config/defaults.php:627
+msgid "Front Page 2"
+msgstr ""
+
+#: config/defaults.php:628
+msgid "Front Page 2 widget area."
+msgstr ""
+
+#: config/defaults.php:636
+msgid "Front Page 3"
+msgstr ""
+
+#: config/defaults.php:637
+msgid "Front Page 3 widget area."
 msgstr ""

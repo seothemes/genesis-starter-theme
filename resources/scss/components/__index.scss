@@ -10,12 +10,19 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
+@import "wrap";
 @import "title-area";
+@import "nav-primary";
+@import "nav-secondary";
 @import "menu";
 @import "sub-menu";
+@import "header-widget-area";
 @import "custom-header";
+@import "hero-section";
 @import "breadcrumb";
 @import "archive-description";
+@import "content";
+@import "sidebar";
 @import "author-box";
 @import "avatar";
 @import "entry";
@@ -26,3 +33,4 @@
 @import "search-form";
 @import "widget";
 @import "footer-widget-area";
+@import "front-page";

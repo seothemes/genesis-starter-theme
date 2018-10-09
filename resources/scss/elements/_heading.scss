@@ -6,38 +6,21 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@mixin heading {
 	margin: 0 0 $spacing--m;
 	font-family: $font-family--heading;
 	font-weight: $font-weight--semibold;
 	line-height: $line-height--heading;
 }
 
-h1 {
-	font-size: $font-size--h1;
+#{$all-headings} {
+
+	@include heading;
 }
 
-h2 {
-	font-size: $font-size--h2;
-}
+@each $heading, $font-size in $font-sizes {
 
-h3 {
-	font-size: $font-size--h3;
-}
-
-h4 {
-	font-size: $font-size--h4;
-}
-
-h5 {
-	font-size: $font-size--h5;
-}
-
-h6 {
-	font-size: $font-size--h6;
+	#{$heading} {
+		font-size: $font-size;
+	}
 }
