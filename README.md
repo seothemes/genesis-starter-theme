@@ -2,7 +2,7 @@
 
 [![WordPress](https://img.shields.io/badge/wordpress-4.9.8%20tested-brightgreen.svg)]() [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://github.com/seothemes/genesis-starter-theme/blob/master/LICENSE.md)
 
-This is a developer-friendly starter theme used for creating commercial child themes for the Genesis Framework.
+A developer-friendly starter theme used for creating commercial child themes for the Genesis Framework.
 
 It uses Composer to pull in the [Core](https://github.com/seothemes/core) component library which provides the PHP logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images.
 
@@ -126,7 +126,6 @@ your-theme-name/    # → Root directory
 ├── config/         # → Config directory
 │   └── config.php  # → Theme settings
 ├── resources/      # → Front-end assets
-│   ├── demo/       # → Theme demo files
 │   ├── fonts/      # → Theme fonts
 │   ├── img/        # → Theme images
 │   ├── js/         # → Theme JavaScript
@@ -137,6 +136,7 @@ your-theme-name/    # → Root directory
 ├── vendor/         # → Composer packages
 ├── composer.json   # → Composer settings
 ├── functions.php   # → Composer autoloader
+├── front-page.php  # → Front page template
 ├── Gulpfile.js     # → Gulp config
 ├── package.json    # → Node dependencies
 ├── screenshot.png  # → Theme screenshot

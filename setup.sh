@@ -16,6 +16,7 @@ default_version=`perl -ne 'print if /(?:\"version\": \")(.*?)(?:\")/' './package
 bs='\'
 setup_sh="./setup.sh"
 functions_php="./functions.php"
+front_page_php="./front-page.php"
 config_php="./config/defaults.php"
 package_json="./package.json"
 composer_json="./composer.json"
@@ -133,6 +134,7 @@ Run setup:
 # ----------------------------------------------------------------
 
 perl -p -i -e "s|$default_name|$name|g" $functions_php
+perl -p -i -e "s|$default_name|$name|g" $front_page_php
 perl -p -i -e "s|$default_name|$name|g" $config_php
 perl -p -i -e "s|$default_name|$name|g" $package_json
 perl -p -i -e "s|$default_name|$name|g" $composer_json
@@ -148,6 +150,7 @@ echo "1/8 --> Search & replace name ........ ${green}done${txtreset}"
 # ----------------------------------------------------------------
 
 perl -p -i -e "s|$default_id|$id|g" $functions_php
+perl -p -i -e "s|$default_id|$id|g" $front_page_php
 perl -p -i -e "s|$default_id|$id|g" $config_php
 perl -p -i -e "s|$default_id|$id|g" $package_json
 perl -p -i -e "s|$default_id|$id|g" $composer_json
@@ -162,6 +165,7 @@ echo "2/8 --> Search & replace id .......... ${green}done${txtreset}"
 # ----------------------------------------------------------------
 
 perl -p -i -e "s|$default_author|$author|g" $functions_php
+perl -p -i -e "s|$default_author|$author|g" $front_page_php
 perl -p -i -e "s|$default_author|$author|g" $config_php
 perl -p -i -e "s|$default_author|$author|g" $package_json
 perl -p -i -e "s|$default_author|$author|g" $composer_json
@@ -176,6 +180,7 @@ echo "3/8 --> Change author name ........... ${green}done${txtreset}"
 # ----------------------------------------------------------------
 
 perl -p -i -e "s|$default_author_url|$author_url|g" $functions_php
+perl -p -i -e "s|$default_author_url|$author_url|g" $front_page_php
 perl -p -i -e "s|$default_author_url|$author_url|g" $config_php
 perl -p -i -e "s|$default_author_url|$author_url|g" $package_json
 perl -p -i -e "s|$default_author_url|$author_url|g" $composer_json
@@ -190,6 +195,7 @@ echo "4/8 --> Change author URL ............ ${green}done${txtreset}"
 # ----------------------------------------------------------------
 
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $functions_php
+perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $front_page_php
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $config_php
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $package_json
 perl -p -i -e "s|\Q$default_company$bs$default_package\E|$company$bs$bs$package|g" $gulpfile

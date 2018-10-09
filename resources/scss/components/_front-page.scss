@@ -1,0 +1,27 @@
+////
+/// Front page component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.front-page-1 {
+
+	@include hero-section;
+
+	@include mq(m) {
+		height: 40rem;
+	}
+}
+
+.front-page-2 {
+	border-bottom: $base--border;
+
+	@extend %front-page-widget;
+}
+
+.front-page-3 {
+
+	@extend %front-page-widget;
+}
