@@ -10,8 +10,7 @@
 	a {
 		text-decoration: none;
 
-		&:focus,
-		&:hover {
+		@include hover-focus {
 			color: $color--primary;
 		}
 	}

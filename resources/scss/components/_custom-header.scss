@@ -10,13 +10,26 @@
 ////
 
 .wp-custom-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include overlay;
+	@include position(absolute, 0 0 0 0);
 
 	// Video play/pause button.
-	&-video-button {}
+	&-video-button {
+	}
 
 	// Video play button.
-	&-video-play {}
+	&-video-play {
+	}
 
 	// Video pause button.
-	&-video-pause {}
+	&-video-pause {
+	}
+
+	img {
+		max-width: none;
+	}
 }

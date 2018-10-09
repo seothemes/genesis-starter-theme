@@ -30,8 +30,7 @@
 	a {
 		color: $color--gray-80;
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			color: $color--primary;
 		}
 	}

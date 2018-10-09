@@ -13,7 +13,9 @@
 	&-wrap {}
 
 	// Widget title.
-	&-title {}
+	&-title {
+		font-size: $font-size--h5;
+	}
 
 	// Featured content widget.
 	&.featured-content {

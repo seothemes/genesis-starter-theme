@@ -17,6 +17,7 @@
 ////
 
 $all-buttons: append($all-buttons, ".button");
+$all-buttons: append($all-buttons, ".button.menu-item a");
 
 ////
 /// Headings map
@@ -33,5 +34,4 @@ $all-headings: (
 	h4,
 	h5,
 	h6,
-	legend,
 );

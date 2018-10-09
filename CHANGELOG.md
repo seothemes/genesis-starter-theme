@@ -1,5 +1,12 @@
 # Genesis Starter Theme Changelog
 
+## [3.3.3] - 2018-10-10
+* Add front page template and widget areas
+* Add full width and landing page templates
+* Add default hero image
+* Add generated stylesheets to version control
+* Update Sass file structure
+
 ## [3.3.2] - 2018-10-05
 * Add featured image display setting for single posts
 * Fix text domains in config

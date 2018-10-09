@@ -15,14 +15,17 @@ body {
 	font-size: $base--font-size;
 	font-weight: $font-weight--regular;
 	line-height: $base--line-height;
+
+	@include mq(m) {
+		font-size: $base--font-size * strip-unit(map_get($font-sizes, h6));
+	}
 }
 
 a {
 	color: $color--primary;
 	text-decoration: none;
 
-	&:focus,
-	&:hover {
+	@include hover-focus {
 		color: $color--primary;
 		text-decoration: underline;
 	}
@@ -72,7 +75,8 @@ code,
 kbd,
 samp {
 	padding: 0.05em 0.5em;
-	background-color: $color--gray-10;
+	border-radius: $base--border--radius;
+	background-color: $color--gray-20;
 	font-family: $font-family--code;
 	font-size: 90%;
 }
@@ -80,7 +84,8 @@ samp {
 pre {
 	overflow-x: scroll;
 	padding: $spacing--m;
-	background-color: $color--gray-10;
+	border-radius: $base--border--radius;
+	background-color: $color--gray-20;
 	font-family: $font-family--code;
 
 	code,

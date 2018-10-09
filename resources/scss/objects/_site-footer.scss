@@ -1,7 +1,7 @@
 ////
-/// Footer layout.
+/// Site footer object.
 ///
-/// @group  Layout
+/// @group  Objects
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
@@ -13,10 +13,15 @@
 
 // Footer widgets layout.
 .footer-widgets {
-	padding: $spacing--m 0;
+	padding: $spacing--l 0;
 }
 
 // Footer credits layout.
 .footer-credits {
-	padding: $spacing--s 0;
+	padding: $spacing--l 0;
+	border-top: $base--border;
+
+	p {
+		margin-bottom: 0;
+	}
 }

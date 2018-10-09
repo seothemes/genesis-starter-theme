@@ -1,14 +1,11 @@
 ////
-/// Navigation layout.
+/// Nav Primary component.
 ///
-/// @group  Layout
+/// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.genesis-nav-menu {}
-
-// Primary nav layout.
 .nav-primary {
 	display: none;
 	position: absolute;
@@ -28,21 +25,3 @@
 		position: relative;
 	}
 }
-
-// Secondary nav layout.
-.nav-secondary {
-
-	@include mq(m) {
-		border-top: $base--border;
-	}
-
-	.menu {
-
-		@include mq(m) {
-			justify-content: flex-start;
-		}
-	}
-}
-
-// Footer nav layout.
-.nav-footer {}

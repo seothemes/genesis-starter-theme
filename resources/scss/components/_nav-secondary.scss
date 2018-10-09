@@ -1,0 +1,21 @@
+////
+/// Nav Secondary component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.nav-secondary {
+
+	@include mq(m) {
+		border-top: $base--border;
+	}
+
+	.menu {
+
+		@include mq(m) {
+			justify-content: flex-start;
+		}
+	}
+}

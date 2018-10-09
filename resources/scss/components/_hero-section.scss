@@ -1,0 +1,41 @@
+////
+/// Hero section component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin hero-section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: $spacing--xl 0;
+	border-bottom: $base--border;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+
+	@include overlay;
+
+	.wrap {
+		justify-content: center;
+		position: relative;
+	}
+
+	h1 {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-top: $spacing--m;
+		margin-bottom: 0;
+	}
+}
+
+.hero-section {
+
+	@include hero-section;
+}
