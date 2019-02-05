@@ -15,35 +15,7 @@
 
 namespace SeoThemes\GenesisStarterTheme;
 
-use SeoThemes\Core\Theme;
-
-add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup', 15 );
-/**
- * Child theme setup.
- *
- * Hooking to `genesis_setup` means we don't have to "start the engine"
- * by requiring the Genesis `lib/init.php` file, and it provides us
- * with access to all of Genesis functions once it's been loaded.
- *
- * @since  3.2.0
- *
- * @return void
- */
-function child_theme_setup() {
-
-	$vendor = require_once __DIR__ . '/vendor/autoload.php';
-	$config = require_once __DIR__ . '/config/defaults.php';
-
-	/**
-	 * Set up child theme using seothemes/core.
-	 *
-	 * Passes all of the theme configuration over to the core, which is responsible
-	 * for instantiating the components and injecting the correct configuration.
-	 * Custom components can be created and loaded from the `app/` directory.
-	 *
-	 * @link  https://github.com/seothemes/core
-	 *
-	 * @since 3.2.0
-	 */
-	Theme::setup( $config );
+// Run Composer autoloader.
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
 }

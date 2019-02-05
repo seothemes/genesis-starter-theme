@@ -20,9 +20,7 @@
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
   "require": {
-    "php": ">=5.4",
-    "seothemes/core": "dev-master",
-    "tgmpa/tgm-plugin-activation": "dev-develop"
+    "php": ">=5.4"
   },
   "require-dev": {},
   "autoload": {
