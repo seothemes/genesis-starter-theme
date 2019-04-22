@@ -531,6 +531,7 @@ $core_simple_social_icons = [
 
 $core_textdomain = [
 	TextDomain::DOMAIN => 'genesis-starter-theme',
+	TextDomain::PATH   => get_stylesheet_directory() . '/resources/lang',
 ];
 
 $core_theme_support = [
