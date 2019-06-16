@@ -1,14 +1,12 @@
+process.env.DISABLE_NOTIFIER = true;
+
 /**
  * Gulp task config file.
  */
 
-'use strict';
-
 var pkg     = require( './package.json' ),
     gulp    = require( 'gulp' ),
-	globs   = require( 'gulp-src-ordered-globs' ),
-	toolkit = require( 'gulp-wp-toolkit' ),
-	zip     = require( 'gulp-zip' );
+	toolkit = require( 'gulp-wp-toolkit' );
 
 toolkit.extendConfig(
 	{
@@ -29,13 +27,12 @@ toolkit.extendConfig(
 		},
 		src: {
 			php: ['**/*.php', '!vendor/**'],
-			images: 'resources/img/**/*',
-			scss: 'resources/scss/**/*.scss',
-			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
-			js: ['resources/js/**/*.js', '!node_modules/**'],
+			images: './do-not-edit/assets/img/**/*',
+			scss: './do-not-edit/assets/scss/**/*.scss',
+			css: ['**/*.css', '!node_modules/**'],
+			js: ['./do-not-edit/assets/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: './resources/lang/',
-			sassdoc: './resources/scss/**/*.scss',
+			i18n: './do-not-edit/assets/lang/',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -44,39 +41,36 @@ toolkit.extendConfig(
 				'!./node_modules',
 				'!./node_modules/**/*',
 				'!./vendor',
-				'!./vendor/**/*',
-				'./vendor/autoload.php',
-				'./vendor/composer/*.php',
-				'./vendor/composer/installed.json',
-				'./vendor/seothemes/core/src/*.php',
-				'./vendor/tgmpa/tgm-plugin-activation/languages/*',
-				'./vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php'
+				'!./vendor/**/*'
 			]
 		},
 		css: {
 			basefontsize: 10, // Used by postcss-pxtorem.
             remmediaquery: false,
 			scss: {
-				'style': {
-					src: 'resources/scss/style.scss',
-					dest: './',
-					outputStyle: 'expanded'
+                'style': {
+                    src: './do-not-edit/assets/scss/tools/_functions.scss',
+                    dest: './',
+                    outputStyle: 'expanded',
+                    sourceMap: 'false'
+                },
+				'main': {
+					src: './do-not-edit/assets/scss/main.scss',
+					dest: './do-not-edit/assets/css/',
+					outputStyle: 'compressed'
 				},
-				'woocommerce': {
-					src: 'resources/scss/vendor/woocommerce/__index.scss',
-					dest: './',
-					outputStyle: 'expanded'
-				}
-			},
-			sassdoc: {
-                dest: './sassdoc'
-            }
+                'woocommerce': {
+                    src: './do-not-edit/assets/scss/woocommerce/__index.scss',
+                    dest: './do-not-edit/assets/css/',
+                    outputStyle: 'compressed'
+                }
+			}
 		},
 		dest: {
-            i18npo: './resources/lang/',
-            i18nmo: './resources/lang/',
-			images: './resources/img/',
-			js: './resources/js/'
+            i18npo: './do-not-edit/assets/lang/',
+            i18nmo: './do-not-edit/assets/lang/',
+			images: './do-not-edit/assets/img/',
+			js: './do-not-edit/assets/js/'
 		},
 		server: {
             proxy: 'https://genesis-starter.test',
@@ -84,22 +78,11 @@ toolkit.extendConfig(
 			open: 'external',
             port: '8000',
             https: {
-            	   'key': '/Users/seothemes/.valet/Certificates/genesis-starter.test.key',
-            	   'cert': '/Users/seothemes/.valet/Certificates/genesis-starter.test.crt'
+            	   'key': '/Users/seothemes/.config/valet/Certificates/genesis-starter.test.key',
+            	   'cert': '/Users/seothemes/.config/valet/Certificates/genesis-starter.test.crt'
             }
 		}
 	}
 );
 
-toolkit.extendTasks( gulp, {
-	'zip': function() {
-		return globs(toolkit.config.src.zip, {base: './'}).
-		pipe(zip(pkg.name + '-' + pkg.version + '.zip')).
-		pipe(gulp.dest('../'));
-	},
-    'sassdoc': function () {
-    	return gulp.src(toolkit.config.src.sassdoc)
-        .pipe(sassdoc(toolkit.config.css.sassdoc))
-        .resume();
-	}
-} );
+toolkit.extendTasks(gulp, { /* Task Overrides */ });

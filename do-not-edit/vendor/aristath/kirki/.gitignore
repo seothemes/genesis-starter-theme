@@ -1,0 +1,43 @@
+# npm #
+#######
+node_modules
+npm-debug.log
+package-lock.json
+
+# grunt-contrib-sass #
+######################
+.sass-cache
+
+# composer #
+############
+vendor
+composer.lock
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jekyll #
+##########
+_site
+
+# SVN #
+#######
+.svn
+svn
+
+# PHPUNIT #
+###########
+build/logs
+
+# Local Dev files #
+###################
+.phpcs.xml
+phpcs.xml
+.css.map

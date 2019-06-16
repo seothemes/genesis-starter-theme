@@ -15,7 +15,6 @@
     "bourbon": "^5.1.0",
     "gridkit": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-src-ordered-globs": "^1.0.3",
     "gulp-wp-toolkit": "^2.3.2",
     "gulp-zip": "^4.1.0",
     "mqkit": "^1.0.3",
@@ -27,12 +26,11 @@
   },
   "theme": {
     "name": "Genesis Starter Theme",
-    "uri": "https://seothemes.com/genesis-starter-theme/",
-    "authoruri": "https://seothemes.com",
-    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "uri": "https://genesisstartertheme.com/",
+    "authoruri": "https://seothemes.com/",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-3.0.html",
     "domainpath": "/languages",
     "textdomain": "genesis-starter-theme",
-    "template": "genesis",
-    "tags": "one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready"
+    "template": "genesis"
   }
 }

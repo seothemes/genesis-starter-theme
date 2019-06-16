@@ -1,0 +1,225 @@
+.merlin__content {
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, .07);
+	box-sizing: border-box;
+	color: $black;
+	display: block;
+	margin: 1.5em auto 0;
+	max-width: 350px;
+	overflow: hidden;
+	padding: 60px 33px 35px;
+	position: relative;
+	text-align: center;
+	zoom: 1;
+
+	&--transition {
+		filter: blur(10px);
+		opacity: 0;
+		transform-origin: 50%;
+		transform: translateX(50%) scale(.95);
+		transition: transform $speed cubic-bezier(.694, 0, .335, 1), opacity $speed cubic-bezier(.694, 0, .335, 1), filter $speed cubic-bezier(.694, 0, .335, 1) 0;
+
+		// Applies styles when Reduced Motion is enabled
+		@media screen and (prefers-reduced-motion: reduce) {
+			filter: blur(2px);
+			transform: translateX(0) scale(1);
+			transition: opacity $speed_accessibility ease-in-out, filter $speed_accessibility ease-in-out;
+		}
+	}
+
+	&--welcome &--transition {
+		filter: blur(0);
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+
+	&--plugins &__footer.no-plugins,
+	&--welcome &__footer {
+		padding-top: 22px;
+	}
+
+	&--plugins &__footer {
+		padding-top: 3px;
+	}
+
+	&--license &__footer {
+		padding-top: 30px;
+	}
+
+	&--license &__footer.is-registered {
+		padding-top: 87px;
+	}
+
+	&--license .merlin__button--knockout {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		margin-top: 0;
+	}
+
+	&--license-key {
+		margin-top: 22px;
+
+		&.has-error input {
+			border-color: $red;
+			box-shadow: 0 0 2px rgba($red, .8);
+			animation: errorShake 0.4s 1 linear;
+		}
+
+		label {
+			@include hide();
+		}
+
+		&-wrapper {
+			position: relative;
+			width: 87%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.icon {
+			fill: $gray;
+			height: 27px;
+			width: 27px;
+			margin-bottom: 0;
+			opacity: .6;
+			z-index: 9999;
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			transition: fill 150ms cubic-bezier(.694, 0, .335, 1), opacity 150ms cubic-bezier(.694, 0, .335, 1);
+
+			// Applies styles when Reduced Motion is enabled
+			@media screen and (prefers-reduced-motion: reduce) {
+				transition: fill 50ms ease-in-out, opacity 50ms ease-in-out;
+			}
+
+			&:hover {
+				opacity: 1;
+				fill: $blue;
+			}
+		}
+
+		a {
+			position: absolute;
+			right: 3px;
+			height: 27px;
+			width: 27px;
+			top: 4px;
+
+			&::after {
+				/* gradient on the right - to indicate it's possible to scroll */
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 23px;
+				height: 27px;
+				width: 20px;
+				background: transparent;
+				border-radius: 3px;
+				background: linear-gradient( to left, $white 40%, rgba( $white, 0 ) );
+				pointer-events: none;
+			}
+		}
+
+		a:active svg {
+			animation: small_pulse 200ms;
+			animation-timing-function: cubic-bezier(0.694, 0, 0.335, 1);
+			animation-fill-mode: none;
+		}
+
+		input {
+			display: inline-block;
+			width: 100%;
+			font-size: 11px;
+			background: transparent;
+			font-family: Menlo, Consolas, monaco, monospace;
+			padding: 10px 27px 8px 9px;
+			border-radius: 3px;
+			box-shadow: inset 0 1px 2px rgba(0, 0, 0, .06);
+		}
+	}
+
+	&--ready {
+		padding-bottom: 12px;
+	}
+
+	body.loaded &--transition {
+		filter: blur(0);
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+
+	body.exiting &--transition {
+		filter: blur(10px);
+		opacity: 0;
+		transform: translateX(-40%) scale(.96);
+		transition: transform $speed cubic-bezier(.694, 0, .335, 1), opacity $speed cubic-bezier(.694, 0, .335, 1), filter $speed_longer cubic-bezier(.694, 0, .335, 1) 0;
+
+		// Applies styles when Reduced Motion is enabled
+		@media screen and (prefers-reduced-motion: reduce) {
+			filter: blur(2px);
+			transform: translateX(0) scale(1);
+			transition: opacity $speed_accessibility ease-in-out, filter $speed_accessibility ease-in-out;
+		}
+	}
+}
+
+.merlin__content--welcome {
+	opacity: 0;
+	animation: animation 1000ms linear both 200ms;
+	transition: opacity 400ms cubic-bezier(.694, 0, .335, 1);
+
+  	body.loaded & {
+		opacity: 1;
+	}
+
+	// Applies styles when Reduced Motion is enabled
+	@media screen and (prefers-reduced-motion: reduce) {
+		animation: none;
+		opacity: 1;
+	}
+}
+
+// Generated with Bounce.js. Edit at https://goo.gl/iTptLG
+@keyframes animation {
+0% { transform: matrix3d(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+4.5% { transform: matrix3d(0.718, 0, 0, 0, 0, 0.743, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+5.51% { transform: matrix3d(0.762, 0, 0, 0, 0, 0.794, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+9.01% { transform: matrix3d(0.888, 0, 0, 0, 0, 0.94, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+11.01% { transform: matrix3d(0.941, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+13.51% { transform: matrix3d(0.989, 0, 0, 0, 0, 1.044, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+16.52% { transform: matrix3d(1.024, 0, 0, 0, 0, 1.067, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+17.92% { transform: matrix3d(1.033, 0, 0, 0, 0, 1.07, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+21.92% { transform: matrix3d(1.042, 0, 0, 0, 0, 1.057, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+29.03% { transform: matrix3d(1.028, 0, 0, 0, 0, 1.016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+34.63% { transform: matrix3d(1.013, 0, 0, 0, 0, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+36.24% { transform: matrix3d(1.009, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+40.14% { transform: matrix3d(1.003, 0, 0, 0, 0, 0.992, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+50.55% { transform: matrix3d(0.997, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+62.36% { transform: matrix3d(0.999, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+79.08% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+84.68% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@keyframes small_pulse {
+	0% {
+		transform: scale(1);
+	}
+	15% {
+		transform: scale(.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes errorShake {
+	0% { transform: translate(8px); }
+	20% { transform: translate(-8px); }
+	40% { transform: translate(4px); }
+	60% { transform: translate(-4px); }
+	80% { transform: translate(2px); }
+	100% { transform: translate(0px); }
+}

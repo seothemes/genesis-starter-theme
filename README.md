@@ -29,7 +29,7 @@ Check out the [live demo](https://demo.seothemes.com/genesis-starter)
 
 The Genesis Starter Theme aims to modernize, organize and enhance some aspects of Genesis child theme development. Take a look at what is waiting for you:
 
-- [Bourbon](https://github.com/seothemes/genesis-starter-theme/tree/master/resources/scss) as a lightweight Sass toolkit
+- [Bourbon](https://github.com/seothemes/genesis-starter-theme/tree/master/assets/scss) as a lightweight Sass toolkit
 - [Gulp](https://gulpjs.com/) for automating development build tasks
 - [Browsersync](https://browsersync.io/) for synchronized browser testing
 - [Config-based](https://www.alainschlesser.com/config-files-for-reusable-code/), OOP modular architecture

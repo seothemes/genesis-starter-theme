@@ -55,7 +55,7 @@ npm manifest:
     },
     "theme": {
       "name": "Genesis Starter Theme",
-      "uri": "https://seothemes.com/genesis-starter-theme/",
+      "uri": "https://genesisstartertheme.com/",
       "authoruri": "https://seothemes.com",
       "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
       "domainpath": "/languages",
