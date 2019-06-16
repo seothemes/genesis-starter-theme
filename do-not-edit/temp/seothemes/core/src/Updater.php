@@ -47,7 +47,7 @@ class Updater extends Component {
 
 		// Return early if there is an error or if it's not a theme update.
 		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' || ! isset( $hook_extra['theme'] ) || $this->config[ self::EDD ]['theme_slug'] !== $hook_extra['theme'] ) ) {
-			return $source;
+			return false;
 		}
 
 		// Create theme backup.
