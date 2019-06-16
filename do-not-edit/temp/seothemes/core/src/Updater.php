@@ -58,10 +58,10 @@ class Updater extends Component {
 		}
 
 		// Create theme backup.
-		$origin = \get_stylesheet_directory();
-		$backup = get_theme_backup_path();
-		\wp_mkdir_p( $backup );
-		\copy_dir( $origin, $backup, [] );
+		$origin = get_stylesheet_directory();
+		$backup = $this->get_theme_backup_path();
+		wp_mkdir_p( $backup );
+		copy_dir( $origin, $backup, [] );
 
 		// Stop update if backup failed.
 		if ( ! file_exists( $backup . '/functions.php' ) ) {
@@ -99,11 +99,11 @@ class Updater extends Component {
 			'Name'    => 'Theme Name',
 			'Version' => 'Version',
 		];
-		$new_theme     = \get_stylesheet_directory() . '/style.css';
-		$new_data      = \get_file_data( $new_theme, $theme_headers );
+		$new_theme     = get_stylesheet_directory() . '/style.css';
+		$new_data      = get_file_data( $new_theme, $theme_headers );
 		$new_version   = $new_data['Version'];
-		$old_theme     = get_theme_backup_path() . '/style.css';
-		$old_data      = \get_file_data( $old_theme, $theme_headers );
+		$old_theme     = $this->get_theme_backup_path() . '/style.css';
+		$old_data      = get_file_data( $old_theme, $theme_headers );
 		$old_version   = $old_data['Version'];
 		$old_contents  = $wp_filesystem->get_contents( $old_theme );
 		$new_contents  = str_replace( $old_version, $new_version, $old_contents );
@@ -111,7 +111,7 @@ class Updater extends Component {
 
 		// Bring everything back except vendor directory.
 		$target = \get_stylesheet_directory();
-		$source = get_theme_backup_path();
+		$source = $this->get_theme_backup_path();
 		$skip   = $this->config[ self::SKIP ];
 		\copy_dir( $source, $target, $skip );
 
@@ -136,9 +136,9 @@ class Updater extends Component {
 	 *
 	 * @return string
 	 */
-	function get_theme_backup_path() {
-		$theme   = \get_stylesheet_directory();
-		$version = \wp_get_theme()->get( 'Version' );
+	public function get_theme_backup_path() {
+		$theme   = get_stylesheet_directory();
+		$version = wp_get_theme()->get( 'Version' );
 
 		return "{$theme}-backup-{$version}";
 	}
