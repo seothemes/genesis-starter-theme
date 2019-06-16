@@ -85,7 +85,7 @@ class Updater extends Component {
 	public function after_update( $response, $hook_extra, $result ) {
 
 		// Return early if no response or destination does not exist.
-		if ( ! $response || ! array_key_exists( 'destination', $result ) ) {
+		if ( ! $response || ! array_key_exists( 'destination', $result ) || ! is_dir( $this->get_theme_backup_path() ) ) {
 			return $response;
 		}
 
@@ -96,7 +96,7 @@ class Updater extends Component {
 
 		// Rename latest directory.
 		$source      = $this->get_latest_dir();
-		$destination = dirname( get_template_directory() ) . DIRECTORY_SEPARATOR . $this->config[ self::EDD ]['theme_slug'];
+		$destination = get_stylesheet_directory();
 		$wp_filesystem->move( $source, $destination, false );
 
 		// Bump temp style sheet version.
@@ -157,7 +157,7 @@ class Updater extends Component {
 	 * @return string
 	 */
 	public function get_theme_backup_path() {
-		$theme   = $this->config[ self::EDD ]['theme_slug'];
+		$theme   = get_stylesheet_directory();
 		$version = wp_get_theme()->get( 'Version' );
 
 		return "{$theme}-backup-{$version}";
