@@ -12,6 +12,13 @@ class Updater extends Component {
 	const PUC        = 'puc';
 	const EDD        = 'edd';
 
+	/**
+	 * Description of expected behavior.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
 	public function init() {
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
 		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
@@ -47,7 +54,7 @@ class Updater extends Component {
 
 		// Return early if there is an error or if it's not a theme update.
 		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' || ! isset( $hook_extra['theme'] ) || $this->config[ self::EDD ]['theme_slug'] !== $hook_extra['theme'] ) ) {
-			return $source;
+			return false;
 		}
 
 		// Create theme backup.
@@ -79,7 +86,7 @@ class Updater extends Component {
 
 		// Return early if no response or destination does not exist.
 		if ( ! $response || ! array_key_exists( 'destination', $result ) || ! isset( $hook_extra['theme'] ) || $this->config[ self::EDD ]['theme_slug'] !== $hook_extra['theme'] ) {
-			return $response;
+			return false;
 		}
 
 		// Setup WP_Filesystem.
