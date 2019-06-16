@@ -50,7 +50,7 @@ class Updater extends Component {
 	 *
 	 * @return string
 	 */
-	function before_update( $source, $remote_source, $theme_object, $hook_extra ) {
+	public function before_update( $source, $remote_source, $theme_object, $hook_extra ) {
 
 		// Return early if there is an error or if it's not a theme update.
 		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' ) ) {
@@ -82,7 +82,7 @@ class Updater extends Component {
 	 *
 	 * @return bool
 	 */
-	function after_update( $response, $hook_extra, $result ) {
+	public function after_update( $response, $hook_extra, $result ) {
 
 		// Return early if no response or destination does not exist.
 		if ( ! $response || ! array_key_exists( 'destination', $result ) ) {
@@ -99,14 +99,17 @@ class Updater extends Component {
 			'Name'    => 'Theme Name',
 			'Version' => 'Version',
 		];
-		$new_theme     = get_stylesheet_directory() . '/style.css';
-		$new_data      = get_file_data( $new_theme, $theme_headers );
-		$new_version   = $new_data['Version'];
-		$old_theme     = $this->get_theme_backup_path() . '/style.css';
-		$old_data      = get_file_data( $old_theme, $theme_headers );
-		$old_version   = $old_data['Version'];
-		$old_contents  = $wp_filesystem->get_contents( $old_theme );
-		$new_contents  = str_replace( $old_version, $new_version, $old_contents );
+
+		$new_theme   = $this->get_latest_dir() . '/style.css';
+		$new_data    = get_file_data( $new_theme, $theme_headers );
+		$new_version = $new_data['Version'];
+
+		$old_theme    = $this->get_theme_backup_path() . '/style.css';
+		$old_data     = get_file_data( $old_theme, $theme_headers );
+		$old_version  = $old_data['Version'];
+		$old_contents = $wp_filesystem->get_contents( $old_theme );
+		$new_contents = str_replace( $old_version, $new_version, $old_contents );
+
 		$wp_filesystem->put_contents( $old_theme, $new_contents, FS_CHMOD_FILE );
 
 		// Bring everything back except vendor directory.
@@ -127,6 +130,21 @@ class Updater extends Component {
 		}
 
 		return $response;
+	}
+
+	/**
+	 * Description of expected behavior.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return int|null|string
+	 */
+	public function get_latest_dir() {
+		$files = glob( dirname( get_template_directory() ) . '/*', GLOB_ONLYDIR );
+		$files = array_combine( $files, array_map( 'filectime', $files ) );
+		arsort( $files );
+
+		return key( $files );
 	}
 
 	/**
@@ -152,7 +170,7 @@ class Updater extends Component {
 	 *
 	 * @return array
 	 */
-	function theme_scandir_exclusions( $exclusions ) {
+	public function theme_scandir_exclusions( $exclusions ) {
 		if ( ! function_exists( 'get_current_screen' ) ) {
 			return $exclusions;
 		}
@@ -171,7 +189,7 @@ class Updater extends Component {
 	 *
 	 * @return void
 	 */
-	function plugin_update_checker() {
+	public function plugin_update_checker() {
 		if ( ! class_exists( 'Puc_v4p6_Factory' ) ) {
 			return;
 		}
