@@ -131,6 +131,8 @@ class Updater extends Component {
 			$wp_filesystem->delete( $source, true, 'd' );
 		}
 
+		switch_theme( get_stylesheet() );
+
 		return $response;
 	}
 

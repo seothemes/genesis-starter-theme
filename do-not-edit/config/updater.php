@@ -4,23 +4,13 @@ namespace SeoThemes\GenesisStarterTheme;
 
 return [
 	'skip'       => [
-		'.git',
 		'do-not-edit',
 		'node_modules',
 	],
 	'delete'     => false,
 	'exclusions' => [
-		'.git',
 		'do-not-edit',
 		'node_modules',
-		'Gulpfile.js',
-		'stylelint.config.js',
-		'composer.json',
-		'package-lock.json',
-		'package.json',
-		'CHANGELOG.md',
-		'README.md',
-		'phpcs.xml',
 	],
 	'puc'        => [
 		'repo'   => 'https://github.com/seothemes/genesis-starter-theme/',
