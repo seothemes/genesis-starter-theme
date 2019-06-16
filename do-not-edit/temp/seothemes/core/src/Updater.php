@@ -21,7 +21,7 @@ class Updater extends Component {
 	 */
 	public function init() {
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
-		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
+//		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
 
 		if ( isset( $this->config[ self::EXCLUSIONS ] ) ) {
 			add_filter( 'theme_scandir_exclusions', [ $this, 'theme_scandir_exclusions' ] );
@@ -99,22 +99,19 @@ class Updater extends Component {
 			'Name'    => 'Theme Name',
 			'Version' => 'Version',
 		];
-
-		$new_theme   = $this->get_latest_dir() . '/style.css';
-		$new_data    = get_file_data( $new_theme, $theme_headers );
-		$new_version = $new_data['Version'];
-
-		$old_theme    = $this->get_theme_backup_path() . '/style.css';
-		$old_data     = get_file_data( $old_theme, $theme_headers );
-		$old_version  = $old_data['Version'];
-		$old_contents = $wp_filesystem->get_contents( $old_theme );
-		$new_contents = str_replace( $old_version, $new_version, $old_contents );
-
+		$new_theme     = $this->get_latest_dir() . '/style.css';
+		$new_data      = get_file_data( $new_theme, $theme_headers );
+		$new_version   = $new_data['Version'];
+		$old_theme     = $this->get_theme_backup_path() . '/style.css';
+		$old_data      = get_file_data( $old_theme, $theme_headers );
+		$old_version   = $old_data['Version'];
+		$old_contents  = $wp_filesystem->get_contents( $old_theme );
+		$new_contents  = str_replace( $old_version, $new_version, $old_contents );
 		$wp_filesystem->put_contents( $old_theme, $new_contents, FS_CHMOD_FILE );
 
 		// Bring everything back except vendor directory.
-		$target = \get_stylesheet_directory();
 		$source = $this->get_theme_backup_path();
+		$target = $this->config[ self::EDD ]['theme_slug'];
 		$skip   = $this->config[ self::SKIP ];
 		\copy_dir( $source, $target, $skip );
 
@@ -155,7 +152,7 @@ class Updater extends Component {
 	 * @return string
 	 */
 	public function get_theme_backup_path() {
-		$theme   = get_stylesheet_directory();
+		$theme   = $this->config[ self::EDD ]['theme_slug'];
 		$version = wp_get_theme()->get( 'Version' );
 
 		return "{$theme}-backup-{$version}";
