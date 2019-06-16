@@ -21,7 +21,7 @@ class Updater extends Component {
 	 */
 	public function init() {
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
-//		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
+		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
 
 		if ( isset( $this->config[ self::EXCLUSIONS ] ) ) {
 			add_filter( 'theme_scandir_exclusions', [ $this, 'theme_scandir_exclusions' ] );
@@ -94,12 +94,17 @@ class Updater extends Component {
 		\WP_Filesystem();
 		global $wp_filesystem;
 
+		// Rename latest directory.
+		$source      = $this->get_latest_dir();
+		$destination = dirname( get_template_directory() ) . DIRECTORY_SEPARATOR . $this->config[ self::EDD ]['theme_slug'];
+		$wp_filesystem->move( $source, $destination, false );
+
 		// Bump temp style sheet version.
 		$theme_headers = [
 			'Name'    => 'Theme Name',
 			'Version' => 'Version',
 		];
-		$new_theme     = $this->get_latest_dir() . '/style.css';
+		$new_theme     = $destination . '/style.css';
 		$new_data      = get_file_data( $new_theme, $theme_headers );
 		$new_version   = $new_data['Version'];
 		$old_theme     = $this->get_theme_backup_path() . '/style.css';
@@ -111,7 +116,7 @@ class Updater extends Component {
 
 		// Bring everything back except vendor directory.
 		$source = $this->get_theme_backup_path();
-		$target = $this->config[ self::EDD ]['theme_slug'];
+		$target = $destination;
 		$skip   = $this->config[ self::SKIP ];
 		\copy_dir( $source, $target, $skip );
 
