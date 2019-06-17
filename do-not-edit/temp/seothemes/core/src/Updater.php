@@ -143,7 +143,7 @@ class Updater extends Component {
 		if ( $this->config[ self::DELETE ] ) {
 			$wp_filesystem->delete( $source, true, 'd' );
 		}
-		
+
 		return $response;
 	}
 

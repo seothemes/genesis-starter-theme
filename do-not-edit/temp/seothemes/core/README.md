@@ -48,23 +48,11 @@ composer require tgmpa/tgm-plugin-activation
 Components should be loaded in your theme `functions.php` file, using the `Theme::setup` static method. Code should run on the `after_setup_theme` hook (or `genesis_setup` if you use Genesis Framework). 
 
 ```php
-add_action( 'genesis_setup', __NAMESPACE__ . '\\child_theme_setup', 15 );
-/**
- * Child theme setup.
- *
- * Hooking to `genesis_setup` means we don't have to "start the engine"
- * by requiring the Genesis `lib/init.php` file, and it provides us
- * with access to all of Genesis functions once it's been loaded.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function child_theme_setup() {
-	$vendor = require_once __DIR__ . '/vendor/autoload.php';
-	$config = require_once __DIR__ . '/config/defaults.php';
-	Theme::setup( $config );
-}
+// Get config path.
+$config = dirname( dirname( __DIR__ ) ) . '/config';
+
+// Setup theme.
+\SeoThemes\Core\Theme::setup( $config );
 ```
 
 ## Structure
@@ -74,29 +62,22 @@ Core follows the [PHP Package Development Standard](https://github.com/php-pds/s
 ```sh
 ./
 ├── src/
-│   ├── AssetLoader.php
-│   ├── Breadcrumbs.php
+│   ├── Enqueue.php
+│   ├── Breadcrumb.php
 │   ├── Component.php
-│   ├── Constants.php
-│   ├── Customizer.php
-│   ├── CustomColors.php
-│   ├── DemoImport.php
+│   ├── Merlin.php
 │   ├── GenesisSettings.php
 │   ├── GoogleFonts.php
-│   ├── HeroSection.php
-│   ├── Hooks.php
 │   ├── ImageSizes.php
 │   ├── Kirki.php
 │   ├── PageLayouts.php
 │   ├── PageTemplate.php
 │   ├── PostTypeSupport.php
-│   ├── PluginActivation.php
+│   ├── Tgmpa.php
 │   ├── SimpleSocialIcons.php
-│   ├── TextDomain.php
 │   ├── Theme.php
 │   ├── ThemeSupport.php
-│   ├── WidgetArea.php
-│   └── Widgets.php
+│   └── WidgetAreas.php
 ├── .gitignore
 ├── composer.json
 ├── CHANGELOG.md
@@ -112,13 +93,3 @@ Please visit https://github.com/seothemes/core/issues/ to open a new issue.
 ## License
 
 This project is licensed under the GNU General Public License - see the LICENSE.md file for details.
-
-## Authors
-
-<a href="https://seothemes.com" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/seothemes-genesis-starter-theme.png" alt="SEO Themes logo" width="150"></a> &nbsp; <a href="https://github.com/d2themes" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/08/d2themes.png" alt="D2 Themes logo" width="150"></a>
-
-See also the list of [contributors](https://github.com/seothemes/core/graphs/contributors) who participated in this project.
-
-## Special Thanks
-
-[Craig Simpson](https://github.com/d2themes), [Gary Jones](https://github.com/gamajo)
