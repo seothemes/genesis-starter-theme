@@ -43,7 +43,16 @@
     "files": [
       "do-not-edit/vendor/richtabor/merlin-wp/class-merlin.php",
       "do-not-edit/vendor/aristath/kirki/kirki.php",
-      "do-not-edit/vendor/seothemes/core/core.php"
+      "do-not-edit/src/functions/setup.php",
+      "do-not-edit/src/structure/body.php",
+      "do-not-edit/src/structure/header.php",
+      "do-not-edit/src/structure/wrap.php",
+      "do-not-edit/src/structure/menus.php",
+      "do-not-edit/src/structure/hero.php",
+      "do-not-edit/src/structure/footer.php",
+      "do-not-edit/src/structure/single.php",
+      "do-not-edit/src/structure/archive.php",
+      "do-not-edit/src/structure/layout.php"
     ]
   },
   "config": {

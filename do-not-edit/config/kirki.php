@@ -2,4 +2,6 @@
 
 namespace SeoThemes\GenesisStarterTheme;
 
-return [];
+return [
+	'loader' => 'disable_loader',
+];

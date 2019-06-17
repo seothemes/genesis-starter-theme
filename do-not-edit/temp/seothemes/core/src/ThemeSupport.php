@@ -4,36 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Add or remove theme support for given features.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\ThemeSupport;
- *
- * $core_theme_support = [
- *     ThemeSupport::ADD => [
- *         'html5', [
- *             'comment-form',
- *             'comment-list',
- *             'gallery',
- *             'caption',
- *         ],
- *     ]
- * ];
- *
- * return [
- *     ThemeSupport::class => $core_theme_support,
- * ];
- * ```
+ * Class ThemeSupport
  *
  * @package SeoThemes\Core
  */

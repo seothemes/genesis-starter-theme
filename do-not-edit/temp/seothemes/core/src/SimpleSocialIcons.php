@@ -4,39 +4,20 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Set Simple Social Icons default values through configuration.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\SimpleSocialIcons;
- *
- * $core_simple_social_icons = [
- *     SimpleSocialIcons::DEFAULTS => [
- *         SimpleSocialIcons::NEW_WINDOW => 1,
- *         SimpleSocialIcons::SIZE       => 40,
- *     ],
- * ];
- *
- * return [
- *     SimpleSocialIcons::class => $core_simple_social_icons,
- * ];
- * ```
+ * Class SimpleSocialIcons
  *
  * @package SeoThemes\Core
  */
 class SimpleSocialIcons extends Component {
 
-	const DEFAULTS = 'defaults';
-
+	const DEFAULTS               = 'defaults';
 	const TITLE                  = 'title';
 	const NEW_WINDOW             = 'new_window';
 	const SIZE                   = 'size';

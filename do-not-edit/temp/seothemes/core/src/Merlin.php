@@ -1,13 +1,33 @@
 <?php
+/**
+ * Register Merlin config, strings and import files.
+ *
+ * @package   SeoThemes\Core
+ * @author    Lee Anthony <seothemeswp@gmail.com>
+ * @copyright 2019, SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\Core;
 
+/**
+ * Class Merlin
+ *
+ * @package SeoThemes\Core
+ */
 class Merlin extends Component {
 
 	const CONFIG  = 'config';
 	const STRINGS = 'strings';
 	const IMPORT  = 'import';
 
+	/**
+	 * Initialize Merlin component.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
 	public function init() {
 		new \Merlin( $this->config[ self::CONFIG ], $this->config[ self::STRINGS ] );
 
@@ -16,11 +36,11 @@ class Merlin extends Component {
 	}
 
 	/**
-	 * Description of expected behavior.
+	 * Remove child theme step from wizard.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param $steps
+	 * @param array $steps Default wizard steps.
 	 *
 	 * @return mixed
 	 */
@@ -31,7 +51,7 @@ class Merlin extends Component {
 	}
 
 	/**
-	 * Description of expected behavior.
+	 * Add local demo import files.
 	 *
 	 * @since 1.0.0
 	 *

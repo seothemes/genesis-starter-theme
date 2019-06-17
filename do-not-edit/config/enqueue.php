@@ -3,11 +3,23 @@
 namespace SeoThemes\GenesisStarterTheme;
 
 return [
-	'scripts' => [],
+	'scripts' => [
+		[
+			'handle' => 'genesis-starter-theme-editor',
+			'src'    => get_stylesheet_directory_uri() . '/do-not-edit/assets/js/editor.js',
+			'deps'   => [ 'wp-blocks' ],
+			'editor' => true,
+		],
+	],
 	'styles'  => [
 		[
 			'handle' => 'main',
 			'src'    => get_stylesheet_directory_uri() . '/do-not-edit/assets/css/main.css',
+		],
+		[
+			'handle' => 'genesis-starter-theme-editor',
+			'src'    => get_stylesheet_directory_uri() . '/do-not-edit/assets/css/editor.css',
+			'editor' => true,
 		],
 	],
 	'menus'   => [

@@ -4,59 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Load theme scripts and stylesheets through configuration.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\AssetLoader;
- *
- * $core_assets = [
- *      AssetLoader::SCRIPTS => [
- *         [
- *            AssetLoader::HANDLE   => 'text-domain',
- *            AssetLoader::URL      => AssetLoader::path( '/assets/js/menus.js' ),
- *            AssetLoader::DEPS     => [ 'jquery' ],
- *            AssetLoader::VERSION  => CHILD_THEME_VERSION,
- *            AssetLoader::FOOTER   => true,
- *            AssetLoader::ENQUEUE  => true,
- *            AssetLoader::LOCALIZE => [
- *                AssetLoader::LOCALIZEVAR  => 'genesis_responsive_menu',
- *                AssetLoader::LOCALIZEDATA => [
- *                    'mainMenu'    => __( 'Toggle Menu', 'text-domain' ),
- *                    'subMenu'     => __( 'Toggle Submenu', 'text-domain' ),
- *                    'menuClasses' => [
- *                        'combine' => [
- *                            '.nav-primary',
- *                        ],
- *                        'others'  => [],
- *                    ],
- *                ]
- *            ],
- *         ],
- *      ],
- *      AssetLoader::STYLES => [
- *         [
- *            AssetLoader::HANDLE   => 'fontawesome',
- *            AssetLoader::URL      =>
- *            'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
- *            AssetLoader::VERSION  => '4.7.0',
- *       ],
- *    ],
- * ];
- *
- * return [
- *     AssetLoader::class => $core_assets,
- * ];
- * ```
+ * Class Enqueue
  *
  * @package SeoThemes\Core
  */
@@ -75,14 +30,15 @@ class Enqueue extends Component {
 	const URL          = 'src';
 	const VERSION      = 'version';
 	const MENUS        = 'menus';
+	const EDITOR       = 'editor';
 
 	public function init() {
 		if ( isset( $this->config[ self::SCRIPTS ] ) ) {
-			add_action( 'wp_enqueue_scripts', [ $this, 'process_scripts' ] );
+			$this->process_assets( $this->config[ self::SCRIPTS ] );
 		}
 
 		if ( isset( $this->config[ self::STYLES ] ) ) {
-			add_action( 'wp_enqueue_scripts', [ $this, 'process_styles' ] );
+			$this->process_assets( $this->config[ self::STYLES ] );
 		}
 
 		if ( isset( $this->config[ self::MENUS ] ) ) {
@@ -91,48 +47,47 @@ class Enqueue extends Component {
 	}
 
 	/**
-	 * Enqueue or register scripts passed through config, and implement l10n if required.
+	 * Process scripts and styles.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $assets
 	 *
 	 * @return void
 	 */
-	public function process_scripts() {
-		foreach ( $this->config[ self::SCRIPTS ] as $asset ) {
-			$deps        = $this->get_deps( $asset );
-			$version     = $this->get_version( $asset );
-			$footer      = $this->get_footer( $asset );
-			$conditional = isset( $asset[ self::CONDITIONAL ] ) ? $asset[ self::CONDITIONAL ] : '__return_true';
+	protected function process_assets( $assets ) {
+		foreach ( $assets as $asset ) {
+			$hook = isset( $asset[ self::EDITOR ] ) && $asset[ self::EDITOR ] ? 'enqueue_block_editor_assets' : 'wp_enqueue_scripts';
 
-			// Either enqueue or register the script.
-			if ( is_callable( $conditional ) && $conditional() ) {
-				wp_register_script( $asset[ self::HANDLE ], $asset[ self::URL ], $deps, $version, $footer );
-				wp_enqueue_script( $asset[ self::HANDLE ] );
+			if ( 'enqueue_block_editor_assets' == $hook && 'style' === $this->get_type( $asset['src'] ) ) {
+				add_editor_style( str_replace( get_stylesheet_directory_uri(), '', $asset['src'] ) );
 
-				if ( isset( $asset[ self::LOCALIZE ] ) ) {
-					$name = $asset[ self::LOCALIZE ][ self::LOCALIZEVAR ];
-					$data = $asset[ self::LOCALIZE ][ self::LOCALIZEDATA ];
-					wp_localize_script( $asset[ self::HANDLE ], $name, $data );
+				continue;
+			}
+
+			add_action( $hook, function () use ( $asset ) {
+				$type        = $this->get_type( $asset['src'] );
+				$deps        = $this->get_deps( $asset );
+				$version     = $this->get_version( $asset );
+				$footer      = $this->get_footer( $asset );
+				$media       = $this->get_media( $asset );
+				$last_arg    = $footer ? $footer : $media;
+				$conditional = isset( $asset[ self::CONDITIONAL ] ) ? $asset[ self::CONDITIONAL ] : '__return_true';
+				$register    = "wp_register_$type";
+				$enqueue     = "wp_enqueue_$type";
+
+				// Register and enqueue the asset.
+				if ( is_callable( $conditional ) && $conditional() ) {
+					$register( $asset[ self::HANDLE ], $asset[ self::URL ], $deps, $version, $last_arg );
+					$enqueue( $asset[ self::HANDLE ] );
+
+					if ( isset( $asset[ self::LOCALIZE ] ) ) {
+						$name = $asset[ self::LOCALIZE ][ self::LOCALIZEVAR ];
+						$data = $asset[ self::LOCALIZE ][ self::LOCALIZEDATA ];
+						wp_localize_script( $asset[ self::HANDLE ], $name, $data );
+					}
 				}
-			}
-		}
-	}
-
-	/**
-	 * Enqueue or register stylesheets passed through config.
-	 *
-	 * @return void
-	 */
-	public function process_styles() {
-		foreach ( $this->config[ self::STYLES ] as $asset ) {
-			$deps        = $this->get_deps( $asset );
-			$version     = $this->get_version( $asset );
-			$media       = $this->get_media( $asset );
-			$conditional = isset( $asset[ self::CONDITIONAL ] ) ? $asset[ self::CONDITIONAL ] : '__return_true';
-
-			// Either enqueue or register the stylesheet.
-			if ( is_callable( $conditional ) && $conditional() ) {
-				wp_register_style( $asset[ self::HANDLE ], $asset[ self::URL ], $deps, $version, $media );
-				wp_enqueue_style( $asset[ self::HANDLE ] );
-			}
+			} );
 		}
 	}
 
@@ -181,32 +136,25 @@ class Enqueue extends Component {
 	}
 
 	/**
-	 * Return the path to the file.
+	 * Get asset type from src URL.
 	 *
-	 * If a minified version of the file exists and SCRIPT_DEBUG
-	 * is not enabled then AssetLoader will return the URL of the
-	 * minified file.
+	 * @since 1.0.0
 	 *
-	 * @param string $path Path to the file relative to theme root.
+	 * @param $asset
 	 *
 	 * @return string
 	 */
-	public static function path( $path ) {
-		if ( ! strpos( $path, '.min.' ) ) {
-			$filename           = pathinfo( $path, PATHINFO_FILENAME );
-			$extension          = pathinfo( $path, PATHINFO_EXTENSION );
-			$directory          = pathinfo( $path, PATHINFO_DIRNAME );
-			$minified_file      = trailingslashit( $directory ) . $filename . '.min.' . $extension;
-			$minified_file_path = get_stylesheet_directory() . $minified_file;
-
-			if ( file_exists( $minified_file_path ) && ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
-				$path = $minified_file;
-			}
-		}
-
-		return esc_url( get_stylesheet_directory_uri() . $path );
+	protected function get_type( $src ) {
+		return strpos( $src, '.js' ) !== false ? 'script' : 'style';
 	}
 
+	/**
+	 * Description of expected behavior.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
 	public function register_menus() {
 		genesis_register_responsive_menus( $this->config[ self::MENUS ] );
 	}

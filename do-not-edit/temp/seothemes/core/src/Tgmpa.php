@@ -4,44 +4,16 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Add recommended plugins to TGM Plugin Activation through configuration.
+ * Class Tgmpa
  *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\PluginActivation;
- *
- * $core_plugins = [
- *     PluginActivation::REGISTER => [
- *         [
- *             PluginActivation::NAME     => 'Genesis Widget Column Classes',
- *             PluginActivation::SLUG     => 'genesis-widget-column-classes',
- *             PluginActivation::REQUIRED => false,
- *         ],
- *         [
- *             PluginActivation::NAME     => 'Icon Widget',
- *             PluginActivation::SLUG     => 'icon-widget',
- *             PluginActivation::REQUIRED => false,
- *         ],
- *     ],
- *     PluginActivation::SETTINGS => [
- *         PluginActivation::SETTING_HAS_NOTICES => true,
- *         PluginActivation::SETTING_DISMISSABLE => false,
- *     ],
- * ];
- *
- * return [
- *     PluginActivation::class => $core_plugins,
- * ];
- * ```
+ * @package SeoThemes\Core
  */
 class Tgmpa extends Component {
 

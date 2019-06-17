@@ -15,16 +15,6 @@ $color--error: #dc4649;
 $color--white: #fff;
 $color--black: #141618;
 
-$colors: (
-	primary: $color--primary,
-	accent: $color--accent,
-	success: $color--success,
-	warning: $color--warning,
-	error: $color--error,
-	white: $color--white,
-	black: $color--black,
-);
-
 // Grayscale
 $color--gray-90: lighten($color--black, 10%);
 $color--gray-80: lighten($color--black, 20%);
@@ -35,6 +25,25 @@ $color--gray-40: lighten($color--black, 60%);
 $color--gray-30: lighten($color--black, 70%);
 $color--gray-20: lighten($color--black, 80%);
 $color--gray-10: lighten($color--black, 90%);
+
+// Site
+$color--heading: $color--gray-80;
+$color--text: $color--gray-80;
+$color--border: $color--gray-20;
+
+// Map
+$colors: (
+	primary: $color--primary,
+	accent: $color--accent,
+	success: $color--success,
+	warning: $color--warning,
+	error: $color--error,
+	white: $color--white,
+	black: $color--black,
+	heading: $color--heading,
+	text: $color--text,
+	border: $color--border,
+);
 
 // Social
 $color--dribbble: #ea4c89;

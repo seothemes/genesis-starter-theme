@@ -9,24 +9,46 @@
 .wp-block {
 
 	// Audio block.
-	&-audio {}
+	&-audio {
+	}
 
 	// Button block.
 	&-button {
 
-		&__link {}
+		&__link {
+
+			@include button;
+
+			.is-style-rounded & {
+				border-radius: 10rem;
+			}
+
+			.is-style-outline & {
+				border: $base--border--width $base--border--style $color--primary;
+				color: $color--primary;
+				background-color: transparent;
+
+				@include hover-focus {
+					border-color: lighten($color--primary, 10);
+					color: $color--white;
+				}
+			}
+		}
 	}
 
 	// Categories block.
 	&-categories {
 
-		&-list {}
+		&-list {
+		}
 
-		&-dropdown {}
+		&-dropdown {
+		}
 	}
 
 	// Code block.
-	&-code {}
+	&-code {
+	}
 
 	// Columns block.
 	&-columns {
@@ -55,19 +77,26 @@
 	// Cover image block.
 	&-cover-image {
 
-		&.has-parallax {}
+		&.has-parallax {
+		}
 
-		&.has-background-dim {}
+		&.has-background-dim {
+		}
 
-		&-text {}
+		&-text {
+		}
 
-		&.has-left-content {}
+		&.has-left-content {
+		}
 
-		&.has-right-content {}
+		&.has-right-content {
+		}
 
-		&.has-left-content &-text {}
+		&.has-left-content &-text {
+		}
 
-		&.has-right-content &-text {}
+		&.has-right-content &-text {
+		}
 	}
 
 	// Embed block.
@@ -79,7 +108,8 @@
 	// File block.
 	&-file {
 
-		&__button {}
+		&__button {
+		}
 	}
 
 	// Gallery block.
@@ -87,17 +117,23 @@
 
 		@include margin($spacing--m null);
 
-		&.is-cropped {}
+		&.is-cropped {
+		}
 
-		&.columns-1 {}
+		&.columns-1 {
+		}
 
-		&.columns-2 {}
+		&.columns-2 {
+		}
 
-		&.columns-3 {}
+		&.columns-3 {
+		}
 
-		.blocks-gallery-item {}
+		.blocks-gallery-item {
+		}
 
-		&.is-cropped .blocks-gallery-item {}
+		&.is-cropped .blocks-gallery-item {
+		}
 
 		.blocks-gallery-item {
 
@@ -106,7 +142,8 @@
 			}
 		}
 
-		&.columns-1 .blocks-gallery-item {}
+		&.columns-1 .blocks-gallery-item {
+		}
 	}
 
 	// Image block.
@@ -134,13 +171,16 @@
 	// Latest posts block.
 	&-latest-posts {
 
-		&.is-grid {}
+		&.is-grid {
+		}
 
-		&__post-date {}
+		&__post-date {
+		}
 	}
 
 	// Preformatted block.
-	&-preformatted {}
+	&-preformatted {
+	}
 
 	// Pullquote block.
 	&-pullquote {
@@ -155,17 +195,22 @@
 	}
 
 	// Quote block.
-	&-quote {}
+	&-quote {
+	}
 
 	// Separator block.
-	&-separator {}
+	&-separator {
+	}
 
 	// Subhead block.
-	&-subhead {}
+	&-subhead {
+	}
 
 	// Table block.
-	&-table {}
+	&-table {
+	}
 
 	// Verse block.
-	&-verse {}
+	&-verse {
+	}
 }

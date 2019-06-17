@@ -37,7 +37,7 @@ textarea {
 	&:disabled:hover {
 		border-color: $color--gray-60;
 		color: $color--gray-40;
-		background-color: $color--gray-20;
+		background-color: $color--border;
 		cursor: not-allowed;
 	}
 }

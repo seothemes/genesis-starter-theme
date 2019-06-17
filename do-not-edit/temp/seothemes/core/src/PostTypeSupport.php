@@ -4,34 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Add or remove post type support for given features.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\PostTypeSupport
- *
- * $core_post_type_support = [
- *     PostTypeSupport::ADD => [
- *        [
- *            PostTypeSupport::POST_TYPE => 'page',
- *            PostTypeSupport::SUPPORTS  => 'excerpt',
- *        ],
- *    ],
- * ];
- *
- * return [
- *     PostTypeSupport::class => $core_post_type_support,
- * ];
- * ```
+ * Class PostTypeSupport
  *
  * @package SeoThemes\Core
  */

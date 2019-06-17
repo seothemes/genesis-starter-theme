@@ -1,12 +1,11 @@
 ////
-/// Site footer object.
+/// WordPress classes.
 ///
-/// @group  Objects
+/// @group  Utilities
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.site-footer {
-	margin-top: auto;
-	border-top: $base--border;
+.post-edit-link {
+	display: none;
 }

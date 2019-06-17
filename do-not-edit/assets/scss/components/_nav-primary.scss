@@ -7,6 +7,7 @@
 ////
 
 .nav-primary {
+	display: none;
 	width: 100vw;
 
 	@include mq(m) {

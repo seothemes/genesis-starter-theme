@@ -4,32 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Merges configured breadcrumbs arguments with defaults.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\GenesisBreadcrumbs;
- *
- * $core_genesis_breadcrumbs = [
- *     GenesisBreadcrumbs::SEP    => ' → ',
- *     GenesisBreadcrumbs::LABELS => [
- *         GenesisBreadcrumbs::PREFIX => '',
- *     ],
- * ];
- *
- * return [
- *     GenesisBreadcrumbs::class => $core_genesis_breadcrumbs,
- * ];
- * ```
+ * Class Breadcrumb
  *
  * @package SeoThemes\Core
  */

@@ -90,14 +90,14 @@
 		&:before {
 			content: "";
 
-			@include triangle("down", 1rem, 0.5rem, $color--gray-80);
+			@include triangle("down", 1rem, 0.5rem, $color--text);
 		}
 
 		&.activated {
 
 			&:before {
 
-				@include triangle("up", 1rem, 0.5rem, $color--gray-80);
+				@include triangle("up", 1rem, 0.5rem, $color--text);
 			}
 		}
 	}

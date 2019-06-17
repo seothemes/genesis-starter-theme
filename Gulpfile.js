@@ -59,8 +59,13 @@ toolkit.extendConfig(
 					dest: './do-not-edit/assets/css/',
 					outputStyle: 'compressed'
 				},
+                'editor': {
+                    src: './do-not-edit/assets/scss/editor.scss',
+                    dest: './do-not-edit/assets/css/',
+                    outputStyle: 'compressed'
+                },
                 'woocommerce': {
-                    src: './do-not-edit/assets/scss/woocommerce/__index.scss',
+                    src: './do-not-edit/assets/scss/plugins/woocommerce/__index.scss',
                     dest: './do-not-edit/assets/css/',
                     outputStyle: 'compressed'
                 }

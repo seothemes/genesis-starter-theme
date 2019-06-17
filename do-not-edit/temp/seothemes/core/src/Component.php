@@ -4,8 +4,7 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
@@ -28,7 +27,11 @@ abstract class Component {
 	/**
 	 * Core constructor.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param array $config Array of config specific to this component.
+	 *
+	 * @return void
 	 */
 	public function __construct( array $config ) {
 		$this->config = $config;
@@ -36,6 +39,8 @@ abstract class Component {
 
 	/**
 	 * The init() method within each core component is called to instantiate it.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return void
 	 */

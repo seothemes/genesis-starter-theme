@@ -12,35 +12,7 @@
 namespace SeoThemes\Core;
 
 /**
- * Add or remove image sizes through configuration.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\ImageSizes;
- *
- * $core_image_sizes = [
- *     ImageSizes::REMOVE => [
- *         'example_image_size',
- *     ],
- *     ImageSizes::ADD    => [
- *         'featured' => [
- *             ImageSizes::WIDTH  => 620,
- *             ImageSizes::HEIGHT => 380,
- *             ImageSizes::CROP   => true,
- *         ],
- *         'hero'        => [
- *             ImageSizes::WIDTH  => 1280,
- *             ImageSizes::HEIGHT => 720,
- *             ImageSizes::CROP   => true,
- *         ],
- *     ],
- * ];
- *
- * return [
- *     ImageSizes::class => $core_image_sizes,
- * ];
- * ```
+ * Class ImageSizes
  *
  * @package SeoThemes\Core
  */

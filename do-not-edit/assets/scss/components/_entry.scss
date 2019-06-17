@@ -12,7 +12,16 @@
 	&-header {}
 
 	// Entry title.
-	&-title {}
+	&-title {
+
+		a {
+			color: $color--text;
+
+			@include hover-focus {
+				color: $color--primary;
+			}
+		}
+	}
 
 	// Entry title link.
 	&-title-link {}

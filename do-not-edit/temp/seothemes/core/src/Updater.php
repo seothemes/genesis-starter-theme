@@ -1,9 +1,22 @@
 <?php
+/**
+ * Loads EDD theme updater and customization-safe updates.
+ *
+ * @package   SeoThemes\Core
+ * @author    Lee Anthony <seothemeswp@gmail.com>
+ * @copyright 2019, SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\Core;
 
 use ProteusThemes\EDDThemeUpdater\EDDThemeUpdaterConfig;
 
+/**
+ * Class Updater
+ *
+ * @package SeoThemes\Core
+ */
 class Updater extends Component {
 
 	const SKIP       = 'skip';
@@ -13,7 +26,7 @@ class Updater extends Component {
 	const EDD        = 'edd';
 
 	/**
-	 * Description of expected behavior.
+	 * Initialize component.
 	 *
 	 * @since 1.0.0
 	 *
@@ -130,9 +143,7 @@ class Updater extends Component {
 		if ( $this->config[ self::DELETE ] ) {
 			$wp_filesystem->delete( $source, true, 'd' );
 		}
-
-		switch_theme( get_stylesheet() );
-
+		
 		return $response;
 	}
 
@@ -214,7 +225,7 @@ class Updater extends Component {
 	}
 
 	/**
-	 * Description of expected behavior.
+	 * Sets up the EDD theme updater config.
 	 *
 	 * @since 1.0.0
 	 *

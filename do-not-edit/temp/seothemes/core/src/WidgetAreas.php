@@ -4,46 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Register, unregister or display widget areas.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\WidgetArea;
- *
- * $core_widget_areas = [
- *     WidgetArea::REGISTER   => [
- *         [
- *             WidgetArea::ID          => 'utility-bar',
- *             WidgetArea::NAME        => __( 'Utility Bar', 'example-textdomain' ),
- *             WidgetArea::DESCRIPTION => __( 'Utility bar appearing above the site header.', 'example-textdomain' ),
- *             WidgetArea::LOCATION    => 'genesis_before_header',
- *             WidgetArea::BEFORE      => '<div class="utility-bar">',
- *             WidgetArea::AFTER       => '</div>',
- *             WidgetArea::PRIORITY    => 5,
- *             WidgetArea::CONDITIONAL => function () {
- *                 return is_front_page();
- *             },
- *         ],
- *     ],
- *     WidgetArea::UNREGISTER => [
- *         WidgetArea::HEADER_RIGHT,
- *         WidgetArea::SIDEBAR_ALT,
- *     ],
- * ];
- *
- * return [
- *     WidgetArea::class => $core_widget_areas,
- * ];
- * ```
+ * Class WidgetAreas
  *
  * @package SeoThemes\Core
  */

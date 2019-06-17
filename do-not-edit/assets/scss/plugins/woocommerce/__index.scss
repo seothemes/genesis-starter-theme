@@ -7,9 +7,9 @@
 ////
 
 // Abstracts
-@import "../../../../node_modules/bourbon/core/bourbon";
-@import "../settings/_index";
-@import "../tools/_index";
+@import "../../../../../node_modules/bourbon/core/bourbon";
+@import "../../settings/_index";
+@import "../../tools/_index";
 
 // WooCommerce
 @import "globals";

@@ -6,6 +6,11 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+.footer-widgets {
+	padding: $spacing--l 0;
+}
+
+// Footer widget area.
 .footer-widget-area {
 
 	@include mq(m) {

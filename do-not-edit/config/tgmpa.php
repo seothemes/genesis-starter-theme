@@ -2,14 +2,18 @@
 
 namespace SeoThemes\GenesisStarterTheme;
 
+$plugins = [];
+
+if ( class_exists( 'WooCommerce' ) ) {
+	$plugins[] = [
+		'name'     => 'Genesis Connect for WooCommerce',
+		'slug'     => 'genesis-connect-woocommerce',
+		'required' => false,
+	];
+}
+
 return [
-	'register' => [
-		[
-			'name'     => 'AMP',
-			'slug'     => 'amp',
-			'required' => false,
-		],
-	],
+	'register' => $plugins,
 	'settings' => [
 		'setting_has_notices' => true,
 		'setting_dismissable' => false,

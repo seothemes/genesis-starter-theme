@@ -3,6 +3,7 @@
  * Genesis Starter Theme
  *
  * Template Name: Landing
+ * Template Post Type: post, page
  *
  * WARNING: This file is should not be modified under any circumstances.
  * Customizations should be made in the form of a core-functionality
@@ -16,11 +17,6 @@
  */
 
 namespace SeoThemes\GenesisStarterTheme;
-
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
 
 // Remove Skip Links.
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
@@ -53,4 +49,4 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Run the Genesis loop.
-\genesis();
+genesis();

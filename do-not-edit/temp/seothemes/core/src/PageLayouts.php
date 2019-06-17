@@ -4,40 +4,14 @@
  *
  * @package   SeoThemes\Core
  * @author    Lee Anthony <seothemeswp@gmail.com>
- * @author    Craig Simpson <craig@craigsimpson.scot>
- * @copyright 2018, D2 Themes
+ * @copyright 2019, SEO Themes
  * @license   GPL-3.0-or-later
  */
 
 namespace SeoThemes\Core;
 
 /**
- * Register and unregister Genesis layouts through configuration.
- *
- * Example config (usually located at config/defaults.php):
- *
- * ```
- * use SeoThemes\Core\GenesisLayout;
- *
- * $core_layouts = [
- *     GenesisLayout::REGISTER   => [
- *         'custom-layout', [
- *             'label' => 'Custom Layout',
- *             'img' => get_stylesheet_directory_uri() . '/img/layout.gif',
- *         ],
- *     ],
- *     GenesisLayout::UNREGISTER => [
- *         GenesisLayout::CONTENT_SIDEBAR_SIDEBAR,
- *         GenesisLayout::SIDEBAR_CONTENT_SIDEBAR,
- *         GenesisLayout::SIDEBAR_SIDEBAR_CONTENT,
- *     ],
- *     GenesisLayout::DEFAULT_LAYOUT => __genesis_return_full_width_content(),
- * ];
- *
- * return [
- *     GenesisLayout::class => $core_layouts,
- * ];
- * ```
+ * Class PageLayouts
  *
  * @package SeoThemes\Core
  */
@@ -55,6 +29,8 @@ class PageLayouts extends Component {
 
 	/**
 	 * Register and unregister Genesis layouts through configuration.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
