@@ -156,7 +156,7 @@ class Updater extends Component {
 	 * @return int|null|string
 	 */
 	public function get_latest_dir() {
-		$files = glob( dirname( get_template_directory() ) . '/*', GLOB_ONLYDIR );
+		$files = glob( get_theme_root() . '/*', GLOB_ONLYDIR );
 		$files = array_combine( $files, array_map( 'filectime', $files ) );
 		arsort( $files );
 
