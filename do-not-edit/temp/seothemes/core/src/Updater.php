@@ -27,11 +27,6 @@ class Updater extends Component {
 	const EDD        = 'edd';
 
 	/**
-	 * @var $strings
-	 */
-	protected $strings;
-
-	/**
 	 * Initialize component.
 	 *
 	 * @since 1.0.0
@@ -39,12 +34,6 @@ class Updater extends Component {
 	 * @return void
 	 */
 	public function init() {
-		$default_strings = [
-			'backup_failed' => 'Could not create backup.',
-		];
-
-		$this->strings = isset( $this->config[ self::STRINGS ] ) ? wp_parse_args( $this->config[ self::STRINGS ], $default_strings ) : $default_strings;
-
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
 		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
 
@@ -90,7 +79,7 @@ class Updater extends Component {
 
 		// Stop update if backup failed.
 		if ( ! file_exists( $backup . '/functions.php' ) ) {
-			$source = new \WP_Error( 'backup_failed', $this->config[ self::STRINGS ] );
+			$source = new \WP_Error( 'backup_failed', 'Could not create backup.', $source );
 		}
 
 		return $source;
