@@ -36,6 +36,7 @@ class Updater extends Component {
 	public function init() {
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
 		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
+		add_action( 'upgrader_post_install', [ $this, 'switch_theme' ], 15, 3 );
 
 		if ( isset( $this->config[ self::EXCLUSIONS ] ) ) {
 			add_filter( 'theme_scandir_exclusions', [ $this, 'theme_scandir_exclusions' ] );
@@ -144,6 +145,31 @@ class Updater extends Component {
 		if ( $this->config[ self::DELETE ] ) {
 			$wp_filesystem->delete( $source, true, 'd' );
 		}
+
+		return $response;
+	}
+
+	/**
+	 * Description of expected behavior.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $response
+	 * @param $hook_extra
+	 * @param $result
+	 *
+	 * @return mixed
+	 */
+	public function switch_theme( $response, $hook_extra, $result ) {
+
+		// Return early if no response or destination does not exist.
+		if ( ! $response || ! array_key_exists( 'destination', $result ) || ! is_dir( $this->get_theme_backup_path() ) ) {
+			return $response;
+		}
+
+		$latest = substr( 0, -6, basename( $this->get_latest_dir() ) );
+		update_option( 'stylesheet', $latest );
+		update_option( 'template', 'genesis' );
 
 		return $response;
 	}
