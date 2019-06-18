@@ -13,13 +13,17 @@ return [
 	],
 	'styles'  => [
 		[
-			'handle' => 'main',
+			'handle' => 'genesis-starter-theme-main',
 			'src'    => get_stylesheet_directory_uri() . '/do-not-edit/assets/css/main.css',
 		],
 		[
 			'handle' => 'genesis-starter-theme-editor',
 			'src'    => get_stylesheet_directory_uri() . '/do-not-edit/assets/css/editor.css',
 			'editor' => true,
+		],
+		[
+			'handle' => 'genesis-starter-theme',
+			'src'    => get_stylesheet_directory_uri() . '/style.css',
 		],
 	],
 	'menus'   => [

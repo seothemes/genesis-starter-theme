@@ -31,8 +31,13 @@ class Enqueue extends Component {
 	const VERSION      = 'version';
 	const MENUS        = 'menus';
 	const EDITOR       = 'editor';
+	const PRIORITY     = 'priority';
 
 	public function init() {
+
+		// Remove stylesheet by default.
+		remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
 		if ( isset( $this->config[ self::SCRIPTS ] ) ) {
 			$this->process_assets( $this->config[ self::SCRIPTS ] );
 		}
@@ -57,7 +62,8 @@ class Enqueue extends Component {
 	 */
 	protected function process_assets( $assets ) {
 		foreach ( $assets as $asset ) {
-			$hook = isset( $asset[ self::EDITOR ] ) && $asset[ self::EDITOR ] ? 'enqueue_block_editor_assets' : 'wp_enqueue_scripts';
+			$hook     = isset( $asset[ self::EDITOR ] ) && $asset[ self::EDITOR ] ? 'enqueue_block_editor_assets' : 'wp_enqueue_scripts';
+			$priority = isset( $asset[ self::PRIORITY ] ) ? $asset[ self::PRIORITY ] : 10;
 
 			if ( 'enqueue_block_editor_assets' == $hook && 'style' === $this->get_type( $asset['src'] ) ) {
 				add_editor_style( str_replace( get_stylesheet_directory_uri(), '', $asset['src'] ) );
@@ -87,7 +93,7 @@ class Enqueue extends Component {
 						wp_localize_script( $asset[ self::HANDLE ], $name, $data );
 					}
 				}
-			} );
+			}, $priority );
 		}
 	}
 
