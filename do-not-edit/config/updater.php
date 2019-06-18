@@ -12,6 +12,9 @@ return [
 		'do-not-edit',
 		'node_modules',
 	],
+	'strings'    => [
+		'backup_failed' => __( 'Could not create backup.', 'genesis-starter-theme' ),
+	],
 	'puc'        => [
 		'repo'   => 'https://github.com/seothemes/genesis-starter-theme/',
 		'file'   => get_stylesheet_directory(),
