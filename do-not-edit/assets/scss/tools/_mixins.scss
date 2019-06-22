@@ -1,0 +1,117 @@
+////
+/// Custom mixins.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+////
+/// Hover focus mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin hover-focus {
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		@content;
+	}
+}
+
+////
+/// Border mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin border( $values ) {
+
+	@include _directional-property(border, null, $values);
+}
+
+////
+/// Overlay mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin overlay {
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		display: block;
+		background-color: rgba($color--gray-10, 0.82);
+		content: "";
+
+		@include position(absolute, 0 0 0 0);
+	}
+}
+
+////
+/// Transition mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin transition {
+	transition: all $base--transition-duration $base--transition-timing-function;
+}
+
+////
+/// Button mixin
+///
+/// Used for both front end and block editor styling.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin button {
+	display: inline-block;
+	width: auto;
+	padding: 1em 2em;
+	border: 0;
+	border-radius: $base--border--radius;
+	color: $color--white;
+	background-color: $color--primary;
+	font-size: $base--font-size / $major-second;
+	font-weight: $font-weight--semibold;
+	line-height: 1;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	@include transition();
+
+	@include hover-focus {
+		outline: none;
+		color: $color--white;
+		background-color: lighten($color--primary, 10);
+		text-decoration: none;
+	}
+
+	&:disabled {
+
+		&,
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+			background-color: $color--gray-50;
+			cursor: not-allowed;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "seothemes/core",
+  "description": "A config-based composer package that provides a set of modules to extend Genesis child theme development.",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "seothemes",
+      "email": "seothemeswp@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "SeoThemes\\Core\\": "src/"
+    }
+  }
+}

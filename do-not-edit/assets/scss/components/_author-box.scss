@@ -1,0 +1,28 @@
+////
+/// Author box component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.author-box {
+	margin: $spacing--xl 0;
+
+	// Author box title.
+	&-title {
+		margin-bottom: $spacing--xs;
+	}
+
+	// Author box content.
+	&-content {
+		padding-left: $spacing--xl + $spacing--m;
+
+		p {
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

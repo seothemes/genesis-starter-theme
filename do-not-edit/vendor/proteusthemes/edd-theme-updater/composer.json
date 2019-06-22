@@ -1,0 +1,25 @@
+{
+  "name": "proteusthemes/edd-theme-updater",
+  "description": "Used for activating the theme and offering automatic updates to the users via the EDD shop.",
+  "keywords": ["wp", "wordpress", "updates", "proteusthemes", "theme", "edd"],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name":  "Gregor Capuder",
+      "email": "gregor.capuder@proteusnet.com"
+    },
+    {
+      "name":  "Marko Prelec",
+      "email": "marko.prelec@proteusnet.com"
+    },
+    {
+      "name":  "Primoz Cigler",
+      "email": "primoz@proteusnet.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProteusThemes\\EDDThemeUpdater\\": "src/"
+    }
+  }
+}

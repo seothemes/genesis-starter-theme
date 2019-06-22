@@ -1,5 +1,8 @@
 # Genesis Starter Theme Changelog
 
+## [3.4.0] - 2018-06-22
+* Add updatable directory
+
 ## [3.3.3] - 2018-10-10
 * Add front page template and widget areas
 * Add full width and landing page templates

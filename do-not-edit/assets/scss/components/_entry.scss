@@ -1,0 +1,61 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.entry {
+
+	// Entry header.
+	&-header {}
+
+	// Entry title.
+	&-title {
+
+		a {
+			color: $color--text;
+
+			@include hover-focus {
+				color: $color--primary;
+			}
+		}
+	}
+
+	// Entry title link.
+	&-title-link {}
+
+	// Entry time.
+	&-time {}
+
+	// Entry author.
+	&-author {}
+
+	// Entry author link.
+	&-author-link {}
+
+	// Entry author name.
+	&-author-name {}
+
+	// Entry comments link
+	&-comments-link {}
+
+	// Entry meta.
+	&-meta {}
+
+	// Entry image link.
+	&-image-link {}
+
+	// Entry content.
+	&-content {}
+
+	// Entry footer.
+	&-footer {}
+
+	// Entry categories.
+	&-categories {}
+
+	// Entry tags.
+	&-tags {}
+}
