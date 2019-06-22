@@ -27,6 +27,11 @@ class Updater extends Component {
 	const EDD        = 'edd';
 
 	/**
+	 * @var array
+	 */
+	public $strings = [];
+
+	/**
 	 * Initialize component.
 	 *
 	 * @since 1.0.0
@@ -34,9 +39,16 @@ class Updater extends Component {
 	 * @return void
 	 */
 	public function init() {
+		$default_strings = [
+			'backup_failed' => 'Could not create backup.',
+			'notice_text'   => 'Please activate your theme license key to enable automatic updates.',
+			'notice_link'   => 'License Settings →',
+		];
+
+		$this->strings = isset( $this->config[ self::STRINGS ] ) ? wp_parse_args( $this->config[ self::STRINGS ], $default_strings ) : $default_strings;
+
 		add_action( 'upgrader_source_selection', [ $this, 'before_update' ], 10, 4 );
 		add_action( 'upgrader_post_install', [ $this, 'after_update' ], 10, 3 );
-		add_action( 'upgrader_post_install', [ $this, 'switch_theme' ], 15, 3 );
 
 		if ( isset( $this->config[ self::EXCLUSIONS ] ) ) {
 			add_filter( 'theme_scandir_exclusions', [ $this, 'theme_scandir_exclusions' ] );
@@ -48,9 +60,8 @@ class Updater extends Component {
 
 		if ( isset( $this->config[ self::EDD ] ) ) {
 			add_action( 'after_setup_theme', [ $this, 'edd_theme_updater' ] );
+			add_action( 'admin_notices', [ $this, 'license_notice' ] );
 		}
-
-		add_action( 'admin_notices', [ $this, 'license_notice' ] );
 	}
 
 	/**
@@ -67,8 +78,8 @@ class Updater extends Component {
 	 */
 	public function before_update( $source, $remote_source, $theme_object, $hook_extra ) {
 
-		// Return early if there is an error or if it's not a theme update.
-		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' ) ) {
+		// Return early if there is an error or if it's not a child theme update.
+		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' ) || ! isset( $hook_extra['theme'] ) || get_template() === $hook_extra['theme'] ) {
 			return $source;
 		}
 
@@ -80,7 +91,7 @@ class Updater extends Component {
 
 		// Stop update if backup failed.
 		if ( ! file_exists( $backup . '/functions.php' ) ) {
-			$source = new \WP_Error( 'backup_failed', 'Could not create backup.', $source );
+			$source = new \WP_Error( 'backup_failed', $this->strings['backup_failed'], $source );
 		}
 
 		return $source;
@@ -109,17 +120,12 @@ class Updater extends Component {
 		\WP_Filesystem();
 		global $wp_filesystem;
 
-		// Rename latest directory.
-		$source      = $this->get_latest_dir();
-		$destination = get_stylesheet_directory();
-		$wp_filesystem->move( $source, $destination, false );
-
 		// Bump temp style sheet version.
 		$theme_headers = [
 			'Name'    => 'Theme Name',
 			'Version' => 'Version',
 		];
-		$new_theme     = $destination . '/style.css';
+		$new_theme     = get_stylesheet_directory() . '/style.css';
 		$new_data      = get_file_data( $new_theme, $theme_headers );
 		$new_version   = $new_data['Version'];
 		$old_theme     = $this->get_theme_backup_path() . '/style.css';
@@ -131,7 +137,7 @@ class Updater extends Component {
 
 		// Bring everything back except vendor directory.
 		$source = $this->get_theme_backup_path();
-		$target = $destination;
+		$target = get_stylesheet_directory();
 		$skip   = $this->config[ self::SKIP ];
 		\copy_dir( $source, $target, $skip );
 
@@ -147,46 +153,6 @@ class Updater extends Component {
 		}
 
 		return $response;
-	}
-
-	/**
-	 * Description of expected behavior.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param $response
-	 * @param $hook_extra
-	 * @param $result
-	 *
-	 * @return mixed
-	 */
-	public function switch_theme( $response, $hook_extra, $result ) {
-
-		// Return early if no response or destination does not exist.
-		if ( ! $response || ! array_key_exists( 'destination', $result ) || ! is_dir( $this->get_theme_backup_path() ) ) {
-			return $response;
-		}
-
-		$latest = substr( 0, -6, basename( $this->get_latest_dir() ) );
-		update_option( 'stylesheet', $latest );
-		update_option( 'template', 'genesis' );
-
-		return $response;
-	}
-
-	/**
-	 * Description of expected behavior.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return int|null|string
-	 */
-	public function get_latest_dir() {
-		$files = glob( get_theme_root() . '/*', GLOB_ONLYDIR );
-		$files = array_combine( $files, array_map( 'filectime', $files ) );
-		arsort( $files );
-
-		return key( $files );
 	}
 
 	/**
@@ -263,7 +229,7 @@ class Updater extends Component {
 	}
 
 	/**
-	 * Displays notice to upgrade to Pro in admin.
+	 * Displays admin notice to enter license key.
 	 *
 	 * @since 1.0.0
 	 *
@@ -281,9 +247,9 @@ class Updater extends Component {
 
 		printf(
 			'<div class="notice notice-error"><p>%s <a href="%s">%s</a></p></div>',
-			esc_html( $settings['notice_text'] ),
+			esc_html( $this->strings['notice_text'] ),
 			admin_url( 'themes.php?page=' . $settings['theme_slug'] . '-license' ),
-			esc_html( $settings['notice_link_text'] )
+			esc_html( $this->strings['notice_link'] )
 		);
 	}
 
