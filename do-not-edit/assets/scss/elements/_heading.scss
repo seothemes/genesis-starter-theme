@@ -7,7 +7,7 @@
 ////
 
 @mixin heading {
-	margin: 0 0 $spacing--m;
+	margin: 0 0 0.5em;
 	font-family: $font-family--heading;
 	font-weight: $font-weight--semibold;
 	line-height: $line-height--heading;

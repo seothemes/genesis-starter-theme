@@ -11,13 +11,17 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	padding: $spacing--xl 0;
+	padding: $spacing--l 0;
 	border-bottom: $base--border;
 	background-position: center;
 	background-size: cover;
 	text-align: center;
 
 	@include overlay;
+
+	@include mq(m) {
+		padding: $spacing--xl 0;
+	}
 
 	.wrap {
 		justify-content: center;

@@ -9,12 +9,7 @@
 .content {
 	width: 100%;
 
-	@include margin($spacing--m null);
-
-	@include mq(m) {
-
-		@include margin($spacing--l null);
-	}
+	@include margin($spacing--l null);
 
 	.content-sidebar &,
 	.sidebar-content &,
@@ -39,7 +34,7 @@
 
 	.full-width-content & {}
 
-	.page-template-blocks & {
+	.has-heading-block & {
 		margin: 0 auto;
 	}
 }

@@ -26,7 +26,28 @@ add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
  * @return array
  */
 function body_classes( $classes ) {
+
+	// Add no-js class.
 	$classes[] = 'no-js';
+
+	// Remove unnecessary page template classes.
+	$template  = get_page_template_slug();
+	$basename  = basename( $template, '.php' );
+	$directory = str_replace( [ '/', basename( $template ) ], '', $template );
+	$classes   = array_diff( $classes, [
+		'page-template-' . $directory,
+		'page-template-' . $directory . $basename . '-php',
+	] );
+
+	// Add blocks class.
+	global $post;
+
+	$blocks = \parse_blocks( $post->post_content );
+	$has_h1 = search_blocks( $blocks );
+
+	if ( $has_h1 ) {
+		$classes[] = 'has-heading-block';
+	}
 
 	return $classes;
 }

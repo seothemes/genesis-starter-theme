@@ -13,7 +13,7 @@
   "dependencies": {},
   "devDependencies": {
     "bourbon": "^5.1.0",
-    "gridkit": "^1.0.0",
+    "gridkit": "^1.0.4",
     "gulp": "^3.9.1",
     "gulp-wp-toolkit": "^2.3.2",
     "gulp-zip": "^4.1.0",

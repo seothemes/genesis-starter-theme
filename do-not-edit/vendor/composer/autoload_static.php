@@ -12,6 +12,7 @@ class ComposerStaticInit94cd2c84b69b79ed4f6044f5ada99fef
         'd0aef80e574f184fa18f841795788cf3' => __DIR__ . '/..' . '/aristath/kirki/kirki.php',
         '19947c5e3b7e50e11328e45b913dd371' => __DIR__ . '/../../..' . '/do-not-edit/src/functions/setup.php',
         '66f0bda845cc8e1b4401c4f600e14c8d' => __DIR__ . '/../../..' . '/do-not-edit/src/functions/helpers.php',
+        'de62e0b70b6793b4f73ca4ea721c257c' => __DIR__ . '/../../..' . '/do-not-edit/src/functions/shortcodes.php',
         '2710decd93c03091a6f9903d6117fd92' => __DIR__ . '/../../..' . '/do-not-edit/src/structure/body.php',
         '5ffc5d4b1a8258140a3e49847bdeb959' => __DIR__ . '/../../..' . '/do-not-edit/src/structure/header.php',
         'af5db17bb4940e033a11c43fb2826e69' => __DIR__ . '/../../..' . '/do-not-edit/src/structure/wrap.php',

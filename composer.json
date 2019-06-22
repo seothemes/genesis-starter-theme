@@ -45,6 +45,7 @@
       "do-not-edit/vendor/aristath/kirki/kirki.php",
       "do-not-edit/src/functions/setup.php",
       "do-not-edit/src/functions/helpers.php",
+      "do-not-edit/src/functions/shortcodes.php",
       "do-not-edit/src/structure/body.php",
       "do-not-edit/src/structure/header.php",
       "do-not-edit/src/structure/wrap.php",

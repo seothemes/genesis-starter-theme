@@ -17,7 +17,6 @@ Check out the [live demo](https://demo.seothemes.com/genesis-starter)
 * [Installation](#installation)
     * [One line command](#one-line-command)
     * [Individual commands](#individual-commands)
-* [Setup](#setup)
 * [Usage](#usage)
 * [Development](#development)
 * [Structure](#structure)
@@ -38,6 +37,8 @@ The Genesis Starter Theme aims to modernize, organize and enhance some aspects o
 - [Composer](https://getcomposer.org/) for managing PHP dependencies
 - [PSR-4](https://www.php-fig.org/psr/psr-4/) class autoloading
 - [Namespaced](http://php.net/manual/en/language.namespaces.basics.php) to avoid naming conflicts
+- [AMP](https://wordpress.org/plugins/amp/) support with the WordPress AMP plugin
+- [Gutenberg](https://wordpress.org/plugins/gutenberg/) support for latest blocks and admin editor styles
 
 ## Requirements
 
@@ -60,7 +61,7 @@ The Genesis Starter Theme aims to modernize, organize and enhance some aspects o
 Install the latest development version of the Genesis Starter Theme using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd "$(\ls -1dt ./*/ | head -n 1)" && sh setup.sh
+composer create-project seothemes/genesis-starter-theme your-theme-name dev-master && cd "$(\ls -1dt ./*/ | head -n 1)" && npm install && gulp
 ```
 
 ### Individual commands:
@@ -77,37 +78,47 @@ Navigate into the theme's root directory:
 cd your-theme-name
 ```
 
-Run the setup script to rename the theme, build the theme assets and kick-off BrowserSync:
+Install node dependencies, build the theme assets and kick-off BrowserSync:
 
 ```shell
-sh setup.sh
+npm install && gulp
 ```
 
-## Setup
+## Structure
 
-The Genesis Starter Theme includes a powerful setup script which automates the process of updating theme details:
+You'll notice that the structure of this theme is different to most themes. All of the themes actual code lives inside the `do-not-edit` directory. This directory *can* be edited by theme developers, but should not be edited by end users.
 
-<a href="https://github.com/seothemes/genesis-starter-theme/blob/master/setup.sh" target="_blank"><img src="https://seothemes.com/wp-content/uploads/2018/07/genesis-starter-theme-setup-script.png" alt="Genesis Starter Theme setup script" width="500"></a>
+By placing all of the themes actual code inside a single, non-editable directory, theme authors are able to push automatic updates for the child theme without running the risk of losing the end users customizations. For more information on how the automatic updates work please see this [example project README](https://github.com/seothemes/genesis-sample-updatable).
 
-It replaces the following details with your own:
-
-- Theme name
-- Theme textdomain
-- Theme author
-- Theme author URL
-- Theme development URL
-- Theme namespace
-- Theme version
+```shell
+your-theme-name/    # → Root directory
+├── do-not-edit/    # → Updatable directory
+│   ├── assets/     # → Front-end assets
+│   ├── config/     # → Config directory
+│   ├── src/        # → Additional PHP files
+│   └── vendor/     # → Composer packages
+├── node_modules/   # → Node.js packages
+├── composer.json   # → Composer settings
+├── package.json    # → Node dependencies
+├── Gulpfile.js     # → Gulp config
+├── screenshot.png  # → Theme screenshot
+├── functions.php   # → Loads Composer
+└── style.css       # → Blank stylesheet
+```
 
 ## Usage
 
 The Genesis Starter Theme is intended to be used with [SEO Themes Core](https://packagist.org/packages/seothemes/core). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme.
 
-Components are only loaded when a config key is provided. They can be added or removed depending on the requirements of your project. For example, to remove the PluginActivation component, simply remove it's config key from the return statement in `config/defaults.php`.
+Components are only loaded when a config is provided. They can be added or removed depending on the requirements of your project. For example, to remove the Kirki component, simply remove it's config file `config/kirki.php`. You can also remove the Composer package with the following command:
+
+```shell
+composer remove aristath/kirki
+```
 
 Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 
-Static assets are organized in the `assets` directory. This folder contains theme scripts, styles, images, fonts, views and language translation files.
+Static assets are organized in the `assets` directory. This folder contains theme scripts, styles, images, fonts, views and language translation files. All of the main theme styles are contained in the `assets/css/main.css` file, the `style.css` file at the root of the theme is left blank intentionally. 
 
 ## Development
 
@@ -115,33 +126,34 @@ Please refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps
 
 In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be used to generate an archive of your theme, including the required composer package files and none of the unnecessary files. The list of included files can be modified from the `toolkit.extendConfig.src.zip` config in the Gulpfile.
 
-## Structure
+### Removing Commercial Features
+
+This theme is intended to be used for commercial child theme development, however with a few tweaks it can be transformed into a lightweight, powerful starter theme for developers building custom one-off themes. Below is an example of how to strip out the commercial theme features:
+
+**Remove Composer Packages**
+
+Run the following command to remove unwanted Composer packages:
 
 ```shell
-your-theme-name/    # → Root directory
-├── assets/         # → Front-end assets
-│   ├── fonts/      # → Theme fonts
-│   ├── img/        # → Theme images
-│   ├── js/         # → Theme JavaScript
-│   ├── lang/       # → Translation files
-│   ├── scss/       # → Sass partials
-│   └── views/      # → Theme templates
-├── config/         # → Config directory
-│   └── config.php  # → Theme settings
-├── src/            # → Theme PHP files
-│   └── example.php # → Example PHP file
-├── node_modules/   # → Node.js packages
-├── vendor/         # → Composer packages
-├── composer.json   # → Composer settings
-├── functions.php   # → Composer autoloader
-├── front-page.php  # → Front page template
-├── Gulpfile.js     # → Gulp config
-├── package.json    # → Node dependencies
-├── screenshot.png  # → Theme screenshot
-├── setup.sh        # → CLI setup script
-├── style.css       # → Theme stylesheet
-└── woocommerce.css # → WooCommerce styles
+composer remove aristath/kirki
+composer remove richtabor/merlin-wp
+composer remove tgmpa/tgm-plugin-activation
+composer remove proteusthemes/edd-theme-updater
+composer update --no-dev
 ```
+
+**Delete Config Files**
+
+You will also want to delete some unneeded config files from the `do-not-edit/config` directory:
+
+```shell
+rm -Rf do-not-edit/config/kirki.php
+rm -Rf do-not-edit/config/merlin.php
+rm -Rf do-not-edit/config/tgmpa.php
+rm -Rf do-not-edit/config/updater.php
+```
+
+
 
 ## Contributing
 

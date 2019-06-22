@@ -24,7 +24,7 @@ add_action( 'genesis_meta', __NAMESPACE__ . '\hero_setup' );
  * @return void
  */
 function hero_setup() {
-	if ( is_admin() || ! current_theme_supports( 'hero-section' ) ) {
+	if ( is_admin() || ! current_theme_supports( 'hero-section' ) || is_front_page() ) {
 		return;
 	}
 
@@ -56,7 +56,7 @@ function hero_setup() {
 	add_filter( 'genesis_attr_archive-title', __NAMESPACE__ . '\hero_archive_title_attr' );
 	add_filter( 'genesis_attr_entry', __NAMESPACE__ . '\hero_entry_attr' );
 
-	if ( ! is_customize_preview() ) {
+	if ( ! is_customize_preview() && is_front_page() ) {
 		add_action( 'genesis_before_hero-section_wrap', 'the_custom_header_markup' );
 	}
 

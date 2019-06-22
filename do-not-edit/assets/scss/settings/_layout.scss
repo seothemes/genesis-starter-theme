@@ -7,4 +7,4 @@
 ////
 
 $layout--width--sidebar: 30rem;
-$layout--width--content: calc(100% - (#{$layout--width--sidebar} + #{$spacing--l}));
+$layout--width--content: calc(100% - (#{$layout--width--sidebar} + #{$spacing--xl}));

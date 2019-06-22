@@ -16,15 +16,19 @@
 namespace SeoThemes\GenesisStarterTheme;
 
 return [
-	'register'             => [
+	'register'   => [
 		[
 			'id'          => 'footer-credits',
 			'name'        => __( 'Footer Credits', 'genesis-starter-theme' ),
 			'description' => __( 'The Footer Credits widget area.', 'genesis-starter-theme' ),
-			'location'    => 'genesis_after_footer_wrap',
+			'location'    => 'genesis_footer',
+			'priority'    => 14,
+			'conditional' => function () {
+				return ! is_page_template( 'do-not-edit/landing.php' );
+			},
 		],
 	],
-	'unregister'=> [
+	'unregister' => [
 		'sidebar-alt',
 	],
 ];
