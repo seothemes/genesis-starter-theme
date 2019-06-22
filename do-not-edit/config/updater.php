@@ -22,15 +22,15 @@ return [
 	'puc'        => [
 		'repo'   => 'https://github.com/seothemes/genesis-starter-theme/',
 		'file'   => get_stylesheet_directory(),
-		'theme'  => 'genesis-starter-theme',
+		'theme'  => get_stylesheet(),
 		'token'  => '',
 		'branch' => 'master',
 	],
 	'edd'        => [
 		'remote_api_url' => 'https://seothemes.com/',
 		'item_name'      => 'Genesis Starter',
-		'theme_slug'     => 'genesis-starter-theme',
-		'version'        => '1.0.0',
+		'theme_slug'     => get_stylesheet(),
+		'version'        => wp_get_theme()->get( 'Version' ),
 		'author'         => 'SEO Themes',
 		'download_id'    => '',
 		'renew_url'      => '',
