@@ -79,7 +79,7 @@ class Updater extends Component {
 	public function before_update( $source, $remote_source, $theme_object, $hook_extra ) {
 
 		// Return early if there is an error or if it's not a child theme update.
-		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' ) || ! isset( $hook_extra['theme'] ) || get_template() === $hook_extra['theme'] ) {
+		if ( is_wp_error( $source ) || ! is_a( $theme_object, 'Theme_Upgrader' ) || ! isset( $hook_extra['theme'] ) || get_stylesheet() !== $hook_extra['theme'] ) {
 			return $source;
 		}
 

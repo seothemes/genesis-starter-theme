@@ -1,4 +1,17 @@
 <?php
+/**
+ * Genesis Starter Theme
+ *
+ * WARNING: This file should never be modified under any circumstances.
+ * Customizations should be made in the form of a core-functionality
+ * plugin so that the theme can be updated without losing changes.
+ *
+ * @package   SeoThemes\GenesisStarterTheme
+ * @link      https://genesisstartertheme.com
+ * @author    SEO Themes
+ * @copyright Copyright © 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\GenesisStarterTheme;
 
@@ -6,7 +19,7 @@ add_filter( 'post_class', __NAMESPACE__ . '\archive_post_class' );
 /**
  * Add column class to archive posts.
  *
- * @since 1.0.0
+ * @since 3.4.0
  *
  * @param array $classes Array of post classes.
  *
@@ -40,7 +53,9 @@ add_filter( 'the_content_more_link', __NAMESPACE__ . '\read_more_link' );
 /**
  * Modify the content limit read more link
  *
- * @since 1.0.0
+ * @since 3.4.0
+ *
+ * @param string $more_link_text Default more link text.
  *
  * @return string
  */

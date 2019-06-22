@@ -2,8 +2,7 @@
 /**
  * Genesis Starter Theme
  *
- * Template Name: Blocks
- * Template Post Type: post, page
+ * Template Name: Front Page
  *
  * WARNING: This file should never be modified under any circumstances.
  * Customizations should be made in the form of a core-functionality
@@ -26,6 +25,21 @@ remove_theme_support( 'hero-section' );
 
 // Removes the breadcrumbs.
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+
+// Remove default loop.
+remove_action( 'genesis_loop', 'genesis_do_loop' );
+
+add_action( 'genesis_loop', __NAMESPACE__ . '\front_page_loop' );
+/**
+ * Add custom front page loop.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function front_page_loop() {
+	do_action( 'genesis_front_page' );
+}
 
 // Run Genesis.
 genesis();

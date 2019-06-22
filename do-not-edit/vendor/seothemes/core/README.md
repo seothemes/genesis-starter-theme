@@ -45,7 +45,7 @@ composer require tgmpa/tgm-plugin-activation
 
 ## Usage
 
-Components should be loaded in your theme `functions.php` file, using the `Theme::setup` static method. Code should run on the `after_setup_theme` hook (or `genesis_setup` if you use Genesis Framework). 
+Components should be loaded in your theme `functions.php` file, using the `Theme::setup` static method. Code should run on the `after_setup_theme` hook (or `genesis_setup` if you use Genesis Framework).
 
 ```php
 // Get config path.
@@ -55,6 +55,10 @@ $config = dirname( dirname( __DIR__ ) ) . '/config';
 \SeoThemes\Core\Theme::setup( $config );
 ```
 
+### Loading Components
+
+Components are automatically loaded if a config file matching the component name in [kebab case](http://wiki.c2.com/?KebabCase) is found. For example, to load the GoogleFonts component, create a file in the `config` directory called `google-fonts.php`.
+
 ## Structure
 
 Core follows the [PHP Package Development Standard](https://github.com/php-pds/skeleton_research) folder structure and uses [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/).
@@ -62,21 +66,21 @@ Core follows the [PHP Package Development Standard](https://github.com/php-pds/s
 ```sh
 ./
 ├── src/
-│   ├── Enqueue.php
 │   ├── Breadcrumb.php
 │   ├── Component.php
-│   ├── Merlin.php
+│   ├── Enqueue.php
 │   ├── GenesisSettings.php
 │   ├── GoogleFonts.php
 │   ├── ImageSizes.php
 │   ├── Kirki.php
+│   ├── Merlin.php
 │   ├── PageLayouts.php
-│   ├── PageTemplate.php
 │   ├── PostTypeSupport.php
-│   ├── Tgmpa.php
 │   ├── SimpleSocialIcons.php
+│   ├── Tgmpa.php
 │   ├── Theme.php
 │   ├── ThemeSupport.php
+│   ├── Updater.php
 │   └── WidgetAreas.php
 ├── .gitignore
 ├── composer.json

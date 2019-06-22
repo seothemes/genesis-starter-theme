@@ -5,7 +5,7 @@
  * Template Name: Landing
  * Template Post Type: post, page
  *
- * WARNING: This file is should not be modified under any circumstances.
+ * WARNING: This file should never be modified under any circumstances.
  * Customizations should be made in the form of a core-functionality
  * plugin so that the theme can be updated without losing changes.
  *

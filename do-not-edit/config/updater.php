@@ -1,4 +1,17 @@
 <?php
+/**
+ * Genesis Starter Theme
+ *
+ * WARNING: This file should never be modified under any circumstances.
+ * Customizations should be made in the form of a core-functionality
+ * plugin so that the theme can be updated without losing changes.
+ *
+ * @package   SeoThemes\GenesisStarterTheme
+ * @link      https://genesisstartertheme.com
+ * @author    SEO Themes
+ * @copyright Copyright © 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\GenesisStarterTheme;
 
@@ -13,6 +26,24 @@ return [
 		'.git',
 		'do-not-edit',
 		'node_modules',
+		'.csscomb.json',
+		'.editorconfig',
+		'.git',
+		'.gitattributes',
+		'.gitignore',
+		'.jsbeautifyrc',
+		'.jshintrc',
+		'.stylelintignore',
+		'CHANGELOG.md',
+		'Gulpfile.js',
+		'README.md',
+		'composer.json',
+		'do-not-edit',
+		'package.json',
+		'phpcs.xml',
+		'stylelint.config.js',
+		'yarn-error.log',
+		'yarn.lock',
 	],
 	'strings'    => [
 		'backup_failed' => __( 'Could not create backup.', 'genesis-starter-theme' ),

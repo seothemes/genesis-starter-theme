@@ -1,12 +1,25 @@
 <?php
+/**
+ * Genesis Starter Theme
+ *
+ * WARNING: This file should never be modified under any circumstances.
+ * Customizations should be made in the form of a core-functionality
+ * plugin so that the theme can be updated without losing changes.
+ *
+ * @package   SeoThemes\GenesisStarterTheme
+ * @link      https://genesisstartertheme.com
+ * @author    SEO Themes
+ * @copyright Copyright © 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\GenesisStarterTheme;
 
 add_filter( 'genesis_before', __NAMESPACE__ . '\structural_wrap_hooks' );
 /**
- * Description of expected behavior.
+ * Add hooks before and after structural wraps.
  *
- * @since 1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
@@ -29,11 +42,11 @@ function structural_wrap_hooks() {
 
 add_filter( 'genesis_attr_content-sidebar-wrap', __NAMESPACE__ . '\content_sidebar_wrap', 10, 1 );
 /**
- * Description of expected behavior.
+ * Change content-sidebar-wrap class to wrap.
  *
- * @since 1.0.0
+ * @since 3.4.0
  *
- * @param $atts
+ * @param array $atts Default element attributes.
  *
  * @return mixed
  */

@@ -1,4 +1,17 @@
 <?php
+/**
+ * Genesis Starter Theme
+ *
+ * WARNING: This file should never be modified under any circumstances.
+ * Customizations should be made in the form of a core-functionality
+ * plugin so that the theme can be updated without losing changes.
+ *
+ * @package   SeoThemes\GenesisStarterTheme
+ * @link      https://genesisstartertheme.com
+ * @author    SEO Themes
+ * @copyright Copyright © 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace SeoThemes\GenesisStarterTheme;
 
@@ -6,16 +19,12 @@ add_action( 'genesis_meta', __NAMESPACE__ . '\hero_setup' );
 /**
  * Sets up hero section.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
 function hero_setup() {
 	if ( is_admin() || ! current_theme_supports( 'hero-section' ) ) {
-		return;
-	}
-
-	if ( is_singular() ) {
 		return;
 	}
 
@@ -67,7 +76,7 @@ function hero_setup() {
 /**
  * Remove default title of 404 pages.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
@@ -82,7 +91,7 @@ function hero_remove_404_title() {
 /**
  * Integrate with Genesis Title Toggle plugin.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @author Bill Erickson
  * @link   http://billerickson.net/code/genesis-title-toggle-theme-integration
@@ -97,7 +106,7 @@ function hero_title_toggle() {
 /**
  * Display title in hero section.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
@@ -138,7 +147,7 @@ function hero_title() {
 /**
  * Display page excerpt.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
@@ -186,7 +195,7 @@ function hero_excerpt() {
 /**
  * Add intro text for archive headings to archive pages.
  *
- * @since 2.5.0
+ * @since 3.4.0
  *
  * @param string $heading    Optional. Archive heading, default is empty string.
  * @param string $intro_text Optional. Archive intro text, default is empty string.
@@ -209,7 +218,7 @@ function do_archive_headings_intro_text( $heading = '', $intro_text = '', $conte
 /**
  * Adds attributes to hero archive title markup.
  *
- * @since 1.0.0
+ * @since 3.4.0
  *
  * @param array $atts Hero title attributes.
  *
@@ -225,7 +234,7 @@ function hero_archive_title_attr( $atts ) {
 /**
  * Adds attributes to hero section markup.
  *
- * @since 1.0.0
+ * @since 3.4.0
  *
  * @param array $atts Hero entry attributes.
  *
@@ -242,7 +251,7 @@ function hero_entry_attr( $atts ) {
 /**
  * Display the hero section.
  *
- * @since  1.0.0
+ * @since 3.4.0
  *
  * @return void
  */
