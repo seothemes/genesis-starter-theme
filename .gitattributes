@@ -77,6 +77,7 @@ do-not-edit/vendor/seothemes/core/.gitignore export-ignore
 do-not-edit/vendor/seothemes/core/CHANGELOG.md export-ignore
 do-not-edit/vendor/seothemes/core/composer.json export-ignore
 do-not-edit/vendor/seothemes/core/README.md export-ignore
+do-not-edit/vendor/seothemes/core/docs/ export-ignore
 
 do-not-edit/vendor/tgmpa/tgm-plugin-activation/.editorconfig export-ignore
 do-not-edit/vendor/tgmpa/tgm-plugin-activation/.scrutinizer.yml export-ignore
