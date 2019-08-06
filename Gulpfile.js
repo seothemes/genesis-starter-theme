@@ -47,6 +47,12 @@ toolkit.extendConfig(
 		css: {
 			basefontsize: 10, // Used by postcss-pxtorem.
             remmediaquery: false,
+            cssnano: {
+                discardComments: {
+                    removeAll: true
+                },
+                zindex: false
+            },
 			scss: {
                 'style': {
                     src: './do-not-edit/assets/scss/tools/_functions.scss',

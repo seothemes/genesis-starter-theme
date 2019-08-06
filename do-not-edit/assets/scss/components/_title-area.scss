@@ -21,6 +21,7 @@
 .site-title {
 	margin: 0;
 	font-weight: $font-weight--semibold;
+	font-size: 1em;
 
 	.wp-custom-logo & {
 
@@ -39,7 +40,7 @@
 // Site description.
 .site-description {
 	margin: 0;
-	font-size: smaller;
+	font-size: small;
 
 	.wp-custom-logo & {
 

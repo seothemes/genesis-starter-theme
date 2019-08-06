@@ -13,18 +13,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: do-not-edit/blocks.php:5
-msgid "Blocks"
-msgstr ""
-
-#: do-not-edit/front.php:5
-msgid "Front Page"
-msgstr ""
-
-#: do-not-edit/landing.php:5
-msgid "Landing"
-msgstr ""
-
 #: do-not-edit/config/enqueue.php:51
 msgid "Menu"
 msgstr ""
