@@ -1,17 +1,17 @@
 [
     {
         "name": "aristath/kirki",
-        "version": "v3.0.41",
-        "version_normalized": "3.0.41.0",
+        "version": "v3.0.44",
+        "version_normalized": "3.0.44.0",
         "source": {
             "type": "git",
             "url": "https://github.com/aristath/kirki.git",
-            "reference": "f543c5f4c68b384152c24c4b33188e4a68facc64"
+            "reference": "0ad720aad498ab984acdd6ef29dde426bd00058c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aristath/kirki/zipball/f543c5f4c68b384152c24c4b33188e4a68facc64",
-            "reference": "f543c5f4c68b384152c24c4b33188e4a68facc64",
+            "url": "https://api.github.com/repos/aristath/kirki/zipball/0ad720aad498ab984acdd6ef29dde426bd00058c",
+            "reference": "0ad720aad498ab984acdd6ef29dde426bd00058c",
             "shasum": ""
         },
         "require": {
@@ -26,7 +26,7 @@
             "phpunit/phpunit": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-06-08T12:10:59+00:00",
+        "time": "2019-06-24T21:32:08+00:00",
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -40,9 +40,9 @@
         "authors": [
             {
                 "name": "aristath",
+                "role": "Developer",
                 "email": "aristath@gmail.com",
-                "homepage": "https://aristath.github.io",
-                "role": "Developer"
+                "homepage": "https://aristath.github.io"
             }
         ],
         "description": "Extending the WordPress customizer",
@@ -331,16 +331,23 @@
     },
     {
         "name": "seothemes/core",
-        "version": "3.4.0.x-dev",
-        "version_normalized": "3.4.0.9999999-dev",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/seothemes/core.git",
+            "reference": "f247fa8322162044cec4a3337dd4f446d6d713a7"
+        },
         "dist": {
-            "type": "path",
-            "url": "do-not-edit/temp/seothemes/core",
-            "reference": "381310965af955fb78f8f03dae37299c5b6251e5"
+            "type": "zip",
+            "url": "https://api.github.com/repos/seothemes/core/zipball/f247fa8322162044cec4a3337dd4f446d6d713a7",
+            "reference": "f247fa8322162044cec4a3337dd4f446d6d713a7",
+            "shasum": ""
         },
         "require": {
             "php": ">=5.4"
         },
+        "time": "2019-06-22T03:51:41+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -348,6 +355,7 @@
                 "SeoThemes\\Core\\": "src/"
             }
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "GPL-3.0-or-later"
         ],
@@ -357,10 +365,7 @@
                 "email": "seothemeswp@gmail.com"
             }
         ],
-        "description": "A config-based composer package that provides a set of modules to extend Genesis child theme development.",
-        "transport-options": {
-            "symlink": true
-        }
+        "description": "A config-based composer package that provides a set of modules to extend Genesis child theme development."
     },
     {
         "name": "tgmpa/tgm-plugin-activation",

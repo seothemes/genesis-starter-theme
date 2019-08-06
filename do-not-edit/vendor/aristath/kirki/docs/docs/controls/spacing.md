@@ -1,8 +1,9 @@
 ---
 layout: default
-title: The "spacing" control
+published: false
+title: WordPress Customizer Spacing Control
 slug: spacing
-subtitle: Learn how to create controls using Kirki
+subtitle: Learn how to create a spacing control using the Kirki Customizer Framework.
 mainMaxWidth: 55rem;
 bodyClasses: control page
 returns: array

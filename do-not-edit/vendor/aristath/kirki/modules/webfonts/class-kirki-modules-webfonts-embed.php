@@ -6,7 +6,7 @@
  * @category    Core
  * @author      Ari Stathopoulos (@aristath)
  * @copyright   Copyright (c) 2019, Ari Stathopoulos (@aristath)
- * @license    https://opensource.org/licenses/MIT
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0
  */
 
@@ -146,8 +146,11 @@ final class Kirki_Modules_Webfonts_Embed {
 			$url     = "https://fonts.googleapis.com/css?family={$family}:{$weights}&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,khmer,latin,latin-ext,vietnamese,hebrew,arabic,bengali,gujarati,tamil,telugu,thai";
 
 			$transient_id = 'kirki_gfonts_' . md5( $url );
-			$contents     = get_site_transient( $transient_id );
+			$contents     = get_transient( $transient_id );
+
 			/**
+			 * Reset the cache if we're using action=kirki-reset-cache in the URL.
+			 *
 			 * Note to code reviewers:
 			 * There's no need to check nonces or anything else, this is a simple true/false evaluation.
 			 */
@@ -200,8 +203,8 @@ final class Kirki_Modules_Webfonts_Embed {
 						$contents
 					);
 
-					// Set the transient for a week.
-					set_site_transient( $transient_id, $contents, WEEK_IN_SECONDS );
+					// Set the transient for a day.
+					set_transient( $transient_id, $contents, DAY_IN_SECONDS );
 				}
 			}
 			if ( $contents ) {

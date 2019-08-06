@@ -18,6 +18,7 @@ Check out the [live demo](https://demo.seothemes.com/genesis-starter)
     * [One line command](#one-line-command)
     * [Individual commands](#individual-commands)
 * [Usage](#usage)
+    * [Autoloading classes and files](#autoloading-classes-and-files)
 * [Development](#development)
 * [Structure](#structure)
 * [Contributing](#contributing)
@@ -119,6 +120,14 @@ composer remove aristath/kirki
 Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 
 Static assets are organized in the `assets` directory. This folder contains theme scripts, styles, images, fonts, views and language translation files. All of the main theme styles are contained in the `assets/css/main.css` file, the `style.css` file at the root of the theme is left blank intentionally. 
+
+### Autoloading classes and files
+
+The Genesis Starter Theme uses the Composer autoloader for loading classes and files. Additional files and classes can be added to the autoloader by adding them to the `composer.json` config. Once you have added your additional files, run the following command to regenerate the autoloader:
+
+```shell
+composer dump-autoload --no-dev
+```
 
 ## Development
 

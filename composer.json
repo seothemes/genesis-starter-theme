@@ -19,27 +19,18 @@
     "issues": "https://github.com/seothemes/genesis-starter-theme/issues",
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "do-not-edit/temp/seothemes/core",
-      "options": {
-        "symlink": true
-      }
-    }
-  ],
   "require": {
     "php": ">=5.4",
     "aristath/kirki": "^3.0",
     "richtabor/merlin-wp": "dev-master",
     "tgmpa/tgm-plugin-activation": "dev-master",
-    "seothemes/core": "@dev",
+    "seothemes/core": "dev-master",
     "proteusthemes/edd-theme-updater": "^0.2.1"
   },
   "autoload": {
-    "psr-4": {
-      "SeoThemes\\GenesisStarterTheme\\": "src/classes/"
-    },
+    "classmap": [
+      "do-not-edit/src/classes/"
+    ],
     "files": [
       "do-not-edit/vendor/richtabor/merlin-wp/class-merlin.php",
       "do-not-edit/vendor/aristath/kirki/kirki.php",
