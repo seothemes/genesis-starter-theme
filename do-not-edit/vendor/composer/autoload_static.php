@@ -27,7 +27,6 @@ class ComposerStaticInit94cd2c84b69b79ed4f6044f5ada99fef
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'SeoThemes\\GenesisStarterTheme\\' => 30,
             'SeoThemes\\Core\\' => 15,
         ),
         'P' => 
@@ -43,10 +42,6 @@ class ComposerStaticInit94cd2c84b69b79ed4f6044f5ada99fef
     );
 
     public static $prefixDirsPsr4 = array (
-        'SeoThemes\\GenesisStarterTheme\\' => 
-        array (
-            0 => __DIR__ . '/../../..' . '/src/classes',
-        ),
         'SeoThemes\\Core\\' => 
         array (
             0 => __DIR__ . '/..' . '/seothemes/core/src',

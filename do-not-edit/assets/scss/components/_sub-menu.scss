@@ -21,9 +21,14 @@
 		background-color: $color--white;
 	}
 
-	.no-js .menu-item-has-children:hover > &,
-	.no-js .menu-item-has-children:focus > & {
-		display: block;
+	// Hovered state.
+	.menu-item-has-children:hover > &,
+	.menu-item-has-children:focus > &,
+	.menu-item-has-children:focus-within > & {
+
+		@include mq(m) {
+			display: block;
+		}
 	}
 
 	// Sub menu menu item.
@@ -31,12 +36,6 @@
 		width: 100%;
 
 		@include mq($until: m) {
-
-			.no-js & {
-				width: auto;
-				margin: 0 $spacing--m 0 0;
-				padding: 0;
-			}
 
 			&:last-of-type {
 				padding-bottom: 0;

@@ -29,10 +29,16 @@ class Enqueue extends Component {
 	const STYLES       = 'styles';
 	const URL          = 'src';
 	const VERSION      = 'version';
-	const MENUS        = 'menus';
 	const EDITOR       = 'editor';
 	const PRIORITY     = 'priority';
 
+	/**
+	 * Initialize component.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
 	public function init() {
 
 		// Remove stylesheet by default.
@@ -44,10 +50,6 @@ class Enqueue extends Component {
 
 		if ( isset( $this->config[ self::STYLES ] ) ) {
 			$this->process_assets( $this->config[ self::STYLES ] );
-		}
-
-		if ( isset( $this->config[ self::MENUS ] ) ) {
-			add_action( 'after_setup_theme', [ $this, 'register_menus' ] );
 		}
 	}
 
@@ -152,16 +154,5 @@ class Enqueue extends Component {
 	 */
 	protected function get_type( $src ) {
 		return strpos( $src, '.js' ) !== false ? 'script' : 'style';
-	}
-
-	/**
-	 * Description of expected behavior.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public function register_menus() {
-		genesis_register_responsive_menus( $this->config[ self::MENUS ] );
 	}
 }

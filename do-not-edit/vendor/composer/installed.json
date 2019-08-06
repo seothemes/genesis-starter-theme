@@ -336,18 +336,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/seothemes/core.git",
-            "reference": "f247fa8322162044cec4a3337dd4f446d6d713a7"
+            "reference": "1021068f154d56bea9746365f6b307c64d5b5cdc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/seothemes/core/zipball/f247fa8322162044cec4a3337dd4f446d6d713a7",
-            "reference": "f247fa8322162044cec4a3337dd4f446d6d713a7",
+            "url": "https://api.github.com/repos/seothemes/core/zipball/1021068f154d56bea9746365f6b307c64d5b5cdc",
+            "reference": "1021068f154d56bea9746365f6b307c64d5b5cdc",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4"
         },
-        "time": "2019-06-22T03:51:41+00:00",
+        "time": "2019-08-06T10:34:35+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
