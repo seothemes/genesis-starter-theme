@@ -1,0 +1,25 @@
+////
+/// Site header object.
+///
+/// @group  Objects
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-header {
+	position: relative;
+	z-index: 10;
+	border-bottom: $base--border;
+	background-color: $color--white;
+
+	.wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mq(m) {
+			flex-wrap: nowrap;
+		}
+	}
+}

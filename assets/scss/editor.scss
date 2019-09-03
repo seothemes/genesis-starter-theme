@@ -1,0 +1,29 @@
+////
+/// Editor stylesheet.
+///
+/// This is the primary editor stylesheet. It is used for the WordPress 5.0+
+/// block editor (Gutenberg) and is not intended for older versions of the
+/// WordPress edit screen.
+///
+/// @group  Styles
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   http://sass-guidelin.es/#main-file
+////
+@import "../../node_modules/bourbon/core/bourbon";
+@import "settings/_index";
+@import "tools/_index";
+@import "components/block";
+
+.editor-post-title__block .editor-post-title__input,
+body {
+	color: $color--text;
+	font-family: $base--font-family;
+}
+
+blockquote {
+	font-style: italic;
+}
+
+.wp-block-button__link {
+	font-size: 1em;
+}

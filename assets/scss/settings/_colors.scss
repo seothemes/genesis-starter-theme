@@ -1,0 +1,108 @@
+////
+/// Color settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Palette
+$color--blue: #007bff;
+$color--indigo: #6610f2;
+$color--purple: #6f42c1;
+$color--pink: #e83e8c;
+$color--red: #dc3545;
+$color--orange: #fd7e14;
+$color--yellow: #ffc107;
+$color--green: #28a745;
+$color--teal: #20c997;
+$color--cyan: #17a2b8;
+
+// Grayscale
+$color--white: #fff;
+$color--gray-100: #f8f9fa;
+$color--gray-200: #e9ecef;
+$color--gray-300: #dee2e6;
+$color--gray-400: #ced4da;
+$color--gray-500: #adb5bd;
+$color--gray-600: #6c757d;
+$color--gray-700: #495057;
+$color--gray-800: #343a40;
+$color--gray-900: #212529;
+$color--black: #000;
+
+// Theme
+$color--primary: $color--blue;
+$color--secondary: $color--gray-600;
+$color--success: $color--green;
+$color--info: $color--blue;
+$color--warning: $color--yellow;
+$color--error: $color--red;
+$color--light: $color--gray-100;
+$color--medium: $color--gray-500;
+$color--dark: $color--gray-800;
+$color--heading: $color--gray-800;
+$color--text: $color--gray-700;
+$color--border: $color--gray-200;
+$color--background: $color--gray-100;
+$color--muted: $color--gray-400;
+$color--overlay: rgba($color--gray-100, 0.9);
+
+// Social
+$color--dribbble: #ea4c89;
+$color--email: #049fb3;
+$color--facebook: #3b5998;
+$color--flickr: #ff0084;
+$color--github: #333;
+$color--gplus: #dd4b39;
+$color--linkedin: #007bb6;
+$color--pinterest: #bd081c;
+$color--rss: #f60;
+$color--stumbleupon: #eb4823;
+$color--tumblr: #32506d;
+$color--twitter: #1da1f2;
+$color--vimeo: #aad450;
+$color--youtube: #f00;
+$color--snapchat: #fffc00;
+$color--instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+
+$colors: (
+	primary: $color--primary,
+	secondary: $color--secondary,
+	success: $color--success,
+	info: $color--info,
+	warning: $color--warning,
+	error: $color--error,
+	light: $color--light,
+	medium: $color--medium,
+	dark: $color--dark,
+	heading: $color--heading,
+	text: $color--text,
+	border: $color--border,
+	background: $color--background,
+	muted: $color--muted,
+	overlay: $color--overlay,
+
+	blue: $color--blue,
+	indigo: $color--indigo,
+	purple: $color--purple,
+	pink: $color--pink,
+	red: $color--red,
+	orange: $color--orange,
+	yellow: $color--yellow,
+	green: $color--green,
+	teal: $color--teal,
+	cyan: $color--cyan,
+
+	white: $color--white,
+	gray-100: $color--gray-100,
+	gray-200: $color--gray-200,
+	gray-300: $color--gray-300,
+	gray-400: $color--gray-400,
+	gray-500: $color--gray-500,
+	gray-600: $color--gray-600,
+	gray-700: $color--gray-700,
+	gray-800: $color--gray-800,
+	gray-900: $color--gray-900,
+	black: $color--black,
+);

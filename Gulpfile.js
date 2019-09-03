@@ -27,12 +27,12 @@ toolkit.extendConfig(
 		},
 		src: {
 			php: ['**/*.php', '!vendor/**'],
-			images: './do-not-edit/assets/img/**/*',
-			scss: './do-not-edit/assets/scss/**/*.scss',
+			images: './assets/img/**/*',
+			scss: './assets/scss/**/*.scss',
 			css: ['**/*.css', '!node_modules/**'],
-			js: ['./do-not-edit/assets/js/**/*.js', '!node_modules/**'],
+			js: ['./assets/js/**/*.js', '!node_modules/**'],
 			json: ['**/*.json', '!node_modules/**'],
-			i18n: './do-not-edit/assets/lang/',
+			i18n: './assets/lang/',
 			zip: [
 				'./**/*',
 				'!./*.zip',
@@ -42,6 +42,13 @@ toolkit.extendConfig(
 				'!./node_modules/**/*',
 				'!./vendor',
 				'!./vendor/**/*'
+			]
+		},
+		js: {
+			'main': [
+				'./assets/js/hide-show.js',
+				'./assets/js/smooth-scroll.js',
+				'./assets/js/sticky-header.js'
 			]
 		},
 		css: {
@@ -55,37 +62,43 @@ toolkit.extendConfig(
             },
 			scss: {
                 'style': {
-                    src: './do-not-edit/assets/scss/tools/_functions.scss',
+                    src: './assets/scss/tools/_functions.scss',
                     dest: './',
                     outputStyle: 'expanded',
                     sourceMap: 'false'
                 },
 				'main': {
-					src: './do-not-edit/assets/scss/main.scss',
-					dest: './do-not-edit/assets/css/',
+					src: './assets/scss/main.scss',
+					dest: './assets/css/',
 					outputStyle: 'compressed'
 				},
                 'editor': {
-                    src: './do-not-edit/assets/scss/editor.scss',
-                    dest: './do-not-edit/assets/css/',
+                    src: './assets/scss/editor.scss',
+                    dest: './assets/css/',
                     outputStyle: 'compressed'
                 },
                 'woocommerce': {
-                    src: './do-not-edit/assets/scss/plugins/woocommerce/__index.scss',
-                    dest: './do-not-edit/assets/css/',
+                    src: './assets/scss/plugins/woocommerce/__index.scss',
+                    dest: './assets/css/',
+                    outputStyle: 'compressed'
+                },
+                'fontawesome': {
+                    src: './assets/scss/plugins/fontawesome/__index.scss',
+                    dest: './assets/css/',
                     outputStyle: 'compressed'
                 }
 			}
 		},
 		dest: {
-            i18npo: './do-not-edit/assets/lang/',
-            i18nmo: './do-not-edit/assets/lang/',
-			images: './do-not-edit/assets/img/',
-			js: './do-not-edit/assets/js/'
+            i18npo: './assets/lang/',
+            i18nmo: './assets/lang/',
+			images: './assets/img/',
+			js: './assets/js/min/'
 		},
 		server: {
+            notify: false,
             proxy: 'https://genesis-starter.test',
-			host: 'genesis-starter.test',
+			// host: 'genesis-starter.test',
 			open: 'external',
             port: '8000',
             https: {

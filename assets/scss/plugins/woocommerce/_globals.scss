@@ -1,0 +1,60 @@
+////
+/// Globals.
+///
+/// @group  WooCommerce
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+.onsale {
+	z-index: 1;
+	padding: $spacing--xs $spacing--m;
+	border-radius: $base--border--radius;
+	color: $color--white;
+	background: $color--primary;
+	font-size: small;
+	font-weight: $font-weight--heading;
+
+	@include position(absolute, -0.5em auto auto -0.5em);
+}
+
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-message {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: $gutter;
+	font-size: smaller;
+
+	@include box;
+
+	.button {
+		margin-left: $spacing--m;
+		padding: $spacing--m $gap;
+		order: 2;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	a {
+		margin-left: 0.382em;
+	}
+}
+
+.woocommerce-message {
+	border-color: $color--success;
+	background-color: rgba($color--success, 0.1);
+
+	&--info {
+		border-color: $color--primary;
+		background-color: rgba($color--primary, 0.1);
+	}
+}
+
+.woocommerce-error {
+	border-color: $color--error;
+	background-color: rgba($color--error, 0.1);
+}

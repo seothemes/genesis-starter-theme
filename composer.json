@@ -7,7 +7,7 @@
     "wordpress-theme-development",
     "genesis-framework"
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Lee Anthony",
@@ -20,36 +20,24 @@
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
   "require": {
-    "php": ">=5.4",
-    "aristath/kirki": "^3.0",
-    "richtabor/merlin-wp": "dev-master",
-    "tgmpa/tgm-plugin-activation": "dev-master",
-    "seothemes/core": "dev-master",
-    "proteusthemes/edd-theme-updater": "^0.2.1"
+    "php": ">=5.6"
+  },
+  "require-dev": {
+    "php": "^5.6|^7",
+    "brain/monkey": "^2.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "v0.5.0",
+    "phpcompatibility/phpcompatibility-wp": "2.0.0",
+    "phpunit/phpunit": "~5.7.9",
+    "squizlabs/php_codesniffer": "^3.4.2",
+    "wp-coding-standards/wpcs": "2.1.0",
+    "wp-phpunit/wp-phpunit": "^5.1"
   },
   "autoload": {
     "classmap": [
-      "do-not-edit/src/classes/"
-    ],
-    "files": [
-      "do-not-edit/vendor/richtabor/merlin-wp/class-merlin.php",
-      "do-not-edit/vendor/aristath/kirki/kirki.php",
-      "do-not-edit/src/functions/setup.php",
-      "do-not-edit/src/functions/helpers.php",
-      "do-not-edit/src/functions/shortcodes.php",
-      "do-not-edit/src/structure/body.php",
-      "do-not-edit/src/structure/header.php",
-      "do-not-edit/src/structure/wrap.php",
-      "do-not-edit/src/structure/menus.php",
-      "do-not-edit/src/structure/hero.php",
-      "do-not-edit/src/structure/footer.php",
-      "do-not-edit/src/structure/single.php",
-      "do-not-edit/src/structure/archive.php",
-      "do-not-edit/src/structure/layout.php"
+      "lib/classes"
     ]
   },
   "config": {
-    "vendor-dir": "do-not-edit/vendor",
     "preferred-install": {
       "*": "dist"
     },
@@ -61,8 +49,13 @@
     "stylelint": [
       "stylelint './assets/scss/**/*.scss' --fix"
     ],
-    "phpcs": [
-      "phpcs"
+    "install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+    "phpcs": "phpcs --standard=WordPress --extensions=php -p -s lib config templates functions.php",
+    "phpcbf": "phpcbf --standard=WordPress --extensions=php -p lib config templates functions.php",
+    "test-unit": "composer dump && \"vendor/bin/phpunit\" --testsuite unit --color=always",
+    "test-integration": "composer dump && \"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always",
+    "post-update-cmd": [
+      "rm -Rf vendor/aristath/kirki/.gitignore"
     ]
   }
 }

@@ -1,0 +1,43 @@
+////
+/// My Account page.
+///
+/// @group  WooCommerce
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+.woocommerce-account {
+
+	.woocommerce {
+
+		@include mq(m) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+	}
+}
+
+.woocommerce-MyAccount-navigation {
+	padding: $gap;
+	border: $base--border;
+	border-radius: $base--border--radius;
+	background-color: $color--background;
+
+	@include mq(m) {
+		width: $one-fourth;
+		margin-right: $gutter;
+	}
+
+	ul {
+		margin: 0;
+		list-style-type: none;
+	}
+}
+
+.woocommerce-MyAccount-content {
+
+	@include mq(m) {
+		width: $three-fourths;
+	}
+}

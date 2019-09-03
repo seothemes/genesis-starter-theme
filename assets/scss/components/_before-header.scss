@@ -1,0 +1,29 @@
+////
+/// Before header component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.before-header {
+	padding: $spacing--s 0;
+	border-bottom: $base--border;
+	background-color: $color--background;
+	font-size: small;
+	line-height: 1;
+
+	.wrap {
+		align-items: center;
+	}
+
+	.widget {
+		margin-bottom: 0;
+	}
+
+	p,
+	button,
+	.button {
+		margin-bottom: 0;
+	}
+}

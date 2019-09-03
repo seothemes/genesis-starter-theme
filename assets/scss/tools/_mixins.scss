@@ -1,0 +1,236 @@
+////
+/// Custom mixins.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+////
+/// Hover focus mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin hover-focus {
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		@content;
+	}
+}
+
+////
+/// Border mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin border( $values ) {
+
+	@include _directional-property(border, null, $values);
+}
+
+////
+/// Overlay mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin overlay {
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		display: block;
+		background-color: $color--overlay;
+		content: "";
+
+		@include position(absolute, 0 0 0 0);
+	}
+}
+
+////
+/// Transition mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin transition {
+	transition: all $base--transition-duration $base--transition-timing-function;
+}
+
+////
+/// Heading mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin heading {
+	margin: 0 0 0.5em;
+	font-family: $font-family--heading;
+	font-weight: $font-weight--heading;
+	line-height: $line-height--heading;
+}
+
+////
+/// Well mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin box {
+	padding: $gap;
+	border: $base--border;
+	border-radius: $base--border--radius;
+	background-color: $color--background;
+
+	p {
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+////
+/// Notice mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin notice($color: "medium") {
+	margin-bottom: $spacing--m;
+
+	@include box;
+
+	@if $color != "medium" {
+		border-color: map_get($colors, $color);
+		color: map_get($colors, $color);
+		background-color: rgba(map_get($colors, $color), 0.1);
+	}
+}
+
+////
+/// Icon mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin icon($glyph: "\f005", $font_weight: 400) {
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-weight: $font_weight;
+	content: $glyph;
+}
+
+////
+/// Button mixin
+///
+/// Used for both front end and block editor styling.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin button {
+	display: inline-block;
+	width: auto;
+	padding: $spacing--m * $minor-third $gutter;
+	border: 0;
+	border-radius: $base--border--radius;
+	color: $color--white;
+	background-color: $color--primary;
+	font-size: $base--font-size / $major-second;
+	font-weight: $font-weight--heading;
+	line-height: 1;
+	text-align: center;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	@include transition();
+
+	@include hover-focus {
+		outline: none;
+		color: $color--white;
+		background-color: lighten($color--primary, 10);
+		text-decoration: none;
+	}
+
+	&:disabled {
+
+		&,
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+			background-color: $color--muted;
+			cursor: not-allowed;
+		}
+	}
+
+	&.small {
+		padding: 1em 1.5em;
+		font-size: small;
+	}
+
+	&.rounded {
+		border-radius: 10rem;
+	}
+
+	&.outline {
+		border: 1px solid $color--primary;
+		color: $color--primary;
+		background: transparent;
+
+		@include hover-focus {
+			color: $color--white;
+			background: $color--primary;
+		}
+	}
+
+	&.fa,
+	&.fab,
+	&.fas {
+		display: inline-flex;
+		font-family: $base--font-family;
+		font-weight: $font-weight--heading;
+
+		&:before {
+			display: inline-block;
+			margin-right: $spacing--s;
+			font-family: "Font Awesome 5 Pro", sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			line-height: 1;
+			text-rendering: auto;
+		}
+	}
+
+	&.icon-right {
+
+		&:before {
+			order: 1;
+			margin-right: 0;
+			margin-left: $spacing--s;
+		}
+	}
+}

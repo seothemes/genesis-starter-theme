@@ -1,0 +1,29 @@
+////
+/// Header right component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.header-widget-area {
+	margin-right: $gap;
+	margin-left: auto;
+
+	@include mq($until: xxs) {
+		display: none;
+	}
+
+	@include mq(m) {
+		margin: 0;
+		order: 3;
+	}
+
+	.widget {
+		margin-bottom: 0;
+
+		@include mq(m) {
+			margin-left: $gutter;
+		}
+	}
+}

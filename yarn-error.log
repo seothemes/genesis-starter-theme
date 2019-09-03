@@ -36,7 +36,7 @@ npm manifest:
       "url": "https://github.com/seothemes/genesis-starter-theme.git"
     },
     "author": "SEO Themes",
-    "license": "GPL-3.0-or-later",
+    "license": "GPL-2.0-or-later",
     "main": "Gulpfile.js",
     "scripts": {},
     "dependencies": {},

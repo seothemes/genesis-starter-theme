@@ -1,0 +1,43 @@
+////
+/// Gallery component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.featured-content {
+	margin-bottom: $spacing--m;
+
+	.entry {
+
+		> a {
+			display: block;
+
+			img {
+				min-width: 100%;
+			}
+		}
+
+		> span {
+			display: none;
+		}
+	}
+
+	.sidebar & {
+
+		.entry {
+
+			@include clearfix;
+		}
+
+		.entry-image {
+			max-width: $spacing--xxl;
+		}
+
+		.entry-title {
+			margin-bottom: $spacing--xxs;
+			font-size: $base--font-size;
+		}
+	}
+}

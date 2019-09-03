@@ -1,0 +1,229 @@
+////
+/// Gutenberg block component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.wp-block {
+
+	// Audio block.
+	&-audio {
+	}
+
+	// Button block.
+	&-button {
+
+		&__link {
+
+			@include button;
+
+			.is-style-rounded & {
+				border-radius: 10rem;
+			}
+
+			.is-style-outline & {
+				border: $base--border--width $base--border--style $color--primary;
+				color: $color--primary;
+				background-color: transparent;
+
+				@include hover-focus {
+					border-color: $color--primary;
+					color: $color--white;
+					background-color: $color--primary;
+				}
+			}
+		}
+	}
+
+	// Categories block.
+	&-categories {
+
+		&-list {
+		}
+
+		&-dropdown {
+		}
+	}
+
+	// Code block.
+	&-code {
+	}
+
+	// Columns block.
+	&-columns {
+
+		@include mq($until: m) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-column {
+
+		@include mq($until: m) {
+			flex: none;
+			width: 100%;
+		}
+
+		@include mq(m) {
+			margin-left: $gutter;
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+	}
+
+	// Cover image block.
+	&-cover-image {
+
+		&.has-parallax {
+		}
+
+		&.has-background-dim {
+		}
+
+		&-text {
+		}
+
+		&.has-left-content {
+		}
+
+		&.has-right-content {
+		}
+
+		&.has-left-content &-text {
+		}
+
+		&.has-right-content &-text {
+		}
+	}
+
+	// Embed block.
+	&-embed {
+
+		@include margin($spacing--m null);
+	}
+
+	// File block.
+	&-file {
+
+		&__button {
+		}
+	}
+
+	// Gallery block.
+	&-gallery {
+
+		@include margin($spacing--m null);
+
+		&.is-cropped {
+		}
+
+		&.columns-1 {
+		}
+
+		&.columns-2 {
+		}
+
+		&.columns-3 {
+		}
+
+		.blocks-gallery-item {
+		}
+
+		&.is-cropped .blocks-gallery-item {
+		}
+
+		.blocks-gallery-item {
+
+			img {
+				align-self: center;
+			}
+		}
+
+		&.columns-1 .blocks-gallery-item {
+		}
+	}
+
+	// Image block.
+	&-image {
+
+		@include margin($spacing--m null);
+
+		&.alignleft {
+			margin-right: $spacing--m;
+		}
+
+		&.alignright {
+			margin-left: $spacing--m;
+		}
+
+		&.alignwide {
+			max-width: 120%;
+		}
+
+		&.alignfull {
+			max-width: none;
+		}
+	}
+
+	// Latest posts block.
+	&-latest-posts {
+
+		&.is-grid {
+		}
+
+		&__post-date {
+		}
+
+		&__post-excerpt {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		li > a {
+			color: $color--heading;
+			font-family: $font-family--heading;
+			font-weight: $font-weight--semibold;
+			line-height: $line-height--heading;
+		}
+	}
+
+	// Preformatted block.
+	&-preformatted {
+	}
+
+	// Pullquote block.
+	&-pullquote {
+		border-left: 0;
+
+		@include margin($spacing--l null);
+
+		&.aligncenter {
+
+			@include margin($spacing--l null);
+		}
+	}
+
+	// Quote block.
+	&-quote {
+	}
+
+	// Separator block.
+	&-separator {
+	}
+
+	// Subhead block.
+	&-subhead {
+	}
+
+	// Table block.
+	&-table {
+	}
+
+	// Verse block.
+	&-verse {
+	}
+}

@@ -4,7 +4,7 @@
 
 A developer-friendly starter theme used for creating commercial child themes for the Genesis Framework.
 
-It uses Composer to pull in the [Core](https://github.com/seothemes/core) component library which provides the PHP logic for the theme's configuration, and it uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images.
+It uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to automate mundane build tasks like compiling SCSS and minifying images.
 
 Check out the [live demo](https://demo.seothemes.com/genesis-starter)
 
@@ -46,8 +46,8 @@ The Genesis Starter Theme aims to modernize, organize and enhance some aspects o
 | Requirement | How to Check | How to Install |
 | :---------- | :----------- | :------------- |
 | PHP >= 5.4 | `php -v` | [php.net](http://php.net/manual/en/install.php) |
-| WordPress >= 4.8 | `Admin Footer` | [wordpress.org](https://codex.wordpress.org/Installing_WordPress) |
-| Genesis >= 2.6 | `Theme Page` | [studiopress.com](http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=) |
+| WordPress >= 5.2 | `Admin Footer` | [wordpress.org](https://codex.wordpress.org/Installing_WordPress) |
+| Genesis >= 3.1.1 | `Theme Page` | [studiopress.com](http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=) |
 | Composer >= 1.5.0 | `composer --version` | [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) |
 | Node >= 9.10.1 | `node -v` | [nodejs.org](https://nodejs.org/) |
 | NPM >= 5.6.0 | `npm -v` | [npm.js](https://www.npmjs.com/) |
@@ -87,35 +87,29 @@ npm install && gulp
 
 ## Structure
 
-You'll notice that the structure of this theme is different to most themes. All of the themes actual code lives inside the `do-not-edit` directory. This directory *can* be edited by theme developers, but should not be edited by end users.
-
-By placing all of the themes actual code inside a single, non-editable directory, theme authors are able to push automatic updates for the child theme without running the risk of losing the end users customizations. For more information on how the automatic updates work please see this [example project README](https://github.com/seothemes/genesis-sample-updatable).
-
 ```shell
 your-theme-name/    # → Root directory
-├── do-not-edit/    # → Updatable directory
-│   ├── assets/     # → Front-end assets
-│   ├── config/     # → Config directory
-│   ├── src/        # → Additional PHP files
-│   └── vendor/     # → Composer packages
+├── assets/         # → Front-end assets
+├── config/         # → Config directory
+├── lib/            # → Theme functions
+│   ├── functions/  # → General functions
+│   ├── plugins/    # → Plugin functions
+│   ├── shortcodes/ # → Shortcode functions
+│   ├── structure/  # → Structural functions
+│   └── init.php    # → File autoloader 
+├── templates/      # → Page templates
+├── tests/          # → PHP Unit tests
+├── vendor/         # → Composer packages
 ├── node_modules/   # → Node.js packages
 ├── composer.json   # → Composer settings
 ├── package.json    # → Node dependencies
 ├── Gulpfile.js     # → Gulp config
 ├── screenshot.png  # → Theme screenshot
-├── functions.php   # → Loads Composer
+├── functions.php   # → Loads init files
 └── style.css       # → Blank stylesheet
 ```
 
 ## Usage
-
-The Genesis Starter Theme is intended to be used with [SEO Themes Core](https://packagist.org/packages/seothemes/core). All changes to the child theme should be made via the theme configuration file. This can be used to change almost every aspect of the theme, including theme features, navigation menus, image sizes, widget areas and more. An example config file is included with this theme.
-
-Components are only loaded when a config is provided. They can be added or removed depending on the requirements of your project. For example, to remove the Kirki component, simply remove it's config file `config/kirki.php`. You can also remove the Composer package with the following command:
-
-```shell
-composer remove aristath/kirki
-```
 
 Project details such as theme name, author, version number etc should only ever be changed from the `package.json` file. The Gulp build task reads this file and automatically places the relevant information to the correct locations throughout the theme. 
 
@@ -123,11 +117,17 @@ Static assets are organized in the `assets` directory. This folder contains them
 
 ### Autoloading classes and files
 
-The Genesis Starter Theme uses the Composer autoloader for loading classes and files. Additional files and classes can be added to the autoloader by adding them to the `composer.json` config. Once you have added your additional files, run the following command to regenerate the autoloader:
+#### Classes
+
+The Genesis Starter Theme automatically loads classes placed in the `lib/classes/` directory via the Composer autoloader. Once you have added your additional files, run the following command to regenerate the autoloader:
 
 ```shell
 composer dump-autoload --no-dev
 ```
+
+#### Files
+
+File loading is handled by the `lib/init.php` file. Simply add or remove files from the directory/filename array. 
 
 ## Development
 
@@ -135,7 +135,7 @@ Please refer to the [Gulp WP Toolkit Instructions](https://github.com/craigsimps
 
 In addition to Gulp WP Toolkit's tasks, there is also a `zip` task which can be used to generate an archive of your theme, including the required composer package files and none of the unnecessary files. The list of included files can be modified from the `toolkit.extendConfig.src.zip` config in the Gulpfile.
 
-### Removing Commercial Features
+### Removing Commercial Features (coming soon)
 
 This theme is intended to be used for commercial child theme development, however with a few tweaks it can be transformed into a lightweight, powerful starter theme for developers building custom one-off themes. Below is an example of how to strip out the commercial theme features:
 
@@ -161,8 +161,6 @@ rm -Rf do-not-edit/config/merlin.php
 rm -Rf do-not-edit/config/tgmpa.php
 rm -Rf do-not-edit/config/updater.php
 ```
-
-
 
 ## Contributing
 

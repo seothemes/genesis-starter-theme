@@ -1,0 +1,199 @@
+////
+/// Cart page.
+///
+/// @group  WooCommerce
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+.remove {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	border-radius: $base--border--radius;
+	color: $color--white;
+	background-color: $color--error;
+	font-weight: $font-weight--heading;
+
+	@include size($gap);
+
+	@include hover-focus {
+		color: $color--white;
+		background-color: lighten($color--error, 10);
+		text-decoration: none;
+	}
+}
+
+.product-thumbnail {
+
+	img {
+		border-radius: $base--border--radius;
+
+		@include size($spacing--xl);
+	}
+}
+
+.quantity {
+
+	.input-text {
+		max-width: $spacing--xxxl;
+		margin: 0 $spacing--m 0 0;
+	}
+}
+
+.actions {
+	padding: $spacing--l;
+
+	> .button {
+
+		@include mq(xs) {
+			float: right;
+		}
+	}
+}
+
+.coupon {
+	display: flex;
+	align-items: center;
+	width: $two-thirds;
+
+	@include mq(xs) {
+		float: left;
+	}
+
+	label {
+
+		@include hide-visually();
+	}
+
+	input {
+		margin: 0;
+	}
+
+	.button {
+		margin-left: 1em;
+		white-space: nowrap;
+	}
+}
+
+.cart-collaterals {
+	margin: $gutter 0;
+
+	@include mq(m) {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.cart_totals {
+
+	@include mq(m) {
+		width: $one-half;
+	}
+}
+
+.checkout-button {
+	width: 100%;
+}
+
+@include mq($until: xs) {
+
+	.woocommerce-cart-form {
+
+		table,
+		thead,
+		tbody,
+		th,
+		td,
+		tr {
+			display: block;
+		}
+
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		td {
+			display: flex;
+			align-items: center;
+			align-content: center;
+			position: relative;
+			padding: 0;
+			border: $base--border;
+			border-bottom: 0;
+		}
+
+		.actions {
+			display: block;
+			padding: 1em;
+			border-bottom: $base--border;
+
+			.button {
+				margin: 0;
+
+				@include padding($spacing--m);
+			}
+		}
+
+		.coupon {
+			flex-wrap: wrap;
+			width: 100%;
+			margin-bottom: 1em;
+
+			.input-text {
+				width: 100%;
+				margin-bottom: 1em;
+			}
+		}
+
+		.cart_item {
+			margin: $gap 0;
+			border-bottom: $base--border;
+
+			td:before {
+				display: flex;
+				align-items: center;
+				align-self: stretch;
+				width: 25%;
+				margin-right: $spacing--m;
+				padding: 1.5em 1em;
+				border-right: $base--border;
+				background-color: $color--background;
+				font-size: smaller;
+				font-weight: $font-weight--heading;
+				white-space: nowrap;
+			}
+		}
+
+		.product-remove:before {
+			content: "Delete";
+		}
+
+		.product-thumbnail:before {
+			content: "Image";
+		}
+
+		.product-name:before {
+			content: "Product";
+		}
+
+		.product-price:before {
+			content: "Price";
+		}
+
+		.product-quantity:before {
+			content: "Quantity";
+		}
+
+		.product-subtotal:before {
+			content: "Subtotal";
+		}
+
+		.product-total:before {
+			content: "Total";
+		}
+	}
+}

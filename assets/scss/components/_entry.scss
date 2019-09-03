@@ -1,0 +1,123 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.entry {
+
+	.featuredpost &,
+	.is-archive & {
+		margin-bottom: $gutter;
+		border: $base--border;
+		border-radius: $base--border--radius;
+		background-color: $color--white;
+
+		&:last-of-type {
+
+			@include mq($until: xs) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Entry header.
+	&-header {
+	}
+
+	// Entry title.
+	&-title {
+
+		.is-archive & {
+			font-size: $font-size--h4;
+		}
+
+		a {
+			color: $color--text;
+
+			@include hover-focus {
+				color: $color--primary;
+			}
+		}
+	}
+
+	// Entry title link.
+	&-title-link {
+	}
+
+	// Entry time.
+	&-time {
+	}
+
+	// Entry author.
+	&-author {
+	}
+
+	// Entry author link.
+	&-author-link {
+	}
+
+	// Entry author name.
+	&-author-name {
+	}
+
+	// Entry comments link
+	&-comments-link {
+	}
+
+	// Entry meta.
+	&-meta {
+		font-size: smaller;
+	}
+
+	// Entry image link.
+	&-image-link {
+		display: block;
+
+		img {
+			min-width: 100%;
+			border-radius: $base--border--radius $base--border--radius 0 0;
+		}
+	}
+
+	// Entry content.
+	&-content {
+
+		p {
+
+			&:last-of-type {
+
+			}
+		}
+	}
+
+	// Entry footer.
+	&-footer {
+
+		p {
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Entry categories.
+	&-categories {
+	}
+
+	// Entry tags.
+	&-tags {
+	}
+
+	// Entry wrap.
+	&-wrap {
+		padding: $gap;
+	}
+}
+
+// More link.
+.more-link {
+}

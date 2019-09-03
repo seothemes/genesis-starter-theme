@@ -1,0 +1,43 @@
+////
+/// Front page component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+[src*="placeholder.com"] {
+	padding: $spacing--xxs;
+	border: $base--border;
+	border-radius: $base--border--radius;
+}
+
+[class*="front-page-"] {
+	width: 100%;
+	padding: $spacing--xl 0 $spacing--xl - $gutter;
+	border-bottom: $base--border;
+
+	@include mq(m) {
+		padding: $spacing--xxl 0 $spacing--xxl - $gutter;
+	}
+
+	&:last-of-type {
+		border-bottom: 0;
+	}
+}
+
+.front-page {
+
+	&-1 {
+		padding: $spacing--xxl 0 $spacing--xxl - $gap;
+
+		@include mq(m) {
+			padding: $spacing--xxxl 0 $spacing--xxxl - $gap;
+		}
+	}
+
+	&-5 {
+		padding: $spacing--xl 0 $spacing--xl - $gutter;
+		background-color: $color--background;
+	}
+}

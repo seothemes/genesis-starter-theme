@@ -1,0 +1,78 @@
+////
+/// Miscellaneous classes.
+///
+/// @group  Utilities
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+// Box
+.box {
+
+	@include box;
+}
+
+// Notice
+.notice {
+
+	@include notice();
+
+	&-success {
+
+		@include notice("success");
+	}
+
+	&-info {
+
+		@include notice("info");
+	}
+
+	&-warning {
+
+		@include notice("warning");
+	}
+
+	&-error {
+
+		@include notice("error");
+	}
+
+}
+
+// Palette
+.palette {
+	display: flex;
+	flex-wrap: wrap;
+
+	h5 {
+		width: 100%;
+	}
+
+	> div {
+		width: $one-half;
+		margin: 0 $gutter $gutter 0;
+		padding: $spacing--m 0;
+		border-radius: $base--border--radius;
+		color: $color--white;
+		font-size: smaller;
+		font-weight: $font-weight--heading;
+		text-align: center;
+
+		&:nth-of-type(even) {
+			margin-right: 0;
+		}
+
+		@include mq(xs) {
+			width: $one-fifth;
+			padding: $gap 0;
+
+			&:nth-of-type(even) {
+				margin-right: $gutter;
+			}
+
+			&:nth-of-type(5n) {
+				margin-right: 0;
+			}
+		}
+	}
+}

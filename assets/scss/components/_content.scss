@@ -1,0 +1,73 @@
+////
+/// Content component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.content {
+	width: 100%;
+
+	@include margin($spacing--l null);
+
+	@include mq(m) {
+
+		@include margin($spacing--xl null);
+	}
+
+	.content-sidebar &,
+	.sidebar-content & {
+
+		@include mq(m) {
+			width: $layout--width--content;
+			max-width: $layout--max-width--content;
+		}
+	}
+
+	.narrow-content & {
+
+		@include mq(m) {
+			width: $layout--width--content;
+		}
+	}
+
+	.sidebar-content & {
+
+		@include mq(m) {
+			order: 1;
+		}
+	}
+
+	.narrow-content & {
+
+		@include margin(null auto);
+	}
+
+	.full-width-content & {
+	}
+
+	.is-archive & {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.has-heading-block & {
+		margin: 0 auto;
+	}
+
+	.front-page & {
+		width: 100%;
+		margin: 0 auto;
+
+		@include mq(m) {
+			width: 100%;
+		}
+	}
+
+	.template-blocks & {
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,63 @@
+////
+/// Pagination component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.pagination {
+	width: 100%;
+	padding: $gutter 0;
+	border-top: $base--border;
+	background-color: $color--background;
+
+	.wrap {
+		justify-content: center;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+		list-style-type: none;
+	}
+
+	li {
+		margin-right: $spacing--s;
+	}
+
+	// Active item.
+	.active {
+	}
+
+	// Previous item.
+	&-prev {
+	}
+
+	// Next item.
+	&-next {
+	}
+}
+
+// Adjacent posts nav.
+.adjacent-entry-pagination {
+
+	.narrow-content & {
+
+		.wrap {
+
+			@include mq(m) {
+				width: calc(#{$layout--width--content} - 10%);
+			}
+		}
+	}
+
+	.wrap {
+		justify-content: space-between;
+
+		> div {
+			max-width: $one-half;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+////
+/// Accessibility classes.
+///
+/// @group  Utilities
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.screen-reader-shortcut,
+.screen-reader-text,
+.screen-reader-text span {
+
+	@include hide-visually;
+
+	&:active,
+	&:focus {
+
+		@include hide-visually(unhide);
+
+		position: absolute;
+		padding: $spacing--s;
+		color: $color--white;
+		background-color: $color--muted;
+		text-decoration: none;
+	}
+}
+
+.more-link {
+	position: relative;
+}
+
+.genesis-skip-link {
+	margin: 0;
+
+	li {
+		width: 0;
+		height: 0;
+		list-style: none;
+	}
+}
+
+:focus {
+	outline: $base--border;
+}

@@ -1,0 +1,45 @@
+////
+/// Component imports.
+///
+/// Components make up the bulk of the actual theme design. Nearly every piece
+/// of the design is some type of component, whether it's a one-off or reusable
+/// block of code.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+@import "wrap";
+@import "title-area";
+@import "nav-primary";
+@import "nav-secondary";
+@import "menu";
+@import "menu-toggle";
+@import "sub-menu";
+@import "header-widget-area";
+@import "transparent-header";
+@import "sticky-header";
+@import "custom-header";
+@import "hero-section";
+@import "front-page";
+@import "breadcrumb";
+@import "archive-description";
+@import "content";
+@import "sidebar";
+@import "author-box";
+@import "avatar";
+@import "entry";
+@import "block";
+@import "gallery";
+@import "pagination";
+@import "comment";
+@import "search-form";
+@import "widget";
+@import "featured-content";
+@import "before-header";
+@import "before-footer";
+@import "footer-widgets";
+@import "footer-credits";
+@import "modal";
+

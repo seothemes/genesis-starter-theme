@@ -1,0 +1,13 @@
+////
+/// Layout and width settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+$layout--width: $mq-xl;
+$layout--width--sidebar: 30rem;
+$layout--width--content: calc(#{$layout--width} - (#{$layout--width--sidebar} + #{$spacing--xl}));
+$layout--max-width--content: calc(100% - (#{$layout--width--sidebar} + #{$spacing--xl}));
+

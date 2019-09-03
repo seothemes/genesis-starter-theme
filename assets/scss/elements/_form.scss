@@ -1,0 +1,116 @@
+////
+/// Form.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+::placeholder {
+	opacity: 1; // Firefox fix
+	color: $color--muted;
+}
+
+abbr[title] {
+	text-decoration: none;
+}
+
+label {
+	display: inline-block;
+	margin: 0 0 $spacing--s;
+	font-size: $base--font-size;
+	font-weight: $font-weight--semibold;
+
+	i + &,
+	input + &,
+	select + &,
+	textarea + & {
+		font-size: smaller;
+		font-weight: $font-weight--regular;
+	}
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+	margin: 0 0 $spacing--s;
+	padding: 1em;
+	border: $base--border;
+	border-radius: $base--border--radius;
+	background-clip: padding-box; // Remove iOS box shadow
+	box-shadow: none;
+	font-size: $base--font-size;
+
+	&:focus {
+		border-color: $color--primary;
+		outline: none;
+	}
+
+	&:disabled,
+	&:disabled:hover {
+		border-color: $color--border;
+		background-color: $color--muted;
+		cursor: not-allowed;
+	}
+}
+
+textarea {
+	line-height: $base--line-height;
+}
+
+select {
+	height: calc((#{$base--font-size} / #{$major-second}) + #{$base--font-size} * 2);
+
+	@include padding(0 null);
+}
+
+select[multiple] {
+	height: auto;
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+	margin-right: $spacing--s;
+}
+
+input[type="color"] {
+	min-height: $spacing--xl;
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button {
+		display: none;
+	}
+}
+
+fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: 0.01em 0 0 0;
+	border: 0;
+
+	body:not(:-moz-handler-blocked) & {
+		display: table-cell;
+	}
+}
+
+legend {
+	display: table;
+	float: left;
+	width: 100%;
+	margin: 0 0 $spacing--s;
+	padding: 0;
+	font-size: $font-size--h5;
+
+	@include heading;
+
+	+ * {
+		clear: both;
+	}
+}
