@@ -1,0 +1,383 @@
+/* ## Gravity Forms
+--------------------------------------------- */
+
+.gform_heading,
+.gform_body,
+.gform_footer {
+	clear: both;
+}
+
+.gform_heading {
+	padding-bottom: 1em;
+}
+
+.gform_wrapper {
+
+	.gform_fields {
+		margin: 0 -0.5em;
+		padding: 0;
+		list-style: none;
+
+		li {
+			list-style-type: none;
+
+			li {
+				display: flex;
+				align-items: center;
+				margin: 0.5em 0;
+
+				label {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.gfield_checkbox,
+	.gfield_radio {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.ginput_container {
+
+	span {
+		margin-bottom: 0.5em;
+	}
+
+	input,
+	select,
+	textarea {
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		margin: 0;
+	}
+
+	[type="checkbox"] {
+		width: auto;
+	}
+}
+
+.gfield_label {
+	display: inline-block;
+
+	&:empty {
+		display: none;
+	}
+
+	.left_label & {
+		float: left;
+	}
+
+	.right_label & {
+		float: right;
+	}
+}
+
+.gfield_required {
+	padding-left: 0.1em;
+}
+
+.gfield_checkbox,
+.gfield_radio {
+
+	li {
+		width: 100%;
+	}
+
+	input {
+		float: left;
+		width: auto;
+		margin-right: 0.5em;
+	}
+
+	label {
+		float: left;
+		line-height: 1;
+	}
+}
+
+.gsection {
+	margin: 0.5em 0;
+
+	h2 {
+		padding-bottom: 0.5em;
+		border-bottom: $base--border;
+	}
+}
+
+.validation_error,
+.gf_progressbar_wrapper {
+	padding-bottom: 1em;
+}
+
+.gf_progressbar {
+	background: $color--border;
+}
+
+.gf_progressbar_percentage {
+	padding: 0.5em 0.5em;
+	background: $color--primary;
+	text-align: right;
+}
+
+.ginput_container_time {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	input,
+	select {
+		width: auto;
+		margin: 0 0.5em;
+	}
+
+	i {
+		display: none;
+	}
+
+	label {
+		margin-bottom: 0;
+	}
+}
+
+.gfield_time_hour,
+.gfield_time_minute {
+
+	label {
+		display: block;
+	}
+}
+
+.gfield_time_ampm {
+	vertical-align: top;
+}
+
+.gfield {
+	clear: both;
+	overflow: auto;
+	width: 100%;
+	margin: 0;
+	padding: 0 0.5em 1em;
+	list-style-type: none;
+
+	.validation_message {
+		margin-top: 0.5em;
+	}
+
+	li {
+		list-style-type: none;
+	}
+}
+
+.gform_validation_container {
+	display: none;
+}
+
+.gform_footer {
+
+	.gform_button {
+		width: auto;
+	}
+}
+
+.ginput_full,
+.ginput_left,
+.ginput_right {
+
+	input,
+	select,
+	textarea {
+		width: 100%;
+		margin-bottom: 0.5em;
+	}
+
+	label {
+		display: block;
+	}
+}
+
+.ginput_full {
+	display: block;
+}
+
+.ginput_left {
+	float: left;
+	padding-right: 0.5em;
+}
+
+.ginput_right {
+	float: right;
+}
+
+.gf_left_half,
+.gf_left_third,
+.gf_middle_third,
+.gf_first_quarter,
+.gf_second_quarter {
+	float: left;
+	clear: none;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.gf_right_half,
+.gf_right_third,
+.gf_fourth_quarter {
+	float: right;
+	clear: none;
+	padding-bottom: 0.5em;
+}
+
+.gf_third_quarter {
+	float: left;
+	clear: none;
+	padding-bottom: 0.5em;
+}
+
+li {
+
+	.gf_list_2col &,
+	.gf_list_3col &,
+	.gf_list_4col &,
+	.gf_list_5col & {
+		float: left;
+		padding-bottom: 0.5em;
+	}
+
+	.gf_list_inline & {
+		display: inline-block;
+		padding-right: 0.5em;
+		padding-bottom: 0.5em;
+	}
+}
+
+.gfield_list_icons {
+	display: flex;
+}
+
+.clear-multi {
+	display: flex;
+}
+
+.ui-datepicker {
+	padding: 0.5em;
+	border: $base--border;
+	border-radius: $base--border--radius;
+	background-color: $color--white;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		font-size: smaller;
+	}
+
+	&-title {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 0.5em;
+	}
+
+	select {
+		width: calc(50% - 0.5em);
+		height: 2em;
+	}
+
+	td,
+	th {
+		padding: 0.5em;
+		font-size: smaller;
+		text-align: center;
+	}
+}
+
+@include mq(xs) {
+
+	.ginput_container {
+
+		input,
+		select,
+		textarea {
+
+			&.large {
+				width: 100%;
+			}
+
+			&.medium {
+				width: 66%;
+			}
+
+			&.small {
+				width: 33%;
+			}
+		}
+	}
+
+	.ginput_left,
+	.ginput_right {
+		width: 50%;
+	}
+
+	.has_first_name,
+	.has_middle_name,
+	.has_last_name {
+		display: flex;
+
+		span {
+			margin-right: 0.5em;
+			flex: 1;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	label.gfield_label {
+
+		.left_label &,
+		.right_label & {
+			width: 25%;
+		}
+	}
+
+	li {
+
+		&.gf_left_half,
+		&.gf_right_half,
+		.gf_list_2col & {
+			width: 50%;
+		}
+
+		&.gf_left_third,
+		&.gf_right_third,
+		.gf_list_3col & {
+			width: 33%;
+		}
+
+		&.gf_middle_third {
+			width: 34%;
+		}
+
+		&.gf_first_quarter,
+		&.gf_second_quarter,
+		&.gf_third_quarter,
+		&.gf_fourth_quarter,
+		.gf_list_4col & {
+			width: 25%;
+		}
+
+		.gf_list_5col & {
+			width: 20%;
+		}
+	}
+}

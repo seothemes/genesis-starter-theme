@@ -1,0 +1,26 @@
+////
+/// Spacing classes.
+///
+/// @group  Utilities
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+@each $spacing-name, $spacing-value in $spacing {
+
+	.spacing-top-#{ $spacing-name } {
+		padding-top: #{ $spacing-value };
+	}
+
+	.spacing-right-#{ $spacing-name } {
+		padding-right: #{ $spacing-value };
+	}
+
+	.spacing-bottom-#{ $spacing-name } {
+		padding-bottom: #{ $spacing-value };
+	}
+
+	.spacing-left-#{ $spacing-name } {
+		padding-left: #{ $spacing-value };
+	}
+}

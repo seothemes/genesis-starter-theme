@@ -1,0 +1,19 @@
+////
+/// Site inner object.
+///
+/// @group  Objects
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-inner {
+
+	.no-hero-section.transparent-header &,
+	.no-hero-section.sticky-header & {
+		margin-top: $spacing--xl * $perfect-fifth;
+
+		@include mq(m) {
+			margin-top: $spacing--xxl;
+		}
+	}
+}

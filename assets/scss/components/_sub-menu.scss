@@ -1,0 +1,103 @@
+////
+/// Sub menu component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.sub-menu {
+	display: none;
+	top: 100%;
+	width: 100%;
+	margin: 0 0 0 $spacing--s;
+	list-style-type: none;
+
+	@include mq(m) {
+		position: absolute;
+		width: $spacing--xxxl * $major-third;
+		margin-left: -$spacing--m;
+		border: $base--border;
+		background-color: $color--white;
+	}
+
+	// Hovered state.
+	.menu-item-has-children:hover > &,
+	.menu-item-has-children:focus > &,
+	.menu-item-has-children:focus-within > & {
+
+		@include mq(m) {
+			display: block;
+		}
+	}
+
+	// Sub menu menu item.
+	.menu-item {
+		width: 100%;
+
+		@include mq($until: m) {
+
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+
+		@include mq(m) {
+			width: auto;
+			padding: $spacing--s $spacing--m;
+		}
+
+		&-has-children {
+			position: relative;
+		}
+	}
+
+	// Sub sub menu.
+	& & {
+
+		@include mq(m) {
+			top: -1px;
+			left: 100%;
+			margin-left: 0;
+			white-space: nowrap;
+		}
+	}
+
+	// Sub menu toggle.
+	&-toggle {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		line-height: 0;
+
+		@include size($spacing--l);
+
+		@include mq(m) {
+			display: none;
+		}
+
+		@include hover-focus {
+			background-color: transparent;
+		}
+
+		&:focus {
+			outline: $base--border;
+		}
+
+		&:before {
+			content: "";
+
+			@include triangle("down", 1rem, 0.5rem, $color--text);
+		}
+
+		&.activated {
+
+			&:before {
+
+				@include triangle("up", 1rem, 0.5rem, $color--text);
+			}
+		}
+	}
+}

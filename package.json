@@ -1,16 +1,18 @@
 {
   "name": "genesis-starter-theme",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Genesis starter theme with a modern development workflow.",
   "repository": {
     "type": "git",
     "url": "https://github.com/seothemes/genesis-starter-theme.git"
   },
   "author": "SEO Themes",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-2.0-or-later",
   "main": "Gulpfile.js",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "natives": "^1.1.6"
+  },
   "devDependencies": {
     "bourbon": "^5.1.0",
     "gridkit": "^1.0.4",
@@ -28,7 +30,7 @@
     "name": "Genesis Starter Theme",
     "uri": "https://genesisstartertheme.com/",
     "authoruri": "https://seothemes.com/",
-    "licenseuri": "http://www.gnu.org/licenses/gpl-3.0.html",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
     "domainpath": "/languages",
     "textdomain": "genesis-starter-theme",
     "template": "genesis"

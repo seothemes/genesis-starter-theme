@@ -1,0 +1,25 @@
+////
+/// Footer widgets component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.footer-widgets {
+	padding: $spacing--xl 0;
+
+}
+
+// Footer widget area.
+.footer-widget-area {
+
+	@include mq(m) {
+		flex: 1;
+		margin-left: $spacing--l;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+////
+/// Transparent header component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.transparent-header {
+
+	.site-header {
+		position: absolute;
+		border-bottom: 1px solid transparent;
+		background-color: transparent;
+	}
+
+	.hero-section {
+
+		.wrap {
+			margin-top: $spacing--xxl;
+		}
+	}
+}

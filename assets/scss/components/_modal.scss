@@ -1,0 +1,63 @@
+////
+/// Modal component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.modal {
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	z-index: 999;
+	padding: $gutter;
+	border-radius: $base--border--radius;
+	opacity: 0;
+	background-color: $color--white;
+	box-shadow: 0 0 0 100vw rgba($color--dark, 0.2), $base--box-shadow;
+	text-align: center;
+
+	@include position(fixed, 10vh 10vw);
+
+	@include mq(m) {
+
+		@include position(fixed, 20vh 20vw);
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: $spacing--m;
+	}
+}
+
+.close {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+	font-size: 0;
+
+	@include size($base--font-size);
+	@include size($gap);
+
+	@include hover-focus {
+		color: inherit;
+		background-color: transparent;
+	}
+
+	&:before {
+		font-size: $base--font-size;
+
+		@include icon("\f00d", 700);
+	}
+
+	.modal & {
+
+		@include position(absolute, $gap $gap null null);
+	}
+}

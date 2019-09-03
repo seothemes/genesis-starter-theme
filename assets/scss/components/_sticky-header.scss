@@ -1,0 +1,28 @@
+////
+/// Sticky header component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.sticky-header {
+
+	.site-header {
+		position: fixed;
+
+		@include transition;
+
+		&.sticky {
+			border-bottom: $base--border;
+			background-color: $color--white;
+		}
+	}
+
+	.hero-section {
+
+		.wrap {
+			margin-top: $spacing--xxl;
+		}
+	}
+}

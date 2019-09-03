@@ -1,0 +1,137 @@
+////
+/// Checkout page.
+///
+/// @group  WooCommerce
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+form.checkout {
+
+	@include mq(m) {
+		columns: 2;
+		column-gap: $gutter;
+
+		> div {
+			break-inside: avoid;
+		}
+	}
+}
+
+.woocommerce-form-coupon {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: $gutter;
+
+	@include box;
+
+	p {
+		width: 100%;
+	}
+}
+
+.woocommerce-checkout-payment {
+	margin-top: $gutter;
+}
+
+.woocommerce-PaymentMethod,
+.wc_payment_method {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	> input {
+
+		@include position(absolute, $gap null null $gap);
+
+		&:checked + label {
+			border-color: $color--primary;
+			background-color: rgba($color--primary, 0.1);
+		}
+	}
+
+	label[for*="payment_method"] {
+
+		@include heading;
+		@include box;
+
+		display: inline-block;
+		width: 100%;
+		margin-bottom: $spacing--m;
+		padding-left: $gutter + $gap;
+
+		img {
+			margin-top: $spacing--s;
+		}
+	}
+}
+
+.payment_method_paypal {
+
+	label {
+
+		img {
+			display: block;
+			max-width: $spacing--xxxl * $golden;
+			margin-bottom: $spacing--m;
+		}
+	}
+}
+
+.payment_method_stripe {
+
+	label {
+
+		img {
+			max-width: $spacing--l * $minor-third;
+			margin-right: $spacing--xs;
+		}
+	}
+
+	.woocommerce-validated {
+		display: flex;
+		align-items: baseline;
+	}
+
+	.form-row {
+
+		> div {
+			margin-bottom: $spacing--m;
+			padding: $spacing--m;
+			border: $base--border;
+			border-radius: $base--border--radius;
+		}
+
+		&-first {
+			float: left;
+			width: $one-half;
+			margin-right: $gutter;
+		}
+
+		&-last {
+			float: right;
+			width: $one-half;
+		}
+	}
+}
+
+
+.place-order {
+
+	.button {
+		width: 100%;
+	}
+}
+
+.select2-container--default .select2-selection--single {
+
+	&,
+	.select2-selection__rendered,
+	.select2-selection__arrow {
+		height: calc((#{$base--font-size} / #{$major-second}) + #{$base--font-size} * 2);
+		line-height: calc((#{$base--font-size} / #{$major-second}) + #{$base--font-size} * 2);
+	}
+}

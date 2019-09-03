@@ -1,6 +1,10 @@
 # Genesis Starter Theme Changelog
 
-## [3.4.0] - 2018-06-22
+## [3.5.0] - 2019-01-09
+* Remove all non-dev composer packages
+* Remove updatable directory
+
+## [3.4.0] - 2019-06-22
 * Add updatable directory
 
 ## [3.3.3] - 2018-10-10

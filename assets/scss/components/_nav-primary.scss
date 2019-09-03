@@ -1,0 +1,26 @@
+////
+/// Nav Primary component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.nav-primary {
+	order: 2;
+	display: none;
+	width: 100vw;
+	margin: 0 -5vw;
+	padding: $spacing--m 5vw;
+	background-color: $color--white;
+
+	@include mq(m) {
+		display: flex !important;
+		position: relative;
+		top: auto;
+		width: auto;
+		margin: 0 0 0 auto;
+		padding: 0;
+		background: 0;
+	}
+}

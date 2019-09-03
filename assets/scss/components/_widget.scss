@@ -1,0 +1,19 @@
+////
+/// Widget component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.widget {
+	margin-bottom: $gutter;
+
+	// Widget wrapper.
+	&-wrap {}
+
+	// Widget title.
+	&-title {
+		font-size: $font-size--h5;
+	}
+}

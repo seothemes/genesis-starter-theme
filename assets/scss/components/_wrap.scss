@@ -1,0 +1,23 @@
+////
+/// Wrap component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 90%;
+	max-width: $mq-xl;
+
+	@include margin(null auto);
+
+	// Sub wrap.
+	.wrap {
+		width: 100%;
+		max-width: 100%;
+	}
+}

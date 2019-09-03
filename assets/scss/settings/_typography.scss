@@ -1,0 +1,48 @@
+////
+/// Typography settings.
+///
+/// @group  Settings
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+// Font sizes
+$base--font-size: 1.6rem;
+
+$font-size--h1: 2.3em;
+$font-size--h2: 1.8em;
+$font-size--h3: 1.5em;
+$font-size--h4: 1.3em;
+$font-size--h5: 1.2em;
+$font-size--h6: 1.1em;
+
+$font-sizes: (
+	h1: $font-size--h1,
+	h2: $font-size--h2,
+	h3: $font-size--h3,
+	h4: $font-size--h4,
+	h5: $font-size--h5,
+	h6: $font-size--h6,
+);
+
+// Font families
+$base--font-family: $font-stack-system;
+
+$font-family--heading: $base--font-family;
+$font-family--code: $font-stack-consolas;
+
+// Font weights
+$font-weight--extralight: 200;
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--semibold: 600;
+$font-weight--bold: 700;
+
+$base--font-weight: $font-weight--regular;
+$font-weight--heading: $font-weight--semibold;
+
+// Line height
+$base--line-height: modular-scale(0, $golden);
+
+$line-height--heading: modular-scale(-1, $golden);

@@ -1,0 +1,13 @@
+////
+/// Before footer component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.before-footer {
+	padding: $spacing--xl 0 $spacing--xl - $gutter;
+	border-bottom: $base--border;
+	background-color: $color--background;
+}

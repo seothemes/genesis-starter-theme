@@ -1,0 +1,20 @@
+////
+/// WooCommerce specific styles.
+///
+/// @group  Vendor
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+// Abstracts
+@import "../../../../node_modules/bourbon/core/bourbon";
+@import "../../settings/_index";
+@import "../../tools/_index";
+
+// WooCommerce
+@import "globals";
+@import "shop-page";
+@import "product";
+@import "checkout";
+@import "cart-page";
+@import "account-page";

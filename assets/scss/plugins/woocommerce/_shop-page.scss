@@ -1,0 +1,250 @@
+////
+/// Shop page.
+///
+/// @group  WooCommerce
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://seothemes.com/themes/genesis-starter-theme
+////
+
+.woocommerce-products-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: $gutter;
+
+	> * {
+		order: 2;
+	}
+
+	&__title {
+		order: 1;
+		width: 100%;
+	}
+
+	.woocommerce-result-count {
+		margin-right: auto;
+		margin-bottom: 0;
+
+		&:before {
+			content: "\00a0 - ";
+		}
+	}
+}
+
+.woocommerce-ordering {
+
+	@include mq($until: xs) {
+		margin-top: $gap;
+	}
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	.entry {
+		width: 100%;
+		margin-bottom: $gutter;
+
+		&:last-of-type {
+
+			@include mq($until: xs) {
+				margin-bottom: 0;
+			}
+		}
+
+		@include mq(xs) {
+			width: $one-half;
+
+			&:nth-of-type(odd) {
+				margin-right: $gutter;
+			}
+		}
+
+		@include mq(m) {
+
+			margin-right: $gutter;
+		}
+	}
+
+	.product {
+		flex-direction: column;
+	}
+}
+
+.product {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	list-style-type: none;
+
+	&-inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		width: 100%;
+		padding: $gap;
+		flex: 1;
+	}
+
+	.price,
+	.star-rating {
+		width: 100%;
+		align-self: flex-start;
+	}
+}
+
+.woocommerce-LoopProduct-link {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+}
+
+.woocommerce-loop-product__title {
+	margin-bottom: auto;
+	font-size: $font-size--h6;
+}
+
+.add_to_cart_button {
+	margin-top: auto;
+	padding: $spacing--m $gap;
+	transition: none;
+
+	&:after {
+		display: inline-flex;
+		font-size: 0;
+
+		@include icon("\f00c", 700);
+	}
+}
+
+.added {
+	padding: $spacing--m;
+	font-size: 0;
+	align-self: flex-start;
+
+	&:after {
+		font-size: $base--font-size / $major-second;
+	}
+}
+
+.added_to_cart {
+
+	@include button();
+
+	align-self: flex-end;
+	margin-left: $spacing--s;
+	padding: $spacing--m - 0.1rem;
+	border: 1px solid $color--primary;
+	color: $color--primary;
+	background: transparent;
+
+	@include hover-focus {
+		color: $color--white;
+		background: $color--primary;
+	}
+}
+
+.star-rating {
+	display: block;
+	margin-bottom: $spacing--xxs;
+
+	&:before {
+		display: inline-block;
+		color: $color--warning;
+		font-family: "Font Awesome 5 Free", sans-serif;
+		font-size: $spacing--m;
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		content: "\f005";
+	}
+
+	&[aria-label*="Rated 1"] {
+
+		&:before {
+			content: "\f005";
+		}
+	}
+
+	&[aria-label*="Rated 2"] {
+
+		&:before {
+			content: "\f005 \f005";
+		}
+	}
+
+	&[aria-label*="Rated 3"] {
+
+		&:before {
+			content: "\f005 \f005 \f005";
+		}
+	}
+
+	&[aria-label*="Rated 4"] {
+
+		&:before {
+			content: "\f005 \f005 \f005 \f005";
+		}
+	}
+
+	&[aria-label*="Rated 5"] {
+
+		&:before {
+			content: "\f005 \f005 \f005 \f005 \f005";
+		}
+	}
+
+	span {
+		display: none;
+	}
+}
+
+.price {
+	display: block;
+	margin-bottom: $spacing--m;
+
+	ins {
+		text-decoration: none;
+	}
+}
+
+@include mq(m) {
+
+	.entry {
+
+		.columns-1 & {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		.columns-2 & {
+			width: $one-half;
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+
+		.columns-3 & {
+			width: $one-third;
+
+			&:nth-of-type(3n) {
+				margin-right: 0;
+			}
+		}
+
+		.columns-4 & {
+			width: $one-fourth;
+
+			&:nth-of-type(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+}

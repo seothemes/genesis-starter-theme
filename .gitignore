@@ -13,17 +13,4 @@ yarn.lock
 .idea
 
 # Dev packages
-/vendor/bin/
-/vendor/antecedent/
-/vendor/brain/
-/vendor/doctrine/
-/vendor/hamcrest/
-/vendor/mockery/
-/vendor/myclabs/
-/vendor/phpdocumentor/
-/vendor/phpspec/
-/vendor/phpunit/
-/vendor/sebastian/
-/vendor/symfony/
-/vendor/webmozart/
-/vendor/wp-phpunit/
+vendor

@@ -1,0 +1,66 @@
+////
+/// Menu component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.menu {
+	margin: 0;
+	list-style-type: none;
+
+	@include mq(m) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
+		border: 0;
+		font-size: $base--font-size / $major-second;
+	}
+
+	// Menu item.
+	&-item {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: $spacing--xs 0;
+
+		@include margin(null auto);
+
+		@include mq(m) {
+			display: block;
+			margin: 0;
+			padding: $spacing--m $spacing--s * $golden;
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+		}
+
+		&.button {
+			padding: 0;
+
+			@include mq(m) {
+				margin-left: $spacing--m;
+			}
+		}
+	}
+
+	// Link
+	a {
+		color: $color--text;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus,
+	.current-menu-item > a {
+		color: $color--primary;
+	}
+}
