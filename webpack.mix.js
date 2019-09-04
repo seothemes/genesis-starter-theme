@@ -1,17 +1,11 @@
 /**
  * Laravel Mix configuration file.
  *
- * Laravel Mix is a layer built on top of WordPress that simplifies much of the
- * complexity of building out a Webpack configuration file. Use this file to
- * configure how your assets are handled in the build process.
+ * Laravel Mix is a layer built on top of Webpack that simplifies much of the
+ * complexity of building out a Webpack configuration file. Use this file
+ * to configure how your assets are handled in the build process.
  *
- * @link https://laravel.com/docs/5.6/mix
- *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
- * @link      https://themehybrid.com/themes/mythic
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link https://laravel.com/docs/5.8/mix
  */
 
 // Import required packages.
@@ -74,8 +68,13 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js(`${devPath}/js/editor.js`, 'js')
-    .js(`${devPath}/js/hide-show.js`, 'js');
+mix.js([
+    `${devPath}/js/editor.js`
+], 'js/min').js([
+    `${devPath}/js/hide-show.js`,
+    `${devPath}/js/sticky-header.js`,
+    `${devPath}/js/smooth-scroll.js`
+], 'js/min/main.js');
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -96,7 +95,7 @@ var sassConfig = {
 // Compile SASS/CSS.
 mix.sass(`${devPath}/scss/main.scss`, 'css', sassConfig)
     .sass(`${devPath}/scss/editor.scss`, 'css', sassConfig)
-    .sass(`${devPath}/scss/plugins/woocommerce/__index.scss`, 'css', sassConfig);
+    .sass(`${devPath}/scss/plugins/woocommerce/__index.scss`, 'css/woocommerce.css', sassConfig);
 
 /*
  * Add custom Webpack configuration.
@@ -156,8 +155,9 @@ if (process.env.sync) {
         proxy: 'localhost',
         files: [
             'assets/**/*',
-            `${devPath}/views/**/*.php`,
+            'config/*.php',
             'lib/**/*.php',
+            'templates/*.php',
             'functions.php'
         ]
     });
