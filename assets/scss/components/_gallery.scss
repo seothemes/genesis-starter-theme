@@ -65,30 +65,6 @@
 					margin-left: 0;
 				}
 			}
-
-			.gallery-columns-7 & {
-				width: $one-seventh;
-
-				&:nth-of-type(7n + 1) {
-					margin-left: 0;
-				}
-			}
-
-			.gallery-columns-8 & {
-				width: $one-eighth;
-
-				&:nth-of-type(8n + 1) {
-					margin-left: 0;
-				}
-			}
-
-			.gallery-columns-9 & {
-				width: $one-ninth;
-
-				&:nth-of-type(9n + 1) {
-					margin-left: 0;
-				}
-			}
 		}
 
 		img {

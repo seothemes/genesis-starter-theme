@@ -5,3 +5,25 @@
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
+
+/// Get a breakpoint's width
+///
+/// @param {String} $name - Name of the breakpoint. One of $mq-breakpoints
+///
+/// @example scss
+///  $tablet-width: mq-get-breakpoint-width(tablet);
+///  @media (min-width: mq-get-breakpoint-width(desktop)) {}
+///
+/// @requires {Variable} $mq-breakpoints
+///
+/// @returns {Number} Value in pixels
+@function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
+
+	@if map-has-key($breakpoints, $name) {
+
+		@return map-get($breakpoints, $name);
+	} @else {
+
+		@warn "Breakpoint #{$name} wasn't found in $breakpoints.";
+	}
+}

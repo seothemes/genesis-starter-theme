@@ -13,6 +13,17 @@ const mix = require('laravel-mix');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const fs = require('fs');
+const packageJson = require('./package.json');
+
+require('laravel-mix-svg-sprite');
+
+/*
+ * Disable all notifications.
+ */
+
+mix.disableNotifications();
+
 
 /*
  * -----------------------------------------------------------------------------
@@ -31,10 +42,10 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const devPath = 'assets';
 
 /*
- * Sets the path to the generated assets. By default, this is the `/dist` folder
- * in the theme. If doing something custom, make sure to change this everywhere.
+ * Sets the path to the generated assets. By default, this is the root folder in
+ * the theme. If doing something custom, make sure to change this everywhere.
  */
-mix.setPublicPath('assets');
+mix.setPublicPath('./');
 
 /*
  * Set Laravel Mix options.
@@ -68,13 +79,15 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js([
-    `${devPath}/js/editor.js`
-], 'js/min').js([
-    `${devPath}/js/hide-show.js`,
-    `${devPath}/js/sticky-header.js`,
-    `${devPath}/js/smooth-scroll.js`
-], 'js/min/main.js');
+mix
+    .js([
+        `${devPath}/js/editor.js`
+    ], `${devPath}/js/min`)
+    .js([
+        `${devPath}/js/hide-show.js`,
+        `${devPath}/js/sticky-header.js`,
+        `${devPath}/js/smooth-scroll.js`
+    ], `${devPath}/js/min/main.js`);
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -87,15 +100,56 @@ mix.js([
 
 // Sass configuration.
 var sassConfig = {
-    outputStyle: 'expanded',
+    outputStyle: 'compressed',
     indentType: 'tab',
     indentWidth: 1
 };
 
 // Compile SASS/CSS.
-mix.sass(`${devPath}/scss/main.scss`, 'css', sassConfig)
-    .sass(`${devPath}/scss/editor.scss`, 'css', sassConfig)
-    .sass(`${devPath}/scss/plugins/woocommerce/__index.scss`, 'css/woocommerce.css', sassConfig);
+mix
+    .sass(`${devPath}/scss/main.scss`, `${devPath}/css`, sassConfig).options({
+    postCss: [
+        require('cssnano')({
+            preset: ['default', {
+                discardComments: {
+                    removeAll: true,
+                },
+            }]
+        })
+    ]
+})
+    .sass(`${devPath}/scss/editor.scss`, `${devPath}/css`, sassConfig)
+    .sass(`${devPath}/scss/plugins/woocommerce/__index.scss`, `${devPath}/css/woocommerce.css`, sassConfig);
+
+// Generate blank stylesheet.
+const banner = [
+    '/*',
+    ' * Theme Name: ' + packageJson.theme.name,
+    ' * Theme URI: ' + packageJson.theme.uri,
+    ' * Author: ' + packageJson.author,
+    ' * Author URI: ' + packageJson.theme.authoruri,
+    ' * Description: ' + packageJson.description,
+    ' * Version: ' + packageJson.version,
+    ' * License: ' + packageJson.license,
+    ' * License URI: ' + packageJson.theme.licenseuri,
+    ' * Text Domain: ' + packageJson.name,
+    ' * Domain Path: ' + packageJson.theme.domainpath,
+    ' * Template: ' + packageJson.theme.template,
+    ' */\n',
+].join('\n');
+
+fs.writeFile('style.css', banner, function (err) {
+    if (err) {
+        return console.log(err);
+    }
+
+    console.log('\x1b[34m', '\nstyle.css banner generated.');
+});
+
+/*
+ * Create SVG sprite.
+ */
+mix.svgSprite(`${devPath}/svg`, `${devPath}/svg/sprite.svg`);
 
 /*
  * Add custom Webpack configuration.
@@ -109,15 +163,15 @@ mix.sass(`${devPath}/scss/main.scss`, 'css', sassConfig)
  */
 mix.webpackConfig({
     stats: 'minimal',
-    devtool: mix.inProduction() ? false : 'source-map',
+    devtool: 'none',
     performance: {hints: false},
     externals: {jquery: 'jQuery'},
     plugins: [
         // @link https://github.com/webpack-contrib/copy-webpack-plugin
         new CopyWebpackPlugin([
-            {from: `${devPath}/img`, to: 'img'},
-            {from: `${devPath}/svg`, to: 'svg'},
-            {from: `${devPath}/fonts`, to: 'fonts'}
+            {from: `${devPath}/img`, to: `${devPath}/img`},
+            {from: `${devPath}/svg`, to: `${devPath}/svg`},
+            {from: `${devPath}/fonts`, to: `${devPath}/fonts`}
         ]),
         // @link https://github.com/Klathmon/imagemin-webpack-plugin
         new ImageminPlugin({
@@ -152,9 +206,17 @@ if (process.env.sync) {
      * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
      */
     mix.browserSync({
-        proxy: 'localhost',
+        notify: false,
+        proxy: 'https://genesis-starter.test',
+        host: 'genesis-starter.test',
+        open: 'external',
+        port: '8000',
+        https: {
+            'key': '/Users/seothemes/.config/valet/Certificates/genesis-starter.test.key',
+            'cert': '/Users/seothemes/.config/valet/Certificates/genesis-starter.test.crt'
+        },
         files: [
-            'assets/**/*',
+            'assets/css/*',
             'config/*.php',
             'lib/**/*.php',
             'templates/*.php',

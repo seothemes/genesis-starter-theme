@@ -81,104 +81,72 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/js/hide-show.js":
-/*!********************************!*\
-  !*** ./assets/js/hide-show.js ***!
-  \********************************/
+/***/ "./assets/js/editor.js":
+/*!*****************************!*\
+  !*** ./assets/js/editor.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function hide(element) {
-  var el = document.getElementsByClassName(element)[0];
-  el.style.opacity = 1;
-
-  (function fade() {
-    if ((el.style.opacity -= 0.1) < 0) {
-      el.style.display = 'none';
-    } else {
-      requestAnimationFrame(fade);
-    }
-  })();
-}
-
-function show(element, display) {
-  var el = document.getElementsByClassName(element)[0];
-  el.style.opacity = 0;
-  el.style.display = display || 'inline-flex';
-
-  (function fade() {
-    var val = parseFloat(el.style.opacity);
-
-    if (!((val += 0.1) > 1)) {
-      el.style.opacity = val;
-      requestAnimationFrame(fade);
-    }
-  })();
-} // Hide modal on click outside.
-
-
-document.addEventListener('click', function (event) {
-  var modal = document.getElementsByClassName('modal')[0];
-
-  if (!modal || event.target.closest('.modal')) {
-    return;
-  }
-
-  if ('1' === modal.style.opacity) {
-    hide('modal');
-  }
+wp.domReady(function () {
+  wp.blocks.unregisterBlockStyle('core/button', 'squared');
+  wp.blocks.registerBlockStyle('core/button', {
+    name: 'rounded',
+    label: 'Rounded'
+  });
 });
 
 /***/ }),
 
-/***/ "./assets/js/smooth-scroll.js":
-/*!************************************!*\
-  !*** ./assets/js/smooth-scroll.js ***!
-  \************************************/
+/***/ "./assets/scss/editor.scss":
+/*!*********************************!*\
+  !*** ./assets/scss/editor.scss ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ "./assets/js/sticky-header.js":
-/*!************************************!*\
-  !*** ./assets/js/sticky-header.js ***!
-  \************************************/
+/***/ "./assets/scss/main.scss":
+/*!*******************************!*\
+  !*** ./assets/scss/main.scss ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var scrollPosition = window.scrollY,
-    siteHeader = document.getElementsByClassName('site-header')[0],
-    siteHeaderHeight = siteHeader.offsetHeight;
-window.addEventListener('scroll', function () {
-  scrollPosition = window.scrollY;
-
-  if (scrollPosition >= siteHeaderHeight) {
-    siteHeader.classList.add('sticky');
-  } else {
-    siteHeader.classList.remove('sticky');
-  }
-});
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 1:
-/*!************************************************************************************************!*\
-  !*** multi ./assets/js/hide-show.js ./assets/js/sticky-header.js ./assets/js/smooth-scroll.js ***!
-  \************************************************************************************************/
+/***/ "./assets/scss/plugins/woocommerce/__index.scss":
+/*!******************************************************!*\
+  !*** ./assets/scss/plugins/woocommerce/__index.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************************************************************************!*\
+  !*** multi ./assets/js/editor.js ./assets/scss/main.scss ./assets/scss/editor.scss ./assets/scss/plugins/woocommerce/__index.scss ***!
+  \************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/js/hide-show.js */"./assets/js/hide-show.js");
-__webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/js/sticky-header.js */"./assets/js/sticky-header.js");
-module.exports = __webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/js/smooth-scroll.js */"./assets/js/smooth-scroll.js");
+__webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/js/editor.js */"./assets/js/editor.js");
+__webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/scss/main.scss */"./assets/scss/main.scss");
+__webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/scss/editor.scss */"./assets/scss/editor.scss");
+module.exports = __webpack_require__(/*! /Users/seothemes/Sites/genesis-starter/wp-content/themes/genesis-starter-theme/assets/scss/plugins/woocommerce/__index.scss */"./assets/scss/plugins/woocommerce/__index.scss");
 
 
 /***/ })

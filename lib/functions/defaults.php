@@ -53,7 +53,11 @@ add_filter( 'icon_widget_defaults', __NAMESPACE__ . '\icon_widget_defaults' );
  * @return array
  */
 function icon_widget_defaults( $defaults ) {
-	$defaults['title'] = __( 'Icon Widget', 'genesis-starter-theme' );
+	$defaults['title']   = __( 'Icon Widget', 'genesis-starter-theme' );
+	$defaults['weight']  = '400';
+	$defaults['size']    = '3x';
+	$defaults['align']   = 'center';
+	$defaults['padding'] = 20;
 
 	return $defaults;
 }

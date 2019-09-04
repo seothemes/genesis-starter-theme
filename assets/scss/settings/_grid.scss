@@ -6,5 +6,44 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
+// Grid spacing.
 $gutter: $spacing--l;
 $gap: $spacing--m * $perfect-fifth;
+
+// Column fractions.
+$one-half: calc((100% - (#{$gutter} * 1)) / 2);
+$one-third: calc((100% - (#{$gutter} * 2)) / 3);
+$one-fourth: calc((100% - (#{$gutter} * 3)) / 4);
+$one-fifth: calc((100% - (#{$gutter} * 4)) / 5);
+$one-sixth: calc((100% - (#{$gutter} * 5)) / 6);
+$two-thirds: calc(#{$one-third} * 2 + #{$gutter});
+$two-fourths: calc(#{$one-fourth} * 2 + #{$gutter});
+$two-fifths: calc(#{$one-fifth} * 2 + #{$gutter});
+$two-sixths: calc(#{$one-sixth} * 2 + #{$gutter});
+$three-fourths: calc(#{$one-fourth} * 3 + (#{$gutter} * 2));
+$three-fifths: calc(#{$one-fifth} * 3 + (#{$gutter} * 2));
+$three-sixths: calc(#{$one-sixth} * 3 + (#{$gutter} * 2));
+$four-fifths: calc(#{$one-fifth} * 4 + (#{$gutter} * 3));
+$four-sixths: calc(#{$one-sixth} * 4 + (#{$gutter} * 3));
+$five-sixths: calc(#{$one-sixth} * 5 + (#{$gutter} * 4));
+
+///
+/// Columns map
+///
+$columns: (
+	one-half: $one-half,
+	one-third: $one-third,
+	one-fourth: $one-fourth,
+	one-fifth: $one-fifth,
+	one-sixth: $one-sixth,
+	two-thirds: $two-thirds,
+	two-fourths: $two-fourths,
+	two-fifths: $two-fifths,
+	two-sixths: $two-sixths,
+	three-fourths: $three-fourths,
+	three-fifths: $three-fifths,
+	three-sixths: $three-sixths,
+	four-fifths: $four-fifths,
+	four-sixths: $four-sixths,
+	five-sixths: $five-sixths,
+);

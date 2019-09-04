@@ -11,40 +11,6 @@
 
 namespace SeoThemes\GenesisStarterTheme\Structure;
 
-// Repositions the footer widgets.
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
-
-add_filter( 'genesis_footer_output', __NAMESPACE__ . '\footer_credits_wrap' );
-/**
- * Outputs the footer credits markup.
- *
- * @since 3.5.0
- *
- * @param string $output Footer credits output.
- *
- * @return string
- */
-function footer_credits_wrap( $output ) {
-	$open = \genesis_markup(
-		[
-			'open'    => '<div class="footer-credits"><div class="wrap">',
-			'context' => 'footer-credits',
-			'echo'    => false,
-		]
-	);
-
-	$close = \genesis_markup(
-		[
-			'close'   => '</div></div>',
-			'context' => 'footer-credits',
-			'echo'    => false,
-		]
-	);
-
-	return $open . $output . $close;
-}
-
 add_action( 'genesis_footer', __NAMESPACE__ . '\before_footer_widget', 5 );
 /**
  * Displays before footer widget area.
@@ -59,6 +25,40 @@ function before_footer_widget() {
 		[
 			'before' => '<div class="before-footer"><div class="wrap">',
 			'after'  => '</div></div>',
+		]
+	);
+}
+
+// Repositions the footer widgets.
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
+
+// Remove default footer.
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+
+add_action( 'genesis_footer', __NAMESPACE__ . '\do_footer_credits' );
+/**
+ * Output custom footer credits.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function do_footer_credits() {
+	\genesis_markup(
+		[
+			'open'    => '<div class="footer-credits"><div class="wrap"><p>',
+			'context' => 'footer-credits',
+		]
+	);
+
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized already.
+	echo \do_shortcode( \genesis_strip_p_tags( \wp_kses_post( \genesis_get_option( 'footer_text' ) ) ) );
+
+	\genesis_markup(
+		[
+			'close'   => '</p></div></div>',
+			'context' => 'footer-credits',
 		]
 	);
 }
