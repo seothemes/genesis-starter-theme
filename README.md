@@ -8,7 +8,7 @@ It uses [Laravel Mix](https://laravel.com/docs/5.8/mix) as a build tool to autom
 
 Check out the [live demo](https://demo.seothemes.com/genesis-starter)
 
-<img src="https://seothemes.com/wp-content/uploads/2018/09/starter-screenshot.png" alt="Genesis Starter Theme screenshot" width="500">
+<img src="https://seothemes.com/wp-content/uploads/edd/2019/09/genesis-starter-theme-desktop.png" alt="Genesis Starter Theme screenshot" width="500">
 
 ## Table of Contents
 
