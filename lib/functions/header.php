@@ -27,7 +27,7 @@ function header() {
 
 	} elseif ( is_post_type_archive() ) {
 		$id = get_page_by_path( get_query_var( 'post_type' ) );
-		$id = $id->ID && has_post_thumbnail( $id->ID ) ? $id->ID : false;
+		$id = $id && has_post_thumbnail( $id->ID ) ? $id->ID : false;
 
 	} elseif ( is_category() ) {
 		$id = get_page_by_title( 'category-' . get_query_var( 'category_name' ), OBJECT, 'attachment' );
@@ -45,10 +45,12 @@ function header() {
 		$id = get_option( 'page_for_posts' );
 
 	} elseif ( is_search() ) {
-		$id = get_page_by_path( 'search' )->ID;
+		$id = get_page_by_path( 'search' );
+		$id = $id ? $id->ID : false;
 
 	} elseif ( is_404() ) {
-		$id = get_page_by_path( 'error' )->ID;
+		$id = get_page_by_path( 'error' );
+		$id = $id ? $id->ID : false;
 
 	} elseif ( is_singular() ) {
 		$id = get_the_id();
