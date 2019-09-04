@@ -65,6 +65,7 @@
 	}
 
 	@media #{$media-type + $media-query} {
+
 		@content;
 	}
 }
