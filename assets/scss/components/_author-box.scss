@@ -7,11 +7,15 @@
 ////
 
 .author-box {
-	margin: $spacing--xl 0;
+	margin: $gutter 0;
 	padding: $gap;
 	border: $base--border;
 	border-radius: $base--border--radius;
 	background-color: $color--background;
+
+	.is-archive & {
+		margin-top: 0;
+	}
 
 	// Author box title.
 	&-title {

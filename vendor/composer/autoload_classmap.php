@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SeoThemes\\GenesisStarterTheme\\Classes\\Example' => $baseDir . '/lib/classes/class-example.php',
 );

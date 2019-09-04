@@ -48,7 +48,7 @@
 		.wrap {
 
 			@include mq(m) {
-				width: calc(#{$layout--width--content} - 10%);
+				width: $layout--width--content;
 			}
 		}
 	}

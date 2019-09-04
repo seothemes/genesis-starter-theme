@@ -1,0 +1,10 @@
+{
+  "from": {
+    "Name": "Genesis Starter Theme",
+    "Description": "Genesis starter theme with a modern development workflow.",
+    "Namespace": "SeoThemes\\GenesisStarterTheme",
+    "Uri": "https://genesisstartertheme.com/",
+    "Author": "SEO Themes",
+    "AuthorUri": "https://seothemes.com/"
+  }
+}

@@ -6,9 +6,14 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit94cd2c84b69b79ed4f6044f5ada99fef
 {
+    public static $classMap = array (
+        'SeoThemes\\GenesisStarterTheme\\Classes\\Example' => __DIR__ . '/../..' . '/lib/classes/class-example.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInit94cd2c84b69b79ed4f6044f5ada99fef::$classMap;
 
         }, null, ClassLoader::class);
     }

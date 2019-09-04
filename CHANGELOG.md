@@ -1,6 +1,8 @@
 # Genesis Starter Theme Changelog
 
 ## [3.5.0] - 2019-01-09
+* Add Laravel Mix
+* Remove Gulp WP Toolkit
 * Remove all non-dev composer packages
 * Remove updatable directory
 

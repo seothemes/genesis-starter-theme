@@ -17,16 +17,6 @@ return [
 	'add'    => [
 		'align-wide',
 		'automatic-feed-links',
-		'custom-logo'              => [
-			'height'      => 100,
-			'width'       => 300,
-			'flex-height' => true,
-			'flex-width'  => true,
-			'header-text' => [
-				'.site-title',
-				'.site-description',
-			],
-		],
 		'custom-header'            => [
 			'header-selector'  => '.hero-section',
 			'default_image'    => get_theme_url() . 'assets/img/hero.jpg',
@@ -50,6 +40,16 @@ return [
 			'skip-links',
 		],
 		'genesis-after-entry-widget-area',
+		'genesis-custom-logo'      => [
+			'height'      => 60,
+			'width'       => 120,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => [
+				'.site-title',
+				'.site-description',
+			],
+		],
 		'genesis-footer-widgets'   => 3,
 		'genesis-menus'            => [
 			'primary'   => __( 'Header Menu', 'genesis-starter-theme' ),
