@@ -42,6 +42,22 @@ function default_social_styles( $defaults ) {
 	return \wp_parse_args( $args, $defaults );
 }
 
+add_filter( 'icon_widget_defaults', __NAMESPACE__ . '\icon_widget_defaults' );
+/**
+ * Change Icon Widget plugin default settings.
+ *
+ * @since 3.5.0
+ *
+ * @param array $defaults Icon widget defaults.
+ *
+ * @return array
+ */
+function icon_widget_defaults( $defaults ) {
+	$defaults['title'] = __( 'Icon Widget', 'genesis-starter-theme' );
+
+	return $defaults;
+}
+
 add_filter( 'syntax_highlighting_code_block_style', __NAMESPACE__ . '\set_syntax_color' );
 /**
  * Set syntax color for code block.

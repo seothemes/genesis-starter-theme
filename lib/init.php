@@ -46,7 +46,6 @@ array_map(
 
 		// Shortcodes.
 		'shortcodes/hook',
-		'shortcodes/icon',
 		'shortcodes/search-form',
 		'shortcodes/widget-area',
 

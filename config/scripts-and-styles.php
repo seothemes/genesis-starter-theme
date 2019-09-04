@@ -42,10 +42,6 @@ return [
 		},
 	],
 	[
-		'handle' => \genesis_get_theme_handle() . '-fontawesome',
-		'src'    => $asset_url . 'css/fontawesome.css',
-	],
-	[
 		'handle' => \genesis_get_theme_handle() . '-google-fonts',
 		'src'    => "//fonts.googleapis.com/css?family=$google_fonts&display=swap",
 		'editor' => 'both',
