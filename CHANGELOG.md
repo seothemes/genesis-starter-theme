@@ -1,5 +1,11 @@
 # Genesis Starter Theme Changelog
 
+## [3.5.2] - 2019-05-09
+* Add test suite
+
+## [3.5.1] - 2019-04-09
+* Remove gitattributes
+
 ## [3.5.0] - 2019-01-09
 * Add Laravel Mix
 * Remove Gulp WP Toolkit
