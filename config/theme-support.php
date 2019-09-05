@@ -75,8 +75,10 @@ return [
 		],
 		'post-thumbnails',
 		'responsive-embeds',
-		//'sticky-header',
-		//'transparent-header',
+		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
+		// 'sticky-header',
+		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
+		// 'transparent-header',
 		'woocommerce',
 		'wc-product-gallery-zoom',
 		'wc-product-gallery-lightbox',

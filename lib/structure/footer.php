@@ -52,7 +52,7 @@ function do_footer_credits() {
 		]
 	);
 
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized already.
+	// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- sanitized already.
 	echo \do_shortcode( \genesis_strip_p_tags( \wp_kses_post( \genesis_get_option( 'footer_text' ) ) ) );
 
 	\genesis_markup(

@@ -32,7 +32,7 @@ function archive_post_class( $classes ) {
 		return $classes;
 	}
 
-	if ( \class_exists('WooCommerce') && \is_woocommerce() ) {
+	if ( \class_exists( 'WooCommerce' ) && \is_woocommerce() ) {
 		return $classes;
 	}
 

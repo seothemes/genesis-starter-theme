@@ -15,7 +15,7 @@ use function SeoThemes\GenesisStarterTheme\Functions\get_theme_url;
 use function SeoThemes\GenesisStarterTheme\Functions\has_hero_section;
 
 // Bail if WooCommerce is not active.
-if ( ! \class_exists('WooCommerce')) {
+if ( ! \class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
@@ -64,7 +64,7 @@ function woo_wrapper_start() {
 
 	\genesis_markup(
 		[
-			'open'   => '<div %s>',
+			'open'    => '<div %s>',
 			'context' => 'content-sidebar-wrap',
 		]
 	);
@@ -73,7 +73,7 @@ function woo_wrapper_start() {
 
 	\genesis_markup(
 		[
-			'open'   => '<main %s>',
+			'open'    => '<main %s>',
 			'context' => 'content',
 		]
 	);

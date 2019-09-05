@@ -113,13 +113,13 @@ function hero_title() {
 		$title = \get_the_title( \wc_get_page_id( 'shop' ) );
 
 	} elseif ( \is_home() && 'posts' === \get_option( 'show_on_front' ) ) {
-		$title = \apply_filters( 'genesis_latest_posts_title', \esc_html__( 'Latest Posts', 'genesis-starter-theme' ) );
+		$title = \apply_filters( 'genesis_latest_posts_title', esc_html__( 'Latest Posts', 'genesis-starter-theme' ) );
 
 	} elseif ( \is_404() ) {
-		$title = \apply_filters( 'genesis_404_entry_title', \esc_html__( 'Not found, error 404', 'genesis-starter-theme' ) );
+		$title = \apply_filters( 'genesis_404_entry_title', esc_html__( 'Not found, error 404', 'genesis-starter-theme' ) );
 
 	} elseif ( \is_search() ) {
-		$title = \apply_filters( 'genesis_search_title_text', \esc_html__( 'Search results for: ', 'genesis-starter-theme' ) . \get_search_query() );
+		$title = \apply_filters( 'genesis_search_title_text', esc_html__( 'Search results for: ', 'genesis-starter-theme' ) . \get_search_query() );
 
 	} elseif ( \is_singular() ) {
 		$title = \get_the_title();
@@ -154,15 +154,19 @@ function hero_excerpt() {
 		$excerpt = \ob_get_clean();
 
 	} elseif ( \is_home() && 'posts' === \get_option( 'show_on_front' ) ) {
-		$excerpt = \apply_filters( 'genes\is_latest_posts_subtitle', \esc_html__( 'Showing the latest posts', 'genesis-starter-theme' ) );
+		$excerpt = \apply_filters( 'genesis_latest_posts_subtitle', esc_html__( 'Showing the latest posts', 'genesis-starter-theme' ) );
 
 	} elseif ( \is_home() ) {
 		$id = \get_option( 'page_for_posts' );
 
 	} elseif ( \is_search() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_path_get_page_by_path
 		$id = \get_page_by_path( 'search' );
 
 	} elseif ( \is_404() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_path_get_page_by_path
 		$id = \get_page_by_path( 'error-404' );
 
 	} elseif ( ( \is_singular() ) && ! \is_singular( 'product' ) ) {

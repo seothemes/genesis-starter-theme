@@ -26,16 +26,24 @@ function header() {
 		$id = \wc_get_page_id( 'shop' );
 
 	} elseif ( \is_post_type_archive() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_path_get_page_by_path
 		$id = \get_page_by_path( \get_query_var( 'post_type' ) );
 		$id = $id && \has_post_thumbnail( $id->ID ) ? $id->ID : false;
 
 	} elseif ( is_category() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_title_get_page_by_title
 		$id = \get_page_by_title( 'category-' . \get_query_var( 'category_name' ), OBJECT, 'attachment' );
 
 	} elseif ( is_tag() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_title_get_page_by_title
 		$id = \get_page_by_title( 'tag-' . \get_query_var( 'tag' ), OBJECT, 'attachment' );
 
 	} elseif ( is_tax() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_title_get_page_by_title
 		$id = \get_page_by_title( 'term-' . \get_query_var( 'term' ), OBJECT, 'attachment' );
 
 	} elseif ( is_front_page() ) {
@@ -45,10 +53,14 @@ function header() {
 		$id = \get_option( 'page_for_posts' );
 
 	} elseif ( is_search() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_path_get_page_by_path
 		$id = \get_page_by_path( 'search' );
 		$id = $id ? $id->ID : false;
 
 	} elseif ( \is_404() ) {
+
+		// phpcs:ignore WordPress.VIP.RestrictedFunctions.get_page_by_path_get_page_by_path
 		$id = \get_page_by_path( 'error' );
 		$id = $id ? $id->ID : false;
 
@@ -70,8 +82,8 @@ function header() {
 	if ( $url ) {
 		$selector = \get_theme_support( 'custom-header', 'header-selector' );
 
-		/** @noinspection CssUnknownTarget */
-		return \printf( '<style id="hero-css" type="text/css">' . \esc_attr( $selector ) . '{background-image:url(%s)}</style>' . "\n", \esc_url( $url ) );
+		/** @noinspection CssUnknownTarget */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		return \printf( '<style id="hero-css" type="text/css">' . esc_attr( $selector ) . '{background-image:url(%s)}</style>' . "\n", esc_url( $url ) );
 
 	} else {
 		return '';

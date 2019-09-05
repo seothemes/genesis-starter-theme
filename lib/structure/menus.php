@@ -25,7 +25,7 @@ namespace SeoThemes\GenesisStarterTheme\Structure;
  *
  * @since 3.5.0
  *
- * @param string $menu_item item HTML
+ * @param string $menu_item item HTML.
  *
  * @return string
  */

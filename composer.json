@@ -37,6 +37,12 @@
       "lib/classes"
     ]
   },
+  "autoload-dev": {
+    "psr-4": {
+      "SeoThemes\\GenesisStarterTheme\\Tests\\Unit\\": "tests/php/unit/",
+      "SeoThemes\\GenesisStarterTheme\\Tests\\Integration\\": "tests/php/integration/"
+    }
+  },
   "config": {
     "preferred-install": {
       "*": "dist"
@@ -50,12 +56,9 @@
       "stylelint './assets/scss/**/*.scss' --fix"
     ],
     "install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-    "phpcs": "phpcs --standard=WordPress --extensions=php -p -s lib config templates functions.php",
-    "phpcbf": "phpcbf --standard=WordPress --extensions=php -p lib config templates functions.php",
+    "phpcs": "phpcs --standard=WordPress --extensions=php -p -s lib config templates tests functions.php",
+    "phpcbf": "phpcbf --standard=WordPress --extensions=php -p lib config templates tests functions.php",
     "test-unit": "composer dump && \"vendor/bin/phpunit\" --testsuite unit --color=always",
-    "test-integration": "composer dump && \"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always",
-    "post-update-cmd": [
-      "rm -Rf vendor/aristath/kirki/.gitignore"
-    ]
+    "test-integration": "composer dump && \"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always"
   }
 }

@@ -12,7 +12,7 @@
 namespace SeoThemes\GenesisStarterTheme\Classes;
 
 /**
- * Example Class
+ * Example Class.
  *
  * This is an example class to demonstrate the class autoloader. Autoloading classes
  * saves you from having `require` calls throughout your theme. To test that this
@@ -32,12 +32,18 @@ namespace SeoThemes\GenesisStarterTheme\Classes;
 class Example {
 
 	/**
+	 * Example property.
+	 *
 	 * @var string
 	 */
 	private $name;
 
 	/**
 	 * Example constructor.
+	 *
+	 * @since 3.5.0
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		$this->name = __CLASS__;
@@ -46,11 +52,11 @@ class Example {
 	/**
 	 * Example method.
 	 *
-	 * @since 1.0.0
+	 * @since 3.5.0
 	 *
 	 * @return void
 	 */
 	public function print_name() {
-		print $this->name;
+		print esc_html( $this->name );
 	}
 }

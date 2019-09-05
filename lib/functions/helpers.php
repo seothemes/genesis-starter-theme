@@ -12,23 +12,6 @@
 namespace SeoThemes\GenesisStarterTheme\Functions;
 
 /**
- * Returns the child theme URL.
- *
- * @since 3.5.0
- *
- * @return string
- */
-function get_theme_url() {
-	static $url = null;
-
-	if ( \is_null( $url ) ) {
-		$url = \trailingslashit( \get_stylesheet_directory_uri() );
-	}
-
-	return $url;
-}
-
-/**
  * Returns the child theme directory.
  *
  * @since 3.5.0
@@ -46,6 +29,23 @@ function get_theme_dir() {
 }
 
 /**
+ * Returns the child theme URL.
+ *
+ * @since 3.5.0
+ *
+ * @return string
+ */
+function get_theme_url() {
+	static $url = null;
+
+	if ( \is_null( $url ) ) {
+		$url = \trailingslashit( \get_stylesheet_directory_uri() );
+	}
+
+	return $url;
+}
+
+/**
  * Check if were on any type of singular page.
  *
  * @since 3.5.0
@@ -53,7 +53,7 @@ function get_theme_dir() {
  * @return bool
  */
 function is_type_single() {
-	return ( \is_front_page() || \is_single() || \is_page() || \is_404() || \is_attachment() || \is_singular() );
+	return \is_front_page() || \is_single() || \is_page() || \is_404() || \is_attachment() || \is_singular();
 }
 
 /**
