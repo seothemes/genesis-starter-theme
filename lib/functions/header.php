@@ -25,52 +25,53 @@ function header() {
 	if ( class_exists( 'WooCommerce' ) && \is_shop() ) {
 		$id = \wc_get_page_id( 'shop' );
 
-	} elseif ( is_post_type_archive() ) {
-		$id = get_page_by_path( get_query_var( 'post_type' ) );
-		$id = $id && has_post_thumbnail( $id->ID ) ? $id->ID : false;
+	} elseif ( \is_post_type_archive() ) {
+		$id = \get_page_by_path( \get_query_var( 'post_type' ) );
+		$id = $id && \has_post_thumbnail( $id->ID ) ? $id->ID : false;
 
 	} elseif ( is_category() ) {
-		$id = get_page_by_title( 'category-' . get_query_var( 'category_name' ), OBJECT, 'attachment' );
+		$id = \get_page_by_title( 'category-' . \get_query_var( 'category_name' ), OBJECT, 'attachment' );
 
 	} elseif ( is_tag() ) {
-		$id = get_page_by_title( 'tag-' . get_query_var( 'tag' ), OBJECT, 'attachment' );
+		$id = \get_page_by_title( 'tag-' . \get_query_var( 'tag' ), OBJECT, 'attachment' );
 
 	} elseif ( is_tax() ) {
-		$id = get_page_by_title( 'term-' . get_query_var( 'term' ), OBJECT, 'attachment' );
+		$id = \get_page_by_title( 'term-' . \get_query_var( 'term' ), OBJECT, 'attachment' );
 
 	} elseif ( is_front_page() ) {
-		$id = get_option( 'page_on_front' );
+		$id = \get_option( 'page_on_front' );
 
 	} elseif ( is_home() ) {
-		$id = get_option( 'page_for_posts' );
+		$id = \get_option( 'page_for_posts' );
 
 	} elseif ( is_search() ) {
-		$id = get_page_by_path( 'search' );
+		$id = \get_page_by_path( 'search' );
 		$id = $id ? $id->ID : false;
 
-	} elseif ( is_404() ) {
-		$id = get_page_by_path( 'error' );
+	} elseif ( \is_404() ) {
+		$id = \get_page_by_path( 'error' );
 		$id = $id ? $id->ID : false;
 
-	} elseif ( is_singular() ) {
-		$id = get_the_id();
+	} elseif ( \is_singular() ) {
+		$id = \get_the_id();
 	}
 
-	if ( is_object( $id ) ) {
-		$url = wp_get_attachment_image_url( $id->ID, 'hero' );
+	if ( \is_object( $id ) ) {
+		$url = \wp_get_attachment_image_url( $id->ID, 'hero' );
 
 	} elseif ( $id ) {
-		$url = get_the_post_thumbnail_url( $id, 'hero' );
+		$url = \get_the_post_thumbnail_url( $id, 'hero' );
 	}
 
 	if ( ! $url ) {
-		$url = get_header_image();
+		$url = \get_header_image();
 	}
 
 	if ( $url ) {
-		$selector = get_theme_support( 'custom-header', 'header-selector' );
+		$selector = \get_theme_support( 'custom-header', 'header-selector' );
 
-		return printf( '<style id="hero-css" type="text/css">' . esc_attr( $selector ) . '{background-image:url(%s)}</style>' . "\n", esc_url( $url ) );
+		/** @noinspection CssUnknownTarget */
+		return \printf( '<style id="hero-css" type="text/css">' . \esc_attr( $selector ) . '{background-image:url(%s)}</style>' . "\n", \esc_url( $url ) );
 
 	} else {
 		return '';

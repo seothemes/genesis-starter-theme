@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Structure;
 
-add_action( 'genesis_footer', __NAMESPACE__ . '\before_footer_widget', 5 );
+\add_action( 'genesis_footer', __NAMESPACE__ . '\before_footer_widget', 5 );
 /**
  * Displays before footer widget area.
  *
@@ -30,13 +30,13 @@ function before_footer_widget() {
 }
 
 // Repositions the footer widgets.
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
+\remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+\add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
 
 // Remove default footer.
-remove_action( 'genesis_footer', 'genesis_do_footer' );
+\remove_action( 'genesis_footer', 'genesis_do_footer' );
 
-add_action( 'genesis_footer', __NAMESPACE__ . '\do_footer_credits' );
+\add_action( 'genesis_footer', __NAMESPACE__ . '\do_footer_credits' );
 /**
  * Output custom footer credits.
  *

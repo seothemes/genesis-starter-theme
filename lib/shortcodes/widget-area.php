@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Shortcodes;
 
-add_shortcode( 'widget_area', __NAMESPACE__ . '\widget_area_shortcode' );
+\add_shortcode( 'widget_area', __NAMESPACE__ . '\widget_area_shortcode' );
 /**
  * Displays a widget area.
  *
@@ -22,11 +22,11 @@ add_shortcode( 'widget_area', __NAMESPACE__ . '\widget_area_shortcode' );
  * @return mixed
  */
 function widget_area_shortcode( $atts ) {
-	if ( is_admin() ) {
+	if ( \is_admin() ) {
 		return false;
 	}
 
-	$atts = shortcode_atts(
+	$atts = \shortcode_atts(
 		[
 			'id' => 'footer-credits',
 		],
@@ -34,8 +34,8 @@ function widget_area_shortcode( $atts ) {
 		'widget_area'
 	);
 
-	ob_start();
-	genesis_widget_area(
+	\ob_start();
+	\genesis_widget_area(
 		$atts['id'],
 		[
 			'before' => '<div class="' . $atts['id'] . ' widget-area"><div class="wrap">',
@@ -43,5 +43,5 @@ function widget_area_shortcode( $atts ) {
 		]
 	);
 
-	return ob_get_clean();
+	return \ob_get_clean();
 }

@@ -1876,7 +1876,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[templates/standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/no-hero.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -5372,4 +5372,3 @@ Our shop is built with the popular WooCommerce plugin for WordPress.]]></content
 							</item>
 				</channel>
 </rss>
-	

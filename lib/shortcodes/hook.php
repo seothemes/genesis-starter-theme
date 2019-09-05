@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Shortcodes;
 
-add_shortcode( 'hook', __NAMESPACE__ . '\hook_shortcode' );
+\add_shortcode( 'hook', __NAMESPACE__ . '\hook_shortcode' );
 /**
  * Creates a hook shortcode.
  *
@@ -22,11 +22,11 @@ add_shortcode( 'hook', __NAMESPACE__ . '\hook_shortcode' );
  * @return mixed
  */
 function hook_shortcode( $atts ) {
-	if ( is_admin() ) {
+	if ( \is_admin() ) {
 		return false;
 	}
 
-	$atts = shortcode_atts(
+	$atts = \shortcode_atts(
 		[
 			'id' => 'custom',
 		],
@@ -34,5 +34,5 @@ function hook_shortcode( $atts ) {
 		'widget_area'
 	);
 
-	return do_action( $atts['id'] );
+	return \do_action( $atts['id'] );
 }

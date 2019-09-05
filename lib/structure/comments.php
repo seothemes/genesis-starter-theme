@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Structure;
 
-add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\\setup_comments_gravatar' );
+\add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\\setup_comments_gravatar' );
 /**
  * Modify size of the Gravatar in the entry comments.
  *
@@ -22,7 +22,7 @@ add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\\setup_comments_grava
  * @return mixed
  */
 function setup_comments_gravatar( array $args ) {
-	$args['avatar_size'] = genesis_get_config( 'genesis-settings' )['avatar_size'];
+	$args['avatar_size'] = \genesis_get_config( 'genesis-settings' )['avatar_size'];
 
 	return $args;
 }

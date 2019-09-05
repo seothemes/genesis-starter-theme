@@ -11,8 +11,8 @@
 
 namespace SeoThemes\GenesisStarterTheme\Functions;
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_assets' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+\add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Register and enqueue all scripts and styles.
  *
@@ -38,13 +38,13 @@ function enqueue_assets() {
 		$register  = "wp_register_$type";
 		$enqueue   = "wp_enqueue_$type";
 
-		if ( is_admin() && $editor || ! is_admin() && ! $editor || 'both' === $editor ) {
+		if ( \is_admin() && $editor || ! \is_admin() && ! $editor || 'both' === $editor ) {
 			if ( is_callable( $condition ) && $condition() ) {
 				$register( $handle, $src, $deps, $ver, $last_arg );
 				$enqueue( $handle );
 
 				if ( ! empty( $localize ) ) {
-					wp_localize_script( $handle, $localize['name'], $localize['data'] );
+					\wp_localize_script( $handle, $localize['name'], $localize['data'] );
 				}
 			}
 		}

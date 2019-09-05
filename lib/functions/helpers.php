@@ -21,8 +21,8 @@ namespace SeoThemes\GenesisStarterTheme\Functions;
 function get_theme_url() {
 	static $url = null;
 
-	if ( is_null( $url ) ) {
-		$url = trailingslashit( get_stylesheet_directory_uri() );
+	if ( \is_null( $url ) ) {
+		$url = \trailingslashit( \get_stylesheet_directory_uri() );
 	}
 
 	return $url;
@@ -38,8 +38,8 @@ function get_theme_url() {
 function get_theme_dir() {
 	static $dir = null;
 
-	if ( is_null( $dir ) ) {
-		$dir = trailingslashit( get_stylesheet_directory() );
+	if ( \is_null( $dir ) ) {
+		$dir = \trailingslashit( \get_stylesheet_directory() );
 	}
 
 	return $dir;
@@ -48,23 +48,23 @@ function get_theme_dir() {
 /**
  * Check if were on any type of singular page.
  *
- * @since 0.1.0
+ * @since 3.5.0
  *
  * @return bool
  */
 function is_type_single() {
-	return ( is_front_page() || is_single() || is_page() || is_404() || is_attachment() || is_singular() );
+	return ( \is_front_page() || \is_single() || \is_page() || \is_404() || \is_attachment() || \is_singular() );
 }
 
 /**
  * Check if were on any type of archive page.
  *
- * @since 0.1.0
+ * @since 3.5.0
  *
  * @return bool
  */
 function is_type_archive() {
-	return is_home() || is_post_type_archive() || is_category() || is_tag() || is_tax() || is_author() || is_date() || is_year() || is_month() || is_day() || is_time() || is_archive() || is_search();
+	return \is_home() || \is_post_type_archive() || \is_category() || \is_tag() || \is_tax() || \is_author() || \is_date() || \is_year() || \is_month() || \is_day() || \is_time() || \is_archive() || \is_search();
 }
 
 /**
@@ -75,5 +75,5 @@ function is_type_archive() {
  * @return bool
  */
 function has_hero_section() {
-	return in_array( 'has-hero-section', get_body_class(), true );
+	return \in_array( 'has-hero-section', \get_body_class(), true );
 }

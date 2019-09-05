@@ -12,10 +12,10 @@
 namespace SeoThemes\GenesisStarterTheme\Structure;
 
 // Reposition featured image.
-remove_action( 'genesis_entry_content', 'genesis_do_singular_image', 8 );
-add_action( 'genesis_entry_header', 'genesis_do_singular_image' );
+\remove_action( 'genesis_entry_content', 'genesis_do_singular_image', 8 );
+\add_action( 'genesis_entry_header', 'genesis_do_singular_image' );
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_edit_post_link' );
+\add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_edit_post_link' );
 /**
  * Disables the post edit link.
  *
@@ -24,5 +24,5 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_edit_post_link' );
  * @return void
  */
 function disable_edit_post_link() {
-	add_filter( 'edit_post_link', '__return_empty_string' );
+	\add_filter( 'edit_post_link', '__return_empty_string' );
 }

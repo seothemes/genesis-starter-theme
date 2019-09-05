@@ -12,4 +12,4 @@
 namespace SeoThemes\GenesisStarterTheme\Plugins;
 
 // Disable CSS output.
-add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
+\add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );

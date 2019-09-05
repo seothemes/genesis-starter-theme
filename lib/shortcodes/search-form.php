@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Shortcodes;
 
-add_shortcode( 'search_form', __NAMESPACE__ . '\search_form_shortcode' );
+\add_shortcode( 'search_form', __NAMESPACE__ . '\search_form_shortcode' );
 /**
  * Displays a search form.
  *
@@ -20,9 +20,9 @@ add_shortcode( 'search_form', __NAMESPACE__ . '\search_form_shortcode' );
  * @return string
  */
 function search_form_shortcode() {
-	if ( is_admin() ) {
+	if ( \is_admin() ) {
 		return false;
 	}
 
-	return get_search_form( false );
+	return \get_search_form( false );
 }

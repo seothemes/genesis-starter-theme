@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Structure;
 
-add_filter( 'genesis_markup_title-area_close', __NAMESPACE__ . '\title_area_hook', 10, 1 );
+\add_filter( 'genesis_markup_title-area_close', __NAMESPACE__ . '\title_area_hook', 10, 1 );
 /**
  * Add custom hook after the title area.
  *
@@ -23,15 +23,15 @@ add_filter( 'genesis_markup_title-area_close', __NAMESPACE__ . '\title_area_hook
  */
 function title_area_hook( $close_html ) {
 	if ( $close_html ) {
-		ob_start();
-		do_action( 'genesis_after_title_area' );
+		\ob_start();
+		\do_action( 'genesis_after_title_area' );
 		$close_html = $close_html . ob_get_clean();
 	}
 
 	return $close_html;
 }
 
-add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\before_header_widget' );
+\add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\before_header_widget' );
 /**
  * Displays the before header widget area.
  *
@@ -49,7 +49,7 @@ function before_header_widget() {
 	);
 }
 
-add_filter( 'get_custom_logo', __NAMESPACE__ . '\custom_logo_size' );
+\add_filter( 'get_custom_logo', __NAMESPACE__ . '\custom_logo_size' );
 /**
  * Add max-width style to custom logo.
  *
@@ -60,9 +60,9 @@ add_filter( 'get_custom_logo', __NAMESPACE__ . '\custom_logo_size' );
  * @return string
  */
 function custom_logo_size( $html ) {
-	$width  = get_theme_support( 'custom-logo' )[0]['width'];
-	$height = get_theme_support( 'custom-logo' )[0]['height'];
+	$width  = \get_theme_support( 'custom-logo' )[0]['width'];
+	$height = \get_theme_support( 'custom-logo' )[0]['height'];
 
-	return str_replace( '<img ', '<img style="max-width:' . $width . 'px;max-height:' . $height . 'px"', $html );
+	return \str_replace( '<img ', '<img style="max-width:' . $width . 'px;max-height:' . $height . 'px"', $html );
 }
 

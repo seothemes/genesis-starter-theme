@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Functions;
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_shortcodes_in_widgets' );
+\add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_shortcodes_in_widgets' );
 /**
  * Enable shortcodes in widgets.
  *
@@ -20,10 +20,10 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_shortcodes_in_widgets'
  * @return void
  */
 function enable_shortcodes_in_widgets() {
-	add_filter( 'widget_text', 'do_shortcode' );
+	\add_filter( 'widget_text', 'do_shortcode' );
 }
 
-add_filter( 'genesis_register_widget_area_defaults', __NAMESPACE__ . '\front_page_1_heading', 10, 2 );
+\add_filter( 'genesis_register_widget_area_defaults', __NAMESPACE__ . '\front_page_1_heading', 10, 2 );
 /**
  * Change Front Page 1 title to H1.
  *
@@ -44,7 +44,7 @@ function front_page_1_heading( $defaults, $args ) {
 }
 
 
-add_filter( 'genesis_widget_area_defaults', __NAMESPACE__ . '\widget_area_defaults', 10, 3 );
+\add_filter( 'genesis_widget_area_defaults', __NAMESPACE__ . '\widget_area_defaults', 10, 3 );
 /**
  * Set default values for widget area output.
  *
@@ -81,7 +81,7 @@ function widget_area_defaults( $defaults, $id ) {
 	return $defaults;
 }
 
-add_filter( 'genesis_widget_column_classes', __NAMESPACE__ . '\extra_widget_columns' );
+\add_filter( 'genesis_widget_column_classes', __NAMESPACE__ . '\extra_widget_columns' );
 /**
  * Add additional column class to plugin.
  *

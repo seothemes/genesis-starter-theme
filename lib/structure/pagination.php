@@ -10,14 +10,14 @@
  */
 
 // Reposition archive pagination.
-remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-add_action( 'genesis_after_content_sidebar_wrap', 'genesis_posts_nav' );
+\remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_posts_nav' );
 
 // Reposition single navigation.
-remove_action( 'genesis_after_entry', 'genesis_adjacent_entry_nav' );
-add_action( 'genesis_after_content_sidebar_wrap', 'genesis_adjacent_entry_nav' );
+\remove_action( 'genesis_after_entry', 'genesis_adjacent_entry_nav' );
+\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_adjacent_entry_nav' );
 
-add_filter( 'genesis_markup_open', __NAMESPACE__ . '\entry_pagination_wrap_open', 10, 2 );
+\add_filter( 'genesis_markup_open', __NAMESPACE__ . '\entry_pagination_wrap_open', 10, 2 );
 /**
  * Outputs the opening pagination wrap markup.
  *
@@ -36,7 +36,7 @@ function entry_pagination_wrap_open( $open, $args ) {
 	return $open;
 }
 
-add_filter( 'genesis_markup_close', __NAMESPACE__ . '\entry_pagination_wrap_close', 10, 2 );
+\add_filter( 'genesis_markup_close', __NAMESPACE__ . '\entry_pagination_wrap_close', 10, 2 );
 /**
  * Outputs the closing pagination wrap markup.
  *
@@ -55,7 +55,7 @@ function entry_pagination_wrap_close( $close, $args ) {
 	return $close;
 }
 
-add_filter( 'genesis_prev_link_text', __NAMESPACE__ . '\previous_page_link' );
+\add_filter( 'genesis_prev_link_text', __NAMESPACE__ . '\previous_page_link' );
 /**
  * Changes the previous page link text.
  *
@@ -64,10 +64,10 @@ add_filter( 'genesis_prev_link_text', __NAMESPACE__ . '\previous_page_link' );
  * @return string
  */
 function previous_page_link() {
-	return sprintf( '← Previous', 'genesis-starter-theme' );
+	return \sprintf( '← Previous', 'genesis-starter-theme' );
 }
 
-add_filter( 'genesis_next_link_text', __NAMESPACE__ . '\next_page_link' );
+\add_filter( 'genesis_next_link_text', __NAMESPACE__ . '\next_page_link' );
 /**
  * Changes the next page link text.
  *
@@ -76,10 +76,10 @@ add_filter( 'genesis_next_link_text', __NAMESPACE__ . '\next_page_link' );
  * @return string
  */
 function next_page_link() {
-	return sprintf( 'Next →', 'genesis-starter-theme' );
+	return \sprintf( 'Next →', 'genesis-starter-theme' );
 }
 
-add_filter( 'genesis_markup_pagination-previous_content', __NAMESPACE__ . '\previous_pagination_text' );
+\add_filter( 'genesis_markup_pagination-previous_content', __NAMESPACE__ . '\previous_pagination_text' );
 /**
  * Changes the previous link arrow icon.
  *
@@ -90,10 +90,10 @@ add_filter( 'genesis_markup_pagination-previous_content', __NAMESPACE__ . '\prev
  * @return string
  */
 function previous_pagination_text( $content ) {
-	return str_replace( '&#xAB;', '←', $content );
+	return \str_replace( '&#xAB;', '←', $content );
 }
 
-add_filter( 'genesis_markup_pagination-next_content', __NAMESPACE__ . '\next_pagination_text' );
+\add_filter( 'genesis_markup_pagination-next_content', __NAMESPACE__ . '\next_pagination_text' );
 /**
  * Changes the next link arrow icon.
  *
@@ -104,9 +104,9 @@ add_filter( 'genesis_markup_pagination-next_content', __NAMESPACE__ . '\next_pag
  * @return string
  */
 function next_pagination_text( $content ) {
-	return str_replace( '&#xBB;', '→', $content );
+	return \str_replace( '&#xBB;', '→', $content );
 }
 
 // Removes alignment classes.
-remove_filter( 'genesis_attr_pagination-previous', 'genesis_adjacent_entry_attr_previous_post' );
-remove_filter( 'genesis_attr_pagination-next', 'genesis_adjacent_entry_attr_next_post' );
+\remove_filter( 'genesis_attr_pagination-previous', 'genesis_adjacent_entry_attr_previous_post' );
+\remove_filter( 'genesis_attr_pagination-next', 'genesis_adjacent_entry_attr_next_post' );

@@ -19,12 +19,12 @@ for ( $i = 1; $i <= $theme_supports['front-page-widgets']; $i++ ) {
 		'id'          => 'front-page-' . $i,
 		'name'        => __( 'Front Page ', 'genesis-starter-theme' ) . $i,
 		/* translators: The front page widget area number. */
-		'description' => sprintf( __( 'The Front Page %s widget area.', 'genesis-starter-theme' ), $i ),
+		'description' => \sprintf( __( 'The Front Page %s widget area.', 'genesis-starter-theme' ), $i ),
 	];
 }
 
 return [
-	'add'    => array_merge_recursive(
+	'add'    => \array_merge_recursive(
 		[
 			[
 				'id'          => 'before-header',

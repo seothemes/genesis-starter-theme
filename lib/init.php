@@ -11,11 +11,11 @@
 
 namespace SeoThemes\GenesisStarterTheme;
 
-array_map(
+\array_map(
 	function ( $file ) {
 		$filename = __DIR__ . "/$file.php";
 
-		if ( is_readable( $filename ) ) {
+		if ( \is_readable( $filename ) ) {
 			require_once $filename;
 		}
 	},

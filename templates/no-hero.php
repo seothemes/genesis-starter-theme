@@ -12,7 +12,7 @@
  */
 
 // Removes hero section.
-remove_theme_support( 'hero-section' );
+\remove_theme_support( 'hero-section' );
 
 // Runs the Genesis loop.
 genesis();

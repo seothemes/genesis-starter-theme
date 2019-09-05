@@ -11,12 +11,14 @@
 
 namespace SeoThemes\GenesisStarterTheme;
 
+use function SeoThemes\GenesisStarterTheme\Functions\get_theme_url;
+
 return [
 	'add'    => [
 		[
 			'id'    => 'narrow-content',
 			'label' => __( 'Narrow Content', 'genesis-starter-theme' ),
-			'img'   => get_stylesheet_directory_uri() . '/assets/img/narrow-content.gif',
+			'img'   => get_theme_url() . 'assets/img/narrow-content.gif',
 		],
 	],
 	'remove' => [

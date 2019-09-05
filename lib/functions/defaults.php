@@ -11,7 +11,7 @@
 
 namespace SeoThemes\GenesisStarterTheme\Functions;
 
-add_action( 'after_switch_theme', __NAMESPACE__ . '\default_theme_settings' );
+\add_action( 'after_switch_theme', __NAMESPACE__ . '\default_theme_settings' );
 /**
  * Set default theme settings on theme activation.
  *
@@ -26,7 +26,7 @@ function default_theme_settings() {
 	\update_option( 'posts_per_page', $settings['blog_cat_num'] );
 }
 
-add_filter( 'simple_social_default_styles', __NAMESPACE__ . '\default_social_styles' );
+\add_filter( 'simple_social_default_styles', __NAMESPACE__ . '\default_social_styles' );
 /**
  * Set Simple Social Icon defaults.
  *
@@ -42,7 +42,7 @@ function default_social_styles( $defaults ) {
 	return \wp_parse_args( $args, $defaults );
 }
 
-add_filter( 'icon_widget_defaults', __NAMESPACE__ . '\icon_widget_defaults' );
+\add_filter( 'icon_widget_defaults', __NAMESPACE__ . '\icon_widget_defaults' );
 /**
  * Change Icon Widget plugin default settings.
  *
@@ -53,7 +53,6 @@ add_filter( 'icon_widget_defaults', __NAMESPACE__ . '\icon_widget_defaults' );
  * @return array
  */
 function icon_widget_defaults( $defaults ) {
-	$defaults['title']   = __( 'Icon Widget', 'genesis-starter-theme' );
 	$defaults['weight']  = '400';
 	$defaults['size']    = '3x';
 	$defaults['align']   = 'center';
@@ -62,7 +61,7 @@ function icon_widget_defaults( $defaults ) {
 	return $defaults;
 }
 
-add_filter( 'syntax_highlighting_code_block_style', __NAMESPACE__ . '\set_syntax_color' );
+\add_filter( 'syntax_highlighting_code_block_style', __NAMESPACE__ . '\set_syntax_color' );
 /**
  * Set syntax color for code block.
  *
