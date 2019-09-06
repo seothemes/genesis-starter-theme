@@ -1,5 +1,8 @@
 # Genesis Starter Theme Changelog
 
+## [3.5.3] - 2019-06-09
+* Add Genesis style trump
+
 ## [3.5.2] - 2019-05-09
 * Add test suite
 
