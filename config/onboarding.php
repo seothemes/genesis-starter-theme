@@ -1,5 +1,4 @@
 <?php
-// phpcs:ignoreFile -- Auto generated file.
 /**
  * Genesis Starter Theme
  *
@@ -15,8 +14,8 @@
  */
 
 return [
-	'dependencies' => [
-		'plugins'      => [
+	'dependencies'     => [
+		'plugins' => [
 			[
 				'name'       => 'Genesis Widget Column Classes',
 				'slug'       => 'genesis-widget-column-classes/genesis-widget-column-classes.php',
@@ -30,47 +29,47 @@ return [
 		],
 	],
 	'content'          => [
-		'layouts' => [
+		'layouts'          => [
 			'post_title'     => 'Layouts',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1568083704:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568083704:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
-		'templates' => [
+		'templates'        => [
 			'post_title'     => 'Templates',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1568083694:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568083694:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
-		'shop' => [
+		'shop'             => [
 			'post_title'     => 'Shop',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1568028783:1',
-				'_genesis_layout' => 'full-width-content',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568028783:1',
+				'_genesis_layout'                => 'full-width-content',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
-		'cart' => [
+		'cart'             => [
 			'post_title'     => 'Cart',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
@@ -78,7 +77,7 @@ return [
 			'ping_status'    => 'closed',
 			'post_content'   => '<!-- wp:shortcode -->[woocommerce_cart]<!-- /wp:shortcode -->',
 		],
-		'checkout' => [
+		'checkout'         => [
 			'post_title'     => 'Checkout',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
@@ -86,24 +85,24 @@ return [
 			'ping_status'    => 'closed',
 			'post_content'   => '<!-- wp:shortcode -->[woocommerce_checkout]<!-- /wp:shortcode -->',
 		],
-		'my-account' => [
+		'my-account'       => [
 			'post_title'     => 'My Account',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567676468:1',
-				'_genesis_layout' => 'full-width-content',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567676468:1',
+				'_genesis_layout'                => 'full-width-content',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'default',
+				'_wp_page_template'              => 'default',
 			],
 			'post_content'   => '<!-- wp:shortcode -->
 [woocommerce_my_account]
 <!-- /wp:shortcode -->',
 		],
-		'another-post' => [
+		'another-post'     => [
 			'post_title'     => 'Another post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -111,15 +110,15 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'default',
-				'_dp_original' => '1769',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_old_slug' => 'fourth-post-3',
-				'_edit_lock' => '1567607569:1',
+				'_wp_page_template'              => 'default',
+				'_dp_original'                   => '1769',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_old_slug'                   => 'fourth-post-3',
+				'_edit_lock'                     => '1567607569:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -141,7 +140,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'sample-content' => [
+		'sample-content'   => [
 			'post_title'     => 'Sample content',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -149,15 +148,15 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1767',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_wp_old_slug' => 'third-post-3',
-				'_edit_lock' => '1567443139:1',
+				'_dp_original'                   => '1767',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_wp_old_slug'                   => 'third-post-3',
+				'_edit_lock'                     => '1567443139:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -179,7 +178,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'another-title' => [
+		'another-title'    => [
 			'post_title'     => 'Another title',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -187,15 +186,15 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1765',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_wp_old_slug' => 'second-post-3',
-				'_edit_lock' => '1567443161:1',
+				'_dp_original'                   => '1765',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_wp_old_slug'                   => 'second-post-3',
+				'_edit_lock'                     => '1567443161:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -225,35 +224,35 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1750',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_wp_old_slug' => 'post-3',
-				'_edit_lock' => '1567443170:1',
+				'_dp_original'                   => '1750',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_wp_old_slug'                   => 'post-3',
+				'_edit_lock'                     => '1567443170:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <!-- /wp:paragraph -->',
 		],
-		'wordpress-post' => [
+		'wordpress-post'   => [
 			'post_title'     => 'WordPress post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'default',
-				'_dp_original' => '1769',
-				'_edit_last' => '1',
-				'_wp_old_slug' => 'fourth-post-2',
-				'_edit_lock' => '1567443186:1',
+				'_wp_page_template'              => 'default',
+				'_dp_original'                   => '1769',
+				'_edit_last'                     => '1',
+				'_wp_old_slug'                   => 'fourth-post-2',
+				'_edit_lock'                     => '1567443186:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -275,7 +274,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'third-post-2' => [
+		'third-post-2'     => [
 			'post_title'     => 'Third post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -283,14 +282,14 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1767',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_edit_lock' => '1567443198:1',
+				'_dp_original'                   => '1767',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_edit_lock'                     => '1567443198:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -312,7 +311,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'second-post-2' => [
+		'second-post-2'    => [
 			'post_title'     => 'Second post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -320,14 +319,14 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1765',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_edit_lock' => '1567443204:1',
+				'_dp_original'                   => '1765',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_edit_lock'                     => '1567443204:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -349,7 +348,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'example-title' => [
+		'example-title'    => [
 			'post_title'     => 'Example title',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -357,30 +356,30 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_pingme' => '1',
-				'_encloseme' => '1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_dp_original' => '1750',
-				'_thumbnail_id' => 'placeholder',
-				'_edit_last' => '1',
-				'_wp_page_template' => 'default',
-				'_wp_old_slug' => 'post-2',
-				'_edit_lock' => '1567443209:1',
+				'_dp_original'                   => '1750',
+				'_thumbnail_id'                  => 'placeholder',
+				'_edit_last'                     => '1',
+				'_wp_page_template'              => 'default',
+				'_wp_old_slug'                   => 'post-2',
+				'_edit_lock'                     => '1567443209:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <!-- /wp:paragraph -->',
 		],
-		'narrow' => [
+		'narrow'           => [
 			'post_title'     => 'Narrow',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567213971:1',
-				'_genesis_layout' => 'narrow-content',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567213971:1',
+				'_genesis_layout'                => 'narrow-content',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
@@ -403,16 +402,16 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'full-width' => [
+		'full-width'       => [
 			'post_title'     => 'Full Width',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567213917:1',
-				'_genesis_layout' => 'full-width-content',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567213917:1',
+				'_genesis_layout'                => 'full-width-content',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
@@ -435,16 +434,16 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'sidebar-content' => [
+		'sidebar-content'  => [
 			'post_title'     => 'Sidebar Content',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567213897:1',
-				'_genesis_layout' => 'sidebar-content',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567213897:1',
+				'_genesis_layout'                => 'sidebar-content',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
@@ -467,16 +466,16 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'content-sidebar' => [
+		'content-sidebar'  => [
 			'post_title'     => 'Content Sidebar',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567213882:1',
-				'_genesis_layout' => 'content-sidebar',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567213882:1',
+				'_genesis_layout'                => 'content-sidebar',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
@@ -499,16 +498,16 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'no-hero' => [
+		'no-hero'          => [
 			'post_title'     => 'No Hero',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567652359:1',
-				'_wp_page_template' => 'templates/no-hero.php',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567652359:1',
+				'_wp_page_template'              => 'templates/no-hero.php',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
@@ -531,18 +530,18 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'features' => [
+		'features'         => [
 			'post_title'     => 'Features',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567608397:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567608397:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_genesis_layout' => 'narrow-content',
-				'_wp_page_template' => 'default',
+				'_genesis_layout'                => 'narrow-content',
+				'_wp_page_template'              => 'default',
 			],
 			'post_content'   => '<!-- wp:heading -->
 <h2>Buttons</h2>
@@ -783,18 +782,18 @@ return [
 &lt;/div></code></pre>
 <!-- /wp:code -->',
 		],
-		'homepage' => [
+		'homepage'         => [
 			'post_title'     => 'Home',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567680853:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567680853:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_genesis_layout' => 'full-width-content',
-				'_wp_page_template' => 'default',
+				'_genesis_layout'                => 'full-width-content',
+				'_wp_page_template'              => 'default',
 			],
 			'post_content'   => '<!-- wp:group {"backgroundColor":"very-light-gray","align":"full"} -->
 <div class="wp-block-group alignfull has-very-light-gray-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:heading -->
@@ -822,15 +821,15 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'contact' => [
+		'contact'          => [
 			'post_title'     => 'Contact',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1568001665:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568001665:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:html -->
@@ -860,17 +859,17 @@ return [
 <p></p>
 <!-- /wp:paragraph -->',
 		],
-		'landing' => [
+		'landing'          => [
 			'post_title'     => 'Landing',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567214584:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567214584:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'templates/landing.php',
+				'_wp_page_template'              => 'templates/landing.php',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -896,7 +895,7 @@ return [
 <div class="wp-block-button"><a class="wp-block-button__link" href="javascript:history.back()">Return to theme</a></div>
 <!-- /wp:button -->',
 		],
-		'fourth-post' => [
+		'fourth-post'      => [
 			'post_title'     => 'Fourth post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -904,13 +903,13 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_edit_lock' => '1567443221:1',
-				'_pingme' => '1',
-				'_encloseme' => '1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567443221:1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'default',
-				'_thumbnail_id' => 'placeholder',
+				'_wp_page_template'              => 'default',
+				'_thumbnail_id'                  => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -932,7 +931,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'third-post' => [
+		'third-post'       => [
 			'post_title'     => 'Third post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -940,12 +939,12 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_edit_lock' => '1568199531:1',
-				'_pingme' => '1',
-				'_encloseme' => '1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568199531:1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder',
+				'_thumbnail_id'                  => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -967,7 +966,7 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'second-post' => [
+		'second-post'      => [
 			'post_title'     => 'Second post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -975,12 +974,12 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_edit_lock' => '1568197615:1',
-				'_pingme' => '1',
-				'_encloseme' => '1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568197615:1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder',
+				'_thumbnail_id'                  => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -1002,18 +1001,18 @@ return [
 <p>Ut consectetur venenatis libero sed tempus. Morbi accumsan nunc id tincidunt varius. Proin auctor felis vitae ligula scelerisque aliquam. Morbi ornare lacus ex, id aliquet tellus dignissim in. Suspendisse nisl sem, pretium nec ultrices id, pulvinar eget sapien.<br></p>
 <!-- /wp:paragraph -->',
 		],
-		'blocks' => [
+		'blocks'           => [
 			'post_title'     => 'Blocks',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567680785:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567680785:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'templates/blocks.php',
-				'_genesis_layout' => 'narrow-content',
+				'_wp_page_template'              => 'templates/blocks.php',
+				'_genesis_layout'                => 'narrow-content',
 			],
 			'post_content'   => '<!-- wp:cover {"url":"https://genesis-starter.test/wp-content/uploads/2019/06/hero.jpg","id":1774,"align":"full"} -->
 <div class="wp-block-cover alignfull has-background-dim" style="background-image:url(https://genesis-starter.test/wp-content/uploads/2019/06/hero.jpg)"><div class="wp-block-cover__inner-container"><!-- wp:heading {"align":"center","level":1} -->
@@ -1061,7 +1060,7 @@ return [
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->',
 		],
-		'post' => [
+		'post'             => [
 			'post_title'     => 'Post',
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -1069,28 +1068,28 @@ return [
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
 			'meta_input'     => [
-				'_edit_lock' => '1568197604:1',
-				'_pingme' => '1',
-				'_encloseme' => '1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1568197604:1',
+				'_pingme'                        => '1',
+				'_encloseme'                     => '1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder',
+				'_thumbnail_id'                  => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <!-- /wp:paragraph -->',
 		],
-		'blog' => [
+		'blog'             => [
 			'post_title'     => 'Blog',
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
 			'meta_input'     => [
-				'_edit_lock' => '1567214512:1',
-				'_edit_last' => '1',
+				'_edit_lock'                     => '1567214512:1',
+				'_edit_last'                     => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_genesis_layout' => 'full-width-content',
+				'_genesis_layout'                => 'full-width-content',
 			],
 			'post_content'   => '',
 		],
@@ -1098,32 +1097,32 @@ return [
 	],
 	'navigation_menus' => [
 		'primary' => [
-			'features' => [
-				'title'  => 'Features',
-				'id'     => 'features',
+			'features'        => [
+				'title' => 'Features',
+				'id'    => 'features',
 			],
-			'templates' => [
-				'title'  => 'Templates',
-				'id'     => 'templates',
+			'templates'       => [
+				'title' => 'Templates',
+				'id'    => 'templates',
 			],
-			'blocks' => [
+			'blocks'          => [
 				'title'  => 'Blocks',
 				'id'     => 'blocks',
 				'parent' => 'templates',
 			],
-			'landing' => [
+			'landing'         => [
 				'title'  => 'Landing',
 				'id'     => 'landing',
 				'parent' => 'templates',
 			],
-			'no-hero' => [
+			'no-hero'         => [
 				'title'  => 'No Hero',
 				'id'     => 'no-hero',
 				'parent' => 'templates',
 			],
-			'layouts' => [
-				'title'  => 'Layouts',
-				'id'     => 'layouts',
+			'layouts'         => [
+				'title' => 'Layouts',
+				'id'    => 'layouts',
 			],
 			'content-sidebar' => [
 				'title'  => 'Content Sidebar',
@@ -1135,75 +1134,77 @@ return [
 				'id'     => 'sidebar-content',
 				'parent' => 'layouts',
 			],
-			'full-width' => [
+			'full-width'      => [
 				'title'  => 'Full Width',
 				'id'     => 'full-width',
 				'parent' => 'layouts',
 			],
-			'narrow' => [
+			'narrow'          => [
 				'title'  => 'Narrow',
 				'id'     => 'narrow',
 				'parent' => 'layouts',
 			],
-			'shop' => [
-				'title'  => 'Shop',
-				'id'     => 'shop',
+			'shop'            => [
+				'title' => 'Shop',
+				'id'    => 'shop',
 			],
-			'cart' => [
+			'cart'            => [
 				'title'  => 'Cart',
 				'id'     => 'cart',
 				'parent' => 'shop',
 			],
-			'checkout' => [
+			'checkout'        => [
 				'title'  => 'Checkout',
 				'id'     => 'checkout',
 				'parent' => 'shop',
 			],
-			'my-account' => [
+			'my-account'      => [
 				'title'  => 'My Account',
 				'id'     => 'my-account',
 				'parent' => 'shop',
 			],
-			'blog' => [
-				'title'  => 'Blog',
-				'id'     => 'blog',
+			'blog'            => [
+				'title' => 'Blog',
+				'id'    => 'blog',
 			],
-			'contact' => [
-				'title'  => 'Contact',
-				'id'     => 'contact',
+			'contact'         => [
+				'title' => 'Contact',
+				'id'    => 'contact',
 			],
 		],
 	],
 	'widgets'          => [
-				'header-right' => [
+		'header-right' => [
 			[
 				'type' => 'custom_html',
 				'args' => [
-					'title' => '',
+					'title'   => '',
 					'content' => '<a href="#" class="button outline small">Start Now</a>',
 				],
 			],
 		],
-		'sidebar' => [
+		'sidebar'      => [
 			[
 				'type' => 'search',
 				'args' => [
 					'title' => 'Search',
 				],
-			],			[
+			],
+			[
 				'type' => 'recent-posts',
 				'args' => [
-					'title' => '',
-					'number' => '5',
+					'title'     => '',
+					'number'    => '5',
 					'show_date' => '',
 				],
-			],			[
+			],
+			[
 				'type' => 'categories',
 				'args' => [
-					'title' => 'Categories',
-					'count' => '0',
+					'title'        => 'Categories',
+					'count'        => '0',
 					'hierarchical' => '0',
-					'dropdown' => '0',
+					'dropdown'     => '0',
 				],
 			],
 		],
@@ -1211,7 +1212,7 @@ return [
 			[
 				'type' => 'custom_html',
 				'args' => [
-					'title' => 'Welcome to the Genesis Starter Theme',
+					'title'   => 'Welcome to the Genesis Starter Theme',
 					'content' => '<p>A configuration based starter theme built for developers.</p>
 
 <br>
@@ -1231,32 +1232,34 @@ return [
 			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Modern build process',
-					'text' => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
+					'title'                => 'Modern build process',
+					'text'                 => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
 <div></div>',
-					'filter' => '1',
-					'visual' => '1',
-					'column-classes' => 'one-third',
+					'filter'               => '1',
+					'visual'               => '1',
+					'column-classes'       => 'one-third',
 					'column-classes-first' => '1',
 				],
-			],			[
+			],
+			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Config based customization',
-					'text' => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
+					'title'          => 'Config based customization',
+					'text'           => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
 <div></div>',
-					'filter' => '1',
-					'visual' => '1',
+					'filter'         => '1',
+					'visual'         => '1',
 					'column-classes' => 'one-third',
 				],
-			],			[
+			],
+			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Gutenberg & AMP ready',
-					'text' => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
+					'title'          => 'Gutenberg & AMP ready',
+					'text'           => '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</div>
 <div></div>',
-					'filter' => '1',
-					'visual' => '1',
+					'filter'         => '1',
+					'visual'         => '1',
 					'column-classes' => 'one-third',
 				],
 			],
@@ -1265,36 +1268,37 @@ return [
 			[
 				'type' => 'custom_html',
 				'args' => [
-					'title' => '',
-					'content' => '<h3>Built for developers</h3>
+					'title'                => '',
+					'content'              => '<h3>Built for developers</h3>
 
 <p>
 	A configuration based drop-in library for extending Genesis child themes. See an example of how to integrate the library here or check out the live demo.
 A configuration based drop-in library for extending Genesis child themes. See an example of how to integrate the library here or check out the live demo. A configuration based drop-in library for extending Genesis child themes.
 </p>
 <a href="#" class="button outline">Get Genesis Starter</a>',
-					'column-classes' => 'one-half',
+					'column-classes'       => 'one-half',
 					'column-classes-first' => '1',
 				],
-			],			[
+			],
+			[
 				'type' => 'media_image',
 				'args' => [
-					'attachment_id' => '0',
-					'url' => 'https://via.placeholder.com/1280x720/f5f5f5/f5f5f5?text=Placeholder',
-					'title' => '',
-					'size' => 'large',
-					'width' => '1280',
-					'height' => '720',
-					'caption' => '',
-					'alt' => 'placeholder',
-					'link_type' => 'custom',
-					'link_url' => '',
-					'image_classes' => '',
-					'link_classes' => '',
-					'link_rel' => '',
+					'attachment_id'     => '0',
+					'url'               => 'https://via.placeholder.com/1280x720/f5f5f5/f5f5f5?text=Placeholder',
+					'title'             => '',
+					'size'              => 'large',
+					'width'             => '1280',
+					'height'            => '720',
+					'caption'           => '',
+					'alt'               => 'placeholder',
+					'link_type'         => 'custom',
+					'link_url'          => '',
+					'image_classes'     => '',
+					'link_classes'      => '',
+					'link_rel'          => '',
 					'link_target_blank' => '',
-					'image_title' => '',
-					'column-classes' => 'one-half',
+					'image_title'       => '',
+					'column-classes'    => 'one-half',
 				],
 			],
 		],
@@ -1302,28 +1306,28 @@ A configuration based drop-in library for extending Genesis child themes. See an
 			[
 				'type' => 'featured-post',
 				'args' => [
-					'title' => '',
-					'posts_cat' => '0',
-					'posts_num' => '3',
-					'posts_offset' => '0',
-					'orderby' => 'date',
-					'order' => 'DESC',
-					'gravatar_size' => '45',
-					'gravatar_alignment' => 'alignnone',
-					'show_image' => '1',
-					'image_size' => 'featured',
-					'image_alignment' => 'alignnone',
-					'show_title' => '1',
-					'show_byline' => '1',
-					'post_info' => '[post_date] By [post_author_posts_link] [post_comments]',
-					'show_content' => 'content-limit',
-					'content_limit' => '200',
-					'more_text' => '[Read More...]',
-					'extra_title' => '',
-					'extra_num' => '0',
-					'more_from_category' => '1',
+					'title'                   => '',
+					'posts_cat'               => '0',
+					'posts_num'               => '3',
+					'posts_offset'            => '0',
+					'orderby'                 => 'date',
+					'order'                   => 'DESC',
+					'gravatar_size'           => '45',
+					'gravatar_alignment'      => 'alignnone',
+					'show_image'              => '1',
+					'image_size'              => 'featured',
+					'image_alignment'         => 'alignnone',
+					'show_title'              => '1',
+					'show_byline'             => '1',
+					'post_info'               => '[post_date] By [post_author_posts_link] [post_comments]',
+					'show_content'            => 'content-limit',
+					'content_limit'           => '200',
+					'more_text'               => '[Read More...]',
+					'extra_title'             => '',
+					'extra_num'               => '0',
+					'more_from_category'      => '1',
 					'more_from_category_text' => 'More Posts from this Category',
-					'column-classes' => 'full-width',
+					'column-classes'          => 'full-width',
 				],
 			],
 		],
@@ -1331,26 +1335,27 @@ A configuration based drop-in library for extending Genesis child themes. See an
 			[
 				'type' => 'custom_html',
 				'args' => [
-					'title' => 'Ready to get started?',
-					'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.',
-					'column-classes' => 'three-fourths',
+					'title'                => 'Ready to get started?',
+					'content'              => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.',
+					'column-classes'       => 'three-fourths',
 					'column-classes-first' => '1',
 				],
-			],			[
+			],
+			[
 				'type' => 'custom_html',
 				'args' => [
-					'title' => '',
-					'content' => '<a href="#" class="button alignright">Get Started</a>',
+					'title'          => '',
+					'content'        => '<a href="#" class="button alignright">Get Started</a>',
 					'column-classes' => 'one-fourth',
 				],
 			],
 		],
-		'footer-1' => [
+		'footer-1'     => [
 			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Design',
-					'text' => 'With an emphasis on typography, white space, and mobile-optimized design, your website will look absolutely breathtaking.
+					'title'  => 'Design',
+					'text'   => 'With an emphasis on typography, white space, and mobile-optimized design, your website will look absolutely breathtaking.
 
 <a href="#">Learn more about design</a>',
 					'filter' => '1',
@@ -1358,12 +1363,12 @@ A configuration based drop-in library for extending Genesis child themes. See an
 				],
 			],
 		],
-		'footer-2' => [
+		'footer-2'     => [
 			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Content',
-					'text' => 'Our team will teach you the art of writing audience-focused content that will help you achieve the success you truly deserve.
+					'title'  => 'Content',
+					'text'   => 'Our team will teach you the art of writing audience-focused content that will help you achieve the success you truly deserve.
 
 <a href="#">Learn more about content</a>',
 					'filter' => '1',
@@ -1371,12 +1376,12 @@ A configuration based drop-in library for extending Genesis child themes. See an
 				],
 			],
 		],
-		'footer-3' => [
+		'footer-3'     => [
 			[
 				'type' => 'text',
 				'args' => [
-					'title' => 'Strategy',
-					'text' => 'We help creative entrepreneurs build their digital business by focusing on three key elements of a successful online platform.
+					'title'  => 'Strategy',
+					'text'   => 'We help creative entrepreneurs build their digital business by focusing on three key elements of a successful online platform.
 
 <a href="#">Learn more about strategy</a>',
 					'filter' => '1',
