@@ -85,7 +85,7 @@ function delete_image_backup() {
 	$wp_filesystem_direct = new \WP_Filesystem_Direct( false );
 
 	if ( is_dir( $temp ) ) {
-		$wp_filesystem_direct->rmdir( dirname( $temp ), true );
+		$wp_filesystem_direct->rmdir( $temp, true );
 	}
 }
 
@@ -112,6 +112,19 @@ function update_thumbnail_ids() {
 
 		if ( $thumbnail_id ) {
 			$attachment = \get_page_by_title( $thumbnail_id, OBJECT, 'attachment' );
+
+			if ( ! $attachment ) {
+				$attachments = \get_posts( [
+					'numberposts' => -1,
+					'post_type'   => 'attachment',
+				] );
+
+				foreach ( $attachments as $attachment_object ) {
+					if ( false !== strpos( $post->post_title, $thumbnail_id ) ) {
+						$attachment = $attachment_object;
+					}
+				}
+			}
 
 			if ( $attachment && $attachment->ID ) {
 				\update_post_meta( $post->ID, '_thumbnail_id', $attachment->ID );

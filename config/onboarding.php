@@ -22,9 +22,9 @@ return [
 				'public_url' => 'https://wordpress.org/plugins/genesis-widget-column-classes/',
 			],
 			[
-				'name'       => 'Quick Featured Images',
-				'slug'       => 'quick-featured-images/quick-featured-images.php',
-				'public_url' => 'https://wordpress.org/plugins/quick-featured-images/',
+				'name'       => 'Icon Widget',
+				'slug'       => 'icon-widget/icon-widget.php',
+				'public_url' => 'https://wordpress.org/plugins/icon-widget/',
 			],
 		],
 	],
