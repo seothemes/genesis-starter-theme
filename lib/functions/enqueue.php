@@ -25,7 +25,7 @@ add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
  * @return void
  */
 function enqueue_assets() {
-	$assets = \genesis_get_config( 'scripts-and-styles' );
+	$assets = \genesis_get_config( 'scripts-and-styles' )['add'];
 
 	foreach ( $assets as $asset ) {
 		$type      = false !== strpos( $asset['src'], '.js' ) ? 'script' : 'style';
@@ -52,5 +52,21 @@ function enqueue_assets() {
 				}
 			}
 		}
+	}
+}
+
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_scripts' );
+/**
+ * Deregister scripts.
+ *
+ * @since 3.5.0
+ *
+ * @return void
+ */
+function deregister_scripts() {
+	$assets = \genesis_get_config( 'scripts-and-styles' )['remove'];
+
+	foreach ( $assets as $asset ) {
+		\wp_deregister_script( $asset );
 	}
 }

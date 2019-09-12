@@ -19,6 +19,15 @@
     "issues": "https://github.com/seothemes/genesis-starter-theme/issues",
     "source": "https://github.com/seothemes/genesis-starter-theme"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../plugins/genesis-config-exporter",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "require": {
     "php": ">=5.6"
   },
@@ -28,6 +37,7 @@
     "dealerdirect/phpcodesniffer-composer-installer": "v0.5.0",
     "phpcompatibility/phpcompatibility-wp": "2.0.0",
     "phpunit/phpunit": "~5.7.9",
+    "seothemes/genesis-config-exporter": "@dev",
     "squizlabs/php_codesniffer": "^3.4.2",
     "wp-coding-standards/wpcs": "2.1.0",
     "wp-phpunit/wp-phpunit": "^5.1"

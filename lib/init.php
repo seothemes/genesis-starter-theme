@@ -31,6 +31,7 @@ namespace SeoThemes\GenesisStarterTheme;
 		'functions/header',
 		'functions/widgets',
 		'functions/defaults',
+		'functions/onboarding',
 
 		// Structure.
 		'structure/archive',

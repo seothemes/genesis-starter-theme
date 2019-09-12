@@ -22,6 +22,16 @@ return [
 				'.nav-secondary',
 			],
 		],
+		'menuAnimation'    => [
+			'effect'   => 'fadeToggle',
+			'duration' => 'fast',
+			'easing'   => 'swing',
+		],
+		'subMenuAnimation' => [
+			'effect'   => 'slideToggle',
+			'duration' => 'fast',
+			'easing'   => 'swing',
+		],
 	],
 	'extras' => [
 		'media_query_width' => '896px',
