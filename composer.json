@@ -42,11 +42,6 @@
     "wp-coding-standards/wpcs": "2.1.0",
     "wp-phpunit/wp-phpunit": "^5.1"
   },
-  "autoload": {
-    "classmap": [
-      "lib/classes"
-    ]
-  },
   "autoload-dev": {
     "psr-4": {
       "SeoThemes\\GenesisStarterTheme\\Tests\\Unit\\": "tests/php/unit/",
