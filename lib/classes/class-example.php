@@ -9,7 +9,7 @@
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\GenesisStarterTheme\Classes;
+namespace SeoThemes\GenesisStarterTheme;
 
 /**
  * Example Class.
@@ -19,7 +19,7 @@ namespace SeoThemes\GenesisStarterTheme\Classes;
  * class is loading correctly, place the following in your functions.php file:
  *
  * ```
- * $example = new \SeoThemes\GenesisStarterTheme\Classes\Example();
+ * $example = new \SeoThemes\GenesisStarterTheme\Example();
  * $example->print_name();
  * ```
  *
@@ -27,7 +27,7 @@ namespace SeoThemes\GenesisStarterTheme\Classes;
  * to run the `composer dump --no-dev` command from the terminal to regenerate the
  * Composer autoloader files so that your new classes are loaded automatically.
  *
- * @package SeoThemes\GenesisStarterTheme\Classes
+ * @package SeoThemes\GenesisStarterTheme
  */
 class Example {
 
