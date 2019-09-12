@@ -102,10 +102,12 @@ function delete_image_backup() {
  * @return void
  */
 function update_thumbnail_ids() {
-	$posts = \get_posts( [
-		'numberposts' => -1,
-		'post_type'   => 'any',
-	] );
+	$posts = \get_posts(
+		[
+			'numberposts' => -1,
+			'post_type'   => 'any',
+		]
+	);
 
 	foreach ( $posts as $post ) {
 		$thumbnail_id = \get_post_thumbnail_id( $post->ID );
@@ -114,10 +116,12 @@ function update_thumbnail_ids() {
 			$attachment = \get_page_by_title( $thumbnail_id, OBJECT, 'attachment' );
 
 			if ( ! $attachment ) {
-				$attachments = \get_posts( [
-					'numberposts' => -1,
-					'post_type'   => 'attachment',
-				] );
+				$attachments = \get_posts(
+					[
+						'numberposts' => -1,
+						'post_type'   => 'attachment',
+					]
+				);
 
 				foreach ( $attachments as $attachment_object ) {
 					if ( false !== strpos( $post->post_title, $thumbnail_id ) ) {

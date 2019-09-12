@@ -17,7 +17,7 @@ $asset_url    = \trailingslashit( get_theme_url() . 'assets' );
 $google_fonts = \implode( '|', \genesis_get_config( 'google-fonts' ) );
 
 return [
-	'add' => [
+	'add'    => [
 		[
 			'handle' => \genesis_get_theme_handle() . '-editor',
 			'src'    => $asset_url . 'js/editor.js',
@@ -49,6 +49,6 @@ return [
 		],
 	],
 	'remove' => [
-		'superfish'
-	]
+		'superfish',
+	],
 ];

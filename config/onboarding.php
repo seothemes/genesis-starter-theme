@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile -- Auto generated file.
 /**
  * Genesis Starter Theme
  *
@@ -35,10 +36,10 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568083704:1',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
@@ -48,10 +49,10 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568083694:1',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
@@ -61,11 +62,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568028783:1',
 				'_genesis_layout' => 'full-width-content',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '',
 		],
@@ -91,12 +92,12 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567676468:1',
 				'_genesis_layout' => 'full-width-content',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'default', 
+				'_wp_page_template' => 'default',
 			],
 			'post_content'   => '<!-- wp:shortcode -->
 [woocommerce_my_account]
@@ -109,7 +110,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -118,7 +119,7 @@ return [
 				'_thumbnail_id' => 'placeholder',
 				'_edit_last' => '1',
 				'_wp_old_slug' => 'fourth-post-3',
-				'_edit_lock' => '1567607569:1', 
+				'_edit_lock' => '1567607569:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -147,7 +148,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -156,7 +157,7 @@ return [
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
 				'_wp_old_slug' => 'third-post-3',
-				'_edit_lock' => '1567443139:1', 
+				'_edit_lock' => '1567443139:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -185,7 +186,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -194,7 +195,7 @@ return [
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
 				'_wp_old_slug' => 'second-post-3',
-				'_edit_lock' => '1567443161:1', 
+				'_edit_lock' => '1567443161:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -223,7 +224,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -232,7 +233,7 @@ return [
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
 				'_wp_old_slug' => 'post-3',
-				'_edit_lock' => '1567443170:1', 
+				'_edit_lock' => '1567443170:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -244,7 +245,7 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -252,7 +253,7 @@ return [
 				'_dp_original' => '1769',
 				'_edit_last' => '1',
 				'_wp_old_slug' => 'fourth-post-2',
-				'_edit_lock' => '1567443186:1', 
+				'_edit_lock' => '1567443186:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -281,7 +282,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -289,7 +290,7 @@ return [
 				'_thumbnail_id' => 'placeholder',
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
-				'_edit_lock' => '1567443198:1', 
+				'_edit_lock' => '1567443198:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -318,7 +319,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -326,7 +327,7 @@ return [
 				'_thumbnail_id' => 'placeholder',
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
-				'_edit_lock' => '1567443204:1', 
+				'_edit_lock' => '1567443204:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -355,7 +356,7 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
@@ -364,7 +365,7 @@ return [
 				'_edit_last' => '1',
 				'_wp_page_template' => 'default',
 				'_wp_old_slug' => 'post-2',
-				'_edit_lock' => '1567443209:1', 
+				'_edit_lock' => '1567443209:1',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -376,11 +377,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567213971:1',
 				'_genesis_layout' => 'narrow-content',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -408,11 +409,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567213917:1',
 				'_genesis_layout' => 'full-width-content',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -440,11 +441,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567213897:1',
 				'_genesis_layout' => 'sidebar-content',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -472,11 +473,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567213882:1',
 				'_genesis_layout' => 'content-sidebar',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -504,11 +505,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567652359:1',
 				'_wp_page_template' => 'templates/no-hero.php',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -536,12 +537,12 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567608397:1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 				'_genesis_layout' => 'narrow-content',
-				'_wp_page_template' => 'default', 
+				'_wp_page_template' => 'default',
 			],
 			'post_content'   => '<!-- wp:heading -->
 <h2>Buttons</h2>
@@ -788,12 +789,12 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567680853:1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 				'_genesis_layout' => 'full-width-content',
-				'_wp_page_template' => 'default', 
+				'_wp_page_template' => 'default',
 			],
 			'post_content'   => '<!-- wp:group {"backgroundColor":"very-light-gray","align":"full"} -->
 <div class="wp-block-group alignfull has-very-light-gray-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:heading -->
@@ -827,10 +828,10 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568001665:1',
 				'_edit_last' => '1',
-				'_genesis_scripts_body_position' => 'bottom', 
+				'_genesis_scripts_body_position' => 'bottom',
 			],
 			'post_content'   => '<!-- wp:html -->
 <form>
@@ -865,11 +866,11 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567214584:1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_wp_page_template' => 'templates/landing.php', 
+				'_wp_page_template' => 'templates/landing.php',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -902,14 +903,14 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567443221:1',
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 				'_wp_page_template' => 'default',
-				'_thumbnail_id' => 'placeholder', 
+				'_thumbnail_id' => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -938,13 +939,13 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568199531:1',
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder', 
+				'_thumbnail_id' => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -973,13 +974,13 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568197615:1',
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder', 
+				'_thumbnail_id' => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque venenatis augue eget lacinia.</p>
@@ -1007,12 +1008,12 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567680785:1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
 				'_wp_page_template' => 'templates/blocks.php',
-				'_genesis_layout' => 'narrow-content', 
+				'_genesis_layout' => 'narrow-content',
 			],
 			'post_content'   => '<!-- wp:cover {"url":"https://genesis-starter.test/wp-content/uploads/2019/06/hero.jpg","id":1774,"align":"full"} -->
 <div class="wp-block-cover alignfull has-background-dim" style="background-image:url(https://genesis-starter.test/wp-content/uploads/2019/06/hero.jpg)"><div class="wp-block-cover__inner-container"><!-- wp:heading {"align":"center","level":1} -->
@@ -1067,13 +1068,13 @@ return [
 			'comment_status' => 'open',
 			'ping_status'    => 'open',
 			'featured_image' => \get_stylesheet_directory() . '/assets/img/placeholder.png',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1568197604:1',
 				'_pingme' => '1',
 				'_encloseme' => '1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_thumbnail_id' => 'placeholder', 
+				'_thumbnail_id' => 'placeholder',
 			],
 			'post_content'   => '<!-- wp:paragraph -->
 <p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -1085,15 +1086,15 @@ return [
 			'post_status'    => 'publish',
 			'comment_status' => 'closed',
 			'ping_status'    => 'closed',
-			'meta_input'     => [ 
+			'meta_input'     => [
 				'_edit_lock' => '1567214512:1',
 				'_edit_last' => '1',
 				'_genesis_scripts_body_position' => 'bottom',
-				'_genesis_layout' => 'full-width-content', 
+				'_genesis_layout' => 'full-width-content',
 			],
 			'post_content'   => '',
 		],
-		
+
 	],
 	'navigation_menus' => [
 		'primary' => [
