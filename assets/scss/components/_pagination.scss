@@ -12,6 +12,10 @@
 	border-top: $base--border;
 	background-color: $color--background;
 
+	@include mq(m) {
+		margin-top: auto;
+	}
+
 	.wrap {
 		justify-content: center;
 	}

@@ -8,6 +8,12 @@
 
 .site-inner {
 
+	@include mq(m) {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
 	.no-hero-section.transparent-header &,
 	.no-hero-section.sticky-header & {
 		margin-top: $spacing--xl * $perfect-fifth;
