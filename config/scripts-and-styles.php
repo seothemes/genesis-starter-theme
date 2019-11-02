@@ -26,7 +26,7 @@ return [
 		],
 		[
 			'handle'    => \genesis_get_theme_handle() . '-main',
-			'src'       => $asset_url . 'js/min/main.min.js',
+			'src'       => $asset_url . 'js/min/main.js',
 			'condition' => function () {
 				return ! \genesis_is_amp();
 			},
