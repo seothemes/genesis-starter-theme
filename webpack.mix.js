@@ -80,10 +80,10 @@ mix.version();
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 mix
-    .js([
+    .scripts([
         `${devPath}/js/editor.js`
-    ], `${devPath}/js/min`)
-    .js([
+    ], `${devPath}/js/min/editor.js`)
+    .scripts([
         `${devPath}/js/hide-show.js`,
         `${devPath}/js/sticky-header.js`,
         `${devPath}/js/smooth-scroll.js`
